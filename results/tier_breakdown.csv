@@ -1,0 +1,13 @@
+Tier,Strategy,Questions,Hit@1,Hit@4,MRR,Mean IoU,R@1@0.3
+Tier A (Curated Studio),fixed_token,50,16.0%,34.0%,0.23,0.08,8.0%
+Tier A (Curated Studio),sentence,50,4.0%,22.0%,0.112,0.017,2.0%
+Tier A (Curated Studio),semantic,50,10.0%,30.0%,0.167,0.046,6.0%
+Tier A (Curated Studio),time_window,50,16.0%,28.0%,0.208,0.073,10.0%
+Tier B (US Classroom),fixed_token,50,4.0%,12.0%,0.068,0.023,4.0%
+Tier B (US Classroom),sentence,50,8.0%,18.0%,0.115,0.033,6.0%
+Tier B (US Classroom),semantic,50,4.0%,14.0%,0.08,0.015,2.0%
+Tier B (US Classroom),time_window,50,6.0%,8.0%,0.067,0.01,0.0%
+Tier C (NPTEL Indian),fixed_token,30,3.3%,30.0%,0.131,0.02,3.3%
+Tier C (NPTEL Indian),sentence,30,3.3%,16.7%,0.086,0.009,0.0%
+Tier C (NPTEL Indian),semantic,30,3.3%,30.0%,0.147,0.008,0.0%
+Tier C (NPTEL Indian),time_window,30,3.3%,13.3%,0.069,0.017,3.3%

@@ -647,6 +647,26 @@ def main() -> None:
                     df_r = pd.read_csv(csv_ret)
                     st.dataframe(df_r, use_container_width=True)
 
+                st.markdown("#### Table 2: Performance Breakdown by Pedagogical & Acoustic Tier")
+                csv_t2 = os.path.join(
+                    os.path.dirname(os.path.abspath(__file__)),
+                    "results",
+                    "tier_breakdown.csv",
+                )
+                if os.path.exists(csv_t2):
+                    df_t2 = pd.read_csv(csv_t2)
+                    st.dataframe(df_t2, use_container_width=True)
+
+                st.markdown("#### Table 3: Video Duration & Search Space Expansion Effect")
+                csv_t3 = os.path.join(
+                    os.path.dirname(os.path.abspath(__file__)),
+                    "results",
+                    "duration_breakdown.csv",
+                )
+                if os.path.exists(csv_t3):
+                    df_t3 = pd.read_csv(csv_t3)
+                    st.dataframe(df_t3, use_container_width=True)
+
                 st.markdown("#### Table 4: Generation Faithfulness & Zero Hallucination")
                 csv_gen = os.path.join(
                     os.path.dirname(os.path.abspath(__file__)),
