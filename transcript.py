@@ -90,6 +90,20 @@ def extract_video_id(url: str) -> str:
     )
 
 
+def get_cached_transcript_path(video_id: str, source: str = "captions") -> str | None:
+    """Find local cached transcript file checking absolute and relative project paths."""
+    base_dir = os.path.dirname(os.path.abspath(__file__))
+    candidates = [
+        os.path.join(base_dir, "data", "transcripts", source, f"{video_id}.json"),
+        os.path.join(os.getcwd(), "data", "transcripts", source, f"{video_id}.json"),
+        os.path.join("data", "transcripts", source, f"{video_id}.json"),
+    ]
+    for path in candidates:
+        if os.path.isfile(path):
+            return path
+    return None
+
+
 def fetch_captions(video_id: str) -> list[dict[str, Any]]:
     """Fetch captions via local cache or fallback to youtube-transcript-api.
     
@@ -102,11 +116,11 @@ def fetch_captions(video_id: str) -> list[dict[str, Any]]:
     Raises:
       TranscriptError: On disabled transcripts, unavailable video, network issues, or no captions.
     """
-    # 0. Check local disk cache first
-    local_captions_path = os.path.join("data", "transcripts", "captions", f"{video_id}.json")
-    if os.path.exists(local_captions_path):
+    # 0. Check local disk cache first (offline-first execution)
+    cached_path = get_cached_transcript_path(video_id, "captions")
+    if cached_path:
         try:
-            with open(local_captions_path, "r", encoding="utf-8") as f:
+            with open(cached_path, "r", encoding="utf-8") as f:
                 cached_data = json.load(f)
             if cached_data and isinstance(cached_data, list):
                 return cached_data
@@ -326,10 +340,10 @@ def get_transcript(
     video_id = extract_video_id(url)
 
     # 1. Check local frozen captions cache first
-    local_captions_path = os.path.join("data", "transcripts", "captions", f"{video_id}.json")
-    if os.path.exists(local_captions_path):
+    cached_captions = get_cached_transcript_path(video_id, "captions")
+    if cached_captions:
         try:
-            with open(local_captions_path, "r", encoding="utf-8") as f:
+            with open(cached_captions, "r", encoding="utf-8") as f:
                 segments = json.load(f)
             if segments and isinstance(segments, list):
                 return video_id, segments, "captions"
@@ -337,10 +351,10 @@ def get_transcript(
             pass
 
     # 2. Check local frozen whisper cache if present
-    local_whisper_path = os.path.join("data", "transcripts", "whisper", f"{video_id}.json")
-    if os.path.exists(local_whisper_path):
+    cached_whisper = get_cached_transcript_path(video_id, "whisper")
+    if cached_whisper:
         try:
-            with open(local_whisper_path, "r", encoding="utf-8") as f:
+            with open(cached_whisper, "r", encoding="utf-8") as f:
                 segments = json.load(f)
             if segments and isinstance(segments, list):
                 return video_id, segments, "whisper"
@@ -358,9 +372,16 @@ def get_transcript(
     if allow_whisper:
         try:
             segments = transcribe_with_whisper(video_id)
+            target_whisper_path = os.path.join(
+                os.path.dirname(os.path.abspath(__file__)),
+                "data",
+                "transcripts",
+                "whisper",
+                f"{video_id}.json",
+            )
             try:
-                os.makedirs(os.path.dirname(local_whisper_path), exist_ok=True)
-                with open(local_whisper_path, "w", encoding="utf-8") as f:
+                os.makedirs(os.path.dirname(target_whisper_path), exist_ok=True)
+                with open(target_whisper_path, "w", encoding="utf-8") as f:
                     json.dump(segments, f, indent=2, ensure_ascii=False)
             except Exception:
                 pass

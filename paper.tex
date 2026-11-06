@@ -150,37 +150,11 @@ Table~\ref{tab:main_benchmark} presents the macro retrieval benchmark across the
 \textbf{Validation of Qu et al. on Spoken Discourse:}
 In their study on formal written documents, Qu et al. \cite{qu2024semantic} observed that semantic chunking does not reliably surpass fixed-token chunking. Our experiments confirm that this failure is even more pronounced in spoken educational discourse. \texttt{semantic} chunking achieved only 3.1\% Hit@1, an MRR of 0.087, and an $R@1 \text{ @ } 0.3$ of 0.8\%, trailing behind simple \texttt{fixed\_token} chunking (4.6\% Hit@1, 0.097 MRR, and 3.8\% $R@1 \text{ @ } 0.3$). Because spoken transcripts lack structured paragraph pauses, semantic embedding transitions identify minor conversational shifts rather than true pedagogical concept boundaries, adding $O(N)$ transformer latency during indexing without producing higher precision.
 
-\subsection{The Search Space Expansion Effect}
-\label{sec:search_space}
-A critical phenomenon observed in our evaluation is the dramatic divergence in retrieval precision between short lectures and extended, multi-hour classroom presentations. To quantify this behavior, we segmented the corpus by video duration: Short ($\le$35 min, $N_{\text{eval}}=30$) versus Long ($>$35 min, $N_{\text{eval}}=100$). The results are presented in Table~\ref{tab:duration_breakdown}.
+\subsection{Acoustic Robustness: Pedagogical Tier Dynamics}
+\label{sec:tier_dynamics}
+Table~\ref{tab:tier_breakdown} disaggregates retrieval quality across the three pedagogical tiers. In Tier A (Studio), clean delivery enables \texttt{fixed\_token} and \texttt{time\_window} to achieve 16.0\% Hit@1 and up to 34.0\% Hit@4. 
 
-% TABLE 3: DURATION BREAKDOWN
-\begin{table}[htbp]
-\caption{Impact of Video Duration on Temporal Grounding (Search Space Expansion)}
-\label{tab:duration_breakdown}
-\centering
-\begin{tabular}{llccccc}
-\toprule
-\textbf{Duration} & \textbf{Strategy} & \textbf{Hit@1} & \textbf{Hit@4} & \textbf{MRR} & \textbf{Mean IoU} & \textbf{Med Error} \\
-\midrule
-\multirow{4}{*}{\shortstack[l]{$\le$35 min\\(Short)}} 
-& \texttt{fixed\_token}  & 16.7\% & 46.7\% & 0.286 & 0.077 & 280.0s \\
-& \texttt{sentence}     & 10.0\% & 30.0\% & 0.189 & 0.037 & 243.2s \\
-& \texttt{semantic}     & 16.7\% & \textbf{53.3\%} & \textbf{0.297} & 0.077 & 238.9s \\
-& \texttt{time\_window} & \textbf{23.3\%} & 36.7\% & 0.286 & \textbf{0.109} & \textbf{214.5s} \\
-\midrule
-\multirow{4}{*}{\shortstack[l]{$>$35 min\\(Long)}} 
-& \texttt{fixed\_token}  & \textbf{6.0\%} & \textbf{18.0\%} & \textbf{0.102} & \textbf{0.035} & 1012.6s \\
-& \texttt{sentence}     & 4.0\% & 16.0\% & 0.083 & 0.017 & \textbf{901.6s} \\
-& \texttt{semantic}     & 3.0\% & 15.0\% & 0.078 & 0.010 & 948.1s \\
-& \texttt{time\_window} & 5.0\% & 11.0\% & 0.072 & 0.014 & 981.2s \\
-\bottomrule
-\end{tabular}
-\end{table}
-
-On shorter lectures ($\le$35 min), video-native \texttt{time\_window} partitioning demonstrates strong localization capabilities: achieving \textbf{23.3\% Hit@1}, \textbf{36.7\% Hit@4}, the highest Mean IoU (0.109), and the lowest median boundary error (214.5s).
-
-Conversely, in multi-hour lectures ($>$35 min), candidate chunk counts increase from $\sim$150 to over 2,000. Because technical instructors repeatedly refer to identical vocabulary (\textit{vectors, backpropagation, weights}) throughout introductions, derivations, and summaries, dense cosine matching without chapter structure frequently retrieves secondary discussions. Consequently, Hit@1 compresses to 3--6\%, and median boundary error expands to $\sim$950s ($\approx$15 minutes). This empirically establishes that flat single-tier dense vector retrieval is insufficient for full-length video courses, demonstrating the necessity for two-stage hierarchical indexing.
+In Tier C (NPTEL / Indian Accented), despite accented phonetic characteristics and extended video durations (e.g., Krish Naik at 164 minutes), top-4 recall remained strong at \textbf{30.0\%} for both \texttt{fixed\_token} and \texttt{semantic}. While conversational deviations lower exact top-1 localization, dense embeddings reliably retain the relevant target concept within the top-4 candidate context.
 
 % TABLE 2: TIER BREAKDOWN
 \begin{table}[htbp]
@@ -212,10 +186,37 @@ Conversely, in multi-hour lectures ($>$35 min), candidate chunk counts increase 
 \end{tabular}
 \end{table}
 
-\subsection{Acoustic Robustness: Tier C (NPTEL) Dynamics}
-Table~\ref{tab:tier_breakdown} disaggregates retrieval quality across the three pedagogical tiers. In Tier A (Studio), clean delivery enables \texttt{fixed\_token} and \texttt{time\_window} to achieve 16.0\% Hit@1 and up to 34.0\% Hit@4. 
+\subsection{The Search Space Expansion Effect}
+\label{sec:search_space}
+A critical phenomenon observed in our evaluation is the dramatic divergence in retrieval precision between short lectures and extended, multi-hour classroom presentations. To quantify this behavior, we segmented the corpus by video duration: Short ($\le$35 min, $N_{\text{eval}}=30$) versus Long ($>$35 min, $N_{\text{eval}}=100$). The results are presented in Table~\ref{tab:duration_breakdown}.
 
-In Tier C (NPTEL / Indian Accented), despite accented phonetic characteristics and extended video durations (e.g., Krish Naik at 164 minutes), top-4 recall remained strong at \textbf{30.0\%} for both \texttt{fixed\_token} and \texttt{semantic}. While conversational deviations lower exact top-1 localization, dense embeddings reliably retain the relevant target concept within the top-4 candidate context.
+% TABLE 3: DURATION BREAKDOWN
+\begin{table}[htbp]
+\caption{Impact of Video Duration on Temporal Grounding (Search Space Expansion)}
+\label{tab:duration_breakdown}
+\centering
+\begin{tabular}{llccccc}
+\toprule
+\textbf{Duration} & \textbf{Strategy} & \textbf{Hit@1} & \textbf{Hit@4} & \textbf{MRR} & \textbf{Mean IoU} & \textbf{Med Error} \\
+\midrule
+\multirow{4}{*}{\shortstack[l]{$\le$35 min\\(Short)}} 
+& \texttt{fixed\_token}  & 16.7\% & 46.7\% & 0.286 & 0.077 & 280.0s \\
+& \texttt{sentence}     & 10.0\% & 30.0\% & 0.189 & 0.037 & 243.2s \\
+& \texttt{semantic}     & 16.7\% & \textbf{53.3\%} & \textbf{0.297} & 0.077 & 238.9s \\
+& \texttt{time\_window} & \textbf{23.3\%} & 36.7\% & 0.286 & \textbf{0.109} & \textbf{214.5s} \\
+\midrule
+\multirow{4}{*}{\shortstack[l]{$>$35 min\\(Long)}} 
+& \texttt{fixed\_token}  & \textbf{6.0\%} & \textbf{18.0\%} & \textbf{0.102} & \textbf{0.035} & 1012.6s \\
+& \texttt{sentence}     & 4.0\% & 16.0\% & 0.083 & 0.017 & \textbf{901.6s} \\
+& \texttt{semantic}     & 3.0\% & 15.0\% & 0.078 & 0.010 & 948.1s \\
+& \texttt{time\_window} & 5.0\% & 11.0\% & 0.072 & 0.014 & 981.2s \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+On shorter lectures ($\le$35 min), video-native \texttt{time\_window} partitioning demonstrates strong localization capabilities: achieving \textbf{23.3\% Hit@1}, \textbf{36.7\% Hit@4}, the highest Mean IoU (0.109), and the lowest median boundary error (214.5s).
+
+Conversely, in multi-hour lectures ($>$35 min), candidate chunk counts increase from $\sim$150 to over 2,000. Because technical instructors repeatedly refer to identical vocabulary (\textit{vectors, backpropagation, weights}) throughout introductions, derivations, and summaries, dense cosine matching without chapter structure frequently retrieves secondary discussions. Consequently, Hit@1 compresses to 3--6\%, and median boundary error expands to $\sim$950s ($\approx$15 minutes). This empirically establishes that flat single-tier dense vector retrieval is insufficient for full-length video courses, demonstrating the necessity for two-stage hierarchical indexing.
 
 % TABLE 4: GENERATION EVALUATION
 \begin{table}[htbp]

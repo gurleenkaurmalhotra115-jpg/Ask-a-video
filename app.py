@@ -164,19 +164,29 @@ def main() -> None:
         "Krish Naik - End To End Machine Learning Project (MJ1vWb1rGwM)": "https://www.youtube.com/watch?v=MJ1vWb1rGwM",
     }
 
+    def on_benchmark_change() -> None:
+        chosen = st.session_state.get("selected_demo_key", "")
+        url_match = CACHED_BENCHMARK_VIDEOS.get(chosen, "")
+        if url_match:
+            st.session_state["video_url_text"] = url_match
+
+    if "video_url_text" not in st.session_state:
+        st.session_state.video_url_text = ""
+
     selected_demo = st.selectbox(
         "⚡ Choose a pre-indexed benchmark lecture (Instant offline, no YouTube rate limits):",
         options=list(CACHED_BENCHMARK_VIDEOS.keys()),
         index=0,
+        key="selected_demo_key",
+        on_change=on_benchmark_change,
         help="Select any of the 13 benchmark lecture videos to load its transcript instantly from disk without hitting YouTube API.",
     )
-    default_url_val = CACHED_BENCHMARK_VIDEOS.get(selected_demo, "")
 
     col_input, col_btn = st.columns([4, 1])
     with col_input:
         url_input = st.text_input(
             "YouTube Video URL or ID",
-            value=default_url_val,
+            key="video_url_text",
             placeholder="e.g. https://www.youtube.com/watch?v=... or youtu.be/...",
             label_visibility="collapsed",
         )
