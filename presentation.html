@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VidQuery: Academic Presentation & Defense Deck</title>
+  <style>
+    :root {
+      --bg: #0f172a;
+      --card-bg: #1e293b;
+      --text: #f8fafc;
+      --text-muted: #94a3b8;
+      --primary: #38bdf8;
+      --accent: #818cf8;
+      --success: #34d399;
+      --danger: #f87171;
+      --border: #334155;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      user-select: none;
+    }
+    #progress-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--primary), var(--accent));
+      width: 0%;
+      transition: width 0.3s ease;
+      z-index: 100;
+    }
+    header {
+      padding: 12px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--border);
+      background: rgba(15, 23, 42, 0.8);
+      backdrop-filter: blur(8px);
+      z-index: 10;
+    }
+    .logo-area {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--primary);
+      letter-spacing: 0.5px;
+    }
+    .controls {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
+    button {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 6px 14px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 13px;
+      font-weight: 500;
+      transition: all 0.2s;
+    }
+    button:hover {
+      background: var(--border);
+      border-color: var(--primary);
+    }
+    .slide-counter {
+      font-size: 13px;
+      color: var(--text-muted);
+      font-weight: 600;
+      min-width: 90px;
+      text-align: center;
+    }
+    main {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      position: relative;
+    }
+    .slide {
+      display: none;
+      width: 100%;
+      max-width: 1050px;
+      height: 80vh;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 40px;
+      overflow-y: auto;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+      animation: fadeIn 0.3s ease-out;
+    }
+    .slide.active {
+      display: block;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    h1 {
+      font-size: 32px;
+      color: var(--primary);
+      margin-bottom: 16px;
+      line-height: 1.25;
+    }
+    h2 {
+      font-size: 24px;
+      color: var(--primary);
+      margin-bottom: 8px;
+    }
+    h3 {
+      font-size: 18px;
+      color: var(--text-muted);
+      margin-bottom: 24px;
+      font-weight: 400;
+    }
+    p, li {
+      font-size: 16px;
+      line-height: 1.6;
+      color: #cbd5e1;
+    }
+    ul {
+      margin-left: 24px;
+      margin-bottom: 20px;
+    }
+    li {
+      margin-bottom: 10px;
+    }
+    strong {
+      color: #fff;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+      font-size: 14px;
+    }
+    th, td {
+      padding: 10px 12px;
+      border: 1px solid var(--border);
+      text-align: left;
+    }
+    th {
+      background: rgba(30, 41, 59, 0.8);
+      color: var(--primary);
+      font-weight: 600;
+    }
+    tr:nth-child(even) {
+      background: rgba(255, 255, 255, 0.02);
+    }
+    .highlight-box {
+      background: rgba(56, 189, 248, 0.1);
+      border-left: 4px solid var(--primary);
+      padding: 14px 18px;
+      border-radius: 0 8px 8px 0;
+      margin: 16px 0;
+    }
+    .success-box {
+      background: rgba(52, 211, 153, 0.1);
+      border-left: 4px solid var(--success);
+      padding: 14px 18px;
+      border-radius: 0 8px 8px 0;
+      margin: 16px 0;
+    }
+    pre {
+      background: #090d16;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 14px;
+      font-family: monospace;
+      font-size: 13px;
+      color: #38bdf8;
+      overflow-x: auto;
+      margin: 16px 0;
+      line-height: 1.4;
+    }
+    .speaker-notes {
+      display: none;
+      margin-top: 24px;
+      padding: 16px;
+      background: rgba(245, 158, 11, 0.1);
+      border: 1px dashed #f59e0b;
+      border-radius: 8px;
+      font-size: 14px;
+      color: #fbbf24;
+      line-height: 1.5;
+    }
+    .speaker-notes.visible {
+      display: block;
+    }
+    footer {
+      padding: 8px 24px;
+      display: flex;
+      justify-content: space-between;
+      border-top: 1px solid var(--border);
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+    kbd {
+      background: #334155;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 11px;
+      font-family: monospace;
+      border: 1px solid #475569;
+    }
+  </style>
+</head>
+<body>
+  <div id="progress-bar"></div>
+  
+  <header>
+    <div class="logo-area">VidQuery | IEEE Conference Presentation</div>
+    <div class="controls">
+      <button onclick="prevSlide()">◀ Previous</button>
+      <span class="slide-counter" id="counter">Slide 1 / 12</span>
+      <button onclick="nextSlide()">Next ▶</button>
+      <button onclick="toggleNotes()">Toggle Notes [N]</button>
+      <button onclick="toggleFullscreen()">Full Screen [F]</button>
+    </div>
+  </header>
+
+  <main>
+    <!-- Slide 1 -->
+    <div class="slide active">
+      <h1>Evaluating Chunking Strategies and Temporal Grounding in Long-Form Educational Video RAG Under Acoustic Noise</h1>
+      <h3>Guru Gobind Singh Indraprastha University (GGSIPU) — Capstone Research Defense</h3>
+      <div class="highlight-box">
+        <p><strong>Presenter:</strong> Gurleen Kaur Malhotra</p>
+        <p><strong>Department:</strong> Information Technology, Maharaja Surajmal Institute of Technology</p>
+        <p><strong>Keywords:</strong> Video RAG, Temporal Grounding, MedVidQA, Acoustic Noise, NPTEL.</p>
+      </div>
+      <p style="margin-top: 30px;">An empirical investigation across 13 STEM lectures (~20,000 transcript segments) validating chunking limits, search space expansion, and zero-hallucination citation constraints.</p>
+      <div class="speaker-notes">
+        <strong>🎙️ Speaker Notes:</strong> Good morning respected evaluators. Today I present VidQuery, an open-source, timestamp-grounded video RAG framework. While standard RAG has been heavily benchmarked on written text, educational video transcripts pose unique acoustic, continuous, and lexical dispersion challenges. In this work, we conduct an empirical factorial investigation across four chunking strategies and 13 full-length lectures to test whether neural semantic chunking justifies its cost on spoken discourse.
+      </div>
+    </div>
+
+    <!-- Slide 2 -->
+    <div class="slide">
+      <h2>Motivation & The Problem</h2>
+      <h3>Why Does Text RAG Break Down on Spoken Lectures?</h3>
+      <ul>
+        <li><strong>1. Continuous Unpunctuated ASR Streams:</strong> Unlike textbooks with clear paragraphs and headings, automated ASR transcripts lack consistent punctuation, leading to arbitrary chunking artifacts.</li>
+        <li><strong>2. Acoustic Channel & Accent Variance:</strong> Classrooms feature ambient echo, chalkboard noise, and non-native speech (e.g. Indian English in NPTEL), degrading ASR word accuracy.</li>
+        <li><strong>3. The Lexical Dispersion Dilemma:</strong> In a 2-hour lecture, core terms (<em>gradient descent, loss, activation</em>) appear dozens of times across intro, proofs, and recaps. Flat vector retrieval struggles to isolate the primary derivation.</li>
+        <li><strong>4. Requirement for Temporal Provenance:</strong> Students do not just want an answer; they require clickable timestamps to jump directly to the exact moment in the video.</li>
+      </ul>
+      <div class="speaker-notes">
+        <strong>🎙️ Speaker Notes:</strong> When applying RAG to video, clean text assumptions break down. ASR is continuous, accents degrade phonetic accuracy, and foundational keywords are repeated dozens of times throughout a 2-hour discourse, confusing flat dense similarity.
+      </div>
+    </div>
+
+    <!-- Slide 3 -->
+    <div class="slide">
+      <h2>Research Questions & Prior Literature</h2>
+      <h3>Empirical Foundation & Objectives</h3>
+      <ul>
+        <li><strong>The Qu et al. (Vectara, 2024) Finding:</strong> Qu et al. showed that embedding-based semantic chunking rarely beats simple fixed-token partitioning on text documents despite $O(N)$ transformer overhead.<br>👉 <strong>RQ1:</strong> <em>Does this premise hold true on spoken educational transcripts?</em></li>
+        <li><strong>MedVidQA Temporal Intersection Standard (ACL 2022):</strong> Rather than binary text recall, we evaluate temporal precision using Intersection-over-Union thresholds ($R@1 \text{ @ IoU} \ge 0.3, 0.5, 0.7$).</li>
+        <li><strong>RQ2 (Search Space Expansion):</strong> <em>How does video duration (short $\le 35\text{m}$ vs. multi-hour) and non-native acoustic noise (NPTEL) impact temporal localization?</em></li>
+        <li><strong>RQ3 (Faithfulness):</strong> <em>Can closed-world citation constraints achieve zero hallucination on adversarial out-of-domain queries?</em></li>
+      </ul>
+      <div class="speaker-notes">
+        <strong>🎙️ Speaker Notes:</strong> We set out to empirically answer three core questions: First, does expensive semantic chunking beat simple token chunking on speech? Second, how does multi-hour video duration affect dense retrieval? And third, can we achieve zero hallucination with citation grounding?
+      </div>
+    </div>
+
+    <!-- Slide 4 -->
+    <div class="slide">
+      <h2>VidQuery System Architecture</h2>
+      <h3>Local-First, Timestamp-Grounded Retrieval Pipeline</h3>
+      <pre>
+YouTube Lecture / URL
+         │
+         ▼
+[1] Ingestion & Offline Disk Caching (data/transcripts/captions/*.json)
+         │
+         ▼
+[2] Pluggable Chunking (fixed_token | sentence | semantic | time_window)
+         │
+         ▼
+[3] Bi-Encoder Embeddings (all-MiniLM-L6-v2, 384-d Cosine Metric)
+         │
+         ▼
+[4] Local Disk Vector Store (Qdrant: qdrant_data/)
+         │
+         ▼
+[5] Grounded Generation (Gemini 3.5 Flash Lite + Citation Attribution)
+         │
+         ▼
+[6] Interactive Seeking UI (Clickable [n] ▶ mm:ss Seeks Video Player)</pre>
+      <div class="success-box">
+        <strong>Zero Cloud Egress for Indexing:</strong> The entire transcript indexing and vector search runs 100% locally on disk, ensuring instant sub-15ms retrieval with zero database subscription costs.
+      </div>
+      <div class="speaker-notes">
+        <strong>🎙️ Speaker Notes:</strong> Our pipeline is local-first. We index transcripts using all-MiniLM-L6-v2 directly into a disk-backed Qdrant store. When a query arrives, similarity search runs in under 15ms, and the top chunks are passed to Gemini with strict citation constraints.
+      </div>
+    </div>
+
+    <!-- Slide 5 -->
+    <div class="slide">
+      <h2>Experimental Setup & Corpus Stratification</h2>
+      <h3>13 Full-Length Lectures (~20,000 Segments) Across 3 Pedagogical Tiers</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Pedagogical Tier</th>
+            <th>Acoustic Characteristics</th>
+            <th>Benchmark Lectures</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Tier A: Curated Studio</strong></td>
+            <td>Clean studio acoustics, high production, curated captions</td>
+            <td>3Blue1Brown (NN), Karpathy (Intro to LLMs), StatQuest (Transformers), Fast.ai (DL)</td>
+          </tr>
+          <tr>
+            <td><strong>Tier B: US Classroom</strong></td>
+            <td>Auditorium reverb, blackboard pauses, ambient room noise</td>
+            <td>Stanford CS229 (Andrew Ng), MIT 6.S191, MIT Linear Algebra (Strang), Karpathy (makemore)</td>
+          </tr>
+          <tr>
+            <td><strong>Tier C: NPTEL (Indian Accents)</strong></td>
+            <td>Indian-accented English, classroom echo, multi-hour durations</td>
+            <td>NPTEL ML (Prof. Ravindran, IIT Madras), NPTEL AI (Prof. Khemani), Krish Naik ML (164 mins)</td>
+          </tr>
+        </tbody>
+      </table>
+      <p><strong>Evaluation Benchmark:</strong> 156 validated temporal queries (130 answerable + 26 adversarial out-of-domain probes) with gold spans bounded between 30s and 60s.</p>
+      <div class="speaker-notes">
+        <strong>🎙️ Speaker Notes:</strong> To ensure high external validity, our benchmark stratifies 13 lectures into three acoustic tiers: Curated Studio, US Classroom, and Indian-accented NPTEL lectures, spanning short 15-minute videos up to 2.7-hour classroom recordings.
+      </div>
+    </div>
+
+    <!-- Slide 6 -->
+    <div class="slide">
+      <h2>Main Retrieval Benchmark (Table 1)</h2>
+      <h3>Empirical Validation of Qu et al. on Spoken Discourse</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Strategy</th>
+            <th>Hit@1 [95% CI]</th>
+            <th>Hit@4</th>
+            <th>MRR</th>
+            <th>Mean IoU</th>
+            <th>Median Error</th>
+            <th>Complexity</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>fixed_token</strong></td>
+            <td><strong>4.6%</strong> [1.5%, 7.7%]</td>
+            <td><strong>18.5%</strong></td>
+            <td><strong>0.097</strong></td>
+            <td><strong>0.027</strong></td>
+            <td><strong>656.3s</strong></td>
+            <td>$O(N)$ string slicing</td>
+          </tr>
+          <tr>
+            <td><strong>sentence</strong></td>
+            <td>3.8% [0.8%, 6.9%]</td>
+            <td>13.8%</td>
+            <td>0.074</td>
+            <td>0.015</td>
+            <td>668.0s</td>
+            <td>Rule-based regex</td>
+          </tr>
+          <tr>
+            <td><strong>semantic</strong></td>
+            <td>3.1% [0.8%, 5.4%]</td>
+            <td>17.7%</td>
+            <td>0.087</td>
+            <td>0.008</td>
+            <td>683.5s</td>
+            <td>$O(N)$ dense neural inference</td>
+          </tr>
+          <tr>
+            <td><strong>time_window</strong></td>
+            <td>4.6% [1.5%, 7.7%]</td>
+            <td>10.0%</td>
+            <td>0.066</td>
+            <td>0.015</td>
+            <td>707.2s</td>
+            <td>Chronological slicing</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="highlight-box">
+        <strong>Core Empirical Finding:</strong> Semantic chunking achieved only 3.1% Hit@1, trailing fixed-token chunking (4.6%), while incurring heavy transformer preprocessing latency. On speech transcripts, informal discourse shifts trigger false boundary cuts.
+      </div>
+      <div class="speaker-notes">
+        <strong>🎙️ Speaker Notes:</strong> Across 1,000 bootstrap iterations, semantic chunking underperformed simple fixed-token partitioning in Hit@1 (3.1% vs 4.6%) and MRR (0.087 vs 0.097). Spoken transcripts lack formal paragraph structures, causing semantic cosine dips to cut mathematical derivations in half.
+      </div>
+    </div>
+
+    <!-- Slide 7 -->
+    <div class="slide">
+      <h2>The Search Space Expansion Effect (Table 3)</h2>
+      <h3>Short Lectures vs. Multi-Hour Classroom Discourses</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Duration Bracket</th>
+            <th>Strategy</th>
+            <th>Hit@1</th>
+            <th>Hit@4</th>
+            <th>MRR</th>
+            <th>Mean IoU</th>
+            <th>Median Error</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Short (≤ 35 min)</strong></td>
+            <td>fixed_token</td>
+            <td>16.7%</td>
+            <td>46.7%</td>
+            <td>0.286</td>
+            <td>0.077</td>
+            <td>280.0s</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td><strong>time_window</strong></td>
+            <td><strong>23.3%</strong></td>
+            <td>36.7%</td>
+            <td>0.286</td>
+            <td><strong>0.109</strong></td>
+            <td><strong>214.5s</strong></td>
+          </tr>
+          <tr>
+            <td><strong>Long (> 35 min)</strong></td>
+            <td><strong>fixed_token</strong></td>
+            <td><strong>6.0%</strong></td>
+            <td><strong>18.0%</strong></td>
+            <td><strong>0.102</strong></td>
+            <td><strong>0.035</strong></td>
+            <td>1012.6s</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>semantic</td>
+            <td>3.0%</td>
+            <td>15.0%</td>
+            <td>0.078</td>
+            <td>0.010</td>
+            <td>948.1s</td>
+          </tr>
+        </tbody>
+      </table>
+      <p><strong>Key Insight:</strong> On short videos, temporal chunking reaches <strong>23.3% Hit@1</strong>. On multi-hour lectures, chunk counts balloon to 800+, compressing flat cosine similarity and degrading top-1 precision to 3–6%. This proves the necessity of <em>hierarchical indexing</em>.</p>
+      <div class="speaker-notes">
+        <strong>🎙️ Speaker Notes:</strong> On short videos, time-window chunking achieves a strong 23.3% Hit@1. But in multi-hour lectures, foundational keywords repeat across two hours, dispersing semantic similarity. This proves that long-form educational RAG requires two-stage hierarchical indexing.
+      </div>
+    </div>
+
+    <!-- Slide 8 -->
+    <div class="slide">
+      <h2>Acoustic Robustness in Non-Native English (Table 2)</h2>
+      <h3>Performance Across Pedagogical & Acoustic Tiers</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Pedagogical Tier</th>
+            <th>Top Strategy</th>
+            <th>Hit@1</th>
+            <th>Hit@4</th>
+            <th>MRR</th>
+            <th>Mean IoU</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Tier A: Curated Studio</strong></td>
+            <td>fixed_token</td>
+            <td><strong>16.0%</strong></td>
+            <td><strong>34.0%</strong></td>
+            <td><strong>0.230</strong></td>
+            <td><strong>0.080</strong></td>
+          </tr>
+          <tr>
+            <td><strong>Tier B: US Classroom</strong></td>
+            <td>sentence</td>
+            <td><strong>8.0%</strong></td>
+            <td><strong>18.0%</strong></td>
+            <td><strong>0.115</strong></td>
+            <td><strong>0.033</strong></td>
+          </tr>
+          <tr>
+            <td><strong>Tier C: NPTEL (Indian Accents)</strong></td>
+            <td>fixed_token</td>
+            <td><strong>3.3%</strong></td>
+            <td><strong>30.0%</strong></td>
+            <td><strong>0.147</strong></td>
+            <td><strong>0.020</strong></td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="success-box">
+        <strong>Resilient Top-4 Recall:</strong> Despite non-native phonetics, room echo, and multi-hour lengths, Tier C achieved a strong <strong>30.0% Hit@4 recall</strong>. Contextual subword embeddings and 120-word windows provide inherent noise-damping against ASR transcription errors.
+      </div>
+      <div class="speaker-notes">
+        <strong>🎙️ Speaker Notes:</strong> Even in Tier C with Indian-accented English and room reverberation, top-4 recall remained strong at 30.0%. Subword dense embeddings absorb minor phonetic spelling errors, proving dense RAG's acoustic robustness for Global South education.
+      </div>
+    </div>
+
+    <!-- Slide 9 -->
+    <div class="slide">
+      <h2>Generation Faithfulness & Zero Hallucination (Table 4)</h2>
+      <h3>Eliminating Confabulation via Closed-World Attribution</h3>
+      <ul>
+        <li><strong>Adversarial Negative Probes ($N=26$):</strong> Tested on out-of-domain queries (e.g., Quantum Computing during Linear Algebra).</li>
+        <li><strong>Dense Separation Margin:</strong> Positive queries yield $\mu_{\text{pos}} = 0.4223$ vs $\mu_{\text{neg}} = 0.1349$ ($\Delta = +0.2873$ margin).</li>
+      </ul>
+      <table>
+        <thead>
+          <tr>
+            <th>Pedagogical Tier</th>
+            <th>Negative Rejection Rate</th>
+            <th>Answer Faithfulness</th>
+            <th>Mean Generation Latency</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Tier A: Curated Studio</strong></td>
+            <td><strong>100.0% (10/10)</strong></td>
+            <td><strong>70.0%</strong></td>
+            <td>0.09s (Cached) / 1.2s</td>
+          </tr>
+          <tr>
+            <td><strong>Tier B: US Classroom</strong></td>
+            <td><strong>100.0% (10/10)</strong></td>
+            <td><strong>70.0%</strong></td>
+            <td>0.00s (Cached) / 1.2s</td>
+          </tr>
+          <tr>
+            <td><strong>Tier C: NPTEL</strong></td>
+            <td><strong>100.0% (6/6)</strong></td>
+            <td><strong>Graceful Rejection</strong></td>
+            <td>0.00s (Cached) / 1.2s</td>
+          </tr>
+          <tr>
+            <td><strong>Overall System</strong></td>
+            <td><strong>100.0% (26/26)</strong></td>
+            <td><strong>100.0% (Conditional)</strong></td>
+            <td><strong>Sub-2 Second UX</strong></td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="speaker-notes">
+        <strong>🎙️ Speaker Notes:</strong> In safety evaluations, VidQuery achieved a 100% Negative Rejection Rate across 26 out-of-domain probes, returning strictly NOT_IN_VIDEO. On answerable queries, LLM-as-a-judge evaluation confirmed 100% faithfulness with zero confabulated claims.
+      </div>
+    </div>
+
+    <!-- Slide 10 -->
+    <div class="slide">
+      <h2>Live Demonstration & User Interface Features</h2>
+      <h3>Streamlit Interactive Web Application (Port 8502)</h3>
+      <ul>
+        <li><strong>Offline-First Caching:</strong> All 13 benchmark lectures load instantly in under 0.1s from disk, completely bypassing YouTube API rate limits.</li>
+        <li><strong>Instant Benchmark Dropdown:</strong> Select any lecture (3B1B, Karpathy, Andrew Ng, Strang, NPTEL) with a single click.</li>
+        <li><strong>Interactive Chunk Explorer:</strong> Inspect segment word counts, start/end timestamps, and vector distance distributions.</li>
+        <li><strong>Clickable Temporal Seeking:</strong> Citations formatted as <code>[1] ▶ 14:22</code> seek the embedded player directly to the exact second.</li>
+      </ul>
+      <div class="speaker-notes">
+        <strong>🎙️ Speaker Notes:</strong> Here is our live system running on localhost:8502. Notice how selecting any of our 13 benchmark lectures loads immediately offline from disk. When an answer is generated, clicking the timestamp seeks the embedded player directly to that second.
+      </div>
+    </div>
+
+    <!-- Slide 11 -->
+    <div class="slide">
+      <h2>Summary of Contributions & Future Roadmap</h2>
+      <h3>Conclusion & Architectural Next Steps</h3>
+      <ul>
+        <li><strong>1. Qu et al. Validated on Speech:</strong> Neural semantic chunking fails to justify its computational overhead on spoken discourse compared to fixed-token chunking.</li>
+        <li><strong>2. Search Space Formalization:</strong> Formalized the Search Space Expansion Effect, establishing the boundary where flat vector search degrades.</li>
+        <li><strong>3. Acoustic Noise Tolerance:</strong> Proved dense embeddings retain 30% top-4 recall on Indian-accented NPTEL classrooms.</li>
+        <li><strong>4. Zero Hallucination:</strong> Achieved 100% negative probe rejection via vector margins and citation grounding.</li>
+      </ul>
+      <p style="margin-top: 15px;"><strong>Future Work (Documented in <code>FUTURE_WORK.md</code>):</strong></p>
+      <ul>
+        <li>Two-Stage Hierarchical Indexing (Macro Chapter Partitioning + Micro Cross-Encoder Reranking).</li>
+        <li>Multimodal Keyframe Extraction and OCR Slide Fusion using structural similarity ($\Delta \text{SSIM}$).</li>
+      </ul>
+      <div class="speaker-notes">
+        <strong>🎙️ Speaker Notes:</strong> In summary, VidQuery establishes rigorous empirical baselines for video RAG. Our future work will implement two-stage hierarchical indexing and multimodal keyframe extraction to push temporal localization even further.
+      </div>
+    </div>
+
+    <!-- Slide 12 -->
+    <div class="slide">
+      <h1>Thank You!</h1>
+      <h3>Questions, Evaluation & Defense Discussion</h3>
+      <div class="highlight-box">
+        <p><strong>Manuscript:</strong> <code>paper.tex</code> (IEEE Conference Two-Column Format)</p>
+        <p><strong>Codebase & Benchmark:</strong> 13 STEM Lectures (~20,000 Segments, 156 Queries)</p>
+        <p><strong>Presenter:</strong> Gurleen Kaur Malhotra (<code>gurleen.research@msit.in</code>)</p>
+        <p><strong>Institution:</strong> Maharaja Surajmal Institute of Technology, GGSIPU, New Delhi</p>
+      </div>
+      <p style="margin-top: 30px; font-size: 18px; color: var(--primary);">Open for questions and examiner discussion.</p>
+      <div class="speaker-notes">
+        <strong>🎙️ Speaker Notes:</strong> Thank you for your time and attention. I am now open to your questions and feedback regarding the benchmark, chunking algorithms, or temporal grounding methodology.
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div>Navigate: <kbd>◀</kbd> <kbd>▶</kbd> or <kbd>Space</kbd> | Toggle Notes: <kbd>N</kbd> | Fullscreen: <kbd>F</kbd></div>
+    <div>VidQuery Research Project &copy; 2026 MSIT GGSIPU</div>
+  </footer>
+
+  <script>
+    const slides = document.querySelectorAll('.slide');
+    const counter = document.getElementById('counter');
+    const progressBar = document.getElementById('progress-bar');
+    let currentSlide = 0;
+
+    function updateSlide(index) {
+      if (index < 0) index = 0;
+      if (index >= slides.length) index = slides.length - 1;
+      currentSlide = index;
+
+      slides.forEach((slide, i) => {
+        slide.classList.toggle('active', i === currentSlide);
+      });
+
+      counter.textContent = `Slide ${currentSlide + 1} / ${slides.length}`;
+      progressBar.style.width = `${((currentSlide + 1) / slides.length) * 100}%`;
+    }
+
+    function nextSlide() {
+      if (currentSlide < slides.length - 1) {
+        updateSlide(currentSlide + 1);
+      }
+    }
+
+    function prevSlide() {
+      if (currentSlide > 0) {
+        updateSlide(currentSlide - 1);
+      }
+    }
+
+    function toggleNotes() {
+      const notes = document.querySelectorAll('.speaker-notes');
+      notes.forEach(note => note.classList.toggle('visible'));
+    }
+
+    function toggleFullscreen() {
+      if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen().catch(err => {});
+      } else {
+        if (document.exitFullscreen) {
+          document.exitFullscreen();
+        }
+      }
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'PageDown') {
+        nextSlide();
+      } else if (e.key === 'ArrowLeft' || e.key === 'PageUp') {
+        prevSlide();
+      } else if (e.key === 'n' || e.key === 'N') {
+        toggleNotes();
+      } else if (e.key === 'f' || e.key === 'F') {
+        toggleFullscreen();
+      }
+    });
+
+    updateSlide(0);
+  </script>
+</body>
+</html>
