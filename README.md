@@ -66,13 +66,19 @@ Top-k Retrieval ──► Grounded Prompt ──► Gemini 3.5 Flash Lite
 ## 📂 Project Structure
 
 ```
-├── app.py                      # Main Streamlit web application
+├── app.py                      # Main Streamlit web application (includes Benchmark tab & PDF downloads)
+├── launch_demo.bat             # One-click Windows launcher (starts server & opens browser)
+├── presentation.html           # Standalone interactive 12-slide HTML presentation deck
+├── paper.pdf                   # Pre-compiled camera-ready 4-page IEEE conference PDF
+├── paper.tex                   # Publication-ready IEEE 2-column LaTeX manuscript
+├── references.bib              # Formal BibTeX bibliography
+├── FUTURE_WORK.md              # Hierarchical indexing & multimodal research roadmap
+├── multimodal.py               # Visual keyframe extraction & thumbnail synchronization
 ├── chunking.py                 # 4 pluggable chunking algorithms & stats
 ├── transcript.py              # Transcript fetcher with offline cache & Whisper
 ├── embeddings.py               # Bi-encoder embedding generator (all-MiniLM-L6-v2)
 ├── vectorstore.py              # Local Qdrant vector database operations
 ├── llm.py                      # Grounded QA with Gemini, retries, and disk cache
-├── paper.tex                   # Publication-ready IEEE 2-column LaTeX manuscript
 ├── eval/
 │   ├── corpus_meta.json        # 13-video corpus metadata across 3 tiers
 │   ├── questions.csv           # 156 validated questions (130 pos + 26 neg)
