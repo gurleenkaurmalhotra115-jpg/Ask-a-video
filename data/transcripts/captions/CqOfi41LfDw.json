@@ -1,0 +1,2052 @@
+[
+  {
+    "start": 0.0,
+    "duration": 6.88,
+    "text": ">> Neural Networks seem so complicated,"
+  },
+  {
+    "start": 6.88,
+    "duration": 4.64,
+    "text": "but they're not StatQuest."
+  },
+  {
+    "start": 11.53,
+    "duration": 2.33,
+    "text": "Hello, I'm Josh Starmer"
+  },
+  {
+    "start": 13.86,
+    "duration": 1.67,
+    "text": "and welcome to StatQuest."
+  },
+  {
+    "start": 15.53,
+    "duration": 1.74,
+    "text": "Today we're going to talk about neural"
+  },
+  {
+    "start": 17.26,
+    "duration": 1.64,
+    "text": "networks Part 1,"
+  },
+  {
+    "start": 18.89,
+    "duration": 2.56,
+    "text": "inside the black box."
+  },
+  {
+    "start": 21.46,
+    "duration": 2.32,
+    "text": "Neural Networks, one of"
+  },
+  {
+    "start": 23.78,
+    "duration": 1.82,
+    "text": "the most popular algorithms"
+  },
+  {
+    "start": 25.6,
+    "duration": 1.24,
+    "text": "in machine learning,"
+  },
+  {
+    "start": 26.84,
+    "duration": 1.66,
+    "text": "cover a broad range"
+  },
+  {
+    "start": 28.5,
+    "duration": 2.2,
+    "text": "of concepts and techniques."
+  },
+  {
+    "start": 30.7,
+    "duration": 2.46,
+    "text": "However, people call them"
+  },
+  {
+    "start": 33.16,
+    "duration": 2.0,
+    "text": "a black box because it can be"
+  },
+  {
+    "start": 35.16,
+    "duration": 2.71,
+    "text": "hard to understand what they're doing."
+  },
+  {
+    "start": 37.87,
+    "duration": 2.53,
+    "text": "The goal of this series is to take"
+  },
+  {
+    "start": 40.4,
+    "duration": 2.66,
+    "text": "a peek into the black box by breaking"
+  },
+  {
+    "start": 43.06,
+    "duration": 2.6,
+    "text": "down each concept and technique into"
+  },
+  {
+    "start": 45.66,
+    "duration": 2.08,
+    "text": "its components and walking through"
+  },
+  {
+    "start": 47.74,
+    "duration": 2.9,
+    "text": "how they fit together step by step."
+  },
+  {
+    "start": 50.64,
+    "duration": 3.06,
+    "text": "In this first part, we will learn about"
+  },
+  {
+    "start": 53.7,
+    "duration": 3.32,
+    "text": "what neural networks do and how they do it."
+  },
+  {
+    "start": 57.02,
+    "duration": 1.94,
+    "text": "In Part 2,"
+  },
+  {
+    "start": 58.95,
+    "duration": 2.1,
+    "text": "we'll talk about how neural networks are"
+  },
+  {
+    "start": 61.06,
+    "duration": 2.92,
+    "text": "fit to data with back propagation."
+  },
+  {
+    "start": 63.98,
+    "duration": 2.9,
+    "text": "Then we will talk about variations on"
+  },
+  {
+    "start": 66.88,
+    "duration": 1.98,
+    "text": "the simple neural network presented in"
+  },
+  {
+    "start": 68.86,
+    "duration": 3.05,
+    "text": "this part, including deep learning."
+  },
+  {
+    "start": 71.91,
+    "duration": 4.39,
+    "text": "Note, crazy awesome news."
+  },
+  {
+    "start": 76.3,
+    "duration": 1.9,
+    "text": "I have a new way to think"
+  },
+  {
+    "start": 78.2,
+    "duration": 1.76,
+    "text": "about neural networks that will help"
+  },
+  {
+    "start": 79.96,
+    "duration": 2.62,
+    "text": "beginners and seasoned experts alike"
+  },
+  {
+    "start": 82.58,
+    "duration": 1.46,
+    "text": "gain a deep insight"
+  },
+  {
+    "start": 84.04,
+    "duration": 2.49,
+    "text": "into what neural networks do."
+  },
+  {
+    "start": 86.53,
+    "duration": 3.39,
+    "text": "For example, most tutorials"
+  },
+  {
+    "start": 89.92,
+    "duration": 2.66,
+    "text": "use cool looking but hard to understand"
+  },
+  {
+    "start": 92.58,
+    "duration": 3.64,
+    "text": "graphs and fancy mathematical notation"
+  },
+  {
+    "start": 96.22,
+    "duration": 2.62,
+    "text": "to represent neural networks."
+  },
+  {
+    "start": 98.84,
+    "duration": 2.58,
+    "text": "In contrast, I'm going"
+  },
+  {
+    "start": 101.42,
+    "duration": 1.8,
+    "text": "to label every little thing"
+  },
+  {
+    "start": 103.22,
+    "duration": 1.72,
+    "text": "on the neural network to make"
+  },
+  {
+    "start": 104.94,
+    "duration": 2.8,
+    "text": "it easy to keep track of the details,"
+  },
+  {
+    "start": 107.74,
+    "duration": 2.48,
+    "text": "and the math will be as simple as"
+  },
+  {
+    "start": 110.22,
+    "duration": 1.66,
+    "text": "possible while still being"
+  },
+  {
+    "start": 111.88,
+    "duration": 2.08,
+    "text": "true to the algorithm."
+  },
+  {
+    "start": 113.96,
+    "duration": 2.88,
+    "text": "These differences will help you develop"
+  },
+  {
+    "start": 116.84,
+    "duration": 1.7,
+    "text": "a deep understanding of"
+  },
+  {
+    "start": 118.54,
+    "duration": 3.16,
+    "text": "what neural networks actually do."
+  },
+  {
+    "start": 121.76,
+    "duration": 2.74,
+    "text": "So with that said,"
+  },
+  {
+    "start": 124.5,
+    "duration": 1.68,
+    "text": "let's imagine we tested"
+  },
+  {
+    "start": 126.18,
+    "duration": 2.9,
+    "text": "a drug that was designed to treat an illness,"
+  },
+  {
+    "start": 129.08,
+    "duration": 1.86,
+    "text": "and we gave the drug to"
+  },
+  {
+    "start": 130.94,
+    "duration": 1.48,
+    "text": "three different groups of people"
+  },
+  {
+    "start": 132.42,
+    "duration": 2.36,
+    "text": "with three different dosages,"
+  },
+  {
+    "start": 134.78,
+    "duration": 4.36,
+    "text": "low, medium, and high."
+  },
+  {
+    "start": 139.14,
+    "duration": 3.42,
+    "text": "The low dosages were not effective,"
+  },
+  {
+    "start": 142.56,
+    "duration": 3.24,
+    "text": "so we set them to zero on this graph."
+  },
+  {
+    "start": 145.8,
+    "duration": 1.82,
+    "text": "In contrast,"
+  },
+  {
+    "start": 147.62,
+    "duration": 2.44,
+    "text": "the medium dosages were effective,"
+  },
+  {
+    "start": 150.06,
+    "duration": 2.74,
+    "text": "so we set them to one, and"
+  },
+  {
+    "start": 152.8,
+    "duration": 2.34,
+    "text": "the high dosages were not effective,"
+  },
+  {
+    "start": 155.14,
+    "duration": 2.4,
+    "text": "so those are set to zero."
+  },
+  {
+    "start": 157.53,
+    "duration": 2.5,
+    "text": "Now that we have this data,"
+  },
+  {
+    "start": 160.03,
+    "duration": 2.38,
+    "text": "we would like to use it to predict whether or"
+  },
+  {
+    "start": 162.41,
+    "duration": 3.0,
+    "text": "not a future dosage will be effective."
+  },
+  {
+    "start": 165.41,
+    "duration": 2.38,
+    "text": "However, we can't just"
+  },
+  {
+    "start": 167.79,
+    "duration": 2.2,
+    "text": "fit a straight line to the data to make"
+  },
+  {
+    "start": 169.99,
+    "duration": 2.36,
+    "text": "predictions because no matter"
+  },
+  {
+    "start": 172.35,
+    "duration": 1.98,
+    "text": "how we rotate the straight line,"
+  },
+  {
+    "start": 174.33,
+    "duration": 1.66,
+    "text": "it can only accurately"
+  },
+  {
+    "start": 175.99,
+    "duration": 3.08,
+    "text": "predict two of the three dosages."
+  },
+  {
+    "start": 179.07,
+    "duration": 2.02,
+    "text": "The good news is that"
+  },
+  {
+    "start": 181.1,
+    "duration": 1.26,
+    "text": "a neural network can"
+  },
+  {
+    "start": 182.36,
+    "duration": 2.33,
+    "text": "fit a squiggle to the data."
+  },
+  {
+    "start": 184.69,
+    "duration": 1.95,
+    "text": "The green squiggle is"
+  },
+  {
+    "start": 186.64,
+    "duration": 2.66,
+    "text": "close to zero for low dosages,"
+  },
+  {
+    "start": 189.3,
+    "duration": 3.44,
+    "text": "close to one for medium dosages,"
+  },
+  {
+    "start": 192.74,
+    "duration": 3.68,
+    "text": "and close to zero for high dosages."
+  },
+  {
+    "start": 196.42,
+    "duration": 2.16,
+    "text": "And even if we have a really"
+  },
+  {
+    "start": 198.58,
+    "duration": 2.54,
+    "text": "complicated dataset like this,"
+  },
+  {
+    "start": 201.12,
+    "duration": 3.92,
+    "text": "a neural network can fit a squiggle to it."
+  },
+  {
+    "start": 205.04,
+    "duration": 2.25,
+    "text": "In this StatQuest,"
+  },
+  {
+    "start": 207.29,
+    "duration": 0.89,
+    "text": "we're going to use"
+  },
+  {
+    "start": 208.18,
+    "duration": 2.84,
+    "text": "this super simple dataset and"
+  },
+  {
+    "start": 211.02,
+    "duration": 2.14,
+    "text": "show how this neural network"
+  },
+  {
+    "start": 213.16,
+    "duration": 2.92,
+    "text": "creates this green squiggle."
+  },
+  {
+    "start": 216.08,
+    "duration": 2.3,
+    "text": "But first, let's just"
+  },
+  {
+    "start": 218.38,
+    "duration": 2.76,
+    "text": "talk about what a neural network is."
+  },
+  {
+    "start": 221.14,
+    "duration": 2.64,
+    "text": "A neural network consists of"
+  },
+  {
+    "start": 223.78,
+    "duration": 4.39,
+    "text": "nodes and connections between the nodes."
+  },
+  {
+    "start": 228.18,
+    "duration": 2.42,
+    "text": "Note, the numbers"
+  },
+  {
+    "start": 230.59,
+    "duration": 1.82,
+    "text": "along each connection represent"
+  },
+  {
+    "start": 232.41,
+    "duration": 2.22,
+    "text": "parameter values that were estimated"
+  },
+  {
+    "start": 234.63,
+    "duration": 3.02,
+    "text": "when this neural network was fit to the data."
+  },
+  {
+    "start": 237.65,
+    "duration": 2.56,
+    "text": "For now, just know that"
+  },
+  {
+    "start": 240.21,
+    "duration": 2.56,
+    "text": "these parameter estimates are analogous to"
+  },
+  {
+    "start": 242.77,
+    "duration": 2.2,
+    "text": "the slope and intercept values that we"
+  },
+  {
+    "start": 244.97,
+    "duration": 1.14,
+    "text": "solve for when we"
+  },
+  {
+    "start": 246.11,
+    "duration": 2.6,
+    "text": "fit a straight line to data."
+  },
+  {
+    "start": 248.79,
+    "duration": 3.5,
+    "text": "Likewise, a neural network starts out"
+  },
+  {
+    "start": 252.29,
+    "duration": 3.06,
+    "text": "with unknown parameter values that"
+  },
+  {
+    "start": 255.35,
+    "duration": 1.3,
+    "text": "are estimated when we"
+  },
+  {
+    "start": 256.65,
+    "duration": 1.48,
+    "text": "fit the neural network to"
+  },
+  {
+    "start": 258.13,
+    "duration": 1.14,
+    "text": "a dataset using"
+  },
+  {
+    "start": 259.27,
+    "duration": 2.5,
+    "text": "a method called back propagation."
+  },
+  {
+    "start": 261.77,
+    "duration": 3.12,
+    "text": "And we will talk about how back propagation"
+  },
+  {
+    "start": 264.89,
+    "duration": 1.71,
+    "text": "estimates these parameters in"
+  },
+  {
+    "start": 266.6,
+    "duration": 2.25,
+    "text": "Part 2 in this series."
+  },
+  {
+    "start": 268.85,
+    "duration": 3.44,
+    "text": "But for now, just assume that we've already"
+  },
+  {
+    "start": 272.29,
+    "duration": 1.36,
+    "text": "fit this neural network"
+  },
+  {
+    "start": 273.65,
+    "duration": 2.35,
+    "text": "to this specific dataset."
+  },
+  {
+    "start": 276.0,
+    "duration": 1.7,
+    "text": "And that means we have"
+  },
+  {
+    "start": 277.69,
+    "duration": 3.18,
+    "text": "already estimated these parameters."
+  },
+  {
+    "start": 280.94,
+    "duration": 3.36,
+    "text": "Also, you may have noticed that some"
+  },
+  {
+    "start": 284.3,
+    "duration": 1.58,
+    "text": "of the nodes have curved"
+  },
+  {
+    "start": 285.88,
+    "duration": 1.84,
+    "text": "lines inside of them."
+  },
+  {
+    "start": 287.72,
+    "duration": 2.96,
+    "text": "These bent or curved lines are"
+  },
+  {
+    "start": 290.68,
+    "duration": 1.28,
+    "text": "the building blocks for"
+  },
+  {
+    "start": 291.96,
+    "duration": 2.56,
+    "text": "fitting a squiggle to data."
+  },
+  {
+    "start": 294.52,
+    "duration": 3.26,
+    "text": "The goal of this StatQuest is to show you"
+  },
+  {
+    "start": 297.78,
+    "duration": 3.0,
+    "text": "how these identical curves can be"
+  },
+  {
+    "start": 300.78,
+    "duration": 3.4,
+    "text": "reshaped by the parameter values and"
+  },
+  {
+    "start": 304.18,
+    "duration": 1.66,
+    "text": "then added together to get"
+  },
+  {
+    "start": 305.84,
+    "duration": 2.98,
+    "text": "a green squiggle that fits the data."
+  },
+  {
+    "start": 308.82,
+    "duration": 2.1,
+    "text": "Note, there are"
+  },
+  {
+    "start": 310.93,
+    "duration": 2.48,
+    "text": "many common bent or curved lines"
+  },
+  {
+    "start": 313.41,
+    "duration": 2.7,
+    "text": "that we can choose for a neural network."
+  },
+  {
+    "start": 316.11,
+    "duration": 2.46,
+    "text": "This specific curved line"
+  },
+  {
+    "start": 318.57,
+    "duration": 1.8,
+    "text": "is called softplus,"
+  },
+  {
+    "start": 320.37,
+    "duration": 2.78,
+    "text": "which sounds like a brand of toilet paper."
+  },
+  {
+    "start": 323.15,
+    "duration": 2.68,
+    "text": "Alternatively, we could use"
+  },
+  {
+    "start": 325.83,
+    "duration": 2.2,
+    "text": "this bent line called ReLU,"
+  },
+  {
+    "start": 328.03,
+    "duration": 2.62,
+    "text": "which is short for rectified linear unit"
+  },
+  {
+    "start": 330.65,
+    "duration": 2.04,
+    "text": "and sounds like a robot."
+  },
+  {
+    "start": 332.69,
+    "duration": 2.66,
+    "text": "Or we could use a sigmoid shape"
+  },
+  {
+    "start": 335.35,
+    "duration": 2.88,
+    "text": "or any other bent or curved line."
+  },
+  {
+    "start": 338.23,
+    "duration": 4.38,
+    "text": "Oh, no, it's the dreaded terminology alert."
+  },
+  {
+    "start": 342.61,
+    "duration": 2.38,
+    "text": "The curved or bent lines"
+  },
+  {
+    "start": 344.99,
+    "duration": 2.85,
+    "text": "are called activation functions."
+  },
+  {
+    "start": 347.85,
+    "duration": 2.52,
+    "text": "When you build a neural network,"
+  },
+  {
+    "start": 350.36,
+    "duration": 2.86,
+    "text": "you have to decide which activation function"
+  },
+  {
+    "start": 353.22,
+    "duration": 2.98,
+    "text": "or functions you want to use."
+  },
+  {
+    "start": 356.2,
+    "duration": 3.28,
+    "text": "When most people teach neural networks,"
+  },
+  {
+    "start": 359.48,
+    "duration": 3.16,
+    "text": "they use the sigmoid activation function."
+  },
+  {
+    "start": 362.64,
+    "duration": 2.34,
+    "text": "However, in practice,"
+  },
+  {
+    "start": 364.98,
+    "duration": 1.84,
+    "text": "it is much more common to use"
+  },
+  {
+    "start": 366.82,
+    "duration": 2.14,
+    "text": "the ReLU activation function"
+  },
+  {
+    "start": 368.96,
+    "duration": 3.4,
+    "text": "or the softplus activation function."
+  },
+  {
+    "start": 372.36,
+    "duration": 3.6,
+    "text": "So we'll use the softplus activation function"
+  },
+  {
+    "start": 375.96,
+    "duration": 2.12,
+    "text": "in this StatQuest."
+  },
+  {
+    "start": 378.07,
+    "duration": 3.56,
+    "text": "Anyway, we'll talk more about how you choose"
+  },
+  {
+    "start": 381.63,
+    "duration": 3.28,
+    "text": "activation functions later in this series."
+  },
+  {
+    "start": 384.91,
+    "duration": 3.38,
+    "text": "Note, this specific neural network"
+  },
+  {
+    "start": 388.29,
+    "duration": 2.16,
+    "text": "is about as simple as they get."
+  },
+  {
+    "start": 390.45,
+    "duration": 2.68,
+    "text": "It only has one input node"
+  },
+  {
+    "start": 393.13,
+    "duration": 1.96,
+    "text": "where we plug in the dosage,"
+  },
+  {
+    "start": 395.09,
+    "duration": 2.58,
+    "text": "only one output node to tell us"
+  },
+  {
+    "start": 397.67,
+    "duration": 2.48,
+    "text": "the predicted effectiveness and"
+  },
+  {
+    "start": 400.15,
+    "duration": 1.56,
+    "text": "only two nodes between"
+  },
+  {
+    "start": 401.71,
+    "duration": 2.48,
+    "text": "the input and output nodes."
+  },
+  {
+    "start": 404.19,
+    "duration": 2.66,
+    "text": "However, in practice,"
+  },
+  {
+    "start": 406.85,
+    "duration": 3.48,
+    "text": "neural networks are usually much fancier."
+  },
+  {
+    "start": 410.33,
+    "duration": 3.04,
+    "text": "And have more than one input node,"
+  },
+  {
+    "start": 413.37,
+    "duration": 2.54,
+    "text": "more than one output node,"
+  },
+  {
+    "start": 415.91,
+    "duration": 1.94,
+    "text": "different layers of nodes"
+  },
+  {
+    "start": 417.85,
+    "duration": 2.54,
+    "text": "between the input and output nodes,"
+  },
+  {
+    "start": 420.39,
+    "duration": 1.88,
+    "text": "and a spider web of"
+  },
+  {
+    "start": 422.27,
+    "duration": 3.02,
+    "text": "connections between each layer of nodes."
+  },
+  {
+    "start": 425.29,
+    "duration": 1.75,
+    "text": "Oh, no."
+  },
+  {
+    "start": 427.05,
+    "duration": 2.31,
+    "text": "It's another terminology alert."
+  },
+  {
+    "start": 429.35,
+    "duration": 2.22,
+    "text": "These layers of nodes between"
+  },
+  {
+    "start": 431.57,
+    "duration": 1.94,
+    "text": "the input and output nodes"
+  },
+  {
+    "start": 433.51,
+    "duration": 2.08,
+    "text": "are called hidden layers."
+  },
+  {
+    "start": 435.59,
+    "duration": 2.46,
+    "text": "When you build a neural network,"
+  },
+  {
+    "start": 438.05,
+    "duration": 2.42,
+    "text": "one of the first things you do is decide"
+  },
+  {
+    "start": 440.47,
+    "duration": 2.18,
+    "text": "how many hidden layers you want and"
+  },
+  {
+    "start": 442.65,
+    "duration": 3.17,
+    "text": "how many nodes go into each hidden layer."
+  },
+  {
+    "start": 445.82,
+    "duration": 2.77,
+    "text": "Although there are rules of thumb for"
+  },
+  {
+    "start": 448.59,
+    "duration": 2.66,
+    "text": "making decisions about the hidden layers,"
+  },
+  {
+    "start": 451.25,
+    "duration": 2.28,
+    "text": "you essentially make a guess and"
+  },
+  {
+    "start": 453.53,
+    "duration": 2.52,
+    "text": "see how well the neural network performs,"
+  },
+  {
+    "start": 456.05,
+    "duration": 3.5,
+    "text": "adding more layers and nodes if needed."
+  },
+  {
+    "start": 459.55,
+    "duration": 2.22,
+    "text": "Now, even though"
+  },
+  {
+    "start": 461.77,
+    "duration": 2.1,
+    "text": "this neural network looks fancy,"
+  },
+  {
+    "start": 463.87,
+    "duration": 1.48,
+    "text": "it is still made from"
+  },
+  {
+    "start": 465.35,
+    "duration": 2.2,
+    "text": "the same parts used"
+  },
+  {
+    "start": 467.55,
+    "duration": 2.2,
+    "text": "in this simple neural network,"
+  },
+  {
+    "start": 469.75,
+    "duration": 1.94,
+    "text": "which has only one hidden"
+  },
+  {
+    "start": 471.69,
+    "duration": 2.37,
+    "text": "layer with two nodes."
+  },
+  {
+    "start": 474.06,
+    "duration": 3.06,
+    "text": "So let's learn how this neural network"
+  },
+  {
+    "start": 477.12,
+    "duration": 1.44,
+    "text": "creates new shapes from"
+  },
+  {
+    "start": 478.56,
+    "duration": 1.76,
+    "text": "the curved or bent lines in"
+  },
+  {
+    "start": 480.32,
+    "duration": 3.12,
+    "text": "the hidden layer and then adds"
+  },
+  {
+    "start": 483.44,
+    "duration": 1.2,
+    "text": "them together to get"
+  },
+  {
+    "start": 484.64,
+    "duration": 3.04,
+    "text": "a green squiggle that fits the data."
+  },
+  {
+    "start": 487.68,
+    "duration": 3.14,
+    "text": "Note, to keep the math simple,"
+  },
+  {
+    "start": 490.82,
+    "duration": 2.06,
+    "text": "let's assume dosages go from"
+  },
+  {
+    "start": 492.88,
+    "duration": 4.21,
+    "text": "zero for low to one for high."
+  },
+  {
+    "start": 497.09,
+    "duration": 3.37,
+    "text": "The first thing we are going to do is plug"
+  },
+  {
+    "start": 500.46,
+    "duration": 2.2,
+    "text": "the lowest dosage zero"
+  },
+  {
+    "start": 502.66,
+    "duration": 2.18,
+    "text": "into the neural network."
+  },
+  {
+    "start": 504.84,
+    "duration": 2.18,
+    "text": "Now, to get from"
+  },
+  {
+    "start": 507.02,
+    "duration": 1.88,
+    "text": "the input node to"
+  },
+  {
+    "start": 508.9,
+    "duration": 2.52,
+    "text": "the top node in the hidden layer,"
+  },
+  {
+    "start": 511.42,
+    "duration": 3.54,
+    "text": "this connection multiplies the dosage by"
+  },
+  {
+    "start": 514.96,
+    "duration": 5.8,
+    "text": "-34.4 and then adds 2.14."
+  },
+  {
+    "start": 520.76,
+    "duration": 3.36,
+    "text": "The result is an x-axis coordinate"
+  },
+  {
+    "start": 524.12,
+    "duration": 2.43,
+    "text": "for the activation function."
+  },
+  {
+    "start": 526.55,
+    "duration": 3.5,
+    "text": "For example, the lowest dosage"
+  },
+  {
+    "start": 530.05,
+    "duration": 5.3,
+    "text": "zero is multiplied by -34.4,"
+  },
+  {
+    "start": 535.36,
+    "duration": 4.62,
+    "text": "and then we add 2.14 to get"
+  },
+  {
+    "start": 539.98,
+    "duration": 3.34,
+    "text": "2.14 as the x-axis coordinate"
+  },
+  {
+    "start": 543.32,
+    "duration": 2.23,
+    "text": "for the activation function."
+  },
+  {
+    "start": 545.55,
+    "duration": 3.73,
+    "text": "To get the corresponding y-axis value,"
+  },
+  {
+    "start": 549.28,
+    "duration": 4.04,
+    "text": "we plug 2.14 into the activation function,"
+  },
+  {
+    "start": 553.32,
+    "duration": 1.7,
+    "text": "which in this case,"
+  },
+  {
+    "start": 555.02,
+    "duration": 2.32,
+    "text": "is the softplus function."
+  },
+  {
+    "start": 557.34,
+    "duration": 2.36,
+    "text": "Note, if we had chosen"
+  },
+  {
+    "start": 559.7,
+    "duration": 1.28,
+    "text": "the sigmoid curve for"
+  },
+  {
+    "start": 560.98,
+    "duration": 1.78,
+    "text": "the activation function,"
+  },
+  {
+    "start": 562.76,
+    "duration": 2.58,
+    "text": "then we would plug 2.14"
+  },
+  {
+    "start": 565.34,
+    "duration": 3.06,
+    "text": "into the equation for the sigmoid curve."
+  },
+  {
+    "start": 568.4,
+    "duration": 3.1,
+    "text": "And if we had chosen the ReLU bent line"
+  },
+  {
+    "start": 571.5,
+    "duration": 1.92,
+    "text": "for the activation function,"
+  },
+  {
+    "start": 573.42,
+    "duration": 2.58,
+    "text": "then we would plug 2.14"
+  },
+  {
+    "start": 576.0,
+    "duration": 2.27,
+    "text": "into the ReLU equation."
+  },
+  {
+    "start": 578.27,
+    "duration": 2.75,
+    "text": "But since we are using softplus"
+  },
+  {
+    "start": 581.02,
+    "duration": 1.95,
+    "text": "for the activation function,"
+  },
+  {
+    "start": 582.97,
+    "duration": 4.7,
+    "text": "we plug 2.14 into the softplus equation,"
+  },
+  {
+    "start": 587.67,
+    "duration": 9.08,
+    "text": "and the log of 1+e^2.14 power is 2.25."
+  },
+  {
+    "start": 596.75,
+    "duration": 3.42,
+    "text": "Note, in statistics, machine learning,"
+  },
+  {
+    "start": 600.17,
+    "duration": 2.16,
+    "text": "and most programming languages,"
+  },
+  {
+    "start": 602.33,
+    "duration": 3.62,
+    "text": "the log function implies the natural log or"
+  },
+  {
+    "start": 605.95,
+    "duration": 3.92,
+    "text": "the log base e. Anyway,"
+  },
+  {
+    "start": 609.88,
+    "duration": 1.69,
+    "text": "the y-axis coordinate for"
+  },
+  {
+    "start": 611.56,
+    "duration": 3.78,
+    "text": "the activation function is 2.25."
+  },
+  {
+    "start": 615.34,
+    "duration": 2.88,
+    "text": "So let's extend this y-axis"
+  },
+  {
+    "start": 618.23,
+    "duration": 2.12,
+    "text": "up a little bit and"
+  },
+  {
+    "start": 620.34,
+    "duration": 1.42,
+    "text": "put a blue dot at"
+  },
+  {
+    "start": 621.76,
+    "duration": 3.92,
+    "text": "2.25 for when dosage equals zero."
+  },
+  {
+    "start": 625.68,
+    "duration": 3.46,
+    "text": "Now, if we increase the dosage a little"
+  },
+  {
+    "start": 629.14,
+    "duration": 3.44,
+    "text": "bit and plug 0.1 into the input,"
+  },
+  {
+    "start": 632.58,
+    "duration": 2.16,
+    "text": "the x-axis coordinate for"
+  },
+  {
+    "start": 634.74,
+    "duration": 3.99,
+    "text": "the activation function is -1.3,"
+  },
+  {
+    "start": 638.73,
+    "duration": 5.45,
+    "text": "and the corresponding y-axis value is 0.24."
+  },
+  {
+    "start": 644.17,
+    "duration": 2.6,
+    "text": "So let's put a blue dot at"
+  },
+  {
+    "start": 646.77,
+    "duration": 4.76,
+    "text": "0.24 for when dosage equals 0.1."
+  },
+  {
+    "start": 651.53,
+    "duration": 2.54,
+    "text": "And if we continue to increase"
+  },
+  {
+    "start": 654.07,
+    "duration": 2.42,
+    "text": "the dosage values all the way to one,"
+  },
+  {
+    "start": 656.49,
+    "duration": 5.06,
+    "text": "the maximum dosage, we get this blue curve."
+  },
+  {
+    "start": 661.55,
+    "duration": 2.92,
+    "text": "Note, before we move on,"
+  },
+  {
+    "start": 664.47,
+    "duration": 2.12,
+    "text": "I want to point out that the full range"
+  },
+  {
+    "start": 666.59,
+    "duration": 4.78,
+    "text": "of dosage values from 0-1 corresponds"
+  },
+  {
+    "start": 671.37,
+    "duration": 1.86,
+    "text": "to this relatively narrow range"
+  },
+  {
+    "start": 673.23,
+    "duration": 2.87,
+    "text": "of values from the activation function."
+  },
+  {
+    "start": 676.1,
+    "duration": 2.62,
+    "text": "In other words, when we plug"
+  },
+  {
+    "start": 678.72,
+    "duration": 3.16,
+    "text": "dosage values from 0-1 into"
+  },
+  {
+    "start": 681.88,
+    "duration": 3.24,
+    "text": "the neural network and then multiply them"
+  },
+  {
+    "start": 685.12,
+    "duration": 4.94,
+    "text": "by -34.4 and add 2.14,"
+  },
+  {
+    "start": 690.06,
+    "duration": 2.92,
+    "text": "we only get x-axis coordinates"
+  },
+  {
+    "start": 692.98,
+    "duration": 2.08,
+    "text": "that are within the red box."
+  },
+  {
+    "start": 695.06,
+    "duration": 4.18,
+    "text": "And thus, only the corresponding y-axis values"
+  },
+  {
+    "start": 699.24,
+    "duration": 1.58,
+    "text": "in the red box are used"
+  },
+  {
+    "start": 700.82,
+    "duration": 2.54,
+    "text": "to make this new blue curve."
+  },
+  {
+    "start": 703.36,
+    "duration": 3.26,
+    "text": "Bam. Now we scale"
+  },
+  {
+    "start": 706.62,
+    "duration": 5.4,
+    "text": "the y-axis values for the blue curve by -1.3."
+  },
+  {
+    "start": 712.02,
+    "duration": 3.48,
+    "text": "For example, when dosage equals zero,"
+  },
+  {
+    "start": 715.5,
+    "duration": 2.2,
+    "text": "the current y-axis coordinate"
+  },
+  {
+    "start": 717.7,
+    "duration": 2.98,
+    "text": "for the blue curve is 2.25."
+  },
+  {
+    "start": 720.68,
+    "duration": 8.48,
+    "text": "So we multiply 2.25 by -1.3 and get -2.93."
+  },
+  {
+    "start": 729.16,
+    "duration": 3.85,
+    "text": "And -2.93 corresponds to"
+  },
+  {
+    "start": 733.01,
+    "duration": 2.94,
+    "text": "this position on the y-axis."
+  },
+  {
+    "start": 735.95,
+    "duration": 2.65,
+    "text": "Likewise, we multiply all of"
+  },
+  {
+    "start": 738.59,
+    "duration": 1.8,
+    "text": "the other y-axis coordinates on"
+  },
+  {
+    "start": 740.39,
+    "duration": 3.29,
+    "text": "the blue curve by -1.3,"
+  },
+  {
+    "start": 743.68,
+    "duration": 3.25,
+    "text": "and we end up with a new blue curve."
+  },
+  {
+    "start": 746.93,
+    "duration": 4.5,
+    "text": "Bam. Now let's focus on"
+  },
+  {
+    "start": 751.43,
+    "duration": 2.26,
+    "text": "the connection from the input node"
+  },
+  {
+    "start": 753.69,
+    "duration": 3.28,
+    "text": "to the bottom node in the hidden layer."
+  },
+  {
+    "start": 756.97,
+    "duration": 4.38,
+    "text": "However, this time we multiply the dosage by"
+  },
+  {
+    "start": 761.36,
+    "duration": 5.82,
+    "text": "-2.52 instead of -34.4,"
+  },
+  {
+    "start": 767.17,
+    "duration": 4.26,
+    "text": "and we add 1.29 instead of"
+  },
+  {
+    "start": 771.43,
+    "duration": 4.14,
+    "text": "2.14 to get the x-axis coordinate"
+  },
+  {
+    "start": 775.57,
+    "duration": 2.3,
+    "text": "for the activation function."
+  },
+  {
+    "start": 777.87,
+    "duration": 3.26,
+    "text": "Remember, these values come from"
+  },
+  {
+    "start": 781.13,
+    "duration": 1.5,
+    "text": "fitting the neural network to"
+  },
+  {
+    "start": 782.63,
+    "duration": 2.04,
+    "text": "the data with back propagation,"
+  },
+  {
+    "start": 784.67,
+    "duration": 1.52,
+    "text": "and we'll talk about that in"
+  },
+  {
+    "start": 786.19,
+    "duration": 2.62,
+    "text": "Part 2 in this series."
+  },
+  {
+    "start": 788.82,
+    "duration": 3.67,
+    "text": "Now, if we plug the lowest dosage,"
+  },
+  {
+    "start": 792.48,
+    "duration": 2.56,
+    "text": "zero into the neural network,"
+  },
+  {
+    "start": 795.04,
+    "duration": 2.36,
+    "text": "then the X access coordinate for"
+  },
+  {
+    "start": 797.4,
+    "duration": 3.84,
+    "text": "the activation function is 1.29."
+  },
+  {
+    "start": 801.24,
+    "duration": 2.82,
+    "text": "Now we plug 1.29"
+  },
+  {
+    "start": 804.06,
+    "duration": 2.34,
+    "text": "into the activation function to get"
+  },
+  {
+    "start": 806.4,
+    "duration": 6.38,
+    "text": "the corresponding y-axis value and get 1.53."
+  },
+  {
+    "start": 812.77,
+    "duration": 3.96,
+    "text": "And that corresponds to this yellow dot."
+  },
+  {
+    "start": 816.74,
+    "duration": 3.08,
+    "text": "Now we just plug in dosage values"
+  },
+  {
+    "start": 819.82,
+    "duration": 4.5,
+    "text": "0-1 to get the corresponding y-axis values,"
+  },
+  {
+    "start": 824.32,
+    "duration": 3.13,
+    "text": "and we get this orange curve."
+  },
+  {
+    "start": 827.45,
+    "duration": 2.81,
+    "text": "Note, just like before,"
+  },
+  {
+    "start": 830.26,
+    "duration": 2.18,
+    "text": "I want to point out that the full range"
+  },
+  {
+    "start": 832.44,
+    "duration": 1.3,
+    "text": "of dosage values from"
+  },
+  {
+    "start": 833.74,
+    "duration": 4.2,
+    "text": "0-1 corresponds to this narrow range"
+  },
+  {
+    "start": 837.94,
+    "duration": 2.84,
+    "text": "of values from the activation function."
+  },
+  {
+    "start": 840.78,
+    "duration": 3.44,
+    "text": "In other words, when we plug dosage values"
+  },
+  {
+    "start": 844.22,
+    "duration": 3.56,
+    "text": "from 0-1 into the neural network,"
+  },
+  {
+    "start": 847.78,
+    "duration": 2.96,
+    "text": "we only get x-axis coordinates"
+  },
+  {
+    "start": 850.74,
+    "duration": 2.33,
+    "text": "that are within the red box."
+  },
+  {
+    "start": 853.07,
+    "duration": 4.45,
+    "text": "And thus, only the corresponding y-axis values"
+  },
+  {
+    "start": 857.51,
+    "duration": 1.68,
+    "text": "in the red box are used to"
+  },
+  {
+    "start": 859.19,
+    "duration": 2.46,
+    "text": "make this new orange curve."
+  },
+  {
+    "start": 861.65,
+    "duration": 3.58,
+    "text": "So we see that fitting a neural network to"
+  },
+  {
+    "start": 865.23,
+    "duration": 1.48,
+    "text": "data gives us different"
+  },
+  {
+    "start": 866.71,
+    "duration": 2.64,
+    "text": "parameter estimates on the connections,"
+  },
+  {
+    "start": 869.35,
+    "duration": 2.56,
+    "text": "and that results in each node in"
+  },
+  {
+    "start": 871.91,
+    "duration": 2.4,
+    "text": "the hidden layer using different portions of"
+  },
+  {
+    "start": 874.31,
+    "duration": 2.36,
+    "text": "the activation functions to"
+  },
+  {
+    "start": 876.67,
+    "duration": 3.14,
+    "text": "create these new and exciting shapes."
+  },
+  {
+    "start": 879.81,
+    "duration": 2.54,
+    "text": "Now, just like before,"
+  },
+  {
+    "start": 882.35,
+    "duration": 1.76,
+    "text": "we scale the y-axis"
+  },
+  {
+    "start": 884.11,
+    "duration": 2.06,
+    "text": "coordinates on the orange curve."
+  },
+  {
+    "start": 886.17,
+    "duration": 2.6,
+    "text": "Only this time, we scale by"
+  },
+  {
+    "start": 888.77,
+    "duration": 3.91,
+    "text": "a positive number 2.28."
+  },
+  {
+    "start": 894.28,
+    "duration": 4.26,
+    "text": "And that gives us this new orange curve."
+  },
+  {
+    "start": 898.54,
+    "duration": 2.88,
+    "text": "Now the neural network tells us to add"
+  },
+  {
+    "start": 901.42,
+    "duration": 1.88,
+    "text": "the y-axis coordinates from"
+  },
+  {
+    "start": 903.3,
+    "duration": 3.24,
+    "text": "the blue curve to the orange curve."
+  },
+  {
+    "start": 907.1,
+    "duration": 3.88,
+    "text": "And that gives us this green squiggle."
+  },
+  {
+    "start": 910.98,
+    "duration": 5.42,
+    "text": "Then finally, we subtract 0.58 from"
+  },
+  {
+    "start": 916.4,
+    "duration": 3.1,
+    "text": "the y-axis values on the green squiggle,"
+  },
+  {
+    "start": 919.5,
+    "duration": 2.04,
+    "text": "and we have a green squiggle"
+  },
+  {
+    "start": 921.54,
+    "duration": 1.52,
+    "text": "that fits the data."
+  },
+  {
+    "start": 923.06,
+    "duration": 3.62,
+    "text": "Bam. Now, if someone"
+  },
+  {
+    "start": 926.68,
+    "duration": 1.7,
+    "text": "comes along and says that they are"
+  },
+  {
+    "start": 928.38,
+    "duration": 3.04,
+    "text": "using dosage equal to 0.5,"
+  },
+  {
+    "start": 931.42,
+    "duration": 1.32,
+    "text": "we can look at"
+  },
+  {
+    "start": 932.74,
+    "duration": 2.52,
+    "text": "the corresponding y-axis coordinate on"
+  },
+  {
+    "start": 935.26,
+    "duration": 1.6,
+    "text": "the green squiggle and see"
+  },
+  {
+    "start": 936.86,
+    "duration": 2.46,
+    "text": "that the dosage will be effective."
+  },
+  {
+    "start": 939.32,
+    "duration": 2.24,
+    "text": "Or we can solve for"
+  },
+  {
+    "start": 941.56,
+    "duration": 2.64,
+    "text": "the y-axis coordinatet by plugging dosage"
+  },
+  {
+    "start": 944.2,
+    "duration": 3.12,
+    "text": "equal 0.5 into the neural network"
+  },
+  {
+    "start": 947.32,
+    "duration": 2.92,
+    "text": "and do the math."
+  },
+  {
+    "start": 978.26,
+    "duration": 2.08,
+    "text": "And we see that"
+  },
+  {
+    "start": 980.34,
+    "duration": 1.7,
+    "text": "the y-axis coordinate on"
+  },
+  {
+    "start": 982.04,
+    "duration": 3.2,
+    "text": "the green squiggle is 1.03."
+  },
+  {
+    "start": 985.24,
+    "duration": 4.78,
+    "text": "And since 1.03 is closer to one than zero,"
+  },
+  {
+    "start": 990.02,
+    "duration": 2.28,
+    "text": "we will conclude that a dosage equal"
+  },
+  {
+    "start": 992.3,
+    "duration": 2.9,
+    "text": "to 0.5 is effective."
+  },
+  {
+    "start": 995.2,
+    "duration": 6.28,
+    "text": "Double bam. Now, if you've made it this far,"
+  },
+  {
+    "start": 1001.48,
+    "duration": 1.5,
+    "text": "you may be wondering why"
+  },
+  {
+    "start": 1002.98,
+    "duration": 1.88,
+    "text": "this is called a neural network."
+  },
+  {
+    "start": 1004.86,
+    "duration": 1.86,
+    "text": "Instead of a big fancy"
+  },
+  {
+    "start": 1006.72,
+    "duration": 2.16,
+    "text": "squiggle fitting machine,"
+  },
+  {
+    "start": 1008.88,
+    "duration": 2.62,
+    "text": "the reason is that way back in"
+  },
+  {
+    "start": 1011.5,
+    "duration": 2.02,
+    "text": "the 1940s and '50s,"
+  },
+  {
+    "start": 1013.52,
+    "duration": 2.02,
+    "text": "when neural networks were invented,"
+  },
+  {
+    "start": 1015.53,
+    "duration": 1.54,
+    "text": "they thought the nodes"
+  },
+  {
+    "start": 1017.08,
+    "duration": 2.02,
+    "text": "were vaguely like neurons,"
+  },
+  {
+    "start": 1019.1,
+    "duration": 1.84,
+    "text": "and the connections between"
+  },
+  {
+    "start": 1020.93,
+    "duration": 2.77,
+    "text": "the nodes were like synapses."
+  },
+  {
+    "start": 1023.71,
+    "duration": 2.87,
+    "text": "However, I think they should be called"
+  },
+  {
+    "start": 1026.58,
+    "duration": 1.68,
+    "text": "big fancy squiggle fitting"
+  },
+  {
+    "start": 1028.26,
+    "duration": 2.5,
+    "text": "machines because that's what they do."
+  },
+  {
+    "start": 1030.76,
+    "duration": 2.16,
+    "text": "Note, whether or not"
+  },
+  {
+    "start": 1032.91,
+    "duration": 2.23,
+    "text": "you call it a squiggle fitting machine,"
+  },
+  {
+    "start": 1035.15,
+    "duration": 1.3,
+    "text": "the parameters that we"
+  },
+  {
+    "start": 1036.45,
+    "duration": 2.28,
+    "text": "multiply are called weights,"
+  },
+  {
+    "start": 1038.73,
+    "duration": 1.78,
+    "text": "and the parameters that we"
+  },
+  {
+    "start": 1040.52,
+    "duration": 2.37,
+    "text": "add are called biases."
+  },
+  {
+    "start": 1042.88,
+    "duration": 2.78,
+    "text": "Note, this neural network"
+  },
+  {
+    "start": 1045.66,
+    "duration": 1.65,
+    "text": "starts with two identical"
+  },
+  {
+    "start": 1047.31,
+    "duration": 1.61,
+    "text": "activation functions,"
+  },
+  {
+    "start": 1048.92,
+    "duration": 2.0,
+    "text": "but the weights and biases on"
+  },
+  {
+    "start": 1050.92,
+    "duration": 2.38,
+    "text": "the connections slice them, flip them,"
+  },
+  {
+    "start": 1053.3,
+    "duration": 2.38,
+    "text": "and stretch them into new shapes,"
+  },
+  {
+    "start": 1055.68,
+    "duration": 2.3,
+    "text": "which are then added together to get"
+  },
+  {
+    "start": 1057.98,
+    "duration": 2.56,
+    "text": "a squiggle that is entirely new,"
+  },
+  {
+    "start": 1060.54,
+    "duration": 1.78,
+    "text": "and then the squiggle is"
+  },
+  {
+    "start": 1062.32,
+    "duration": 2.16,
+    "text": "shifted to fit the data."
+  },
+  {
+    "start": 1064.48,
+    "duration": 2.18,
+    "text": "Now, if we can create"
+  },
+  {
+    "start": 1066.66,
+    "duration": 1.18,
+    "text": "this green squiggle with"
+  },
+  {
+    "start": 1067.84,
+    "duration": 2.86,
+    "text": "just two nodes in a single hidden layer,"
+  },
+  {
+    "start": 1070.7,
+    "duration": 1.8,
+    "text": "just imagine what types"
+  },
+  {
+    "start": 1072.5,
+    "duration": 1.64,
+    "text": "of green squiggles we could fit"
+  },
+  {
+    "start": 1074.14,
+    "duration": 1.38,
+    "text": "with more hidden layers"
+  },
+  {
+    "start": 1075.52,
+    "duration": 2.68,
+    "text": "and more nodes in each hidden layer."
+  },
+  {
+    "start": 1078.2,
+    "duration": 2.98,
+    "text": "In theory, neural networks can fit"
+  },
+  {
+    "start": 1081.18,
+    "duration": 2.9,
+    "text": "a green squiggle to just about any dataset,"
+  },
+  {
+    "start": 1084.08,
+    "duration": 2.04,
+    "text": "no matter how complicated."
+  },
+  {
+    "start": 1086.12,
+    "duration": 2.29,
+    "text": "And I think that's pretty cool."
+  },
+  {
+    "start": 1088.42,
+    "duration": 4.06,
+    "text": "Triple bam. Now it's"
+  },
+  {
+    "start": 1092.48,
+    "duration": 3.78,
+    "text": "time for some shameless self promotion."
+  },
+  {
+    "start": 1096.26,
+    "duration": 2.5,
+    "text": "If you want to review statistics"
+  },
+  {
+    "start": 1098.76,
+    "duration": 1.94,
+    "text": "and machine learning offline,"
+  },
+  {
+    "start": 1100.7,
+    "duration": 2.28,
+    "text": "check out the StatQuest study guides"
+  },
+  {
+    "start": 1102.98,
+    "duration": 1.92,
+    "text": "at statquest.org."
+  },
+  {
+    "start": 1104.89,
+    "duration": 2.55,
+    "text": "There's something for everyone."
+  },
+  {
+    "start": 1107.44,
+    "duration": 2.46,
+    "text": "Hurray, we've made it to"
+  },
+  {
+    "start": 1109.91,
+    "duration": 2.67,
+    "text": "the end of another exciting StatQuest."
+  },
+  {
+    "start": 1112.58,
+    "duration": 1.57,
+    "text": "If you like this StatQuest and"
+  },
+  {
+    "start": 1114.15,
+    "duration": 2.1,
+    "text": "want to see more, please subscribe."
+  },
+  {
+    "start": 1116.25,
+    "duration": 2.21,
+    "text": "And if you want to support StatQuest,"
+  },
+  {
+    "start": 1118.45,
+    "duration": 2.81,
+    "text": "consider contributing to my patreon campaign."
+  },
+  {
+    "start": 1121.27,
+    "duration": 1.72,
+    "text": "Becoming a channel member,"
+  },
+  {
+    "start": 1122.99,
+    "duration": 2.34,
+    "text": "buying one or two of my original songs or"
+  },
+  {
+    "start": 1125.33,
+    "duration": 2.44,
+    "text": "a T shirt or a hoodie or just donate."
+  },
+  {
+    "start": 1127.77,
+    "duration": 2.85,
+    "text": "The links are in the description below."
+  },
+  {
+    "start": 1130.62,
+    "duration": 3.69,
+    "text": "Until next time, quest on."
+  }
+]

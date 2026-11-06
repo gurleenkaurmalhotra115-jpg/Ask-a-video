@@ -1,0 +1,24 @@
+% IEEE Table 2: Performance Breakdown by Pedagogical Tier
+\begin{table*}[t]
+\caption{Retrieval Performance Broken Down by Video Pedagogical and Acoustic Tier}
+\label{tab:tier_breakdown}
+\centering
+\begin{tabular}{llcccccc}
+\hline
+\textbf{Tier} & \textbf{Strategy} & \textbf{Questions} & \textbf{Hit@1} & \textbf{Hit@4} & \textbf{MRR} & \textbf{Mean IoU@1} & \textbf{R@1@0.3} \\
+\hline
+Tier A (Curated Studio) & \texttt{fixed\_token} & 50 & 16.0\% & 34.0\% & 0.230 & 0.080 & 8.0\% \\
+Tier A (Curated Studio) & \texttt{sentence} & 50 & 4.0\% & 22.0\% & 0.112 & 0.017 & 2.0\% \\
+Tier A (Curated Studio) & \texttt{semantic} & 50 & 10.0\% & 30.0\% & 0.167 & 0.046 & 6.0\% \\
+Tier A (Curated Studio) & \texttt{time\_window} & 50 & 16.0\% & 28.0\% & 0.208 & 0.073 & 10.0\% \\
+Tier B (US Classroom) & \texttt{fixed\_token} & 50 & 4.0\% & 12.0\% & 0.068 & 0.023 & 4.0\% \\
+Tier B (US Classroom) & \texttt{sentence} & 50 & 8.0\% & 18.0\% & 0.115 & 0.033 & 6.0\% \\
+Tier B (US Classroom) & \texttt{semantic} & 50 & 4.0\% & 14.0\% & 0.080 & 0.015 & 2.0\% \\
+Tier B (US Classroom) & \texttt{time\_window} & 50 & 6.0\% & 8.0\% & 0.067 & 0.010 & 0.0\% \\
+Tier C (Indian / NPTEL) & \texttt{fixed\_token} & 30 & 3.3\% & 30.0\% & 0.131 & 0.020 & 3.3\% \\
+Tier C (Indian / NPTEL) & \texttt{sentence} & 30 & 3.3\% & 16.7\% & 0.086 & 0.009 & 0.0\% \\
+Tier C (Indian / NPTEL) & \texttt{semantic} & 30 & 3.3\% & 30.0\% & 0.147 & 0.008 & 0.0\% \\
+Tier C (Indian / NPTEL) & \texttt{time\_window} & 30 & 3.3\% & 13.3\% & 0.069 & 0.017 & 3.3\% \\
+\hline
+\end{tabular}
+\end{table*}

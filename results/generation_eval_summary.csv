@@ -1,0 +1,5 @@
+tier,n_pos,n_neg,neg_rejection_acc,faithfulness_pct,citation_alignment_pct,mean_latency_sec
+Tier A (Curated Studio),10,10,100.0,70.0,10.0,0.09
+Tier B (US Classroom),10,10,100.0,70.0,0.0,0.0
+Tier C (Indian / NPTEL),10,6,100.0,0.0,0.0,0.0
+Overall System,30,26,100.0,46.67,3.33,0.03

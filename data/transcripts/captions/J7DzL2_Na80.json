@@ -1,0 +1,3212 @@
+[
+  {
+    "start": 8.71,
+    "duration": 0.5,
+    "text": "Hi."
+  },
+  {
+    "start": 9.21,
+    "duration": 5.02,
+    "text": "This is the first lecture in MIT's course 18.06,"
+  },
+  {
+    "start": 14.23,
+    "duration": 5.2,
+    "text": "linear algebra, and I'm Gilbert Strang."
+  },
+  {
+    "start": 19.43,
+    "duration": 4.01,
+    "text": "The text for the course is this book,"
+  },
+  {
+    "start": 23.44,
+    "duration": 2.63,
+    "text": "Introduction to Linear Algebra."
+  },
+  {
+    "start": 26.07,
+    "duration": 6.66,
+    "text": "And the course web page, which has got a lot of exercises from"
+  },
+  {
+    "start": 32.73,
+    "duration": 5.74,
+    "text": "the past, MatLab codes, the syllabus for the course,"
+  },
+  {
+    "start": 38.47,
+    "duration": 5.59,
+    "text": "is web.mit.edu/18.06."
+  },
+  {
+    "start": 44.06,
+    "duration": 3.29,
+    "text": "And this is the first lecture, lecture one."
+  },
+  {
+    "start": 49.92,
+    "duration": 5.57,
+    "text": "So, and later we'll give the web address for viewing these,"
+  },
+  {
+    "start": 55.49,
+    "duration": 1.78,
+    "text": "videotapes."
+  },
+  {
+    "start": 57.27,
+    "duration": 1.93,
+    "text": "Okay, so what's in the first lecture?"
+  },
+  {
+    "start": 62.68,
+    "duration": 2.85,
+    "text": "This is my plan."
+  },
+  {
+    "start": 65.53,
+    "duration": 3.81,
+    "text": "The fundamental problem of linear algebra,"
+  },
+  {
+    "start": 69.34,
+    "duration": 4.54,
+    "text": "which is to solve a system of linear equations."
+  },
+  {
+    "start": 73.88,
+    "duration": 2.33,
+    "text": "So let's start with a case when we"
+  },
+  {
+    "start": 76.21,
+    "duration": 5.23,
+    "text": "have some number of equations, say n equations and n unknowns."
+  },
+  {
+    "start": 81.44,
+    "duration": 2.38,
+    "text": "So an equal number of equations and unknowns."
+  },
+  {
+    "start": 83.82,
+    "duration": 3.04,
+    "text": "That's the normal, nice case."
+  },
+  {
+    "start": 86.86,
+    "duration": 5.01,
+    "text": "And what I want to do is -- with examples, of course --"
+  },
+  {
+    "start": 91.87,
+    "duration": 5.36,
+    "text": "to describe, first, what I call the Row picture."
+  },
+  {
+    "start": 97.23,
+    "duration": 3.64,
+    "text": "That's the picture of one equation at a time."
+  },
+  {
+    "start": 100.87,
+    "duration": 3.11,
+    "text": "It's the picture you've seen before in two"
+  },
+  {
+    "start": 103.98,
+    "duration": 2.37,
+    "text": "by two equations where lines meet."
+  },
+  {
+    "start": 106.35,
+    "duration": 3.11,
+    "text": "So in a minute, you'll see lines meeting."
+  },
+  {
+    "start": 109.46,
+    "duration": 2.77,
+    "text": "The second picture, I'll put a star"
+  },
+  {
+    "start": 112.23,
+    "duration": 2.84,
+    "text": "beside that, because that's such an important one."
+  },
+  {
+    "start": 115.07,
+    "duration": 6.53,
+    "text": "And maybe new to you is the picture -- a column at a time."
+  },
+  {
+    "start": 121.6,
+    "duration": 3.84,
+    "text": "And those are the rows and columns of a matrix."
+  },
+  {
+    "start": 125.44,
+    "duration": 3.53,
+    "text": "So the third -- the algebra way to look at the problem is"
+  },
+  {
+    "start": 128.97,
+    "duration": 4.82,
+    "text": "the matrix form and using a matrix that I'll call A."
+  },
+  {
+    "start": 133.79,
+    "duration": 3.7,
+    "text": "Okay, so can I do an example?"
+  },
+  {
+    "start": 137.49,
+    "duration": 5.93,
+    "text": "The whole semester will be examples and then see what's"
+  },
+  {
+    "start": 143.42,
+    "duration": 1.69,
+    "text": "going on with the example."
+  },
+  {
+    "start": 145.11,
+    "duration": 2.88,
+    "text": "So, take an example."
+  },
+  {
+    "start": 147.99,
+    "duration": 2.44,
+    "text": "Two equations, two unknowns."
+  },
+  {
+    "start": 150.43,
+    "duration": 7.86,
+    "text": "So let me take 2x -y =0, let's say."
+  },
+  {
+    "start": 158.29,
+    "duration": 7.06,
+    "text": "And -x 2y=3."
+  },
+  {
+    "start": 165.35,
+    "duration": 1.18,
+    "text": "Okay."
+  },
+  {
+    "start": 166.53,
+    "duration": 4.15,
+    "text": "let me -- I can even say right away --"
+  },
+  {
+    "start": 170.68,
+    "duration": 6.97,
+    "text": "what's the matrix, that is, what's the coefficient matrix?"
+  },
+  {
+    "start": 177.65,
+    "duration": 2.94,
+    "text": "The matrix that involves these numbers --"
+  },
+  {
+    "start": 180.59,
+    "duration": 4.6,
+    "text": "a matrix is just a rectangular array of numbers."
+  },
+  {
+    "start": 185.19,
+    "duration": 4.42,
+    "text": "Here it's two rows and two columns, so 2 and --"
+  },
+  {
+    "start": 189.61,
+    "duration": 4.81,
+    "text": "minus 1 in the first row minus 1 and 2 in the second row,"
+  },
+  {
+    "start": 194.42,
+    "duration": 2.28,
+    "text": "that's the matrix."
+  },
+  {
+    "start": 196.7,
+    "duration": 4.91,
+    "text": "And the right-hand -- the, unknown --"
+  },
+  {
+    "start": 201.61,
+    "duration": 1.48,
+    "text": "well, we've got two unknowns."
+  },
+  {
+    "start": 203.09,
+    "duration": 4.28,
+    "text": "So we've got a vector, with two components, x and y,"
+  },
+  {
+    "start": 207.37,
+    "duration": 3.78,
+    "text": "and we've got two right-hand sides that go into a vector"
+  },
+  {
+    "start": 211.15,
+    "duration": 1.79,
+    "text": "0 3."
+  },
+  {
+    "start": 212.94,
+    "duration": 5.32,
+    "text": "I couldn't resist writing the matrix form, right --"
+  },
+  {
+    "start": 218.26,
+    "duration": 2.79,
+    "text": "even before the pictures."
+  },
+  {
+    "start": 221.05,
+    "duration": 3.98,
+    "text": "So I always will think of this as the matrix A,"
+  },
+  {
+    "start": 225.03,
+    "duration": 4.41,
+    "text": "the matrix of coefficients, then there's a vector of"
+  },
+  {
+    "start": 229.44,
+    "duration": 0.59,
+    "text": "unknowns."
+  },
+  {
+    "start": 230.03,
+    "duration": 1.76,
+    "text": "Here we've only got two unknowns."
+  },
+  {
+    "start": 231.79,
+    "duration": 2.31,
+    "text": "Later we'll have any number of unknowns."
+  },
+  {
+    "start": 234.1,
+    "duration": 3.52,
+    "text": "And that vector of unknowns, well I'll often --"
+  },
+  {
+    "start": 237.62,
+    "duration": 2.2,
+    "text": "I'll make that x --"
+  },
+  {
+    "start": 239.82,
+    "duration": 1.33,
+    "text": "extra bold."
+  },
+  {
+    "start": 241.15,
+    "duration": 3.7,
+    "text": "A and the right-hand side is also a vector"
+  },
+  {
+    "start": 244.85,
+    "duration": 3.38,
+    "text": "that I'll always call b."
+  },
+  {
+    "start": 248.23,
+    "duration": 5.56,
+    "text": "So linear equations are A x equal b and the idea now"
+  },
+  {
+    "start": 253.79,
+    "duration": 3.03,
+    "text": "is to solve this particular example"
+  },
+  {
+    "start": 256.82,
+    "duration": 4.12,
+    "text": "and then step back to see the bigger picture."
+  },
+  {
+    "start": 260.94,
+    "duration": 3.69,
+    "text": "Okay, what's the picture for this example, the Row picture?"
+  },
+  {
+    "start": 264.63,
+    "duration": 2.11,
+    "text": "Okay, so here comes the Row picture."
+  },
+  {
+    "start": 270.21,
+    "duration": 2.68,
+    "text": "So that means I take one row at a time"
+  },
+  {
+    "start": 272.89,
+    "duration": 5.63,
+    "text": "and I'm drawing here the xy plane"
+  },
+  {
+    "start": 278.52,
+    "duration": 5.47,
+    "text": "and I'm going to plot all the points that"
+  },
+  {
+    "start": 283.99,
+    "duration": 3.87,
+    "text": "satisfy that first equation."
+  },
+  {
+    "start": 287.86,
+    "duration": 5.26,
+    "text": "So I'm looking at all the points that satisfy 2x-y =0."
+  },
+  {
+    "start": 293.12,
+    "duration": 5.88,
+    "text": "It's often good to start with which point on the horizontal"
+  },
+  {
+    "start": 299.0,
+    "duration": 3.48,
+    "text": "line -- on this horizontal line, y is zero."
+  },
+  {
+    "start": 302.48,
+    "duration": 4.03,
+    "text": "The x axis has y as zero and that -- in this case, actually,"
+  },
+  {
+    "start": 306.51,
+    "duration": 1.21,
+    "text": "then x is zero."
+  },
+  {
+    "start": 307.72,
+    "duration": 3.51,
+    "text": "So the point, the origin --"
+  },
+  {
+    "start": 311.23,
+    "duration": 5.33,
+    "text": "the point with coordinates (0,0) is on the line."
+  },
+  {
+    "start": 316.56,
+    "duration": 1.73,
+    "text": "It solves that equation."
+  },
+  {
+    "start": 318.29,
+    "duration": 4.05,
+    "text": "Okay, tell me in -- well, I guess I have to tell you"
+  },
+  {
+    "start": 322.34,
+    "duration": 4.64,
+    "text": "another point that solves this same equation."
+  },
+  {
+    "start": 326.98,
+    "duration": 5.11,
+    "text": "Let me suppose x is one, so I'll take x to be one."
+  },
+  {
+    "start": 332.09,
+    "duration": 2.84,
+    "text": "Then y should be two, right?"
+  },
+  {
+    "start": 334.93,
+    "duration": 5.32,
+    "text": "So there's the point one two that also solves this equation."
+  },
+  {
+    "start": 340.25,
+    "duration": 2.59,
+    "text": "And I could put in more points."
+  },
+  {
+    "start": 342.84,
+    "duration": 2.88,
+    "text": "But, but let me put in all the points"
+  },
+  {
+    "start": 345.72,
+    "duration": 5.09,
+    "text": "at once, because they all lie on a straight line."
+  },
+  {
+    "start": 350.81,
+    "duration": 2.73,
+    "text": "This is a linear equation and that word linear"
+  },
+  {
+    "start": 353.54,
+    "duration": 0.77,
+    "text": "got the letters"
+  },
+  {
+    "start": 354.31,
+    "duration": 2.45,
+    "text": "Okay, thanks. for line in it."
+  },
+  {
+    "start": 356.76,
+    "duration": 3.0,
+    "text": "That's the equation -- this is the line that ..."
+  },
+  {
+    "start": 359.76,
+    "duration": 8.93,
+    "text": "of solutions to 2x-y=0 my first row, first equation."
+  },
+  {
+    "start": 368.69,
+    "duration": 5.37,
+    "text": "So typically, maybe, x equal a half, y equal one will work."
+  },
+  {
+    "start": 374.06,
+    "duration": 1.6,
+    "text": "And sure enough it does."
+  },
+  {
+    "start": 375.66,
+    "duration": 1.94,
+    "text": "Okay, that's the first one."
+  },
+  {
+    "start": 377.6,
+    "duration": 5.15,
+    "text": "Now the second one is not going to go through the origin."
+  },
+  {
+    "start": 382.75,
+    "duration": 1.64,
+    "text": "It's always important."
+  },
+  {
+    "start": 384.39,
+    "duration": 2.51,
+    "text": "Do we go through the origin or not?"
+  },
+  {
+    "start": 386.9,
+    "duration": 3.12,
+    "text": "In this case, yes, because there's a zero over there."
+  },
+  {
+    "start": 390.02,
+    "duration": 2.25,
+    "text": "In this case we don't go through the origin,"
+  },
+  {
+    "start": 392.27,
+    "duration": 3.95,
+    "text": "because if x and y are zero, we don't get three."
+  },
+  {
+    "start": 396.22,
+    "duration": 4.13,
+    "text": "So, let me again say suppose y is zero,"
+  },
+  {
+    "start": 400.35,
+    "duration": 2.21,
+    "text": "what x do we actually get?"
+  },
+  {
+    "start": 402.56,
+    "duration": 5.67,
+    "text": "If y is zero, then I get x is minus three."
+  },
+  {
+    "start": 408.23,
+    "duration": 4.38,
+    "text": "So if y is zero, I go along minus three."
+  },
+  {
+    "start": 412.61,
+    "duration": 3.75,
+    "text": "So there's one point on this second line."
+  },
+  {
+    "start": 416.36,
+    "duration": 7.09,
+    "text": "Now let me say, well, suppose x is minus one --"
+  },
+  {
+    "start": 423.45,
+    "duration": 1.92,
+    "text": "just to take another x."
+  },
+  {
+    "start": 425.37,
+    "duration": 3.91,
+    "text": "If x is minus one, then this is a one"
+  },
+  {
+    "start": 429.28,
+    "duration": 6.59,
+    "text": "and I think y should be a one, because if x is minus one,"
+  },
+  {
+    "start": 435.87,
+    "duration": 3.92,
+    "text": "then I think y should be a one and we'll get that point."
+  },
+  {
+    "start": 439.79,
+    "duration": 1.11,
+    "text": "Is that right?"
+  },
+  {
+    "start": 440.9,
+    "duration": 2.43,
+    "text": "If x is minus one, that's a one."
+  },
+  {
+    "start": 443.33,
+    "duration": 2.31,
+    "text": "If y is a one, that's a two and the one"
+  },
+  {
+    "start": 445.64,
+    "duration": 2.91,
+    "text": "and the two make three and that point's on the equation."
+  },
+  {
+    "start": 448.55,
+    "duration": 0.78,
+    "text": "Okay."
+  },
+  {
+    "start": 449.33,
+    "duration": 2.41,
+    "text": "Now, I should just draw the line, right,"
+  },
+  {
+    "start": 451.74,
+    "duration": 2.73,
+    "text": "connecting those two points at --"
+  },
+  {
+    "start": 454.47,
+    "duration": 1.94,
+    "text": "that will give me the whole line."
+  },
+  {
+    "start": 456.41,
+    "duration": 4.07,
+    "text": "And if I've done this reasonably well,"
+  },
+  {
+    "start": 460.48,
+    "duration": 2.16,
+    "text": "I think it's going to happen to go through -- well,"
+  },
+  {
+    "start": 462.64,
+    "duration": 3.88,
+    "text": "not happen -- it was arranged to go through that point."
+  },
+  {
+    "start": 466.52,
+    "duration": 4.08,
+    "text": "So I think that the second line is this one,"
+  },
+  {
+    "start": 470.6,
+    "duration": 5.5,
+    "text": "and this is the all-important point that lies on both lines."
+  },
+  {
+    "start": 476.1,
+    "duration": 2.73,
+    "text": "Shall we just check that that point which"
+  },
+  {
+    "start": 478.83,
+    "duration": 4.86,
+    "text": "is the point x equal one and y was two, right?"
+  },
+  {
+    "start": 483.69,
+    "duration": 4.1,
+    "text": "That's the point there and that, I believe,"
+  },
+  {
+    "start": 487.79,
+    "duration": 2.74,
+    "text": "solves both equations."
+  },
+  {
+    "start": 490.53,
+    "duration": 0.97,
+    "text": "Let's just check this."
+  },
+  {
+    "start": 491.5,
+    "duration": 7.09,
+    "text": "If x is one, I have a minus one plus four equals three, okay."
+  },
+  {
+    "start": 498.59,
+    "duration": 3.09,
+    "text": "Apologies for drawing this picture"
+  },
+  {
+    "start": 501.68,
+    "duration": 3.47,
+    "text": "that you've seen before."
+  },
+  {
+    "start": 505.15,
+    "duration": 4.54,
+    "text": "But this -- seeing the row picture --"
+  },
+  {
+    "start": 509.69,
+    "duration": 3.45,
+    "text": "first of all, for n equal 2, two equations and two unknowns,"
+  },
+  {
+    "start": 513.14,
+    "duration": 2.32,
+    "text": "it's the right place to start."
+  },
+  {
+    "start": 515.46,
+    "duration": 0.81,
+    "text": "Okay."
+  },
+  {
+    "start": 516.27,
+    "duration": 1.42,
+    "text": "So we've got the solution."
+  },
+  {
+    "start": 517.69,
+    "duration": 1.99,
+    "text": "The point that lies on both lines."
+  },
+  {
+    "start": 519.68,
+    "duration": 3.92,
+    "text": "Now can I come to the column picture?"
+  },
+  {
+    "start": 523.6,
+    "duration": 4.28,
+    "text": "Pay attention, this is the key point."
+  },
+  {
+    "start": 527.88,
+    "duration": 2.05,
+    "text": "So the column picture."
+  },
+  {
+    "start": 529.93,
+    "duration": 3.59,
+    "text": "I'm now going to look at the columns of the matrix."
+  },
+  {
+    "start": 533.52,
+    "duration": 3.27,
+    "text": "I'm going to look at this part and this part."
+  },
+  {
+    "start": 536.79,
+    "duration": 8.22,
+    "text": "I'm going to say that the x part is really x times --"
+  },
+  {
+    "start": 545.01,
+    "duration": 1.73,
+    "text": "you see, I'm putting the two --"
+  },
+  {
+    "start": 546.74,
+    "duration": 3.42,
+    "text": "I'm kind of getting the two equations at once --"
+  },
+  {
+    "start": 550.16,
+    "duration": 5.13,
+    "text": "that part and then I have a y and in the first equation"
+  },
+  {
+    "start": 555.29,
+    "duration": 3.97,
+    "text": "it's multiplying a minus one and in the second equation a two,"
+  },
+  {
+    "start": 559.26,
+    "duration": 2.77,
+    "text": "and on the right-hand side, zero and three."
+  },
+  {
+    "start": 566.5,
+    "duration": 3.36,
+    "text": "You see, the columns of the matrix, the columns of A"
+  },
+  {
+    "start": 569.86,
+    "duration": 3.19,
+    "text": "are here and the right-hand side b is there."
+  },
+  {
+    "start": 573.05,
+    "duration": 3.89,
+    "text": "And now what is the equation asking for?"
+  },
+  {
+    "start": 576.94,
+    "duration": 5.81,
+    "text": "It's asking us to find -- somehow to combine that vector"
+  },
+  {
+    "start": 582.75,
+    "duration": 4.72,
+    "text": "and this one in the right amounts to get that one."
+  },
+  {
+    "start": 587.47,
+    "duration": 4.36,
+    "text": "It's asking us to find the right linear combination --"
+  },
+  {
+    "start": 591.83,
+    "duration": 3.59,
+    "text": "this is called a linear combination."
+  },
+  {
+    "start": 595.42,
+    "duration": 3.42,
+    "text": "And it's the most fundamental operation in the whole course."
+  },
+  {
+    "start": 601.71,
+    "duration": 4.62,
+    "text": "It's a linear combination of the columns."
+  },
+  {
+    "start": 606.33,
+    "duration": 3.22,
+    "text": "That's what we're seeing on the left side."
+  },
+  {
+    "start": 609.55,
+    "duration": 3.64,
+    "text": "Again, I don't want to write down a big definition."
+  },
+  {
+    "start": 613.19,
+    "duration": 1.82,
+    "text": "You can see what it is."
+  },
+  {
+    "start": 615.01,
+    "duration": 2.46,
+    "text": "There's column one, there's column two."
+  },
+  {
+    "start": 617.47,
+    "duration": 4.22,
+    "text": "I multiply by some numbers and I add."
+  },
+  {
+    "start": 621.69,
+    "duration": 4.25,
+    "text": "That's a combination -- a linear combination and I want to make"
+  },
+  {
+    "start": 625.94,
+    "duration": 4.93,
+    "text": "those numbers the right numbers to produce zero three."
+  },
+  {
+    "start": 630.87,
+    "duration": 1.2,
+    "text": "Okay."
+  },
+  {
+    "start": 632.07,
+    "duration": 5.04,
+    "text": "Now I want to draw a picture that, represents what this --"
+  },
+  {
+    "start": 637.11,
+    "duration": 1.12,
+    "text": "this is algebra."
+  },
+  {
+    "start": 638.23,
+    "duration": 3.51,
+    "text": "What's the geometry, what's the picture that goes with it?"
+  },
+  {
+    "start": 641.74,
+    "duration": 0.62,
+    "text": "Okay."
+  },
+  {
+    "start": 642.36,
+    "duration": 2.9,
+    "text": "So again, these vectors have two components,"
+  },
+  {
+    "start": 645.26,
+    "duration": 5.47,
+    "text": "so I better draw a picture like that."
+  },
+  {
+    "start": 650.73,
+    "duration": 1.95,
+    "text": "So can I put down these columns?"
+  },
+  {
+    "start": 652.68,
+    "duration": 2.79,
+    "text": "I'll draw these columns as they are,"
+  },
+  {
+    "start": 655.47,
+    "duration": 3.23,
+    "text": "and then I'll do a combination of them."
+  },
+  {
+    "start": 658.7,
+    "duration": 5.3,
+    "text": "So the first column is over two and down one, right?"
+  },
+  {
+    "start": 664.0,
+    "duration": 2.21,
+    "text": "So there's the first column."
+  },
+  {
+    "start": 666.21,
+    "duration": 1.65,
+    "text": "The first column."
+  },
+  {
+    "start": 667.86,
+    "duration": 3.1,
+    "text": "Column one."
+  },
+  {
+    "start": 670.96,
+    "duration": 2.87,
+    "text": "It's the vector two minus one."
+  },
+  {
+    "start": 673.83,
+    "duration": 4.75,
+    "text": "The second column is --"
+  },
+  {
+    "start": 678.58,
+    "duration": 3.42,
+    "text": "minus one is the first component and up two."
+  },
+  {
+    "start": 682.0,
+    "duration": 2.96,
+    "text": "It's here."
+  },
+  {
+    "start": 684.96,
+    "duration": 2.75,
+    "text": "There's column two."
+  },
+  {
+    "start": 687.71,
+    "duration": 4.57,
+    "text": "So this, again, you see what its components are."
+  },
+  {
+    "start": 692.28,
+    "duration": 3.25,
+    "text": "Its components are minus one, two."
+  },
+  {
+    "start": 695.53,
+    "duration": 0.5,
+    "text": "Good."
+  },
+  {
+    "start": 696.03,
+    "duration": 0.81,
+    "text": "That's this guy."
+  },
+  {
+    "start": 699.47,
+    "duration": 1.38,
+    "text": "Now I have to take a combination."
+  },
+  {
+    "start": 703.74,
+    "duration": 3.57,
+    "text": "What combination shall I take?"
+  },
+  {
+    "start": 707.31,
+    "duration": 3.2,
+    "text": "Why not the right combination, what the hell?"
+  },
+  {
+    "start": 710.51,
+    "duration": 0.5,
+    "text": "Okay."
+  },
+  {
+    "start": 711.01,
+    "duration": 2.83,
+    "text": "So the combination I'm going to take"
+  },
+  {
+    "start": 713.84,
+    "duration": 3.41,
+    "text": "is the right one to produce zero three"
+  },
+  {
+    "start": 717.25,
+    "duration": 2.37,
+    "text": "and then we'll see it happen in the picture."
+  },
+  {
+    "start": 719.62,
+    "duration": 4.91,
+    "text": "So the right combination is to take x as one of those"
+  },
+  {
+    "start": 724.53,
+    "duration": 1.61,
+    "text": "and two of these."
+  },
+  {
+    "start": 729.23,
+    "duration": 3.53,
+    "text": "It's because we already know that that's the right x and y,"
+  },
+  {
+    "start": 732.76,
+    "duration": 2.96,
+    "text": "so why not take the correct combination here and see it"
+  },
+  {
+    "start": 735.72,
+    "duration": 0.56,
+    "text": "happen?"
+  },
+  {
+    "start": 736.28,
+    "duration": 5.56,
+    "text": "Okay, so how do I picture this linear combination?"
+  },
+  {
+    "start": 741.84,
+    "duration": 3.34,
+    "text": "So I start with this vector that's already here --"
+  },
+  {
+    "start": 745.18,
+    "duration": 3.04,
+    "text": "so that's one of column one, that's one times column"
+  },
+  {
+    "start": 748.22,
+    "duration": 2.18,
+    "text": "one, right there."
+  },
+  {
+    "start": 750.4,
+    "duration": 3.32,
+    "text": "And now I want to add on -- so I'm going to hook the next"
+  },
+  {
+    "start": 753.72,
+    "duration": 4.94,
+    "text": "vector onto the front of the arrow will start the next"
+  },
+  {
+    "start": 758.66,
+    "duration": 1.93,
+    "text": "vector and it will go this way."
+  },
+  {
+    "start": 760.59,
+    "duration": 3.58,
+    "text": "So let's see, can I do it right?"
+  },
+  {
+    "start": 764.17,
+    "duration": 2.07,
+    "text": "If I added on one of these vectors,"
+  },
+  {
+    "start": 766.24,
+    "duration": 4.35,
+    "text": "it would go left one and up two, so we'd go left one and up two,"
+  },
+  {
+    "start": 770.59,
+    "duration": 1.54,
+    "text": "so it would probably get us to there."
+  },
+  {
+    "start": 772.13,
+    "duration": 2.52,
+    "text": "Maybe I'll do dotted line for that."
+  },
+  {
+    "start": 774.65,
+    "duration": 0.96,
+    "text": "Okay?"
+  },
+  {
+    "start": 775.61,
+    "duration": 4.1,
+    "text": "That's one of column two tucked onto the end,"
+  },
+  {
+    "start": 779.71,
+    "duration": 3.68,
+    "text": "but I wanted to tuck on two of column two."
+  },
+  {
+    "start": 783.39,
+    "duration": 3.61,
+    "text": "So that -- the second one -- we'll go up left one and up two"
+  },
+  {
+    "start": 787.0,
+    "duration": 0.66,
+    "text": "also."
+  },
+  {
+    "start": 787.66,
+    "duration": 1.78,
+    "text": "It'll probably end there."
+  },
+  {
+    "start": 789.44,
+    "duration": 1.08,
+    "text": "And there's another one."
+  },
+  {
+    "start": 790.52,
+    "duration": 3.83,
+    "text": "So what I've put in here is two of column two."
+  },
+  {
+    "start": 797.31,
+    "duration": 2.03,
+    "text": "Added on."
+  },
+  {
+    "start": 799.34,
+    "duration": 1.27,
+    "text": "And where did I end up?"
+  },
+  {
+    "start": 803.28,
+    "duration": 4.95,
+    "text": "What are the coordinates of this result?"
+  },
+  {
+    "start": 808.23,
+    "duration": 4.34,
+    "text": "What do I get when I take one of this plus two of that?"
+  },
+  {
+    "start": 812.57,
+    "duration": 2.24,
+    "text": "I do get that, of course."
+  },
+  {
+    "start": 814.81,
+    "duration": 4.06,
+    "text": "There it is, x is zero, y is three, that's b."
+  },
+  {
+    "start": 818.87,
+    "duration": 2.66,
+    "text": "That's the answer we wanted."
+  },
+  {
+    "start": 821.53,
+    "duration": 2.0,
+    "text": "And how do I do it?"
+  },
+  {
+    "start": 823.53,
+    "duration": 3.33,
+    "text": "You see I do it just like the first component."
+  },
+  {
+    "start": 826.86,
+    "duration": 3.84,
+    "text": "I have a two and a minus two that produces a zero,"
+  },
+  {
+    "start": 830.7,
+    "duration": 3.98,
+    "text": "and in the second component I have a minus one and a four,"
+  },
+  {
+    "start": 834.68,
+    "duration": 3.07,
+    "text": "they combine to give the three."
+  },
+  {
+    "start": 837.75,
+    "duration": 3.44,
+    "text": "But look at this picture."
+  },
+  {
+    "start": 841.19,
+    "duration": 2.04,
+    "text": "So here's our key picture."
+  },
+  {
+    "start": 843.23,
+    "duration": 7.05,
+    "text": "I combine this column and this column to get this guy."
+  },
+  {
+    "start": 850.28,
+    "duration": 1.08,
+    "text": "That was the b."
+  },
+  {
+    "start": 851.36,
+    "duration": 2.32,
+    "text": "That's the zero three."
+  },
+  {
+    "start": 853.68,
+    "duration": 0.86,
+    "text": "Okay."
+  },
+  {
+    "start": 854.54,
+    "duration": 4.25,
+    "text": "So that idea of linear combination is crucial,"
+  },
+  {
+    "start": 858.79,
+    "duration": 2.34,
+    "text": "and also --"
+  },
+  {
+    "start": 861.13,
+    "duration": 1.78,
+    "text": "do we want to think about this question?"
+  },
+  {
+    "start": 865.42,
+    "duration": 1.05,
+    "text": "Sure, why not."
+  },
+  {
+    "start": 866.47,
+    "duration": 3.36,
+    "text": "What are all the combinations?"
+  },
+  {
+    "start": 869.83,
+    "duration": 2.83,
+    "text": "If I took -- can I go back to xs and ys?"
+  },
+  {
+    "start": 875.24,
+    "duration": 3.37,
+    "text": "This is a question for really --"
+  },
+  {
+    "start": 878.61,
+    "duration": 2.84,
+    "text": "it's going to come up over and over,"
+  },
+  {
+    "start": 881.45,
+    "duration": 3.9,
+    "text": "but why don't we see it once now?"
+  },
+  {
+    "start": 885.35,
+    "duration": 5.26,
+    "text": "If I took all the xs and all the ys, all the combinations,"
+  },
+  {
+    "start": 890.61,
+    "duration": 3.22,
+    "text": "what would be all the results?"
+  },
+  {
+    "start": 893.83,
+    "duration": 2.37,
+    "text": "And, actually, the result would be"
+  },
+  {
+    "start": 896.2,
+    "duration": 3.2,
+    "text": "that I could get any right-hand side at all."
+  },
+  {
+    "start": 899.4,
+    "duration": 3.28,
+    "text": "The combinations of this and this"
+  },
+  {
+    "start": 902.68,
+    "duration": 3.57,
+    "text": "would fill the whole plane."
+  },
+  {
+    "start": 906.25,
+    "duration": 2.26,
+    "text": "You can tuck that away."
+  },
+  {
+    "start": 908.51,
+    "duration": 5.57,
+    "text": "We'll, explore it further."
+  },
+  {
+    "start": 914.08,
+    "duration": 5.53,
+    "text": "But this idea of what linear combination gives b and what do"
+  },
+  {
+    "start": 919.61,
+    "duration": 2.04,
+    "text": "all the linear combinations give,"
+  },
+  {
+    "start": 921.65,
+    "duration": 3.42,
+    "text": "what are all the possible, achievable right-hand sides be"
+  },
+  {
+    "start": 925.07,
+    "duration": 1.54,
+    "text": "-- that's going to be basic."
+  },
+  {
+    "start": 926.61,
+    "duration": 0.61,
+    "text": "Okay."
+  },
+  {
+    "start": 927.22,
+    "duration": 4.76,
+    "text": "Can I move to three equations and three unknowns?"
+  },
+  {
+    "start": 931.98,
+    "duration": 6.63,
+    "text": "Because it's easy to picture the two by two case."
+  },
+  {
+    "start": 938.61,
+    "duration": 2.37,
+    "text": "Let me do a three by three example."
+  },
+  {
+    "start": 940.98,
+    "duration": 2.35,
+    "text": "Okay, I'll sort of start it the same way,"
+  },
+  {
+    "start": 943.33,
+    "duration": 6.88,
+    "text": "say maybe 2x-y and maybe I'll take no zs as a zero and maybe"
+  },
+  {
+    "start": 950.21,
+    "duration": 5.73,
+    "text": "a -x 2y and maybe a -z as a -- oh,"
+  },
+  {
+    "start": 955.94,
+    "duration": 5.19,
+    "text": "let me make that a minus one and, just for variety let me"
+  },
+  {
+    "start": 961.13,
+    "duration": 8.8,
+    "text": "take, -3z, -3ys, I should keep the ys in that line,"
+  },
+  {
+    "start": 969.93,
+    "duration": 4.47,
+    "text": "and 4zs is, say, 4."
+  },
+  {
+    "start": 974.4,
+    "duration": 2.08,
+    "text": "Okay."
+  },
+  {
+    "start": 976.48,
+    "duration": 2.62,
+    "text": "That's three equations."
+  },
+  {
+    "start": 979.1,
+    "duration": 3.28,
+    "text": "I'm in three dimensions, x, y, z."
+  },
+  {
+    "start": 982.38,
+    "duration": 4.83,
+    "text": "And, I don't have a solution yet."
+  },
+  {
+    "start": 987.21,
+    "duration": 5.02,
+    "text": "So I want to understand the equations and then solve them."
+  },
+  {
+    "start": 992.23,
+    "duration": 0.55,
+    "text": "Okay."
+  },
+  {
+    "start": 992.78,
+    "duration": 2.67,
+    "text": "So how do I you understand them?"
+  },
+  {
+    "start": 995.45,
+    "duration": 1.9,
+    "text": "The row picture one way."
+  },
+  {
+    "start": 997.35,
+    "duration": 3.77,
+    "text": "The column picture is another very important way."
+  },
+  {
+    "start": 1001.12,
+    "duration": 2.6,
+    "text": "Just let's remember the matrix form, here,"
+  },
+  {
+    "start": 1003.72,
+    "duration": 1.3,
+    "text": "because that's easy."
+  },
+  {
+    "start": 1005.02,
+    "duration": 4.12,
+    "text": "The matrix form -- what's our matrix A?"
+  },
+  {
+    "start": 1009.14,
+    "duration": 5.14,
+    "text": "Our matrix A is this right-hand side, the two and the minus one"
+  },
+  {
+    "start": 1014.28,
+    "duration": 4.34,
+    "text": "and the zero from the first row, the minus one and the two"
+  },
+  {
+    "start": 1018.62,
+    "duration": 2.16,
+    "text": "and the minus one from the second row,"
+  },
+  {
+    "start": 1020.78,
+    "duration": 7.75,
+    "text": "the zero, the minus three and the four from the third row."
+  },
+  {
+    "start": 1028.53,
+    "duration": 2.52,
+    "text": "So it's a three by three matrix."
+  },
+  {
+    "start": 1031.05,
+    "duration": 1.92,
+    "text": "Three equations, three unknowns."
+  },
+  {
+    "start": 1032.97,
+    "duration": 1.71,
+    "text": "And what's our right-hand side?"
+  },
+  {
+    "start": 1034.68,
+    "duration": 5.51,
+    "text": "Of course, it's the vector, zero minus one, four."
+  },
+  {
+    "start": 1040.19,
+    "duration": 0.99,
+    "text": "Okay."
+  },
+  {
+    "start": 1041.18,
+    "duration": 5.77,
+    "text": "So that's the way, well, that's the short-hand to write out"
+  },
+  {
+    "start": 1046.95,
+    "duration": 1.74,
+    "text": "the three equations."
+  },
+  {
+    "start": 1048.69,
+    "duration": 2.74,
+    "text": "But it's the picture that I'm looking for today."
+  },
+  {
+    "start": 1051.43,
+    "duration": 1.04,
+    "text": "Okay, so the row picture."
+  },
+  {
+    "start": 1052.47,
+    "duration": 5.9,
+    "text": "All right, so I'm in three dimensions, x,"
+  },
+  {
+    "start": 1058.37,
+    "duration": 4.31,
+    "text": "find out when there isn't a solution."
+  },
+  {
+    "start": 1062.68,
+    "duration": 3.27,
+    "text": "y and z."
+  },
+  {
+    "start": 1065.95,
+    "duration": 5.2,
+    "text": "And I want to take those equations one at a time and ask"
+  },
+  {
+    "start": 1071.15,
+    "duration": 0.67,
+    "text": "--"
+  },
+  {
+    "start": 1071.82,
+    "duration": 3.46,
+    "text": "and make a picture of all the points that satisfy --"
+  },
+  {
+    "start": 1075.28,
+    "duration": 2.68,
+    "text": "let's take equation number two."
+  },
+  {
+    "start": 1077.96,
+    "duration": 2.86,
+    "text": "If I make a picture of all the points that satisfy --"
+  },
+  {
+    "start": 1080.82,
+    "duration": 5.08,
+    "text": "all the x, y, z points that solve this equation --"
+  },
+  {
+    "start": 1085.9,
+    "duration": 3.65,
+    "text": "well, first of all, the origin is not one of them."
+  },
+  {
+    "start": 1089.55,
+    "duration": 5.07,
+    "text": "x, y, z -- it being 0, 0, 0 would not solve that equation."
+  },
+  {
+    "start": 1094.62,
+    "duration": 3.17,
+    "text": "So what are some points that do solve the equation?"
+  },
+  {
+    "start": 1097.79,
+    "duration": 5.96,
+    "text": "Let's see, maybe if x is one, y and z could be zero."
+  },
+  {
+    "start": 1103.75,
+    "duration": 1.0,
+    "text": "That would work, right?"
+  },
+  {
+    "start": 1104.75,
+    "duration": 2.12,
+    "text": "So there's one point."
+  },
+  {
+    "start": 1106.87,
+    "duration": 2.65,
+    "text": "I'm looking at this second equation,"
+  },
+  {
+    "start": 1109.52,
+    "duration": 3.6,
+    "text": "here, just, to start with."
+  },
+  {
+    "start": 1113.12,
+    "duration": 0.55,
+    "text": "Let's see."
+  },
+  {
+    "start": 1113.67,
+    "duration": 2.76,
+    "text": "Also, I guess, if z could be one,"
+  },
+  {
+    "start": 1116.43,
+    "duration": 2.28,
+    "text": "x and y could be zero, so that would just"
+  },
+  {
+    "start": 1118.71,
+    "duration": 3.22,
+    "text": "go straight up that axis."
+  },
+  {
+    "start": 1121.93,
+    "duration": 4.95,
+    "text": "And, probably I'd want a third point here."
+  },
+  {
+    "start": 1126.88,
+    "duration": 8.51,
+    "text": "Let me take x to be zero, z to be zero,"
+  },
+  {
+    "start": 1135.39,
+    "duration": 5.01,
+    "text": "then y would be minus a half, right?"
+  },
+  {
+    "start": 1140.4,
+    "duration": 5.72,
+    "text": "So there's a third point, somewhere -- oh my -- okay."
+  },
+  {
+    "start": 1146.12,
+    "duration": 1.78,
+    "text": "Let's see."
+  },
+  {
+    "start": 1147.9,
+    "duration": 5.18,
+    "text": "I want to put in all the points that satisfy that equation."
+  },
+  {
+    "start": 1153.08,
+    "duration": 4.85,
+    "text": "Do you know what that bunch of points will be?"
+  },
+  {
+    "start": 1157.93,
+    "duration": 1.42,
+    "text": "It's a plane."
+  },
+  {
+    "start": 1159.35,
+    "duration": 3.08,
+    "text": "If we have a linear equation, then, fortunately,"
+  },
+  {
+    "start": 1162.43,
+    "duration": 4.64,
+    "text": "the graph of the thing, the plot of all the points that solve it"
+  },
+  {
+    "start": 1167.07,
+    "duration": 3.32,
+    "text": "are a plane."
+  },
+  {
+    "start": 1170.39,
+    "duration": 1.83,
+    "text": "These three points determine a plane,"
+  },
+  {
+    "start": 1172.22,
+    "duration": 5.35,
+    "text": "but your lecturer is not Rembrandt"
+  },
+  {
+    "start": 1177.57,
+    "duration": 5.81,
+    "text": "and the art is going to be the weak point here."
+  },
+  {
+    "start": 1183.38,
+    "duration": 3.08,
+    "text": "So I'm just going to draw a plane, right?"
+  },
+  {
+    "start": 1186.46,
+    "duration": 1.85,
+    "text": "There's a plane somewhere."
+  },
+  {
+    "start": 1188.31,
+    "duration": 2.49,
+    "text": "That's my plane."
+  },
+  {
+    "start": 1190.8,
+    "duration": 4.16,
+    "text": "That plane is all the points that solves this guy."
+  },
+  {
+    "start": 1194.96,
+    "duration": 4.92,
+    "text": "Then, what about this one?"
+  },
+  {
+    "start": 1199.88,
+    "duration": 2.88,
+    "text": "Two x minus y plus zero z."
+  },
+  {
+    "start": 1202.76,
+    "duration": 2.65,
+    "text": "So z actually can be anything."
+  },
+  {
+    "start": 1205.41,
+    "duration": 2.98,
+    "text": "Again, it's going to be another plane."
+  },
+  {
+    "start": 1208.39,
+    "duration": 2.9,
+    "text": "Each row in a three by three problem"
+  },
+  {
+    "start": 1211.29,
+    "duration": 3.19,
+    "text": "gives us a plane in three dimensions."
+  },
+  {
+    "start": 1214.48,
+    "duration": 3.25,
+    "text": "So this one is going to be some other plane --"
+  },
+  {
+    "start": 1217.73,
+    "duration": 2.52,
+    "text": "maybe I'll try to draw it like this."
+  },
+  {
+    "start": 1220.25,
+    "duration": 4.99,
+    "text": "And those two planes meet in a line."
+  },
+  {
+    "start": 1225.24,
+    "duration": 4.04,
+    "text": "So if I have two equations, just the first two"
+  },
+  {
+    "start": 1229.28,
+    "duration": 4.1,
+    "text": "equations in three dimensions, those give me a line."
+  },
+  {
+    "start": 1233.38,
+    "duration": 1.91,
+    "text": "The line where those two planes meet."
+  },
+  {
+    "start": 1235.29,
+    "duration": 6.92,
+    "text": "And now, the third guy is a third plane."
+  },
+  {
+    "start": 1242.21,
+    "duration": 7.08,
+    "text": "And it goes somewhere."
+  },
+  {
+    "start": 1249.29,
+    "duration": 2.53,
+    "text": "Okay, those three things meet in a point."
+  },
+  {
+    "start": 1251.82,
+    "duration": 3.27,
+    "text": "Now I don't know where that point is, frankly."
+  },
+  {
+    "start": 1255.09,
+    "duration": 3.05,
+    "text": "But -- linear algebra will find it."
+  },
+  {
+    "start": 1258.14,
+    "duration": 7.44,
+    "text": "The main point is that the three planes, because they're not"
+  },
+  {
+    "start": 1265.58,
+    "duration": 2.52,
+    "text": "parallel, they're not special."
+  },
+  {
+    "start": 1268.1,
+    "duration": 3.68,
+    "text": "They do meet in one point and that's the solution."
+  },
+  {
+    "start": 1271.78,
+    "duration": 5.13,
+    "text": "But, maybe you can see that this row picture is"
+  },
+  {
+    "start": 1276.91,
+    "duration": 2.21,
+    "text": "getting a little hard to see."
+  },
+  {
+    "start": 1279.12,
+    "duration": 5.4,
+    "text": "The row picture was a cinch when we looked at two lines"
+  },
+  {
+    "start": 1284.52,
+    "duration": 0.7,
+    "text": "meeting."
+  },
+  {
+    "start": 1285.22,
+    "duration": 2.52,
+    "text": "When we look at three planes meeting,"
+  },
+  {
+    "start": 1287.74,
+    "duration": 5.15,
+    "text": "it's not so clear and in four dimensions probably"
+  },
+  {
+    "start": 1292.89,
+    "duration": 1.89,
+    "text": "a little less clear."
+  },
+  {
+    "start": 1294.78,
+    "duration": 2.75,
+    "text": "So, can I quit on the row picture?"
+  },
+  {
+    "start": 1297.53,
+    "duration": 4.34,
+    "text": "Or quit on the row picture before I've successfully"
+  },
+  {
+    "start": 1301.87,
+    "duration": 4.07,
+    "text": "found the point where the three planes meet?"
+  },
+  {
+    "start": 1305.94,
+    "duration": 5.57,
+    "text": "All I really want to see is that the row picture consists"
+  },
+  {
+    "start": 1311.51,
+    "duration": 4.27,
+    "text": "of three planes and, if everything works right,"
+  },
+  {
+    "start": 1315.78,
+    "duration": 3.56,
+    "text": "three planes meet in one point and that's a solution."
+  },
+  {
+    "start": 1319.34,
+    "duration": 5.39,
+    "text": "Now, you can tell I prefer the column picture."
+  },
+  {
+    "start": 1324.73,
+    "duration": 2.26,
+    "text": "Okay, so let me take the column picture."
+  },
+  {
+    "start": 1326.99,
+    "duration": 2.83,
+    "text": "That's x times --"
+  },
+  {
+    "start": 1329.82,
+    "duration": 4.58,
+    "text": "so there were two xs in the first equation minus one x is,"
+  },
+  {
+    "start": 1334.4,
+    "duration": 2.29,
+    "text": "and no xs in the third."
+  },
+  {
+    "start": 1336.69,
+    "duration": 2.31,
+    "text": "It's just the first column of that."
+  },
+  {
+    "start": 1339.0,
+    "duration": 2.3,
+    "text": "And how many ys are there?"
+  },
+  {
+    "start": 1341.3,
+    "duration": 3.43,
+    "text": "There's minus one in the first equations, two in the second"
+  },
+  {
+    "start": 1344.73,
+    "duration": 2.7,
+    "text": "and maybe minus three in the third."
+  },
+  {
+    "start": 1347.43,
+    "duration": 2.4,
+    "text": "Just the second column of my matrix."
+  },
+  {
+    "start": 1349.83,
+    "duration": 7.91,
+    "text": "And z times no zs minus one zs and four zs."
+  },
+  {
+    "start": 1357.74,
+    "duration": 3.53,
+    "text": "And it's those three columns, right,"
+  },
+  {
+    "start": 1361.27,
+    "duration": 5.37,
+    "text": "that I have to combine to produce the right-hand side,"
+  },
+  {
+    "start": 1366.64,
+    "duration": 2.31,
+    "text": "which is zero minus one four."
+  },
+  {
+    "start": 1372.83,
+    "duration": 2.08,
+    "text": "Okay."
+  },
+  {
+    "start": 1374.91,
+    "duration": 3.03,
+    "text": "So what have we got on this left-hand side?"
+  },
+  {
+    "start": 1377.94,
+    "duration": 1.53,
+    "text": "A linear combination."
+  },
+  {
+    "start": 1379.47,
+    "duration": 3.07,
+    "text": "It's a linear combination now of three vectors,"
+  },
+  {
+    "start": 1382.54,
+    "duration": 3.18,
+    "text": "and they happen to be -- each one is a three dimensional"
+  },
+  {
+    "start": 1385.72,
+    "duration": 4.28,
+    "text": "vector, so we want to know what combination of those three"
+  },
+  {
+    "start": 1390.0,
+    "duration": 2.09,
+    "text": "vectors produces that one."
+  },
+  {
+    "start": 1392.09,
+    "duration": 3.73,
+    "text": "Shall I try to draw the column picture, then?"
+  },
+  {
+    "start": 1395.82,
+    "duration": 3.01,
+    "text": "So, since these vectors have three components --"
+  },
+  {
+    "start": 1398.83,
+    "duration": 2.83,
+    "text": "so it's some multiple -- let me draw in the first column"
+  },
+  {
+    "start": 1401.66,
+    "duration": 1.68,
+    "text": "as before --"
+  },
+  {
+    "start": 1403.34,
+    "duration": 3.95,
+    "text": "x is two and y is minus one."
+  },
+  {
+    "start": 1407.29,
+    "duration": 1.33,
+    "text": "Maybe there is the first column."
+  },
+  {
+    "start": 1412.32,
+    "duration": 6.25,
+    "text": "y -- the second column has maybe a minus one and a two and the y"
+  },
+  {
+    "start": 1418.57,
+    "duration": 5.61,
+    "text": "is a minus three, somewhere, there possibly, column two."
+  },
+  {
+    "start": 1424.18,
+    "duration": 2.77,
+    "text": "And the third column has --"
+  },
+  {
+    "start": 1426.95,
+    "duration": 5.81,
+    "text": "no zero minus one four, so how shall I draw that?"
+  },
+  {
+    "start": 1432.76,
+    "duration": 4.24,
+    "text": "So this was the first component."
+  },
+  {
+    "start": 1437.0,
+    "duration": 2.23,
+    "text": "The second component was a minus one."
+  },
+  {
+    "start": 1439.23,
+    "duration": 2.04,
+    "text": "Maybe up here."
+  },
+  {
+    "start": 1441.27,
+    "duration": 7.65,
+    "text": "That's column three, that's the column zero minus one and four."
+  },
+  {
+    "start": 1448.92,
+    "duration": 0.5,
+    "text": "This guy."
+  },
+  {
+    "start": 1452.05,
+    "duration": 3.38,
+    "text": "So, again, what's my problem?"
+  },
+  {
+    "start": 1455.43,
+    "duration": 2.83,
+    "text": "What this equation is asking me to do"
+  },
+  {
+    "start": 1458.26,
+    "duration": 3.08,
+    "text": "is to combine these three vectors"
+  },
+  {
+    "start": 1461.34,
+    "duration": 6.56,
+    "text": "with a right combination to produce this one."
+  },
+  {
+    "start": 1467.9,
+    "duration": 5.72,
+    "text": "Well, you can see what the right combination is, because"
+  },
+  {
+    "start": 1473.62,
+    "duration": 4.63,
+    "text": "in this special problem, specially chosen"
+  },
+  {
+    "start": 1478.25,
+    "duration": 4.53,
+    "text": "by the lecturer, that right-hand side that I'm trying to get"
+  },
+  {
+    "start": 1482.78,
+    "duration": 2.28,
+    "text": "is actually one of these columns."
+  },
+  {
+    "start": 1485.06,
+    "duration": 1.6,
+    "text": "So I know how to get that one."
+  },
+  {
+    "start": 1486.66,
+    "duration": 1.76,
+    "text": "So what's the solution?"
+  },
+  {
+    "start": 1488.42,
+    "duration": 2.49,
+    "text": "What combination will work?"
+  },
+  {
+    "start": 1490.91,
+    "duration": 3.03,
+    "text": "I just want one of these and none of these."
+  },
+  {
+    "start": 1493.94,
+    "duration": 5.13,
+    "text": "So x should be zero, y should be zero and z should"
+  },
+  {
+    "start": 1499.07,
+    "duration": 0.97,
+    "text": "be one."
+  },
+  {
+    "start": 1502.86,
+    "duration": 1.66,
+    "text": "That's the combination."
+  },
+  {
+    "start": 1504.52,
+    "duration": 3.08,
+    "text": "One of those is obviously the right one."
+  },
+  {
+    "start": 1507.6,
+    "duration": 2.27,
+    "text": "Column three is actually the same"
+  },
+  {
+    "start": 1509.87,
+    "duration": 2.22,
+    "text": "as b in this particular problem."
+  },
+  {
+    "start": 1515.64,
+    "duration": 2.22,
+    "text": "I made it work that way just so we"
+  },
+  {
+    "start": 1517.86,
+    "duration": 3.91,
+    "text": "would get an answer, (0,0,1), so somehow that's"
+  },
+  {
+    "start": 1521.77,
+    "duration": 4.12,
+    "text": "the point where those three planes met"
+  },
+  {
+    "start": 1525.89,
+    "duration": 2.82,
+    "text": "and I couldn't see it before."
+  },
+  {
+    "start": 1528.71,
+    "duration": 3.12,
+    "text": "Of course, I won't always be able to see it from the column"
+  },
+  {
+    "start": 1531.83,
+    "duration": 1.34,
+    "text": "picture, either."
+  },
+  {
+    "start": 1533.17,
+    "duration": 6.22,
+    "text": "It's the next lecture, actually, which is about elimination,"
+  },
+  {
+    "start": 1539.39,
+    "duration": 7.28,
+    "text": "which is the systematic way that everybody --"
+  },
+  {
+    "start": 1546.67,
+    "duration": 5.28,
+    "text": "every bit of software, too --"
+  },
+  {
+    "start": 1551.95,
+    "duration": 4.88,
+    "text": "production, large-scale software would solve the equations."
+  },
+  {
+    "start": 1556.83,
+    "duration": 2.19,
+    "text": "So the lecture that's coming up."
+  },
+  {
+    "start": 1559.02,
+    "duration": 3.43,
+    "text": "If I was to add that to the syllabus,"
+  },
+  {
+    "start": 1562.45,
+    "duration": 6.6,
+    "text": "will be about how to find x, y, z in all cases."
+  },
+  {
+    "start": 1569.05,
+    "duration": 6.06,
+    "text": "Can I just think again, though, about the big picture?"
+  },
+  {
+    "start": 1575.11,
+    "duration": 3.8,
+    "text": "By the big picture I mean let's keep this same matrix"
+  },
+  {
+    "start": 1578.91,
+    "duration": 3.08,
+    "text": "on the left but imagine that we have"
+  },
+  {
+    "start": 1581.99,
+    "duration": 2.26,
+    "text": "a different right-hand side."
+  },
+  {
+    "start": 1584.25,
+    "duration": 3.18,
+    "text": "Oh, let me take a different right-hand side."
+  },
+  {
+    "start": 1587.43,
+    "duration": 1.67,
+    "text": "So I'll change that right-hand side"
+  },
+  {
+    "start": 1589.1,
+    "duration": 5.51,
+    "text": "to something that actually is also pretty special."
+  },
+  {
+    "start": 1594.61,
+    "duration": 2.2,
+    "text": "Let me change it to --"
+  },
+  {
+    "start": 1596.81,
+    "duration": 2.13,
+    "text": "if I add those first two columns,"
+  },
+  {
+    "start": 1598.94,
+    "duration": 4.28,
+    "text": "that would give me a one and a one and a minus three."
+  },
+  {
+    "start": 1603.22,
+    "duration": 2.99,
+    "text": "There's a very special right-hand side."
+  },
+  {
+    "start": 1606.21,
+    "duration": 5.21,
+    "text": "I just cooked it up by adding this one to this one."
+  },
+  {
+    "start": 1611.42,
+    "duration": 3.22,
+    "text": "Now, what's the solution with this new right-hand side?"
+  },
+  {
+    "start": 1614.64,
+    "duration": 4.32,
+    "text": "The solution with this new right-hand side is clear."
+  },
+  {
+    "start": 1618.96,
+    "duration": 5.92,
+    "text": "took one of these and none of those."
+  },
+  {
+    "start": 1624.88,
+    "duration": 3.15,
+    "text": "So actually, it just changed around to this"
+  },
+  {
+    "start": 1628.03,
+    "duration": 3.12,
+    "text": "when I took this new right-hand side."
+  },
+  {
+    "start": 1631.15,
+    "duration": 0.86,
+    "text": "Okay."
+  },
+  {
+    "start": 1632.01,
+    "duration": 7.06,
+    "text": "So in the row picture, I have three different planes,"
+  },
+  {
+    "start": 1639.07,
+    "duration": 4.73,
+    "text": "three new planes meeting now at this point."
+  },
+  {
+    "start": 1643.8,
+    "duration": 3.2,
+    "text": "In the column picture, I have the same three columns,"
+  },
+  {
+    "start": 1647.0,
+    "duration": 3.64,
+    "text": "but now I'm combining them to produce this guy,"
+  },
+  {
+    "start": 1650.64,
+    "duration": 3.46,
+    "text": "and it turned out that column one plus column two which would"
+  },
+  {
+    "start": 1654.1,
+    "duration": 4.4,
+    "text": "be somewhere -- there is the right column --"
+  },
+  {
+    "start": 1658.5,
+    "duration": 3.76,
+    "text": "one of this and one of this would give me the new b."
+  },
+  {
+    "start": 1665.19,
+    "duration": 0.5,
+    "text": "Okay."
+  },
+  {
+    "start": 1665.69,
+    "duration": 3.04,
+    "text": "So we squeezed in an extra example."
+  },
+  {
+    "start": 1668.73,
+    "duration": 7.24,
+    "text": "But now think about all bs, all right-hand sides."
+  },
+  {
+    "start": 1675.97,
+    "duration": 2.95,
+    "text": "Can I solve these equations for every right-hand side?"
+  },
+  {
+    "start": 1682.03,
+    "duration": 2.95,
+    "text": "Can I ask that question?"
+  },
+  {
+    "start": 1684.98,
+    "duration": 2.04,
+    "text": "So that's the algebra question."
+  },
+  {
+    "start": 1687.02,
+    "duration": 4.85,
+    "text": "Can I solve A x=b for every b?"
+  },
+  {
+    "start": 1691.87,
+    "duration": 1.62,
+    "text": "Let me write that down."
+  },
+  {
+    "start": 1693.49,
+    "duration": 10.83,
+    "text": "Can I solve A x =b for every right-hand side b?"
+  },
+  {
+    "start": 1704.32,
+    "duration": 2.1,
+    "text": "I mean, is there a solution?"
+  },
+  {
+    "start": 1706.42,
+    "duration": 3.25,
+    "text": "And then, if there is, elimination"
+  },
+  {
+    "start": 1709.67,
+    "duration": 2.27,
+    "text": "will give me a way to find it."
+  },
+  {
+    "start": 1711.94,
+    "duration": 2.58,
+    "text": "I really wanted to ask, is there a solution"
+  },
+  {
+    "start": 1714.52,
+    "duration": 2.33,
+    "text": "for every right-hand side?"
+  },
+  {
+    "start": 1716.85,
+    "duration": 3.54,
+    "text": "So now, can I put that in different words --"
+  },
+  {
+    "start": 1720.39,
+    "duration": 2.75,
+    "text": "in this linear combination words?"
+  },
+  {
+    "start": 1723.14,
+    "duration": 9.37,
+    "text": "So in linear combination words, do the linear combinations"
+  },
+  {
+    "start": 1732.51,
+    "duration": 10.55,
+    "text": "of the columns fill three dimensional space?"
+  },
+  {
+    "start": 1745.74,
+    "duration": 6.76,
+    "text": "Every b means all the bs in three dimensional space."
+  },
+  {
+    "start": 1752.5,
+    "duration": 3.55,
+    "text": "Do you see that I'm just asking the same question"
+  },
+  {
+    "start": 1756.05,
+    "duration": 3.55,
+    "text": "in different words?"
+  },
+  {
+    "start": 1759.6,
+    "duration": 1.44,
+    "text": "Solving A x --"
+  },
+  {
+    "start": 1761.04,
+    "duration": 3.98,
+    "text": "A x -- that's very important."
+  },
+  {
+    "start": 1765.02,
+    "duration": 6.77,
+    "text": "A times x -- when I multiply a matrix by a vector,"
+  },
+  {
+    "start": 1771.79,
+    "duration": 3.15,
+    "text": "I get a combination of the columns."
+  },
+  {
+    "start": 1774.94,
+    "duration": 3.71,
+    "text": "I'll write that down in a moment."
+  },
+  {
+    "start": 1778.65,
+    "duration": 4.9,
+    "text": "But in my column picture, that's really what I'm doing."
+  },
+  {
+    "start": 1783.55,
+    "duration": 3.53,
+    "text": "I'm taking linear combinations of these three columns"
+  },
+  {
+    "start": 1787.08,
+    "duration": 3.54,
+    "text": "and I'm trying to find b."
+  },
+  {
+    "start": 1790.62,
+    "duration": 7.13,
+    "text": "And, actually, the answer for this matrix will be yes."
+  },
+  {
+    "start": 1797.75,
+    "duration": 6.58,
+    "text": "For this matrix A -- for these columns, the answer is yes."
+  },
+  {
+    "start": 1804.33,
+    "duration": 15.26,
+    "text": "This matrix -- that I chose for an example is a good matrix."
+  },
+  {
+    "start": 1819.59,
+    "duration": 2.19,
+    "text": "A non-singular matrix."
+  },
+  {
+    "start": 1821.78,
+    "duration": 1.4,
+    "text": "An invertible matrix."
+  },
+  {
+    "start": 1823.18,
+    "duration": 3.52,
+    "text": "Those will be the matrices that we like best."
+  },
+  {
+    "start": 1826.7,
+    "duration": 2.79,
+    "text": "There could be other --"
+  },
+  {
+    "start": 1829.49,
+    "duration": 5.58,
+    "text": "and we will see other matrices where the answer becomes, no --"
+  },
+  {
+    "start": 1835.07,
+    "duration": 3.25,
+    "text": "oh, actually, you can see when it would become no."
+  },
+  {
+    "start": 1838.32,
+    "duration": 5.57,
+    "text": "What could go wrong? find out -- because if elimination fails,"
+  },
+  {
+    "start": 1843.89,
+    "duration": 2.93,
+    "text": "How could it go wrong that out of these --"
+  },
+  {
+    "start": 1846.82,
+    "duration": 4.49,
+    "text": "out of three columns and all their combinations --"
+  },
+  {
+    "start": 1851.31,
+    "duration": 7.08,
+    "text": "when would I not be able to produce some b off here?"
+  },
+  {
+    "start": 1858.39,
+    "duration": 2.22,
+    "text": "When could it go wrong?"
+  },
+  {
+    "start": 1860.61,
+    "duration": 3.74,
+    "text": "Do you see that the combinations --"
+  },
+  {
+    "start": 1864.35,
+    "duration": 2.02,
+    "text": "let me say when it goes wrong."
+  },
+  {
+    "start": 1866.37,
+    "duration": 5.94,
+    "text": "If these three columns all lie in the same plane,"
+  },
+  {
+    "start": 1872.31,
+    "duration": 5.8,
+    "text": "then their combinations will lie in that same plane."
+  },
+  {
+    "start": 1878.11,
+    "duration": 1.53,
+    "text": "So then we're in trouble."
+  },
+  {
+    "start": 1879.64,
+    "duration": 4.24,
+    "text": "If the three columns of my matrix --"
+  },
+  {
+    "start": 1883.88,
+    "duration": 4.3,
+    "text": "if those three vectors happen to lie in the same plane --"
+  },
+  {
+    "start": 1888.18,
+    "duration": 2.91,
+    "text": "for example, if column three is just"
+  },
+  {
+    "start": 1891.09,
+    "duration": 5.27,
+    "text": "the sum of column one and column two, I would be in trouble."
+  },
+  {
+    "start": 1896.36,
+    "duration": 3.7,
+    "text": "That would be a matrix A where the answer would be no,"
+  },
+  {
+    "start": 1900.06,
+    "duration": 4.3,
+    "text": "because the combinations --"
+  },
+  {
+    "start": 1904.36,
+    "duration": 3.9,
+    "text": "if column three is in the same plane as column one and two,"
+  },
+  {
+    "start": 1908.26,
+    "duration": 1.99,
+    "text": "I don't get anything new from that."
+  },
+  {
+    "start": 1910.25,
+    "duration": 4.36,
+    "text": "All the combinations are in the plane and only right-hand sides"
+  },
+  {
+    "start": 1914.61,
+    "duration": 5.4,
+    "text": "b that I could get would be the ones in that plane."
+  },
+  {
+    "start": 1920.01,
+    "duration": 3.67,
+    "text": "So I could solve it for some right-hand sides, when"
+  },
+  {
+    "start": 1923.68,
+    "duration": 4.64,
+    "text": "b is in the plane, but most right-hand sides"
+  },
+  {
+    "start": 1928.32,
+    "duration": 2.95,
+    "text": "would be out of the plane and unreachable."
+  },
+  {
+    "start": 1931.27,
+    "duration": 2.92,
+    "text": "So that would be a singular case."
+  },
+  {
+    "start": 1934.19,
+    "duration": 2.64,
+    "text": "The matrix would be not invertible."
+  },
+  {
+    "start": 1936.83,
+    "duration": 2.98,
+    "text": "There would not be a solution for every b."
+  },
+  {
+    "start": 1939.81,
+    "duration": 2.7,
+    "text": "The answer would become no for that."
+  },
+  {
+    "start": 1942.51,
+    "duration": 0.5,
+    "text": "Okay."
+  },
+  {
+    "start": 1945.74,
+    "duration": 1.3,
+    "text": "I don't know --"
+  },
+  {
+    "start": 1947.04,
+    "duration": 2.15,
+    "text": "shall we take just a little shot at thinking"
+  },
+  {
+    "start": 1949.19,
+    "duration": 5.32,
+    "text": "about nine dimensions?"
+  },
+  {
+    "start": 1954.51,
+    "duration": 4.13,
+    "text": "Imagine that we have vectors with nine components."
+  },
+  {
+    "start": 1961.17,
+    "duration": 3.75,
+    "text": "Well, it's going to be hard to visualize those."
+  },
+  {
+    "start": 1964.92,
+    "duration": 1.88,
+    "text": "I don't pretend to do it."
+  },
+  {
+    "start": 1966.8,
+    "duration": 5.15,
+    "text": "But somehow, pretend you do."
+  },
+  {
+    "start": 1971.95,
+    "duration": 3.66,
+    "text": "Pretend we have -- if this was nine equations and nine"
+  },
+  {
+    "start": 1975.61,
+    "duration": 3.65,
+    "text": "unknowns, then we would have nine columns,"
+  },
+  {
+    "start": 1979.26,
+    "duration": 3.46,
+    "text": "and each one would be a vector in nine-dimensional space"
+  },
+  {
+    "start": 1982.72,
+    "duration": 4.21,
+    "text": "and we would be looking at their linear combinations."
+  },
+  {
+    "start": 1986.93,
+    "duration": 2.41,
+    "text": "So we would be having the linear combinations"
+  },
+  {
+    "start": 1989.34,
+    "duration": 2.98,
+    "text": "of nine vectors in nine-dimensional space,"
+  },
+  {
+    "start": 1992.32,
+    "duration": 3.06,
+    "text": "and we would be trying to find the combination that hit"
+  },
+  {
+    "start": 1995.38,
+    "duration": 2.62,
+    "text": "the correct right-hand side b."
+  },
+  {
+    "start": 1998.0,
+    "duration": 4.99,
+    "text": "And we might also ask the question can we always do it?"
+  },
+  {
+    "start": 2002.99,
+    "duration": 2.39,
+    "text": "Can we get every right-hand side b?"
+  },
+  {
+    "start": 2005.38,
+    "duration": 4.46,
+    "text": "And certainly it will depend on those nine columns."
+  },
+  {
+    "start": 2009.84,
+    "duration": 2.64,
+    "text": "Sometimes the answer will be yes --"
+  },
+  {
+    "start": 2012.48,
+    "duration": 3.02,
+    "text": "if I picked a random matrix, it would be yes, actually."
+  },
+  {
+    "start": 2015.5,
+    "duration": 4.13,
+    "text": "If I used MatLab and just used the random command, picked"
+  },
+  {
+    "start": 2019.63,
+    "duration": 5.19,
+    "text": "out a nine by nine matrix, I guarantee it would be"
+  },
+  {
+    "start": 2024.82,
+    "duration": 0.5,
+    "text": "good."
+  },
+  {
+    "start": 2025.32,
+    "duration": 1.82,
+    "text": "It would be non-singular, it would"
+  },
+  {
+    "start": 2027.14,
+    "duration": 2.13,
+    "text": "be invertible, all beautiful."
+  },
+  {
+    "start": 2029.27,
+    "duration": 11.48,
+    "text": "But if I choose those columns so that they're not independent,"
+  },
+  {
+    "start": 2040.75,
+    "duration": 5.04,
+    "text": "so that the ninth column is the same as the eighth column,"
+  },
+  {
+    "start": 2045.79,
+    "duration": 3.23,
+    "text": "then it contributes nothing new and there"
+  },
+  {
+    "start": 2049.02,
+    "duration": 4.06,
+    "text": "would be right-hand sides b that I couldn't get."
+  },
+  {
+    "start": 2053.08,
+    "duration": 5.13,
+    "text": "Can you sort of think about nine vectors"
+  },
+  {
+    "start": 2058.21,
+    "duration": 3.84,
+    "text": "in nine-dimensional space an take their combinations?"
+  },
+  {
+    "start": 2062.05,
+    "duration": 4.41,
+    "text": "That's really the central thought --"
+  },
+  {
+    "start": 2066.46,
+    "duration": 4.46,
+    "text": "that you get kind of used to in linear algebra."
+  },
+  {
+    "start": 2070.92,
+    "duration": 2.42,
+    "text": "Even though you can't really visualize it,"
+  },
+  {
+    "start": 2073.34,
+    "duration": 2.8,
+    "text": "you sort of think you can after a while."
+  },
+  {
+    "start": 2076.14,
+    "duration": 4.69,
+    "text": "Those nine columns and all their combinations"
+  },
+  {
+    "start": 2080.83,
+    "duration": 4.2,
+    "text": "may very well fill out the whole nine-dimensional space."
+  },
+  {
+    "start": 2085.03,
+    "duration": 3.21,
+    "text": "But if the ninth column happened to be the same as the eighth"
+  },
+  {
+    "start": 2088.24,
+    "duration": 2.85,
+    "text": "column and gave nothing new, then probably what it would"
+  },
+  {
+    "start": 2091.09,
+    "duration": 2.01,
+    "text": "fill out would be --"
+  },
+  {
+    "start": 2095.82,
+    "duration": 7.25,
+    "text": "I hesitate even to say this -- it would be a sort of a plane"
+  },
+  {
+    "start": 2103.07,
+    "duration": 1.25,
+    "text": "--"
+  },
+  {
+    "start": 2104.32,
+    "duration": 5.71,
+    "text": "an eight dimensional plane inside nine-dimensional space."
+  },
+  {
+    "start": 2110.03,
+    "duration": 2.86,
+    "text": "And it's those eight dimensional planes"
+  },
+  {
+    "start": 2112.89,
+    "duration": 3.15,
+    "text": "inside nine-dimensional space that we"
+  },
+  {
+    "start": 2116.04,
+    "duration": 2.79,
+    "text": "have to work with eventually."
+  },
+  {
+    "start": 2118.83,
+    "duration": 7.14,
+    "text": "For now, let's stay with a nice case where the matrices work,"
+  },
+  {
+    "start": 2125.97,
+    "duration": 4.01,
+    "text": "we can get every right-hand side b and here"
+  },
+  {
+    "start": 2129.98,
+    "duration": 2.37,
+    "text": "we see how to do it with columns."
+  },
+  {
+    "start": 2132.35,
+    "duration": 0.81,
+    "text": "Okay."
+  },
+  {
+    "start": 2133.16,
+    "duration": 3.36,
+    "text": "There was one step which I realized"
+  },
+  {
+    "start": 2136.52,
+    "duration": 4.69,
+    "text": "I was saying in words that I now want to write in letters."
+  },
+  {
+    "start": 2141.21,
+    "duration": 4.54,
+    "text": "Because I'm coming back to the matrix form of the equation,"
+  },
+  {
+    "start": 2145.75,
+    "duration": 3.46,
+    "text": "so let me write it here."
+  },
+  {
+    "start": 2149.21,
+    "duration": 5.06,
+    "text": "The matrix form of my equation, of my system"
+  },
+  {
+    "start": 2154.27,
+    "duration": 3.7,
+    "text": "is some matrix A times some vector x"
+  },
+  {
+    "start": 2157.97,
+    "duration": 2.95,
+    "text": "equals some right-hand side b."
+  },
+  {
+    "start": 2160.92,
+    "duration": 1.03,
+    "text": "Okay."
+  },
+  {
+    "start": 2161.95,
+    "duration": 1.5,
+    "text": "So this is a multiplication."
+  },
+  {
+    "start": 2163.45,
+    "duration": 1.07,
+    "text": "A times x."
+  },
+  {
+    "start": 2164.52,
+    "duration": 2.91,
+    "text": "Matrix times vector, and I just want to say"
+  },
+  {
+    "start": 2167.43,
+    "duration": 4.19,
+    "text": "how do you multiply a matrix by a vector?"
+  },
+  {
+    "start": 2171.62,
+    "duration": 4.93,
+    "text": "Okay, so I'm just going to create a matrix --"
+  },
+  {
+    "start": 2176.55,
+    "duration": 5.09,
+    "text": "let me take two five one three --"
+  },
+  {
+    "start": 2181.64,
+    "duration": 6.5,
+    "text": "and let me take a vector x to be, say, 1and 2."
+  },
+  {
+    "start": 2188.14,
+    "duration": 3.36,
+    "text": "How do I multiply a matrix by a vector?"
+  },
+  {
+    "start": 2194.15,
+    "duration": 6.38,
+    "text": "But just think a little bit about matrix notation"
+  },
+  {
+    "start": 2200.53,
+    "duration": 1.59,
+    "text": "and how to do that in multiplication."
+  },
+  {
+    "start": 2202.12,
+    "duration": 3.27,
+    "text": "So let me say how I multiply a matrix by a vector."
+  },
+  {
+    "start": 2205.39,
+    "duration": 2.37,
+    "text": "Actually, there are two ways to do it."
+  },
+  {
+    "start": 2207.76,
+    "duration": 2.67,
+    "text": "Let me tell you my favorite way."
+  },
+  {
+    "start": 2210.43,
+    "duration": 2.34,
+    "text": "It's columns again."
+  },
+  {
+    "start": 2212.77,
+    "duration": 1.95,
+    "text": "It's a column at a time."
+  },
+  {
+    "start": 2214.72,
+    "duration": 3.26,
+    "text": "For me, this matrix multiplication"
+  },
+  {
+    "start": 2217.98,
+    "duration": 5.31,
+    "text": "says I take one of that column and two of that column and add."
+  },
+  {
+    "start": 2223.29,
+    "duration": 3.48,
+    "text": "So this is the way I would think of it"
+  },
+  {
+    "start": 2226.77,
+    "duration": 6.05,
+    "text": "is one of the first column and two of the second column"
+  },
+  {
+    "start": 2232.82,
+    "duration": 4.48,
+    "text": "and let's just see what we get."
+  },
+  {
+    "start": 2237.3,
+    "duration": 4.21,
+    "text": "So in the first component I'm getting a two and a ten."
+  },
+  {
+    "start": 2241.51,
+    "duration": 1.96,
+    "text": "I'm getting a twelve there."
+  },
+  {
+    "start": 2243.47,
+    "duration": 2.75,
+    "text": "In the second component I'm getting a one and a six,"
+  },
+  {
+    "start": 2246.22,
+    "duration": 1.64,
+    "text": "I'm getting a seven."
+  },
+  {
+    "start": 2247.86,
+    "duration": 7.6,
+    "text": "So that matrix times that vector is twelve seven."
+  },
+  {
+    "start": 2255.46,
+    "duration": 3.75,
+    "text": "Now, you could do that another way."
+  },
+  {
+    "start": 2259.21,
+    "duration": 1.33,
+    "text": "You could do it a row at a time."
+  },
+  {
+    "start": 2260.54,
+    "duration": 3.22,
+    "text": "And you would get this twelve -- and actually I pretty much did"
+  },
+  {
+    "start": 2263.76,
+    "duration": 1.21,
+    "text": "it here --"
+  },
+  {
+    "start": 2264.97,
+    "duration": 0.74,
+    "text": "this way."
+  },
+  {
+    "start": 2265.71,
+    "duration": 2.76,
+    "text": "Two -- I could take that row times my vector."
+  },
+  {
+    "start": 2268.47,
+    "duration": 4.71,
+    "text": "This is the idea of a dot product."
+  },
+  {
+    "start": 2273.18,
+    "duration": 4.96,
+    "text": "This vector times this vector, two times one plus five times"
+  },
+  {
+    "start": 2278.14,
+    "duration": 2.58,
+    "text": "two is the twelve."
+  },
+  {
+    "start": 2280.72,
+    "duration": 3.89,
+    "text": "This vector times this vector -- one times one plus three times"
+  },
+  {
+    "start": 2284.61,
+    "duration": 1.39,
+    "text": "two is the seven."
+  },
+  {
+    "start": 2286.0,
+    "duration": 5.81,
+    "text": "So I can do it by rows, and in each row times"
+  },
+  {
+    "start": 2291.81,
+    "duration": 4.55,
+    "text": "my x is what I'll later call a dot product."
+  },
+  {
+    "start": 2296.36,
+    "duration": 3.07,
+    "text": "But I also like to see it by columns."
+  },
+  {
+    "start": 2299.43,
+    "duration": 3.06,
+    "text": "I see this as a linear combination of a column."
+  },
+  {
+    "start": 2302.49,
+    "duration": 1.64,
+    "text": "So here's my point."
+  },
+  {
+    "start": 2304.13,
+    "duration": 12.05,
+    "text": "A times x is a combination of the columns of A."
+  },
+  {
+    "start": 2316.18,
+    "duration": 7.47,
+    "text": "That's how I hope you will think of A times x when we need"
+  },
+  {
+    "start": 2323.65,
+    "duration": 0.5,
+    "text": "it."
+  },
+  {
+    "start": 2324.15,
+    "duration": 3.08,
+    "text": "Right now we've got -- with small ones,"
+  },
+  {
+    "start": 2327.23,
+    "duration": 4.16,
+    "text": "we can always do it in different ways, but later,"
+  },
+  {
+    "start": 2331.39,
+    "duration": 2.54,
+    "text": "think of it that way."
+  },
+  {
+    "start": 2333.93,
+    "duration": 0.55,
+    "text": "Okay."
+  },
+  {
+    "start": 2334.48,
+    "duration": 7.54,
+    "text": "So that's the picture for a two by two system."
+  },
+  {
+    "start": 2342.02,
+    "duration": 3.95,
+    "text": "And if the right-hand side B happened to be twelve seven,"
+  },
+  {
+    "start": 2345.97,
+    "duration": 6.14,
+    "text": "then of course the correct solution would be one two."
+  },
+  {
+    "start": 2352.11,
+    "duration": 0.5,
+    "text": "Okay."
+  },
+  {
+    "start": 2352.61,
+    "duration": 5.34,
+    "text": "So let me come back next time to a systematic way,"
+  },
+  {
+    "start": 2357.95,
+    "duration": 7.33,
+    "text": "using elimination, to find the solution, if there is one,"
+  },
+  {
+    "start": 2365.28,
+    "duration": 6.88,
+    "text": "to a system of any size and find out--"
+  },
+  {
+    "start": 2372.16,
+    "duration": 3.3,
+    "text": "because the system-- because if elimination fails--"
+  },
+  {
+    "start": 2375.46,
+    "duration": 3.9,
+    "text": "find out when there isn't a solution."
+  },
+  {
+    "start": 2379.36,
+    "duration": 0.6,
+    "text": "Okay."
+  },
+  {
+    "start": 2379.96,
+    "duration": 1.55,
+    "text": "Thanks."
+  }
+]

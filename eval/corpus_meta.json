@@ -1,0 +1,141 @@
+{
+  "corpus_version": "1.0",
+  "target_questions_per_video": 12,
+  "tiers": {
+    "tier_a_curated": {
+      "description": "High-production educational videos with curated captions and clean visual pacing",
+      "videos": [
+        {
+          "tag": "3b1b_nn",
+          "speaker": "Grant Sanderson",
+          "institution": "3Blue1Brown",
+          "video_id": "aircAruvnKk",
+          "title": "But what is a neural network? | Chapter 1, Deep learning",
+          "domain": "Deep Learning Fundamentals"
+        },
+        {
+          "tag": "karpathy_intro_llm",
+          "speaker": "Andrej Karpathy",
+          "institution": "Independent",
+          "video_id": "zjkBMFhNj_g",
+          "title": "[1hr Talk] Intro to Large Language Models",
+          "domain": "Natural Language Processing"
+        },
+        {
+          "tag": "statquest_transformer",
+          "speaker": "Josh Starmer",
+          "institution": "StatQuest",
+          "video_id": "zxQyTK8quyY",
+          "title": "Transformer Neural Networks, ChatGPT's foundation",
+          "domain": "Transformers & Attention"
+        },
+        {
+          "tag": "statquest_neural_net",
+          "speaker": "Josh Starmer",
+          "institution": "StatQuest",
+          "video_id": "CqOfi41LfDw",
+          "title": "The Essential Main Ideas of Neural Networks",
+          "domain": "Neural Network Fundamentals"
+        },
+        {
+          "tag": "fastai_practical_dl",
+          "speaker": "Jeremy Howard",
+          "institution": "Fast.ai",
+          "video_id": "8SF_h3xF3cE",
+          "title": "Practical Deep Learning for Coders: Lesson 1",
+          "domain": "Applied Deep Learning"
+        }
+      ]
+    },
+    "tier_b_us_classroom": {
+      "description": "Standard US university auditorium and blackboard lectures",
+      "videos": [
+        {
+          "tag": "stanford_cs229",
+          "speaker": "Andrew Ng",
+          "institution": "Stanford University",
+          "video_id": "jGwO_UgTS7I",
+          "title": "Stanford CS229: Machine Learning Lecture 1",
+          "domain": "Machine Learning Foundations"
+        },
+        {
+          "tag": "mit_6s191",
+          "speaker": "Alexander Amini",
+          "institution": "MIT",
+          "video_id": "II4giR4vOOo",
+          "title": "MIT Introduction to Deep Learning | 6.S191 Lecture 1",
+          "domain": "Deep Learning Foundations"
+        },
+        {
+          "tag": "mit_strang_linear_algebra",
+          "speaker": "Gilbert Strang",
+          "institution": "MIT OpenCourseWare",
+          "video_id": "J7DzL2_Na80",
+          "title": "1. The Geometry of Linear Equations",
+          "domain": "Linear Algebra for ML"
+        },
+        {
+          "tag": "karpathy_makemore",
+          "speaker": "Andrej Karpathy",
+          "institution": "Independent",
+          "video_id": "PaCmpygFfXo",
+          "title": "The spelled-out intro to language modeling: building makemore",
+          "domain": "Language Modeling"
+        },
+        {
+          "tag": "andrew_ng_ai_opp",
+          "speaker": "Andrew Ng",
+          "institution": "Stanford / AI Fund",
+          "video_id": "5p248yoa3oE",
+          "title": "Andrew Ng: Opportunities in AI - 2023",
+          "domain": "AI Industry Trends"
+        }
+      ]
+    },
+    "tier_c_indian_nptel": {
+      "description": "Indian-accented technical English lectures from NPTEL IITs and Indian tech educators",
+      "videos": [
+        {
+          "tag": "nptel_ml_iitm",
+          "speaker": "Prof. Balaraman Ravindran",
+          "institution": "IIT Madras (NPTEL)",
+          "video_id": "YLczBemZpaE",
+          "title": "Introduction to the Machine Learning Course",
+          "domain": "Machine Learning"
+        },
+        {
+          "tag": "nptel_ai_khemani",
+          "speaker": "Prof. Deepak Khemani",
+          "institution": "IIT Madras (NPTEL)",
+          "video_id": "zT0sGjOSPt8",
+          "title": "1.1 - Artificial Intelligence - Introduction",
+          "domain": "Classical AI & Search"
+        },
+        {
+          "tag": "krish_naik_ml",
+          "speaker": "Krish Naik",
+          "institution": "iNeuron / Independent",
+          "video_id": "MJ1vWb1rGwM",
+          "title": "End To End Machine Learning Project Implementation",
+          "domain": "MLOps & Engineering"
+        },
+        {
+          "tag": "nptel_nlp_iitkgp",
+          "speaker": "Prof. Pawan Goyal",
+          "institution": "IIT Kharagpur (NPTEL)",
+          "video_id": "r_E6bX7fD0s",
+          "title": "NOC: Natural Language Processing - Lecture 1",
+          "domain": "Natural Language Processing"
+        },
+        {
+          "tag": "nptel_ds_eng_iitm",
+          "speaker": "Prof. Raghunathan Rengaswamy",
+          "institution": "IIT Madras (NPTEL)",
+          "video_id": "p_9rE_Xw2eI",
+          "title": "Data Science for Engineers - Course Introduction",
+          "domain": "Data Science Foundations"
+        }
+      ]
+    }
+  }
+}

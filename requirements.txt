@@ -1,0 +1,12 @@
+streamlit
+pandas
+python-dotenv
+youtube-transcript-api>=1.0.0
+yt-dlp
+openai-whisper
+sentence-transformers
+numpy
+pytest
+qdrant-client
+google-genai
+tabulate

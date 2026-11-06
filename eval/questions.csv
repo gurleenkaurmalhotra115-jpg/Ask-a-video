@@ -1,0 +1,157 @@
+video_id,tier,question,gold_start_sec,gold_end_sec,gold_answer_key,is_negative
+aircAruvnKk,tier_a_curated,How many neurons are in the input layer for the handwritten digit example and why?,188.0,242.0,784 neurons corresponding to 28x28 pixels of grayscale values.,False
+aircAruvnKk,tier_a_curated,What does an activation number inside a neuron represent?,195.0,240.0,A number between 0 and 1 representing pixel brightness or neuron excitement.,False
+aircAruvnKk,tier_a_curated,What do the neurons in the output layer represent?,225.0,260.0,10 neurons each representing one of the digits from 0 to 9.,False
+aircAruvnKk,tier_a_curated,Why does each connection between neurons have an assigned weight?,545.0,600.0,Weights determine the positive or negative influence of one neuron activation on the next.,False
+aircAruvnKk,tier_a_curated,What is the role of a bias in a neural network neuron?,660.0,710.0,A bias sets the baseline threshold required before a neuron meaningfully activates.,False
+aircAruvnKk,tier_a_curated,What does the sigmoid squishification function do?,625.0,670.0,Compresses the weighted sum of activations into the interval between 0 and 1.,False
+aircAruvnKk,tier_a_curated,Why is ReLU preferred over the sigmoid function in modern networks?,1050.0,1105.0,ReLU is computationally simpler and mitigates vanishing gradient issues.,False
+aircAruvnKk,tier_a_curated,How many total weights and biases or parameters are in this network?,735.0,765.0,Around 13000 total weights and biases across the network layers.,False
+aircAruvnKk,tier_a_curated,How does the network combine weights activations and bias mathematically?,700.0,735.0,Computes weighted sum of previous activations plus bias and feeds into activation function.,False
+aircAruvnKk,tier_a_curated,Why is the neural network structured in layers to break down images?,360.0,420.0,"Successive layers aggregate pixels into edges, edges into patterns, and patterns into digits.",False
+aircAruvnKk,tier_a_curated,Who invented the transformer architecture in 2017?,,,NOT_IN_VIDEO,True
+aircAruvnKk,tier_a_curated,What is the capital of France?,,,NOT_IN_VIDEO,True
+zjkBMFhNj_g,tier_a_curated,What two files compose the core of a modern LLM package like Llama 2 70B?,120.0,175.0,The parameters file (weights) and a run file in C or Python.,False
+zjkBMFhNj_g,tier_a_curated,How much text is typically collected to pretrain a foundational base model?,260.0,315.0,Approximately 10 terabytes of text from web scrapes like Common Crawl.,False
+zjkBMFhNj_g,tier_a_curated,What computational hardware is typically used for pretraining runs and at what cost?,380.0,435.0,Clusters of thousands of GPUs (e.g. 6000 A100s) costing millions of dollars.,False
+zjkBMFhNj_g,tier_a_curated,What fundamental objective is an LLM trained to predict during pretraining?,480.0,535.0,Next word prediction over token sequences.,False
+zjkBMFhNj_g,tier_a_curated,Why does an LLM function as a lossy compression algorithm for the internet?,620.0,675.0,Weights compress web text patterns similarly to a zip file.,False
+zjkBMFhNj_g,tier_a_curated,What is the role of fine-tuning or instruction tuning after pretraining?,860.0,915.0,Converts a raw document completer into a question-answering assistant via curated dialogues.,False
+zjkBMFhNj_g,tier_a_curated,How does Reinforcement Learning from Human Feedback (RLHF) improve LLM responses?,1180.0,1235.0,Human comparisons train reward models to guide generations toward helpful and harmless answers.,False
+zjkBMFhNj_g,tier_a_curated,What is context window memory in an LLM and how is it limited?,1520.0,1575.0,The maximum prompt token buffer the model can attend to at inference time.,False
+zjkBMFhNj_g,tier_a_curated,How does retrieval-augmented generation (RAG) help prevent model hallucinations?,1920.0,1975.0,Fetches relevant search documents into context so the LLM references verified facts.,False
+zjkBMFhNj_g,tier_a_curated,What security vulnerability arises from prompt injection attacks on LLMs?,2450.0,2505.0,Malicious user input hijacks system prompt instructions to execute unauthorized commands.,False
+zjkBMFhNj_g,tier_a_curated,How do you calculate the determinant of a 4x4 matrix?,,,NOT_IN_VIDEO,True
+zjkBMFhNj_g,tier_a_curated,What are the rules of professional cricket?,,,NOT_IN_VIDEO,True
+zxQyTK8quyY,tier_a_curated,What limitation of Recurrent Neural Networks (RNNs) led to the development of Transformers?,45.0,100.0,"RNNs process tokens sequentially, making parallel training on large corpora impossible.",False
+zxQyTK8quyY,tier_a_curated,How do positional encodings allow Transformers to preserve word order?,160.0,215.0,Adds sine and cosine wave values to input embeddings to encode token position.,False
+zxQyTK8quyY,tier_a_curated,"What are Query, Key, and Value vectors in the self-attention mechanism?",320.0,375.0,Vectors calculated per token where Queries match Keys to produce weights for Values.,False
+zxQyTK8quyY,tier_a_curated,Why is the dot product of Query and Key divided by the square root of the dimension dk?,450.0,505.0,Prevents extreme dot product magnitudes from pushing Softmax into near-zero gradient regions.,False
+zxQyTK8quyY,tier_a_curated,How does the Softmax function normalize attention weights?,560.0,615.0,Converts raw attention scores into a probability distribution summing to 1.,False
+zxQyTK8quyY,tier_a_curated,What is Multi-Head Attention and what advantage does it offer over single-head attention?,720.0,775.0,Computes multiple attention subspaces simultaneously to capture diverse relationships.,False
+zxQyTK8quyY,tier_a_curated,What is the purpose of residual connections and layer normalization in transformer blocks?,910.0,965.0,Stabilizes gradient flow during backpropagation and accelerates training convergence.,False
+zxQyTK8quyY,tier_a_curated,How does masked self-attention differ from standard self-attention in the decoder?,1120.0,1175.0,Masks future token positions with negative infinity so the decoder cannot look ahead.,False
+zxQyTK8quyY,tier_a_curated,What role does the feed-forward network play after attention layers?,1340.0,1395.0,Applies non-linear transformations independently to each position's representation.,False
+zxQyTK8quyY,tier_a_curated,How does cross-attention connect the encoder output to the decoder?,1520.0,1575.0,Decoder queries attend to encoder key and value outputs to incorporate input context.,False
+zxQyTK8quyY,tier_a_curated,What chemical elements make up stainless steel?,,,NOT_IN_VIDEO,True
+zxQyTK8quyY,tier_a_curated,How many moons does Jupiter have?,,,NOT_IN_VIDEO,True
+CqOfi41LfDw,tier_a_curated,How does a simple neural network fit a curved squiggle to data points?,50.0,105.0,By combining linear segments through non-linear activation functions.,False
+CqOfi41LfDw,tier_a_curated,What role does the activation function play in fitting non-linear data?,180.0,235.0,Introduces curvature so the combined output is not just a straight linear line.,False
+CqOfi41LfDw,tier_a_curated,What happens to the output curve when you increase a connection weight?,310.0,365.0,Scales the steepness or amplitude of the activation curve.,False
+CqOfi41LfDw,tier_a_curated,How does a bias shift the activation function horizontally?,420.0,475.0,Shifts the activation curve along the x-axis to align with data clusters.,False
+CqOfi41LfDw,tier_a_curated,How are outputs from multiple hidden nodes summed together?,530.0,585.0,Weighted activations from hidden nodes are added together to form the final prediction.,False
+CqOfi41LfDw,tier_a_curated,What is the loss function or sum of squared residuals in network training?,640.0,695.0,Measures the squared distance between model predictions and actual target values.,False
+CqOfi41LfDw,tier_a_curated,How does gradient descent update parameters to minimize the loss?,750.0,805.0,Takes iterative steps proportional to the negative derivative of the loss function.,False
+CqOfi41LfDw,tier_a_curated,What is the learning rate parameter in gradient descent?,840.0,895.0,A hyperparameter controlling step size taken along the gradient direction.,False
+CqOfi41LfDw,tier_a_curated,What happens if the learning rate is set too large?,910.0,965.0,The optimization overshoots the minimum and may diverge wildly.,False
+CqOfi41LfDw,tier_a_curated,How does backpropagation calculate derivatives with respect to each weight?,1010.0,1065.0,Applies the calculus chain rule recursively from the output layer backwards.,False
+CqOfi41LfDw,tier_a_curated,Who won the FIFA World Cup in 1998?,,,NOT_IN_VIDEO,True
+CqOfi41LfDw,tier_a_curated,What is photosynthesis in plant biology?,,,NOT_IN_VIDEO,True
+8SF_h3xF3cE,tier_a_curated,Why does Fast.ai recommend a top-down teaching approach to machine learning?,80.0,135.0,Enables building working models immediately before diving into mathematical proofs.,False
+8SF_h3xF3cE,tier_a_curated,What computer vision task is built in the first 10 minutes of the lesson?,220.0,275.0,A bird versus forest image classifier using the fastai library.,False
+8SF_h3xF3cE,tier_a_curated,How are images downloaded using DuckDuckGo search programmatically?,340.0,395.0,Using search_images_ddg helper to query and retrieve image URLs.,False
+8SF_h3xF3cE,tier_a_curated,What is a DataBlock and what components does it require?,580.0,635.0,"A fastai blueprint defining item getters, splitters, labelers, and image transforms.",False
+8SF_h3xF3cE,tier_a_curated,Why is a validation set essential before training any neural network?,740.0,795.0,To detect overfitting by evaluating generalizability on unseen data.,False
+8SF_h3xF3cE,tier_a_curated,What pretrained architecture (e.g. resnet18) is used for transfer learning?,920.0,975.0,ResNet architectures pretrained on millions of ImageNet samples.,False
+8SF_h3xF3cE,tier_a_curated,What is fine-tuning in fastai and why is fine_tune used instead of fit?,1100.0,1155.0,"Freezes pretrained head, trains new classification layer, then unfreezes for gentle tuning.",False
+8SF_h3xF3cE,tier_a_curated,How does fastai measure classification error rate during training?,1280.0,1335.0,Fraction of validation images where the model predicted the incorrect class.,False
+8SF_h3xF3cE,tier_a_curated,How can the trained model be exported and loaded for production inference?,1640.0,1695.0,Using learn.export('model.pkl') and load_learner for deployment.,False
+8SF_h3xF3cE,tier_a_curated,What interactive web application tool (like Gradio or Hugging Face Spaces) is recommended?,1980.0,2035.0,Gradio apps deployed to Hugging Face Spaces for demoing models.,False
+8SF_h3xF3cE,tier_a_curated,How do quantum computers factor large prime numbers?,,,NOT_IN_VIDEO,True
+8SF_h3xF3cE,tier_a_curated,What caused the fall of the Western Roman Empire?,,,NOT_IN_VIDEO,True
+jGwO_UgTS7I,tier_b_us_classroom,What are the four main areas or topics covered in CS229?,210.0,265.0,"Supervised learning, unsupervised learning, learning theory, and reinforcement learning.",False
+jGwO_UgTS7I,tier_b_us_classroom,How does Andrew Ng define supervised learning using the housing prices dataset?,380.0,435.0,Learning algorithm given a dataset with correct target labels to predict future values.,False
+jGwO_UgTS7I,tier_b_us_classroom,What is the difference between a regression problem and a classification problem?,520.0,575.0,Regression predicts continuous values; classification predicts discrete categories.,False
+jGwO_UgTS7I,tier_b_us_classroom,What medical diagnosis example is used to illustrate binary classification?,650.0,705.0,Predicting whether a breast tumor is malignant or benign based on tumor size.,False
+jGwO_UgTS7I,tier_b_us_classroom,How does Support Vector Machines use infinite-dimensional feature spaces?,840.0,895.0,Via kernel tricks that map features into higher dimensions without computing coordinates explicitly.,False
+jGwO_UgTS7I,tier_b_us_classroom,How does unsupervised learning differ from supervised learning regarding data labels?,980.0,1035.0,Unsupervised data has no target labels; the algorithm discovers structure on its own.,False
+jGwO_UgTS7I,tier_b_us_classroom,What real-world cocktail party problem is solved using unsupervised learning?,1140.0,1195.0,Independent Component Analysis separating overlapping voices recorded by two microphones.,False
+jGwO_UgTS7I,tier_b_us_classroom,What is reinforcement learning and how is the reward function structured?,1380.0,1435.0,Agent takes actions in an environment to maximize cumulative reward signals over time.,False
+jGwO_UgTS7I,tier_b_us_classroom,What autonomous helicopter control project is used as a case study for reinforcement learning?,1560.0,1615.0,Stanford autonomous aerobatic helicopter learned through reinforcement learning.,False
+jGwO_UgTS7I,tier_b_us_classroom,What are the course prerequisites in linear algebra and probability?,1840.0,1895.0,"Basic multivariable calculus, linear algebra matrix operations, and foundational probability.",False
+jGwO_UgTS7I,tier_b_us_classroom,How do aircraft jet engines generate thrust?,,,NOT_IN_VIDEO,True
+jGwO_UgTS7I,tier_b_us_classroom,What is the speed of light in vacuum?,,,NOT_IN_VIDEO,True
+II4giR4vOOo,tier_b_us_classroom,Why has deep learning surged in practical capability over the past decade?,110.0,165.0,"Convergence of massive datasets, powerful parallel GPU hardware, and algorithmic advances.",False
+II4giR4vOOo,tier_b_us_classroom,What is a perceptron and how does it compute its output?,240.0,295.0,"Calculates dot product of inputs and weights, adds bias, passes through non-linear activation.",False
+II4giR4vOOo,tier_b_us_classroom,Why is non-linearity crucial in neural network activation functions?,410.0,465.0,"Without non-linearity, multiple layers collapse into a single linear regression operation.",False
+II4giR4vOOo,tier_b_us_classroom,"What activation function outputs values strictly in the range [0, 1]?",510.0,565.0,The sigmoid activation function.,False
+II4giR4vOOo,tier_b_us_classroom,What is the mathematical definition of the Rectified Linear Unit (ReLU)?,630.0,685.0,"g(z) = max(0, z).",False
+II4giR4vOOo,tier_b_us_classroom,How do dense feedforward layers connect neurons between successive stages?,760.0,815.0,Every neuron in layer l connects to every neuron in layer l+1 via weight matrix W.,False
+II4giR4vOOo,tier_b_us_classroom,What is cross-entropy loss and when is it applied instead of mean squared error?,1020.0,1075.0,Measures divergence between probability distributions in classification tasks.,False
+II4giR4vOOo,tier_b_us_classroom,How does stochastic gradient descent differ from batch gradient descent?,1240.0,1295.0,SGD computes loss gradients on random mini-batches rather than the entire dataset.,False
+II4giR4vOOo,tier_b_us_classroom,What is the vanishing gradient problem in deep neural networks?,1510.0,1565.0,Gradients shrink exponentially as they propagate backward through many layers.,False
+II4giR4vOOo,tier_b_us_classroom,How does dropout regularization prevent neural networks from overfitting?,1740.0,1795.0,Randomly deactivates a fraction of neurons during training to prevent co-adaptation.,False
+II4giR4vOOo,tier_b_us_classroom,What are the rules of Texas Hold'em poker?,,,NOT_IN_VIDEO,True
+II4giR4vOOo,tier_b_us_classroom,How do tectonic plates cause earthquakes?,,,NOT_IN_VIDEO,True
+J7DzL2_Na80,tier_b_us_classroom,What are the two fundamental geometric pictures for systems of linear equations?,45.0,100.0,The row picture (intersecting planes) and the column picture (linear combination of columns).,False
+J7DzL2_Na80,tier_b_us_classroom,"In the 2x2 system 2x - y = 0 and -x + 2y = 3, what is the row picture?",140.0,195.0,Two intersecting straight lines in the 2D xy plane meeting at the solution point.,False
+J7DzL2_Na80,tier_b_us_classroom,How does the column picture represent the matrix equation Ax = b?,290.0,345.0,As finding the linear combination of column vectors that produces vector b.,False
+J7DzL2_Na80,tier_b_us_classroom,"What is the linear combination of column vectors [2, -1] and [-1, 2] that yields [0, 3]?",410.0,465.0,"Taking 1 of column 1 and 2 of column 2: 1*(2,-1) + 2*(-1,2) = (0,3).",False
+J7DzL2_Na80,tier_b_us_classroom,Why does Professor Strang emphasize the column picture over the row picture?,580.0,635.0,The column picture scales intuitively to higher dimensions as combinations of column vectors.,False
+J7DzL2_Na80,tier_b_us_classroom,"In 3 dimensions with 3 equations, what does each equation represent in the row picture?",720.0,775.0,A flat 2-dimensional plane in 3-dimensional space.,False
+J7DzL2_Na80,tier_b_us_classroom,When do three 3D column vectors fail to solve Ax = b for all b?,950.0,1005.0,When all three column vectors lie on the same 2D plane (linearly dependent).,False
+J7DzL2_Na80,tier_b_us_classroom,What does it mean for a square matrix A to be singular or non-invertible?,1120.0,1175.0,"The column vectors do not span the full space, meaning no unique inverse exists.",False
+J7DzL2_Na80,tier_b_us_classroom,How is matrix-vector multiplication Ax interpreted in terms of matrix columns?,1310.0,1365.0,Ax is strictly a linear combination of the columns of matrix A with weights x.,False
+J7DzL2_Na80,tier_b_us_classroom,What is the dot product interpretation of multiplying row i by vector x?,1480.0,1535.0,Each component of Ax is the inner dot product of row i with vector x.,False
+J7DzL2_Na80,tier_b_us_classroom,What is the capital city of Australia?,,,NOT_IN_VIDEO,True
+J7DzL2_Na80,tier_b_us_classroom,How does penicillin kill bacteria in medicine?,,,NOT_IN_VIDEO,True
+PaCmpygFfXo,tier_b_us_classroom,What dataset of names is used to train the bigram character model?,60.0,115.0,"A list of 32,000 common names downloaded from names.txt.",False
+PaCmpygFfXo,tier_b_us_classroom,What is a bigram language model and how does it predict subsequent tokens?,180.0,235.0,Predicts the next character based strictly on the single immediately preceding character.,False
+PaCmpygFfXo,tier_b_us_classroom,What special start/end token is added to delineate name boundaries?,320.0,375.0,A period character '.' used to signify start and end of sequences.,False
+PaCmpygFfXo,tier_b_us_classroom,How is a 2D 27x27 tensor created in PyTorch to store character pair counts?,510.0,565.0,"torch.zeros((27, 27), dtype=torch.int32) counting co-occurrences.",False
+PaCmpygFfXo,tier_b_us_classroom,How are raw bigram counts converted into probability distributions along rows?,780.0,835.0,"Dividing each row by its sum using PyTorch broadcasting: N / N.sum(1, keepdim=True).",False
+PaCmpygFfXo,tier_b_us_classroom,How does torch.multinomial sample new characters using probability distributions?,1020.0,1075.0,Draws random character indices according to the categorical probability distribution.,False
+PaCmpygFfXo,tier_b_us_classroom,What is negative log likelihood and why is it used as the training loss?,1340.0,1395.0,Minimizing negative log likelihood maximizes the likelihood assigned to actual target characters.,False
+PaCmpygFfXo,tier_b_us_classroom,What problem occurs when a bigram count is zero and how does model smoothing solve it?,1620.0,1675.0,Log of zero gives negative infinity; adding 1 fake count (Laplace smoothing) prevents inf loss.,False
+PaCmpygFfXo,tier_b_us_classroom,How is the bigram problem reformulated into a single linear neural network layer?,2040.0,2095.0,One-hot encoded input characters multiplied by weight matrix W followed by softmax.,False
+PaCmpygFfXo,tier_b_us_classroom,Why does gradient descent on the single-layer neural network match count probabilities?,2480.0,2535.0,Both optimize the exact same convex cross-entropy objective on bigram statistics.,False
+PaCmpygFfXo,tier_b_us_classroom,How does nuclear fusion generate energy in the Sun?,,,NOT_IN_VIDEO,True
+PaCmpygFfXo,tier_b_us_classroom,What are the rules of Olympic curling?,,,NOT_IN_VIDEO,True
+5p248yoa3oE,tier_b_us_classroom,Why does Andrew Ng compare AI to general-purpose technology like electricity?,50.0,105.0,"Like electricity, AI transforms virtually every industrial sector rather than one silo.",False
+5p248yoa3oE,tier_b_us_classroom,What are the two foundational pillars of modern AI technology mentioned?,180.0,235.0,Supervised learning (labeling data) and generative AI (creating text and images).,False
+5p248yoa3oE,tier_b_us_classroom,Why is supervised learning still the primary driver of commercial AI economic value?,310.0,365.0,"Decades of mature deployment across ad click prediction, loan approvals, and routing.",False
+5p248yoa3oE,tier_b_us_classroom,How has generative AI compressed software development timelines?,490.0,545.0,Tasks requiring months of coding can now be prototyped in days using prompt engineering.,False
+5p248yoa3oE,tier_b_us_classroom,What is the long-tail problem in commercial machine learning deployment?,680.0,735.0,Millions of small-scale business problems where custom engineering was historically too expensive.,False
+5p248yoa3oE,tier_b_us_classroom,How do low-code AI platforms empower non-programmers to solve niche problems?,860.0,915.0,Enable domain experts to inspect and train visual inspection models without writing code.,False
+5p248yoa3oE,tier_b_us_classroom,"What are the three main layers of the AI tech stack (Hardware, Infrastructure, Applications)?",1120.0,1175.0,"Semiconductor hardware at bottom, foundation models in middle, application software on top.",False
+5p248yoa3oE,tier_b_us_classroom,Where does Andrew Ng see the greatest near-term opportunity for new AI startups?,1340.0,1395.0,In the application layer building vertical domain solutions on top of foundation models.,False
+5p248yoa3oE,tier_b_us_classroom,What realistic stance does Andrew Ng take on immediate existential extinction risks from AI?,1640.0,1695.0,Views extinction risks as exaggerated hype distracting from real issues like bias and disruption.,False
+5p248yoa3oE,tier_b_us_classroom,What is the role of AI startup studios in co-founding companies?,1880.0,1935.0,Partnering with domain experts to build ventures with pre-validated problem-solution fits.,False
+5p248yoa3oE,tier_b_us_classroom,What is the formula for calculating compound interest in finance?,,,NOT_IN_VIDEO,True
+5p248yoa3oE,tier_b_us_classroom,How does a four-stroke internal combustion engine work?,,,NOT_IN_VIDEO,True
+YLczBemZpaE,tier_c_indian_nptel,What classic definition of machine learning by Tom Mitchell is introduced?,90.0,145.0,A computer program learns from Experience E with respect to Task T and performance metric P.,False
+YLczBemZpaE,tier_c_indian_nptel,"What checkers playing example illustrates Task, Performance, and Experience?",240.0,295.0,Task T: playing checkers; Performance P: win rate; Experience E: playing practice games.,False
+YLczBemZpaE,tier_c_indian_nptel,Why is machine learning necessary when human programming cannot specify exact rules?,420.0,475.0,Tasks like speech and vision cannot be manually coded with explicit conditional if-else rules.,False
+YLczBemZpaE,tier_c_indian_nptel,How does biological learning in humans inspire machine learning paradigms?,580.0,635.0,"Adaptation through trial, observation, and sensory feedback mechanisms.",False
+YLczBemZpaE,tier_c_indian_nptel,What is the difference between inductive inference and deductive reasoning?,760.0,815.0,Inductive inference generalizes from examples; deductive reasoning proves specific consequences from axioms.,False
+YLczBemZpaE,tier_c_indian_nptel,What is inductive bias in machine learning and why is it required?,940.0,995.0,Set of assumptions the learner uses to predict outputs of unseen inputs.,False
+YLczBemZpaE,tier_c_indian_nptel,What three broad learning categories are outlined for the course?,1140.0,1195.0,"Supervised learning, unsupervised learning, and reinforcement learning.",False
+YLczBemZpaE,tier_c_indian_nptel,What role do credit assignment and delayed rewards play in reinforcement learning?,1380.0,1435.0,Determining which sequence of prior actions was responsible for achieving a final success.,False
+YLczBemZpaE,tier_c_indian_nptel,How does the course organize evaluation metrics across classification problems?,1620.0,1675.0,"Through confusion matrices, precision, recall, and ROC curves.",False
+YLczBemZpaE,tier_c_indian_nptel,What mathematical foundations in linear algebra and multivariate calculus are required?,1890.0,1945.0,"Eigenvalues, matrix factorization, partial derivatives, and probability distributions.",False
+YLczBemZpaE,tier_c_indian_nptel,What is the atomic number of Gold on the periodic table?,,,NOT_IN_VIDEO,True
+YLczBemZpaE,tier_c_indian_nptel,How do diesel engines ignite fuel without spark plugs?,,,NOT_IN_VIDEO,True
+zT0sGjOSPt8,tier_c_indian_nptel,What fundamental question regarding the nature of mind and intelligence opens the lecture?,40.0,95.0,"Can machines think, and what constitutes mechanical or artificial thought?",False
+zT0sGjOSPt8,tier_c_indian_nptel,How does the lecture contrast rational behavior with human-like behavior?,160.0,215.0,Rationality implies achieving optimal goals; human behavior includes cognitive biases.,False
+zT0sGjOSPt8,tier_c_indian_nptel,What role did Aristotle and formal syllogisms play in early theories of reasoning?,290.0,345.0,Formalized structured rules of logic where true premises mechanically lead to true conclusions.,False
+zT0sGjOSPt8,tier_c_indian_nptel,How did Alan Turing formulate the imitation game (Turing Test) in 1950?,430.0,485.0,An interrogator attempts to distinguish between human and machine through text conversations.,False
+zT0sGjOSPt8,tier_c_indian_nptel,What are the limitations of the Turing Test as an operational definition of intelligence?,580.0,635.0,Focuses on deception and human quirk replication rather than true underlying rationality.,False
+zT0sGjOSPt8,tier_c_indian_nptel,What is the physical symbol system hypothesis formulated by Newell and Simon?,720.0,775.0,A physical symbol system has the necessary and sufficient means for general intelligent action.,False
+zT0sGjOSPt8,tier_c_indian_nptel,Why is state space search considered the core computational paradigm of classical AI?,880.0,935.0,Problems are modeled as graphs of states and operators to navigate toward goal states.,False
+zT0sGjOSPt8,tier_c_indian_nptel,What distinction is made between blind search and heuristic search?,1040.0,1095.0,Heuristic search utilizes domain knowledge estimates to guide exploration toward the goal.,False
+zT0sGjOSPt8,tier_c_indian_nptel,How does knowledge representation bridge perception and rational action?,1210.0,1265.0,Encodes world facts into formal syntax enabling inference engines to deduce new facts.,False
+zT0sGjOSPt8,tier_c_indian_nptel,What is the frame problem in classical artificial intelligence logic?,1340.0,1395.0,The difficulty of specifying what aspects of the world remain unchanged after an action.,False
+zT0sGjOSPt8,tier_c_indian_nptel,What causes lunar eclipses in astronomy?,,,NOT_IN_VIDEO,True
+zT0sGjOSPt8,tier_c_indian_nptel,How is concrete manufactured in civil engineering?,,,NOT_IN_VIDEO,True
+MJ1vWb1rGwM,tier_c_indian_nptel,What are the core phases of an industrial end-to-end machine learning project lifecycle?,60.0,115.0,"Data ingestion, data transformation, model training, evaluation, and CI/CD deployment pipelines.",False
+MJ1vWb1rGwM,tier_c_indian_nptel,Why is modular coding with src packages preferred over running single Jupyter notebooks?,190.0,245.0,"Modular architecture allows automated unit testing, CI/CD integration, and clean maintainability.",False
+MJ1vWb1rGwM,tier_c_indian_nptel,What is the role of setup.py and requirements.txt in local packaging?,330.0,385.0,Allows installing the src repository as a local editable python package via pip install -e .,False
+MJ1vWb1rGwM,tier_c_indian_nptel,How is custom exception handling implemented in python using sys.exc_info?,510.0,565.0,"Custom class overrides __str__ to capture file name, line number, and error message.",False
+MJ1vWb1rGwM,tier_c_indian_nptel,Why is structured logging with logging.basicConfig essential for production debugging?,680.0,735.0,Generates timestamped log files tracking pipeline execution stages and error stack traces.,False
+MJ1vWb1rGwM,tier_c_indian_nptel,What data ingestion component splits raw CSV files into train and test sets?,890.0,945.0,DataIngestion class reads raw source and exports train.csv and test.csv into artifacts folder.,False
+MJ1vWb1rGwM,tier_c_indian_nptel,How does a ColumnTransformer handle numerical and categorical preprocessing pipelines?,1140.0,1195.0,"Applies SimpleImputer and StandardScaler to numerical features, and OneHotEncoder to categorical.",False
+MJ1vWb1rGwM,tier_c_indian_nptel,How is the preprocessor object serialized to disk using dill or pickle?,1380.0,1435.0,Saved as preprocessor.pkl in artifacts so training and inference share identical transformations.,False
+MJ1vWb1rGwM,tier_c_indian_nptel,How does ModelTrainer evaluate multiple regression models to pick the best R2 score?,1690.0,1745.0,"Loops over candidate models, computes R2 on validation split, and selects the highest scoring.",False
+MJ1vWb1rGwM,tier_c_indian_nptel,What is the purpose of Dockerizing the Flask or FastAPI web application?,2100.0,2155.0,Packages application code and runtime dependencies into a portable container image for AWS/Azure.,False
+MJ1vWb1rGwM,tier_c_indian_nptel,What is the Pythagorean theorem in Euclidean geometry?,,,NOT_IN_VIDEO,True
+MJ1vWb1rGwM,tier_c_indian_nptel,Who painted the Mona Lisa in the Renaissance?,,,NOT_IN_VIDEO,True

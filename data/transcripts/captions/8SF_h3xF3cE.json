@@ -1,0 +1,3847 @@
+[
+  {
+    "start": 2.0,
+    "duration": 8.0,
+    "text": "Welcome to Practical Deep Learning for coders, lesson one. This is version five of this course,"
+  },
+  {
+    "start": 11.44,
+    "duration": 3.68,
+    "text": "and it's the first new one we've done in two years. So, we've got a lot of"
+  },
+  {
+    "start": 15.12,
+    "duration": 11.36,
+    "text": "cool things to cover! It's amazing how much has changed. Here is an xkcd from the end of 2015."
+  },
+  {
+    "start": 28.0,
+    "duration": 4.96,
+    "text": "Who here has seen xkcd comics before? …Pretty much everybody. Not surprising."
+  },
+  {
+    "start": 35.36,
+    "duration": 8.48,
+    "text": "So the basic joke here is… I'll let you read it, and then I'll come back to it."
+  },
+  {
+    "start": 51.84,
+    "duration": 5.44,
+    "text": "So, it can be hard to tell what's easy and what's nearly impossible, and in 2015 or at the end of"
+  },
+  {
+    "start": 57.28,
+    "duration": 4.48,
+    "text": "2015 the idea of checking whether something is a photo of a bird was considered nearly"
+  },
+  {
+    "start": 61.76,
+    "duration": 4.72,
+    "text": "impossible. So impossible, it was the basic idea of a joke. Because everybody knows that"
+  },
+  {
+    "start": 66.48,
+    "duration": 6.32,
+    "text": "that's nearly impossible. We're now going to build exactly that system for free in about two minutes!"
+  },
+  {
+    "start": 75.2,
+    "duration": 1.84,
+    "text": "So, let's build an “is it a bird” system."
+  },
+  {
+    "start": 79.52,
+    "duration": 4.32,
+    "text": "So, we're going to use python, and I'm going to run through this really quickly."
+  },
+  {
+    "start": 83.84,
+    "duration": 4.16,
+    "text": "You're not expected to run through it with me because we're going to come back to it. But"
+  },
+  {
+    "start": 89.6,
+    "duration": 1.52,
+    "text": "let's go ahead and run that cell."
+  },
+  {
+    "start": 94.16,
+    "duration": 4.72,
+    "text": "Okay, so what we're doing is we're searching DuckDuckgo for images of"
+  },
+  {
+    "start": 98.88,
+    "duration": 1.68,
+    "text": "bird photos and we're just going to grab one"
+  },
+  {
+    "start": 103.04,
+    "duration": 3.28,
+    "text": "and so here is the url of the bird that we grabbed."
+  },
+  {
+    "start": 109.04,
+    "duration": 1.04,
+    "text": "Okay, we'll download it."
+  },
+  {
+    "start": 112.64,
+    "duration": 5.2,
+    "text": "Okay, so there it is. So we've grabbed a bird and so okay we've now got something that can"
+  },
+  {
+    "start": 117.84,
+    "duration": 5.68,
+    "text": "download pictures of birds. Now we're going to need to build a system that can"
+  },
+  {
+    "start": 124.08,
+    "duration": 4.0,
+    "text": "recognize things that are birds versus things that aren't birds, from photos."
+  },
+  {
+    "start": 128.08,
+    "duration": 8.32,
+    "text": "Now of course computers need numbers to work with, but luckily images are made of numbers."
+  },
+  {
+    "start": 137.2,
+    "duration": 6.08,
+    "text": "I actually found this really nice website called pixby"
+  },
+  {
+    "start": 145.68,
+    "duration": 9.12,
+    "text": "where I can grab a bird, and if I wiggle over it (let's pick its beak) you'll see here that that"
+  },
+  {
+    "start": 154.8,
+    "duration": 10.48,
+    "text": "part of the beak was 251 brightness of red, 48 of green, and 21 of blue. So that's RGB. And so"
+  },
+  {
+    "start": 165.28,
+    "duration": 9.92,
+    "text": "you can see as I wave around, those colors are changing (those numbers). And so this picture,"
+  },
+  {
+    "start": 175.2,
+    "duration": 11.68,
+    "text": "the thing that we recognize as a picture, is actually 256 x 171 x 3 numbers, between 0 and 255,"
+  },
+  {
+    "start": 186.88,
+    "duration": 5.52,
+    "text": "representing the amount of red, green and blue on each pixel. So that's going to be an input"
+  },
+  {
+    "start": 192.96,
+    "duration": 4.88,
+    "text": "to our program, that's going to try and figure out whether this is a picture of a bird or not."
+  },
+  {
+    "start": 203.84,
+    "duration": 7.2,
+    "text": "Okay, so let's go ahead and run this cell, which is going to go through… (and I needed bird and"
+  },
+  {
+    "start": 211.04,
+    "duration": 5.6,
+    "text": "non-bird but you can't really search Google images or DuckDuckGo images for not a bird,"
+  },
+  {
+    "start": 217.36,
+    "duration": 4.48,
+    "text": "it just doesn't work that way. So I just decided to use forest - I thought okay pictures of forest"
+  },
+  {
+    "start": 221.84,
+    "duration": 4.88,
+    "text": "versus pictures of birds sounds like a good starting point.) So I go through each of:"
+  },
+  {
+    "start": 226.72,
+    "duration": 7.92,
+    "text": "forest, and bird. And I search for forest photo and bird photo, download images,"
+  },
+  {
+    "start": 235.92,
+    "duration": 5.2,
+    "text": "and then resize them to be no bigger than 400 pixels on a side - just because we don't need"
+  },
+  {
+    "start": 241.12,
+    "duration": 4.56,
+    "text": "particularly big ones and it takes a surprisingly large amount of time just for a computer to open"
+  },
+  {
+    "start": 245.68,
+    "duration": 7.76,
+    "text": "an image. Okay, so we've now got 200 of each. I find when I download images I often get a few"
+  },
+  {
+    "start": 253.44,
+    "duration": 5.36,
+    "text": "broken ones and if you try and train a model with broken images it will not work. So here's"
+  },
+  {
+    "start": 258.8,
+    "duration": 4.16,
+    "text": "something which just verifies each image and unlinks - so deletes the ones that don't work"
+  },
+  {
+    "start": 265.12,
+    "duration": 6.64,
+    "text": "Okay, so now we can create what's called a data block. So after I run this cell"
+  },
+  {
+    "start": 277.76,
+    "duration": 5.6,
+    "text": "you'll see that I've basically… I'll go through the details of this later, but… a data block"
+  },
+  {
+    "start": 284.16,
+    "duration": 5.28,
+    "text": "gives fast.ai (the library) all the information it needs to create a computer vision model. And"
+  },
+  {
+    "start": 289.44,
+    "duration": 3.36,
+    "text": "so in this case we're basically telling it… get all the image files that we just downloaded."
+  },
+  {
+    "start": 294.16,
+    "duration": 2.88,
+    "text": "And then we say show me a few up to six, and let's see… yeah,"
+  },
+  {
+    "start": 297.04,
+    "duration": 4.08,
+    "text": "so we've got some birds, forest, bird, bird, forest. Okay, so one of the nice"
+  },
+  {
+    "start": 301.12,
+    "duration": 3.52,
+    "text": "things about doing computer vision models is it's really easy to check your data because"
+  },
+  {
+    "start": 304.64,
+    "duration": 5.44,
+    "text": "you can just look at it - which is not the case for a lot of kinds of models."
+  },
+  {
+    "start": 310.08,
+    "duration": 5.2,
+    "text": "Okay, so we've now downloaded 200 pictures of birds, 200 pictures of forests,"
+  },
+  {
+    "start": 317.6,
+    "duration": 6.64,
+    "text": "so we'll now press run. And this model is actually running on my laptop,"
+  },
+  {
+    "start": 324.24,
+    "duration": 5.2,
+    "text": "so this is not using a vast data center. It's running on my presentation laptop. And"
+  },
+  {
+    "start": 329.44,
+    "duration": 5.36,
+    "text": "it's doing it at the same time as my laptop is streaming video, which is possibly a bad idea."
+  },
+  {
+    "start": 337.52,
+    "duration": 6.48,
+    "text": "And so what it's going to do is it's going to run through every photo out of those 400,"
+  },
+  {
+    "start": 344.56,
+    "duration": 4.72,
+    "text": "and for the ones that are forest it's going to learn a bit more about what forest looks"
+  },
+  {
+    "start": 349.28,
+    "duration": 3.04,
+    "text": "like and for the ones that are bird it'll learn a bit more about what bird looks like."
+  },
+  {
+    "start": 353.36,
+    "duration": 7.52,
+    "text": "So overall it took under 30 seconds, and believe it or not, that's enough to"
+  },
+  {
+    "start": 362.08,
+    "duration": 5.28,
+    "text": "finish doing the thing which was in that xkcd comic. Let's check"
+  },
+  {
+    "start": 368.8,
+    "duration": 6.48,
+    "text": "by passing in that bird that we downloaded at the start. This is a bird. Probability it's a bird:"
+  },
+  {
+    "start": 376.24,
+    "duration": 6.48,
+    "text": "1.0000 (rounded to the nearest four decimal places). So something pretty extraordinary"
+  },
+  {
+    "start": 383.28,
+    "duration": 7.6,
+    "text": "has happened since late 2015, which is literally something that has gone from so impossible it's"
+  },
+  {
+    "start": 390.88,
+    "duration": 8.24,
+    "text": "a joke to so easy that I can run it on my laptop computer in (I don't know how long it was) about"
+  },
+  {
+    "start": 399.12,
+    "duration": 9.68,
+    "text": "two minutes. And so hopefully that gives you a sense that creating really interesting,"
+  },
+  {
+    "start": 410.16,
+    "duration": 5.2,
+    "text": "you know real working programs with deep learning is something that… doesn't take a lot of code,"
+  },
+  {
+    "start": 415.36,
+    "duration": 8.16,
+    "text": "didn't take any math, didn't take more than my laptop computer. It's pretty accessible in fact."
+  },
+  {
+    "start": 423.52,
+    "duration": 4.4,
+    "text": "So that's really what we're going to be learning about over the next seven weeks."
+  },
+  {
+    "start": 429.04,
+    "duration": 3.36,
+    "text": "So where have we got to now with deep learning? Well"
+  },
+  {
+    "start": 433.76,
+    "duration": 8.4,
+    "text": "it moves so fast, but even in the last few weeks we've taken it up another notch as a community."
+  },
+  {
+    "start": 442.16,
+    "duration": 5.52,
+    "text": "You might have seen that something called DALLꞏEꞏ2 has been released which uses deep learning to"
+  },
+  {
+    "start": 447.68,
+    "duration": 6.48,
+    "text": "generate new pictures. And I thought this was an amazing thing that this guy nick did where he took"
+  },
+  {
+    "start": 454.16,
+    "duration": 8.24,
+    "text": "his friends twitter bios and typed them into the DALLꞏEꞏ2 input and it generated these pictures. So"
+  },
+  {
+    "start": 462.4,
+    "duration": 4.24,
+    "text": "this guy's… he typed in commitment, sympathetic, psychedelic, philosophical, and it generated"
+  },
+  {
+    "start": 467.76,
+    "duration": 2.88,
+    "text": "these pictures. So I'll just show you a few of these. I'll let you read them…"
+  },
+  {
+    "start": 474.32,
+    "duration": 3.52,
+    "text": "I love that."
+  },
+  {
+    "start": 484.96,
+    "duration": 6.88,
+    "text": "That one's pretty amazing I reckon! actually."
+  },
+  {
+    "start": 495.92,
+    "duration": 4.56,
+    "text": "I love this. Happy Sisyphus has actually got a happy rock to move around."
+  },
+  {
+    "start": 502.56,
+    "duration": 5.92,
+    "text": "So this is like, um, yeah, I don't know. When I look at these I still get pretty blown away"
+  },
+  {
+    "start": 508.48,
+    "duration": 8.32,
+    "text": "that this is a computer algorithm using nothing but this text input to generate these arbitrary"
+  },
+  {
+    "start": 516.8,
+    "duration": 5.84,
+    "text": "pictures. In this case of fairly, you know, complex and creative things. So the guy who"
+  },
+  {
+    "start": 522.64,
+    "duration": 5.84,
+    "text": "made those points out, this is like… he spends about two minutes or so, you know, creating"
+  },
+  {
+    "start": 528.48,
+    "duration": 3.52,
+    "text": "each of these. Like he tries a few different prompts and he tries a few different pictures,"
+  },
+  {
+    "start": 532.0,
+    "duration": 3.52,
+    "text": "you know, and so he's given an example here of… like when he types something into the system…"
+  },
+  {
+    "start": 535.52,
+    "duration": 5.84,
+    "text": "like, here's an example of like 10 different things he gets back when he puts in “expressive"
+  },
+  {
+    "start": 541.36,
+    "duration": 6.48,
+    "text": "painting of a man shining rays of justice and transparency, on a blue bird twitter logo.”"
+  },
+  {
+    "start": 549.2,
+    "duration": 4.56,
+    "text": "So it's not just, you know, DALLꞏEꞏ2, to be clear. There's, you know, a lot of different"
+  },
+  {
+    "start": 553.76,
+    "duration": 5.2,
+    "text": "systems doing something like this now. There's something called MidJourney, which this twitter"
+  },
+  {
+    "start": 558.96,
+    "duration": 4.48,
+    "text": "account posted: a “female scientist with a laptop writing code, in a symbolic, meaningful,"
+  },
+  {
+    "start": 563.44,
+    "duration": 6.16,
+    "text": "and vibrant style.” This one here is “an HD photo of a rare psychedelic pink elephant.”"
+  },
+  {
+    "start": 571.28,
+    "duration": 4.96,
+    "text": "And this one I think is the second one here (I never know how to actually pronounce this.)"
+  },
+  {
+    "start": 578.64,
+    "duration": 4.0,
+    "text": "This one's pretty cool “a blind bat with big sunglasses holding a walking stick in his hand.”"
+  },
+  {
+    "start": 585.92,
+    "duration": 7.68,
+    "text": "And so when actual artists, you know, this for example, this guy said he knows nothing about art,"
+  },
+  {
+    "start": 593.6,
+    "duration": 4.4,
+    "text": "you know he's got no artistic talent, it's just something you know, he threw together. This guy is"
+  },
+  {
+    "start": 598.0,
+    "duration": 4.88,
+    "text": "an artist who actually writes his own software based on deep learning and spends, you know,"
+  },
+  {
+    "start": 603.44,
+    "duration": 4.16,
+    "text": "months on building stuff, and as you can see, you can really take it to the next level."
+  },
+  {
+    "start": 608.96,
+    "duration": 6.16,
+    "text": "It's been really great actually to see how a lot of fast.ai alumni with backgrounds as"
+  },
+  {
+    "start": 615.12,
+    "duration": 4.64,
+    "text": "artists have gone on to bring deep learning and art together, and it's a very exciting direction."
+  },
+  {
+    "start": 621.04,
+    "duration": 4.88,
+    "text": "And it's not just images to be clear, you know one of another interesting thing that's popped up in"
+  },
+  {
+    "start": 625.92,
+    "duration": 6.96,
+    "text": "the last couple of weeks is google's pathways language model which can take any arbitrary"
+  },
+  {
+    "start": 632.88,
+    "duration": 6.64,
+    "text": "english as text, a question, and can create an answer which not only answers the question"
+  },
+  {
+    "start": 639.52,
+    "duration": 6.32,
+    "text": "but also explains its thinking (whatever it means for a language model to be thinking.)"
+  },
+  {
+    "start": 647.52,
+    "duration": 12.32,
+    "text": "One of the ones I found pretty amazing was that it can explain a joke. I'll let you read this…"
+  },
+  {
+    "start": 667.36,
+    "duration": 6.32,
+    "text": "So, this is actually a joke that probably needs explanations for anybody who's not familiar with"
+  },
+  {
+    "start": 673.68,
+    "duration": 5.68,
+    "text": "TPUs. So it, this model, just took the text as input and created this text as output."
+  },
+  {
+    "start": 681.36,
+    "duration": 7.04,
+    "text": "And so you can see, you know, again, deep learning models are doing things which I think very few,"
+  },
+  {
+    "start": 688.4,
+    "duration": 5.04,
+    "text": "if any of us, would have believed would be maybe possible to do by computers even in our lifetime"
+  },
+  {
+    "start": 697.52,
+    "duration": 5.36,
+    "text": "This means that there is a lot of practical and ethical considerations."
+  },
+  {
+    "start": 704.72,
+    "duration": 4.4,
+    "text": "We will touch on them during this course but can't possibly hope to do them justice."
+  },
+  {
+    "start": 710.0,
+    "duration": 6.48,
+    "text": "So I would certainly encourage you to check out ethics.fast.ai to see our whole data ethics"
+  },
+  {
+    "start": 716.48,
+    "duration": 8.88,
+    "text": "course, taught by my co-founder Dr Rachel Thomas, which goes into these issues in a lot more detail."
+  },
+  {
+    "start": 728.24,
+    "duration": 6.24,
+    "text": "All right, so as well as being an AI researcher at the University of Queensland and fast.ai,"
+  },
+  {
+    "start": 735.12,
+    "duration": 7.28,
+    "text": "I am also a homeschooling primary school teacher and for that reason I study education a lot."
+  },
+  {
+    "start": 744.0,
+    "duration": 5.36,
+    "text": "One of the people who I love in education is a guy named Dylan Williams and he has this great"
+  },
+  {
+    "start": 749.36,
+    "duration": 4.24,
+    "text": "approach in his classrooms of figuring out how his students are getting along,"
+  },
+  {
+    "start": 753.6,
+    "duration": 5.68,
+    "text": "which is to put a coloured cup on their desk - green to mean that they're doing fine,"
+  },
+  {
+    "start": 760.08,
+    "duration": 7.04,
+    "text": "yellow cup to mean I'm not quite sure, and a red cup to mean I have no idea what's going on. Now"
+  },
+  {
+    "start": 767.12,
+    "duration": 4.64,
+    "text": "since most of you are watching this remotely I can't look at your cups and I don't think"
+  },
+  {
+    "start": 771.76,
+    "duration": 5.52,
+    "text": "anybody bought coloured cups with them today, so instead we have an online version of this."
+  },
+  {
+    "start": 779.12,
+    "duration": 10.84,
+    "text": "So what I want you to do is go to cups.fast.ai/fast - that's cups.fast.ai/fast -"
+  },
+  {
+    "start": 792.72,
+    "duration": 5.6,
+    "text": "and don't do this if you're, like, a fast.ai expert who's done the course five times - because"
+  },
+  {
+    "start": 798.32,
+    "duration": 3.84,
+    "text": "if you're following along that doesn't really mean much obviously. This is really for people who are,"
+  },
+  {
+    "start": 803.36,
+    "duration": 4.4,
+    "text": "you know, not already fast.ai experts. And so click one of these colored buttons."
+  },
+  {
+    "start": 810.4,
+    "duration": 7.12,
+    "text": "And what I will do, is I will go to the teacher version and see what buttons you're pressing."
+  },
+  {
+    "start": 818.64,
+    "duration": 4.4,
+    "text": "All right! So, so far people are feeling we're not going too fast on the whole. We've got one,"
+  },
+  {
+    "start": 823.04,
+    "duration": 8.88,
+    "text": "nope not one, brief red. Okay! So, hey Nick, this url, the same thing with teacher on the end,"
+  },
+  {
+    "start": 832.48,
+    "duration": 5.28,
+    "text": "if you can you keep that open as well and let me know if it suddenly gets covered in red."
+  },
+  {
+    "start": 839.92,
+    "duration": 7.68,
+    "text": "If you are somebody who's red, I'm not going to come to you now because there's not enough"
+  },
+  {
+    "start": 847.6,
+    "duration": 5.6,
+    "text": "of you to stop the class. So it's up to you to ask on the forum or on the youtube live chat,"
+  },
+  {
+    "start": 854.08,
+    "duration": 3.12,
+    "text": "and there's a lot of folks luckily who will be able to help you, I hope."
+  },
+  {
+    "start": 859.04,
+    "duration": 10.0,
+    "text": "All right! I wanted to do a big shout out to Radek. Radeck created cups.fast.ai for"
+  },
+  {
+    "start": 869.04,
+    "duration": 3.68,
+    "text": "me. I said to him last week I need a way of seeing coloured cups on the internet"
+  },
+  {
+    "start": 873.36,
+    "duration": 7.28,
+    "text": "and he wrote it in one evening. And I also wanted to shout out that Radek"
+  },
+  {
+    "start": 881.76,
+    "duration": 4.72,
+    "text": "just announced today that he got a job at Nvidia AI and I wanted to say, you know,"
+  },
+  {
+    "start": 886.48,
+    "duration": 5.84,
+    "text": "that fast.ai alumni around the world very very frequently, like every day or two,"
+  },
+  {
+    "start": 892.32,
+    "duration": 7.92,
+    "text": "email me to say that they've got their dream job. Yeah… If you're looking for inspiration on how to"
+  },
+  {
+    "start": 901.2,
+    "duration": 6.0,
+    "text": "get into the field I couldn't recommend nothing… nothing would be better than checking out Radek's"
+  },
+  {
+    "start": 907.2,
+    "duration": 4.4,
+    "text": "work. And he's actually written a book about his journey. It's got a lot of tips in particular"
+  },
+  {
+    "start": 911.6,
+    "duration": 4.8,
+    "text": "about how to take advantage of fast.ai - make the most of these lessons. And so I"
+  },
+  {
+    "start": 916.4,
+    "duration": 4.48,
+    "text": "would certainly… so check that out as well. And if you're here live he's one of our TAs as well"
+  },
+  {
+    "start": 920.88,
+    "duration": 4.96,
+    "text": "so you can say hello to him afterwards. He looks exactly like this picture here."
+  },
+  {
+    "start": 928.08,
+    "duration": 5.92,
+    "text": "So I mentioned I spent a lot of time studying education both for my home schooling duties"
+  },
+  {
+    "start": 934.0,
+    "duration": 5.68,
+    "text": "and also for my courses, and you'll see that there's something a bit different,"
+  },
+  {
+    "start": 939.68,
+    "duration": 5.44,
+    "text": "very different, about this course… which is that we started by training a model. We didn't start"
+  },
+  {
+    "start": 945.12,
+    "duration": 7.28,
+    "text": "by doing an in-depth review of linear algebra and calculus. That's because two of my favorite"
+  },
+  {
+    "start": 953.44,
+    "duration": 5.68,
+    "text": "writers and researchers on education Paul Lockhart and David Perkins, and many others talk about how"
+  },
+  {
+    "start": 959.12,
+    "duration": 7.6,
+    "text": "much better people learn when they learn with a context in place. So the way we learn math"
+  },
+  {
+    "start": 966.72,
+    "duration": 6.24,
+    "text": "at school where we do counting and then adding and then fractions and then decimals and then"
+  },
+  {
+    "start": 972.96,
+    "duration": 5.28,
+    "text": "blah blah blah and you know, 15 years later we start doing the really interesting stuff"
+  },
+  {
+    "start": 978.24,
+    "duration": 6.72,
+    "text": "at grad school. That is not the way most people learn effectively. The way most people learn"
+  },
+  {
+    "start": 984.96,
+    "duration": 7.04,
+    "text": "effectively is from the way we teach sports, for example, where we show you a whole game of sports."
+  },
+  {
+    "start": 992.56,
+    "duration": 4.96,
+    "text": "We show you how much fun it is. You go and start playing sports, simple versions of them,"
+  },
+  {
+    "start": 997.52,
+    "duration": 4.08,
+    "text": "you're not very good right and then you gradually put more and more pieces together."
+  },
+  {
+    "start": 1001.6,
+    "duration": 9.36,
+    "text": "So that's how we do deep learning. You will go into as much depth as the most sophisticated,"
+  },
+  {
+    "start": 1012.0,
+    "duration": 9.2,
+    "text": "technically detailed classes you'll find - later, right! But first you'll learn to be very very good"
+  },
+  {
+    "start": 1021.2,
+    "duration": 8.96,
+    "text": "at actually building and deploying models. And you will learn why and how things work as you need, to"
+  },
+  {
+    "start": 1030.88,
+    "duration": 4.4,
+    "text": "get to the next level. For those of you that have spent a lot of time in technical education (like"
+  },
+  {
+    "start": 1035.28,
+    "duration": 4.72,
+    "text": "if you've done a phd or something) will find this deeply uncomfortable because you'll be wanting to"
+  },
+  {
+    "start": 1040.0,
+    "duration": 5.04,
+    "text": "understand why everything works from the start. Just do your best to go along with it. Those of"
+  },
+  {
+    "start": 1045.04,
+    "duration": 4.8,
+    "text": "you who haven't will find this very natural. Oh! And this is Dylan Wiliam, who I mentioned"
+  },
+  {
+    "start": 1049.84,
+    "duration": 8.96,
+    "text": "before - the guy who came up with the really cool cups things. There'll be a lot of tricks that have"
+  },
+  {
+    "start": 1058.8,
+    "duration": 4.16,
+    "text": "come out of the educational research literature scattered through this course. On the whole I"
+  },
+  {
+    "start": 1062.96,
+    "duration": 3.44,
+    "text": "won't call them out, they'll just be there, but maybe from time to time we'll talk about them."
+  },
+  {
+    "start": 1067.68,
+    "duration": 4.24,
+    "text": "All right! So before we start talking about how we actually built that model and how it works,"
+  },
+  {
+    "start": 1071.92,
+    "duration": 5.28,
+    "text": "I guess I should convince you that I'm worth listening to. I'll try to do that reasonably"
+  },
+  {
+    "start": 1077.2,
+    "duration": 6.32,
+    "text": "quickly, because I don't like tooting my own horn, but I know it's important. So the first"
+  },
+  {
+    "start": 1083.52,
+    "duration": 5.04,
+    "text": "thing I mentioned about me, is that me and my friend Silvain wrote this extremely popular book"
+  },
+  {
+    "start": 1088.56,
+    "duration": 5.92,
+    "text": "“Deep Learning for Coders” and that book is what this course is quite heavily based on. We're not"
+  },
+  {
+    "start": 1094.48,
+    "duration": 4.88,
+    "text": "going to be using any material from the book directly, and you might be surprised by that,"
+  },
+  {
+    "start": 1099.36,
+    "duration": 5.44,
+    "text": "but the reason actually is that the educational research literature shows that people learn things"
+  },
+  {
+    "start": 1104.8,
+    "duration": 4.64,
+    "text": "best when they hear the same thing in multiple different ways. So I want you to read the book"
+  },
+  {
+    "start": 1110.88,
+    "duration": 6.88,
+    "text": "and you'll also see the same information presented in a different way, in these videos. So on,e of"
+  },
+  {
+    "start": 1117.76,
+    "duration": 5.76,
+    "text": "the bits of homework after each lesson will be to read a chapter of the book. A lot of"
+  },
+  {
+    "start": 1123.52,
+    "duration": 5.28,
+    "text": "people like the book. Peter Norvig, Director of Research, loves the book. In fact his ones here"
+  },
+  {
+    "start": 1129.52,
+    "duration": 6.4,
+    "text": "“one of the best sources for a programmer to become proficient in deep learning.” Eric Topple"
+  },
+  {
+    "start": 1135.92,
+    "duration": 4.32,
+    "text": "loves the book. Hal Varian Emeritus Professor at Berkeley, Chief Economist, Google, likes the book."
+  },
+  {
+    "start": 1141.2,
+    "duration": 5.6,
+    "text": "Jerome Pecente who is the head of AI at Facebook likes the book. A lot of people like the book, so"
+  },
+  {
+    "start": 1148.08,
+    "duration": 7.36,
+    "text": "hopefully you'll find that you like this material as well. I've spent about 30 years of my life"
+  },
+  {
+    "start": 1155.44,
+    "duration": 5.28,
+    "text": "working in and around machine learning including building a number of companies that relied on it."
+  },
+  {
+    "start": 1162.48,
+    "duration": 5.36,
+    "text": "And became the highest ranked competitor in the world on Kaggle in machine learning competitions."
+  },
+  {
+    "start": 1169.36,
+    "duration": 4.88,
+    "text": "My company Enlitic, which I founded, was the first company to specialize in deep learning for"
+  },
+  {
+    "start": 1174.24,
+    "duration": 6.4,
+    "text": "medicine, and MIT voted it one of the 50 smartest companies in 2016, just above Facebook and Spacex."
+  },
+  {
+    "start": 1184.16,
+    "duration": 6.64,
+    "text": "I started fast.ai with Rachel Thomas and that was quite a few years ago now, but it's had"
+  },
+  {
+    "start": 1191.52,
+    "duration": 8.56,
+    "text": "a big impact on the world already, including work we've done with our students, has been globally"
+  },
+  {
+    "start": 1200.08,
+    "duration": 7.28,
+    "text": "recognized, such as our win in the DAWNBench competition which showed how we could train big"
+  },
+  {
+    "start": 1207.36,
+    "duration": 4.0,
+    "text": "neural networks faster than anybody in the world, and cheaper than anybody in the world."
+  },
+  {
+    "start": 1213.6,
+    "duration": 7.44,
+    "text": "And so that was a really big step in 2018, which actually made a big difference. Google"
+  },
+  {
+    "start": 1221.04,
+    "duration": 7.28,
+    "text": "started using our special approaches in their models. Nvidia started optimizing"
+  },
+  {
+    "start": 1228.32,
+    "duration": 4.08,
+    "text": "their stuff using our approaches. So it made quite a big difference there."
+  },
+  {
+    "start": 1234.24,
+    "duration": 4.32,
+    "text": "I'm the inventor of the ULMFiT algorithm which according to the Transformers book"
+  },
+  {
+    "start": 1238.56,
+    "duration": 9.28,
+    "text": "was one of the two key foundations behind the modern NLP revolution. This is the"
+  },
+  {
+    "start": 1249.52,
+    "duration": 6.32,
+    "text": "paper here. And actually, you know, interesting point about that, it was actually invented for"
+  },
+  {
+    "start": 1256.96,
+    "duration": 3.52,
+    "text": "a fast.ai course. So the first time it appeared was not actually in"
+  },
+  {
+    "start": 1263.6,
+    "duration": 3.44,
+    "text": "the journal. It was actually in lesson four"
+  },
+  {
+    "start": 1267.68,
+    "duration": 5.2,
+    "text": "of the course, I think, the 2016 course, if I remember correctly."
+  },
+  {
+    "start": 1275.36,
+    "duration": 6.64,
+    "text": "And, you know, most importantly of course, I've been teaching this course since Version One. And"
+  },
+  {
+    "start": 1282.0,
+    "duration": 4.16,
+    "text": "this is actually, I think, this is the very first version of it (which even back then"
+  },
+  {
+    "start": 1286.16,
+    "duration": 7.6,
+    "text": "was getting hbr's attention) a lot of people have been watching the course, and it's been, you know,"
+  },
+  {
+    "start": 1293.76,
+    "duration": 6.08,
+    "text": "really widely used. Youtube doesn't show likes anymore, so I have to show you our likes for you."
+  },
+  {
+    "start": 1301.92,
+    "duration": 10.16,
+    "text": "You know it's been amazing to see how many alumni have gone from this to, you know,"
+  },
+  {
+    "start": 1312.72,
+    "duration": 7.04,
+    "text": "to really doing amazing things, you know. And so for example Andrej Karpathy told me"
+  },
+  {
+    "start": 1319.76,
+    "duration": 3.92,
+    "text": "that at Tesla, I think he said, pretty much everybody who joins Tesla in AI"
+  },
+  {
+    "start": 1323.68,
+    "duration": 3.92,
+    "text": "is meant to do this course. I believe at OpenAI, they told me that"
+  },
+  {
+    "start": 1327.6,
+    "duration": 4.56,
+    "text": "all the residents joining there first do this course. So this, you know this course,"
+  },
+  {
+    "start": 1332.16,
+    "duration": 5.6,
+    "text": "is really widely used in industry and research for people, and they have a lot of success."
+  },
+  {
+    "start": 1338.8,
+    "duration": 5.76,
+    "text": "Okay, so there's a bit of brief information about why you should hopefully keep going with this."
+  },
+  {
+    "start": 1346.08,
+    "duration": 4.96,
+    "text": "All right so let's get back to what's happened here. Why are we able to create"
+  },
+  {
+    "start": 1351.04,
+    "duration": 6.56,
+    "text": "a bird recognizer in a minute or two? And why couldn't we do it before?"
+  },
+  {
+    "start": 1358.8,
+    "duration": 6.48,
+    "text": "So I'm going to go back to 2012 and in 2012 this was how image recognition was done."
+  },
+  {
+    "start": 1366.16,
+    "duration": 7.92,
+    "text": "This is the computational pathologist - it was a project done at Stanford. A very successful,"
+  },
+  {
+    "start": 1374.08,
+    "duration": 6.56,
+    "text": "very famous project that was looking at the five-year survival of breast cancer patients"
+  },
+  {
+    "start": 1380.64,
+    "duration": 6.88,
+    "text": "by looking at their histopathology image slides. Now, so this is, like, what I would call a classic"
+  },
+  {
+    "start": 1387.52,
+    "duration": 4.4,
+    "text": "machine learning approach. And I spoke to the senior author of this, Daphne Koller,"
+  },
+  {
+    "start": 1392.96,
+    "duration": 2.72,
+    "text": "and I asked her why they didn't use deep learning and she said “well it just,"
+  },
+  {
+    "start": 1396.4,
+    "duration": 4.16,
+    "text": "you know, it wasn't really on the radar at that point.” So this is like a pre-deep-learning"
+  },
+  {
+    "start": 1401.36,
+    "duration": 5.84,
+    "text": "approach. And so the way they did this was they got a big team of mathematicians and computer"
+  },
+  {
+    "start": 1407.2,
+    "duration": 4.72,
+    "text": "scientists and pathologists and so forth to get together and build these ideas for features,"
+  },
+  {
+    "start": 1411.92,
+    "duration": 5.68,
+    "text": "like relationships between epithelial nuclear neighbors. Thousands and thousands actually they"
+  },
+  {
+    "start": 1417.6,
+    "duration": 5.28,
+    "text": "created of features, and each one required a lot of expertise from a cross-disciplinary group of"
+  },
+  {
+    "start": 1422.88,
+    "duration": 5.68,
+    "text": "experts at Stanford. So this project took years, and a lot of people, and a lot of code, and a lot"
+  },
+  {
+    "start": 1428.56,
+    "duration": 5.2,
+    "text": "of math. And then once they had all these features they then fed them into a machine learning"
+  },
+  {
+    "start": 1433.76,
+    "duration": 5.04,
+    "text": "model - in this case, logistic regression, to predict survival. As I say it's very successful,"
+  },
+  {
+    "start": 1439.36,
+    "duration": 5.6,
+    "text": "right, but it's not something that I could create for you in a minute at the start of a course."
+  },
+  {
+    "start": 1446.96,
+    "duration": 4.08,
+    "text": "The difference with neural networks is neural networks don't require us to build these features."
+  },
+  {
+    "start": 1451.6,
+    "duration": 6.24,
+    "text": "They build them for us! And so what actually happened was, in I think it was 2015,"
+  },
+  {
+    "start": 1459.6,
+    "duration": 6.56,
+    "text": "Matt Zeiler and Rob Fergus took a trained neural network and they looked inside it"
+  },
+  {
+    "start": 1466.16,
+    "duration": 6.48,
+    "text": "to see what it had learned. So we don't give it features, we ask it to learn features."
+  },
+  {
+    "start": 1473.28,
+    "duration": 5.52,
+    "text": "So when Zeiler and Zeiler looked inside a neural network, they looked at the actual"
+  },
+  {
+    "start": 1480.88,
+    "duration": 4.64,
+    "text": "weights in the model and they drew a picture of them. And this was nine of the sets of weights"
+  },
+  {
+    "start": 1485.52,
+    "duration": 6.64,
+    "text": "they found. And this set of weights, for example, finds diagonal edges. This set of weights finds"
+  },
+  {
+    "start": 1492.16,
+    "duration": 6.56,
+    "text": "yellow to blue gradients. And this set of weights finds red to green gradients, and so forth, right."
+  },
+  {
+    "start": 1498.72,
+    "duration": 6.4,
+    "text": "And then down here are examples of some bits of photos which closely matched, for example, this"
+  },
+  {
+    "start": 1506.32,
+    "duration": 6.48,
+    "text": "feature detector. And deep learning, I mean, is deep because we can then take"
+  },
+  {
+    "start": 1513.36,
+    "duration": 4.08,
+    "text": "these features and combine them to create more advanced features."
+  },
+  {
+    "start": 1518.64,
+    "duration": 4.48,
+    "text": "So these are some layer two features. So there's a feature, for example, that finds corners."
+  },
+  {
+    "start": 1523.84,
+    "duration": 3.44,
+    "text": "And a feature that finds curves. And a feature that finds circles."
+  },
+  {
+    "start": 1527.28,
+    "duration": 6.24,
+    "text": "And here are some examples of bits of pictures that the circle finder found. And so remember"
+  },
+  {
+    "start": 1534.48,
+    "duration": 6.0,
+    "text": "with a neural net which is the basic function used in deep learning, we don't have to hand code any"
+  },
+  {
+    "start": 1540.48,
+    "duration": 6.8,
+    "text": "of these or come up with any of these ideas. You just start with actually a random neural network"
+  },
+  {
+    "start": 1547.28,
+    "duration": 6.8,
+    "text": "and your feed it examples and you have it learn to recognize things, and it turns out"
+  },
+  {
+    "start": 1554.08,
+    "duration": 8.48,
+    "text": "that these are the things that it creates for itself. So you can then combine these features."
+  },
+  {
+    "start": 1563.2,
+    "duration": 4.96,
+    "text": "And when you combine these features it creates a feature detector, for example, that finds kind of"
+  },
+  {
+    "start": 1568.72,
+    "duration": 6.32,
+    "text": "repeating geometric shapes. And it creates a feature detector, for example, that finds kind of"
+  },
+  {
+    "start": 1575.04,
+    "duration": 6.0,
+    "text": "frilly little things, which it looks like is finding the edges of flowers. And this feature"
+  },
+  {
+    "start": 1581.04,
+    "duration": 8.48,
+    "text": "detector here seems to be finding words. And so the deeper you get the more sophisticated the"
+  },
+  {
+    "start": 1589.52,
+    "duration": 4.24,
+    "text": "features it can find are. And so you can imagine that trying to code these things by hand would be,"
+  },
+  {
+    "start": 1594.88,
+    "duration": 5.04,
+    "text": "you know, insanely difficult, and you wouldn't know even what to encode by hand,"
+  },
+  {
+    "start": 1599.92,
+    "duration": 5.68,
+    "text": "right! So what we're going to learn is how neural networks do this automatically, right, but this"
+  },
+  {
+    "start": 1605.6,
+    "duration": 6.32,
+    "text": "is the key difference of why we can now do things that previously we just didn't even conceive of as"
+  },
+  {
+    "start": 1611.92,
+    "duration": 7.12,
+    "text": "possible, because now we don't have to hand code the features we look for. They can all be learned."
+  },
+  {
+    "start": 1624.4,
+    "duration": 3.36,
+    "text": "it's important to recognize we're going to be spending some time learning about building"
+  },
+  {
+    "start": 1629.36,
+    "duration": 6.72,
+    "text": "image based algorithms and image-based algorithms are not just for images and in fact this is going"
+  },
+  {
+    "start": 1636.08,
+    "duration": 6.4,
+    "text": "to be a general theme. We're going to show you some foundational techniques but with creativity"
+  },
+  {
+    "start": 1642.48,
+    "duration": 5.76,
+    "text": "these foundational techniques can be used very widely. So for example, an image recognizer"
+  },
+  {
+    "start": 1649.04,
+    "duration": 8.96,
+    "text": "can also be used to classify sounds. So this was an example from one of our students"
+  },
+  {
+    "start": 1659.44,
+    "duration": 5.52,
+    "text": "who posted on the forum and said for their project they would try classifying sounds"
+  },
+  {
+    "start": 1664.96,
+    "duration": 4.4,
+    "text": "and so they basically took sounds and created pictures from their waveforms"
+  },
+  {
+    "start": 1670.48,
+    "duration": 4.08,
+    "text": "and then they used an image recognizer on that and they got a state-of-the-art result by the way."
+  },
+  {
+    "start": 1675.92,
+    "duration": 3.52,
+    "text": "Another of our students on the forum said that they did something very similar"
+  },
+  {
+    "start": 1679.44,
+    "duration": 5.52,
+    "text": "to take time series and turn them into pictures and then use image classifiers."
+  },
+  {
+    "start": 1686.16,
+    "duration": 6.88,
+    "text": "Another of our students created pictures from mouse movements from... from users of"
+  },
+  {
+    "start": 1693.04,
+    "duration": 4.88,
+    "text": "a computer system. So the clicks became dots and the movements became lines and"
+  },
+  {
+    "start": 1697.92,
+    "duration": 5.52,
+    "text": "the speed of the movement became colors and then used that to create an image classifier."
+  },
+  {
+    "start": 1703.44,
+    "duration": 8.24,
+    "text": "So you can see with... with some creativity there's a lot of things you can do with images."
+  },
+  {
+    "start": 1713.52,
+    "duration": 8.96,
+    "text": "There's something else I wanted to point out which is that as you saw when we trained a real working"
+  },
+  {
+    "start": 1722.48,
+    "duration": 6.16,
+    "text": "bird recognizer image model we didn't need lots of math; there wasn't any. We didn't need lots of"
+  },
+  {
+    "start": 1728.64,
+    "duration": 6.8,
+    "text": "data. We had 200 pictures. We didn't need lots of expensive computers; we just used my laptop. This"
+  },
+  {
+    "start": 1735.44,
+    "duration": 7.44,
+    "text": "is generally the case for the vast majority of deep learning that you'll need in... in real life."
+  },
+  {
+    "start": 1745.76,
+    "duration": 5.68,
+    "text": "There will be some math that pops up during this course but we will teach it to you as needed or"
+  },
+  {
+    "start": 1751.44,
+    "duration": 4.4,
+    "text": "we'll refer you to external resources as... as needed but it'll just be the little bits"
+  },
+  {
+    "start": 1755.84,
+    "duration": 6.4,
+    "text": "that you actually need. You know the myth that deep learning needs lots of data, I think, is"
+  },
+  {
+    "start": 1762.24,
+    "duration": 6.96,
+    "text": "mainly passed along by big companies that want to sell you computers to store lots of data and to"
+  },
+  {
+    "start": 1769.2,
+    "duration": 8.24,
+    "text": "process it. We find that most real world projects don't need extraordinary amounts of data at all"
+  },
+  {
+    "start": 1778.96,
+    "duration": 2.64,
+    "text": "and as you'll see there's actually a lot of fantastic"
+  },
+  {
+    "start": 1782.48,
+    "duration": 4.24,
+    "text": "places you can do state-of-the-art work for free nowadays which is... which is great news."
+  },
+  {
+    "start": 1790.8,
+    "duration": 3.04,
+    "text": "One of the key reasons for this is because of something called transfer learning"
+  },
+  {
+    "start": 1794.72,
+    "duration": 3.92,
+    "text": "which we'll be learning about a lot during this course and it's something which"
+  },
+  {
+    "start": 1799.44,
+    "duration": 1.92,
+    "text": "very few people are aware of the pay-off."
+  },
+  {
+    "start": 1803.92,
+    "duration": 7.76,
+    "text": "In this course we'll be using Pytorch. For those of you who are not particularly close"
+  },
+  {
+    "start": 1811.68,
+    "duration": 5.36,
+    "text": "to the deep learning world, you might have heard of Tensorflow and not of Pytorch."
+  },
+  {
+    "start": 1817.76,
+    "duration": 7.2,
+    "text": "You might be surprised to hear that Tensorflow has been dying in popularity in recent years"
+  },
+  {
+    "start": 1826.72,
+    "duration": 12.24,
+    "text": "and Pytorch is actually growing rapidly and in… in research repositories amongst the top papers,"
+  },
+  {
+    "start": 1840.4,
+    "duration": 4.8,
+    "text": "Tensorflow is a tiny minority now compared to Pytorch. This is also"
+  },
+  {
+    "start": 1845.2,
+    "duration": 4.64,
+    "text": "great research that's come out from Ryan O'Connor. He also discovered that..."
+  },
+  {
+    "start": 1852.72,
+    "duration": 6.96,
+    "text": "the majority of people that were doing Tensorflow in 2018 researchers, the majority have now shifted"
+  },
+  {
+    "start": 1859.68,
+    "duration": 6.72,
+    "text": "to Pytorch and I mention this because what people use in research is a very strong leading indicator"
+  },
+  {
+    "start": 1866.4,
+    "duration": 4.0,
+    "text": "of what's going to happen in industry because this is where you know all the new algorithms"
+  },
+  {
+    "start": 1870.4,
+    "duration": 2.56,
+    "text": "are going to come out. this is where all the papers are going to be written about."
+  },
+  {
+    "start": 1874.08,
+    "duration": 6.24,
+    "text": "it's going to be increasingly difficult to use Tensorflow. We've been using Pytorch since before"
+  },
+  {
+    "start": 1880.32,
+    "duration": 5.6,
+    "text": "it came out, before the initial release because we knew just from technical fundamentals, it was"
+  },
+  {
+    "start": 1885.92,
+    "duration": 3.52,
+    "text": "far better. So this course has been using Pytorch for a long time."
+  },
+  {
+    "start": 1890.48,
+    "duration": 6.64,
+    "text": "I will say however that Pytorch requires a lot of hairy code for relatively simple things. This is"
+  },
+  {
+    "start": 1897.12,
+    "duration": 6.16,
+    "text": "the code required to implement a particular optimizer called AdamW in plain Pytorch."
+  },
+  {
+    "start": 1903.28,
+    "duration": 5.92,
+    "text": "I actually copied this code from the Pytorch repository so as you can see there's a lot of it."
+  },
+  {
+    "start": 1911.12,
+    "duration": 8.24,
+    "text": "This gray bit here is the code required to do the same thing with fast.ai. fast.ai is a library we"
+  },
+  {
+    "start": 1919.36,
+    "duration": 7.44,
+    "text": "built on top of Pytorch. This huge difference is not because Pytorch is bad. It's because"
+  },
+  {
+    "start": 1926.8,
+    "duration": 7.04,
+    "text": "Pytorch is designed to be a strong foundation to build things on top of, like fast.ai. So..."
+  },
+  {
+    "start": 1935.92,
+    "duration": 7.36,
+    "text": "When you use fast.ai - the library, you get access to all the power of Pytorch as well but"
+  },
+  {
+    "start": 1943.28,
+    "duration": 5.68,
+    "text": "you shouldn't be writing all this code if you only need to write this much code, right? The problem"
+  },
+  {
+    "start": 1948.96,
+    "duration": 4.96,
+    "text": "of writing lots of code is that that's lots of things to make mistakes with, lots of things to,"
+  },
+  {
+    "start": 1953.92,
+    "duration": 5.6,
+    "text": "you know, not have best practices in, lots of things to maintain. In general we've found,"
+  },
+  {
+    "start": 1959.52,
+    "duration": 5.44,
+    "text": "particularly with deep learning: less code is better. Particularly with fastai,"
+  },
+  {
+    "start": 1966.64,
+    "duration": 4.8,
+    "text": "the code you don't write is code that we've basically found kind of best practices"
+  },
+  {
+    "start": 1971.44,
+    "duration": 5.04,
+    "text": "for you. So when you use the code that we've provided for you, you know you'll generally"
+  },
+  {
+    "start": 1976.48,
+    "duration": 9.12,
+    "text": "find you get better results. So... so fast.ai has been a really popular library and it's very widely"
+  },
+  {
+    "start": 1985.6,
+    "duration": 8.4,
+    "text": "used in industry, in academia, and in teaching and as we go through this course we'll be seeing"
+  },
+  {
+    "start": 1994.0,
+    "duration": 5.84,
+    "text": "more and more pure Pytorch as we get deeper and deeper underneath to see exactly how things work."
+  },
+  {
+    "start": 2002.16,
+    "duration": 4.72,
+    "text": "The fast.ai library just won the 2020 best paper award for the paper about it"
+  },
+  {
+    "start": 2006.88,
+    "duration": 8.48,
+    "text": "in Information so again you can see it's a very well regarded library. Okay so…"
+  },
+  {
+    "start": 2017.52,
+    "duration": 2.16,
+    "text": "Okay we're still green, that's good."
+  },
+  {
+    "start": 2021.36,
+    "duration": 7.04,
+    "text": "So you may have noticed something interesting, which is that I'm actually running code"
+  },
+  {
+    "start": 2028.4,
+    "duration": 6.44,
+    "text": "in these slides. That's because these slides are not in PowerPoint. These slides are in a"
+  },
+  {
+    "start": 2037.68,
+    "duration": 5.52,
+    "text": "Jupyter notebook. Jupyter notebook is the environment in which you will be doing"
+  },
+  {
+    "start": 2044.96,
+    "duration": 5.68,
+    "text": "most of your computing. It's a web-based application"
+  },
+  {
+    "start": 2052.24,
+    "duration": 8.72,
+    "text": "which is extremely popular and widely used in industry and in academia and in teaching"
+  },
+  {
+    "start": 2060.96,
+    "duration": 5.92,
+    "text": "and it is a very very very powerful way to to experiment and explore and to build."
+  },
+  {
+    "start": 2070.72,
+    "duration": 7.28,
+    "text": "Nowadays I would say most people at least most students run jupyter notebooks not on"
+  },
+  {
+    "start": 2078.0,
+    "duration": 4.32,
+    "text": "their own computers particularly for data science but on a cloud server"
+  },
+  {
+    "start": 2083.84,
+    "duration": 6.16,
+    "text": "of which there's quite a few and as I mentioned earlier if you go to course.fast.ai"
+  },
+  {
+    "start": 2091.28,
+    "duration": 5.12,
+    "text": "you can see how to use various different cloud servers."
+  },
+  {
+    "start": 2099.36,
+    "duration": 7.92,
+    "text": "One I'm going to show an example of is Kaggle. So Kaggle doesn't just have competitions but it"
+  },
+  {
+    "start": 2107.28,
+    "duration": 8.56,
+    "text": "also has a cloud notebook server and I've got quite a few examples there."
+  },
+  {
+    "start": 2118.88,
+    "duration": 6.48,
+    "text": "So let me give you a quick example of how we use Jupyter notebooks. To... to..."
+  },
+  {
+    "start": 2125.36,
+    "duration": 5.6,
+    "text": "to build stuff, to... to experiment, to explore. So on kaggle, if you start with somebody else's"
+  },
+  {
+    "start": 2130.96,
+    "duration": 5.52,
+    "text": "notebook... so why don't you start with this one Jupyter notebook 101. If it's your own notebook"
+  },
+  {
+    "start": 2136.48,
+    "duration": 4.08,
+    "text": "you'll see a button called edit. If it's somebody else's, that button will say copy and edit."
+  },
+  {
+    "start": 2142.32,
+    "duration": 3.36,
+    "text": "If you use somebody's notebook that you like, make sure you click the"
+  },
+  {
+    "start": 2145.68,
+    "duration": 2.88,
+    "text": "upvote button to encourage them and to help other people find it"
+  },
+  {
+    "start": 2149.2,
+    "duration": 7.52,
+    "text": "before you go ahead and copy and edit. And once we're in edit mode we can now use this"
+  },
+  {
+    "start": 2157.84,
+    "duration": 6.64,
+    "text": "notebook and to use it we can type in any arbitrary expression in python and click run"
+  },
+  {
+    "start": 2165.84,
+    "duration": 4.0,
+    "text": "and the very first time we do that it says session is starting it's basically launching"
+  },
+  {
+    "start": 2169.84,
+    "duration": 3.6,
+    "text": "a virtual computer for us to run our code. This is all free."
+  },
+  {
+    "start": 2175.76,
+    "duration": 6.24,
+    "text": "In a sense, it's like the world's most powerful calculator. It's a calculator where you have"
+  },
+  {
+    "start": 2182.0,
+    "duration": 6.24,
+    "text": "all of the capabilities of the world's I think most popular programming language – certainly it"
+  },
+  {
+    "start": 2188.24,
+    "duration": 5.92,
+    "text": "and javascript would be the top two – directly at your disposal. So, python does know how to"
+  },
+  {
+    "start": 2194.16,
+    "duration": 5.36,
+    "text": "do one plus one, and so you can see here it spits out the answer. I hate clicking I always use"
+  },
+  {
+    "start": 2199.52,
+    "duration": 4.72,
+    "text": "keyboard shortcuts so instead of clicking this little arrow, you just press shift enter to do"
+  },
+  {
+    "start": 2204.24,
+    "duration": 5.6,
+    "text": "the same thing but as you can see there's not just calculations here, there's also"
+  },
+  {
+    "start": 2211.04,
+    "duration": 6.64,
+    "text": "prose, and so jupyter notebooks are great for explaining to you the version of yourself"
+  },
+  {
+    "start": 2217.68,
+    "duration": 3.76,
+    "text": "in six months time, what on earth you were doing, or to your co-workers, or the people"
+  },
+  {
+    "start": 2221.44,
+    "duration": 5.36,
+    "text": "in the open source community, or the people you're blogging for etc, and so you just type"
+  },
+  {
+    "start": 2226.8,
+    "duration": 6.24,
+    "text": "prose, and as you can see when we create a new cell, you can create a code cell which is a cell"
+  },
+  {
+    "start": 2233.04,
+    "duration": 8.8,
+    "text": "that lets you type calculations, or a markdown cell which is a cell that lets you create prose."
+  },
+  {
+    "start": 2244.48,
+    "duration": 4.72,
+    "text": "And the prose uses formatting in a little mini language called “markdown”. There's so many"
+  },
+  {
+    "start": 2249.2,
+    "duration": 7.04,
+    "text": "tutorials around I won't explain it to you but it lets you do things like links and so forth."
+  },
+  {
+    "start": 2260.08,
+    "duration": 5.28,
+    "text": "So I'll let you follow through the tutorial in your own time because it really explains to you"
+  },
+  {
+    "start": 2266.64,
+    "duration": 4.56,
+    "text": "what to do. One thing to point out is that sometimes you'll see me use cells with an"
+  },
+  {
+    "start": 2271.2,
+    "duration": 5.84,
+    "text": "exclamation mark at the start. That's not Python, that's a bash shell command,"
+  },
+  {
+    "start": 2277.04,
+    "duration": 2.48,
+    "text": "okay? so that's what the exclamation mark means."
+  },
+  {
+    "start": 2282.64,
+    "duration": 4.8,
+    "text": "As you can see you can put images into notebooks, and so the image I popped in here was the one"
+  },
+  {
+    "start": 2287.44,
+    "duration": 5.28,
+    "text": "showing that Jupyter won the 2017 software system award which is pretty much the biggest"
+  },
+  {
+    "start": 2292.72,
+    "duration": 7.92,
+    "text": "award there is for this kind of software. Okay, so that's the basic idea of how we use notebooks."
+  },
+  {
+    "start": 2305.84,
+    "duration": 6.0,
+    "text": "So let's have a look at how we do our bird or not bird model."
+  },
+  {
+    "start": 2316.08,
+    "duration": 4.48,
+    "text": "One thing I always like to do when I'm using something like colab or kaggle cloud,"
+  },
+  {
+    "start": 2320.56,
+    "duration": 4.72,
+    "text": "cloud platforms that I'm not controlling is, make sure that I'm using the most recent version of any"
+  },
+  {
+    "start": 2325.28,
+    "duration": 6.96,
+    "text": "software. So my first cell here is exclamation mark pip install minus u , (that means upgrade)"
+  },
+  {
+    "start": 2332.24,
+    "duration": 4.32,
+    "text": "q (for quiet) fast.ai. So that makes sure that we have the latest version of fast.ai,"
+  },
+  {
+    "start": 2337.36,
+    "duration": 3.04,
+    "text": "and if you always have that at the start of your notebooks you're never going to have those"
+  },
+  {
+    "start": 2341.12,
+    "duration": 2.96,
+    "text": "awkward forum threads where you say “why isn't this working?” and somebody"
+  },
+  {
+    "start": 2344.08,
+    "duration": 2.24,
+    "text": "says to you “oh you're using an old version of some software!”"
+  },
+  {
+    "start": 2349.6,
+    "duration": 4.72,
+    "text": "So, you'll see here this notebook"
+  },
+  {
+    "start": 2354.32,
+    "duration": 2.8,
+    "text": "is the exact thing that I was showing you at the start of this lesson,"
+  },
+  {
+    "start": 2361.84,
+    "duration": 11.84,
+    "text": "So, if you haven't done much python, you might be surprised about how little code there is here,"
+  },
+  {
+    "start": 2374.4,
+    "duration": 7.92,
+    "text": "and so python is a concise but not too concise language. You'll see that there's less"
+  },
+  {
+    "start": 2382.32,
+    "duration": 5.44,
+    "text": "boilerplate than some other languages you might be familiar with, and I'm also taking advantage"
+  },
+  {
+    "start": 2387.76,
+    "duration": 8.72,
+    "text": "of a lot of libraries so fast.ai provides a lot of convenient things for you. Oh I forgot to import…"
+  },
+  {
+    "start": 2400.96,
+    "duration": 8.88,
+    "text": "So, to use a external library we use import to “import a symbol from a library”."
+  },
+  {
+    "start": 2411.12,
+    "duration": 3.44,
+    "text": "fast.ai has a lot of libraries we provide. They generally start with"
+  },
+  {
+    "start": 2414.56,
+    "duration": 5.12,
+    "text": "“fast something” so for example to make it easy to download a url, “fastdownload” has"
+  },
+  {
+    "start": 2419.68,
+    "duration": 8.24,
+    "text": "download_url(). To make it easy to create a thumbnail, we have Image.to_thumb() and so forth."
+  },
+  {
+    "start": 2430.16,
+    "duration": 7.92,
+    "text": "So, I always like to view – as I'm building a model – my data at every step. So that's why"
+  },
+  {
+    "start": 2438.08,
+    "duration": 6.96,
+    "text": "I first of all grab one bird, and then I grab one forest photo, and I look at them"
+  },
+  {
+    "start": 2445.04,
+    "duration": 1.36,
+    "text": "to make sure they look reasonable."
+  },
+  {
+    "start": 2449.2,
+    "duration": 6.64,
+    "text": "And once I think, “okay they look okay”, then I go ahead and download."
+  },
+  {
+    "start": 2458.32,
+    "duration": 4.0,
+    "text": "And, so, you can see fast.ai has a download_images() where you just"
+  },
+  {
+    "start": 2462.32,
+    "duration": 6.16,
+    "text": "provide a list of urls so that's how easy it is, and it does that in parallel. So it does that,"
+  },
+  {
+    "start": 2469.28,
+    "duration": 8.4,
+    "text": "you know, surprisingly quickly. One other fast.ai thing I'm using here is resize_images(). You"
+  },
+  {
+    "start": 2477.68,
+    "duration": 4.48,
+    "text": "generally… you'll find that for computer vision algorithms you don't need particularly big images,"
+  },
+  {
+    "start": 2483.12,
+    "duration": 6.64,
+    "text": "so I'm resizing these to a maximum size length of 400 because it just… it's actually much faster"
+  },
+  {
+    "start": 2490.32,
+    "duration": 6.32,
+    "text": "because gpus are so quick for big images, most of the time can be taken up just opening it."
+  },
+  {
+    "start": 2497.52,
+    "duration": 4.8,
+    "text": "The neural net itself often takes less time. So that's another good reason to make them smaller."
+  },
+  {
+    "start": 2505.28,
+    "duration": 6.88,
+    "text": "Okay, so the main thing I wanted to tell you about was this data block command. So the data block"
+  },
+  {
+    "start": 2512.96,
+    "duration": 4.72,
+    "text": "is the key thing that you're going to want to get familiar with as deep learning practitioners at"
+  },
+  {
+    "start": 2517.68,
+    "duration": 7.12,
+    "text": "the start of your journey because the main thing you're going to be trying to figure out is how do"
+  },
+  {
+    "start": 2524.8,
+    "duration": 6.0,
+    "text": "I get this data into my model? Now that might surprise you. You might be thinking we should"
+  },
+  {
+    "start": 2530.8,
+    "duration": 6.16,
+    "text": "be spending all of our time talking about neural network architectures, and matrix multiplication"
+  },
+  {
+    "start": 2536.96,
+    "duration": 8.0,
+    "text": "and gradients and stuff like that, the truth is very little of that comes up in practice, and the"
+  },
+  {
+    "start": 2544.96,
+    "duration": 7.28,
+    "text": "reason is, that at this point the deep learning community has found a reasonably small number of"
+  },
+  {
+    "start": 2552.88,
+    "duration": 6.16,
+    "text": "types of model that work for nearly all the main applications you'll need;"
+  },
+  {
+    "start": 2560.16,
+    "duration": 5.68,
+    "text": "and fast.ai will create the right type of model for you the vast majority of the time."
+  },
+  {
+    "start": 2566.96,
+    "duration": 5.92,
+    "text": "So all of that stuff about tweaking neural network architectures and stuff… I mean"
+  },
+  {
+    "start": 2573.44,
+    "duration": 4.64,
+    "text": "we'll get to it eventually in this course but you might be surprised to discover that"
+  },
+  {
+    "start": 2578.8,
+    "duration": 5.04,
+    "text": "it almost never comes up. Kind of like if you ever did like a computer science course or something"
+  },
+  {
+    "start": 2583.84,
+    "duration": 5.28,
+    "text": "and they spent all this time on the details of compilers and operating systems, and then you"
+  },
+  {
+    "start": 2589.12,
+    "duration": 4.48,
+    "text": "get to the real world and you never use it again. So this course is called practical deep learning,"
+  },
+  {
+    "start": 2594.24,
+    "duration": 3.36,
+    "text": "and so we're going to focus on the stuff that is practically important."
+  },
+  {
+    "start": 2598.64,
+    "duration": 8.48,
+    "text": "Okay, so our images have finished downloading, and two of them were broken so we just deleted them."
+  },
+  {
+    "start": 2609.76,
+    "duration": 2.4,
+    "text": "Another thing you'll note by the way if you're"
+  },
+  {
+    "start": 2612.16,
+    "duration": 6.4,
+    "text": "a keen software engineer is, I tend to use a lot of functional style in my"
+  },
+  {
+    "start": 2618.56,
+    "duration": 7.6,
+    "text": "programs I find for kind of the kind of work I do that a functional style works very well if you're,"
+  },
+  {
+    "start": 2626.96,
+    "duration": 2.96,
+    "text": "you know a lot of people in python are less familiar with, that it's more, maybe comes,"
+  },
+  {
+    "start": 2629.92,
+    "duration": 4.8,
+    "text": "more from other things. So yeah that's why you'll see me using stuff like map and stuff quite a lot."
+  },
+  {
+    "start": 2636.24,
+    "duration": 4.4,
+    "text": "Alright so a data block is the key thing you need to know about"
+  },
+  {
+    "start": 2640.64,
+    "duration": 2.72,
+    "text": "if you're going to know how to use different kinds of data sets,"
+  },
+  {
+    "start": 2644.4,
+    "duration": 3.44,
+    "text": "and so these are all of the things, basically, that you'll be providing."
+  },
+  {
+    "start": 2648.4,
+    "duration": 6.0,
+    "text": "And so what we did when we designed the data block was we actually looked and said “okay over"
+  },
+  {
+    "start": 2655.36,
+    "duration": 6.88,
+    "text": "hundreds of projects what are all the things that change from project to project to get the data"
+  },
+  {
+    "start": 2662.24,
+    "duration": 4.0,
+    "text": "into the right shape”?, and we realized we could basically split it down into these five things."
+  },
+  {
+    "start": 2668.48,
+    "duration": 6.48,
+    "text": "So the first thing that we tell fast.ai is “what kind of input do we have”?, and so then, so there"
+  },
+  {
+    "start": 2674.96,
+    "duration": 4.48,
+    "text": "are lots of blocks in fast.ai for different kinds of inputs so we said “ah, the input is an image!;"
+  },
+  {
+    "start": 2680.88,
+    "duration": 3.52,
+    "text": "“what kind of output is there?”, “what kind of label?.” The output's a category,"
+  },
+  {
+    "start": 2684.4,
+    "duration": 3.2,
+    "text": "so that means it's one of a number of possibilities."
+  },
+  {
+    "start": 2689.6,
+    "duration": 3.92,
+    "text": "So that's enough for fast.ai to know what kind of model to build for you."
+  },
+  {
+    "start": 2695.6,
+    "duration": 2.8,
+    "text": "So what are the items in this model? what am I actually going to be looking at to look"
+  },
+  {
+    "start": 2698.4,
+    "duration": 5.6,
+    "text": "to train from? this is a function! In fact you might have noticed if you were looking"
+  },
+  {
+    "start": 2704.0,
+    "duration": 2.48,
+    "text": "carefully that we use this function here."
+  },
+  {
+    "start": 2708.08,
+    "duration": 6.96,
+    "text": "It's a function which returns a list of all of the image files in a path based on extension,"
+  },
+  {
+    "start": 2716.4,
+    "duration": 3.6,
+    "text": "so every time it's going to try and find out what things to train from, it's going to use"
+  },
+  {
+    "start": 2720.0,
+    "duration": 6.72,
+    "text": "that function. In this case we'll get a list of image files. Something we'll talk about shortly is"
+  },
+  {
+    "start": 2726.72,
+    "duration": 5.84,
+    "text": "that it's critical that you put aside some data for testing the accuracy of your model that's"
+  },
+  {
+    "start": 2732.56,
+    "duration": 6.4,
+    "text": "called a “validation set.” It's so critical that fast.ai won't let you train a model without one,"
+  },
+  {
+    "start": 2740.64,
+    "duration": 2.8,
+    "text": "so you actually have to tell it how to create a validation set,"
+  },
+  {
+    "start": 2743.44,
+    "duration": 7.36,
+    "text": "how to set aside some data, and in this case we say “randomly, set aside 20% of the data.”"
+  },
+  {
+    "start": 2753.28,
+    "duration": 7.68,
+    "text": "Okay, next question, then you have to tell fast.ai is “how do we know the correct label"
+  },
+  {
+    "start": 2760.96,
+    "duration": 6.88,
+    "text": "of a photo”, how do we know if it's a bird photo or a forest photo? and this is another function,"
+  },
+  {
+    "start": 2768.56,
+    "duration": 8.96,
+    "text": "and this function simply returns the parent folder of of a path and so in this case we"
+  },
+  {
+    "start": 2777.52,
+    "duration": 6.8,
+    "text": "saved our images into either forest or bird. So that's where the labels are going to come from"
+  },
+  {
+    "start": 2786.72,
+    "duration": 1.12,
+    "text": "And then finally,"
+  },
+  {
+    "start": 2790.4,
+    "duration": 5.6,
+    "text": "most computer vision architectures need all of your inputs as you train to be the same size,"
+  },
+  {
+    "start": 2797.2,
+    "duration": 6.72,
+    "text": "so “item transforms” are all of the bits of code that are gonna run on every item,"
+  },
+  {
+    "start": 2804.64,
+    "duration": 7.12,
+    "text": "on every image in this case, and we're saying okay we want you to resize each of them to being"
+  },
+  {
+    "start": 2811.76,
+    "duration": 5.36,
+    "text": "192 by 192 pixels. There's two ways you can resize: you can either crop out"
+  },
+  {
+    "start": 2817.12,
+    "duration": 6.32,
+    "text": "a piece in the middle, or you can squish it, and so we're saying “squish it”."
+  },
+  {
+    "start": 2825.6,
+    "duration": 5.76,
+    "text": "So that's the data block that's all that you need, and from there we create an important"
+  },
+  {
+    "start": 2831.36,
+    "duration": 6.08,
+    "text": "class called data loaders. Data loaders are the things that, actually, pytorch iterates"
+  },
+  {
+    "start": 2837.44,
+    "duration": 6.88,
+    "text": "through to grab a bunch of your data at a time. The way it can do it so fast is by using a GPU"
+  },
+  {
+    "start": 2844.32,
+    "duration": 4.72,
+    "text": "which is something that can do thousands of things at the same time and that means it needs thousands"
+  },
+  {
+    "start": 2849.04,
+    "duration": 7.28,
+    "text": "of things to do at the same time so a data loader will feed the training algorithm with a “bunch”"
+  },
+  {
+    "start": 2856.88,
+    "duration": 7.12,
+    "text": "of your images at once; in fact we don't call it a bunch we call it a “batch” or a “mini batch”."
+  },
+  {
+    "start": 2866.56,
+    "duration": 7.92,
+    "text": "And so, when we say show “batch” that's actually a very specific word in deep learning. It's"
+  },
+  {
+    "start": 2874.48,
+    "duration": 5.36,
+    "text": "saying show me an example of a batch of data that you would be passing into the model,"
+  },
+  {
+    "start": 2880.56,
+    "duration": 6.24,
+    "text": "and so you can see showbatch gives you – tells you – two things: the input which is the picture,"
+  },
+  {
+    "start": 2886.8,
+    "duration": 7.52,
+    "text": "and the label, and remember! the label came by calling that function. So,"
+  },
+  {
+    "start": 2895.52,
+    "duration": 6.08,
+    "text": "when you come to building your own models you'll be wanting to know what kind of splitters"
+  },
+  {
+    "start": 2901.6,
+    "duration": 3.6,
+    "text": "are there? what kinds of labeling functions are there? and so forth what's wrong button"
+  },
+  {
+    "start": 2907.76,
+    "duration": 3.44,
+    "text": "you'll be wanting to know what kind of labeling functions are there and what kind of splitters"
+  },
+  {
+    "start": 2911.2,
+    "duration": 6.56,
+    "text": "are there and so forth and so docs.fast.ai is where you go to get that information. Often the"
+  },
+  {
+    "start": 2917.76,
+    "duration": 7.28,
+    "text": "best place to go is to choose the tutorials. So for example here's a whole data block tutorial,"
+  },
+  {
+    "start": 2926.08,
+    "duration": 4.24,
+    "text": "and there's lots and lots of examples, so hopefully you can start out by finding something"
+  },
+  {
+    "start": 2930.32,
+    "duration": 7.36,
+    "text": "that's similar to what you want to do and see how we did it, but then of course there's also"
+  },
+  {
+    "start": 2939.92,
+    "duration": 4.08,
+    "text": "the underlying api information so here's data blocks!"
+  },
+  {
+    "start": 2946.32,
+    "duration": 9.52,
+    "text": "Okay. How are we doing? Still doing good! Alright."
+  },
+  {
+    "start": 2957.44,
+    "duration": 3.76,
+    "text": "So at the end of all this we've got an object called “dls” that stand for “data loaders”"
+  },
+  {
+    "start": 2961.76,
+    "duration": 9.6,
+    "text": "and that contains iterators that pytorch can run through to grab batches of randomly split"
+  },
+  {
+    "start": 2971.36,
+    "duration": 5.92,
+    "text": "out training images to train the model with, and validation images to test the model with."
+  },
+  {
+    "start": 2979.52,
+    "duration": 0.96,
+    "text": "So now we need a model."
+  },
+  {
+    "start": 2982.56,
+    "duration": 5.84,
+    "text": "The critical concept here in fastai is called a “learner”. A “learner” is something which"
+  },
+  {
+    "start": 2988.4,
+    "duration": 4.48,
+    "text": "combines a model, which is, that is, the actual neural network function we’ll be training,"
+  },
+  {
+    "start": 2993.44,
+    "duration": 4.4,
+    "text": "and the data we use to train it with; and that's why you have to pass in two things:"
+  },
+  {
+    "start": 2998.96,
+    "duration": 7.28,
+    "text": "the data which is the data loaders object, and a model. And so the model"
+  },
+  {
+    "start": 3007.76,
+    "duration": 5.6,
+    "text": "is going to be the actual neural network function that you want to pass in, and as I said there's"
+  },
+  {
+    "start": 3013.36,
+    "duration": 5.68,
+    "text": "a relatively small number that basically work for the vast majority of things you do."
+  },
+  {
+    "start": 3021.44,
+    "duration": 3.36,
+    "text": "If you pass in just a bare symbol like this it's going to be one of"
+  },
+  {
+    "start": 3024.8,
+    "duration": 3.68,
+    "text": "fast.ai's built-in models but what's particularly interesting"
+  },
+  {
+    "start": 3029.84,
+    "duration": 6.72,
+    "text": "is that we integrate a wonderful library by Ross Wightman called “timm” (the pytorch image models)"
+  },
+  {
+    "start": 3036.56,
+    "duration": 5.12,
+    "text": "which is the largest collection of computer vision models in the world, and at this point fast.ai is"
+  },
+  {
+    "start": 3041.68,
+    "duration": 6.08,
+    "text": "the first and only framework to integrate this. So you can use any one of the pytorch image models"
+  },
+  {
+    "start": 3049.2,
+    "duration": 4.64,
+    "text": "and one of our students Amanamoro was kind enough to create this fantastic documentation"
+  },
+  {
+    "start": 3056.0,
+    "duration": 3.84,
+    "text": "where you can find out all about the different models."
+  },
+  {
+    "start": 3062.72,
+    "duration": 6.24,
+    "text": "And if we click on here, you can get lots and lots of information about all the different models that"
+  },
+  {
+    "start": 3070.16,
+    "duration": 7.92,
+    "text": "Ross has provided. Having said that, the model family called “resnet”"
+  },
+  {
+    "start": 3079.04,
+    "duration": 4.32,
+    "text": "are probably going to be fine for nearly all the things you want to do, but it is fun to"
+  },
+  {
+    "start": 3083.36,
+    "duration": 8.88,
+    "text": "try different models out so you can type in any string here to use any one of those other models"
+  },
+  {
+    "start": 3095.84,
+    "duration": 6.0,
+    "text": "Okay so if we run that, let's see what happens okay? So this is interesting… So when I ran this…"
+  },
+  {
+    "start": 3102.4,
+    "duration": 2.72,
+    "text": "so, remember on kaggle it's creating a new"
+  },
+  {
+    "start": 3106.16,
+    "duration": 3.2,
+    "text": "virtual computer for us, so it doesn't really have anything ready to go,"
+  },
+  {
+    "start": 3109.36,
+    "duration": 4.8,
+    "text": "so when I ran this the first thing it did was it said “downloading resnet18.pth”"
+  },
+  {
+    "start": 3116.16,
+    "duration": 7.68,
+    "text": "What's that? well, the reason we can do this so fast is, because somebody else has already trained"
+  },
+  {
+    "start": 3124.8,
+    "duration": 5.52,
+    "text": "this model to recognize over 1 million images of over 1 000 different types;"
+  },
+  {
+    "start": 3131.52,
+    "duration": 7.28,
+    "text": "something called the “ImageNet” dataset, and they then made those weights available – those"
+  },
+  {
+    "start": 3138.8,
+    "duration": 7.2,
+    "text": "parameters– available on the internet for anybody to download. By default on fast.ai when you"
+  },
+  {
+    "start": 3146.0,
+    "duration": 6.72,
+    "text": "ask for a model, we will download those weights for you, so that you don't start with a random"
+  },
+  {
+    "start": 3152.72,
+    "duration": 4.32,
+    "text": "network that can't do anything. You actually start with a network that can do an awful lot,"
+  },
+  {
+    "start": 3158.0,
+    "duration": 5.2,
+    "text": "and so, then something that fast.ai has, that's unique, is this fine_tune method,"
+  },
+  {
+    "start": 3163.2,
+    "duration": 5.84,
+    "text": "which, what it does is: it takes those pre-trained weights we downloaded for you, and it adjusts"
+  },
+  {
+    "start": 3169.04,
+    "duration": 7.2,
+    "text": "them in a really carefully controlled way to just teach the model the differences"
+  },
+  {
+    "start": 3176.96,
+    "duration": 5.04,
+    "text": "between your data set, and what it was originally trained for. That's called “fine tuning”;"
+  },
+  {
+    "start": 3183.04,
+    "duration": 7.28,
+    "text": "hence the name. So that's why you'll see this downloading happen first, and so as you can"
+  },
+  {
+    "start": 3190.32,
+    "duration": 5.92,
+    "text": "see at the end of it, this is the error right here after a few seconds it's a 100% accurate"
+  },
+  {
+    "start": 3201.44,
+    "duration": 5.68,
+    "text": "So we now have a learner, and this learner has been, has started with, a pre-trained"
+  },
+  {
+    "start": 3207.12,
+    "duration": 6.0,
+    "text": "model that's been fine-tuned for the purpose of recognizing bird pictures from forest pictures."
+  },
+  {
+    "start": 3215.44,
+    "duration": 9.68,
+    "text": "So you can now call dot predict on it, and dot predict you pass in an image, and so this is"
+  },
+  {
+    "start": 3225.12,
+    "duration": 6.8,
+    "text": "how you would then deploy your model. So in the code you have whatever it needs to do."
+  },
+  {
+    "start": 3233.6,
+    "duration": 6.0,
+    "text": "So in this particular case this person had some reason that he needs"
+  },
+  {
+    "start": 3240.32,
+    "duration": 3.36,
+    "text": "the app to check whether they're in the national park, and whether it's a photo of a bird,"
+  },
+  {
+    "start": 3243.68,
+    "duration": 3.28,
+    "text": "so at the vet where they need to know if it's a photo of a bird it would just call"
+  },
+  {
+    "start": 3248.08,
+    "duration": 5.44,
+    "text": "this one line of code learn.predict(); and so that's going to return"
+  },
+  {
+    "start": 3254.88,
+    "duration": 4.96,
+    "text": "whether it's a bird or not as a string, whether it's a bird or not as an integer, and"
+  },
+  {
+    "start": 3259.84,
+    "duration": 5.36,
+    "text": "the probability that it's a non-bird or a bird; and so that's why we can print these things out."
+  },
+  {
+    "start": 3267.6,
+    "duration": 6.64,
+    "text": "Okay so that's how we can create a computer vision model."
+  },
+  {
+    "start": 3277.68,
+    "duration": 3.92,
+    "text": "What about other kinds of models? right? There's a lot more in the world than just computer vision."
+  },
+  {
+    "start": 3283.04,
+    "duration": 3.6,
+    "text": "A lot more than just image recognition. Well even within computer vision,"
+  },
+  {
+    "start": 3286.64,
+    "duration": 5.2,
+    "text": "there's a lot more than just image recognition. For example,"
+  },
+  {
+    "start": 3295.76,
+    "duration": 3.44,
+    "text": "for example, there's segmentation!"
+  },
+  {
+    "start": 3303.44,
+    "duration": 3.68,
+    "text": "So segmentation, maybe the best way to explain segmentation is to show you the result of this"
+  },
+  {
+    "start": 3307.12,
+    "duration": 10.48,
+    "text": "model. Segmentation is where we take photos – in this case of road scenes – and we color in"
+  },
+  {
+    "start": 3317.6,
+    "duration": 5.52,
+    "text": "every pixel according to what it's a, what is it. So in this case we've got brown as cars,"
+  },
+  {
+    "start": 3324.16,
+    "duration": 3.36,
+    "text": "blue is fences I guess? red is buildings? or brown?"
+  },
+  {
+    "start": 3330.24,
+    "duration": 5.2,
+    "text": "And so on the left here some photos that some somebody has already gone through,"
+  },
+  {
+    "start": 3336.0,
+    "duration": 5.36,
+    "text": "and classified every pixel of, every one of these images according to what that pixel is a pixel of,"
+  },
+  {
+    "start": 3342.88,
+    "duration": 7.36,
+    "text": "and then on the right is what our model is guessing, and as you can see"
+  },
+  {
+    "start": 3351.44,
+    "duration": 4.08,
+    "text": "it's getting a lot of the pixels correct and some of them it’s getting wrong."
+  },
+  {
+    "start": 3357.6,
+    "duration": 4.96,
+    "text": "It's actually amazing how many is getting correct because this particular model"
+  },
+  {
+    "start": 3367.76,
+    "duration": 9.44,
+    "text": "I trained in about 20 seconds using a tiny, tiny, tiny, amount of data. So you know, again, like,"
+  },
+  {
+    "start": 3377.2,
+    "duration": 8.16,
+    "text": "you would think this would be a particularly challenging problem to solve, but it took about"
+  },
+  {
+    "start": 3385.36,
+    "duration": 6.24,
+    "text": "20 seconds of training to solve it, not amazingly well, but pretty well. If I trained it for another"
+  },
+  {
+    "start": 3391.6,
+    "duration": 7.6,
+    "text": "two minutes it'd probably be close to perfect. So this is called “segmentation”. Now you'll see that"
+  },
+  {
+    "start": 3399.84,
+    "duration": 6.56,
+    "text": "there's very, very, little data required, and … sorry, very little CODE required, and the steps"
+  },
+  {
+    "start": 3407.2,
+    "duration": 4.4,
+    "text": "are actually going to look quite familiar. In fact in this case we're using an even simpler approach."
+  },
+  {
+    "start": 3412.24,
+    "duration": 9.2,
+    "text": "Earlier on, we used “data blocks”. Data blocks are a kind of intermediate level very … flexible"
+  },
+  {
+    "start": 3422.0,
+    "duration": 6.0,
+    "text": "approach that you can take to handling almost any kind of data, but for the kinds of data that occur"
+  },
+  {
+    "start": 3428.0,
+    "duration": 7.52,
+    "text": "a lot, you can use these special data loaders classes which kind of lets you use even less code."
+  },
+  {
+    "start": 3435.52,
+    "duration": 2.48,
+    "text": "So, in this case, to create data loaders for segmentation,"
+  },
+  {
+    "start": 3439.92,
+    "duration": 4.64,
+    "text": "you can just say: “okay I'm going to pass you in a function for labeling”; and you can see"
+  },
+  {
+    "start": 3444.56,
+    "duration": 6.0,
+    "text": "here it's got pretty similar things that we pass in, to what we passed in for data blocks before."
+  },
+  {
+    "start": 3451.2,
+    "duration": 4.88,
+    "text": "So our file names is get_image_files() again, and then our label function"
+  },
+  {
+    "start": 3457.92,
+    "duration": 9.6,
+    "text": "is something that grabs this path, and the codes. So the labels for further segmentation, sorry,"
+  },
+  {
+    "start": 3467.52,
+    "duration": 5.2,
+    "text": "the codes. So, like, “what does each code mean?” is going to be this text file, but"
+  },
+  {
+    "start": 3472.72,
+    "duration": 5.76,
+    "text": "you can see the basic information we're providing is very very similar regardless of whether we're"
+  },
+  {
+    "start": 3478.48,
+    "duration": 5.44,
+    "text": "doing segmentation or object recognition; and then the next steps are pretty much the same."
+  },
+  {
+    "start": 3483.92,
+    "duration": 2.64,
+    "text": "We create a learner for segmentation. We create,"
+  },
+  {
+    "start": 3486.56,
+    "duration": 4.88,
+    "text": "so, we've got a UNet learner which we'll learn about later, and then again, we call fine_tune()"
+  },
+  {
+    "start": 3492.72,
+    "duration": 4.16,
+    "text": "so that is it! and that's how we create a segmentation model!"
+  },
+  {
+    "start": 3499.12,
+    "duration": 5.04,
+    "text": "What about stepping away from computer vision? So perhaps the most widely used kind of"
+  },
+  {
+    "start": 3505.04,
+    "duration": 2.72,
+    "text": "model used in industry is tabular analysis. So,"
+  },
+  {
+    "start": 3507.76,
+    "duration": 3.84,
+    "text": "taking things like spreadsheets and database tables, and trying to predict columns of those."
+  },
+  {
+    "start": 3517.52,
+    "duration": 6.64,
+    "text": "So, in tabular analysis, it really looks very similar to what we've seen already,"
+  },
+  {
+    "start": 3524.8,
+    "duration": 5.36,
+    "text": "We grabbed some data and you'll see when I call this untar_data(), this is the thing in fast.ai"
+  },
+  {
+    "start": 3530.16,
+    "duration": 4.72,
+    "text": "that downloads some data and decompresses it for you and there's a whole lot of urls provided by"
+  },
+  {
+    "start": 3534.88,
+    "duration": 6.0,
+    "text": "fast.ai for all the, kind of common data sets that you might want to use; you know all the ones that"
+  },
+  {
+    "start": 3540.88,
+    "duration": 4.48,
+    "text": "are in the book? or lots of data sets that are kind of widely used in learning and research?"
+  },
+  {
+    "start": 3546.24,
+    "duration": 3.92,
+    "text": "So, it makes life nice and easy for you. So again, we're going to create data loaders,"
+  },
+  {
+    "start": 3550.16,
+    "duration": 4.88,
+    "text": "but this time it's tabular data loaders, but we provide pretty similar kind of information to what"
+  },
+  {
+    "start": 3555.04,
+    "duration": 5.92,
+    "text": "we have before. Couple of new things we have to tell it. “Which of the columns are categorical?”"
+  },
+  {
+    "start": 3560.96,
+    "duration": 4.64,
+    "text": "so they can only take one of a few values, and “which ones are continuous”"
+  },
+  {
+    "start": 3565.6,
+    "duration": 6.64,
+    "text": "so they can take, basically, any real number, and then again, we can use the exact same"
+  },
+  {
+    "start": 3572.8,
+    "duration": 7.44,
+    "text": "show_batch() that we've seen before, to see the data, and so, fast.ai uses a lot of"
+  },
+  {
+    "start": 3580.24,
+    "duration": 5.44,
+    "text": "something called “type dispatch” which is a system that's particularly popular in in a"
+  },
+  {
+    "start": 3585.68,
+    "duration": 3.84,
+    "text": "language called Julia, to basically, automatically, do the right thing"
+  },
+  {
+    "start": 3590.24,
+    "duration": 5.2,
+    "text": "for your data, regardless of what kind of data it is. So, if you call show_batch() on something you"
+  },
+  {
+    "start": 3595.44,
+    "duration": 4.16,
+    "text": "should go get back something “useful” regardless of what kind of information you provided."
+  },
+  {
+    "start": 3599.6,
+    "duration": 7.84,
+    "text": "So for a table it shows you on the information in that table. This particular data set is a data set"
+  },
+  {
+    "start": 3608.32,
+    "duration": 5.92,
+    "text": "of whether people have less than fifty thousand dollars or more than fifty thousand dollars in"
+  },
+  {
+    "start": 3614.24,
+    "duration": 5.84,
+    "text": "salary for different districts based on demographic information in each district."
+  },
+  {
+    "start": 3623.6,
+    "duration": 5.84,
+    "text": "So, to build a model for that data loader, we do as always"
+  },
+  {
+    "start": 3630.16,
+    "duration": 3.2,
+    "text": "“something” underscore “learner”. In this case it's a tabular learner."
+  },
+  {
+    "start": 3635.12,
+    "duration": 4.64,
+    "text": "Now this time we don't say: “fine_tune()”; we say “fit”. Specifically, fit_one_cycle()."
+  },
+  {
+    "start": 3640.64,
+    "duration": 4.08,
+    "text": "That's because for tabular models, there's not generally going to be a pre-trained model"
+  },
+  {
+    "start": 3644.72,
+    "duration": 5.28,
+    "text": "that already does something like what you want, because every table of data is very different,"
+  },
+  {
+    "start": 3650.8,
+    "duration": 4.48,
+    "text": "whereas pictures often have a similar theme, you know? They're all pictures. They all have"
+  },
+  {
+    "start": 3655.28,
+    "duration": 4.56,
+    "text": "the same kind of “general idea” of what pictures are. So that's why it generally"
+  },
+  {
+    "start": 3659.84,
+    "duration": 5.12,
+    "text": "doesn't make too much sense to fine-tune a tabular model. So instead, you just fit."
+  },
+  {
+    "start": 3666.4,
+    "duration": 3.76,
+    "text": "So there's one difference there. I'll show another example."
+  },
+  {
+    "start": 3672.48,
+    "duration": 2.48,
+    "text": "Okay, so, collaborative filtering."
+  },
+  {
+    "start": 3680.08,
+    "duration": 3.76,
+    "text": "“Collaborative filtering” is the basis of most recommendation systems today."
+  },
+  {
+    "start": 3684.4,
+    "duration": 8.32,
+    "text": "It's a system where we basically take data set that says: which users liked which products,"
+  },
+  {
+    "start": 3692.72,
+    "duration": 6.96,
+    "text": "or which users used which products, and then we use that to guess what other products those users"
+  },
+  {
+    "start": 3699.68,
+    "duration": 5.68,
+    "text": "might like based on finding similar users, and what those similar users like. The interesting"
+  },
+  {
+    "start": 3705.36,
+    "duration": 3.76,
+    "text": "thing about collaborative filtering is that when we say “similar users,” we're not referring to"
+  },
+  {
+    "start": 3710.24,
+    "duration": 7.92,
+    "text": "similar demographically, but similar in the sense of people who liked the same kinds of"
+  },
+  {
+    "start": 3718.88,
+    "duration": 6.32,
+    "text": "products. So, for example, if you use any of the music systems like Spotify, or Apple music,"
+  },
+  {
+    "start": 3725.2,
+    "duration": 8.48,
+    "text": "or whatever, it'll ask you first, like, “what's a few pieces of music you like,” and you tell it,"
+  },
+  {
+    "start": 3733.68,
+    "duration": 5.28,
+    "text": "and then it says “okay well maybe let's start playing this music for you,” and that's how"
+  },
+  {
+    "start": 3738.96,
+    "duration": 7.84,
+    "text": "it works. It uses collaborative filtering. So we can create a collaborative filtering data"
+  },
+  {
+    "start": 3746.8,
+    "duration": 5.36,
+    "text": "loaders in exactly the same way that we're used to, by downloading and decompressing some data,"
+  },
+  {
+    "start": 3753.52,
+    "duration": 3.52,
+    "text": "create our collab data loaders. In this case we can just save from csv,"
+  },
+  {
+    "start": 3757.6,
+    "duration": 4.72,
+    "text": "and pass in a csv, and this is what collaborative filtering data looks like. It's going to have,"
+  },
+  {
+    "start": 3762.32,
+    "duration": 6.96,
+    "text": "generally speaking, a user id, some kind of product id; in this case, a movie, and a rating."
+  },
+  {
+    "start": 3771.44,
+    "duration": 6.32,
+    "text": "So, in this case this user gave this movie a rating of 3.5 out of 5,"
+  },
+  {
+    "start": 3778.4,
+    "duration": 3.6,
+    "text": "and so, again, you can see show_batch, right? So use show batch. You should get back"
+  },
+  {
+    "start": 3782.0,
+    "duration": 4.64,
+    "text": "some useful visualization of your data regardless of what kind of data it is,"
+  },
+  {
+    "start": 3790.32,
+    "duration": 2.24,
+    "text": "and so again, we create a “learner.”"
+  },
+  {
+    "start": 3794.24,
+    "duration": 4.32,
+    "text": "This time the “collaborative filtering” learner, and you pass in your data."
+  },
+  {
+    "start": 3800.64,
+    "duration": 3.84,
+    "text": "In this case we give it one extra piece of information, which is – because this"
+  },
+  {
+    "start": 3804.48,
+    "duration": 4.72,
+    "text": "is not predicting a category, but it's predicting a real number – we tell it:"
+  },
+  {
+    "start": 3809.2,
+    "duration": 4.56,
+    "text": "“what's the possible range.” The actual range is one to five,"
+  },
+  {
+    "start": 3814.32,
+    "duration": 4.0,
+    "text": "but for reasons you'll learn about later, it's a good idea to actually go from a little bit"
+  },
+  {
+    "start": 3818.32,
+    "duration": 5.52,
+    "text": "lower than the possible minimum, to a little bit higher. That's why I say 0.5 to 5.5,"
+  },
+  {
+    "start": 3824.88,
+    "duration": 4.0,
+    "text": "and then fine-tune. Now, again, you know we don't really need to fine-tune here because there's not"
+  },
+  {
+    "start": 3828.88,
+    "duration": 4.0,
+    "text": "really such a thing as a pre-trained collaborative filtering model. We could just say “fit”"
+  },
+  {
+    "start": 3832.88,
+    "duration": 6.56,
+    "text": "or “fit_one_cycle”, but actually fine_tune() works fine as well. So, after we train it for a while,"
+  },
+  {
+    "start": 3840.8,
+    "duration": 6.48,
+    "text": "this here is the “mean squared error”, so it's basically, that: “on average how far off are we"
+  },
+  {
+    "start": 3848.0,
+    "duration": 3.6,
+    "text": "for the validation set”. And you can see as we train,"
+  },
+  {
+    "start": 3851.6,
+    "duration": 2.8,
+    "text": "and it's literally so fast (it's less than a second each epoch)"
+  },
+  {
+    "start": 3855.84,
+    "duration": 13.84,
+    "text": "that error goes down and down, and for any kind of fast.ai model you can always call show_results() ,"
+  },
+  {
+    "start": 3869.68,
+    "duration": 4.08,
+    "text": "and get something sensible. So in this case it's going to show a few examples of users and movies."
+  },
+  {
+    "start": 3874.32,
+    "duration": 5.52,
+    "text": "Here's the actual rating that user gave that movie and here's the rating that the model predicted."
+  },
+  {
+    "start": 3882.0,
+    "duration": 3.36,
+    "text": "Okay, so, apparently a lot of people on the forum are asking how I'm"
+  },
+  {
+    "start": 3886.56,
+    "duration": 1.92,
+    "text": "turning this notebook into a presentation?"
+  },
+  {
+    "start": 3890.96,
+    "duration": 3.84,
+    "text": "So, I'll be delighted to show you, because I'm very pleased that these people made this thing"
+  },
+  {
+    "start": 3894.8,
+    "duration": 8.48,
+    "text": "for free for us to use. It's called “Rise”, and all I do is, it's a notebook extension,"
+  },
+  {
+    "start": 3904.48,
+    "duration": 5.52,
+    "text": "and in your notebook it gives you an extra little thing on the side where you say which things are"
+  },
+  {
+    "start": 3910.0,
+    "duration": 4.4,
+    "text": "slides, or which things are fragments, and a fragment just being… so, this is a slide, that's"
+  },
+  {
+    "start": 3914.4,
+    "duration": 7.44,
+    "text": "a fragment. So if I do that you'll see it starts with a slide and then the fragment gets added in."
+  },
+  {
+    "start": 3924.96,
+    "duration": 3.12,
+    "text": "Yeah, that's about all there is to it! Actually it's pretty great, and it's very"
+  },
+  {
+    "start": 3928.08,
+    "duration": 5.76,
+    "text": "well documented. You know I'll just mention, like what do I make with Jupyter notebooks:"
+  },
+  {
+    "start": 3939.92,
+    "duration": 3.84,
+    "text": "this entire book was written entirely in Jupyter notebooks."
+  },
+  {
+    "start": 3947.12,
+    "duration": 3.6,
+    "text": "Here are the notebooks. So if you go to the fastai fastbook repo… if you go to the fastai"
+  },
+  {
+    "start": 3950.72,
+    "duration": 9.52,
+    "text": "fastbook repo, you can read the whole book, and because it's all in notebooks, every time we say:"
+  },
+  {
+    "start": 3960.24,
+    "duration": 3.6,
+    "text": "“here's how you create this plot,” or “here's how you train this model,” you can actually"
+  },
+  {
+    "start": 3963.84,
+    "duration": 4.8,
+    "text": "create the plot, or you can actually train the model, because it's all notebooks."
+  },
+  {
+    "start": 3974.72,
+    "duration": 3.44,
+    "text": "The entire fast.ai library is actually written in notebooks."
+  },
+  {
+    "start": 3979.04,
+    "duration": 3.28,
+    "text": "So you might be surprised to discover that if you go to fast.ai fast.ai"
+  },
+  {
+    "start": 3986.88,
+    "duration": 5.92,
+    "text": "that the source code for the entire library is notebooks,"
+  },
+  {
+    "start": 3998.56,
+    "duration": 2.96,
+    "text": "and so the nice thing about this is that, you know, the source code"
+  },
+  {
+    "start": 4002.32,
+    "duration": 4.96,
+    "text": "for the fast.ai library has actual pictures of the actual things that we're building for example."
+  },
+  {
+    "start": 4011.12,
+    "duration": 1.76,
+    "text": "What else have we done with notebooks? oh!"
+  },
+  {
+    "start": 4015.44,
+    "duration": 0.48,
+    "text": "blogging!"
+  },
+  {
+    "start": 4018.24,
+    "duration": 5.12,
+    "text": "I love blogging with notebooks, because when I want to explain something"
+  },
+  {
+    "start": 4023.36,
+    "duration": 5.44,
+    "text": "I just write the code, and you can just see the outputs, and it all just works."
+  },
+  {
+    "start": 4032.8,
+    "duration": 4.96,
+    "text": "Another thing you might be surprised by, is all of our tests and continuous integration"
+  },
+  {
+    "start": 4037.76,
+    "duration": 4.32,
+    "text": "are also all in notebooks. So every time we change one of our notebooks…"
+  },
+  {
+    "start": 4047.2,
+    "duration": 6.88,
+    "text": "every time we change one of our notebooks, hundreds of tests get run automatically,"
+  },
+  {
+    "start": 4055.68,
+    "duration": 5.44,
+    "text": "in parallel, and if there's any issues we will find out about it. So, yeah,"
+  },
+  {
+    "start": 4061.12,
+    "duration": 6.4,
+    "text": "notebooks are great! and rise is… is a really nice way to do slides in notebooks."
+  },
+  {
+    "start": 4071.52,
+    "duration": 0.16,
+    "text": "Alright."
+  },
+  {
+    "start": 4074.96,
+    "duration": 3.28,
+    "text": "So, what can deep learning do at present?"
+  },
+  {
+    "start": 4080.48,
+    "duration": 4.48,
+    "text": "We're still scratching this the tip of the iceberg even though it's a pretty well hyped you know"
+  },
+  {
+    "start": 4085.76,
+    "duration": 8.08,
+    "text": "heavily marketed technology this pro… you know when we started in 2014 or so, you know,"
+  },
+  {
+    "start": 4094.48,
+    "duration": 5.84,
+    "text": "not many people were talking about deep learning, and really there was no accessible way to get"
+  },
+  {
+    "start": 4100.32,
+    "duration": 6.16,
+    "text": "started with it. There were no pre-trained models you could download, you know. There"
+  },
+  {
+    "start": 4106.48,
+    "duration": 5.44,
+    "text": "was just starting to appear some of the first open source software that would run on gpus,"
+  },
+  {
+    "start": 4113.6,
+    "duration": 3.44,
+    "text": "but yeah, I mean, but despite the fact that today there's a lot of people talking about deep"
+  },
+  {
+    "start": 4117.04,
+    "duration": 4.48,
+    "text": "learning, we're just scratching the surface. Every time pretty much somebody says to me"
+  },
+  {
+    "start": 4121.52,
+    "duration": 4.56,
+    "text": "I work in domain x, and I thought I might try deep learning out to see if it can help,"
+  },
+  {
+    "start": 4127.2,
+    "duration": 2.64,
+    "text": "and I see them a few months later, and I say “how did it go?” they"
+  },
+  {
+    "start": 4129.84,
+    "duration": 3.04,
+    "text": "nearly always say: “well we just broke the state-of-the-art results in our field.”"
+  },
+  {
+    "start": 4134.16,
+    "duration": 4.08,
+    "text": "So, you know, when I say these are things that it's currently state of the art for – these are"
+  },
+  {
+    "start": 4138.24,
+    "duration": 3.52,
+    "text": "kind of the ones that people have tried so far – but still, most things haven't been tried."
+  },
+  {
+    "start": 4142.48,
+    "duration": 3.44,
+    "text": "So, in NLP, deep learning is the state of the art"
+  },
+  {
+    "start": 4145.92,
+    "duration": 13.92,
+    "text": "method in all these kinds of things and a lot more; computer vision, medicine, biology"
+  },
+  {
+    "start": 4161.04,
+    "duration": 7.44,
+    "text": "recommendation systems, playing games, robotics… I mean it's just… I've tried… I've tried elsewhere"
+  },
+  {
+    "start": 4168.48,
+    "duration": 5.76,
+    "text": "to make bigger lists, and I just end up with pages and pages and pages! so yeah it's… it's"
+  },
+  {
+    "start": 4176.64,
+    "duration": 7.2,
+    "text": "generally speaking you know, if it's something that a human can do reasonably quickly,"
+  },
+  {
+    "start": 4184.8,
+    "duration": 3.68,
+    "text": "like look at a go board and decide if it looks like a good"
+  },
+  {
+    "start": 4188.48,
+    "duration": 3.92,
+    "text": "go board or not, even if it needs to be an ex even… if it needs to be an expert human,"
+  },
+  {
+    "start": 4193.36,
+    "duration": 3.6,
+    "text": "then that's probably something that deep learning will be pretty good at."
+  },
+  {
+    "start": 4198.24,
+    "duration": 6.08,
+    "text": "If it's something that takes a lot of logical thought processes over an extended period of time,"
+  },
+  {
+    "start": 4204.32,
+    "duration": 5.68,
+    "text": "you know, particularly if it's not based on much data, maybe not. You know, like,"
+  },
+  {
+    "start": 4211.2,
+    "duration": 4.0,
+    "text": "“who's going to win the next election”, or something like that. That'd be kind of broadly"
+  },
+  {
+    "start": 4215.2,
+    "duration": 4.16,
+    "text": "how I try to decide: is your thing useful for deep… you know, good for deep learning or not."
+  },
+  {
+    "start": 4221.44,
+    "duration": 2.4,
+    "text": "You know it's been a long time to get to this point."
+  },
+  {
+    "start": 4226.08,
+    "duration": 6.48,
+    "text": "Yes, deep learning is incredibly powerful now, but it's taken decades of work. This was the first"
+  },
+  {
+    "start": 4232.56,
+    "duration": 6.88,
+    "text": "neural network. Remember, neural networks are the basis of deep learning. So this was back in 1957."
+  },
+  {
+    "start": 4241.2,
+    "duration": 10.0,
+    "text": "The basic ideas have not changed much at all, but you know we do have things like gpus now,"
+  },
+  {
+    "start": 4251.2,
+    "duration": 5.68,
+    "text": "and solid-state drives, and stuff like that, and of course much more data, just is available,"
+  },
+  {
+    "start": 4257.44,
+    "duration": 9.12,
+    "text": "now, but this has been decades of really hard work by a lot of people to get to this point."
+  },
+  {
+    "start": 4271.2,
+    "duration": 6.72,
+    "text": "So let's kind of take a step back, and talk about, like, what's what's going on"
+  },
+  {
+    "start": 4278.88,
+    "duration": 6.96,
+    "text": "in these models, and I'm going to describe the basic idea of machine learning"
+  },
+  {
+    "start": 4286.96,
+    "duration": 4.48,
+    "text": "largely as it was described by Arthur Samuel in the late 50s when it was invented,"
+  },
+  {
+    "start": 4293.36,
+    "duration": 6.88,
+    "text": "and I'm going to kind of do it with these graphs; oh which, by the way,"
+  },
+  {
+    "start": 4300.24,
+    "duration": 4.48,
+    "text": "you might find fun… these graphs are themselves…"
+  },
+  {
+    "start": 4312.08,
+    "duration": 4.56,
+    "text": "created with Jupyter notebooks. So these are graphviz descriptions that are going to get"
+  },
+  {
+    "start": 4316.64,
+    "duration": 4.24,
+    "text": "turned into these, so there's a little sneak peek behind the scenes for you?"
+  },
+  {
+    "start": 4323.84,
+    "duration": 3.84,
+    "text": "So, let's start with kind of a graph of, like, well, what does a normal program look like? right?"
+  },
+  {
+    "start": 4327.68,
+    "duration": 4.88,
+    "text": "so, in the pre deep learning, and machine learning days, well, you know, you'd have… you still have"
+  },
+  {
+    "start": 4332.56,
+    "duration": 4.96,
+    "text": "inputs, and you still have results. Right? and then you code a program in the middle, which is,"
+  },
+  {
+    "start": 4337.52,
+    "duration": 4.72,
+    "text": "you know, a bunch of conditionals, and loops, and setting variables, and blah blah blah. Okay."
+  },
+  {
+    "start": 4344.16,
+    "duration": 3.6,
+    "text": "A “machine learning model” doesn't look that different…"
+  },
+  {
+    "start": 4350.4,
+    "duration": 0.32,
+    "text": "but…"
+  },
+  {
+    "start": 4353.76,
+    "duration": 4.96,
+    "text": "The program has been replaced with something called “a model,” and we don't just have inputs"
+  },
+  {
+    "start": 4358.72,
+    "duration": 5.68,
+    "text": "now, we now also have weights, which are also called “parameters,” and the key thing is this:"
+  },
+  {
+    "start": 4364.96,
+    "duration": 4.88,
+    "text": "the model is not any more a bunch of conditionals, and loops, and things."
+  },
+  {
+    "start": 4370.72,
+    "duration": 1.28,
+    "text": "It's a mathematical function."
+  },
+  {
+    "start": 4372.56,
+    "duration": 4.16,
+    "text": "In the case of a neural network, it's a mathematical function that takes the inputs,"
+  },
+  {
+    "start": 4378.08,
+    "duration": 4.32,
+    "text": "multiplies them together by the weights – by one set of weights – and adds them up;"
+  },
+  {
+    "start": 4382.96,
+    "duration": 2.8,
+    "text": "and then it does that again for a second set of weights and adds them up,"
+  },
+  {
+    "start": 4385.76,
+    "duration": 2.48,
+    "text": "does it again for a third set of weights, and adds them up and so forth."
+  },
+  {
+    "start": 4389.44,
+    "duration": 3.36,
+    "text": "It then takes all the negative numbers, and replaces them with zeros,"
+  },
+  {
+    "start": 4394.56,
+    "duration": 4.56,
+    "text": "and then it takes those as inputs to the next layer. It does the same thing;"
+  },
+  {
+    "start": 4399.12,
+    "duration": 3.84,
+    "text": "multiplies them a bunch of times, and adds them up, and it does that a few times,"
+  },
+  {
+    "start": 4403.68,
+    "duration": 5.04,
+    "text": "and that's called “a neural network.” Now, the model"
+  },
+  {
+    "start": 4410.32,
+    "duration": 4.16,
+    "text": "therefore, is not going to do anything useful, unless these weights are very carefully chosen."
+  },
+  {
+    "start": 4416.56,
+    "duration": 3.6,
+    "text": "And, so the way it works is, that we actually start out with these weights as being"
+  },
+  {
+    "start": 4420.96,
+    "duration": 6.48,
+    "text": "random. So initially, this thing doesn't do anything useful at all!"
+  },
+  {
+    "start": 4432.24,
+    "duration": 4.72,
+    "text": "So, what we do –- the way arthur samuel described it back in the late 50s"
+  },
+  {
+    "start": 4436.96,
+    "duration": 4.32,
+    "text": "(the inventor of machine learning) – is, he said: “okay, let's take the inputs,"
+  },
+  {
+    "start": 4441.28,
+    "duration": 2.88,
+    "text": "and the weights, put them through our model.” He wasn't talking particularly"
+  },
+  {
+    "start": 4444.16,
+    "duration": 2.56,
+    "text": "about neural networks. He's just like… whatever model you like…"
+  },
+  {
+    "start": 4449.36,
+    "duration": 7.04,
+    "text": "get the results, and then let's decide how “good” they are, right? So, if for example,"
+  },
+  {
+    "start": 4456.4,
+    "duration": 5.84,
+    "text": "we're trying to decide: “is this a picture of a bird?” and the model said – which initially"
+  },
+  {
+    "start": 4462.24,
+    "duration": 5.52,
+    "text": "is random – says “this isn't a bird,” and actually it IS a bird, we would say: “oh you're wrong!” So"
+  },
+  {
+    "start": 4467.76,
+    "duration": 5.12,
+    "text": "we then calculate “the loss.” So, the loss is a number that says how good were the results."
+  },
+  {
+    "start": 4475.28,
+    "duration": 2.72,
+    "text": "So that's all pretty straightforward, you know. We could, for example, say oh what's"
+  },
+  {
+    "start": 4478.0,
+    "duration": 3.84,
+    "text": "the accuracy? We could look at 100 photos and say which percentage of them did it get right."
+  },
+  {
+    "start": 4483.52,
+    "duration": 8.96,
+    "text": "No worries. Now the critical step is this arrow. We need a way of updating the weights"
+  },
+  {
+    "start": 4492.48,
+    "duration": 4.32,
+    "text": "that is coming up with a new set of weights that are a bit better than the previous set."
+  },
+  {
+    "start": 4497.76,
+    "duration": 4.8,
+    "text": "Okay. And by a bit better we mean it should make the loss"
+  },
+  {
+    "start": 4503.84,
+    "duration": 5.52,
+    "text": "get a little bit better. So we've got this number that says how good is our model and"
+  },
+  {
+    "start": 4509.36,
+    "duration": 5.84,
+    "text": "initially it's terrible, right? It's random. We need some mechanism of making a little bit better."
+  },
+  {
+    "start": 4515.84,
+    "duration": 2.16,
+    "text": "If we can just do that one thing"
+  },
+  {
+    "start": 4519.04,
+    "duration": 4.96,
+    "text": "then we just need to iterate this a few times. Because each time we put in some more inputs"
+  },
+  {
+    "start": 4524.0,
+    "duration": 4.24,
+    "text": "and... and put in our weights and get our loss and use it to make it a little bit better,"
+  },
+  {
+    "start": 4529.04,
+    "duration": 3.84,
+    "text": "then if we make it a little bit better enough times, eventually it's going to get good."
+  },
+  {
+    "start": 4534.32,
+    "duration": 6.88,
+    "text": "Assuming that our model is flexible enough to represent the thing we want to do. Now remember"
+  },
+  {
+    "start": 4541.2,
+    "duration": 4.08,
+    "text": "what I told you earlier about what a neural network is: which is basically multiplying things"
+  },
+  {
+    "start": 4545.28,
+    "duration": 4.96,
+    "text": "together and adding them up and replacing the negatives with zeros and you do that a few times,"
+  },
+  {
+    "start": 4551.2,
+    "duration": 3.6,
+    "text": "that is provably an infinitely flexible function."
+  },
+  {
+    "start": 4555.84,
+    "duration": 6.96,
+    "text": "So it actually turns out that that incredibly simple sequence of steps, if you repeat it a"
+  },
+  {
+    "start": 4562.8,
+    "duration": 9.68,
+    "text": "few times, you do enough of them, can solve any computable function. And something like generate"
+  },
+  {
+    "start": 4573.68,
+    "duration": 7.12,
+    "text": "an artwork based off somebody's twitter bio is an example of a computable function, right?"
+  },
+  {
+    "start": 4581.36,
+    "duration": 7.6,
+    "text": "Or translate English to Chinese is an example of a computable function. So they're not the"
+  },
+  {
+    "start": 4588.96,
+    "duration": 5.76,
+    "text": "kinds of normal functions you do in year eight math right but they are computable functions."
+  },
+  {
+    "start": 4595.52,
+    "duration": 8.0,
+    "text": "and so therefore if we can just create this step then and use the neural network as our model"
+  },
+  {
+    "start": 4605.28,
+    "duration": 7.36,
+    "text": "then we're good to go. In theory we can solve anything given enough time and enough data"
+  },
+  {
+    "start": 4613.68,
+    "duration": 2.96,
+    "text": "and so that's exactly what we do."
+  },
+  {
+    "start": 4618.56,
+    "duration": 3.28,
+    "text": "And so once we've finished that training procedure"
+  },
+  {
+    "start": 4624.16,
+    "duration": 5.12,
+    "text": "we don't need the loss anymore and even the weights themselves, we can integrate them,"
+  },
+  {
+    "start": 4629.28,
+    "duration": 3.84,
+    "text": "kind of into the model, right? We finish changing them so we can just say that's now fixed"
+  },
+  {
+    "start": 4633.76,
+    "duration": 4.32,
+    "text": "and so once we've done that we now have something which takes inputs,"
+  },
+  {
+    "start": 4638.08,
+    "duration": 8.0,
+    "text": "puts them through a model and gives us results. It looks exactly like our original idea of a program"
+  },
+  {
+    "start": 4646.96,
+    "duration": 6.16,
+    "text": "and that's why we can do what I described earlier, that is once we've got that learn.predict for our"
+  },
+  {
+    "start": 4653.12,
+    "duration": 5.68,
+    "text": "bird recognizer we can insert it into any piece of computer code, right? Once we've got a trained"
+  },
+  {
+    "start": 4658.8,
+    "duration": 5.92,
+    "text": "model it's just another piece of code we can call with some inputs and get some outputs."
+  },
+  {
+    "start": 4667.2,
+    "duration": 9.04,
+    "text": "Deploying machine learning models in practice can come with a lot of, you know, little tricky"
+  },
+  {
+    "start": 4676.24,
+    "duration": 4.4,
+    "text": "details but the basic idea in your code is that you're just going to have a line of code that says"
+  },
+  {
+    "start": 4681.36,
+    "duration": 4.08,
+    "text": "learn.predict and then you just fit it in with all the rest of your code in the usual way."
+  },
+  {
+    "start": 4685.44,
+    "duration": 6.4,
+    "text": "And this is why: because a trained model is just another thing that maps inputs to results."
+  },
+  {
+    "start": 4695.68,
+    "duration": 0.32,
+    "text": "Okay."
+  },
+  {
+    "start": 4700.08,
+    "duration": 3.12,
+    "text": "All right. so as we come to wrap up this first lesson,"
+  },
+  {
+    "start": 4705.6,
+    "duration": 6.0,
+    "text": "for those of you that are already familiar with notebooks and Python, there's... you know... this"
+  },
+  {
+    "start": 4711.6,
+    "duration": 5.68,
+    "text": "has got to be pretty easy for you. You're just going to be using some stuff that you're already"
+  },
+  {
+    "start": 4717.28,
+    "duration": 4.48,
+    "text": "familiar with and some slightly new libraries. For those of you who are not familiar with Python,"
+  },
+  {
+    "start": 4722.4,
+    "duration": 5.36,
+    "text": "you know, you... you're biting into a big thing here. There's obviously a lot you're going to"
+  },
+  {
+    "start": 4727.76,
+    "duration": 7.04,
+    "text": "have to learn and to be clear I'm... I'm not going to be teaching Python in this course"
+  },
+  {
+    "start": 4734.8,
+    "duration": 6.48,
+    "text": "but we do have links to great python resources in the forum. So check out... check out that thread."
+  },
+  {
+    "start": 4743.44,
+    "duration": 7.44,
+    "text": "Regardless of where you're at, the most important thing is to experiment and so experimenting"
+  },
+  {
+    "start": 4752.16,
+    "duration": 7.6,
+    "text": "could be as simple as just running those Kaggle notebooks that I've shown you just to see them"
+  },
+  {
+    "start": 4759.76,
+    "duration": 6.24,
+    "text": "run. You could try changing things a little bit. I'd really love you to try doing the... the bird"
+  },
+  {
+    "start": 4766.0,
+    "duration": 5.12,
+    "text": "or forest exercise but come up with something else. Maybe try to use three or four categories"
+  },
+  {
+    "start": 4771.12,
+    "duration": 4.72,
+    "text": "rather than two, you know. Have a think about something that you think would be fun to try."
+  },
+  {
+    "start": 4778.56,
+    "duration": 5.12,
+    "text": "Depending on where you're at, you know, push yourself a little bit but not too much. So make"
+  },
+  {
+    "start": 4783.68,
+    "duration": 6.4,
+    "text": "sure you get something finished before the next lesson. Most importantly, read chapter one of the"
+  },
+  {
+    "start": 4790.08,
+    "duration": 5.28,
+    "text": "book. It's got much the same stuff that we've seen today but presented in a slightly different way."
+  },
+  {
+    "start": 4797.04,
+    "duration": 6.08,
+    "text": "And then come back to the forums and present what you've done in the share your work here"
+  },
+  {
+    "start": 4803.76,
+    "duration": 4.4,
+    "text": "thread. After the first time we did this in year one of the course"
+  },
+  {
+    "start": 4810.32,
+    "duration": 5.12,
+    "text": "we got over a thousand replies and of those replies it's amazing how many"
+  },
+  {
+    "start": 4815.44,
+    "duration": 7.28,
+    "text": "of them have ended up turning into new startups, scientific papers, job offers."
+  },
+  {
+    "start": 4823.36,
+    "duration": 4.4,
+    "text": "It's been really cool to watch people's journeys and some of them are just plain fun, you know. So"
+  },
+  {
+    "start": 4827.76,
+    "duration": 4.88,
+    "text": "this person classified different types of Trinidad and Tobago people. So you know,"
+  },
+  {
+    "start": 4832.64,
+    "duration": 3.36,
+    "text": "people do stuff based on where they live and what their interests are."
+  },
+  {
+    "start": 4836.0,
+    "duration": 3.28,
+    "text": "I don't know if this person is particularly interested in zucchini and cucumber but they"
+  },
+  {
+    "start": 4839.28,
+    "duration": 3.84,
+    "text": "made a zucchini and cucumber classifier. I thought this was a really interesting one:"
+  },
+  {
+    "start": 4843.68,
+    "duration": 5.36,
+    "text": "classifying satellite imagery into what city it's probably a picture of. Amazingly accurate"
+  },
+  {
+    "start": 4849.04,
+    "duration": 6.96,
+    "text": "actually. 85 percent with 110 classes. Panama city bus classifier. Batik cloth classifier."
+  },
+  {
+    "start": 4858.32,
+    "duration": 5.68,
+    "text": "This one, you know, very practically important, you know, recognizing the state of buildings."
+  },
+  {
+    "start": 4864.0,
+    "duration": 4.4,
+    "text": "We've had quite a few students actually move into disaster resilience based on satellite imagery"
+  },
+  {
+    "start": 4868.4,
+    "duration": 6.64,
+    "text": "using exactly this kind of work. We've already actually seen this example. Ethan Sutin the... the"
+  },
+  {
+    "start": 4875.04,
+    "duration": 5.36,
+    "text": "sound classifier and I mentioned it was state of the art. He actually checked up the"
+  },
+  {
+    "start": 4880.4,
+    "duration": 6.72,
+    "text": "dataset's website and found that he beat the state of the art for that. Alena Harley did tumor-normal"
+  },
+  {
+    "start": 4887.12,
+    "duration": 4.8,
+    "text": "sequencing. So she was at Human Longevity International. So she actually did three"
+  },
+  {
+    "start": 4891.92,
+    "duration": 5.36,
+    "text": "different really interesting pieces of cancer work during that first course if I remember correctly."
+  },
+  {
+    "start": 4898.88,
+    "duration": 3.92,
+    "text": "And I showed you this picture before. What I didn't mention is actually this... this student"
+  },
+  {
+    "start": 4902.8,
+    "duration": 8.72,
+    "text": "Gleb was a software developer at Splunk, a big NASDAQ listed company. And this student project"
+  },
+  {
+    "start": 4911.52,
+    "duration": 5.44,
+    "text": "he did turned into a new patented product at Splunk and a big blog post and the whole thing"
+  },
+  {
+    "start": 4916.96,
+    "duration": 6.72,
+    "text": "turned out to be really cool. Basically something to identify fraudsters using image recognition"
+  },
+  {
+    "start": 4923.68,
+    "duration": 4.88,
+    "text": "with these pictures we discussed. One of our students built this startup called Envision."
+  },
+  {
+    "start": 4931.68,
+    "duration": 6.16,
+    "text": "Anyway there's been lots and lots of examples. So all of this is to say, you know, have... have a go"
+  },
+  {
+    "start": 4937.84,
+    "duration": 6.96,
+    "text": "at you know, starting something. Create something you think would be fun or or interesting and share"
+  },
+  {
+    "start": 4944.8,
+    "duration": 5.44,
+    "text": "it in the forum. If you're a total beginner with Python, you know, then start... start"
+  },
+  {
+    "start": 4950.24,
+    "duration": 3.68,
+    "text": "with something simple. But I think you'll find people very encouraging and if you've done this"
+  },
+  {
+    "start": 4953.92,
+    "duration": 4.8,
+    "text": "a few times before then try to push yourself a little bit further. And don't forget to look"
+  },
+  {
+    "start": 4958.72,
+    "duration": 4.56,
+    "text": "at the quiz questions at the end of the book and see if you can answer them all correctly."
+  },
+  {
+    "start": 4967.84,
+    "duration": 7.2,
+    "text": "All right, thanks everybody, so much for coming. Okay. Thanks so much for coming everybody. Bye."
+  }
+]

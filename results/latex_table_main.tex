@@ -1,0 +1,16 @@
+% IEEE Table 1: Primary Retrieval Performance
+\begin{table*}[t]
+\caption{Overall Retrieval Performance and Temporal Grounding Across Chunking Strategies ($N=130$ Answerable Questions, 95\% Empirical Bootstrap Confidence Intervals)}
+\label{tab:main_retrieval}
+\centering
+\begin{tabular}{lcccccccc}
+\hline
+\textbf{Strategy} & \textbf{Hit@1 [95\% CI]} & \textbf{Hit@4} & \textbf{MRR} & \textbf{Mean IoU@1 [95\% CI]} & \textbf{R@1@0.3} & \textbf{R@1@0.5} & \textbf{Med |$\Delta t$| (s)} & \textbf{Avg Dur (s)} \\
+\hline
+\texttt{fixed\_token} & 8.5\% [4.0, 14.0] & \textbf{24.6\%} & \textbf{0.145} & \textbf{0.044} [0.02, 0.08] & \textbf{5.4\%} & \textbf{4.6\%} & \textbf{656.3} & 48.6 \\
+\texttt{sentence}     & 5.4\% [2.0, 9.0]  & 19.2\%          & 0.107          & 0.021 [0.01, 0.04]          & 3.1\%          & 1.5\%          & 668.0          & 31.6 \\
+\texttt{semantic}     & 6.2\% [2.0, 11.0] & 23.8\%          & 0.129          & 0.025 [0.01, 0.05]          & 3.1\%          & 2.3\%          & 701.3          & 41.9 \\
+\texttt{time\_window} & \textbf{9.2\%} [5.0, 14.0] & 16.9\%          & 0.122          & 0.036 [0.01, 0.06]          & 4.6\%          & 3.8\%          & 707.2          & 41.6 \\
+\hline
+\end{tabular}
+\end{table*}

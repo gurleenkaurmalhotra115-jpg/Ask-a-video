@@ -1,0 +1,4947 @@
+[
+  {
+    "start": 0.51,
+    "duration": 2.08,
+    "text": "[Music]"
+  },
+  {
+    "start": 4.94,
+    "duration": 6.52,
+    "text": "it is my pleasure to welcome Dr Andrew"
+  },
+  {
+    "start": 9.12,
+    "duration": 4.8,
+    "text": "right"
+  },
+  {
+    "start": 11.46,
+    "duration": 5.22,
+    "text": "Andrew is the managing General partner"
+  },
+  {
+    "start": 13.92,
+    "duration": 6.6,
+    "text": "of AI fund"
+  },
+  {
+    "start": 16.68,
+    "duration": 7.26,
+    "text": "founder of deep learning AI"
+  },
+  {
+    "start": 20.52,
+    "duration": 5.76,
+    "text": "and learn and Landing AI chairman and"
+  },
+  {
+    "start": 23.94,
+    "duration": 5.34,
+    "text": "co-founder of Coursera"
+  },
+  {
+    "start": 26.28,
+    "duration": 5.1,
+    "text": "in an Adjunct professor of computer"
+  },
+  {
+    "start": 29.28,
+    "duration": 5.82,
+    "text": "science here at Stanford"
+  },
+  {
+    "start": 31.38,
+    "duration": 6.3,
+    "text": "previously he had started and led the"
+  },
+  {
+    "start": 35.1,
+    "duration": 5.34,
+    "text": "Google brain team which had helped"
+  },
+  {
+    "start": 37.68,
+    "duration": 5.4,
+    "text": "Google adopt modern Ai and he was also"
+  },
+  {
+    "start": 40.44,
+    "duration": 6.18,
+    "text": "director of the Stanford AI lab"
+  },
+  {
+    "start": 43.08,
+    "duration": 6.36,
+    "text": "about 8 million people one in one"
+  },
+  {
+    "start": 46.62,
+    "duration": 6.12,
+    "text": "thousand persons on the planet"
+  },
+  {
+    "start": 49.44,
+    "duration": 5.64,
+    "text": "have taken an AI class from him and"
+  },
+  {
+    "start": 52.74,
+    "duration": 3.54,
+    "text": "through both his education and his AI"
+  },
+  {
+    "start": 55.08,
+    "duration": 3.9,
+    "text": "work"
+  },
+  {
+    "start": 56.28,
+    "duration": 5.95,
+    "text": "he has changed numerous lives"
+  },
+  {
+    "start": 58.98,
+    "duration": 5.76,
+    "text": "please welcome Dr Andrew"
+  },
+  {
+    "start": 62.23,
+    "duration": 5.03,
+    "text": "[Music]"
+  },
+  {
+    "start": 64.74,
+    "duration": 4.34,
+    "text": "foreign"
+  },
+  {
+    "start": 67.26,
+    "duration": 4.92,
+    "text": "Thank you Lisa it's good to see everyone"
+  },
+  {
+    "start": 69.08,
+    "duration": 6.88,
+    "text": "so what I want to do today is um chat"
+  },
+  {
+    "start": 72.18,
+    "duration": 5.88,
+    "text": "you about some opportunities in AI so"
+  },
+  {
+    "start": 75.96,
+    "duration": 3.78,
+    "text": "I've been seeing AI is a new electricity"
+  },
+  {
+    "start": 78.06,
+    "duration": 4.14,
+    "text": "one of the difficult things to"
+  },
+  {
+    "start": 79.74,
+    "duration": 4.74,
+    "text": "understand about AI is that it is a"
+  },
+  {
+    "start": 82.2,
+    "duration": 4.32,
+    "text": "general purpose technology meaning that"
+  },
+  {
+    "start": 84.48,
+    "duration": 3.42,
+    "text": "it's not useful only for one thing but"
+  },
+  {
+    "start": 86.52,
+    "duration": 3.9,
+    "text": "it's useful for lots of different"
+  },
+  {
+    "start": 87.9,
+    "duration": 4.08,
+    "text": "applications kind of like electricity if"
+  },
+  {
+    "start": 90.42,
+    "duration": 3.78,
+    "text": "I was to ask you what is electricity"
+  },
+  {
+    "start": 91.98,
+    "duration": 4.2,
+    "text": "good for you know it's not any one thing"
+  },
+  {
+    "start": 94.2,
+    "duration": 3.66,
+    "text": "it's a lot of things so what I'd like to"
+  },
+  {
+    "start": 96.18,
+    "duration": 3.96,
+    "text": "do is start off sharing with you how I"
+  },
+  {
+    "start": 97.86,
+    "duration": 4.94,
+    "text": "view the technology landscape and this"
+  },
+  {
+    "start": 100.14,
+    "duration": 5.4,
+    "text": "will lead into the set of opportunities"
+  },
+  {
+    "start": 102.8,
+    "duration": 5.56,
+    "text": "so a lot of hype lots of excitement"
+  },
+  {
+    "start": 105.54,
+    "duration": 6.18,
+    "text": "about Ai and I think a good way to think"
+  },
+  {
+    "start": 108.36,
+    "duration": 4.8,
+    "text": "about AI is as a collection of tools so"
+  },
+  {
+    "start": 111.72,
+    "duration": 2.94,
+    "text": "this includes a technique called"
+  },
+  {
+    "start": 113.16,
+    "duration": 3.42,
+    "text": "supervised learning which is very good"
+  },
+  {
+    "start": 114.66,
+    "duration": 4.92,
+    "text": "at recognizing things or labeling things"
+  },
+  {
+    "start": 116.58,
+    "duration": 5.4,
+    "text": "and gents of AI which is relatively new"
+  },
+  {
+    "start": 119.58,
+    "duration": 4.02,
+    "text": "exciting development if you're familiar"
+  },
+  {
+    "start": 121.98,
+    "duration": 3.66,
+    "text": "with AI you may have heard of other"
+  },
+  {
+    "start": 123.6,
+    "duration": 3.66,
+    "text": "tools but I'm going to talk less about"
+  },
+  {
+    "start": 125.64,
+    "duration": 4.32,
+    "text": "these additional tools and I'll focus on"
+  },
+  {
+    "start": 127.26,
+    "duration": 3.96,
+    "text": "a on what I think are currently the two"
+  },
+  {
+    "start": 129.96,
+    "duration": 4.08,
+    "text": "most important tools which are"
+  },
+  {
+    "start": 131.22,
+    "duration": 5.1,
+    "text": "supervised learning and generative AI"
+  },
+  {
+    "start": 134.04,
+    "duration": 3.84,
+    "text": "so supervised learning is very good at"
+  },
+  {
+    "start": 136.32,
+    "duration": 4.62,
+    "text": "labeling things or very good at"
+  },
+  {
+    "start": 137.88,
+    "duration": 5.4,
+    "text": "Computing input to outputs or a to B"
+  },
+  {
+    "start": 140.94,
+    "duration": 5.76,
+    "text": "mappings given input a give me an output"
+  },
+  {
+    "start": 143.28,
+    "duration": 5.58,
+    "text": "B for example given an email we can use"
+  },
+  {
+    "start": 146.7,
+    "duration": 4.38,
+    "text": "supervised learning to label it as spam"
+  },
+  {
+    "start": 148.86,
+    "duration": 3.72,
+    "text": "or not spam the most lucrative"
+  },
+  {
+    "start": 151.08,
+    "duration": 3.54,
+    "text": "application of this that I've ever"
+  },
+  {
+    "start": 152.58,
+    "duration": 4.74,
+    "text": "worked on is probably online advertising"
+  },
+  {
+    "start": 154.62,
+    "duration": 4.56,
+    "text": "we're given an ad we can label our users"
+  },
+  {
+    "start": 157.32,
+    "duration": 4.38,
+    "text": "likely to click on it and therefore show"
+  },
+  {
+    "start": 159.18,
+    "duration": 4.62,
+    "text": "more relevant ads for self-driving calls"
+  },
+  {
+    "start": 161.7,
+    "duration": 3.9,
+    "text": "given the sensitive readings of a car we"
+  },
+  {
+    "start": 163.8,
+    "duration": 4.02,
+    "text": "can label it with where the other cars"
+  },
+  {
+    "start": 165.6,
+    "duration": 3.84,
+    "text": "one project that my team AI fan worked"
+  },
+  {
+    "start": 167.82,
+    "duration": 3.78,
+    "text": "on was ship route optimization where"
+  },
+  {
+    "start": 169.44,
+    "duration": 4.26,
+    "text": "given a route that the ship is taking or"
+  },
+  {
+    "start": 171.6,
+    "duration": 4.2,
+    "text": "considering taking we can label that"
+  },
+  {
+    "start": 173.7,
+    "duration": 4.62,
+    "text": "with how much fuel we think to consume"
+  },
+  {
+    "start": 175.8,
+    "duration": 4.56,
+    "text": "and use this uh make ships more fuel"
+  },
+  {
+    "start": 178.32,
+    "duration": 4.32,
+    "text": "efficient still a lot of work in"
+  },
+  {
+    "start": 180.36,
+    "duration": 3.78,
+    "text": "automated visual inspection in factories"
+  },
+  {
+    "start": 182.64,
+    "duration": 2.94,
+    "text": "so you can take a picture of a"
+  },
+  {
+    "start": 184.14,
+    "duration": 3.12,
+    "text": "smartphone that was just manufactured"
+  },
+  {
+    "start": 185.58,
+    "duration": 4.08,
+    "text": "and label is just scratched right near"
+  },
+  {
+    "start": 187.26,
+    "duration": 4.14,
+    "text": "the defect in it or if you want to build"
+  },
+  {
+    "start": 189.66,
+    "duration": 3.66,
+    "text": "a restaurant review reputation"
+  },
+  {
+    "start": 191.4,
+    "duration": 3.72,
+    "text": "monitoring system you can have little"
+  },
+  {
+    "start": 193.32,
+    "duration": 3.78,
+    "text": "piece of software that looks at online"
+  },
+  {
+    "start": 195.12,
+    "duration": 4.86,
+    "text": "restaurant reviews and labels that as"
+  },
+  {
+    "start": 197.1,
+    "duration": 4.02,
+    "text": "positive or negative sentiment so one"
+  },
+  {
+    "start": 199.98,
+    "duration": 2.94,
+    "text": "nice thing one cool thing about"
+  },
+  {
+    "start": 201.12,
+    "duration": 3.78,
+    "text": "supervised learning is that it's not"
+  },
+  {
+    "start": 202.92,
+    "duration": 3.6,
+    "text": "useful for one thing it's useful for all"
+  },
+  {
+    "start": 204.9,
+    "duration": 4.26,
+    "text": "of these different applications and many"
+  },
+  {
+    "start": 206.52,
+    "duration": 4.92,
+    "text": "more besides let me just walk through"
+  },
+  {
+    "start": 209.16,
+    "duration": 4.32,
+    "text": "you know concretely the workflow of one"
+  },
+  {
+    "start": 211.44,
+    "duration": 4.56,
+    "text": "example of a supervised learning"
+  },
+  {
+    "start": 213.48,
+    "duration": 3.84,
+    "text": "labeling things kind of project if you"
+  },
+  {
+    "start": 216.0,
+    "duration": 3.48,
+    "text": "want to build a system to label"
+  },
+  {
+    "start": 217.32,
+    "duration": 3.84,
+    "text": "restaurant reviews you then collect a"
+  },
+  {
+    "start": 219.48,
+    "duration": 3.54,
+    "text": "few data points or collect the data set"
+  },
+  {
+    "start": 221.16,
+    "duration": 4.74,
+    "text": "where say you know the pastrami sandwich"
+  },
+  {
+    "start": 223.02,
+    "duration": 5.1,
+    "text": "is great to say that is positive civil"
+  },
+  {
+    "start": 225.9,
+    "duration": 5.64,
+    "text": "is slow that's negative my favorite"
+  },
+  {
+    "start": 228.12,
+    "duration": 4.86,
+    "text": "chicken curry that's positive and"
+  },
+  {
+    "start": 231.54,
+    "duration": 3.06,
+    "text": "um here I've shown three data points"
+  },
+  {
+    "start": 232.98,
+    "duration": 3.6,
+    "text": "whether you're building this you may get"
+  },
+  {
+    "start": 234.6,
+    "duration": 3.72,
+    "text": "thousands of data points like this or"
+  },
+  {
+    "start": 236.58,
+    "duration": 3.9,
+    "text": "thousands of trading examples we call it"
+  },
+  {
+    "start": 238.32,
+    "duration": 4.2,
+    "text": "and the workflow of a machine learning"
+  },
+  {
+    "start": 240.48,
+    "duration": 4.44,
+    "text": "project or an AI project is you get"
+  },
+  {
+    "start": 242.52,
+    "duration": 4.5,
+    "text": "labeled data maybe thousands of you know"
+  },
+  {
+    "start": 244.92,
+    "duration": 4.5,
+    "text": "data points then you have an AI"
+  },
+  {
+    "start": 247.02,
+    "duration": 4.62,
+    "text": "engineering team trained an AI model to"
+  },
+  {
+    "start": 249.42,
+    "duration": 4.86,
+    "text": "learn from this data and then finally"
+  },
+  {
+    "start": 251.64,
+    "duration": 5.04,
+    "text": "you would find maybe a cloud service to"
+  },
+  {
+    "start": 254.28,
+    "duration": 3.96,
+    "text": "run the trained AI model and then you"
+  },
+  {
+    "start": 256.68,
+    "duration": 3.42,
+    "text": "can feed it you know best bubble tea"
+  },
+  {
+    "start": 258.24,
+    "duration": 5.22,
+    "text": "I've ever had and that's positive sense"
+  },
+  {
+    "start": 260.1,
+    "duration": 5.4,
+    "text": "of it and so I think the last decade was"
+  },
+  {
+    "start": 263.46,
+    "duration": 4.32,
+    "text": "maybe the decade of large-scale"
+  },
+  {
+    "start": 265.5,
+    "duration": 5.34,
+    "text": "supervised learning what we found"
+  },
+  {
+    "start": 267.78,
+    "duration": 4.86,
+    "text": "starting about 10 15 years ago was if"
+  },
+  {
+    "start": 270.84,
+    "duration": 3.24,
+    "text": "you were to train a small AI model to"
+  },
+  {
+    "start": 272.64,
+    "duration": 3.42,
+    "text": "train a small neural network with small"
+  },
+  {
+    "start": 274.08,
+    "duration": 3.9,
+    "text": "deep learning algorithm Basia small AI"
+  },
+  {
+    "start": 276.06,
+    "duration": 5.1,
+    "text": "model maybe not on a very powerful"
+  },
+  {
+    "start": 277.98,
+    "duration": 4.68,
+    "text": "computer then as you fed more data is"
+  },
+  {
+    "start": 281.16,
+    "duration": 3.18,
+    "text": "performance would get better for a"
+  },
+  {
+    "start": 282.66,
+    "duration": 3.66,
+    "text": "little bit but then it would flatten out"
+  },
+  {
+    "start": 284.34,
+    "duration": 4.02,
+    "text": "it would plateau and it would stop being"
+  },
+  {
+    "start": 286.32,
+    "duration": 2.94,
+    "text": "able to use the data to get better and"
+  },
+  {
+    "start": 288.36,
+    "duration": 3.3,
+    "text": "better"
+  },
+  {
+    "start": 289.26,
+    "duration": 5.4,
+    "text": "but if you were to train a very large AI"
+  },
+  {
+    "start": 291.66,
+    "duration": 6.3,
+    "text": "model lots of compute on maybe powerful"
+  },
+  {
+    "start": 294.66,
+    "duration": 5.46,
+    "text": "gpus then as we scaled up the amount of"
+  },
+  {
+    "start": 297.96,
+    "duration": 3.9,
+    "text": "data we gave the machine learning model"
+  },
+  {
+    "start": 300.12,
+    "duration": 4.08,
+    "text": "this performance would kind of keep on"
+  },
+  {
+    "start": 301.86,
+    "duration": 4.44,
+    "text": "getting better and better so this is why"
+  },
+  {
+    "start": 304.2,
+    "duration": 4.56,
+    "text": "when I started let the Google brain team"
+  },
+  {
+    "start": 306.3,
+    "duration": 4.14,
+    "text": "the primary mission that I directed the"
+  },
+  {
+    "start": 308.76,
+    "duration": 3.18,
+    "text": "team to solve at the time was let's just"
+  },
+  {
+    "start": 310.44,
+    "duration": 3.72,
+    "text": "build really really large neural"
+  },
+  {
+    "start": 311.94,
+    "duration": 4.32,
+    "text": "networks that we then fed a lot of data"
+  },
+  {
+    "start": 314.16,
+    "duration": 4.86,
+    "text": "to and that recipe fortunately worked"
+  },
+  {
+    "start": 316.26,
+    "duration": 5.58,
+    "text": "and I think the idea of driving large"
+  },
+  {
+    "start": 319.02,
+    "duration": 5.58,
+    "text": "compute and large scale of data that"
+  },
+  {
+    "start": 321.84,
+    "duration": 5.52,
+    "text": "recipes really helped us driven a lot of"
+  },
+  {
+    "start": 324.6,
+    "duration": 5.64,
+    "text": "AI progress over the last decade"
+  },
+  {
+    "start": 327.36,
+    "duration": 5.34,
+    "text": "so if that was the last decade of AI I"
+  },
+  {
+    "start": 330.24,
+    "duration": 4.38,
+    "text": "think this decade is turning out to be"
+  },
+  {
+    "start": 332.7,
+    "duration": 4.5,
+    "text": "also doing everything we had to"
+  },
+  {
+    "start": 334.62,
+    "duration": 5.22,
+    "text": "supervised learning but adding to it"
+  },
+  {
+    "start": 337.2,
+    "duration": 5.34,
+    "text": "um the exciting tool of genus of AI"
+  },
+  {
+    "start": 339.84,
+    "duration": 4.74,
+    "text": "so many of you maybe all of you will"
+  },
+  {
+    "start": 342.54,
+    "duration": 4.8,
+    "text": "play their chai GPT and Bob and so on"
+  },
+  {
+    "start": 344.58,
+    "duration": 4.38,
+    "text": "but just you know given a piece of text"
+  },
+  {
+    "start": 347.34,
+    "duration": 3.42,
+    "text": "which you call a prompt like I love"
+  },
+  {
+    "start": 348.96,
+    "duration": 4.26,
+    "text": "eating if you run this multiple times"
+  },
+  {
+    "start": 350.76,
+    "duration": 4.56,
+    "text": "maybe you get bagels cream cheese or my"
+  },
+  {
+    "start": 353.22,
+    "duration": 4.44,
+    "text": "Mother's Meatloaf or um Ultra friends"
+  },
+  {
+    "start": 355.32,
+    "duration": 3.84,
+    "text": "and the AI system can generate output"
+  },
+  {
+    "start": 357.66,
+    "duration": 2.64,
+    "text": "like that"
+  },
+  {
+    "start": 359.16,
+    "duration": 2.94,
+    "text": "um given the amounts of Buzz and"
+  },
+  {
+    "start": 360.3,
+    "duration": 4.26,
+    "text": "excitement about genes of AI I thought"
+  },
+  {
+    "start": 362.1,
+    "duration": 4.92,
+    "text": "I'd take just half a slide to you know"
+  },
+  {
+    "start": 364.56,
+    "duration": 6.48,
+    "text": "say a little bit about how this works"
+  },
+  {
+    "start": 367.02,
+    "duration": 6.42,
+    "text": "so it turns out that germs of AI at"
+  },
+  {
+    "start": 371.04,
+    "duration": 4.5,
+    "text": "least this type of text generation the"
+  },
+  {
+    "start": 373.44,
+    "duration": 4.2,
+    "text": "core of it is using supervised learning"
+  },
+  {
+    "start": 375.54,
+    "duration": 4.86,
+    "text": "that inputs output mappings to"
+  },
+  {
+    "start": 377.64,
+    "duration": 4.56,
+    "text": "repeatedly predict the next word and so"
+  },
+  {
+    "start": 380.4,
+    "duration": 4.26,
+    "text": "if your system reads on the Internet"
+  },
+  {
+    "start": 382.2,
+    "duration": 5.04,
+    "text": "it's a sentence like my favorite food is"
+  },
+  {
+    "start": 384.66,
+    "duration": 4.98,
+    "text": "a bagel with cream cheese and locks then"
+  },
+  {
+    "start": 387.24,
+    "duration": 5.16,
+    "text": "this is translated into a few data"
+  },
+  {
+    "start": 389.64,
+    "duration": 6.12,
+    "text": "points where if it sees my favorite food"
+  },
+  {
+    "start": 392.4,
+    "duration": 6.12,
+    "text": "is a in this case try to guess that the"
+  },
+  {
+    "start": 395.76,
+    "duration": 4.98,
+    "text": "right next word was Bagel or my favorite"
+  },
+  {
+    "start": 398.52,
+    "duration": 3.54,
+    "text": "food is a bagel try to guess next word"
+  },
+  {
+    "start": 400.74,
+    "duration": 3.36,
+    "text": "is with"
+  },
+  {
+    "start": 402.06,
+    "duration": 3.9,
+    "text": "um and similarly if it sees that you"
+  },
+  {
+    "start": 404.1,
+    "duration": 4.14,
+    "text": "know in this case the right guess for"
+  },
+  {
+    "start": 405.96,
+    "duration": 4.86,
+    "text": "the next word would have been cream"
+  },
+  {
+    "start": 408.24,
+    "duration": 5.16,
+    "text": "so by taking text that you find on the"
+  },
+  {
+    "start": 410.82,
+    "duration": 4.86,
+    "text": "internet or other sources and by using"
+  },
+  {
+    "start": 413.4,
+    "duration": 3.96,
+    "text": "this input output supervised learning to"
+  },
+  {
+    "start": 415.68,
+    "duration": 4.32,
+    "text": "try to repeatedly predict the next word"
+  },
+  {
+    "start": 417.36,
+    "duration": 5.22,
+    "text": "if you train a very large AI system"
+  },
+  {
+    "start": 420.0,
+    "duration": 4.56,
+    "text": "on hundreds of billions of words so in"
+  },
+  {
+    "start": 422.58,
+    "duration": 3.96,
+    "text": "the case of the largest models now more"
+  },
+  {
+    "start": 424.56,
+    "duration": 4.62,
+    "text": "than a trillion words then you get a"
+  },
+  {
+    "start": 426.54,
+    "duration": 4.32,
+    "text": "large language model like chai GP and"
+  },
+  {
+    "start": 429.18,
+    "duration": 3.66,
+    "text": "you know there are additional other"
+  },
+  {
+    "start": 430.86,
+    "duration": 3.0,
+    "text": "important technical details I talked"
+  },
+  {
+    "start": 432.84,
+    "duration": 3.3,
+    "text": "about predicting the next word"
+  },
+  {
+    "start": 433.86,
+    "duration": 4.38,
+    "text": "technically these systems predict the"
+  },
+  {
+    "start": 436.14,
+    "duration": 3.74,
+    "text": "next sub word or part of work called the"
+  },
+  {
+    "start": 438.24,
+    "duration": 5.22,
+    "text": "token and then there are other"
+  },
+  {
+    "start": 439.88,
+    "duration": 6.04,
+    "text": "techniques like rohf for further tuning"
+  },
+  {
+    "start": 443.46,
+    "duration": 5.34,
+    "text": "the AI output to be more helpful honest"
+  },
+  {
+    "start": 445.92,
+    "duration": 4.92,
+    "text": "and harmless but at the heart of it is"
+  },
+  {
+    "start": 448.8,
+    "duration": 3.72,
+    "text": "this using supervised learning to"
+  },
+  {
+    "start": 450.84,
+    "duration": 3.84,
+    "text": "repeatedly predict the next word that"
+  },
+  {
+    "start": 452.52,
+    "duration": 3.9,
+    "text": "that's really what's enabling"
+  },
+  {
+    "start": 454.68,
+    "duration": 3.3,
+    "text": "um the exciting you know really"
+  },
+  {
+    "start": 456.42,
+    "duration": 3.54,
+    "text": "fantastic progress on large language"
+  },
+  {
+    "start": 457.98,
+    "duration": 3.84,
+    "text": "models"
+  },
+  {
+    "start": 459.96,
+    "duration": 5.4,
+    "text": "so"
+  },
+  {
+    "start": 461.82,
+    "duration": 6.12,
+    "text": "um while many people have seen large"
+  },
+  {
+    "start": 465.36,
+    "duration": 4.86,
+    "text": "English models as a fantastic consumer"
+  },
+  {
+    "start": 467.94,
+    "duration": 4.56,
+    "text": "tool you can go to a website like track"
+  },
+  {
+    "start": 470.22,
+    "duration": 3.6,
+    "text": "GPS website or Bots or other large"
+  },
+  {
+    "start": 472.5,
+    "duration": 3.3,
+    "text": "language models and use it I think it's"
+  },
+  {
+    "start": 473.82,
+    "duration": 3.72,
+    "text": "fantastic too there's one of the trends"
+  },
+  {
+    "start": 475.8,
+    "duration": 5.16,
+    "text": "I think is still underappreciated which"
+  },
+  {
+    "start": 477.54,
+    "duration": 7.38,
+    "text": "is the power of large language models"
+  },
+  {
+    "start": 480.96,
+    "duration": 5.4,
+    "text": "not only not just as consumer two but as"
+  },
+  {
+    "start": 484.92,
+    "duration": 4.2,
+    "text": "a developer to"
+  },
+  {
+    "start": 486.36,
+    "duration": 5.88,
+    "text": "so it turns out that um there are"
+  },
+  {
+    "start": 489.12,
+    "duration": 5.46,
+    "text": "applications that used to take me months"
+  },
+  {
+    "start": 492.24,
+    "duration": 4.92,
+    "text": "to build that a lot of people can now"
+  },
+  {
+    "start": 494.58,
+    "duration": 5.46,
+    "text": "build much faster by using a large"
+  },
+  {
+    "start": 497.16,
+    "duration": 4.26,
+    "text": "language model so specifically the"
+  },
+  {
+    "start": 500.04,
+    "duration": 2.82,
+    "text": "workflow for supervised learning"
+  },
+  {
+    "start": 501.42,
+    "duration": 3.9,
+    "text": "building the restaurant review system"
+  },
+  {
+    "start": 502.86,
+    "duration": 4.74,
+    "text": "say would be that you need to get a"
+  },
+  {
+    "start": 505.32,
+    "duration": 4.02,
+    "text": "bunch of label data and you know maybe"
+  },
+  {
+    "start": 507.6,
+    "duration": 4.74,
+    "text": "that takes a month to get a few thousand"
+  },
+  {
+    "start": 509.34,
+    "duration": 5.52,
+    "text": "data points and then have an AI team"
+  },
+  {
+    "start": 512.34,
+    "duration": 4.5,
+    "text": "train and tune and really get you know"
+  },
+  {
+    "start": 514.86,
+    "duration": 4.8,
+    "text": "optimized performance on your AI model"
+  },
+  {
+    "start": 516.84,
+    "duration": 5.52,
+    "text": "maybe that'll take three months"
+  },
+  {
+    "start": 519.66,
+    "duration": 4.2,
+    "text": "then find a cloud service to run it make"
+  },
+  {
+    "start": 522.36,
+    "duration": 3.18,
+    "text": "sure it's running robustly make sure"
+  },
+  {
+    "start": 523.86,
+    "duration": 3.06,
+    "text": "it's recognized maybe that'll take"
+  },
+  {
+    "start": 525.54,
+    "duration": 3.48,
+    "text": "another three months"
+  },
+  {
+    "start": 526.92,
+    "duration": 4.02,
+    "text": "so pretty realistic timeline for"
+  },
+  {
+    "start": 529.02,
+    "duration": 4.38,
+    "text": "building a commercial grade machine"
+  },
+  {
+    "start": 530.94,
+    "duration": 5.1,
+    "text": "Learning System is like six to 12 months"
+  },
+  {
+    "start": 533.4,
+    "duration": 4.62,
+    "text": "right so teams I've LED will often took"
+  },
+  {
+    "start": 536.04,
+    "duration": 3.6,
+    "text": "you know roughly six to 12 months to"
+  },
+  {
+    "start": 538.02,
+    "duration": 3.06,
+    "text": "build and deploy these systems and and"
+  },
+  {
+    "start": 539.64,
+    "duration": 3.9,
+    "text": "some of them turned out to be really"
+  },
+  {
+    "start": 541.08,
+    "duration": 4.68,
+    "text": "valuable uh but this is a realistic"
+  },
+  {
+    "start": 543.54,
+    "duration": 4.68,
+    "text": "timeline for building and deploying a"
+  },
+  {
+    "start": 545.76,
+    "duration": 5.04,
+    "text": "commercial grade AI system"
+  },
+  {
+    "start": 548.22,
+    "duration": 4.68,
+    "text": "in contrast with prompt base AI we write"
+  },
+  {
+    "start": 550.8,
+    "duration": 2.82,
+    "text": "a prompt this is what the workflow looks"
+  },
+  {
+    "start": 552.9,
+    "duration": 3.48,
+    "text": "like"
+  },
+  {
+    "start": 553.62,
+    "duration": 5.76,
+    "text": "you can specify a prompt that takes"
+  },
+  {
+    "start": 556.38,
+    "duration": 4.86,
+    "text": "maybe minutes or hours and then you can"
+  },
+  {
+    "start": 559.38,
+    "duration": 4.68,
+    "text": "deploy it to the cloud and that takes"
+  },
+  {
+    "start": 561.24,
+    "duration": 5.76,
+    "text": "maybe hours or days so there are certain"
+  },
+  {
+    "start": 564.06,
+    "duration": 5.88,
+    "text": "AI applications that used to take me you"
+  },
+  {
+    "start": 567.0,
+    "duration": 5.16,
+    "text": "know literally six months maybe a year"
+  },
+  {
+    "start": 569.94,
+    "duration": 4.92,
+    "text": "to build that many teams around the"
+  },
+  {
+    "start": 572.16,
+    "duration": 5.46,
+    "text": "world can now build in maybe a week and"
+  },
+  {
+    "start": 574.86,
+    "duration": 4.74,
+    "text": "I think this is already starting but the"
+  },
+  {
+    "start": 577.62,
+    "duration": 4.08,
+    "text": "best is still yet to come this is"
+  },
+  {
+    "start": 579.6,
+    "duration": 3.9,
+    "text": "starting to open up a flood of a lot"
+  },
+  {
+    "start": 581.7,
+    "duration": 3.6,
+    "text": "more AI applications that can be built"
+  },
+  {
+    "start": 583.5,
+    "duration": 3.9,
+    "text": "by a lot of people so I think many"
+  },
+  {
+    "start": 585.3,
+    "duration": 4.68,
+    "text": "people still underestimate the magnitude"
+  },
+  {
+    "start": 587.4,
+    "duration": 3.84,
+    "text": "of the floods of custom AI applications"
+  },
+  {
+    "start": 589.98,
+    "duration": 2.1,
+    "text": "that I think is going to come down the"
+  },
+  {
+    "start": 591.24,
+    "duration": 3.78,
+    "text": "pipe"
+  },
+  {
+    "start": 592.08,
+    "duration": 5.52,
+    "text": "now I know you probably were not"
+  },
+  {
+    "start": 595.02,
+    "duration": 3.66,
+    "text": "expecting me to write code in this"
+  },
+  {
+    "start": 597.6,
+    "duration": 3.9,
+    "text": "presentation"
+  },
+  {
+    "start": 598.68,
+    "duration": 3.84,
+    "text": "but that's what I'm going to do"
+  },
+  {
+    "start": 601.5,
+    "duration": 4.08,
+    "text": "um"
+  },
+  {
+    "start": 602.52,
+    "duration": 4.32,
+    "text": "so it turns out this is all the code I"
+  },
+  {
+    "start": 605.58,
+    "duration": 2.64,
+    "text": "need"
+  },
+  {
+    "start": 606.84,
+    "duration": 2.88,
+    "text": "um in order to write a sentiment"
+  },
+  {
+    "start": 608.22,
+    "duration": 3.9,
+    "text": "classifier"
+  },
+  {
+    "start": 609.72,
+    "duration": 4.26,
+    "text": "so I'm gonna you know some of you will"
+  },
+  {
+    "start": 612.12,
+    "duration": 4.62,
+    "text": "know python I guess important tools from"
+  },
+  {
+    "start": 613.98,
+    "duration": 5.04,
+    "text": "open Ai and then I have this prompt that"
+  },
+  {
+    "start": 616.74,
+    "duration": 4.5,
+    "text": "says classify the text to below"
+  },
+  {
+    "start": 619.02,
+    "duration": 4.74,
+    "text": "delimited by three dashes as having"
+  },
+  {
+    "start": 621.24,
+    "duration": 4.86,
+    "text": "either a positive or negative sentiment"
+  },
+  {
+    "start": 623.76,
+    "duration": 5.76,
+    "text": "I don't know I"
+  },
+  {
+    "start": 626.1,
+    "duration": 8.84,
+    "text": "I don't know what I rather fantastic"
+  },
+  {
+    "start": 629.52,
+    "duration": 5.42,
+    "text": "time back at Stanford GSB"
+  },
+  {
+    "start": 636.42,
+    "duration": 6.06,
+    "text": "on we learned a lot and also made great"
+  },
+  {
+    "start": 639.6,
+    "duration": 4.8,
+    "text": "new friends all right so that's my"
+  },
+  {
+    "start": 642.48,
+    "duration": 3.36,
+    "text": "prompt and now I'm just gonna run it and"
+  },
+  {
+    "start": 644.4,
+    "duration": 3.06,
+    "text": "I've never run it before so I really"
+  },
+  {
+    "start": 645.84,
+    "duration": 3.8,
+    "text": "hope oh thank goodness we got the right"
+  },
+  {
+    "start": 647.46,
+    "duration": 2.18,
+    "text": "answer"
+  },
+  {
+    "start": 652.1,
+    "duration": 5.38,
+    "text": "and this is literally all the code it"
+  },
+  {
+    "start": 655.02,
+    "duration": 4.92,
+    "text": "takes to build a sentiment classifier"
+  },
+  {
+    "start": 657.48,
+    "duration": 3.84,
+    "text": "um and so today you know developers"
+  },
+  {
+    "start": 659.94,
+    "duration": 3.18,
+    "text": "around the world can take literally"
+  },
+  {
+    "start": 661.32,
+    "duration": 3.3,
+    "text": "maybe like 10 minutes to build a system"
+  },
+  {
+    "start": 663.12,
+    "duration": 3.36,
+    "text": "like this"
+  },
+  {
+    "start": 664.62,
+    "duration": 6.84,
+    "text": "um and"
+  },
+  {
+    "start": 666.48,
+    "duration": 7.64,
+    "text": "that's a very exciting development"
+  },
+  {
+    "start": 671.46,
+    "duration": 2.66,
+    "text": "so"
+  },
+  {
+    "start": 674.58,
+    "duration": 3.54,
+    "text": "one of the things I've been working on"
+  },
+  {
+    "start": 676.98,
+    "duration": 2.88,
+    "text": "was"
+  },
+  {
+    "start": 678.12,
+    "duration": 4.56,
+    "text": "um trying to teach you know online"
+  },
+  {
+    "start": 679.86,
+    "duration": 4.14,
+    "text": "classes about how to use prompting not"
+  },
+  {
+    "start": 682.68,
+    "duration": 4.74,
+    "text": "just as a consumer too but as a"
+  },
+  {
+    "start": 684.0,
+    "duration": 5.82,
+    "text": "developer too so stop the technology"
+  },
+  {
+    "start": 687.42,
+    "duration": 5.1,
+    "text": "landscape let me now"
+  },
+  {
+    "start": 689.82,
+    "duration": 5.1,
+    "text": "share my thoughts on what are some of"
+  },
+  {
+    "start": 692.52,
+    "duration": 5.82,
+    "text": "the AI opportunities I see"
+  },
+  {
+    "start": 694.92,
+    "duration": 5.82,
+    "text": "this shows what I think is the value of"
+  },
+  {
+    "start": 698.34,
+    "duration": 3.66,
+    "text": "different AI Technologies today"
+  },
+  {
+    "start": 700.74,
+    "duration": 3.9,
+    "text": "um and I'll talk about three years from"
+  },
+  {
+    "start": 702.0,
+    "duration": 5.16,
+    "text": "now but the vast majority of financial"
+  },
+  {
+    "start": 704.64,
+    "duration": 4.86,
+    "text": "value from AI today is I think"
+  },
+  {
+    "start": 707.16,
+    "duration": 4.38,
+    "text": "supervised learning where for a single"
+  },
+  {
+    "start": 709.5,
+    "duration": 4.74,
+    "text": "company like Google can be worth more"
+  },
+  {
+    "start": 711.54,
+    "duration": 4.98,
+    "text": "than 100 billion US dollars a year and"
+  },
+  {
+    "start": 714.24,
+    "duration": 3.9,
+    "text": "also there are millions of developers"
+  },
+  {
+    "start": 716.52,
+    "duration": 3.54,
+    "text": "building supervised learning"
+  },
+  {
+    "start": 718.14,
+    "duration": 4.08,
+    "text": "applications so it's already massively"
+  },
+  {
+    "start": 720.06,
+    "duration": 3.84,
+    "text": "valuable and also with tremendous"
+  },
+  {
+    "start": 722.22,
+    "duration": 3.72,
+    "text": "momentum behind it just because of the"
+  },
+  {
+    "start": 723.9,
+    "duration": 4.02,
+    "text": "sheer efforts in you know Finding"
+  },
+  {
+    "start": 725.94,
+    "duration": 4.32,
+    "text": "applications and building applications"
+  },
+  {
+    "start": 727.92,
+    "duration": 4.56,
+    "text": "and then generative AI is the really"
+  },
+  {
+    "start": 730.26,
+    "duration": 3.9,
+    "text": "exciting new entrance which is much"
+  },
+  {
+    "start": 732.48,
+    "duration": 3.24,
+    "text": "smaller right now"
+  },
+  {
+    "start": 734.16,
+    "duration": 3.24,
+    "text": "and then there are the other tools I'm"
+  },
+  {
+    "start": 735.72,
+    "duration": 2.82,
+    "text": "including for completeness we can you"
+  },
+  {
+    "start": 737.4,
+    "duration": 3.54,
+    "text": "know"
+  },
+  {
+    "start": 738.54,
+    "duration": 4.2,
+    "text": "the size of these circles represent the"
+  },
+  {
+    "start": 740.94,
+    "duration": 3.78,
+    "text": "value today this is what I think it"
+  },
+  {
+    "start": 742.74,
+    "duration": 4.14,
+    "text": "might grow to in three years"
+  },
+  {
+    "start": 744.72,
+    "duration": 5.28,
+    "text": "so supervised learning already really"
+  },
+  {
+    "start": 746.88,
+    "duration": 5.22,
+    "text": "massive May double say in the next three"
+  },
+  {
+    "start": 750.0,
+    "duration": 3.06,
+    "text": "years from truly massive to even more"
+  },
+  {
+    "start": 752.1,
+    "duration": 3.42,
+    "text": "massive"
+  },
+  {
+    "start": 753.06,
+    "duration": 4.2,
+    "text": "and gents of AI which is much smaller"
+  },
+  {
+    "start": 755.52,
+    "duration": 3.3,
+    "text": "today I think we're much more than"
+  },
+  {
+    "start": 757.26,
+    "duration": 3.78,
+    "text": "double in the next three years because"
+  },
+  {
+    "start": 758.82,
+    "duration": 4.38,
+    "text": "of the number of amounts of developer"
+  },
+  {
+    "start": 761.04,
+    "duration": 4.02,
+    "text": "interests the amount of venture capital"
+  },
+  {
+    "start": 763.2,
+    "duration": 4.44,
+    "text": "Investments number of large corporates"
+  },
+  {
+    "start": 765.06,
+    "duration": 4.56,
+    "text": "exploring applications and I also just"
+  },
+  {
+    "start": 767.64,
+    "duration": 4.5,
+    "text": "point out three years is a very short"
+  },
+  {
+    "start": 769.62,
+    "duration": 4.32,
+    "text": "time Horizon if it continues to compound"
+  },
+  {
+    "start": 772.14,
+    "duration": 3.18,
+    "text": "anything near this rate then in six"
+  },
+  {
+    "start": 773.94,
+    "duration": 4.74,
+    "text": "years you know it'll be it'll be even"
+  },
+  {
+    "start": 775.32,
+    "duration": 5.58,
+    "text": "vastly larger but um this light shaded"
+  },
+  {
+    "start": 778.68,
+    "duration": 4.5,
+    "text": "region in green or orange that light"
+  },
+  {
+    "start": 780.9,
+    "duration": 4.44,
+    "text": "shaded region is where the options is"
+  },
+  {
+    "start": 783.18,
+    "duration": 4.86,
+    "text": "for either new startups or for large"
+  },
+  {
+    "start": 785.34,
+    "duration": 5.7,
+    "text": "companies incumbents to create and to"
+  },
+  {
+    "start": 788.04,
+    "duration": 4.8,
+    "text": "enjoy value capture but one thing I hope"
+  },
+  {
+    "start": 791.04,
+    "duration": 3.48,
+    "text": "you take away from this slide is that"
+  },
+  {
+    "start": 792.84,
+    "duration": 4.14,
+    "text": "all of these Technologies are general"
+  },
+  {
+    "start": 794.52,
+    "duration": 4.5,
+    "text": "purpose Technologies so in the case of"
+  },
+  {
+    "start": 796.98,
+    "duration": 4.44,
+    "text": "supervised learning a lot of the work"
+  },
+  {
+    "start": 799.02,
+    "duration": 4.2,
+    "text": "that had to be done over the last decade"
+  },
+  {
+    "start": 801.42,
+    "duration": 4.38,
+    "text": "but it's continuing for the next decade"
+  },
+  {
+    "start": 803.22,
+    "duration": 5.34,
+    "text": "is identified and execute on the"
+  },
+  {
+    "start": 805.8,
+    "duration": 6.48,
+    "text": "concrete use cases and that process is"
+  },
+  {
+    "start": 808.56,
+    "duration": 5.58,
+    "text": "also kicking off for um generative AI"
+  },
+  {
+    "start": 812.28,
+    "duration": 3.78,
+    "text": "so for this part of the presentation I"
+  },
+  {
+    "start": 814.14,
+    "duration": 3.6,
+    "text": "hope you take away from it that general"
+  },
+  {
+    "start": 816.06,
+    "duration": 3.72,
+    "text": "purpose Technologies are useful for many"
+  },
+  {
+    "start": 817.74,
+    "duration": 4.14,
+    "text": "different tasks a lot of value remains"
+  },
+  {
+    "start": 819.78,
+    "duration": 3.68,
+    "text": "we created using civilized learning and"
+  },
+  {
+    "start": 821.88,
+    "duration": 3.78,
+    "text": "and even though we're nowhere near"
+  },
+  {
+    "start": 823.46,
+    "duration": 4.72,
+    "text": "finishing figuring out the exciting use"
+  },
+  {
+    "start": 825.66,
+    "duration": 4.32,
+    "text": "cases of supervised learning we have"
+  },
+  {
+    "start": 828.18,
+    "duration": 4.68,
+    "text": "this other you know fantastic two of"
+  },
+  {
+    "start": 829.98,
+    "duration": 5.7,
+    "text": "Genesis AI which further extends the set"
+  },
+  {
+    "start": 832.86,
+    "duration": 4.5,
+    "text": "of things we can now do using AI"
+  },
+  {
+    "start": 835.68,
+    "duration": 4.62,
+    "text": "um but one caveat which is that there"
+  },
+  {
+    "start": 837.36,
+    "duration": 5.22,
+    "text": "will be short-term fans along the way so"
+  },
+  {
+    "start": 840.3,
+    "duration": 5.16,
+    "text": "I don't know if um some of you might"
+  },
+  {
+    "start": 842.58,
+    "duration": 4.56,
+    "text": "remember the app called lenser This is"
+  },
+  {
+    "start": 845.46,
+    "duration": 3.48,
+    "text": "the app that will let you upload"
+  },
+  {
+    "start": 847.14,
+    "duration": 3.9,
+    "text": "pictures of yourself and they'll render"
+  },
+  {
+    "start": 848.94,
+    "duration": 4.02,
+    "text": "a cool picture of you as an astronaut or"
+  },
+  {
+    "start": 851.04,
+    "duration": 3.36,
+    "text": "a scientist or something"
+  },
+  {
+    "start": 852.96,
+    "duration": 3.3,
+    "text": "um and it was a good idea and people"
+  },
+  {
+    "start": 854.4,
+    "duration": 3.42,
+    "text": "liked it and it's really just took off"
+  },
+  {
+    "start": 856.26,
+    "duration": 2.94,
+    "text": "like crazy like that through last"
+  },
+  {
+    "start": 857.82,
+    "duration": 3.36,
+    "text": "December"
+  },
+  {
+    "start": 859.2,
+    "duration": 5.52,
+    "text": "and then it did that"
+  },
+  {
+    "start": 861.18,
+    "duration": 5.82,
+    "text": "and that's because lenser was it was a"
+  },
+  {
+    "start": 864.72,
+    "duration": 4.8,
+    "text": "good idea people liked it but it was a"
+  },
+  {
+    "start": 867.0,
+    "duration": 5.22,
+    "text": "relatively thin software layer on top of"
+  },
+  {
+    "start": 869.52,
+    "duration": 4.74,
+    "text": "someone else's really powerful apis"
+  },
+  {
+    "start": 872.22,
+    "duration": 4.38,
+    "text": "um and so even though it was a it was a"
+  },
+  {
+    "start": 874.26,
+    "duration": 3.54,
+    "text": "useful product it was in a defensible"
+  },
+  {
+    "start": 876.6,
+    "duration": 4.26,
+    "text": "business"
+  },
+  {
+    "start": 877.8,
+    "duration": 4.74,
+    "text": "um and when I when I one thing about you"
+  },
+  {
+    "start": 880.86,
+    "duration": 2.94,
+    "text": "know apps like lenser"
+  },
+  {
+    "start": 882.54,
+    "duration": 5.1,
+    "text": "um I'm actually reminded that when Steve"
+  },
+  {
+    "start": 883.8,
+    "duration": 8.16,
+    "text": "Jobs gave us the iPhone shortly after"
+  },
+  {
+    "start": 887.64,
+    "duration": 7.32,
+    "text": "someone wrote an app that I paid 199 for"
+  },
+  {
+    "start": 891.96,
+    "duration": 5.4,
+    "text": "um to do this to turn on the LED to turn"
+  },
+  {
+    "start": 894.96,
+    "duration": 5.16,
+    "text": "the phone into the flashlight and that"
+  },
+  {
+    "start": 897.36,
+    "duration": 4.8,
+    "text": "was also a good idea to write an app to"
+  },
+  {
+    "start": 900.12,
+    "duration": 4.32,
+    "text": "turn on the LED light but it also wasn't"
+  },
+  {
+    "start": 902.16,
+    "duration": 4.32,
+    "text": "a defensible long-term it also didn't"
+  },
+  {
+    "start": 904.44,
+    "duration": 4.44,
+    "text": "create very long-term value because it"
+  },
+  {
+    "start": 906.48,
+    "duration": 5.1,
+    "text": "was a easily replicated and underpriced"
+  },
+  {
+    "start": 908.88,
+    "duration": 5.22,
+    "text": "and eventually incorporated into iOS"
+  },
+  {
+    "start": 911.58,
+    "duration": 4.38,
+    "text": "but with the rise of iOS with the rise"
+  },
+  {
+    "start": 914.1,
+    "duration": 4.68,
+    "text": "of the iPhone someone also figured out"
+  },
+  {
+    "start": 915.96,
+    "duration": 5.22,
+    "text": "how to build things like uber and Airbnb"
+  },
+  {
+    "start": 918.78,
+    "duration": 4.8,
+    "text": "and Tinder the very long-term very"
+  },
+  {
+    "start": 921.18,
+    "duration": 5.28,
+    "text": "defensible businesses that created you"
+  },
+  {
+    "start": 923.58,
+    "duration": 4.98,
+    "text": "know sustaining value and I think with"
+  },
+  {
+    "start": 926.46,
+    "duration": 5.28,
+    "text": "um the rise of gents of AI or the rise"
+  },
+  {
+    "start": 928.56,
+    "duration": 5.4,
+    "text": "of new AI tools I think what really what"
+  },
+  {
+    "start": 931.74,
+    "duration": 4.56,
+    "text": "excites me is the opportunity to create"
+  },
+  {
+    "start": 933.96,
+    "duration": 5.28,
+    "text": "those really deep really hard"
+  },
+  {
+    "start": 936.3,
+    "duration": 6.0,
+    "text": "applications that hopefully can create"
+  },
+  {
+    "start": 939.24,
+    "duration": 5.04,
+    "text": "very long-term value"
+  },
+  {
+    "start": 942.3,
+    "duration": 3.78,
+    "text": "so the first Trend I want to share is"
+  },
+  {
+    "start": 944.28,
+    "duration": 3.3,
+    "text": "ai's general purpose technology and a"
+  },
+  {
+    "start": 946.08,
+    "duration": 3.96,
+    "text": "lot of the work that lies ahead of us is"
+  },
+  {
+    "start": 947.58,
+    "duration": 3.6,
+    "text": "to find the very diverse use cases and"
+  },
+  {
+    "start": 950.04,
+    "duration": 3.42,
+    "text": "to build them"
+  },
+  {
+    "start": 951.18,
+    "duration": 4.56,
+    "text": "there's a second Trend I want to share"
+  },
+  {
+    "start": 953.46,
+    "duration": 4.02,
+    "text": "with you which relates to why AI isn't"
+  },
+  {
+    "start": 955.74,
+    "duration": 3.3,
+    "text": "more widely adopted yet"
+  },
+  {
+    "start": 957.48,
+    "duration": 3.54,
+    "text": "it feels like a bunch of us have been"
+  },
+  {
+    "start": 959.04,
+    "duration": 3.78,
+    "text": "talking about AI for like 15 years or"
+  },
+  {
+    "start": 961.02,
+    "duration": 4.56,
+    "text": "something but if you look at where the"
+  },
+  {
+    "start": 962.82,
+    "duration": 4.86,
+    "text": "value of AI is today a lot of it is"
+  },
+  {
+    "start": 965.58,
+    "duration": 3.66,
+    "text": "still very concentrated in consumer"
+  },
+  {
+    "start": 967.68,
+    "duration": 3.3,
+    "text": "software internet right once you go"
+  },
+  {
+    "start": 969.24,
+    "duration": 3.6,
+    "text": "outside you know Tech or consumer"
+  },
+  {
+    "start": 970.98,
+    "duration": 5.22,
+    "text": "software internet there's some air"
+  },
+  {
+    "start": 972.84,
+    "duration": 5.04,
+    "text": "adoption but a lot of views very early"
+  },
+  {
+    "start": 976.2,
+    "duration": 3.84,
+    "text": "so why is that"
+  },
+  {
+    "start": 977.88,
+    "duration": 4.68,
+    "text": "it turns out if you were to take all"
+  },
+  {
+    "start": 980.04,
+    "duration": 4.5,
+    "text": "current and potential AI projects and"
+  },
+  {
+    "start": 982.56,
+    "duration": 4.38,
+    "text": "sort them in decreasing all their value"
+  },
+  {
+    "start": 984.54,
+    "duration": 5.1,
+    "text": "then to the left of this curve the head"
+  },
+  {
+    "start": 986.94,
+    "duration": 5.34,
+    "text": "of this curve are the multi-billion"
+  },
+  {
+    "start": 989.64,
+    "duration": 5.64,
+    "text": "dollar projects like advertising or web"
+  },
+  {
+    "start": 992.28,
+    "duration": 5.7,
+    "text": "search or um for e-commerce your product"
+  },
+  {
+    "start": 995.28,
+    "duration": 4.92,
+    "text": "recommendations your company Amazon and"
+  },
+  {
+    "start": 997.98,
+    "duration": 3.9,
+    "text": "it turns out that about 10 15 years ago"
+  },
+  {
+    "start": 1000.2,
+    "duration": 4.38,
+    "text": "you know variously my friends and I we"
+  },
+  {
+    "start": 1001.88,
+    "duration": 5.22,
+    "text": "figured out a recipe for how to hire say"
+  },
+  {
+    "start": 1004.58,
+    "duration": 5.28,
+    "text": "100 Engineers to write one piece of"
+  },
+  {
+    "start": 1007.1,
+    "duration": 4.5,
+    "text": "software to serve more relevant ads and"
+  },
+  {
+    "start": 1009.86,
+    "duration": 3.78,
+    "text": "apply that one piece of software to"
+  },
+  {
+    "start": 1011.6,
+    "duration": 4.08,
+    "text": "billion users and generate massive"
+  },
+  {
+    "start": 1013.64,
+    "duration": 2.76,
+    "text": "Financial value so that works"
+  },
+  {
+    "start": 1015.68,
+    "duration": 3.12,
+    "text": "um"
+  },
+  {
+    "start": 1016.4,
+    "duration": 4.98,
+    "text": "but once you go outside consumer"
+  },
+  {
+    "start": 1018.8,
+    "duration": 4.86,
+    "text": "software internet hardly anyone has a"
+  },
+  {
+    "start": 1021.38,
+    "duration": 4.62,
+    "text": "hundred million or a billion users that"
+  },
+  {
+    "start": 1023.66,
+    "duration": 3.78,
+    "text": "you can write and apply one piece of"
+  },
+  {
+    "start": 1026.0,
+    "duration": 4.56,
+    "text": "software to"
+  },
+  {
+    "start": 1027.44,
+    "duration": 4.68,
+    "text": "so once you go to other Industries as we"
+  },
+  {
+    "start": 1030.56,
+    "duration": 4.32,
+    "text": "go from the head of this curve on the"
+  },
+  {
+    "start": 1032.12,
+    "duration": 4.26,
+    "text": "left over to the long tail these are"
+  },
+  {
+    "start": 1034.88,
+    "duration": 2.7,
+    "text": "some of the projects I see and I'm"
+  },
+  {
+    "start": 1036.38,
+    "duration": 4.2,
+    "text": "excited about"
+  },
+  {
+    "start": 1037.58,
+    "duration": 5.64,
+    "text": "I was working with a pizza maker that"
+  },
+  {
+    "start": 1040.58,
+    "duration": 4.62,
+    "text": "was taking pictures of the Pisa they"
+  },
+  {
+    "start": 1043.22,
+    "duration": 3.48,
+    "text": "were making because they needed to do"
+  },
+  {
+    "start": 1045.2,
+    "duration": 4.26,
+    "text": "things like make sure that the cheese is"
+  },
+  {
+    "start": 1046.7,
+    "duration": 4.62,
+    "text": "spread evenly so this is about a five"
+  },
+  {
+    "start": 1049.46,
+    "duration": 4.32,
+    "text": "million dollar project"
+  },
+  {
+    "start": 1051.32,
+    "duration": 5.34,
+    "text": "um but that recipe of hiring 100"
+  },
+  {
+    "start": 1053.78,
+    "duration": 4.68,
+    "text": "Engineers or dozens of Engineers to work"
+  },
+  {
+    "start": 1056.66,
+    "duration": 3.6,
+    "text": "on a five million dollar project that"
+  },
+  {
+    "start": 1058.46,
+    "duration": 3.72,
+    "text": "doesn't make sense"
+  },
+  {
+    "start": 1060.26,
+    "duration": 5.22,
+    "text": "um or there's another very example"
+  },
+  {
+    "start": 1062.18,
+    "duration": 5.16,
+    "text": "working with an agriculture company that"
+  },
+  {
+    "start": 1065.48,
+    "duration": 4.32,
+    "text": "with them we figured out that we use"
+  },
+  {
+    "start": 1067.34,
+    "duration": 3.84,
+    "text": "cameras to find out how tall is the"
+  },
+  {
+    "start": 1069.8,
+    "duration": 3.48,
+    "text": "wheat and wheat is often bent over"
+  },
+  {
+    "start": 1071.18,
+    "duration": 3.72,
+    "text": "because of wind or rain or something and"
+  },
+  {
+    "start": 1073.28,
+    "duration": 3.72,
+    "text": "we can chop off the weeds at the very"
+  },
+  {
+    "start": 1074.9,
+    "duration": 3.84,
+    "text": "height then that results in more food"
+  },
+  {
+    "start": 1077.0,
+    "duration": 3.78,
+    "text": "for the farmer to sell and it's also"
+  },
+  {
+    "start": 1078.74,
+    "duration": 3.66,
+    "text": "better for the environment but this is"
+  },
+  {
+    "start": 1080.78,
+    "duration": 4.92,
+    "text": "another you know five million dollar"
+  },
+  {
+    "start": 1082.4,
+    "duration": 4.74,
+    "text": "project that that old recipe of having a"
+  },
+  {
+    "start": 1085.7,
+    "duration": 3.42,
+    "text": "large group of Highly School Engineers"
+  },
+  {
+    "start": 1087.14,
+    "duration": 3.0,
+    "text": "to work on this one project that doesn't"
+  },
+  {
+    "start": 1089.12,
+    "duration": 2.94,
+    "text": "make sense"
+  },
+  {
+    "start": 1090.14,
+    "duration": 3.84,
+    "text": "um and some of the materials grading"
+  },
+  {
+    "start": 1092.06,
+    "duration": 3.48,
+    "text": "cloth grading sheet metal grading many"
+  },
+  {
+    "start": 1093.98,
+    "duration": 3.54,
+    "text": "projects like this"
+  },
+  {
+    "start": 1095.54,
+    "duration": 4.56,
+    "text": "so whereas to the left in the head of"
+  },
+  {
+    "start": 1097.52,
+    "duration": 4.44,
+    "text": "this curve there's a small number of"
+  },
+  {
+    "start": 1100.1,
+    "duration": 3.54,
+    "text": "let's say multi-billion dollar projects"
+  },
+  {
+    "start": 1101.96,
+    "duration": 3.72,
+    "text": "and we know how to execute those you"
+  },
+  {
+    "start": 1103.64,
+    "duration": 4.8,
+    "text": "know delivering value in other"
+  },
+  {
+    "start": 1105.68,
+    "duration": 5.64,
+    "text": "Industries I'm seeing a very long tale"
+  },
+  {
+    "start": 1108.44,
+    "duration": 5.1,
+    "text": "of tens of thousands of let's call them"
+  },
+  {
+    "start": 1111.32,
+    "duration": 4.26,
+    "text": "five million dollar projects that until"
+  },
+  {
+    "start": 1113.54,
+    "duration": 3.36,
+    "text": "now have been very difficult to excuse"
+  },
+  {
+    "start": 1115.58,
+    "duration": 3.18,
+    "text": "on because of the high cost of"
+  },
+  {
+    "start": 1116.9,
+    "duration": 3.96,
+    "text": "customization"
+  },
+  {
+    "start": 1118.76,
+    "duration": 4.14,
+    "text": "the trend that I think is exciting is"
+  },
+  {
+    "start": 1120.86,
+    "duration": 4.74,
+    "text": "that the AI Community has been building"
+  },
+  {
+    "start": 1122.9,
+    "duration": 5.28,
+    "text": "better tools that lets us aggregate"
+  },
+  {
+    "start": 1125.6,
+    "duration": 4.5,
+    "text": "these use cases and make it easy for the"
+  },
+  {
+    "start": 1128.18,
+    "duration": 3.9,
+    "text": "end user to do the customization so"
+  },
+  {
+    "start": 1130.1,
+    "duration": 5.4,
+    "text": "specifically I'm seeing a lot of"
+  },
+  {
+    "start": 1132.08,
+    "duration": 5.94,
+    "text": "exciting low code and no code tools that"
+  },
+  {
+    "start": 1135.5,
+    "duration": 5.16,
+    "text": "enable the user to customize the AI"
+  },
+  {
+    "start": 1138.02,
+    "duration": 4.5,
+    "text": "system what this means is instead of me"
+  },
+  {
+    "start": 1140.66,
+    "duration": 4.86,
+    "text": "needing to worry that much about"
+  },
+  {
+    "start": 1142.52,
+    "duration": 5.04,
+    "text": "pictures of Pisa we have tools because"
+  },
+  {
+    "start": 1145.52,
+    "duration": 4.26,
+    "text": "we're starting to see tools that can"
+  },
+  {
+    "start": 1147.56,
+    "duration": 5.04,
+    "text": "enable the I.T Departments of the pizza"
+  },
+  {
+    "start": 1149.78,
+    "duration": 4.56,
+    "text": "making factory to train an AI system on"
+  },
+  {
+    "start": 1152.6,
+    "duration": 3.06,
+    "text": "their own pages of Pisa to realize"
+  },
+  {
+    "start": 1154.34,
+    "duration": 2.1,
+    "text": "there's five million dollars worth of"
+  },
+  {
+    "start": 1155.66,
+    "duration": 3.78,
+    "text": "value"
+  },
+  {
+    "start": 1156.44,
+    "duration": 4.56,
+    "text": "and by the way the pictures of pizza you"
+  },
+  {
+    "start": 1159.44,
+    "duration": 2.94,
+    "text": "know they don't exist on the internet so"
+  },
+  {
+    "start": 1161.0,
+    "duration": 3.9,
+    "text": "Google and Bing don't have access to"
+  },
+  {
+    "start": 1162.38,
+    "duration": 4.38,
+    "text": "these pictures we need tools that can be"
+  },
+  {
+    "start": 1164.9,
+    "duration": 4.02,
+    "text": "used by really The Pizza Factory"
+  },
+  {
+    "start": 1166.76,
+    "duration": 4.62,
+    "text": "themselves to build and deploy and"
+  },
+  {
+    "start": 1168.92,
+    "duration": 4.7,
+    "text": "maintain their own custom AI system that"
+  },
+  {
+    "start": 1171.38,
+    "duration": 4.2,
+    "text": "works on their own pictures of pizza"
+  },
+  {
+    "start": 1173.62,
+    "duration": 4.96,
+    "text": "and broadly"
+  },
+  {
+    "start": 1175.58,
+    "duration": 5.52,
+    "text": "the technology for enabling this"
+  },
+  {
+    "start": 1178.58,
+    "duration": 4.68,
+    "text": "um some of it is prompting with text"
+  },
+  {
+    "start": 1181.1,
+    "duration": 4.2,
+    "text": "prompting visual prompting but really"
+  },
+  {
+    "start": 1183.26,
+    "duration": 4.26,
+    "text": "large language models and and similar"
+  },
+  {
+    "start": 1185.3,
+    "duration": 5.16,
+    "text": "tools like that or a technology called"
+  },
+  {
+    "start": 1187.52,
+    "duration": 6.48,
+    "text": "Data Centric AI whereby instead of"
+  },
+  {
+    "start": 1190.46,
+    "duration": 6.18,
+    "text": "asking the Pizza Factory to write a lot"
+  },
+  {
+    "start": 1194.0,
+    "duration": 4.56,
+    "text": "of code yeah which is which which is"
+  },
+  {
+    "start": 1196.64,
+    "duration": 5.1,
+    "text": "challenging we can ask them to provide"
+  },
+  {
+    "start": 1198.56,
+    "duration": 5.04,
+    "text": "data which turns out to be more feasible"
+  },
+  {
+    "start": 1201.74,
+    "duration": 3.36,
+    "text": "and I think the second trend is"
+  },
+  {
+    "start": 1203.6,
+    "duration": 3.54,
+    "text": "important because I think this is a key"
+  },
+  {
+    "start": 1205.1,
+    "duration": 4.56,
+    "text": "part of the recipe for taking the value"
+  },
+  {
+    "start": 1207.14,
+    "duration": 4.5,
+    "text": "of AI which so far still feels very"
+  },
+  {
+    "start": 1209.66,
+    "duration": 3.66,
+    "text": "concentrated in the tech world and the"
+  },
+  {
+    "start": 1211.64,
+    "duration": 3.54,
+    "text": "consumer software into their world and"
+  },
+  {
+    "start": 1213.32,
+    "duration": 3.3,
+    "text": "pushing this out to you know all"
+  },
+  {
+    "start": 1215.18,
+    "duration": 3.18,
+    "text": "Industries really to the rest of the"
+  },
+  {
+    "start": 1216.62,
+    "duration": 3.42,
+    "text": "economy which which you know sometimes"
+  },
+  {
+    "start": 1218.36,
+    "duration": 3.06,
+    "text": "is easy to forget the rest of the"
+  },
+  {
+    "start": 1220.04,
+    "duration": 3.56,
+    "text": "economy is much bigger than the tech"
+  },
+  {
+    "start": 1221.42,
+    "duration": 2.18,
+    "text": "world"
+  },
+  {
+    "start": 1223.88,
+    "duration": 3.42,
+    "text": "so"
+  },
+  {
+    "start": 1225.14,
+    "duration": 3.84,
+    "text": "there are two Trends I shared it has a"
+  },
+  {
+    "start": 1227.3,
+    "duration": 3.9,
+    "text": "general purpose technology lots of"
+  },
+  {
+    "start": 1228.98,
+    "duration": 5.34,
+    "text": "concrete use cases to be realized as"
+  },
+  {
+    "start": 1231.2,
+    "duration": 5.28,
+    "text": "well as local no code easily used tools"
+  },
+  {
+    "start": 1234.32,
+    "duration": 5.4,
+    "text": "enabling AI to be deployed in more"
+  },
+  {
+    "start": 1236.48,
+    "duration": 4.62,
+    "text": "Industries how do we go after these"
+  },
+  {
+    "start": 1239.72,
+    "duration": 3.78,
+    "text": "opportunities"
+  },
+  {
+    "start": 1241.1,
+    "duration": 4.14,
+    "text": "so about five years ago there was a"
+  },
+  {
+    "start": 1243.5,
+    "duration": 3.66,
+    "text": "puzzle I want to solve which is I felt"
+  },
+  {
+    "start": 1245.24,
+    "duration": 4.14,
+    "text": "that many valuable AI projects are now"
+  },
+  {
+    "start": 1247.16,
+    "duration": 5.34,
+    "text": "possible I was thinking how do we get"
+  },
+  {
+    "start": 1249.38,
+    "duration": 5.1,
+    "text": "them done and having LED AI teams in you"
+  },
+  {
+    "start": 1252.5,
+    "duration": 4.92,
+    "text": "know Google and Baidu in big tech"
+  },
+  {
+    "start": 1254.48,
+    "duration": 5.94,
+    "text": "companies I had a hard time figuring out"
+  },
+  {
+    "start": 1257.42,
+    "duration": 6.06,
+    "text": "how I could operate a team in a big tech"
+  },
+  {
+    "start": 1260.42,
+    "duration": 4.86,
+    "text": "company to go after a very diverse set"
+  },
+  {
+    "start": 1263.48,
+    "duration": 4.14,
+    "text": "of opportunities and everything from"
+  },
+  {
+    "start": 1265.28,
+    "duration": 3.96,
+    "text": "Maritime shipping to education to"
+  },
+  {
+    "start": 1267.62,
+    "duration": 3.36,
+    "text": "financial services and Healthcare and on"
+  },
+  {
+    "start": 1269.24,
+    "duration": 4.38,
+    "text": "and on it's just very diverse use cases"
+  },
+  {
+    "start": 1270.98,
+    "duration": 4.62,
+    "text": "very diverse go to markets and very"
+  },
+  {
+    "start": 1273.62,
+    "duration": 4.08,
+    "text": "diverse really you know customer bases"
+  },
+  {
+    "start": 1275.6,
+    "duration": 5.16,
+    "text": "and applications"
+  },
+  {
+    "start": 1277.7,
+    "duration": 4.86,
+    "text": "um and I felt that the most efficient"
+  },
+  {
+    "start": 1280.76,
+    "duration": 4.2,
+    "text": "way to do this would be if we can start"
+  },
+  {
+    "start": 1282.56,
+    "duration": 4.92,
+    "text": "a lot of different companies to pursue"
+  },
+  {
+    "start": 1284.96,
+    "duration": 4.08,
+    "text": "these very diverse opportunities so"
+  },
+  {
+    "start": 1287.48,
+    "duration": 3.9,
+    "text": "that's why I ended up starting AI fun"
+  },
+  {
+    "start": 1289.04,
+    "duration": 4.62,
+    "text": "which is Adventure Studio that builds"
+  },
+  {
+    "start": 1291.38,
+    "duration": 4.98,
+    "text": "startups to pursue a diverse surveyor"
+  },
+  {
+    "start": 1293.66,
+    "duration": 5.22,
+    "text": "opportunities and of course in addition"
+  },
+  {
+    "start": 1296.36,
+    "duration": 4.38,
+    "text": "to lots of startups in company companies"
+  },
+  {
+    "start": 1298.88,
+    "duration": 4.92,
+    "text": "also have a lot of opportunities to"
+  },
+  {
+    "start": 1300.74,
+    "duration": 4.74,
+    "text": "integrate AI into existing businesses in"
+  },
+  {
+    "start": 1303.8,
+    "duration": 4.5,
+    "text": "fact one pattern I'm seeing for"
+  },
+  {
+    "start": 1305.48,
+    "duration": 6.48,
+    "text": "incumbent businesses is um distribution"
+  },
+  {
+    "start": 1308.3,
+    "duration": 5.82,
+    "text": "uh is is often one of the significant"
+  },
+  {
+    "start": 1311.96,
+    "duration": 4.02,
+    "text": "advantages of incoming companies is they"
+  },
+  {
+    "start": 1314.12,
+    "duration": 4.26,
+    "text": "play the cards right can allow them to"
+  },
+  {
+    "start": 1315.98,
+    "duration": 3.78,
+    "text": "integrate AI into into their products"
+  },
+  {
+    "start": 1318.38,
+    "duration": 3.18,
+    "text": "quite efficiently"
+  },
+  {
+    "start": 1319.76,
+    "duration": 2.88,
+    "text": "but just be Concrete where are the"
+  },
+  {
+    "start": 1321.56,
+    "duration": 2.7,
+    "text": "options"
+  },
+  {
+    "start": 1322.64,
+    "duration": 3.3,
+    "text": "so I think of this as a this is what I"
+  },
+  {
+    "start": 1324.26,
+    "duration": 3.6,
+    "text": "think of as the AI stack"
+  },
+  {
+    "start": 1325.94,
+    "duration": 4.38,
+    "text": "right at the bottom level is the"
+  },
+  {
+    "start": 1327.86,
+    "duration": 4.5,
+    "text": "hardware semiconductor layer fantastic"
+  },
+  {
+    "start": 1330.32,
+    "duration": 4.8,
+    "text": "opportunities there but very Capital"
+  },
+  {
+    "start": 1332.36,
+    "duration": 4.44,
+    "text": "intensive very concentrated so there's a"
+  },
+  {
+    "start": 1335.12,
+    "duration": 3.6,
+    "text": "lot of resources relatively few winners"
+  },
+  {
+    "start": 1336.8,
+    "duration": 3.36,
+    "text": "so some people can and should play there"
+  },
+  {
+    "start": 1338.72,
+    "duration": 2.52,
+    "text": "I personally don't like to play them"
+  },
+  {
+    "start": 1340.16,
+    "duration": 2.82,
+    "text": "myself"
+  },
+  {
+    "start": 1341.24,
+    "duration": 4.26,
+    "text": "there's also the infrastructure layer"
+  },
+  {
+    "start": 1342.98,
+    "duration": 5.1,
+    "text": "also fantastic opportunities but very"
+  },
+  {
+    "start": 1345.5,
+    "duration": 5.46,
+    "text": "couple intensive very concentrated so I"
+  },
+  {
+    "start": 1348.08,
+    "duration": 5.04,
+    "text": "tend not to play that myself either"
+  },
+  {
+    "start": 1350.96,
+    "duration": 4.56,
+    "text": "and then does it develop a two layer"
+  },
+  {
+    "start": 1353.12,
+    "duration": 4.44,
+    "text": "what I showed you just now was I was"
+  },
+  {
+    "start": 1355.52,
+    "duration": 4.74,
+    "text": "actually using open ai's API as a"
+  },
+  {
+    "start": 1357.56,
+    "duration": 5.64,
+    "text": "developer tool and then I think the"
+  },
+  {
+    "start": 1360.26,
+    "duration": 5.52,
+    "text": "developer 2 sector is hyper competitive"
+  },
+  {
+    "start": 1363.2,
+    "duration": 5.22,
+    "text": "look at all the startups chasing open AI"
+  },
+  {
+    "start": 1365.78,
+    "duration": 6.06,
+    "text": "right now but there will be some Mega"
+  },
+  {
+    "start": 1368.42,
+    "duration": 5.52,
+    "text": "winners and so I sometimes play here but"
+  },
+  {
+    "start": 1371.84,
+    "duration": 3.66,
+    "text": "primarily when I think of a meaningful"
+  },
+  {
+    "start": 1373.94,
+    "duration": 3.78,
+    "text": "technology Advantage because I think"
+  },
+  {
+    "start": 1375.5,
+    "duration": 4.14,
+    "text": "that earns you the right or earns you a"
+  },
+  {
+    "start": 1377.72,
+    "duration": 2.94,
+    "text": "better shot at being one of the mega"
+  },
+  {
+    "start": 1379.64,
+    "duration": 3.72,
+    "text": "winners"
+  },
+  {
+    "start": 1380.66,
+    "duration": 5.1,
+    "text": "and then lastly even though a lot of the"
+  },
+  {
+    "start": 1383.36,
+    "duration": 4.26,
+    "text": "media attention in the buzz is in the"
+  },
+  {
+    "start": 1385.76,
+    "duration": 4.32,
+    "text": "infrastructure and developer tooling"
+  },
+  {
+    "start": 1387.62,
+    "duration": 5.58,
+    "text": "layer it turns out that that layer can"
+  },
+  {
+    "start": 1390.08,
+    "duration": 6.06,
+    "text": "be successful only if the application"
+  },
+  {
+    "start": 1393.2,
+    "duration": 5.1,
+    "text": "layer is even more successful and we saw"
+  },
+  {
+    "start": 1396.14,
+    "duration": 4.2,
+    "text": "this at the rise of SAS as well a lot of"
+  },
+  {
+    "start": 1398.3,
+    "duration": 4.02,
+    "text": "the buzz excitement is on the technology"
+  },
+  {
+    "start": 1400.34,
+    "duration": 3.9,
+    "text": "the tooling layer which is fine nothing"
+  },
+  {
+    "start": 1402.32,
+    "duration": 3.66,
+    "text": "wrong with that but the only way for"
+  },
+  {
+    "start": 1404.24,
+    "duration": 3.18,
+    "text": "that to be successful is that the"
+  },
+  {
+    "start": 1405.98,
+    "duration": 3.18,
+    "text": "application layer is even more"
+  },
+  {
+    "start": 1407.42,
+    "duration": 3.72,
+    "text": "successful so that frankly they can"
+  },
+  {
+    "start": 1409.16,
+    "duration": 4.98,
+    "text": "generate enough Revenue to pay the"
+  },
+  {
+    "start": 1411.14,
+    "duration": 5.1,
+    "text": "infrastructure and the tooling layer so"
+  },
+  {
+    "start": 1414.14,
+    "duration": 4.38,
+    "text": "actually let me mention one example"
+  },
+  {
+    "start": 1416.24,
+    "duration": 4.74,
+    "text": "um I'm all right I was actually just"
+  },
+  {
+    "start": 1418.52,
+    "duration": 6.12,
+    "text": "texting the CEO yesterday but armor raw"
+  },
+  {
+    "start": 1420.98,
+    "duration": 7.26,
+    "text": "is a completely rebuilt that uses AI for"
+  },
+  {
+    "start": 1424.64,
+    "duration": 5.94,
+    "text": "romantic relationship coaching right"
+  },
+  {
+    "start": 1428.24,
+    "duration": 5.58,
+    "text": "um and Jesus points out I'm an AI guy"
+  },
+  {
+    "start": 1430.58,
+    "duration": 5.64,
+    "text": "and I feel like I know nothing really"
+  },
+  {
+    "start": 1433.82,
+    "duration": 5.46,
+    "text": "about Romance"
+  },
+  {
+    "start": 1436.22,
+    "duration": 5.16,
+    "text": "um and if you don't believe me you can"
+  },
+  {
+    "start": 1439.28,
+    "duration": 4.68,
+    "text": "ask my wife if she will confirm that I"
+  },
+  {
+    "start": 1441.38,
+    "duration": 4.44,
+    "text": "know nothing about Romance"
+  },
+  {
+    "start": 1443.96,
+    "duration": 4.38,
+    "text": "but what we want to build this we wanted"
+  },
+  {
+    "start": 1445.82,
+    "duration": 5.4,
+    "text": "getting together with the former CEO of"
+  },
+  {
+    "start": 1448.34,
+    "duration": 5.7,
+    "text": "Tinder or Renata and eyeball and with my"
+  },
+  {
+    "start": 1451.22,
+    "duration": 4.74,
+    "text": "team's expertise in Ai and her expertise"
+  },
+  {
+    "start": 1454.04,
+    "duration": 3.24,
+    "text": "in relationships we actually ran Tinder"
+  },
+  {
+    "start": 1455.96,
+    "duration": 2.76,
+    "text": "she knows more about you know"
+  },
+  {
+    "start": 1457.28,
+    "duration": 3.48,
+    "text": "relationships I think anyone I know"
+  },
+  {
+    "start": 1458.72,
+    "duration": 4.26,
+    "text": "we're able to build something pretty"
+  },
+  {
+    "start": 1460.76,
+    "duration": 5.34,
+    "text": "unique using AI for you know kind of"
+  },
+  {
+    "start": 1462.98,
+    "duration": 4.44,
+    "text": "romantic relationship mentoring"
+  },
+  {
+    "start": 1466.1,
+    "duration": 3.18,
+    "text": "um and the interesting thing about"
+  },
+  {
+    "start": 1467.42,
+    "duration": 3.18,
+    "text": "applications like these is when we look"
+  },
+  {
+    "start": 1469.28,
+    "duration": 3.18,
+    "text": "around"
+  },
+  {
+    "start": 1470.6,
+    "duration": 5.16,
+    "text": "um you know how many teams in the world"
+  },
+  {
+    "start": 1472.46,
+    "duration": 5.82,
+    "text": "are simultaneously expert in Ai and in"
+  },
+  {
+    "start": 1475.76,
+    "duration": 5.28,
+    "text": "relationships and so at the application"
+  },
+  {
+    "start": 1478.28,
+    "duration": 4.8,
+    "text": "layer I'm seeing a lot of exciting"
+  },
+  {
+    "start": 1481.04,
+    "duration": 4.68,
+    "text": "opportunities that seem to have a very"
+  },
+  {
+    "start": 1483.08,
+    "duration": 4.86,
+    "text": "large Market but where the competition"
+  },
+  {
+    "start": 1485.72,
+    "duration": 3.66,
+    "text": "sets is very light relative to the"
+  },
+  {
+    "start": 1487.94,
+    "duration": 2.88,
+    "text": "magnitude of the opportunity it's not"
+  },
+  {
+    "start": 1489.38,
+    "duration": 4.32,
+    "text": "that they're no competitors but it's"
+  },
+  {
+    "start": 1490.82,
+    "duration": 5.16,
+    "text": "just much less intense compared to the"
+  },
+  {
+    "start": 1493.7,
+    "duration": 3.9,
+    "text": "developer 2 or the infrastructure layer"
+  },
+  {
+    "start": 1495.98,
+    "duration": 4.14,
+    "text": "and so"
+  },
+  {
+    "start": 1497.6,
+    "duration": 4.32,
+    "text": "because I've spent a lot of time"
+  },
+  {
+    "start": 1500.12,
+    "duration": 3.78,
+    "text": "iterating on the process of building"
+  },
+  {
+    "start": 1501.92,
+    "duration": 4.26,
+    "text": "startups what I'm going to do is just"
+  },
+  {
+    "start": 1503.9,
+    "duration": 3.84,
+    "text": "you know very transparently tell you the"
+  },
+  {
+    "start": 1506.18,
+    "duration": 4.14,
+    "text": "recipe we've developed for building"
+  },
+  {
+    "start": 1507.74,
+    "duration": 4.2,
+    "text": "startups and so after many years of"
+  },
+  {
+    "start": 1510.32,
+    "duration": 5.1,
+    "text": "iteration and Improvement this is how"
+  },
+  {
+    "start": 1511.94,
+    "duration": 4.68,
+    "text": "you know we now build startups my team's"
+  },
+  {
+    "start": 1515.42,
+    "duration": 3.06,
+    "text": "always had access to a lot of different"
+  },
+  {
+    "start": 1516.62,
+    "duration": 4.44,
+    "text": "ideas you know internally generated"
+  },
+  {
+    "start": 1518.48,
+    "duration": 4.5,
+    "text": "ideas from partners and I want to walk"
+  },
+  {
+    "start": 1521.06,
+    "duration": 3.6,
+    "text": "through this with one example or"
+  },
+  {
+    "start": 1522.98,
+    "duration": 4.26,
+    "text": "something we did which is a company"
+  },
+  {
+    "start": 1524.66,
+    "duration": 4.08,
+    "text": "bearing AI which uses AI to make ships"
+  },
+  {
+    "start": 1527.24,
+    "duration": 4.92,
+    "text": "more fuel efficient"
+  },
+  {
+    "start": 1528.74,
+    "duration": 5.88,
+    "text": "so this idea came to me when a few years"
+  },
+  {
+    "start": 1532.16,
+    "duration": 5.04,
+    "text": "ago a large Japanese conglomerate called"
+  },
+  {
+    "start": 1534.62,
+    "duration": 5.64,
+    "text": "mitsui that is a major shareholder in"
+  },
+  {
+    "start": 1537.2,
+    "duration": 5.28,
+    "text": "the Opera is a major Shipping Lines they"
+  },
+  {
+    "start": 1540.26,
+    "duration": 4.14,
+    "text": "came to me and they said hey Andrew you"
+  },
+  {
+    "start": 1542.48,
+    "duration": 4.44,
+    "text": "should build a business to use AI to"
+  },
+  {
+    "start": 1544.4,
+    "duration": 4.62,
+    "text": "make ships more fuel efficient and the"
+  },
+  {
+    "start": 1546.92,
+    "duration": 4.2,
+    "text": "specific idea was you know think of it"
+  },
+  {
+    "start": 1549.02,
+    "duration": 4.56,
+    "text": "as a Google Maps for ships where you can"
+  },
+  {
+    "start": 1551.12,
+    "duration": 4.74,
+    "text": "suggest a ship or towership how to steer"
+  },
+  {
+    "start": 1553.58,
+    "duration": 5.22,
+    "text": "so you still get your destination on"
+  },
+  {
+    "start": 1555.86,
+    "duration": 4.26,
+    "text": "time by using it turns out about 10 less"
+  },
+  {
+    "start": 1558.8,
+    "duration": 4.5,
+    "text": "fuel"
+  },
+  {
+    "start": 1560.12,
+    "duration": 5.64,
+    "text": "um and so what we now do is we spend"
+  },
+  {
+    "start": 1563.3,
+    "duration": 3.84,
+    "text": "about a month validating the idea so"
+  },
+  {
+    "start": 1565.76,
+    "duration": 3.54,
+    "text": "double check is this idea even"
+  },
+  {
+    "start": 1567.14,
+    "duration": 3.6,
+    "text": "technically feasible and then talk to"
+  },
+  {
+    "start": 1569.3,
+    "duration": 3.0,
+    "text": "prospective customers to make sure this"
+  },
+  {
+    "start": 1570.74,
+    "duration": 4.68,
+    "text": "is marketing so you spend up to about a"
+  },
+  {
+    "start": 1572.3,
+    "duration": 5.76,
+    "text": "month doing that and if it passes this"
+  },
+  {
+    "start": 1575.42,
+    "duration": 5.52,
+    "text": "stage then we will go and recruit the"
+  },
+  {
+    "start": 1578.06,
+    "duration": 4.56,
+    "text": "CEO to work with us on the project when"
+  },
+  {
+    "start": 1580.94,
+    "duration": 3.24,
+    "text": "I was starting out I used to spend a"
+  },
+  {
+    "start": 1582.62,
+    "duration": 3.6,
+    "text": "long time working on the project myself"
+  },
+  {
+    "start": 1584.18,
+    "duration": 4.38,
+    "text": "before bringing on the CEO but after"
+  },
+  {
+    "start": 1586.22,
+    "duration": 4.44,
+    "text": "iterating we realized that bringing on"
+  },
+  {
+    "start": 1588.56,
+    "duration": 5.1,
+    "text": "the leader at the very beginning to work"
+  },
+  {
+    "start": 1590.66,
+    "duration": 4.8,
+    "text": "with us it reduces a lot of the burden"
+  },
+  {
+    "start": 1593.66,
+    "duration": 3.54,
+    "text": "of having to transfer knowledge or"
+  },
+  {
+    "start": 1595.46,
+    "duration": 3.54,
+    "text": "having a seal come in and rebound having"
+  },
+  {
+    "start": 1597.2,
+    "duration": 3.66,
+    "text": "to revalidate whether we discover it so"
+  },
+  {
+    "start": 1599.0,
+    "duration": 3.3,
+    "text": "the process is we've learned much more"
+  },
+  {
+    "start": 1600.86,
+    "duration": 3.3,
+    "text": "efficiently which is bringing the leader"
+  },
+  {
+    "start": 1602.3,
+    "duration": 4.08,
+    "text": "at the very start"
+  },
+  {
+    "start": 1604.16,
+    "duration": 4.62,
+    "text": "um and so in the case of bearing AI we"
+  },
+  {
+    "start": 1606.38,
+    "duration": 4.14,
+    "text": "found a fantastic CEO Dylan Kyle who's a"
+  },
+  {
+    "start": 1608.78,
+    "duration": 3.78,
+    "text": "repeat entrepreneur a one successful"
+  },
+  {
+    "start": 1610.52,
+    "duration": 5.16,
+    "text": "exhibit before and then we spent three"
+  },
+  {
+    "start": 1612.56,
+    "duration": 5.52,
+    "text": "months um six two weeks Sprints to work"
+  },
+  {
+    "start": 1615.68,
+    "duration": 5.82,
+    "text": "with them to build a prototype as well"
+  },
+  {
+    "start": 1618.08,
+    "duration": 6.0,
+    "text": "as do do deep customer validation"
+  },
+  {
+    "start": 1621.5,
+    "duration": 5.34,
+    "text": "if it survives the stage and we have"
+  },
+  {
+    "start": 1624.08,
+    "duration": 5.28,
+    "text": "about two-thirds 66 survival rate"
+  },
+  {
+    "start": 1626.84,
+    "duration": 5.04,
+    "text": "whenever the first check-in which then"
+  },
+  {
+    "start": 1629.36,
+    "duration": 4.2,
+    "text": "gives the company resources to hire an"
+  },
+  {
+    "start": 1631.88,
+    "duration": 4.14,
+    "text": "executive team you know build the key"
+  },
+  {
+    "start": 1633.56,
+    "duration": 4.2,
+    "text": "team get the MVP working minimum viable"
+  },
+  {
+    "start": 1636.02,
+    "duration": 4.26,
+    "text": "product working and get some real"
+  },
+  {
+    "start": 1637.76,
+    "duration": 4.1,
+    "text": "customers and then after that you know"
+  },
+  {
+    "start": 1640.28,
+    "duration": 3.72,
+    "text": "hopefully then successfully raises"
+  },
+  {
+    "start": 1641.86,
+    "duration": 4.78,
+    "text": "additional external rounds of funding"
+  },
+  {
+    "start": 1644.0,
+    "duration": 4.92,
+    "text": "they can keep on growing and scaling"
+  },
+  {
+    "start": 1646.64,
+    "duration": 3.78,
+    "text": "so I'm really proud of the work that my"
+  },
+  {
+    "start": 1648.92,
+    "duration": 4.14,
+    "text": "team was able to do"
+  },
+  {
+    "start": 1650.42,
+    "duration": 5.82,
+    "text": "um to support mitsui's idea and telling"
+  },
+  {
+    "start": 1653.06,
+    "duration": 5.82,
+    "text": "how as CEO and today there are hundreds"
+  },
+  {
+    "start": 1656.24,
+    "duration": 4.2,
+    "text": "of ships on the high seas right now that"
+  },
+  {
+    "start": 1658.88,
+    "duration": 4.8,
+    "text": "are steering themselves differently"
+  },
+  {
+    "start": 1660.44,
+    "duration": 5.28,
+    "text": "because of bearing Ai and um 10 fuel"
+  },
+  {
+    "start": 1663.68,
+    "duration": 4.98,
+    "text": "savings translates the rough order"
+  },
+  {
+    "start": 1665.72,
+    "duration": 4.92,
+    "text": "amount to maybe 450 000 in savings and"
+  },
+  {
+    "start": 1668.66,
+    "duration": 4.2,
+    "text": "Fuel per ship per year and of course"
+  },
+  {
+    "start": 1670.64,
+    "duration": 3.36,
+    "text": "it's also frankly quite a bit better for"
+  },
+  {
+    "start": 1672.86,
+    "duration": 3.48,
+    "text": "the environment"
+  },
+  {
+    "start": 1674.0,
+    "duration": 4.74,
+    "text": "um and I think the startup"
+  },
+  {
+    "start": 1676.34,
+    "duration": 5.22,
+    "text": "I think would not have to existed if not"
+  },
+  {
+    "start": 1678.74,
+    "duration": 5.42,
+    "text": "for Dylan's fantastic work and then also"
+  },
+  {
+    "start": 1681.56,
+    "duration": 5.82,
+    "text": "you know mitsui brings this idea to me"
+  },
+  {
+    "start": 1684.16,
+    "duration": 5.56,
+    "text": "and I like this example because this is"
+  },
+  {
+    "start": 1687.38,
+    "duration": 4.62,
+    "text": "another one it's like you know this is a"
+  },
+  {
+    "start": 1689.72,
+    "duration": 3.78,
+    "text": "startup idea that I just point out I"
+  },
+  {
+    "start": 1692.0,
+    "duration": 3.96,
+    "text": "would never have come up with myself"
+  },
+  {
+    "start": 1693.5,
+    "duration": 4.86,
+    "text": "right because you know I've been on a"
+  },
+  {
+    "start": 1695.96,
+    "duration": 3.6,
+    "text": "boat but what do I know about Maritime"
+  },
+  {
+    "start": 1698.36,
+    "duration": 2.7,
+    "text": "shipping"
+  },
+  {
+    "start": 1699.56,
+    "duration": 3.78,
+    "text": "um but it's the deep subject matter"
+  },
+  {
+    "start": 1701.06,
+    "duration": 4.56,
+    "text": "expertise of mitsui"
+  },
+  {
+    "start": 1703.34,
+    "duration": 4.5,
+    "text": "um that had this inside together with"
+  },
+  {
+    "start": 1705.62,
+    "duration": 5.94,
+    "text": "Dylan and then my team's expertise in AI"
+  },
+  {
+    "start": 1707.84,
+    "duration": 5.64,
+    "text": "that that made this possible and so as I"
+  },
+  {
+    "start": 1711.56,
+    "duration": 4.98,
+    "text": "operate in AI one thing I've learned is"
+  },
+  {
+    "start": 1713.48,
+    "duration": 5.58,
+    "text": "my swim Lane is AI and that's it because"
+  },
+  {
+    "start": 1716.54,
+    "duration": 4.56,
+    "text": "I've done a time it was very difficult"
+  },
+  {
+    "start": 1719.06,
+    "duration": 4.08,
+    "text": "for me to be expert in Maritime shipping"
+  },
+  {
+    "start": 1721.1,
+    "duration": 4.02,
+    "text": "and romantic relationships and"
+  },
+  {
+    "start": 1723.14,
+    "duration": 4.32,
+    "text": "Healthcare and financial services on and"
+  },
+  {
+    "start": 1725.12,
+    "duration": 4.98,
+    "text": "on and on and so I've learned that if I"
+  },
+  {
+    "start": 1727.46,
+    "duration": 5.52,
+    "text": "can just help get a accurate technical"
+  },
+  {
+    "start": 1730.1,
+    "duration": 4.56,
+    "text": "validation and then use you know AI"
+  },
+  {
+    "start": 1732.98,
+    "duration": 3.24,
+    "text": "resources to make sure that AI Tech has"
+  },
+  {
+    "start": 1734.66,
+    "duration": 3.36,
+    "text": "been quickly and well and I think with"
+  },
+  {
+    "start": 1736.22,
+    "duration": 3.42,
+    "text": "all always managed to hope the companies"
+  },
+  {
+    "start": 1738.02,
+    "duration": 3.36,
+    "text": "build a strong technical team then"
+  },
+  {
+    "start": 1739.64,
+    "duration": 3.72,
+    "text": "partnering with subject matter experts"
+  },
+  {
+    "start": 1741.38,
+    "duration": 3.72,
+    "text": "often results in exciting New"
+  },
+  {
+    "start": 1743.36,
+    "duration": 3.72,
+    "text": "Opportunities"
+  },
+  {
+    "start": 1745.1,
+    "duration": 4.44,
+    "text": "and I want to share with you one other"
+  },
+  {
+    "start": 1747.08,
+    "duration": 4.38,
+    "text": "weird aspect of another one of the weird"
+  },
+  {
+    "start": 1749.54,
+    "duration": 4.2,
+    "text": "listing I've learned about you know"
+  },
+  {
+    "start": 1751.46,
+    "duration": 4.08,
+    "text": "building startups which is"
+  },
+  {
+    "start": 1753.74,
+    "duration": 3.18,
+    "text": "um I like to engage only when there's a"
+  },
+  {
+    "start": 1755.54,
+    "duration": 4.08,
+    "text": "concrete idea"
+  },
+  {
+    "start": 1756.92,
+    "duration": 4.92,
+    "text": "and this runs counter to a lot of the"
+  },
+  {
+    "start": 1759.62,
+    "duration": 4.8,
+    "text": "advice you hear from the design thinking"
+  },
+  {
+    "start": 1761.84,
+    "duration": 4.38,
+    "text": "methodology which often says don't rush"
+  },
+  {
+    "start": 1764.42,
+    "duration": 3.96,
+    "text": "to solutioning right explore a lot of"
+  },
+  {
+    "start": 1766.22,
+    "duration": 5.7,
+    "text": "alternatives for either a solution"
+  },
+  {
+    "start": 1768.38,
+    "duration": 6.12,
+    "text": "honestly we tried that it was very slow"
+  },
+  {
+    "start": 1771.92,
+    "duration": 5.1,
+    "text": "um but what we've learned is that at the"
+  },
+  {
+    "start": 1774.5,
+    "duration": 4.38,
+    "text": "ideation stage is someone comes to me"
+  },
+  {
+    "start": 1777.02,
+    "duration": 3.3,
+    "text": "and says hey Andrew you should apply AI"
+  },
+  {
+    "start": 1778.88,
+    "duration": 3.36,
+    "text": "to financial services"
+  },
+  {
+    "start": 1780.32,
+    "duration": 4.86,
+    "text": "because I'm not a subject matter expert"
+  },
+  {
+    "start": 1782.24,
+    "duration": 4.08,
+    "text": "in financial services is very slow for"
+  },
+  {
+    "start": 1785.18,
+    "duration": 3.0,
+    "text": "me to go and learn enough about"
+  },
+  {
+    "start": 1786.32,
+    "duration": 3.36,
+    "text": "financial services so you can figure out"
+  },
+  {
+    "start": 1788.18,
+    "duration": 4.14,
+    "text": "what to do I mean eventually you could"
+  },
+  {
+    "start": 1789.68,
+    "duration": 4.5,
+    "text": "get a good outcome but it's a very labor"
+  },
+  {
+    "start": 1792.32,
+    "duration": 4.2,
+    "text": "intensive very slow very expensive"
+  },
+  {
+    "start": 1794.18,
+    "duration": 3.6,
+    "text": "process for me to try to learn industry"
+  },
+  {
+    "start": 1796.52,
+    "duration": 3.9,
+    "text": "after industry"
+  },
+  {
+    "start": 1797.78,
+    "duration": 4.62,
+    "text": "in contrast one of my partners wrote"
+  },
+  {
+    "start": 1800.42,
+    "duration": 4.2,
+    "text": "this idea as a tongue-in sheet not not"
+  },
+  {
+    "start": 1802.4,
+    "duration": 4.8,
+    "text": "really seriously but you know let's say"
+  },
+  {
+    "start": 1804.62,
+    "duration": 4.44,
+    "text": "the country is buy gbt let's eliminate"
+  },
+  {
+    "start": 1807.2,
+    "duration": 3.48,
+    "text": "commercials by automatically buying"
+  },
+  {
+    "start": 1809.06,
+    "duration": 3.66,
+    "text": "every product advertising it's changed"
+  },
+  {
+    "start": 1810.68,
+    "duration": 5.52,
+    "text": "or not haven't seen any ads it's not a"
+  },
+  {
+    "start": 1812.72,
+    "duration": 5.76,
+    "text": "good idea but it is a concrete idea"
+  },
+  {
+    "start": 1816.2,
+    "duration": 5.7,
+    "text": "and it turns out concrete ideas can be"
+  },
+  {
+    "start": 1818.48,
+    "duration": 5.34,
+    "text": "validated or falsified efficiently"
+  },
+  {
+    "start": 1821.9,
+    "duration": 4.2,
+    "text": "um they also give a team a clear"
+  },
+  {
+    "start": 1823.82,
+    "duration": 4.2,
+    "text": "direction to execute and I've learned"
+  },
+  {
+    "start": 1826.1,
+    "duration": 3.24,
+    "text": "that in today's world especially with"
+  },
+  {
+    "start": 1828.02,
+    "duration": 3.48,
+    "text": "you know the excitement Buzz the"
+  },
+  {
+    "start": 1829.34,
+    "duration": 3.6,
+    "text": "exposure the AI of a lot of people it"
+  },
+  {
+    "start": 1831.5,
+    "duration": 3.36,
+    "text": "turns out that there are a lot of"
+  },
+  {
+    "start": 1832.94,
+    "duration": 3.96,
+    "text": "subject matter experts in today's world"
+  },
+  {
+    "start": 1834.86,
+    "duration": 4.38,
+    "text": "that have deeply thought about the"
+  },
+  {
+    "start": 1836.9,
+    "duration": 4.56,
+    "text": "problem for months sometimes even you"
+  },
+  {
+    "start": 1839.24,
+    "duration": 3.9,
+    "text": "know one or two years but they've not"
+  },
+  {
+    "start": 1841.46,
+    "duration": 4.26,
+    "text": "yet had a bill partner and when we get"
+  },
+  {
+    "start": 1843.14,
+    "duration": 4.38,
+    "text": "together with them and hear and they"
+  },
+  {
+    "start": 1845.72,
+    "duration": 3.6,
+    "text": "share the idea of us it allows us to"
+  },
+  {
+    "start": 1847.52,
+    "duration": 4.8,
+    "text": "work with them to very quickly go into"
+  },
+  {
+    "start": 1849.32,
+    "duration": 5.04,
+    "text": "validation and building and I find that"
+  },
+  {
+    "start": 1852.32,
+    "duration": 4.38,
+    "text": "this works because there are a lot of"
+  },
+  {
+    "start": 1854.36,
+    "duration": 5.04,
+    "text": "people that have already done the you"
+  },
+  {
+    "start": 1856.7,
+    "duration": 4.38,
+    "text": "know design thinking thing of exploring"
+  },
+  {
+    "start": 1859.4,
+    "duration": 4.02,
+    "text": "a lot of ideas and running down to"
+  },
+  {
+    "start": 1861.08,
+    "duration": 3.84,
+    "text": "really good ideas and there I find that"
+  },
+  {
+    "start": 1863.42,
+    "duration": 4.14,
+    "text": "there's so many good ideas sitting out"
+  },
+  {
+    "start": 1864.92,
+    "duration": 4.14,
+    "text": "there that no one is working on on that"
+  },
+  {
+    "start": 1867.56,
+    "duration": 4.26,
+    "text": "finding those good ideas that someone"
+  },
+  {
+    "start": 1869.06,
+    "duration": 4.98,
+    "text": "has already had and wants to share of us"
+  },
+  {
+    "start": 1871.82,
+    "duration": 3.54,
+    "text": "that wants to build partner for that"
+  },
+  {
+    "start": 1874.04,
+    "duration": 3.98,
+    "text": "turns out to be much more efficient"
+  },
+  {
+    "start": 1875.36,
+    "duration": 2.66,
+    "text": "engine"
+  },
+  {
+    "start": 1878.48,
+    "duration": 3.18,
+    "text": "so"
+  },
+  {
+    "start": 1879.8,
+    "duration": 3.84,
+    "text": "um before I wrap up we'll go to question"
+  },
+  {
+    "start": 1881.66,
+    "duration": 3.66,
+    "text": "a second just a few slices talk about"
+  },
+  {
+    "start": 1883.64,
+    "duration": 2.46,
+    "text": "risks and social impact"
+  },
+  {
+    "start": 1885.32,
+    "duration": 3.96,
+    "text": "um"
+  },
+  {
+    "start": 1886.1,
+    "duration": 5.04,
+    "text": "so yeah it's very powerful technology to"
+  },
+  {
+    "start": 1889.28,
+    "duration": 3.48,
+    "text": "State something you probably guess my"
+  },
+  {
+    "start": 1891.14,
+    "duration": 4.2,
+    "text": "teams and I we only work on projects"
+  },
+  {
+    "start": 1892.76,
+    "duration": 5.1,
+    "text": "that move Humanity forward and you know"
+  },
+  {
+    "start": 1895.34,
+    "duration": 4.68,
+    "text": "we have multiple times cool projects"
+  },
+  {
+    "start": 1897.86,
+    "duration": 4.38,
+    "text": "that we assess to be financially sound"
+  },
+  {
+    "start": 1900.02,
+    "duration": 4.74,
+    "text": "uh based on ethical grounds it turns out"
+  },
+  {
+    "start": 1902.24,
+    "duration": 5.46,
+    "text": "I've been surprised and sometimes"
+  },
+  {
+    "start": 1904.76,
+    "duration": 5.46,
+    "text": "dismayed at the creativity of people to"
+  },
+  {
+    "start": 1907.7,
+    "duration": 5.16,
+    "text": "come up with good ideas so to come up"
+  },
+  {
+    "start": 1910.22,
+    "duration": 4.32,
+    "text": "with really bad ideas that that seem"
+  },
+  {
+    "start": 1912.86,
+    "duration": 4.02,
+    "text": "profitable but really should not be"
+  },
+  {
+    "start": 1914.54,
+    "duration": 3.96,
+    "text": "built um we'll kill a few projects on"
+  },
+  {
+    "start": 1916.88,
+    "duration": 3.9,
+    "text": "those on those drones"
+  },
+  {
+    "start": 1918.5,
+    "duration": 4.32,
+    "text": "and then I think has to be acknowledge"
+  },
+  {
+    "start": 1920.78,
+    "duration": 4.44,
+    "text": "the AI today does have problems with"
+  },
+  {
+    "start": 1922.82,
+    "duration": 4.26,
+    "text": "bias fairness accuracy"
+  },
+  {
+    "start": 1925.22,
+    "duration": 3.84,
+    "text": "um but also you know the technology is"
+  },
+  {
+    "start": 1927.08,
+    "duration": 4.92,
+    "text": "improving quickly so I see that AI"
+  },
+  {
+    "start": 1929.06,
+    "duration": 4.68,
+    "text": "systems today are less biased than six"
+  },
+  {
+    "start": 1932.0,
+    "duration": 3.78,
+    "text": "months ago and more fair than six months"
+  },
+  {
+    "start": 1933.74,
+    "duration": 3.84,
+    "text": "ago which is not to dismiss the"
+  },
+  {
+    "start": 1935.78,
+    "duration": 3.42,
+    "text": "importance of these problems they are"
+  },
+  {
+    "start": 1937.58,
+    "duration": 4.14,
+    "text": "problems and we should continue to work"
+  },
+  {
+    "start": 1939.2,
+    "duration": 4.44,
+    "text": "on them but I'm also gratified at the"
+  },
+  {
+    "start": 1941.72,
+    "duration": 3.84,
+    "text": "number of aits working hard on these"
+  },
+  {
+    "start": 1943.64,
+    "duration": 4.02,
+    "text": "issues to make them much better"
+  },
+  {
+    "start": 1945.56,
+    "duration": 4.08,
+    "text": "when I think of the biggest risk of AI I"
+  },
+  {
+    "start": 1947.66,
+    "duration": 4.26,
+    "text": "think that because there is one of the"
+  },
+  {
+    "start": 1949.64,
+    "duration": 3.66,
+    "text": "biggest there is is the disruption to"
+  },
+  {
+    "start": 1951.92,
+    "duration": 4.26,
+    "text": "jobs"
+  },
+  {
+    "start": 1953.3,
+    "duration": 4.02,
+    "text": "um this is a diagram from a paper by our"
+  },
+  {
+    "start": 1956.18,
+    "duration": 3.08,
+    "text": "friends at the University of"
+  },
+  {
+    "start": 1957.32,
+    "duration": 4.68,
+    "text": "Pennsylvania and some folks at open AI"
+  },
+  {
+    "start": 1959.26,
+    "duration": 6.34,
+    "text": "analyzing the exposure of different jobs"
+  },
+  {
+    "start": 1962.0,
+    "duration": 6.08,
+    "text": "to AI Automation and it turns out that"
+  },
+  {
+    "start": 1965.6,
+    "duration": 5.82,
+    "text": "whereas the previous wave of automation"
+  },
+  {
+    "start": 1968.08,
+    "duration": 5.68,
+    "text": "mainly the most exposed jobs were often"
+  },
+  {
+    "start": 1971.42,
+    "duration": 5.16,
+    "text": "the lower wage jobs such as when you"
+  },
+  {
+    "start": 1973.76,
+    "duration": 5.22,
+    "text": "know we put robots into factories with"
+  },
+  {
+    "start": 1976.58,
+    "duration": 4.8,
+    "text": "this current wave of automation is"
+  },
+  {
+    "start": 1978.98,
+    "duration": 4.56,
+    "text": "actually the highway shops further to"
+  },
+  {
+    "start": 1981.38,
+    "duration": 3.96,
+    "text": "the right of this apps is that seems to"
+  },
+  {
+    "start": 1983.54,
+    "duration": 2.76,
+    "text": "have more of their tasks expose the AI"
+  },
+  {
+    "start": 1985.34,
+    "duration": 2.34,
+    "text": "automation"
+  },
+  {
+    "start": 1986.3,
+    "duration": 3.3,
+    "text": "so"
+  },
+  {
+    "start": 1987.68,
+    "duration": 5.58,
+    "text": "um even as we create tremendous value"
+  },
+  {
+    "start": 1989.6,
+    "duration": 5.94,
+    "text": "using AI I feel like as Citizens"
+  },
+  {
+    "start": 1993.26,
+    "duration": 3.96,
+    "text": "um and and our corporations and the"
+  },
+  {
+    "start": 1995.54,
+    "duration": 4.2,
+    "text": "governments and really our society I"
+  },
+  {
+    "start": 1997.22,
+    "duration": 3.54,
+    "text": "feel a strong obligation to make sure"
+  },
+  {
+    "start": 1999.74,
+    "duration": 2.7,
+    "text": "that"
+  },
+  {
+    "start": 2000.76,
+    "duration": 4.44,
+    "text": "um people especially people whose"
+  },
+  {
+    "start": 2002.44,
+    "duration": 6.12,
+    "text": "livelihoods are disrupted are still well"
+  },
+  {
+    "start": 2005.2,
+    "duration": 5.58,
+    "text": "taken care of are still treated well"
+  },
+  {
+    "start": 2008.56,
+    "duration": 5.04,
+    "text": "and then lastly"
+  },
+  {
+    "start": 2010.78,
+    "duration": 4.86,
+    "text": "um there's also been it feels like every"
+  },
+  {
+    "start": 2013.6,
+    "duration": 4.26,
+    "text": "time there's a big wave of progress in"
+  },
+  {
+    "start": 2015.64,
+    "duration": 3.6,
+    "text": "AI you know there's a there's a big wave"
+  },
+  {
+    "start": 2017.86,
+    "duration": 3.54,
+    "text": "of hype about artificial gender"
+  },
+  {
+    "start": 2019.24,
+    "duration": 3.66,
+    "text": "intelligence as well when deep learning"
+  },
+  {
+    "start": 2021.4,
+    "duration": 3.54,
+    "text": "start to work really well 10 years ago"
+  },
+  {
+    "start": 2022.9,
+    "duration": 3.66,
+    "text": "there was a lot of hype about AGI and"
+  },
+  {
+    "start": 2024.94,
+    "duration": 4.5,
+    "text": "now the genify is working really well"
+  },
+  {
+    "start": 2026.56,
+    "duration": 5.64,
+    "text": "there's another wave of hyper by AGI"
+  },
+  {
+    "start": 2029.44,
+    "duration": 4.74,
+    "text": "um but I think that artificial gender"
+  },
+  {
+    "start": 2032.2,
+    "duration": 4.2,
+    "text": "intelligence AI didn't do anything a"
+  },
+  {
+    "start": 2034.18,
+    "duration": 3.84,
+    "text": "human can do it's still decades away you"
+  },
+  {
+    "start": 2036.4,
+    "duration": 3.06,
+    "text": "know maybe 30 to 50 years maybe even"
+  },
+  {
+    "start": 2038.02,
+    "duration": 4.26,
+    "text": "longer I hope we'll see it in a"
+  },
+  {
+    "start": 2039.46,
+    "duration": 5.88,
+    "text": "lifetimes but I don't think as anytime"
+  },
+  {
+    "start": 2042.28,
+    "duration": 5.46,
+    "text": "soon one of the challenges is that"
+  },
+  {
+    "start": 2045.34,
+    "duration": 4.26,
+    "text": "the biological path to intelligence like"
+  },
+  {
+    "start": 2047.74,
+    "duration": 4.68,
+    "text": "humans and the digital path to"
+  },
+  {
+    "start": 2049.6,
+    "duration": 4.5,
+    "text": "intelligence you know AI they've taken"
+  },
+  {
+    "start": 2052.42,
+    "duration": 4.26,
+    "text": "very different paths and the funny thing"
+  },
+  {
+    "start": 2054.1,
+    "duration": 4.32,
+    "text": "about the definition of AGI is yeah"
+  },
+  {
+    "start": 2056.68,
+    "duration": 4.02,
+    "text": "benchmarking there's very different"
+  },
+  {
+    "start": 2058.42,
+    "duration": 4.62,
+    "text": "digital Parts intelligence with really"
+  },
+  {
+    "start": 2060.7,
+    "duration": 4.62,
+    "text": "the biological part of intelligence so I"
+  },
+  {
+    "start": 2063.04,
+    "duration": 4.86,
+    "text": "think you know large English models are"
+  },
+  {
+    "start": 2065.32,
+    "duration": 4.62,
+    "text": "smarter than any of us in certain key"
+  },
+  {
+    "start": 2067.9,
+    "duration": 4.74,
+    "text": "Dimensions but much dumber than any of"
+  },
+  {
+    "start": 2069.94,
+    "duration": 4.38,
+    "text": "us in other dimensions and so forcing it"
+  },
+  {
+    "start": 2072.64,
+    "duration": 3.18,
+    "text": "to do everything a human can do is like"
+  },
+  {
+    "start": 2074.32,
+    "duration": 2.58,
+    "text": "a funny comparison"
+  },
+  {
+    "start": 2075.82,
+    "duration": 4.02,
+    "text": "um but I hope we'll get there maybe"
+  },
+  {
+    "start": 2076.9,
+    "duration": 5.28,
+    "text": "hopefully within our lifetimes and then"
+  },
+  {
+    "start": 2079.84,
+    "duration": 4.5,
+    "text": "there's also a lot of I think overblown"
+  },
+  {
+    "start": 2082.18,
+    "duration": 3.6,
+    "text": "hype about AI creating Extinction risk"
+  },
+  {
+    "start": 2084.34,
+    "duration": 3.06,
+    "text": "for Humanity"
+  },
+  {
+    "start": 2085.78,
+    "duration": 3.66,
+    "text": "um candidly I don't see it I just don't"
+  },
+  {
+    "start": 2087.4,
+    "duration": 4.56,
+    "text": "see how AI creates any meaningful"
+  },
+  {
+    "start": 2089.44,
+    "duration": 5.7,
+    "text": "Extinction rest of humanity"
+  },
+  {
+    "start": 2091.96,
+    "duration": 6.36,
+    "text": "um I think that people worry we can't"
+  },
+  {
+    "start": 2095.14,
+    "duration": 5.4,
+    "text": "control AI but we have lots of AI will"
+  },
+  {
+    "start": 2098.32,
+    "duration": 4.38,
+    "text": "be more powerful than any person but"
+  },
+  {
+    "start": 2100.54,
+    "duration": 3.72,
+    "text": "with lots of experience steering very"
+  },
+  {
+    "start": 2102.7,
+    "duration": 3.12,
+    "text": "powerful entities such as corporations"
+  },
+  {
+    "start": 2104.26,
+    "duration": 4.2,
+    "text": "or nation states that are far more"
+  },
+  {
+    "start": 2105.82,
+    "duration": 4.14,
+    "text": "powerful than any single person and"
+  },
+  {
+    "start": 2108.46,
+    "duration": 4.62,
+    "text": "making sure they for the most part"
+  },
+  {
+    "start": 2109.96,
+    "duration": 5.94,
+    "text": "benefit humanity and also technology"
+  },
+  {
+    "start": 2113.08,
+    "duration": 5.04,
+    "text": "develops gradually the so-called hard"
+  },
+  {
+    "start": 2115.9,
+    "duration": 4.2,
+    "text": "takeoff scenario where it's not really"
+  },
+  {
+    "start": 2118.12,
+    "duration": 4.08,
+    "text": "working today and then suddenly one day"
+  },
+  {
+    "start": 2120.1,
+    "duration": 3.8,
+    "text": "overnight it works brilliantly in which"
+  },
+  {
+    "start": 2122.2,
+    "duration": 4.44,
+    "text": "is super intelligent takes over world"
+  },
+  {
+    "start": 2123.9,
+    "duration": 5.26,
+    "text": "that's just not realistic and I think AI"
+  },
+  {
+    "start": 2126.64,
+    "duration": 4.26,
+    "text": "technology would develop slowly like all"
+  },
+  {
+    "start": 2129.16,
+    "duration": 4.14,
+    "text": "that you know like and then it gives us"
+  },
+  {
+    "start": 2130.9,
+    "duration": 4.32,
+    "text": "plenty of time to make sure that we"
+  },
+  {
+    "start": 2133.3,
+    "duration": 2.88,
+    "text": "provide oversight and can manage it to"
+  },
+  {
+    "start": 2135.22,
+    "duration": 3.12,
+    "text": "be safe"
+  },
+  {
+    "start": 2136.18,
+    "duration": 4.5,
+    "text": "and lastly if you look at the real"
+  },
+  {
+    "start": 2138.34,
+    "duration": 4.44,
+    "text": "Extinction rest of humanity"
+  },
+  {
+    "start": 2140.68,
+    "duration": 5.46,
+    "text": "um such as fingers crossed the next"
+  },
+  {
+    "start": 2142.78,
+    "duration": 5.1,
+    "text": "pandemic or climate change leading to a"
+  },
+  {
+    "start": 2146.14,
+    "duration": 4.26,
+    "text": "massive depopulation of some parts of"
+  },
+  {
+    "start": 2147.88,
+    "duration": 4.98,
+    "text": "the planets or much lower odds but maybe"
+  },
+  {
+    "start": 2150.4,
+    "duration": 4.8,
+    "text": "someday and as there are doing to us"
+  },
+  {
+    "start": 2152.86,
+    "duration": 3.9,
+    "text": "what it had done to the dinosaurs I"
+  },
+  {
+    "start": 2155.2,
+    "duration": 4.74,
+    "text": "think if you look the actual real"
+  },
+  {
+    "start": 2156.76,
+    "duration": 5.34,
+    "text": "Extinction risk to humanity AI having"
+  },
+  {
+    "start": 2159.94,
+    "duration": 4.02,
+    "text": "more intelligence even artificial"
+  },
+  {
+    "start": 2162.1,
+    "duration": 3.96,
+    "text": "intelligence in the world would be a key"
+  },
+  {
+    "start": 2163.96,
+    "duration": 4.68,
+    "text": "part of the solution so I feel like if"
+  },
+  {
+    "start": 2166.06,
+    "duration": 5.1,
+    "text": "you want Humanity to survive and thrive"
+  },
+  {
+    "start": 2168.64,
+    "duration": 4.2,
+    "text": "for the next Thousand Years rather than"
+  },
+  {
+    "start": 2171.16,
+    "duration": 4.02,
+    "text": "slowing AI down which some people"
+  },
+  {
+    "start": 2172.84,
+    "duration": 6.0,
+    "text": "propose I would mother I would rather"
+  },
+  {
+    "start": 2175.18,
+    "duration": 5.52,
+    "text": "maybe ai go as fast as possible"
+  },
+  {
+    "start": 2178.84,
+    "duration": 5.4,
+    "text": "um some of that just to summarize this"
+  },
+  {
+    "start": 2180.7,
+    "duration": 6.0,
+    "text": "is my last line I think that AI as a"
+  },
+  {
+    "start": 2184.24,
+    "duration": 5.46,
+    "text": "general purpose technology creates a lot"
+  },
+  {
+    "start": 2186.7,
+    "duration": 4.74,
+    "text": "of new opportunities for everyone and a"
+  },
+  {
+    "start": 2189.7,
+    "duration": 4.14,
+    "text": "lot of the excisely and important work"
+  },
+  {
+    "start": 2191.44,
+    "duration": 5.82,
+    "text": "that lies ahead of us all is to go and"
+  },
+  {
+    "start": 2193.84,
+    "duration": 5.64,
+    "text": "build those concrete use cases and"
+  },
+  {
+    "start": 2197.26,
+    "duration": 5.16,
+    "text": "hopefully in the future hopefully I have"
+  },
+  {
+    "start": 2199.48,
+    "duration": 4.86,
+    "text": "options to maybe engage with more of you"
+  },
+  {
+    "start": 2202.42,
+    "duration": 3.93,
+    "text": "on those opportunities as well so that"
+  },
+  {
+    "start": 2204.34,
+    "duration": 7.84,
+    "text": "let me just say thank you all very much"
+  },
+  {
+    "start": 2206.35,
+    "duration": 5.83,
+    "text": "[Applause]"
+  }
+]

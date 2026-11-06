@@ -1,0 +1,7852 @@
+[
+  {
+    "start": 5.24,
+    "duration": 2.02,
+    "text": "[music]"
+  },
+  {
+    "start": 15.56,
+    "duration": 2.32,
+    "text": ">> Okay."
+  },
+  {
+    "start": 16.32,
+    "duration": 3.72,
+    "text": "Good morning everyone, or actually good"
+  },
+  {
+    "start": 17.88,
+    "duration": 4.12,
+    "text": "afternoon everyone. My name is Alexander"
+  },
+  {
+    "start": 20.04,
+    "duration": 5.96,
+    "text": "Amini and thank you all for joining us"
+  },
+  {
+    "start": 22.0,
+    "duration": 6.04,
+    "text": "today in MIT 6.S191 Introduction to Deep"
+  },
+  {
+    "start": 26.0,
+    "duration": 3.52,
+    "text": "Learning. We're super excited to welcome"
+  },
+  {
+    "start": 28.04,
+    "duration": 2.08,
+    "text": "you to this class."
+  },
+  {
+    "start": 29.52,
+    "duration": 2.24,
+    "text": "Uh"
+  },
+  {
+    "start": 30.12,
+    "duration": 4.2,
+    "text": "my name is Alexander. I'll be your"
+  },
+  {
+    "start": 31.76,
+    "duration": 4.52,
+    "text": "instructor along with Ava, uh who will"
+  },
+  {
+    "start": 34.32,
+    "duration": 4.16,
+    "text": "you'll hear from later today as well"
+  },
+  {
+    "start": 36.28,
+    "duration": 4.52,
+    "text": "with the second lecture."
+  },
+  {
+    "start": 38.48,
+    "duration": 3.64,
+    "text": "This is a one-week boot camp on"
+  },
+  {
+    "start": 40.8,
+    "duration": 3.24,
+    "text": "everything deep learning, right? So,"
+  },
+  {
+    "start": 42.12,
+    "duration": 4.64,
+    "text": "you'll go from the very beginnings of"
+  },
+  {
+    "start": 44.04,
+    "duration": 5.64,
+    "text": "neural networks all the way to some of"
+  },
+  {
+    "start": 46.76,
+    "duration": 6.72,
+    "text": "uh the the most recent LLM advances that"
+  },
+  {
+    "start": 49.68,
+    "duration": 6.0,
+    "text": "we've had uh even up to last week even."
+  },
+  {
+    "start": 53.48,
+    "duration": 3.72,
+    "text": "We'll be covering the the field. The"
+  },
+  {
+    "start": 55.68,
+    "duration": 3.28,
+    "text": "pace of this field is really truly"
+  },
+  {
+    "start": 57.2,
+    "duration": 3.28,
+    "text": "remark- remarkable, right? And that's"
+  },
+  {
+    "start": 58.96,
+    "duration": 3.24,
+    "text": "one thing that we'll keep touching back"
+  },
+  {
+    "start": 60.48,
+    "duration": 3.68,
+    "text": "on throughout the course in a lot of"
+  },
+  {
+    "start": 62.2,
+    "duration": 3.68,
+    "text": "detail that we want to see actually not"
+  },
+  {
+    "start": 64.16,
+    "duration": 4.48,
+    "text": "just what the current state of the art"
+  },
+  {
+    "start": 65.88,
+    "duration": 5.2,
+    "text": "is, but also remember how we got there."
+  },
+  {
+    "start": 68.64,
+    "duration": 4.96,
+    "text": "And I think it's really easy for us to"
+  },
+  {
+    "start": 71.08,
+    "duration": 5.12,
+    "text": "become desensitized actually with a lot"
+  },
+  {
+    "start": 73.6,
+    "duration": 3.76,
+    "text": "of the state of the art with AI because"
+  },
+  {
+    "start": 76.2,
+    "duration": 2.6,
+    "text": "there are so many amazing things"
+  },
+  {
+    "start": 77.36,
+    "duration": 4.0,
+    "text": "happening and we really are on this"
+  },
+  {
+    "start": 78.8,
+    "duration": 3.84,
+    "text": "exponential trend. It's really hard for"
+  },
+  {
+    "start": 81.36,
+    "duration": 3.44,
+    "text": "us to actually remember where we were"
+  },
+  {
+    "start": 82.64,
+    "duration": 5.08,
+    "text": "just a few years ago. So, I think what"
+  },
+  {
+    "start": 84.8,
+    "duration": 5.72,
+    "text": "better way to to do that than to see it."
+  },
+  {
+    "start": 87.72,
+    "duration": 4.72,
+    "text": "So, exactly one decade ago, uh we"
+  },
+  {
+    "start": 90.52,
+    "duration": 3.36,
+    "text": "started teaching the class. We created"
+  },
+  {
+    "start": 92.44,
+    "duration": 3.72,
+    "text": "this class nine years ago. We started"
+  },
+  {
+    "start": 93.88,
+    "duration": 4.8,
+    "text": "teaching it nine years ago."
+  },
+  {
+    "start": 96.16,
+    "duration": 4.72,
+    "text": "One decade ago, in 2015, this was the"
+  },
+  {
+    "start": 98.68,
+    "duration": 5.32,
+    "text": "state of the art in terms of facial"
+  },
+  {
+    "start": 100.88,
+    "duration": 4.32,
+    "text": "image generation. So, generating facial"
+  },
+  {
+    "start": 104.0,
+    "duration": 3.72,
+    "text": "images."
+  },
+  {
+    "start": 105.2,
+    "duration": 4.8,
+    "text": "Uh fast forward a couple years to 2018,"
+  },
+  {
+    "start": 107.72,
+    "duration": 4.12,
+    "text": "you can already see a massive leap in"
+  },
+  {
+    "start": 110.0,
+    "duration": 4.12,
+    "text": "quality. And then fast forward a couple"
+  },
+  {
+    "start": 111.84,
+    "duration": 5.16,
+    "text": "more years and you see that extend into"
+  },
+  {
+    "start": 114.12,
+    "duration": 5.0,
+    "text": "a new dimension of time into generating"
+  },
+  {
+    "start": 117.0,
+    "duration": 4.4,
+    "text": "videos as well. In fact, this was a"
+  },
+  {
+    "start": 119.12,
+    "duration": 3.92,
+    "text": "video that we generated for the class in"
+  },
+  {
+    "start": 121.4,
+    "duration": 2.92,
+    "text": "2020"
+  },
+  {
+    "start": 123.04,
+    "duration": 3.44,
+    "text": "to actually introduce the class. If you"
+  },
+  {
+    "start": 124.32,
+    "duration": 3.48,
+    "text": "guys haven't seen this video, you should"
+  },
+  {
+    "start": 126.48,
+    "duration": 3.48,
+    "text": "watch it online. It's on YouTube. It"
+  },
+  {
+    "start": 127.8,
+    "duration": 4.0,
+    "text": "went a bit viral a few years ago when we"
+  },
+  {
+    "start": 129.96,
+    "duration": 4.0,
+    "text": "started the class."
+  },
+  {
+    "start": 131.8,
+    "duration": 5.84,
+    "text": "Now, in the past few years, we've seen"
+  },
+  {
+    "start": 133.96,
+    "duration": 6.64,
+    "text": "this revolution expand also into natural"
+  },
+  {
+    "start": 137.64,
+    "duration": 4.48,
+    "text": "language as well. So, in 2022, we had"
+  },
+  {
+    "start": 140.6,
+    "duration": 4.2,
+    "text": "ChatGPT-3"
+  },
+  {
+    "start": 142.12,
+    "duration": 7.4,
+    "text": "released and launched to the public"
+  },
+  {
+    "start": 144.8,
+    "duration": 5.8,
+    "text": "followed shortly by GPT-4 in 2023."
+  },
+  {
+    "start": 149.52,
+    "duration": 5.24,
+    "text": "Now,"
+  },
+  {
+    "start": 150.6,
+    "duration": 6.24,
+    "text": "the jump between 3.5 and 4 was often"
+  },
+  {
+    "start": 154.76,
+    "duration": 3.84,
+    "text": "times regarded as this massive leap in"
+  },
+  {
+    "start": 156.84,
+    "duration": 4.4,
+    "text": "AI capabilities when we went from"
+  },
+  {
+    "start": 158.6,
+    "duration": 5.2,
+    "text": "GPT-3.5 to GPT-4 because really"
+  },
+  {
+    "start": 161.24,
+    "duration": 5.64,
+    "text": "everybody felt that the the capabilities"
+  },
+  {
+    "start": 163.8,
+    "duration": 4.6,
+    "text": "were vastly improved between these two"
+  },
+  {
+    "start": 166.88,
+    "duration": 3.04,
+    "text": "models. And everybody could feel it."
+  },
+  {
+    "start": 168.4,
+    "duration": 4.44,
+    "text": "Even non-technical folks could really"
+  },
+  {
+    "start": 169.92,
+    "duration": 4.76,
+    "text": "feel the capabilities come through."
+  },
+  {
+    "start": 172.84,
+    "duration": 3.32,
+    "text": "Now, what you couldn't really see or"
+  },
+  {
+    "start": 174.68,
+    "duration": 3.92,
+    "text": "what you couldn't feel was what was"
+  },
+  {
+    "start": 176.16,
+    "duration": 5.04,
+    "text": "happening behind all of those giant"
+  },
+  {
+    "start": 178.6,
+    "duration": 5.08,
+    "text": "models, right? So, GPT-4 was this"
+  },
+  {
+    "start": 181.2,
+    "duration": 5.12,
+    "text": "incredible model, but this is what you"
+  },
+  {
+    "start": 183.68,
+    "duration": 5.64,
+    "text": "don't see. Powering GPT-4 are these"
+  },
+  {
+    "start": 186.32,
+    "duration": 5.84,
+    "text": "massive and 5, of course, as well, are"
+  },
+  {
+    "start": 189.32,
+    "duration": 4.44,
+    "text": "these massive data centers, GPU data"
+  },
+  {
+    "start": 192.16,
+    "duration": 3.68,
+    "text": "centers. They cost hundreds of millions"
+  },
+  {
+    "start": 193.76,
+    "duration": 5.4,
+    "text": "of dollars to build and tons of"
+  },
+  {
+    "start": 195.84,
+    "duration": 6.36,
+    "text": "infrastructure to maintain and to"
+  },
+  {
+    "start": 199.16,
+    "duration": 4.4,
+    "text": "to manage these different data centers."
+  },
+  {
+    "start": 202.2,
+    "duration": 3.24,
+    "text": "Now,"
+  },
+  {
+    "start": 203.56,
+    "duration": 5.6,
+    "text": "these are for large language models."
+  },
+  {
+    "start": 205.44,
+    "duration": 6.24,
+    "text": "We've also had this this this revolution"
+  },
+  {
+    "start": 209.16,
+    "duration": 4.48,
+    "text": "of AI computing capability on small form"
+  },
+  {
+    "start": 211.68,
+    "duration": 4.36,
+    "text": "factors as well, right? So, just like we"
+  },
+  {
+    "start": 213.64,
+    "duration": 4.92,
+    "text": "have large language models powered in"
+  },
+  {
+    "start": 216.04,
+    "duration": 4.48,
+    "text": "the cloud, we've also started to see"
+  },
+  {
+    "start": 218.56,
+    "duration": 4.92,
+    "text": "small language models"
+  },
+  {
+    "start": 220.52,
+    "duration": 5.36,
+    "text": "go directly down onto edge devices."
+  },
+  {
+    "start": 223.48,
+    "duration": 4.32,
+    "text": "Now, traditionally, this gap between"
+  },
+  {
+    "start": 225.88,
+    "duration": 4.4,
+    "text": "large language models and small language"
+  },
+  {
+    "start": 227.8,
+    "duration": 4.92,
+    "text": "models has been very large in a"
+  },
+  {
+    "start": 230.28,
+    "duration": 5.56,
+    "text": "capability sense. We couldn't really"
+  },
+  {
+    "start": 232.72,
+    "duration": 5.68,
+    "text": "accomplish huge jumps in capability in"
+  },
+  {
+    "start": 235.84,
+    "duration": 4.6,
+    "text": "small language world uh that we've seen"
+  },
+  {
+    "start": 238.4,
+    "duration": 3.64,
+    "text": "in the large language world. But, let me"
+  },
+  {
+    "start": 240.44,
+    "duration": 3.6,
+    "text": "show you actually what's happening right"
+  },
+  {
+    "start": 242.04,
+    "duration": 4.24,
+    "text": "now. So, I'm going to switch over my"
+  },
+  {
+    "start": 244.04,
+    "duration": 4.24,
+    "text": "screen to this screen, which is actually"
+  },
+  {
+    "start": 246.28,
+    "duration": 3.84,
+    "text": "running"
+  },
+  {
+    "start": 248.28,
+    "duration": 4.28,
+    "text": "Let's see here. So, this is actually"
+  },
+  {
+    "start": 250.12,
+    "duration": 4.04,
+    "text": "live on this phone running right here."
+  },
+  {
+    "start": 252.56,
+    "duration": 3.04,
+    "text": "You can see everything that's happening"
+  },
+  {
+    "start": 254.16,
+    "duration": 2.92,
+    "text": "on the phone."
+  },
+  {
+    "start": 255.6,
+    "duration": 3.24,
+    "text": "So, what I'll do is I'll show you"
+  },
+  {
+    "start": 257.08,
+    "duration": 3.6,
+    "text": "actually a language model running"
+  },
+  {
+    "start": 258.84,
+    "duration": 2.84,
+    "text": "entirely on this phone"
+  },
+  {
+    "start": 260.68,
+    "duration": 2.8,
+    "text": "right now."
+  },
+  {
+    "start": 261.68,
+    "duration": 3.76,
+    "text": "So, we can ask it questions. This should"
+  },
+  {
+    "start": 263.48,
+    "duration": 3.44,
+    "text": "look very familiar to what you have seen"
+  },
+  {
+    "start": 265.44,
+    "duration": 2.92,
+    "text": "with GPTs."
+  },
+  {
+    "start": 266.92,
+    "duration": 3.92,
+    "text": "So, how are you doing? We can ask it"
+  },
+  {
+    "start": 268.36,
+    "duration": 4.2,
+    "text": "very simple questions to start."
+  },
+  {
+    "start": 270.84,
+    "duration": 4.28,
+    "text": "Now, the thing that you'll notice here,"
+  },
+  {
+    "start": 272.56,
+    "duration": 5.44,
+    "text": "if I swipe down from the top, this model"
+  },
+  {
+    "start": 275.12,
+    "duration": 4.44,
+    "text": "is running entirely on airplane mode."
+  },
+  {
+    "start": 278.0,
+    "duration": 3.84,
+    "text": "There's no Wi-Fi connected to this"
+  },
+  {
+    "start": 279.56,
+    "duration": 4.04,
+    "text": "phone. This is entirely offline."
+  },
+  {
+    "start": 281.84,
+    "duration": 4.56,
+    "text": "Everything that's being computed is"
+  },
+  {
+    "start": 283.6,
+    "duration": 4.04,
+    "text": "running on the device itself."
+  },
+  {
+    "start": 286.4,
+    "duration": 2.88,
+    "text": "Now,"
+  },
+  {
+    "start": 287.64,
+    "duration": 3.4,
+    "text": "of course, we can ask it more complex"
+  },
+  {
+    "start": 289.28,
+    "duration": 4.4,
+    "text": "questions as well. So, here's a question"
+  },
+  {
+    "start": 291.04,
+    "duration": 3.84,
+    "text": "about finding the zeros in this"
+  },
+  {
+    "start": 293.68,
+    "duration": 2.88,
+    "text": "equation."
+  },
+  {
+    "start": 294.88,
+    "duration": 3.24,
+    "text": "It looks simple at first glance, but"
+  },
+  {
+    "start": 296.56,
+    "duration": 3.72,
+    "text": "actually, if you read it,"
+  },
+  {
+    "start": 298.12,
+    "duration": 4.52,
+    "text": "it's actually asking about it in Z7"
+  },
+  {
+    "start": 300.28,
+    "duration": 4.4,
+    "text": "space. Does anybody know what Z7 space"
+  },
+  {
+    "start": 302.64,
+    "duration": 3.52,
+    "text": "is?"
+  },
+  {
+    "start": 304.68,
+    "duration": 3.56,
+    "text": "Anybody? Yes."
+  },
+  {
+    "start": 306.16,
+    "duration": 4.24,
+    "text": "If it's integers but like modulo 7."
+  },
+  {
+    "start": 308.24,
+    "duration": 4.64,
+    "text": "Exactly. Exactly. So, it's in modulo 7,"
+  },
+  {
+    "start": 310.4,
+    "duration": 4.4,
+    "text": "the finite space of uh of modulo 7. We"
+  },
+  {
+    "start": 312.88,
+    "duration": 3.8,
+    "text": "can ask it this question."
+  },
+  {
+    "start": 314.8,
+    "duration": 3.2,
+    "text": "It can immediately know the answer. You"
+  },
+  {
+    "start": 316.68,
+    "duration": 3.36,
+    "text": "can check the answer. It is indeed"
+  },
+  {
+    "start": 318.0,
+    "duration": 5.52,
+    "text": "correct. We can also ask it to maybe"
+  },
+  {
+    "start": 320.04,
+    "duration": 3.48,
+    "text": "like give me more explanation."
+  },
+  {
+    "start": 327.2,
+    "duration": 4.08,
+    "text": "Right."
+  },
+  {
+    "start": 328.64,
+    "duration": 3.76,
+    "text": "Okay. So, it it's able to do this. Now,"
+  },
+  {
+    "start": 331.28,
+    "duration": 3.04,
+    "text": "let me"
+  },
+  {
+    "start": 332.4,
+    "duration": 4.56,
+    "text": "go back out, and let me actually show"
+  },
+  {
+    "start": 334.32,
+    "duration": 6.68,
+    "text": "you another demonstration. Now, these"
+  },
+  {
+    "start": 336.96,
+    "duration": 5.84,
+    "text": "models are also permeating beyond text"
+  },
+  {
+    "start": 341.0,
+    "duration": 4.32,
+    "text": "language as well. We can ask questions"
+  },
+  {
+    "start": 342.8,
+    "duration": 4.6,
+    "text": "directly in audio language. Now, these"
+  },
+  {
+    "start": 345.32,
+    "duration": 4.88,
+    "text": "are models that are not converting from"
+  },
+  {
+    "start": 347.4,
+    "duration": 5.28,
+    "text": "to audio audio to text. These are pure"
+  },
+  {
+    "start": 350.2,
+    "duration": 4.92,
+    "text": "audio models that take audio in and"
+  },
+  {
+    "start": 352.68,
+    "duration": 4.76,
+    "text": "directly output audio tokens out. So, I"
+  },
+  {
+    "start": 355.12,
+    "duration": 3.88,
+    "text": "can ask you a question like"
+  },
+  {
+    "start": 357.44,
+    "duration": 5.2,
+    "text": "\"Can you give me a step-by-step guide on"
+  },
+  {
+    "start": 359.0,
+    "duration": 4.6,
+    "text": "how to give a really compelling talk?\""
+  },
+  {
+    "start": 362.64,
+    "duration": 2.72,
+    "text": "Sure."
+  },
+  {
+    "start": 363.6,
+    "duration": 3.52,
+    "text": "Start by clarifying your main message"
+  },
+  {
+    "start": 365.36,
+    "duration": 3.28,
+    "text": "and who you're speaking to."
+  },
+  {
+    "start": 367.12,
+    "duration": 4.16,
+    "text": "Then, sketch a simple outline with an"
+  },
+  {
+    "start": 368.64,
+    "duration": 4.12,
+    "text": "intro, a few key points, and a strong"
+  },
+  {
+    "start": 371.28,
+    "duration": 3.84,
+    "text": "conclusion."
+  },
+  {
+    "start": 372.76,
+    "duration": 4.08,
+    "text": "Next, craft a few opening and closing"
+  },
+  {
+    "start": 375.12,
+    "duration": 3.6,
+    "text": "lines that grab attention and leave a"
+  },
+  {
+    "start": 376.84,
+    "duration": 3.4,
+    "text": "lasting impression."
+  },
+  {
+    "start": 378.72,
+    "duration": 4.12,
+    "text": "And practice your delivery so you can"
+  },
+  {
+    "start": 380.24,
+    "duration": 4.96,
+    "text": "adjust your pace and body language."
+  },
+  {
+    "start": 382.84,
+    "duration": 4.24,
+    "text": "Finally, rehearse your talk, get"
+  },
+  {
+    "start": 385.2,
+    "duration": 4.24,
+    "text": "feedback, and tweak any weak spots"
+  },
+  {
+    "start": 387.08,
+    "duration": 3.88,
+    "text": "before the event."
+  },
+  {
+    "start": 389.44,
+    "duration": 3.72,
+    "text": "Right. So,"
+  },
+  {
+    "start": 390.96,
+    "duration": 4.84,
+    "text": "what have we seen? Right. So, this is an"
+  },
+  {
+    "start": 393.16,
+    "duration": 4.4,
+    "text": "end-to-end audio model. It means that"
+  },
+  {
+    "start": 395.8,
+    "duration": 2.96,
+    "text": "the latency is extremely low is what"
+  },
+  {
+    "start": 397.56,
+    "duration": 2.72,
+    "text": "you'll probably notice there because"
+  },
+  {
+    "start": 398.76,
+    "duration": 2.84,
+    "text": "number one, you don't send anything to"
+  },
+  {
+    "start": 400.28,
+    "duration": 2.96,
+    "text": "the cloud, so you don't have to wait for"
+  },
+  {
+    "start": 401.6,
+    "duration": 2.84,
+    "text": "internet times. Everything runs on"
+  },
+  {
+    "start": 403.24,
+    "duration": 3.48,
+    "text": "device."
+  },
+  {
+    "start": 404.44,
+    "duration": 3.72,
+    "text": "And you're directly processing audio."
+  },
+  {
+    "start": 406.72,
+    "duration": 2.68,
+    "text": "So, it's extremely responsive. These are"
+  },
+  {
+    "start": 408.16,
+    "duration": 2.8,
+    "text": "models that can actually understand your"
+  },
+  {
+    "start": 409.4,
+    "duration": 3.44,
+    "text": "emotion because they don't convert audio"
+  },
+  {
+    "start": 410.96,
+    "duration": 4.16,
+    "text": "to text. When you convert to text, you"
+  },
+  {
+    "start": 412.84,
+    "duration": 3.8,
+    "text": "lose emotion. So, you directly capture"
+  },
+  {
+    "start": 415.12,
+    "duration": 3.56,
+    "text": "the emotion in the speech and you can"
+  },
+  {
+    "start": 416.64,
+    "duration": 3.04,
+    "text": "directly convey the emotion back to the"
+  },
+  {
+    "start": 418.68,
+    "duration": 2.76,
+    "text": "user."
+  },
+  {
+    "start": 419.68,
+    "duration": 4.12,
+    "text": "Now, this was a model actually developed"
+  },
+  {
+    "start": 421.44,
+    "duration": 3.36,
+    "text": "by Liquid AI. It released about 1 week"
+  },
+  {
+    "start": 423.8,
+    "duration": 2.68,
+    "text": "ago."
+  },
+  {
+    "start": 424.8,
+    "duration": 3.68,
+    "text": "It's multimodal. It can process all of"
+  },
+  {
+    "start": 426.48,
+    "duration": 3.08,
+    "text": "these different modalities, text, audio,"
+  },
+  {
+    "start": 428.48,
+    "duration": 3.12,
+    "text": "and vision."
+  },
+  {
+    "start": 429.56,
+    "duration": 4.32,
+    "text": "But, there have been a ton of these"
+  },
+  {
+    "start": 431.6,
+    "duration": 2.96,
+    "text": "model releases in the past"
+  },
+  {
+    "start": 433.88,
+    "duration": 3.68,
+    "text": "uh"
+  },
+  {
+    "start": 434.56,
+    "duration": 5.8,
+    "text": "few years actually since GPT first"
+  },
+  {
+    "start": 437.56,
+    "duration": 4.68,
+    "text": "launched. And this problem that"
+  },
+  {
+    "start": 440.36,
+    "duration": 3.52,
+    "text": "traditionally was having between large"
+  },
+  {
+    "start": 442.24,
+    "duration": 2.8,
+    "text": "language models, the gap between large"
+  },
+  {
+    "start": 443.88,
+    "duration": 3.56,
+    "text": "language models and small language"
+  },
+  {
+    "start": 445.04,
+    "duration": 5.72,
+    "text": "models has always been around, right?"
+  },
+  {
+    "start": 447.44,
+    "duration": 5.48,
+    "text": "This was actually a very special release"
+  },
+  {
+    "start": 450.76,
+    "duration": 5.08,
+    "text": "for the community because of this"
+  },
+  {
+    "start": 452.92,
+    "duration": 4.28,
+    "text": "context on the left-hand side. So, I'll"
+  },
+  {
+    "start": 455.84,
+    "duration": 2.76,
+    "text": "read it out just for everybody to see."
+  },
+  {
+    "start": 457.2,
+    "duration": 3.48,
+    "text": "So, it's pretty crazy when you think"
+  },
+  {
+    "start": 458.6,
+    "duration": 6.28,
+    "text": "about it. One of the biggest wow moments"
+  },
+  {
+    "start": 460.68,
+    "duration": 6.36,
+    "text": "of GPT was the update from 3.5 to 4. And"
+  },
+  {
+    "start": 464.88,
+    "duration": 4.36,
+    "text": "now this open-source model that anybody"
+  },
+  {
+    "start": 467.04,
+    "duration": 4.68,
+    "text": "can download and put on their phone with"
+  },
+  {
+    "start": 469.24,
+    "duration": 5.36,
+    "text": "only 2 billion parameters"
+  },
+  {
+    "start": 471.72,
+    "duration": 4.6,
+    "text": "is better than the original GPT-4 model"
+  },
+  {
+    "start": 474.6,
+    "duration": 3.8,
+    "text": "in terms of every benchmark basically"
+  },
+  {
+    "start": 476.32,
+    "duration": 4.12,
+    "text": "that comes out, right? And this is a"
+  },
+  {
+    "start": 478.4,
+    "duration": 3.6,
+    "text": "model again that you can run entirely on"
+  },
+  {
+    "start": 480.44,
+    "duration": 3.72,
+    "text": "your phone. It's open-source. You can"
+  },
+  {
+    "start": 482.0,
+    "duration": 4.04,
+    "text": "fine-tune it on your own prem."
+  },
+  {
+    "start": 484.16,
+    "duration": 3.68,
+    "text": "Right? So that's the pace of the field."
+  },
+  {
+    "start": 486.04,
+    "duration": 4.24,
+    "text": "That's why this class is such an"
+  },
+  {
+    "start": 487.84,
+    "duration": 4.84,
+    "text": "happening at such an exciting time."
+  },
+  {
+    "start": 490.28,
+    "duration": 3.76,
+    "text": "Um so let's dive into it, right? This is"
+  },
+  {
+    "start": 492.68,
+    "duration": 3.48,
+    "text": "what we'll learn in the class. Let's"
+  },
+  {
+    "start": 494.04,
+    "duration": 4.32,
+    "text": "dive in by first of all laying some"
+  },
+  {
+    "start": 496.16,
+    "duration": 4.12,
+    "text": "foundation of what exactly is deep"
+  },
+  {
+    "start": 498.36,
+    "duration": 4.32,
+    "text": "learning. And to do that we need to"
+  },
+  {
+    "start": 500.28,
+    "duration": 3.68,
+    "text": "first understand what is intelligence"
+  },
+  {
+    "start": 502.68,
+    "duration": 3.76,
+    "text": "because deep learning at the heart of"
+  },
+  {
+    "start": 503.96,
+    "duration": 4.8,
+    "text": "deep learning is AI."
+  },
+  {
+    "start": 506.44,
+    "duration": 5.48,
+    "text": "Right? So what is AI first of all? AI is"
+  },
+  {
+    "start": 508.76,
+    "duration": 7.12,
+    "text": "the practice of building artificial"
+  },
+  {
+    "start": 511.92,
+    "duration": 6.28,
+    "text": "algorithms to process information in"
+  },
+  {
+    "start": 515.88,
+    "duration": 4.52,
+    "text": "order to inform some future decisions,"
+  },
+  {
+    "start": 518.2,
+    "duration": 4.56,
+    "text": "right? At its core, that's what we call"
+  },
+  {
+    "start": 520.4,
+    "duration": 3.76,
+    "text": "intelligence in fact even. And"
+  },
+  {
+    "start": 522.76,
+    "duration": 3.32,
+    "text": "artificial intelligence is just the"
+  },
+  {
+    "start": 524.16,
+    "duration": 4.0,
+    "text": "ability for a machine to do that same"
+  },
+  {
+    "start": 526.08,
+    "duration": 3.56,
+    "text": "ability. Process information to inform a"
+  },
+  {
+    "start": 528.16,
+    "duration": 3.24,
+    "text": "future decision."
+  },
+  {
+    "start": 529.64,
+    "duration": 5.36,
+    "text": "Now machine learning is nothing more"
+  },
+  {
+    "start": 531.4,
+    "duration": 7.24,
+    "text": "than a subset of AI that specifically"
+  },
+  {
+    "start": 535.0,
+    "duration": 5.92,
+    "text": "does this without explicitly programming"
+  },
+  {
+    "start": 538.64,
+    "duration": 4.32,
+    "text": "a computer on the steps of how to"
+  },
+  {
+    "start": 540.92,
+    "duration": 4.2,
+    "text": "process that information. It's able to"
+  },
+  {
+    "start": 542.96,
+    "duration": 4.84,
+    "text": "learn this from data, right? That's the"
+  },
+  {
+    "start": 545.12,
+    "duration": 4.08,
+    "text": "differentiating point between AI and"
+  },
+  {
+    "start": 547.8,
+    "duration": 2.84,
+    "text": "machine learning."
+  },
+  {
+    "start": 549.2,
+    "duration": 4.04,
+    "text": "And now deep learning is nothing more"
+  },
+  {
+    "start": 550.64,
+    "duration": 4.96,
+    "text": "than a subset of machine learning which"
+  },
+  {
+    "start": 553.24,
+    "duration": 4.56,
+    "text": "focuses on the use of neural networks,"
+  },
+  {
+    "start": 555.6,
+    "duration": 3.8,
+    "text": "specifically deep neural networks, to do"
+  },
+  {
+    "start": 557.8,
+    "duration": 4.56,
+    "text": "this task of learning from data to"
+  },
+  {
+    "start": 559.4,
+    "duration": 4.48,
+    "text": "inform future decisions and other tasks."
+  },
+  {
+    "start": 562.36,
+    "duration": 2.48,
+    "text": "Right?"
+  },
+  {
+    "start": 563.88,
+    "duration": 3.52,
+    "text": "So"
+  },
+  {
+    "start": 564.84,
+    "duration": 5.4,
+    "text": "we'll we'll circle around this theme of"
+  },
+  {
+    "start": 567.4,
+    "duration": 4.84,
+    "text": "teaching computers to learn a task"
+  },
+  {
+    "start": 570.24,
+    "duration": 4.64,
+    "text": "directly from raw data. That really is"
+  },
+  {
+    "start": 572.24,
+    "duration": 4.24,
+    "text": "what this whole class is all about. And"
+  },
+  {
+    "start": 574.88,
+    "duration": 3.16,
+    "text": "we'll learn about different models to do"
+  },
+  {
+    "start": 576.48,
+    "duration": 3.2,
+    "text": "that, different ways and different"
+  },
+  {
+    "start": 578.04,
+    "duration": 3.12,
+    "text": "algorithms to accomplish that main"
+  },
+  {
+    "start": 579.68,
+    "duration": 3.6,
+    "text": "objective."
+  },
+  {
+    "start": 581.16,
+    "duration": 4.6,
+    "text": "This class is split between both"
+  },
+  {
+    "start": 583.28,
+    "duration": 5.16,
+    "text": "technical lectures as well as"
+  },
+  {
+    "start": 585.76,
+    "duration": 4.16,
+    "text": "hands-on project software labs. We'll"
+  },
+  {
+    "start": 588.44,
+    "duration": 3.96,
+    "text": "have several new updates this year,"
+  },
+  {
+    "start": 589.92,
+    "duration": 4.12,
+    "text": "especially towards the second half of"
+  },
+  {
+    "start": 592.4,
+    "duration": 4.12,
+    "text": "the week where we start to cover a lot"
+  },
+  {
+    "start": 594.04,
+    "duration": 5.6,
+    "text": "more of the new advances in AI and deep"
+  },
+  {
+    "start": 596.52,
+    "duration": 5.04,
+    "text": "learning. And we'll conclude also with"
+  },
+  {
+    "start": 599.64,
+    "duration": 4.0,
+    "text": "some guest lectures and some project"
+  },
+  {
+    "start": 601.56,
+    "duration": 4.0,
+    "text": "presentation competitions that will give"
+  },
+  {
+    "start": 603.64,
+    "duration": 4.88,
+    "text": "everybody the opportunity to win some"
+  },
+  {
+    "start": 605.56,
+    "duration": 2.96,
+    "text": "awesome prizes."
+  },
+  {
+    "start": 609.56,
+    "duration": 3.72,
+    "text": "Yes, also we"
+  },
+  {
+    "start": 611.36,
+    "duration": 4.48,
+    "text": "John is graciously"
+  },
+  {
+    "start": 613.28,
+    "duration": 6.28,
+    "text": "offered to host the top winners of the"
+  },
+  {
+    "start": 615.84,
+    "duration": 7.36,
+    "text": "project presentation for TEDxMIT talks."
+  },
+  {
+    "start": 619.56,
+    "duration": 6.28,
+    "text": "So, who has not given a TEDxMIT talk?"
+  },
+  {
+    "start": 623.2,
+    "duration": 5.28,
+    "text": "Probably most of this audience. So, this"
+  },
+  {
+    "start": 625.84,
+    "duration": 5.32,
+    "text": "is your opportunity to win a spot on the"
+  },
+  {
+    "start": 628.48,
+    "duration": 5.56,
+    "text": "big stage and give a TEDxMIT talk as"
+  },
+  {
+    "start": 631.16,
+    "duration": 4.16,
+    "text": "part of the project pitch competitions."
+  },
+  {
+    "start": 634.04,
+    "duration": 3.36,
+    "text": "Um"
+  },
+  {
+    "start": 635.32,
+    "duration": 4.56,
+    "text": "the software labs are an excellent way"
+  },
+  {
+    "start": 637.4,
+    "duration": 5.48,
+    "text": "to get hands-on and actually learn how"
+  },
+  {
+    "start": 639.88,
+    "duration": 5.44,
+    "text": "to deploy and build what we learn about"
+  },
+  {
+    "start": 642.88,
+    "duration": 3.48,
+    "text": "in the technical lectures directly with"
+  },
+  {
+    "start": 645.32,
+    "duration": 4.12,
+    "text": "your own"
+  },
+  {
+    "start": 646.36,
+    "duration": 4.64,
+    "text": "code and programming. We offer software"
+  },
+  {
+    "start": 649.44,
+    "duration": 4.24,
+    "text": "labs in both TensorFlow and PyTorch."
+  },
+  {
+    "start": 651.0,
+    "duration": 6.48,
+    "text": "We'll talk more about this later today."
+  },
+  {
+    "start": 653.68,
+    "duration": 5.68,
+    "text": "Okay, so how do the projects labs work?"
+  },
+  {
+    "start": 657.48,
+    "duration": 4.28,
+    "text": "Right, so every day we have a dedicated"
+  },
+  {
+    "start": 659.36,
+    "duration": 3.48,
+    "text": "software lab that helps mirror exactly"
+  },
+  {
+    "start": 661.76,
+    "duration": 3.08,
+    "text": "what you learn in the technical"
+  },
+  {
+    "start": 662.84,
+    "duration": 4.56,
+    "text": "lectures. Also, you learn this in the"
+  },
+  {
+    "start": 664.84,
+    "duration": 4.36,
+    "text": "project labs as well. And every day"
+  },
+  {
+    "start": 667.4,
+    "duration": 3.44,
+    "text": "covers [clears throat] on both sides."
+  },
+  {
+    "start": 669.2,
+    "duration": 3.48,
+    "text": "Right, so starting with lab one today,"
+  },
+  {
+    "start": 670.84,
+    "duration": 3.88,
+    "text": "where where you'll be learning how to"
+  },
+  {
+    "start": 672.68,
+    "duration": 4.76,
+    "text": "build a music generation model that can"
+  },
+  {
+    "start": 674.72,
+    "duration": 3.92,
+    "text": "learn how to generate a certain style of"
+  },
+  {
+    "start": 677.44,
+    "duration": 3.24,
+    "text": "music."
+  },
+  {
+    "start": 678.64,
+    "duration": 3.88,
+    "text": "Lab two, which is tomorrow, is going to"
+  },
+  {
+    "start": 680.68,
+    "duration": 3.4,
+    "text": "be focused on computer vision and facial"
+  },
+  {
+    "start": 682.52,
+    "duration": 4.6,
+    "text": "detection systems."
+  },
+  {
+    "start": 684.08,
+    "duration": 4.36,
+    "text": "And then lab three is a lab dedicated on"
+  },
+  {
+    "start": 687.12,
+    "duration": 3.92,
+    "text": "large language modeling. You'll"
+  },
+  {
+    "start": 688.44,
+    "duration": 4.56,
+    "text": "fine-tune your own large language model."
+  },
+  {
+    "start": 691.04,
+    "duration": 3.92,
+    "text": "You'll evaluate it. You'll see the whole"
+  },
+  {
+    "start": 693.0,
+    "duration": 4.56,
+    "text": "process end to end from training all the"
+  },
+  {
+    "start": 694.96,
+    "duration": 4.68,
+    "text": "way to evaluation and deployment."
+  },
+  {
+    "start": 697.56,
+    "duration": 4.32,
+    "text": "And finally, on the last day of this"
+  },
+  {
+    "start": 699.64,
+    "duration": 5.04,
+    "text": "class, we'll cover a final project pitch"
+  },
+  {
+    "start": 701.88,
+    "duration": 4.44,
+    "text": "competition. Three to five minutes, very"
+  },
+  {
+    "start": 704.68,
+    "duration": 3.32,
+    "text": "Shark Tank-like style. You'll get on"
+  },
+  {
+    "start": 706.32,
+    "duration": 2.92,
+    "text": "stage. You can work individually or in"
+  },
+  {
+    "start": 708.0,
+    "duration": 3.36,
+    "text": "groups. We'll talk more about the"
+  },
+  {
+    "start": 709.24,
+    "duration": 4.0,
+    "text": "details for this a bit later throughout"
+  },
+  {
+    "start": 711.36,
+    "duration": 4.08,
+    "text": "the class."
+  },
+  {
+    "start": 713.24,
+    "duration": 4.64,
+    "text": "This class has many amazing resources to"
+  },
+  {
+    "start": 715.44,
+    "duration": 4.24,
+    "text": "help throughout the week. Uh please post"
+  },
+  {
+    "start": 717.88,
+    "duration": 3.96,
+    "text": "to Piazza. I think everybody here should"
+  },
+  {
+    "start": 719.68,
+    "duration": 3.84,
+    "text": "have received the link for the Piazza,"
+  },
+  {
+    "start": 721.84,
+    "duration": 4.32,
+    "text": "but please uh reach out to us if you"
+  },
+  {
+    "start": 723.52,
+    "duration": 4.76,
+    "text": "haven't. Um we also have some incredible"
+  },
+  {
+    "start": 726.16,
+    "duration": 3.88,
+    "text": "TAs who you'll meet throughout the week"
+  },
+  {
+    "start": 728.28,
+    "duration": 3.28,
+    "text": "and will help support if there's any"
+  },
+  {
+    "start": 730.04,
+    "duration": 3.8,
+    "text": "questions. All of these slides, by the"
+  },
+  {
+    "start": 731.56,
+    "duration": 3.92,
+    "text": "way, are online on the website, so feel"
+  },
+  {
+    "start": 733.84,
+    "duration": 3.76,
+    "text": "free to um"
+  },
+  {
+    "start": 735.48,
+    "duration": 4.4,
+    "text": "grab any of these links or details from"
+  },
+  {
+    "start": 737.6,
+    "duration": 4.04,
+    "text": "online as well."
+  },
+  {
+    "start": 739.88,
+    "duration": 3.84,
+    "text": "And of course, uh we have an incredible"
+  },
+  {
+    "start": 741.64,
+    "duration": 5.0,
+    "text": "team. Myself and Ava are your main"
+  },
+  {
+    "start": 743.72,
+    "duration": 4.88,
+    "text": "instructors, but then we also have uh an"
+  },
+  {
+    "start": 746.64,
+    "duration": 4.24,
+    "text": "incredible team of TAs and we also have"
+  },
+  {
+    "start": 748.6,
+    "duration": 4.0,
+    "text": "some incredible guest lecturers lined up"
+  },
+  {
+    "start": 750.88,
+    "duration": 4.0,
+    "text": "for Thursday and Friday as well that"
+  },
+  {
+    "start": 752.6,
+    "duration": 4.76,
+    "text": "you'll definitely not want to miss."
+  },
+  {
+    "start": 754.88,
+    "duration": 4.44,
+    "text": "And finally, just a huge thanks and uh"
+  },
+  {
+    "start": 757.36,
+    "duration": 3.44,
+    "text": "call out to our sponsors who, without"
+  },
+  {
+    "start": 759.32,
+    "duration": 3.2,
+    "text": "their support, this class is not"
+  },
+  {
+    "start": 760.8,
+    "duration": 3.52,
+    "text": "possible at all."
+  },
+  {
+    "start": 762.52,
+    "duration": 3.0,
+    "text": "Okay. So, now let's start with uh some"
+  },
+  {
+    "start": 764.32,
+    "duration": 2.88,
+    "text": "of the fun stuff. And let's start by"
+  },
+  {
+    "start": 765.52,
+    "duration": 3.6,
+    "text": "asking ourselves, first of all, a"
+  },
+  {
+    "start": 767.2,
+    "duration": 3.6,
+    "text": "question that uh"
+  },
+  {
+    "start": 769.12,
+    "duration": 4.0,
+    "text": "probably is pretty self-explanatory at"
+  },
+  {
+    "start": 770.8,
+    "duration": 4.36,
+    "text": "this point, right? So, which is why do"
+  },
+  {
+    "start": 773.12,
+    "duration": 3.52,
+    "text": "we actually care about deep learning so"
+  },
+  {
+    "start": 775.16,
+    "duration": 3.72,
+    "text": "much, right? Why are you all here? Why"
+  },
+  {
+    "start": 776.64,
+    "duration": 4.4,
+    "text": "are you so excited about this topic?"
+  },
+  {
+    "start": 778.88,
+    "duration": 3.72,
+    "text": "And the answer really boils down to what"
+  },
+  {
+    "start": 781.04,
+    "duration": 3.52,
+    "text": "I believe is is one thing, right?"
+  },
+  {
+    "start": 782.6,
+    "duration": 3.84,
+    "text": "Traditional machine learning algorithms"
+  },
+  {
+    "start": 784.56,
+    "duration": 4.72,
+    "text": "really require a level of hand"
+  },
+  {
+    "start": 786.44,
+    "duration": 6.08,
+    "text": "engineering, human human-guided hand"
+  },
+  {
+    "start": 789.28,
+    "duration": 5.4,
+    "text": "engineering to teach computers how to"
+  },
+  {
+    "start": 792.52,
+    "duration": 4.28,
+    "text": "perform a particular task."
+  },
+  {
+    "start": 794.68,
+    "duration": 5.44,
+    "text": "Deep learning is so exciting because it"
+  },
+  {
+    "start": 796.8,
+    "duration": 5.32,
+    "text": "enables us to learn those rules that"
+  },
+  {
+    "start": 800.12,
+    "duration": 4.36,
+    "text": "traditionally are driven by human"
+  },
+  {
+    "start": 802.12,
+    "duration": 4.44,
+    "text": "engineering, now by computers and by"
+  },
+  {
+    "start": 804.48,
+    "duration": 4.12,
+    "text": "data, right? So, the key idea here is to"
+  },
+  {
+    "start": 806.56,
+    "duration": 3.48,
+    "text": "learn those features directly from data"
+  },
+  {
+    "start": 808.6,
+    "duration": 3.52,
+    "text": "and to do that in a hierarchical"
+  },
+  {
+    "start": 810.04,
+    "duration": 5.04,
+    "text": "fashion, right? So if we want to learn"
+  },
+  {
+    "start": 812.12,
+    "duration": 4.76,
+    "text": "how to detect faces, for example, right?"
+  },
+  {
+    "start": 815.08,
+    "duration": 4.0,
+    "text": "You may do that. As a human, how would"
+  },
+  {
+    "start": 816.88,
+    "duration": 3.88,
+    "text": "you detect faces, right? And think from"
+  },
+  {
+    "start": 819.08,
+    "duration": 3.64,
+    "text": "a first principles way. You would"
+  },
+  {
+    "start": 820.76,
+    "duration": 3.56,
+    "text": "probably start by looking at an image"
+  },
+  {
+    "start": 822.72,
+    "duration": 4.32,
+    "text": "and first detecting the lines in the"
+  },
+  {
+    "start": 824.32,
+    "duration": 5.52,
+    "text": "image and composing those lines together"
+  },
+  {
+    "start": 827.04,
+    "duration": 4.96,
+    "text": "to see if there are certain corners in"
+  },
+  {
+    "start": 829.84,
+    "duration": 4.32,
+    "text": "certain parts of the image that resemble"
+  },
+  {
+    "start": 832.0,
+    "duration": 4.56,
+    "text": "a face and then putting those corners in"
+  },
+  {
+    "start": 834.16,
+    "duration": 5.16,
+    "text": "different uh configurations together to"
+  },
+  {
+    "start": 836.56,
+    "duration": 5.2,
+    "text": "see if you can configure an eye or a"
+  },
+  {
+    "start": 839.32,
+    "duration": 3.92,
+    "text": "nose or a mouth. And if you detect any"
+  },
+  {
+    "start": 841.76,
+    "duration": 3.6,
+    "text": "of those things, then it's even more"
+  },
+  {
+    "start": 843.24,
+    "duration": 4.2,
+    "text": "inkling that you're probably uh looking"
+  },
+  {
+    "start": 845.36,
+    "duration": 4.04,
+    "text": "at a face, right? Deep learning"
+  },
+  {
+    "start": 847.44,
+    "duration": 3.92,
+    "text": "algorithms are extremely hierarchical in"
+  },
+  {
+    "start": 849.4,
+    "duration": 3.76,
+    "text": "the same way. They build up features"
+  },
+  {
+    "start": 851.36,
+    "duration": 4.76,
+    "text": "from very low-level features like lines"
+  },
+  {
+    "start": 853.16,
+    "duration": 5.92,
+    "text": "and edges to higher-level shapes like"
+  },
+  {
+    "start": 856.12,
+    "duration": 4.52,
+    "text": "corners and curves all the way up to"
+  },
+  {
+    "start": 859.08,
+    "duration": 4.48,
+    "text": "mid-level objects and higher-level"
+  },
+  {
+    "start": 860.64,
+    "duration": 2.92,
+    "text": "objects as well."
+  },
+  {
+    "start": 863.84,
+    "duration": 3.08,
+    "text": "Now, applying the fundamental building"
+  },
+  {
+    "start": 865.6,
+    "duration": 3.88,
+    "text": "blocks of how to learn those"
+  },
+  {
+    "start": 866.92,
+    "duration": 6.0,
+    "text": "hierarchical representations is actually"
+  },
+  {
+    "start": 869.48,
+    "duration": 5.08,
+    "text": "something that is not new and not very"
+  },
+  {
+    "start": 872.92,
+    "duration": 5.44,
+    "text": "recent at all. A lot of these core"
+  },
+  {
+    "start": 874.56,
+    "duration": 6.48,
+    "text": "algorithms have existed since the 1950s,"
+  },
+  {
+    "start": 878.36,
+    "duration": 4.32,
+    "text": "1970s, they really took off a lot. So"
+  },
+  {
+    "start": 881.04,
+    "duration": 3.4,
+    "text": "why are we really now seeing this"
+  },
+  {
+    "start": 882.68,
+    "duration": 3.76,
+    "text": "resurgence? And there are really three"
+  },
+  {
+    "start": 884.44,
+    "duration": 3.6,
+    "text": "answers to this. One is big data. The"
+  },
+  {
+    "start": 886.44,
+    "duration": 3.8,
+    "text": "data in the world has never been more"
+  },
+  {
+    "start": 888.04,
+    "duration": 4.56,
+    "text": "prevalent than today and these"
+  },
+  {
+    "start": 890.24,
+    "duration": 4.96,
+    "text": "algorithms live off of data. This is"
+  },
+  {
+    "start": 892.6,
+    "duration": 5.28,
+    "text": "what they are feeding off of, right? So"
+  },
+  {
+    "start": 895.2,
+    "duration": 4.32,
+    "text": "they really need and require massive"
+  },
+  {
+    "start": 897.88,
+    "duration": 3.6,
+    "text": "amounts of data that the world has now"
+  },
+  {
+    "start": 899.52,
+    "duration": 4.48,
+    "text": "been able to provide. The second is"
+  },
+  {
+    "start": 901.48,
+    "duration": 4.64,
+    "text": "hardware. Companies like AMD and Nvidia,"
+  },
+  {
+    "start": 904.0,
+    "duration": 4.56,
+    "text": "of course, as well are providing new"
+  },
+  {
+    "start": 906.12,
+    "duration": 4.24,
+    "text": "GPUs that are accelerating parallel"
+  },
+  {
+    "start": 908.56,
+    "duration": 4.36,
+    "text": "computing and accelerating the"
+  },
+  {
+    "start": 910.36,
+    "duration": 5.16,
+    "text": "development and the deployment of these"
+  },
+  {
+    "start": 912.92,
+    "duration": 3.92,
+    "text": "uh algorithms. And finally, software"
+  },
+  {
+    "start": 915.52,
+    "duration": 2.56,
+    "text": "that you'll get hands-on experience"
+  },
+  {
+    "start": 916.84,
+    "duration": 4.0,
+    "text": "throughout this class that it actually"
+  },
+  {
+    "start": 918.08,
+    "duration": 5.0,
+    "text": "democratizes the ability to create,"
+  },
+  {
+    "start": 920.84,
+    "duration": 6.28,
+    "text": "train, and deploy any of these models"
+  },
+  {
+    "start": 923.08,
+    "duration": 6.12,
+    "text": "even at relatively large scales."
+  },
+  {
+    "start": 927.12,
+    "duration": 3.8,
+    "text": "Okay, so let's start with the"
+  },
+  {
+    "start": 929.2,
+    "duration": 3.88,
+    "text": "fundamental, the most fundamental"
+  },
+  {
+    "start": 930.92,
+    "duration": 4.16,
+    "text": "building block of what makes up pretty"
+  },
+  {
+    "start": 933.08,
+    "duration": 4.16,
+    "text": "much every neural network,"
+  },
+  {
+    "start": 935.08,
+    "duration": 4.24,
+    "text": "uh and that is the single neuron, right?"
+  },
+  {
+    "start": 937.24,
+    "duration": 4.32,
+    "text": "Also known as the perceptron."
+  },
+  {
+    "start": 939.32,
+    "duration": 3.96,
+    "text": "Right? So, this is really the most basic"
+  },
+  {
+    "start": 941.56,
+    "duration": 5.08,
+    "text": "building block that's very important to"
+  },
+  {
+    "start": 943.28,
+    "duration": 5.36,
+    "text": "understand when starting deep learning."
+  },
+  {
+    "start": 946.64,
+    "duration": 4.32,
+    "text": "Now, what is the idea of a single"
+  },
+  {
+    "start": 948.64,
+    "duration": 3.8,
+    "text": "perceptron?"
+  },
+  {
+    "start": 950.96,
+    "duration": 3.92,
+    "text": "At its core, it's actually extremely"
+  },
+  {
+    "start": 952.44,
+    "duration": 4.44,
+    "text": "simple. Let's start by first talking"
+  },
+  {
+    "start": 954.88,
+    "duration": 4.48,
+    "text": "about the forward propagation of"
+  },
+  {
+    "start": 956.88,
+    "duration": 4.24,
+    "text": "information through this neuron. So, if"
+  },
+  {
+    "start": 959.36,
+    "duration": 4.2,
+    "text": "you have information and you're passing"
+  },
+  {
+    "start": 961.12,
+    "duration": 5.88,
+    "text": "it through a neuron, we can define a set"
+  },
+  {
+    "start": 963.56,
+    "duration": 5.0,
+    "text": "of the inputs to that neuron as X1 to"
+  },
+  {
+    "start": 967.0,
+    "duration": 4.36,
+    "text": "Xn."
+  },
+  {
+    "start": 968.56,
+    "duration": 6.4,
+    "text": "Or here we call it Xm, excuse me."
+  },
+  {
+    "start": 971.36,
+    "duration": 5.2,
+    "text": "Okay, so we have m inputs, one to m,"
+  },
+  {
+    "start": 974.96,
+    "duration": 3.88,
+    "text": "and this one neuron takes all of these"
+  },
+  {
+    "start": 976.56,
+    "duration": 4.28,
+    "text": "inputs and it has to create some output."
+  },
+  {
+    "start": 978.84,
+    "duration": 3.6,
+    "text": "This is the goal of this neuron. Now,"
+  },
+  {
+    "start": 980.84,
+    "duration": 4.08,
+    "text": "how do we do this? How does this neuron"
+  },
+  {
+    "start": 982.44,
+    "duration": 3.72,
+    "text": "actually take those m inputs and compute"
+  },
+  {
+    "start": 984.92,
+    "duration": 3.88,
+    "text": "its output?"
+  },
+  {
+    "start": 986.16,
+    "duration": 4.84,
+    "text": "It does this by taking"
+  },
+  {
+    "start": 988.8,
+    "duration": 5.2,
+    "text": "each of those inputs, multiplying every"
+  },
+  {
+    "start": 991.0,
+    "duration": 5.08,
+    "text": "input with a corresponding weight, or"
+  },
+  {
+    "start": 994.0,
+    "duration": 4.52,
+    "text": "it's called the weight. Well, every"
+  },
+  {
+    "start": 996.08,
+    "duration": 5.28,
+    "text": "input has a corresponding weight, so X1"
+  },
+  {
+    "start": 998.52,
+    "duration": 4.44,
+    "text": "corresponds to weight one."
+  },
+  {
+    "start": 1001.36,
+    "duration": 3.04,
+    "text": "X2 corresponds to weight two. You"
+  },
+  {
+    "start": 1002.96,
+    "duration": 4.08,
+    "text": "multiply every weight with its"
+  },
+  {
+    "start": 1004.4,
+    "duration": 4.68,
+    "text": "corresponding input, then you add up all"
+  },
+  {
+    "start": 1007.04,
+    "duration": 5.64,
+    "text": "of the answers, and then you pass this"
+  },
+  {
+    "start": 1009.08,
+    "duration": 5.28,
+    "text": "through to the output. With one more"
+  },
+  {
+    "start": 1012.68,
+    "duration": 3.04,
+    "text": "exception, which is that you also pass"
+  },
+  {
+    "start": 1014.36,
+    "duration": 3.88,
+    "text": "it through what's called an activation"
+  },
+  {
+    "start": 1015.72,
+    "duration": 4.28,
+    "text": "function. Here it's denoted as g. So,"
+  },
+  {
+    "start": 1018.24,
+    "duration": 3.8,
+    "text": "you multiply your inputs with your"
+  },
+  {
+    "start": 1020.0,
+    "duration": 3.12,
+    "text": "weights, add up everything into one"
+  },
+  {
+    "start": 1022.04,
+    "duration": 2.2,
+    "text": "number,"
+  },
+  {
+    "start": 1023.12,
+    "duration": 2.72,
+    "text": "and then pass it through some"
+  },
+  {
+    "start": 1024.24,
+    "duration": 3.8,
+    "text": "transformation, which we'll talk about"
+  },
+  {
+    "start": 1025.84,
+    "duration": 3.96,
+    "text": "in a second, and that is your final"
+  },
+  {
+    "start": 1028.04,
+    "duration": 6.04,
+    "text": "answer. That's one number that comes out"
+  },
+  {
+    "start": 1029.8,
+    "duration": 6.0,
+    "text": "of this neuron from m inputs that go in."
+  },
+  {
+    "start": 1034.08,
+    "duration": 3.16,
+    "text": "Okay."
+  },
+  {
+    "start": 1035.8,
+    "duration": 3.6,
+    "text": "There's one more detail I left out of"
+  },
+  {
+    "start": 1037.24,
+    "duration": 4.16,
+    "text": "this, which is that we can also have a"
+  },
+  {
+    "start": 1039.4,
+    "duration": 4.48,
+    "text": "what's called a bias term"
+  },
+  {
+    "start": 1041.4,
+    "duration": 3.76,
+    "text": "to this neuron as well. So, in addition"
+  },
+  {
+    "start": 1043.88,
+    "duration": 4.84,
+    "text": "to our"
+  },
+  {
+    "start": 1045.16,
+    "duration": 6.56,
+    "text": "M inputs on the left, we also have one"
+  },
+  {
+    "start": 1048.72,
+    "duration": 5.76,
+    "text": "more weight W0, which is called our"
+  },
+  {
+    "start": 1051.72,
+    "duration": 6.0,
+    "text": "bias. Now, our bias is what can allow us"
+  },
+  {
+    "start": 1054.48,
+    "duration": 5.4,
+    "text": "to shift this this function"
+  },
+  {
+    "start": 1057.72,
+    "duration": 4.28,
+    "text": "up or down, right? And I'll show a"
+  },
+  {
+    "start": 1059.88,
+    "duration": 3.28,
+    "text": "graphical example of this in a second."
+  },
+  {
+    "start": 1062.0,
+    "duration": 3.16,
+    "text": "Right? But the equation is still the"
+  },
+  {
+    "start": 1063.16,
+    "duration": 3.76,
+    "text": "same. We take every input, multiply by"
+  },
+  {
+    "start": 1065.16,
+    "duration": 3.2,
+    "text": "corresponding weights,"
+  },
+  {
+    "start": 1066.92,
+    "duration": 4.36,
+    "text": "add a bias, pass through our"
+  },
+  {
+    "start": 1068.36,
+    "duration": 2.92,
+    "text": "non-linearity."
+  },
+  {
+    "start": 1071.32,
+    "duration": 4.92,
+    "text": "So, now that X and"
+  },
+  {
+    "start": 1073.6,
+    "duration": 5.44,
+    "text": "W are actually just lists of numbers,"
+  },
+  {
+    "start": 1076.24,
+    "duration": 5.4,
+    "text": "each of which are M dimensional, we can"
+  },
+  {
+    "start": 1079.04,
+    "duration": 4.48,
+    "text": "actually write this in vector uh form,"
+  },
+  {
+    "start": 1081.64,
+    "duration": 3.04,
+    "text": "right? In linear algebra form."
+  },
+  {
+    "start": 1083.52,
+    "duration": 4.24,
+    "text": "So,"
+  },
+  {
+    "start": 1084.68,
+    "duration": 6.8,
+    "text": "the output now, Y, is just obtained by"
+  },
+  {
+    "start": 1087.76,
+    "duration": 5.48,
+    "text": "taking the dot product between X and W,"
+  },
+  {
+    "start": 1091.48,
+    "duration": 3.2,
+    "text": "adding this bias, and passing through a"
+  },
+  {
+    "start": 1093.24,
+    "duration": 3.44,
+    "text": "non-linearity."
+  },
+  {
+    "start": 1094.68,
+    "duration": 3.16,
+    "text": "Right? This simplifies the equation at"
+  },
+  {
+    "start": 1096.68,
+    "duration": 3.44,
+    "text": "least"
+  },
+  {
+    "start": 1097.84,
+    "duration": 3.88,
+    "text": "uh notation-wise quite a lot, right?"
+  },
+  {
+    "start": 1100.12,
+    "duration": 3.12,
+    "text": "From the previous slide."
+  },
+  {
+    "start": 1101.72,
+    "duration": 3.0,
+    "text": "Now, you might be wondering about this"
+  },
+  {
+    "start": 1103.24,
+    "duration": 3.68,
+    "text": "activation function that I mentioned"
+  },
+  {
+    "start": 1104.72,
+    "duration": 4.2,
+    "text": "previously. I said this is a non-linear"
+  },
+  {
+    "start": 1106.92,
+    "duration": 4.08,
+    "text": "function, right? What does that mean? It"
+  },
+  {
+    "start": 1108.92,
+    "duration": 4.04,
+    "text": "just means that you're transforming"
+  },
+  {
+    "start": 1111.0,
+    "duration": 4.32,
+    "text": "something from the X axis that can be"
+  },
+  {
+    "start": 1112.96,
+    "duration": 4.12,
+    "text": "any real number, anything from negative"
+  },
+  {
+    "start": 1115.32,
+    "duration": 5.2,
+    "text": "infinity to infinity,"
+  },
+  {
+    "start": 1117.08,
+    "duration": 4.84,
+    "text": "into a new real number that sometimes is"
+  },
+  {
+    "start": 1120.52,
+    "duration": 3.76,
+    "text": "bounded, sometimes not, but that"
+  },
+  {
+    "start": 1121.92,
+    "duration": 5.12,
+    "text": "transformation is not linear. So, here's"
+  },
+  {
+    "start": 1124.28,
+    "duration": 4.28,
+    "text": "one example of a non-linear activation"
+  },
+  {
+    "start": 1127.04,
+    "duration": 4.08,
+    "text": "function. This is called the sigmoid"
+  },
+  {
+    "start": 1128.56,
+    "duration": 4.8,
+    "text": "activation function. It transforms any"
+  },
+  {
+    "start": 1131.12,
+    "duration": 4.72,
+    "text": "any number on the X axis into a new"
+  },
+  {
+    "start": 1133.36,
+    "duration": 3.68,
+    "text": "number between 0 and 1."
+  },
+  {
+    "start": 1135.84,
+    "duration": 2.68,
+    "text": "Right?"
+  },
+  {
+    "start": 1137.04,
+    "duration": 3.52,
+    "text": "In fact, there are many types of"
+  },
+  {
+    "start": 1138.52,
+    "duration": 3.92,
+    "text": "non-linear activation functions that"
+  },
+  {
+    "start": 1140.56,
+    "duration": 3.88,
+    "text": "you'll get exposure with throughout this"
+  },
+  {
+    "start": 1142.44,
+    "duration": 3.4,
+    "text": "class. The sigmoid activation, which you"
+  },
+  {
+    "start": 1144.44,
+    "duration": 3.84,
+    "text": "see in the left-hand side, is just one"
+  },
+  {
+    "start": 1145.84,
+    "duration": 4.56,
+    "text": "example of very common activation"
+  },
+  {
+    "start": 1148.28,
+    "duration": 4.72,
+    "text": "functions in neural networks."
+  },
+  {
+    "start": 1150.4,
+    "duration": 3.96,
+    "text": "The the central theme that links all of"
+  },
+  {
+    "start": 1153.0,
+    "duration": 4.68,
+    "text": "these together though is that they're"
+  },
+  {
+    "start": 1154.36,
+    "duration": 4.96,
+    "text": "all non-linear. Right? The activation"
+  },
+  {
+    "start": 1157.68,
+    "duration": 3.6,
+    "text": "function with sigmoid on the left is"
+  },
+  {
+    "start": 1159.32,
+    "duration": 3.76,
+    "text": "very commonly used for things like"
+  },
+  {
+    "start": 1161.28,
+    "duration": 3.8,
+    "text": "probabilities because it always outputs"
+  },
+  {
+    "start": 1163.08,
+    "duration": 3.68,
+    "text": "between zero and one, which is the space"
+  },
+  {
+    "start": 1165.08,
+    "duration": 3.52,
+    "text": "that probabilities live in."
+  },
+  {
+    "start": 1166.76,
+    "duration": 4.4,
+    "text": "On the right-hand side, you have"
+  },
+  {
+    "start": 1168.6,
+    "duration": 4.52,
+    "text": "activation functions that output between"
+  },
+  {
+    "start": 1171.16,
+    "duration": 4.28,
+    "text": "zero and positive infinity, which is"
+  },
+  {
+    "start": 1173.12,
+    "duration": 4.76,
+    "text": "great for introducing non-negativity"
+  },
+  {
+    "start": 1175.44,
+    "duration": 3.8,
+    "text": "constraints into your models as well."
+  },
+  {
+    "start": 1177.88,
+    "duration": 3.56,
+    "text": "And it's very simple because it's"
+  },
+  {
+    "start": 1179.24,
+    "duration": 5.64,
+    "text": "actually just two linear functions with"
+  },
+  {
+    "start": 1181.44,
+    "duration": 3.44,
+    "text": "a non-linearity between them."
+  },
+  {
+    "start": 1185.64,
+    "duration": 4.32,
+    "text": "Okay. So, now why do we actually even"
+  },
+  {
+    "start": 1187.44,
+    "duration": 4.88,
+    "text": "need activation functions, right? Why"
+  },
+  {
+    "start": 1189.96,
+    "duration": 3.96,
+    "text": "not just directly use the dot product"
+  },
+  {
+    "start": 1192.32,
+    "duration": 3.64,
+    "text": "that comes from our weights and our"
+  },
+  {
+    "start": 1193.92,
+    "duration": 4.2,
+    "text": "inputs? The point of an activation"
+  },
+  {
+    "start": 1195.96,
+    "duration": 4.8,
+    "text": "function is precisely to introduce"
+  },
+  {
+    "start": 1198.12,
+    "duration": 4.8,
+    "text": "non-linearities into our model."
+  },
+  {
+    "start": 1200.76,
+    "duration": 5.36,
+    "text": "Right? And why do we care about this?"
+  },
+  {
+    "start": 1202.92,
+    "duration": 5.36,
+    "text": "It's because in real life, real life is"
+  },
+  {
+    "start": 1206.12,
+    "duration": 4.6,
+    "text": "highly non-linear. It's highly complex"
+  },
+  {
+    "start": 1208.28,
+    "duration": 4.04,
+    "text": "and dynamic. And let me show you an"
+  },
+  {
+    "start": 1210.72,
+    "duration": 3.04,
+    "text": "example. So, here's a here's an example"
+  },
+  {
+    "start": 1212.32,
+    "duration": 3.84,
+    "text": "of a data set, just a two-dimensional"
+  },
+  {
+    "start": 1213.76,
+    "duration": 5.88,
+    "text": "data set, not even extremely complex."
+  },
+  {
+    "start": 1216.16,
+    "duration": 5.16,
+    "text": "But if I asked you to draw a line"
+  },
+  {
+    "start": 1219.64,
+    "duration": 3.68,
+    "text": "separating the green points from the red"
+  },
+  {
+    "start": 1221.32,
+    "duration": 3.28,
+    "text": "points in this data set, it would"
+  },
+  {
+    "start": 1223.32,
+    "duration": 3.28,
+    "text": "actually be really hard. In fact,"
+  },
+  {
+    "start": 1224.6,
+    "duration": 3.4,
+    "text": "there's no line that perfectly separates"
+  },
+  {
+    "start": 1226.6,
+    "duration": 2.72,
+    "text": "the green points from the red points,"
+  },
+  {
+    "start": 1228.0,
+    "duration": 2.88,
+    "text": "and that's because this data is"
+  },
+  {
+    "start": 1229.32,
+    "duration": 3.0,
+    "text": "non-linear. Even though it's just in"
+  },
+  {
+    "start": 1230.88,
+    "duration": 3.56,
+    "text": "two-dimensional space, it's not in"
+  },
+  {
+    "start": 1232.32,
+    "duration": 4.48,
+    "text": "high-dimensional space, but it's still"
+  },
+  {
+    "start": 1234.44,
+    "duration": 3.72,
+    "text": "non-linear and very complex. Now,"
+  },
+  {
+    "start": 1236.8,
+    "duration": 3.36,
+    "text": "imagine you're dealing with real-world"
+  },
+  {
+    "start": 1238.16,
+    "duration": 4.12,
+    "text": "data that's extremely high-dimensional"
+  },
+  {
+    "start": 1240.16,
+    "duration": 4.08,
+    "text": "and also non-linear."
+  },
+  {
+    "start": 1242.28,
+    "duration": 3.72,
+    "text": "Definitely, you need non-linearities in"
+  },
+  {
+    "start": 1244.24,
+    "duration": 3.24,
+    "text": "your model to handle this."
+  },
+  {
+    "start": 1246.0,
+    "duration": 3.44,
+    "text": "If I tell you you can make a curved"
+  },
+  {
+    "start": 1247.48,
+    "duration": 3.64,
+    "text": "line, this problem becomes very easy,"
+  },
+  {
+    "start": 1249.44,
+    "duration": 3.28,
+    "text": "right? And that's what it means to have"
+  },
+  {
+    "start": 1251.12,
+    "duration": 3.4,
+    "text": "non-linear activation functions. We're"
+  },
+  {
+    "start": 1252.72,
+    "duration": 3.64,
+    "text": "trying to learn a mapping, a decision,"
+  },
+  {
+    "start": 1254.52,
+    "duration": 4.52,
+    "text": "to classify between red points and green"
+  },
+  {
+    "start": 1256.36,
+    "duration": 5.28,
+    "text": "points, but we allow our model to draw"
+  },
+  {
+    "start": 1259.04,
+    "duration": 5.96,
+    "text": "curves in the edges in this decision"
+  },
+  {
+    "start": 1261.64,
+    "duration": 4.88,
+    "text": "space between the two points."
+  },
+  {
+    "start": 1265.0,
+    "duration": 3.2,
+    "text": "Let's understand this with maybe a"
+  },
+  {
+    "start": 1266.52,
+    "duration": 3.6,
+    "text": "simple example, and we can walk through"
+  },
+  {
+    "start": 1268.2,
+    "duration": 3.96,
+    "text": "it together. So, let's assume now that"
+  },
+  {
+    "start": 1270.12,
+    "duration": 4.32,
+    "text": "we have a neural network that was"
+  },
+  {
+    "start": 1272.16,
+    "duration": 5.96,
+    "text": "trained with two weights."
+  },
+  {
+    "start": 1274.44,
+    "duration": 5.12,
+    "text": "So, W1 and W2 is 3 and -2, just as an"
+  },
+  {
+    "start": 1278.12,
+    "duration": 3.64,
+    "text": "example. We trained it, this is the"
+  },
+  {
+    "start": 1279.56,
+    "duration": 4.96,
+    "text": "result that we got. And we want to pass"
+  },
+  {
+    "start": 1281.76,
+    "duration": 4.48,
+    "text": "in a new input to this model. So, we"
+  },
+  {
+    "start": 1284.52,
+    "duration": 2.76,
+    "text": "have two inputs to this model, X1 and"
+  },
+  {
+    "start": 1286.24,
+    "duration": 3.56,
+    "text": "X2."
+  },
+  {
+    "start": 1287.28,
+    "duration": 3.08,
+    "text": "We obtain the output of this"
+  },
+  {
+    "start": 1289.8,
+    "duration": 2.68,
+    "text": "uh"
+  },
+  {
+    "start": 1290.36,
+    "duration": 3.72,
+    "text": "neuron by"
+  },
+  {
+    "start": 1292.48,
+    "duration": 4.76,
+    "text": "as we saw before, computing a dot"
+  },
+  {
+    "start": 1294.08,
+    "duration": 4.56,
+    "text": "product between our X and our W."
+  },
+  {
+    "start": 1297.24,
+    "duration": 3.24,
+    "text": "Right? Our W's already trained, so we"
+  },
+  {
+    "start": 1298.64,
+    "duration": 4.12,
+    "text": "can plug in those two weights directly"
+  },
+  {
+    "start": 1300.48,
+    "duration": 3.76,
+    "text": "into this vector here."
+  },
+  {
+    "start": 1302.76,
+    "duration": 2.24,
+    "text": "Adding our bias,"
+  },
+  {
+    "start": 1304.24,
+    "duration": 2.4,
+    "text": "and then passing through a"
+  },
+  {
+    "start": 1305.0,
+    "duration": 3.68,
+    "text": "non-linearity."
+  },
+  {
+    "start": 1306.64,
+    "duration": 4.2,
+    "text": "Now, if you look at this, what's inside"
+  },
+  {
+    "start": 1308.68,
+    "duration": 4.48,
+    "text": "of the activation function, this is"
+  },
+  {
+    "start": 1310.84,
+    "duration": 4.64,
+    "text": "nothing more than a two-dimensional line"
+  },
+  {
+    "start": 1313.16,
+    "duration": 3.96,
+    "text": "as a function of X1 and X2, our two"
+  },
+  {
+    "start": 1315.48,
+    "duration": 3.48,
+    "text": "inputs."
+  },
+  {
+    "start": 1317.12,
+    "duration": 3.76,
+    "text": "We can plot this line, right? This is a"
+  },
+  {
+    "start": 1318.96,
+    "duration": 4.0,
+    "text": "trained neural network, or it's a"
+  },
+  {
+    "start": 1320.88,
+    "duration": 5.4,
+    "text": "trained neuron at least. We can plot"
+  },
+  {
+    "start": 1322.96,
+    "duration": 6.0,
+    "text": "this line and observe what this decision"
+  },
+  {
+    "start": 1326.28,
+    "duration": 5.08,
+    "text": "uh boundary looks like in the space"
+  },
+  {
+    "start": 1328.96,
+    "duration": 5.44,
+    "text": "between X1 and X2."
+  },
+  {
+    "start": 1331.36,
+    "duration": 6.28,
+    "text": "So, for any new point X1 and X2, if I"
+  },
+  {
+    "start": 1334.4,
+    "duration": 4.44,
+    "text": "want to pass in an input to this neuron,"
+  },
+  {
+    "start": 1337.64,
+    "duration": 4.24,
+    "text": "I can actually plot this point. So,"
+  },
+  {
+    "start": 1338.84,
+    "duration": 7.04,
+    "text": "let's say I I pass in a new input, -1,"
+  },
+  {
+    "start": 1341.88,
+    "duration": 6.4,
+    "text": "+2 is the XY coordinate of this point. I"
+  },
+  {
+    "start": 1345.88,
+    "duration": 4.76,
+    "text": "can plot it in this space, and I can see"
+  },
+  {
+    "start": 1348.28,
+    "duration": 4.48,
+    "text": "that it actually lies on the left side"
+  },
+  {
+    "start": 1350.64,
+    "duration": 3.4,
+    "text": "of this decision boundary. What does it"
+  },
+  {
+    "start": 1352.76,
+    "duration": 3.08,
+    "text": "mean to lie on the left side of the"
+  },
+  {
+    "start": 1354.04,
+    "duration": 3.52,
+    "text": "decision boundary? Well, let's actually"
+  },
+  {
+    "start": 1355.84,
+    "duration": 4.12,
+    "text": "compute it mathematically first, and"
+  },
+  {
+    "start": 1357.56,
+    "duration": 6.52,
+    "text": "then we'll see. So, if we plug in those"
+  },
+  {
+    "start": 1359.96,
+    "duration": 6.84,
+    "text": "numbers to the equation, we'll get 1 + 3"
+  },
+  {
+    "start": 1364.08,
+    "duration": 5.0,
+    "text": "* -1, which is -3,"
+  },
+  {
+    "start": 1366.8,
+    "duration": 4.08,
+    "text": "2 * 2, which is -4."
+  },
+  {
+    "start": 1369.08,
+    "duration": 4.6,
+    "text": "Right? Add up all those together, you"
+  },
+  {
+    "start": 1370.88,
+    "duration": 4.96,
+    "text": "get -6. Right? That's a negative number."
+  },
+  {
+    "start": 1373.68,
+    "duration": 4.6,
+    "text": "That means that we're on the left side"
+  },
+  {
+    "start": 1375.84,
+    "duration": 4.08,
+    "text": "of the decision boundary. When we pass"
+  },
+  {
+    "start": 1378.28,
+    "duration": 3.36,
+    "text": "that through our non-linearity, which is"
+  },
+  {
+    "start": 1379.92,
+    "duration": 3.12,
+    "text": "our sigmoid function, being a very"
+  },
+  {
+    "start": 1381.64,
+    "duration": 4.68,
+    "text": "negative number, that means that we're"
+  },
+  {
+    "start": 1383.04,
+    "duration": 4.6,
+    "text": "going to be further on the left on the"
+  },
+  {
+    "start": 1386.32,
+    "duration": 3.56,
+    "text": "under 50"
+  },
+  {
+    "start": 1387.64,
+    "duration": 4.08,
+    "text": "under .5 on the sigmoid function, so"
+  },
+  {
+    "start": 1389.88,
+    "duration": 4.0,
+    "text": "where it's a very small number close to"
+  },
+  {
+    "start": 1391.72,
+    "duration": 4.88,
+    "text": "zero, .00."
+  },
+  {
+    "start": 1393.88,
+    "duration": 4.64,
+    "text": "In fact, we can actually draw a"
+  },
+  {
+    "start": 1396.6,
+    "duration": 4.28,
+    "text": "hyperplane between these two parts of"
+  },
+  {
+    "start": 1398.52,
+    "duration": 4.8,
+    "text": "the space and say anything that lies on"
+  },
+  {
+    "start": 1400.88,
+    "duration": 5.12,
+    "text": "the left side of the decision boundary"
+  },
+  {
+    "start": 1403.32,
+    "duration": 4.56,
+    "text": "will always be negative, right? It will"
+  },
+  {
+    "start": 1406.0,
+    "duration": 4.4,
+    "text": "always be negative before the activation"
+  },
+  {
+    "start": 1407.88,
+    "duration": 4.48,
+    "text": "function, it will always be less than .5"
+  },
+  {
+    "start": 1410.4,
+    "duration": 4.04,
+    "text": "after the activation function"
+  },
+  {
+    "start": 1412.36,
+    "duration": 4.04,
+    "text": "if it's sigmoid activation, and anything"
+  },
+  {
+    "start": 1414.44,
+    "duration": 4.32,
+    "text": "on the right is going to be positive"
+  },
+  {
+    "start": 1416.4,
+    "duration": 4.0,
+    "text": "before the activation function."
+  },
+  {
+    "start": 1418.76,
+    "duration": 4.4,
+    "text": "Now, this is really nice and convenient"
+  },
+  {
+    "start": 1420.4,
+    "duration": 5.12,
+    "text": "that we can visualize this trained"
+  },
+  {
+    "start": 1423.16,
+    "duration": 4.8,
+    "text": "neuron in this way here that for any"
+  },
+  {
+    "start": 1425.52,
+    "duration": 5.12,
+    "text": "input, we can directly visualize exactly"
+  },
+  {
+    "start": 1427.96,
+    "duration": 4.08,
+    "text": "where it lives in this decision space."
+  },
+  {
+    "start": 1430.64,
+    "duration": 3.52,
+    "text": "But of course, this is only a"
+  },
+  {
+    "start": 1432.04,
+    "duration": 4.16,
+    "text": "two-dimensional space. It has only two"
+  },
+  {
+    "start": 1434.16,
+    "duration": 4.84,
+    "text": "neurons in our neuron Excuse me, two"
+  },
+  {
+    "start": 1436.2,
+    "duration": 4.64,
+    "text": "parameters in our neuron in our neuron,"
+  },
+  {
+    "start": 1439.0,
+    "duration": 3.92,
+    "text": "right? It's extremely small, right?"
+  },
+  {
+    "start": 1440.84,
+    "duration": 4.04,
+    "text": "Modern neural networks have billions of"
+  },
+  {
+    "start": 1442.92,
+    "duration": 4.12,
+    "text": "parameters. So, imagine this plot now"
+  },
+  {
+    "start": 1444.88,
+    "duration": 4.24,
+    "text": "with a billion-dimensional space. This"
+  },
+  {
+    "start": 1447.04,
+    "duration": 4.12,
+    "text": "is what we would be looking at."
+  },
+  {
+    "start": 1449.12,
+    "duration": 3.84,
+    "text": "Um so, of course, that's not possible,"
+  },
+  {
+    "start": 1451.16,
+    "duration": 4.52,
+    "text": "right? So, this is why this is a helpful"
+  },
+  {
+    "start": 1452.96,
+    "duration": 6.2,
+    "text": "exercise to explain, but of course, we"
+  },
+  {
+    "start": 1455.68,
+    "duration": 6.12,
+    "text": "need uh to actually scale without having"
+  },
+  {
+    "start": 1459.16,
+    "duration": 5.2,
+    "text": "this exact uh visual, but building up"
+  },
+  {
+    "start": 1461.8,
+    "duration": 4.04,
+    "text": "more mathematical intuition."
+  },
+  {
+    "start": 1464.36,
+    "duration": 3.6,
+    "text": "So, let's do exactly that. Let's scale"
+  },
+  {
+    "start": 1465.84,
+    "duration": 4.48,
+    "text": "this idea now into larger"
+  },
+  {
+    "start": 1467.96,
+    "duration": 4.88,
+    "text": "networks, and let's start by taking that"
+  },
+  {
+    "start": 1470.32,
+    "duration": 4.92,
+    "text": "one neuron and actually building a"
+  },
+  {
+    "start": 1472.84,
+    "duration": 4.52,
+    "text": "neural network out of it to see how this"
+  },
+  {
+    "start": 1475.24,
+    "duration": 5.8,
+    "text": "all comes together, right? So, this is"
+  },
+  {
+    "start": 1477.36,
+    "duration": 4.72,
+    "text": "our original neuron picture, okay? Now,"
+  },
+  {
+    "start": 1481.04,
+    "duration": 2.88,
+    "text": "if there's a few things that you"
+  },
+  {
+    "start": 1482.08,
+    "duration": 3.36,
+    "text": "remember from this class, this is"
+  },
+  {
+    "start": 1483.92,
+    "duration": 4.32,
+    "text": "probably the most important thing is"
+  },
+  {
+    "start": 1485.44,
+    "duration": 5.16,
+    "text": "that you should remember how a single"
+  },
+  {
+    "start": 1488.24,
+    "duration": 5.04,
+    "text": "neuron works, and that's by doing a dot"
+  },
+  {
+    "start": 1490.6,
+    "duration": 5.04,
+    "text": "product, adding a bias, and applying a"
+  },
+  {
+    "start": 1493.28,
+    "duration": 4.28,
+    "text": "non-linearity. It's really three steps:"
+  },
+  {
+    "start": 1495.64,
+    "duration": 5.36,
+    "text": "dot product, add a bias, and apply a"
+  },
+  {
+    "start": 1497.56,
+    "duration": 5.56,
+    "text": "non-linearity. That equation is the core"
+  },
+  {
+    "start": 1501.0,
+    "duration": 3.64,
+    "text": "to so many different parts of deep"
+  },
+  {
+    "start": 1503.12,
+    "duration": 3.44,
+    "text": "learning."
+  },
+  {
+    "start": 1504.64,
+    "duration": 4.88,
+    "text": "Now, let's simplify the diagram a little"
+  },
+  {
+    "start": 1506.56,
+    "duration": 4.6,
+    "text": "bit now that we got that foundation"
+  },
+  {
+    "start": 1509.52,
+    "duration": 4.44,
+    "text": "settled, right? I'll remove all of the"
+  },
+  {
+    "start": 1511.16,
+    "duration": 5.52,
+    "text": "weight labels, and we'll just have every"
+  },
+  {
+    "start": 1513.96,
+    "duration": 4.96,
+    "text": "line you can remember that every line"
+  },
+  {
+    "start": 1516.68,
+    "duration": 4.16,
+    "text": "will have both an input coming in as"
+  },
+  {
+    "start": 1518.92,
+    "duration": 3.68,
+    "text": "well as a weight associated to that"
+  },
+  {
+    "start": 1520.84,
+    "duration": 5.52,
+    "text": "line. Okay."
+  },
+  {
+    "start": 1522.6,
+    "duration": 6.36,
+    "text": "Now, Z here, what's shown as Z, is the"
+  },
+  {
+    "start": 1526.36,
+    "duration": 4.28,
+    "text": "result of that dot product plus a bias,"
+  },
+  {
+    "start": 1528.96,
+    "duration": 3.8,
+    "text": "right? This is what's happening before"
+  },
+  {
+    "start": 1530.64,
+    "duration": 4.52,
+    "text": "the non-linearity, right? So, the final"
+  },
+  {
+    "start": 1532.76,
+    "duration": 6.32,
+    "text": "output is simply Y of"
+  },
+  {
+    "start": 1535.16,
+    "duration": 4.84,
+    "text": "G, which is our non-linearity, of Z."
+  },
+  {
+    "start": 1539.08,
+    "duration": 3.96,
+    "text": "Okay."
+  },
+  {
+    "start": 1540.0,
+    "duration": 5.64,
+    "text": "Now, let's define a multi-output neural"
+  },
+  {
+    "start": 1543.04,
+    "duration": 4.96,
+    "text": "network now. To do this, we just have"
+  },
+  {
+    "start": 1545.64,
+    "duration": 4.68,
+    "text": "two neurons instead of one. They will"
+  },
+  {
+    "start": 1548.0,
+    "duration": 4.0,
+    "text": "both see the same inputs,"
+  },
+  {
+    "start": 1550.32,
+    "duration": 4.72,
+    "text": "but now they will have their own"
+  },
+  {
+    "start": 1552.0,
+    "duration": 4.92,
+    "text": "independent weights. So, each neuron has"
+  },
+  {
+    "start": 1555.04,
+    "duration": 4.04,
+    "text": "its own three weights."
+  },
+  {
+    "start": 1556.92,
+    "duration": 3.72,
+    "text": "It sees the same three inputs,"
+  },
+  {
+    "start": 1559.08,
+    "duration": 3.48,
+    "text": "but it now can output two different"
+  },
+  {
+    "start": 1560.64,
+    "duration": 4.04,
+    "text": "answers because it has two different"
+  },
+  {
+    "start": 1562.56,
+    "duration": 3.24,
+    "text": "sets of weights."
+  },
+  {
+    "start": 1564.68,
+    "duration": 2.4,
+    "text": "Okay."
+  },
+  {
+    "start": 1565.8,
+    "duration": 2.68,
+    "text": "So, now with this mathematical"
+  },
+  {
+    "start": 1567.08,
+    "duration": 4.4,
+    "text": "understanding, let's see if we can now"
+  },
+  {
+    "start": 1568.48,
+    "duration": 6.4,
+    "text": "build our first layer neural network"
+  },
+  {
+    "start": 1571.48,
+    "duration": 6.2,
+    "text": "layer entirely from scratch."
+  },
+  {
+    "start": 1574.88,
+    "duration": 6.4,
+    "text": "So, let's do this uh by first"
+  },
+  {
+    "start": 1577.68,
+    "duration": 5.08,
+    "text": "initializing a matrix called W. This is"
+  },
+  {
+    "start": 1581.28,
+    "duration": 3.72,
+    "text": "going to be a matrix that contains all"
+  },
+  {
+    "start": 1582.76,
+    "duration": 4.64,
+    "text": "of our weights for all of our neurons in"
+  },
+  {
+    "start": 1585.0,
+    "duration": 6.72,
+    "text": "that one layer. Okay."
+  },
+  {
+    "start": 1587.4,
+    "duration": 6.2,
+    "text": "So, we can create now this matrix with"
+  },
+  {
+    "start": 1591.72,
+    "duration": 4.56,
+    "text": "uh of weights, which is going to be"
+  },
+  {
+    "start": 1593.6,
+    "duration": 4.68,
+    "text": "dimensionality of the input space by the"
+  },
+  {
+    "start": 1596.28,
+    "duration": 3.08,
+    "text": "dimensionality of our output space,"
+  },
+  {
+    "start": 1598.28,
+    "duration": 2.28,
+    "text": "right?"
+  },
+  {
+    "start": 1599.36,
+    "duration": 3.2,
+    "text": "Now,"
+  },
+  {
+    "start": 1600.56,
+    "duration": 4.04,
+    "text": "the bias is also important to initialize"
+  },
+  {
+    "start": 1602.56,
+    "duration": 4.32,
+    "text": "here. And then when we create our call"
+  },
+  {
+    "start": 1604.6,
+    "duration": 4.36,
+    "text": "function, our forward pass function,"
+  },
+  {
+    "start": 1606.88,
+    "duration": 5.12,
+    "text": "this is going to show actually how we"
+  },
+  {
+    "start": 1608.96,
+    "duration": 4.92,
+    "text": "can multiply, do the dot product of our"
+  },
+  {
+    "start": 1612.0,
+    "duration": 3.88,
+    "text": "inputs with our weights."
+  },
+  {
+    "start": 1613.88,
+    "duration": 4.04,
+    "text": "Okay. Right here."
+  },
+  {
+    "start": 1615.88,
+    "duration": 3.92,
+    "text": "Add the bias."
+  },
+  {
+    "start": 1617.92,
+    "duration": 3.6,
+    "text": "Apply the non-linearity."
+  },
+  {
+    "start": 1619.8,
+    "duration": 4.72,
+    "text": "And that's our answer, right? It's the"
+  },
+  {
+    "start": 1621.52,
+    "duration": 4.84,
+    "text": "same equation again."
+  },
+  {
+    "start": 1624.52,
+    "duration": 3.56,
+    "text": "Okay, we can do this in TensorFlow. We"
+  },
+  {
+    "start": 1626.36,
+    "duration": 4.2,
+    "text": "can also do it in PyTorch. And you'll"
+  },
+  {
+    "start": 1628.08,
+    "duration": 5.0,
+    "text": "notice actually between these two it's"
+  },
+  {
+    "start": 1630.56,
+    "duration": 3.72,
+    "text": "very very similar type of language. Uh,"
+  },
+  {
+    "start": 1633.08,
+    "duration": 2.76,
+    "text": "a lot of"
+  },
+  {
+    "start": 1634.28,
+    "duration": 3.48,
+    "text": "parallels. Basically just different"
+  },
+  {
+    "start": 1635.84,
+    "duration": 3.52,
+    "text": "names for a lot of things, but"
+  },
+  {
+    "start": 1637.76,
+    "duration": 4.08,
+    "text": "the overall frameworks are extremely"
+  },
+  {
+    "start": 1639.36,
+    "duration": 2.48,
+    "text": "similar."
+  },
+  {
+    "start": 1641.88,
+    "duration": 4.12,
+    "text": "Same foundations. We'll initialize the"
+  },
+  {
+    "start": 1643.8,
+    "duration": 4.08,
+    "text": "weights and the biases."
+  },
+  {
+    "start": 1646.0,
+    "duration": 4.64,
+    "text": "In the forward pass, we'll compute the"
+  },
+  {
+    "start": 1647.88,
+    "duration": 4.84,
+    "text": "output of this layer by computing a"
+  },
+  {
+    "start": 1650.64,
+    "duration": 4.32,
+    "text": "matrix multiplication of our inputs with"
+  },
+  {
+    "start": 1652.72,
+    "duration": 5.08,
+    "text": "our weights, adding a bias, and then"
+  },
+  {
+    "start": 1654.96,
+    "duration": 4.0,
+    "text": "applying our non-linearity."
+  },
+  {
+    "start": 1657.8,
+    "duration": 3.08,
+    "text": "Okay."
+  },
+  {
+    "start": 1658.96,
+    "duration": 3.36,
+    "text": "Now luckily"
+  },
+  {
+    "start": 1660.88,
+    "duration": 3.84,
+    "text": "both TensorFlow and PyTorch have"
+  },
+  {
+    "start": 1662.32,
+    "duration": 4.24,
+    "text": "actually defined that exact layer for us"
+  },
+  {
+    "start": 1664.72,
+    "duration": 4.0,
+    "text": "already. So you don't actually need to"
+  },
+  {
+    "start": 1666.56,
+    "duration": 4.44,
+    "text": "to write that code yourself. You would"
+  },
+  {
+    "start": 1668.72,
+    "duration": 4.08,
+    "text": "just call the layer. In TensorFlow it's"
+  },
+  {
+    "start": 1671.0,
+    "duration": 3.72,
+    "text": "called the dense layer. In PyTorch it's"
+  },
+  {
+    "start": 1672.8,
+    "duration": 3.56,
+    "text": "called a linear layer. They do the exact"
+  },
+  {
+    "start": 1674.72,
+    "duration": 4.12,
+    "text": "same thing. They do the matrix multiply,"
+  },
+  {
+    "start": 1676.36,
+    "duration": 4.6,
+    "text": "add a bias, apply a non-linearity."
+  },
+  {
+    "start": 1678.84,
+    "duration": 3.92,
+    "text": "So we can just call it instead, right?"
+  },
+  {
+    "start": 1680.96,
+    "duration": 5.32,
+    "text": "We call it with the number of units or"
+  },
+  {
+    "start": 1682.76,
+    "duration": 5.96,
+    "text": "the number of neurons in each layer."
+  },
+  {
+    "start": 1686.28,
+    "duration": 4.8,
+    "text": "Okay, let's keep building up this"
+  },
+  {
+    "start": 1688.72,
+    "duration": 4.72,
+    "text": "abstraction step by step."
+  },
+  {
+    "start": 1691.08,
+    "duration": 4.44,
+    "text": "That's a single layer neural network."
+  },
+  {
+    "start": 1693.44,
+    "duration": 4.08,
+    "text": "This is one where we can have a single"
+  },
+  {
+    "start": 1695.52,
+    "duration": 3.48,
+    "text": "hidden layer now. So this is actually"
+  },
+  {
+    "start": 1697.52,
+    "duration": 3.52,
+    "text": "two layers."
+  },
+  {
+    "start": 1699.0,
+    "duration": 4.36,
+    "text": "Now we can see how we can do this"
+  },
+  {
+    "start": 1701.04,
+    "duration": 4.28,
+    "text": "transformation from input space to the"
+  },
+  {
+    "start": 1703.36,
+    "duration": 3.8,
+    "text": "hidden layer space with one layer, and"
+  },
+  {
+    "start": 1705.32,
+    "duration": 4.04,
+    "text": "then hidden layer space to output space"
+  },
+  {
+    "start": 1707.16,
+    "duration": 5.08,
+    "text": "with another layer. So now we actually"
+  },
+  {
+    "start": 1709.36,
+    "duration": 4.6,
+    "text": "have two weight matrices, right? The"
+  },
+  {
+    "start": 1712.24,
+    "duration": 3.64,
+    "text": "first weight matrix on the left-hand"
+  },
+  {
+    "start": 1713.96,
+    "duration": 4.24,
+    "text": "side W1"
+  },
+  {
+    "start": 1715.88,
+    "duration": 5.28,
+    "text": "converts the inputs to the hidden layer."
+  },
+  {
+    "start": 1718.2,
+    "duration": 4.2,
+    "text": "Second weight matrix is W2 which goes"
+  },
+  {
+    "start": 1721.16,
+    "duration": 3.0,
+    "text": "to the output."
+  },
+  {
+    "start": 1722.4,
+    "duration": 2.92,
+    "text": "Right? Each of these are separate weight"
+  },
+  {
+    "start": 1724.16,
+    "duration": 2.72,
+    "text": "matrices, and they actually have"
+  },
+  {
+    "start": 1725.32,
+    "duration": 2.88,
+    "text": "different sizes as well because your"
+  },
+  {
+    "start": 1726.88,
+    "duration": 4.12,
+    "text": "output shape is different than your"
+  },
+  {
+    "start": 1728.2,
+    "duration": 5.68,
+    "text": "hidden layer shape."
+  },
+  {
+    "start": 1731.0,
+    "duration": 5.2,
+    "text": "Now, if we look at a single unit,"
+  },
+  {
+    "start": 1733.88,
+    "duration": 4.08,
+    "text": "let's zoom back in now to a single unit"
+  },
+  {
+    "start": 1736.2,
+    "duration": 3.16,
+    "text": "within the hidden layer."
+  },
+  {
+    "start": 1737.96,
+    "duration": 4.24,
+    "text": "Right? Let's take for example this one,"
+  },
+  {
+    "start": 1739.36,
+    "duration": 5.12,
+    "text": "Z2. This is just the second unit in our"
+  },
+  {
+    "start": 1742.2,
+    "duration": 4.6,
+    "text": "hidden layer of this model. This is the"
+  },
+  {
+    "start": 1744.48,
+    "duration": 4.64,
+    "text": "same perceptron that we saw before,"
+  },
+  {
+    "start": 1746.8,
+    "duration": 6.08,
+    "text": "nothing special here. We compute its"
+  },
+  {
+    "start": 1749.12,
+    "duration": 6.08,
+    "text": "output Z2 by taking a dot product of all"
+  },
+  {
+    "start": 1752.88,
+    "duration": 4.8,
+    "text": "inputs with the weights corresponding to"
+  },
+  {
+    "start": 1755.2,
+    "duration": 4.48,
+    "text": "that neuron, adding its bias, and"
+  },
+  {
+    "start": 1757.68,
+    "duration": 4.56,
+    "text": "applying a non-linearity."
+  },
+  {
+    "start": 1759.68,
+    "duration": 4.24,
+    "text": "If we took a different node, like Z3,"
+  },
+  {
+    "start": 1762.24,
+    "duration": 3.48,
+    "text": "for example, it would look also the"
+  },
+  {
+    "start": 1763.92,
+    "duration": 3.88,
+    "text": "exact same, except its weights would be"
+  },
+  {
+    "start": 1765.72,
+    "duration": 3.2,
+    "text": "different than Z2's weights. The inputs"
+  },
+  {
+    "start": 1767.8,
+    "duration": 2.24,
+    "text": "are the same, but they see different"
+  },
+  {
+    "start": 1768.92,
+    "duration": 3.28,
+    "text": "weights."
+  },
+  {
+    "start": 1770.04,
+    "duration": 3.28,
+    "text": "Okay, so this picture looks a bit messy,"
+  },
+  {
+    "start": 1772.2,
+    "duration": 2.92,
+    "text": "so let's"
+  },
+  {
+    "start": 1773.32,
+    "duration": 4.8,
+    "text": "abstract even further so we can keep"
+  },
+  {
+    "start": 1775.12,
+    "duration": 4.52,
+    "text": "building up this this intuition. So now"
+  },
+  {
+    "start": 1778.12,
+    "duration": 4.36,
+    "text": "I'm going to remove all the lines and"
+  },
+  {
+    "start": 1779.64,
+    "duration": 4.44,
+    "text": "just put these symbols here in cases"
+  },
+  {
+    "start": 1782.48,
+    "duration": 3.32,
+    "text": "wherever we have these fully connected"
+  },
+  {
+    "start": 1784.08,
+    "duration": 4.36,
+    "text": "layers. Everything that connects from"
+  },
+  {
+    "start": 1785.8,
+    "duration": 5.16,
+    "text": "input to output with the matrix multiply"
+  },
+  {
+    "start": 1788.44,
+    "duration": 5.8,
+    "text": "in between."
+  },
+  {
+    "start": 1790.96,
+    "duration": 5.36,
+    "text": "And again, we can actually stack these"
+  },
+  {
+    "start": 1794.24,
+    "duration": 4.04,
+    "text": "fully connected or linear layers on top"
+  },
+  {
+    "start": 1796.32,
+    "duration": 3.4,
+    "text": "of each other with non-linearities"
+  },
+  {
+    "start": 1798.28,
+    "duration": 3.64,
+    "text": "between them to make sure that we have"
+  },
+  {
+    "start": 1799.72,
+    "duration": 4.28,
+    "text": "the non-linearities across our network"
+  },
+  {
+    "start": 1801.92,
+    "duration": 4.28,
+    "text": "as well. And here's an example of how to"
+  },
+  {
+    "start": 1804.0,
+    "duration": 3.76,
+    "text": "do this. You basically stack the same"
+  },
+  {
+    "start": 1806.2,
+    "duration": 3.8,
+    "text": "layers that we saw before now in these"
+  },
+  {
+    "start": 1807.76,
+    "duration": 5.64,
+    "text": "sequential blocks. Sequential just"
+  },
+  {
+    "start": 1810.0,
+    "duration": 5.96,
+    "text": "basically allows you to stack them."
+  },
+  {
+    "start": 1813.4,
+    "duration": 5.04,
+    "text": "Okay, now finally the the point that"
+  },
+  {
+    "start": 1815.96,
+    "duration": 4.44,
+    "text": "we've been waiting for is how to go from"
+  },
+  {
+    "start": 1818.44,
+    "duration": 3.8,
+    "text": "these neural networks to deep neural"
+  },
+  {
+    "start": 1820.4,
+    "duration": 3.88,
+    "text": "networks. There's nothing more to this"
+  },
+  {
+    "start": 1822.24,
+    "duration": 3.72,
+    "text": "than just stacking a bunch of linear"
+  },
+  {
+    "start": 1824.28,
+    "duration": 3.48,
+    "text": "layers on top of each other. A deep"
+  },
+  {
+    "start": 1825.96,
+    "duration": 4.08,
+    "text": "neural network is nothing more than a"
+  },
+  {
+    "start": 1827.76,
+    "duration": 5.0,
+    "text": "neural network that has more than"
+  },
+  {
+    "start": 1830.04,
+    "duration": 4.32,
+    "text": "usually three layers is what people can"
+  },
+  {
+    "start": 1832.76,
+    "duration": 3.56,
+    "text": "conceptually say."
+  },
+  {
+    "start": 1834.36,
+    "duration": 4.6,
+    "text": "Right? So this is a network where the"
+  },
+  {
+    "start": 1836.32,
+    "duration": 4.76,
+    "text": "final output is computed by going deeper"
+  },
+  {
+    "start": 1838.96,
+    "duration": 4.36,
+    "text": "and deeper and deeper across each of"
+  },
+  {
+    "start": 1841.08,
+    "duration": 4.76,
+    "text": "these layers to compute and its final"
+  },
+  {
+    "start": 1843.32,
+    "duration": 4.8,
+    "text": "output at the end of the network. And"
+  },
+  {
+    "start": 1845.84,
+    "duration": 4.68,
+    "text": "again, to no surprise, this is done in"
+  },
+  {
+    "start": 1848.12,
+    "duration": 4.12,
+    "text": "the same abstraction code as before,"
+  },
+  {
+    "start": 1850.52,
+    "duration": 3.24,
+    "text": "just having a sequential block and a"
+  },
+  {
+    "start": 1852.24,
+    "duration": 3.64,
+    "text": "bunch of linear layers within that"
+  },
+  {
+    "start": 1853.76,
+    "duration": 3.88,
+    "text": "block."
+  },
+  {
+    "start": 1855.88,
+    "duration": 4.2,
+    "text": "Okay, this is awesome. So now we have"
+  },
+  {
+    "start": 1857.64,
+    "duration": 4.56,
+    "text": "this good intuition of how to"
+  },
+  {
+    "start": 1860.08,
+    "duration": 4.4,
+    "text": "build up from a single neuron all the"
+  },
+  {
+    "start": 1862.2,
+    "duration": 4.96,
+    "text": "way to a layer to a neural network and"
+  },
+  {
+    "start": 1864.48,
+    "duration": 4.52,
+    "text": "to compose these in the forward pass."
+  },
+  {
+    "start": 1867.16,
+    "duration": 4.8,
+    "text": "Let's take a quick look at how we can"
+  },
+  {
+    "start": 1869.0,
+    "duration": 5.52,
+    "text": "apply this to a particular problem that"
+  },
+  {
+    "start": 1871.96,
+    "duration": 4.68,
+    "text": "it's it's a good starting problem for"
+  },
+  {
+    "start": 1874.52,
+    "duration": 4.0,
+    "text": "everybody in this class, which is"
+  },
+  {
+    "start": 1876.64,
+    "duration": 3.32,
+    "text": "should will I pass this class, right? So"
+  },
+  {
+    "start": 1878.52,
+    "duration": 2.96,
+    "text": "this is a question, it has a yes no"
+  },
+  {
+    "start": 1879.96,
+    "duration": 3.64,
+    "text": "answer"
+  },
+  {
+    "start": 1881.48,
+    "duration": 3.32,
+    "text": "and there's a lot of data for this"
+  },
+  {
+    "start": 1883.6,
+    "duration": 3.16,
+    "text": "question actually because we've taught"
+  },
+  {
+    "start": 1884.8,
+    "duration": 3.52,
+    "text": "this class for a long time. So we have a"
+  },
+  {
+    "start": 1886.76,
+    "duration": 4.32,
+    "text": "lot of data from past students who have"
+  },
+  {
+    "start": 1888.32,
+    "duration": 4.96,
+    "text": "taken this class. Here's an example. So"
+  },
+  {
+    "start": 1891.08,
+    "duration": 3.84,
+    "text": "we have an X and a Y axis."
+  },
+  {
+    "start": 1893.28,
+    "duration": 2.72,
+    "text": "X is the number of lectures that you"
+  },
+  {
+    "start": 1894.92,
+    "duration": 3.52,
+    "text": "attend"
+  },
+  {
+    "start": 1896.0,
+    "duration": 4.84,
+    "text": "and the Y axis is the number of hours"
+  },
+  {
+    "start": 1898.44,
+    "duration": 4.48,
+    "text": "that you spend on the final project."
+  },
+  {
+    "start": 1900.84,
+    "duration": 4.2,
+    "text": "And we also have individual data points"
+  },
+  {
+    "start": 1902.92,
+    "duration": 4.04,
+    "text": "which represent past students who have"
+  },
+  {
+    "start": 1905.04,
+    "duration": 4.04,
+    "text": "taken this class. You can see where they"
+  },
+  {
+    "start": 1906.96,
+    "duration": 4.28,
+    "text": "live in this space."
+  },
+  {
+    "start": 1909.08,
+    "duration": 4.44,
+    "text": "And then we have you."
+  },
+  {
+    "start": 1911.24,
+    "duration": 4.12,
+    "text": "You fall right here at 4 5."
+  },
+  {
+    "start": 1913.52,
+    "duration": 3.68,
+    "text": "Right? You've attended four lectures and"
+  },
+  {
+    "start": 1915.36,
+    "duration": 4.6,
+    "text": "you spent five hours on your final"
+  },
+  {
+    "start": 1917.2,
+    "duration": 5.4,
+    "text": "project and the question is will you"
+  },
+  {
+    "start": 1919.96,
+    "duration": 5.0,
+    "text": "pass this class based off of all of the"
+  },
+  {
+    "start": 1922.6,
+    "duration": 5.04,
+    "text": "other data that you've seen, right? Now,"
+  },
+  {
+    "start": 1924.96,
+    "duration": 4.24,
+    "text": "how can we do this?"
+  },
+  {
+    "start": 1927.64,
+    "duration": 3.04,
+    "text": "We have a neural network that can do"
+  },
+  {
+    "start": 1929.2,
+    "duration": 3.08,
+    "text": "this. Let's try and actually feed it"
+  },
+  {
+    "start": 1930.68,
+    "duration": 3.08,
+    "text": "into a neural network. We have two"
+  },
+  {
+    "start": 1932.28,
+    "duration": 3.12,
+    "text": "inputs"
+  },
+  {
+    "start": 1933.76,
+    "duration": 3.56,
+    "text": "which are the exact two axes that you"
+  },
+  {
+    "start": 1935.4,
+    "duration": 4.52,
+    "text": "saw before, number of class number of"
+  },
+  {
+    "start": 1937.32,
+    "duration": 4.12,
+    "text": "lectures and number of hours."
+  },
+  {
+    "start": 1939.92,
+    "duration": 4.32,
+    "text": "One input is four, the other input is"
+  },
+  {
+    "start": 1941.44,
+    "duration": 6.32,
+    "text": "five. We can feed these two inputs into"
+  },
+  {
+    "start": 1944.24,
+    "duration": 6.44,
+    "text": "our neural network and we can see that"
+  },
+  {
+    "start": 1947.76,
+    "duration": 4.64,
+    "text": "it predicts an answer of .1 or 10%"
+  },
+  {
+    "start": 1950.68,
+    "duration": 3.4,
+    "text": "probability that you'll pass this class."
+  },
+  {
+    "start": 1952.4,
+    "duration": 4.68,
+    "text": "Very bad, I know."
+  },
+  {
+    "start": 1954.08,
+    "duration": 4.68,
+    "text": "Okay, who knows why the the network is"
+  },
+  {
+    "start": 1957.08,
+    "duration": 3.52,
+    "text": "wrong in this case."
+  },
+  {
+    "start": 1958.76,
+    "duration": 3.72,
+    "text": "Yes. The four"
+  },
+  {
+    "start": 1960.6,
+    "duration": 4.08,
+    "text": "Exactly. Okay, so this is a randomly"
+  },
+  {
+    "start": 1962.48,
+    "duration": 4.68,
+    "text": "initialized network. It is effectively"
+  },
+  {
+    "start": 1964.68,
+    "duration": 4.4,
+    "text": "the same as"
+  },
+  {
+    "start": 1967.16,
+    "duration": 3.24,
+    "text": "a brand new baby, right? It's never seen"
+  },
+  {
+    "start": 1969.08,
+    "duration": 3.4,
+    "text": "the world before. It has never seen any"
+  },
+  {
+    "start": 1970.4,
+    "duration": 3.64,
+    "text": "of the data before. So, the step that's"
+  },
+  {
+    "start": 1972.48,
+    "duration": 3.52,
+    "text": "missing here is that we've just done a"
+  },
+  {
+    "start": 1974.04,
+    "duration": 3.84,
+    "text": "forward pass through the model. Now, we"
+  },
+  {
+    "start": 1976.0,
+    "duration": 3.64,
+    "text": "have to actually teach the model, right?"
+  },
+  {
+    "start": 1977.88,
+    "duration": 3.64,
+    "text": "And the key part of this is that every"
+  },
+  {
+    "start": 1979.64,
+    "duration": 4.72,
+    "text": "time that we have a prediction, the"
+  },
+  {
+    "start": 1981.52,
+    "duration": 5.12,
+    "text": "model predicts .1, there's also a ground"
+  },
+  {
+    "start": 1984.36,
+    "duration": 4.12,
+    "text": "truth answer for every prediction that"
+  },
+  {
+    "start": 1986.64,
+    "duration": 4.12,
+    "text": "we have in our training set. And the"
+  },
+  {
+    "start": 1988.48,
+    "duration": 4.0,
+    "text": "ground truth answer here is is true,"
+  },
+  {
+    "start": 1990.76,
+    "duration": 3.72,
+    "text": "right? It did actually You did actually"
+  },
+  {
+    "start": 1992.48,
+    "duration": 3.8,
+    "text": "pass this class, right? So, there's a"
+  },
+  {
+    "start": 1994.48,
+    "duration": 4.2,
+    "text": "deviation here. There's a difference"
+  },
+  {
+    "start": 1996.28,
+    "duration": 5.92,
+    "text": "between the .1 that the model predicted"
+  },
+  {
+    "start": 1998.68,
+    "duration": 5.32,
+    "text": "and the one that it should be answering."
+  },
+  {
+    "start": 2002.2,
+    "duration": 3.44,
+    "text": "Now, to train this network, we need to"
+  },
+  {
+    "start": 2004.0,
+    "duration": 3.04,
+    "text": "show it this difference. We need to tell"
+  },
+  {
+    "start": 2005.64,
+    "duration": 3.56,
+    "text": "it when it gets the answer wrong so it"
+  },
+  {
+    "start": 2007.04,
+    "duration": 4.2,
+    "text": "can learn to move closer towards the"
+  },
+  {
+    "start": 2009.2,
+    "duration": 3.76,
+    "text": "correct answer the next time it sees a"
+  },
+  {
+    "start": 2011.24,
+    "duration": 4.04,
+    "text": "four or five, right? If it sees four or"
+  },
+  {
+    "start": 2012.96,
+    "duration": 3.6,
+    "text": "five again, it should now improve on its"
+  },
+  {
+    "start": 2015.28,
+    "duration": 3.48,
+    "text": "answer and should predict something"
+  },
+  {
+    "start": 2016.56,
+    "duration": 4.28,
+    "text": "closer to a one."
+  },
+  {
+    "start": 2018.76,
+    "duration": 4.96,
+    "text": "We do this by quantifying what's called"
+  },
+  {
+    "start": 2020.84,
+    "duration": 6.04,
+    "text": "a loss. A loss is much nothing more than"
+  },
+  {
+    "start": 2023.72,
+    "duration": 5.0,
+    "text": "just the error, this deviation term"
+  },
+  {
+    "start": 2026.88,
+    "duration": 2.8,
+    "text": "between the prediction and the ground"
+  },
+  {
+    "start": 2028.72,
+    "duration": 4.16,
+    "text": "truth."
+  },
+  {
+    "start": 2029.68,
+    "duration": 5.56,
+    "text": "Smaller losses means that the model is"
+  },
+  {
+    "start": 2032.88,
+    "duration": 5.08,
+    "text": "is is outputting a higher quality"
+  },
+  {
+    "start": 2035.24,
+    "duration": 6.04,
+    "text": "answer. Larger losses means that the"
+  },
+  {
+    "start": 2037.96,
+    "duration": 5.56,
+    "text": "answer is more erroneous."
+  },
+  {
+    "start": 2041.28,
+    "duration": 4.24,
+    "text": "So, let's assume of course that the data"
+  },
+  {
+    "start": 2043.52,
+    "duration": 3.8,
+    "text": "is not just from one student, but we"
+  },
+  {
+    "start": 2045.52,
+    "duration": 5.36,
+    "text": "have a data set of many, many students,"
+  },
+  {
+    "start": 2047.32,
+    "duration": 6.36,
+    "text": "right? This is coming from now a loss"
+  },
+  {
+    "start": 2050.88,
+    "duration": 4.64,
+    "text": "over the average of each of those losses"
+  },
+  {
+    "start": 2053.68,
+    "duration": 3.64,
+    "text": "that we have in our data set, right? So,"
+  },
+  {
+    "start": 2055.52,
+    "duration": 3.28,
+    "text": "when training a neural network, often"
+  },
+  {
+    "start": 2057.32,
+    "duration": 3.92,
+    "text": "times we're not going to actually"
+  },
+  {
+    "start": 2058.8,
+    "duration": 4.84,
+    "text": "minimize the loss on a single data"
+  },
+  {
+    "start": 2061.24,
+    "duration": 4.72,
+    "text": "point, but minimize it across the entire"
+  },
+  {
+    "start": 2063.64,
+    "duration": 5.04,
+    "text": "data set, right? And that's to have"
+  },
+  {
+    "start": 2065.96,
+    "duration": 4.64,
+    "text": "higher quality outputs."
+  },
+  {
+    "start": 2068.68,
+    "duration": 4.72,
+    "text": "Now, if we look at this problem in the"
+  },
+  {
+    "start": 2070.6,
+    "duration": 4.0,
+    "text": "case of classification, a yes-no type of"
+  },
+  {
+    "start": 2073.4,
+    "duration": 3.6,
+    "text": "problem,"
+  },
+  {
+    "start": 2074.6,
+    "duration": 4.6,
+    "text": "then this is where the answers will"
+  },
+  {
+    "start": 2077.0,
+    "duration": 3.72,
+    "text": "typically predict a probability, a"
+  },
+  {
+    "start": 2079.2,
+    "duration": 3.0,
+    "text": "probability of being a yes versus a"
+  },
+  {
+    "start": 2080.72,
+    "duration": 3.32,
+    "text": "probability of being a no, and that's"
+  },
+  {
+    "start": 2082.2,
+    "duration": 3.24,
+    "text": "why we predict between zero and one."
+  },
+  {
+    "start": 2084.04,
+    "duration": 3.4,
+    "text": "This ties us back to the sigmoid"
+  },
+  {
+    "start": 2085.44,
+    "duration": 4.36,
+    "text": "function from before, right? Because"
+  },
+  {
+    "start": 2087.44,
+    "duration": 4.64,
+    "text": "those outputs are zero and one outputs,"
+  },
+  {
+    "start": 2089.8,
+    "duration": 3.88,
+    "text": "so we can train it in this way."
+  },
+  {
+    "start": 2092.08,
+    "duration": 4.8,
+    "text": "Right? And we can use losses like the"
+  },
+  {
+    "start": 2093.68,
+    "duration": 5.12,
+    "text": "cross-entropy loss that actually support"
+  },
+  {
+    "start": 2096.88,
+    "duration": 4.44,
+    "text": "matching those two distributions of"
+  },
+  {
+    "start": 2098.8,
+    "duration": 4.36,
+    "text": "probability against each other."
+  },
+  {
+    "start": 2101.32,
+    "duration": 2.84,
+    "text": "Now, you might be asking yourselves,"
+  },
+  {
+    "start": 2103.16,
+    "duration": 2.8,
+    "text": "\"Okay, what if you didn't want to"
+  },
+  {
+    "start": 2104.16,
+    "duration": 3.8,
+    "text": "predict a probability distribution, like"
+  },
+  {
+    "start": 2105.96,
+    "duration": 3.72,
+    "text": "a yes-no question, but rather a"
+  },
+  {
+    "start": 2107.96,
+    "duration": 4.0,
+    "text": "continuous value, like what's the"
+  },
+  {
+    "start": 2109.68,
+    "duration": 3.88,
+    "text": "temperature going to be, or what score"
+  },
+  {
+    "start": 2111.96,
+    "duration": 4.0,
+    "text": "will actually get on the class rather"
+  },
+  {
+    "start": 2113.56,
+    "duration": 4.0,
+    "text": "than will I just pass or fail it?\""
+  },
+  {
+    "start": 2115.96,
+    "duration": 3.8,
+    "text": "In those cases, you care about"
+  },
+  {
+    "start": 2117.56,
+    "duration": 4.4,
+    "text": "predicting continuous values instead,"
+  },
+  {
+    "start": 2119.76,
+    "duration": 4.76,
+    "text": "not probability distributions. So, you"
+  },
+  {
+    "start": 2121.96,
+    "duration": 5.12,
+    "text": "actually want to output and have losses"
+  },
+  {
+    "start": 2124.52,
+    "duration": 4.56,
+    "text": "that encourage deviations that are also"
+  },
+  {
+    "start": 2127.08,
+    "duration": 4.16,
+    "text": "continuous. In those cases, you may"
+  },
+  {
+    "start": 2129.08,
+    "duration": 4.24,
+    "text": "consider things like mean squared errors"
+  },
+  {
+    "start": 2131.24,
+    "duration": 4.12,
+    "text": "or L1 errors, things like this that"
+  },
+  {
+    "start": 2133.32,
+    "duration": 3.16,
+    "text": "simply compare the predicted value minus"
+  },
+  {
+    "start": 2135.36,
+    "duration": 2.68,
+    "text": "the"
+  },
+  {
+    "start": 2136.48,
+    "duration": 5.56,
+    "text": "uh ground truth value, and just"
+  },
+  {
+    "start": 2138.04,
+    "duration": 4.0,
+    "text": "minimizing that absolute difference."
+  },
+  {
+    "start": 2142.36,
+    "duration": 4.28,
+    "text": "Okay, now let's put all of this loss"
+  },
+  {
+    "start": 2144.16,
+    "duration": 4.48,
+    "text": "information together into the problem of"
+  },
+  {
+    "start": 2146.64,
+    "duration": 4.52,
+    "text": "actually finding the neural network"
+  },
+  {
+    "start": 2148.64,
+    "duration": 4.08,
+    "text": "weights that are optimally suited for"
+  },
+  {
+    "start": 2151.16,
+    "duration": 3.32,
+    "text": "any particular data set or any"
+  },
+  {
+    "start": 2152.72,
+    "duration": 3.6,
+    "text": "particular task."
+  },
+  {
+    "start": 2154.48,
+    "duration": 3.52,
+    "text": "So, we know that we want to find a"
+  },
+  {
+    "start": 2156.32,
+    "duration": 4.04,
+    "text": "neural network that looks roughly like"
+  },
+  {
+    "start": 2158.0,
+    "duration": 5.68,
+    "text": "this form, right? It we want it to"
+  },
+  {
+    "start": 2160.36,
+    "duration": 5.8,
+    "text": "minimize the loss on our entire training"
+  },
+  {
+    "start": 2163.68,
+    "duration": 5.64,
+    "text": "data set, and this means that we want to"
+  },
+  {
+    "start": 2166.16,
+    "duration": 4.88,
+    "text": "find the W's, the weights,"
+  },
+  {
+    "start": 2169.32,
+    "duration": 5.6,
+    "text": "that minimize"
+  },
+  {
+    "start": 2171.04,
+    "duration": 7.48,
+    "text": "uh the the the the loss here, the J, the"
+  },
+  {
+    "start": 2174.92,
+    "duration": 6.36,
+    "text": "J of W, right? J of W is our empirical"
+  },
+  {
+    "start": 2178.52,
+    "duration": 6.12,
+    "text": "average loss across our entire data set"
+  },
+  {
+    "start": 2181.28,
+    "duration": 6.28,
+    "text": "of N data points."
+  },
+  {
+    "start": 2184.64,
+    "duration": 4.84,
+    "text": "Okay. So, remember again that W is"
+  },
+  {
+    "start": 2187.56,
+    "duration": 3.56,
+    "text": "nothing more than just a collection of"
+  },
+  {
+    "start": 2189.48,
+    "duration": 3.68,
+    "text": "many, many weights across all of the"
+  },
+  {
+    "start": 2191.12,
+    "duration": 4.08,
+    "text": "different layers in your neural network."
+  },
+  {
+    "start": 2193.16,
+    "duration": 4.16,
+    "text": "Everything from layer zero, the first"
+  },
+  {
+    "start": 2195.2,
+    "duration": 4.84,
+    "text": "layer, all the way to layer N, which is"
+  },
+  {
+    "start": 2197.32,
+    "duration": 5.84,
+    "text": "your last layer."
+  },
+  {
+    "start": 2200.04,
+    "duration": 5.16,
+    "text": "Now, our loss function is also nothing"
+  },
+  {
+    "start": 2203.16,
+    "duration": 4.56,
+    "text": "more than just a function that outputs a"
+  },
+  {
+    "start": 2205.2,
+    "duration": 5.44,
+    "text": "single scalar at the end, right? We take"
+  },
+  {
+    "start": 2207.72,
+    "duration": 4.84,
+    "text": "the average loss, the average error"
+  },
+  {
+    "start": 2210.64,
+    "duration": 4.08,
+    "text": "across every data point,"
+  },
+  {
+    "start": 2212.56,
+    "duration": 4.2,
+    "text": "compute its average, and that is our"
+  },
+  {
+    "start": 2214.72,
+    "duration": 4.28,
+    "text": "loss. It's just one number at the end of"
+  },
+  {
+    "start": 2216.76,
+    "duration": 5.16,
+    "text": "the day. And that one number is a"
+  },
+  {
+    "start": 2219.0,
+    "duration": 4.72,
+    "text": "function of our weights."
+  },
+  {
+    "start": 2221.92,
+    "duration": 5.08,
+    "text": "So, on on here, you can see a"
+  },
+  {
+    "start": 2223.72,
+    "duration": 5.64,
+    "text": "visualization of let's say again, a two"
+  },
+  {
+    "start": 2227.0,
+    "duration": 6.68,
+    "text": "parameter neural network, just two"
+  },
+  {
+    "start": 2229.36,
+    "duration": 6.64,
+    "text": "parameters, W0 and W1. For any"
+  },
+  {
+    "start": 2233.68,
+    "duration": 5.48,
+    "text": "configuration of those two parameters,"
+  },
+  {
+    "start": 2236.0,
+    "duration": 5.4,
+    "text": "we have a particular value of the loss,"
+  },
+  {
+    "start": 2239.16,
+    "duration": 4.28,
+    "text": "which is the height. Okay? There are"
+  },
+  {
+    "start": 2241.4,
+    "duration": 4.2,
+    "text": "some weights that encourage a really"
+  },
+  {
+    "start": 2243.44,
+    "duration": 4.28,
+    "text": "good loss, very low. There are other"
+  },
+  {
+    "start": 2245.6,
+    "duration": 4.52,
+    "text": "weights that are really bad losses, very"
+  },
+  {
+    "start": 2247.72,
+    "duration": 3.88,
+    "text": "high on the curve here."
+  },
+  {
+    "start": 2250.12,
+    "duration": 3.92,
+    "text": "Right? And the goal is that we want to"
+  },
+  {
+    "start": 2251.6,
+    "duration": 5.04,
+    "text": "find the neural network that has the two"
+  },
+  {
+    "start": 2254.04,
+    "duration": 3.64,
+    "text": "weights, W0 and W1, that have the lowest"
+  },
+  {
+    "start": 2256.64,
+    "duration": 3.28,
+    "text": "loss."
+  },
+  {
+    "start": 2257.68,
+    "duration": 3.44,
+    "text": "Now, how do we do that?"
+  },
+  {
+    "start": 2259.92,
+    "duration": 2.76,
+    "text": "So, this is called training the neural"
+  },
+  {
+    "start": 2261.12,
+    "duration": 3.2,
+    "text": "network. We start by training the neural"
+  },
+  {
+    "start": 2262.68,
+    "duration": 4.44,
+    "text": "network. We just randomly initialize it."
+  },
+  {
+    "start": 2264.32,
+    "duration": 4.52,
+    "text": "We'll pick a W0 and a W1 to start with."
+  },
+  {
+    "start": 2267.12,
+    "duration": 4.2,
+    "text": "Let's say we start here at this black"
+  },
+  {
+    "start": 2268.84,
+    "duration": 4.72,
+    "text": "point. We compute its loss. And then we"
+  },
+  {
+    "start": 2271.32,
+    "duration": 4.4,
+    "text": "compute the gradient. The gradient tells"
+  },
+  {
+    "start": 2273.56,
+    "duration": 4.52,
+    "text": "us the direction"
+  },
+  {
+    "start": 2275.72,
+    "duration": 3.8,
+    "text": "of the slope at that location, right?"
+  },
+  {
+    "start": 2278.08,
+    "duration": 3.12,
+    "text": "Doesn't tell us the slope everywhere,"
+  },
+  {
+    "start": 2279.52,
+    "duration": 4.68,
+    "text": "just tells us at this very local"
+  },
+  {
+    "start": 2281.2,
+    "duration": 4.48,
+    "text": "location, which way is pointing up."
+  },
+  {
+    "start": 2284.2,
+    "duration": 3.12,
+    "text": "But of course, we want to go down, so we"
+  },
+  {
+    "start": 2285.68,
+    "duration": 5.6,
+    "text": "actually take the negative of the"
+  },
+  {
+    "start": 2287.32,
+    "duration": 5.64,
+    "text": "gradient and take a small step down."
+  },
+  {
+    "start": 2291.28,
+    "duration": 3.04,
+    "text": "And then we repeat this process. We"
+  },
+  {
+    "start": 2292.96,
+    "duration": 3.76,
+    "text": "compute the new gradient at the new"
+  },
+  {
+    "start": 2294.32,
+    "duration": 4.64,
+    "text": "point, and we take a negative step in"
+  },
+  {
+    "start": 2296.72,
+    "duration": 4.44,
+    "text": "the opposite direction of which way the"
+  },
+  {
+    "start": 2298.96,
+    "duration": 3.84,
+    "text": "gradient is pointing, until we finally"
+  },
+  {
+    "start": 2301.16,
+    "duration": 3.96,
+    "text": "get to the bottom. And this will"
+  },
+  {
+    "start": 2302.8,
+    "duration": 5.48,
+    "text": "actually be guaranteed to converge to a"
+  },
+  {
+    "start": 2305.12,
+    "duration": 4.48,
+    "text": "bottom. May not be the lowest bottom,"
+  },
+  {
+    "start": 2308.28,
+    "duration": 3.12,
+    "text": "right? Because it actually depends on"
+  },
+  {
+    "start": 2309.6,
+    "duration": 3.44,
+    "text": "where you start. You may not find"
+  },
+  {
+    "start": 2311.4,
+    "duration": 3.4,
+    "text": "yourself in the"
+  },
+  {
+    "start": 2313.04,
+    "duration": 3.52,
+    "text": "absolute lowest, but you will find a"
+  },
+  {
+    "start": 2314.8,
+    "duration": 3.8,
+    "text": "bottom, and you'll eventually converge"
+  },
+  {
+    "start": 2316.56,
+    "duration": 3.48,
+    "text": "there."
+  },
+  {
+    "start": 2318.6,
+    "duration": 3.84,
+    "text": "So, we can summarize this algorithm."
+  },
+  {
+    "start": 2320.04,
+    "duration": 3.8,
+    "text": "This is known as gradient descent, and"
+  },
+  {
+    "start": 2322.44,
+    "duration": 3.08,
+    "text": "we can write it roughly in pseudocode."
+  },
+  {
+    "start": 2323.84,
+    "duration": 4.76,
+    "text": "It looks like this. We start by"
+  },
+  {
+    "start": 2325.52,
+    "duration": 4.92,
+    "text": "initializing our weights randomly,"
+  },
+  {
+    "start": 2328.6,
+    "duration": 3.76,
+    "text": "and then we repeat the following process"
+  },
+  {
+    "start": 2330.44,
+    "duration": 3.64,
+    "text": "until convergence. We compute the"
+  },
+  {
+    "start": 2332.36,
+    "duration": 3.16,
+    "text": "gradient at the weights that we're"
+  },
+  {
+    "start": 2334.08,
+    "duration": 3.76,
+    "text": "currently in,"
+  },
+  {
+    "start": 2335.52,
+    "duration": 5.12,
+    "text": "and then we take a small negative step"
+  },
+  {
+    "start": 2337.84,
+    "duration": 4.84,
+    "text": "of our gradient with our weights. So, we"
+  },
+  {
+    "start": 2340.64,
+    "duration": 4.28,
+    "text": "change the gradients to step in the"
+  },
+  {
+    "start": 2342.68,
+    "duration": 3.8,
+    "text": "opposite way that the gradient tells us,"
+  },
+  {
+    "start": 2344.92,
+    "duration": 3.04,
+    "text": "and then we keep repeating this until"
+  },
+  {
+    "start": 2346.48,
+    "duration": 3.48,
+    "text": "there's convergence, until our weights"
+  },
+  {
+    "start": 2347.96,
+    "duration": 4.28,
+    "text": "are not really changing anymore,"
+  },
+  {
+    "start": 2349.96,
+    "duration": 3.68,
+    "text": "and then finally we call those final"
+  },
+  {
+    "start": 2352.24,
+    "duration": 3.0,
+    "text": "weights the trained network of the"
+  },
+  {
+    "start": 2353.64,
+    "duration": 5.76,
+    "text": "model."
+  },
+  {
+    "start": 2355.24,
+    "duration": 6.76,
+    "text": "Um in code, right? This also is is"
+  },
+  {
+    "start": 2359.4,
+    "duration": 4.44,
+    "text": "is doable in code. We can do this"
+  },
+  {
+    "start": 2362.0,
+    "duration": 3.76,
+    "text": "while looping in a while loop, where we"
+  },
+  {
+    "start": 2363.84,
+    "duration": 4.0,
+    "text": "compute the loss. We can compute the"
+  },
+  {
+    "start": 2365.76,
+    "duration": 4.24,
+    "text": "gradient of our loss with respect to our"
+  },
+  {
+    "start": 2367.84,
+    "duration": 4.64,
+    "text": "weights, and then compute that same"
+  },
+  {
+    "start": 2370.0,
+    "duration": 4.32,
+    "text": "update formula again."
+  },
+  {
+    "start": 2372.48,
+    "duration": 3.28,
+    "text": "Now, a very important line here is to"
+  },
+  {
+    "start": 2374.32,
+    "duration": 3.08,
+    "text": "look at this term right here, the"
+  },
+  {
+    "start": 2375.76,
+    "duration": 2.76,
+    "text": "gradient, right?"
+  },
+  {
+    "start": 2377.4,
+    "duration": 3.2,
+    "text": "Now, I"
+  },
+  {
+    "start": 2378.52,
+    "duration": 4.12,
+    "text": "glossed over this this point, but"
+  },
+  {
+    "start": 2380.6,
+    "duration": 3.32,
+    "text": "actually the gradient, this is a key"
+  },
+  {
+    "start": 2382.64,
+    "duration": 3.12,
+    "text": "part of this algorithm, because"
+  },
+  {
+    "start": 2383.92,
+    "duration": 3.84,
+    "text": "computing this tells us exactly how to"
+  },
+  {
+    "start": 2385.76,
+    "duration": 3.88,
+    "text": "update our weights on every part of the"
+  },
+  {
+    "start": 2387.76,
+    "duration": 3.16,
+    "text": "iteration, but I never actually told you"
+  },
+  {
+    "start": 2389.64,
+    "duration": 3.36,
+    "text": "how to compute this. So, let's talk"
+  },
+  {
+    "start": 2390.92,
+    "duration": 3.84,
+    "text": "about actually computing the gradient"
+  },
+  {
+    "start": 2393.0,
+    "duration": 4.48,
+    "text": "for a neural network, and this is a"
+  },
+  {
+    "start": 2394.76,
+    "duration": 3.92,
+    "text": "process known as backpropagation. We"
+  },
+  {
+    "start": 2397.48,
+    "duration": 2.84,
+    "text": "already learned about forward"
+  },
+  {
+    "start": 2398.68,
+    "duration": 3.16,
+    "text": "propagation of information through the"
+  },
+  {
+    "start": 2400.32,
+    "duration": 2.96,
+    "text": "model. Now, we'll learn about"
+  },
+  {
+    "start": 2401.84,
+    "duration": 3.28,
+    "text": "backpropagation, which is how to"
+  },
+  {
+    "start": 2403.28,
+    "duration": 2.92,
+    "text": "actually compute the gradient of the"
+  },
+  {
+    "start": 2405.12,
+    "duration": 3.12,
+    "text": "model."
+  },
+  {
+    "start": 2406.2,
+    "duration": 4.76,
+    "text": "We'll start with a very simple neural"
+  },
+  {
+    "start": 2408.24,
+    "duration": 4.12,
+    "text": "network uh to illustrate this example,"
+  },
+  {
+    "start": 2410.96,
+    "duration": 2.72,
+    "text": "and this is actually probably the"
+  },
+  {
+    "start": 2412.36,
+    "duration": 3.36,
+    "text": "simplest neural network that you can"
+  },
+  {
+    "start": 2413.68,
+    "duration": 4.76,
+    "text": "have, which is just a single neuron"
+  },
+  {
+    "start": 2415.72,
+    "duration": 4.68,
+    "text": "with a single output as well. So, X goes"
+  },
+  {
+    "start": 2418.44,
+    "duration": 4.52,
+    "text": "to a single neuron, goes to a single"
+  },
+  {
+    "start": 2420.4,
+    "duration": 4.0,
+    "text": "output, goes to a loss."
+  },
+  {
+    "start": 2422.96,
+    "duration": 2.68,
+    "text": "So, let's visualize what this would look"
+  },
+  {
+    "start": 2424.4,
+    "duration": 3.96,
+    "text": "like if we wanted to compute the"
+  },
+  {
+    "start": 2425.64,
+    "duration": 4.6,
+    "text": "gradient of our loss with respect to our"
+  },
+  {
+    "start": 2428.36,
+    "duration": 6.16,
+    "text": "weight W2,"
+  },
+  {
+    "start": 2430.24,
+    "duration": 8.36,
+    "text": "which tells us how a small change in our"
+  },
+  {
+    "start": 2434.52,
+    "duration": 5.28,
+    "text": "uh in W2 affects our loss J."
+  },
+  {
+    "start": 2438.6,
+    "duration": 3.24,
+    "text": "Okay, so let's write it out as a"
+  },
+  {
+    "start": 2439.8,
+    "duration": 4.84,
+    "text": "derivative. So, this is the derivative"
+  },
+  {
+    "start": 2441.84,
+    "duration": 4.4,
+    "text": "of J with respect to W2."
+  },
+  {
+    "start": 2444.64,
+    "duration": 4.48,
+    "text": "Right? Now, to compute this, we can use"
+  },
+  {
+    "start": 2446.24,
+    "duration": 6.6,
+    "text": "the chain rule. Right? We can decompose"
+  },
+  {
+    "start": 2449.12,
+    "duration": 6.8,
+    "text": "dJ dW2 into two parts. The first part"
+  },
+  {
+    "start": 2452.84,
+    "duration": 5.64,
+    "text": "being dJ dY"
+  },
+  {
+    "start": 2455.92,
+    "duration": 5.48,
+    "text": "times dY dW2."
+  },
+  {
+    "start": 2458.48,
+    "duration": 5.76,
+    "text": "Right? This is just uh an application of"
+  },
+  {
+    "start": 2461.4,
+    "duration": 4.48,
+    "text": "the chain rule in linear algebra."
+  },
+  {
+    "start": 2464.24,
+    "duration": 4.56,
+    "text": "Now,"
+  },
+  {
+    "start": 2465.88,
+    "duration": 5.36,
+    "text": "this is only possible because Y is only"
+  },
+  {
+    "start": 2468.8,
+    "duration": 4.32,
+    "text": "dependent on the previous layer."
+  },
+  {
+    "start": 2471.24,
+    "duration": 4.04,
+    "text": "Right? Let's suppose now we wanted to"
+  },
+  {
+    "start": 2473.12,
+    "duration": 4.88,
+    "text": "compute the gradients of the weight"
+  },
+  {
+    "start": 2475.28,
+    "duration": 4.76,
+    "text": "before that, which is W1, not W2. So,"
+  },
+  {
+    "start": 2478.0,
+    "duration": 4.16,
+    "text": "let's actually change this to"
+  },
+  {
+    "start": 2480.04,
+    "duration": 4.08,
+    "text": "uh dJ of d"
+  },
+  {
+    "start": 2482.16,
+    "duration": 3.56,
+    "text": "W1."
+  },
+  {
+    "start": 2484.12,
+    "duration": 4.8,
+    "text": "Now, here,"
+  },
+  {
+    "start": 2485.72,
+    "duration": 5.08,
+    "text": "this is dY dW1. We all We again need to"
+  },
+  {
+    "start": 2488.92,
+    "duration": 3.52,
+    "text": "apply a chain rule again to compute"
+  },
+  {
+    "start": 2490.8,
+    "duration": 5.68,
+    "text": "this. Right? So, we expand it out one"
+  },
+  {
+    "start": 2492.44,
+    "duration": 7.64,
+    "text": "more time. That part turns into dY dZ1"
+  },
+  {
+    "start": 2496.48,
+    "duration": 4.92,
+    "text": "followed by dZ1 dW1."
+  },
+  {
+    "start": 2500.08,
+    "duration": 2.64,
+    "text": "Right? And if you had a deeper neural"
+  },
+  {
+    "start": 2501.4,
+    "duration": 2.92,
+    "text": "network, you would just keep repeating"
+  },
+  {
+    "start": 2502.72,
+    "duration": 3.0,
+    "text": "this process as you go deeper and deeper"
+  },
+  {
+    "start": 2504.32,
+    "duration": 3.8,
+    "text": "into the model."
+  },
+  {
+    "start": 2505.72,
+    "duration": 3.92,
+    "text": "And and uh just repeats like this,"
+  },
+  {
+    "start": 2508.12,
+    "duration": 3.2,
+    "text": "right? You can repeat this process by"
+  },
+  {
+    "start": 2509.64,
+    "duration": 3.96,
+    "text": "propagating those gradients that you"
+  },
+  {
+    "start": 2511.32,
+    "duration": 4.96,
+    "text": "compute from the end, from the output,"
+  },
+  {
+    "start": 2513.6,
+    "duration": 4.76,
+    "text": "all the way back in in the in the"
+  },
+  {
+    "start": 2516.28,
+    "duration": 4.04,
+    "text": "topology of the neural network, all the"
+  },
+  {
+    "start": 2518.36,
+    "duration": 3.88,
+    "text": "way back to the input."
+  },
+  {
+    "start": 2520.32,
+    "duration": 4.36,
+    "text": "And this will allow you to determine how"
+  },
+  {
+    "start": 2522.24,
+    "duration": 3.88,
+    "text": "every single weight impacts your final"
+  },
+  {
+    "start": 2524.68,
+    "duration": 3.28,
+    "text": "loss. Right? That's exactly what the"
+  },
+  {
+    "start": 2526.12,
+    "duration": 3.96,
+    "text": "gradient shows you. It shows you if you"
+  },
+  {
+    "start": 2527.96,
+    "duration": 5.92,
+    "text": "move in some direction, how will the"
+  },
+  {
+    "start": 2530.08,
+    "duration": 6.32,
+    "text": "loss change? Will it go up or down?"
+  },
+  {
+    "start": 2533.88,
+    "duration": 4.72,
+    "text": "Now, that's the backprop algorithm."
+  },
+  {
+    "start": 2536.4,
+    "duration": 4.12,
+    "text": "In theory, it's just a application of"
+  },
+  {
+    "start": 2538.6,
+    "duration": 3.32,
+    "text": "the chain rule. Right? It's nothing more"
+  },
+  {
+    "start": 2540.52,
+    "duration": 3.88,
+    "text": "than the chain rule."
+  },
+  {
+    "start": 2541.92,
+    "duration": 5.24,
+    "text": "In practice, this is a lot more complex"
+  },
+  {
+    "start": 2544.4,
+    "duration": 5.08,
+    "text": "because computing the gradient of neural"
+  },
+  {
+    "start": 2547.16,
+    "duration": 4.48,
+    "text": "networks does not look as clean as what"
+  },
+  {
+    "start": 2549.48,
+    "duration": 5.24,
+    "text": "we saw in that previous slide. Right? In"
+  },
+  {
+    "start": 2551.64,
+    "duration": 6.44,
+    "text": "practice, neural network loss topologies"
+  },
+  {
+    "start": 2554.72,
+    "duration": 5.8,
+    "text": "look highly non-convex. Right? There are"
+  },
+  {
+    "start": 2558.08,
+    "duration": 5.44,
+    "text": "a lot of different minimum and it's"
+  },
+  {
+    "start": 2560.52,
+    "duration": 4.44,
+    "text": "highly dependent on the initializations"
+  },
+  {
+    "start": 2563.52,
+    "duration": 3.52,
+    "text": "that you pick in these models and the"
+  },
+  {
+    "start": 2564.96,
+    "duration": 3.88,
+    "text": "regularizations that you apply to make"
+  },
+  {
+    "start": 2567.04,
+    "duration": 3.08,
+    "text": "sure that you can find actually this"
+  },
+  {
+    "start": 2568.84,
+    "duration": 3.76,
+    "text": "minimum."
+  },
+  {
+    "start": 2570.12,
+    "duration": 4.64,
+    "text": "So, this is a really cool paper from uh"
+  },
+  {
+    "start": 2572.6,
+    "duration": 3.72,
+    "text": "many years ago, 2017, where they"
+  },
+  {
+    "start": 2574.76,
+    "duration": 3.16,
+    "text": "actually tried to visualize what these"
+  },
+  {
+    "start": 2576.32,
+    "duration": 3.12,
+    "text": "high-dimensional neural network loss"
+  },
+  {
+    "start": 2577.92,
+    "duration": 2.8,
+    "text": "landscapes actually look like. Of"
+  },
+  {
+    "start": 2579.44,
+    "duration": 3.2,
+    "text": "course, this is a two-dimensional"
+  },
+  {
+    "start": 2580.72,
+    "duration": 3.6,
+    "text": "representation of something that is, you"
+  },
+  {
+    "start": 2582.64,
+    "duration": 2.72,
+    "text": "know, millions of dimensions. So, it's"
+  },
+  {
+    "start": 2584.32,
+    "duration": 2.84,
+    "text": "you need to take it with a grain of"
+  },
+  {
+    "start": 2585.36,
+    "duration": 4.04,
+    "text": "salt, but even projecting it down into"
+  },
+  {
+    "start": 2587.16,
+    "duration": 5.68,
+    "text": "two dimensions, you can see that this is"
+  },
+  {
+    "start": 2589.4,
+    "duration": 5.24,
+    "text": "a highly nonlinear landscape."
+  },
+  {
+    "start": 2592.84,
+    "duration": 4.44,
+    "text": "Now, recall the update equation that we"
+  },
+  {
+    "start": 2594.64,
+    "duration": 4.84,
+    "text": "defined during gradient descent and"
+  },
+  {
+    "start": 2597.28,
+    "duration": 4.08,
+    "text": "remember this this parameter that we"
+  },
+  {
+    "start": 2599.48,
+    "duration": 4.52,
+    "text": "also didn't talk so much about. Right? I"
+  },
+  {
+    "start": 2601.36,
+    "duration": 4.72,
+    "text": "said we take a small step in the"
+  },
+  {
+    "start": 2604.0,
+    "duration": 3.84,
+    "text": "opposite direction of the gradient. What"
+  },
+  {
+    "start": 2606.08,
+    "duration": 3.56,
+    "text": "I didn't mention is, you know, how big"
+  },
+  {
+    "start": 2607.84,
+    "duration": 4.04,
+    "text": "is the step? This step here is referred"
+  },
+  {
+    "start": 2609.64,
+    "duration": 4.2,
+    "text": "to as eta, right? This small symbol"
+  },
+  {
+    "start": 2611.88,
+    "duration": 3.68,
+    "text": "here. This is called the learning rate."
+  },
+  {
+    "start": 2613.84,
+    "duration": 4.64,
+    "text": "This is the rate at which you follow the"
+  },
+  {
+    "start": 2615.56,
+    "duration": 4.92,
+    "text": "gradient. In practice, setting this"
+  },
+  {
+    "start": 2618.48,
+    "duration": 4.84,
+    "text": "learning rate is just a number that you"
+  },
+  {
+    "start": 2620.48,
+    "duration": 5.08,
+    "text": "set. In practice, setting this number is"
+  },
+  {
+    "start": 2623.32,
+    "duration": 5.4,
+    "text": "also quite difficult, right? Because if"
+  },
+  {
+    "start": 2625.56,
+    "duration": 5.76,
+    "text": "you set something that is too small,"
+  },
+  {
+    "start": 2628.72,
+    "duration": 4.56,
+    "text": "then you actually never really reach"
+  },
+  {
+    "start": 2631.32,
+    "duration": 4.16,
+    "text": "some of the the big minimums. Right?"
+  },
+  {
+    "start": 2633.28,
+    "duration": 4.08,
+    "text": "This is a minimum, but the model gets"
+  },
+  {
+    "start": 2635.48,
+    "duration": 4.24,
+    "text": "stuck in it even though it's not the"
+  },
+  {
+    "start": 2637.36,
+    "duration": 3.92,
+    "text": "biggest one. Right? You would actually"
+  },
+  {
+    "start": 2639.72,
+    "duration": 4.24,
+    "text": "and if you set something too large, you"
+  },
+  {
+    "start": 2641.28,
+    "duration": 3.96,
+    "text": "can overshoot and your loss can also"
+  },
+  {
+    "start": 2643.96,
+    "duration": 3.28,
+    "text": "explode"
+  },
+  {
+    "start": 2645.24,
+    "duration": 3.2,
+    "text": "and you never find the minimum, either"
+  },
+  {
+    "start": 2647.24,
+    "duration": 3.8,
+    "text": "minimum."
+  },
+  {
+    "start": 2648.44,
+    "duration": 4.32,
+    "text": "So, ideally, you want to use learning"
+  },
+  {
+    "start": 2651.04,
+    "duration": 3.52,
+    "text": "rates that are basically just large"
+  },
+  {
+    "start": 2652.76,
+    "duration": 5.16,
+    "text": "enough that you can skip over these kind"
+  },
+  {
+    "start": 2654.56,
+    "duration": 6.2,
+    "text": "of fake local minimums, but get stuck in"
+  },
+  {
+    "start": 2657.92,
+    "duration": 4.64,
+    "text": "these global or close to global minimums"
+  },
+  {
+    "start": 2660.76,
+    "duration": 4.04,
+    "text": "uh to converge there."
+  },
+  {
+    "start": 2662.56,
+    "duration": 4.24,
+    "text": "So, how do we deal with this? How do we"
+  },
+  {
+    "start": 2664.8,
+    "duration": 4.6,
+    "text": "actually set the learning rate? One"
+  },
+  {
+    "start": 2666.8,
+    "duration": 4.08,
+    "text": "option is just to try a bunch of"
+  },
+  {
+    "start": 2669.4,
+    "duration": 3.88,
+    "text": "different learning rates and see what"
+  },
+  {
+    "start": 2670.88,
+    "duration": 5.88,
+    "text": "works best. And actually, this is not as"
+  },
+  {
+    "start": 2673.28,
+    "duration": 5.04,
+    "text": "crazy of an option as it sounds like. Um"
+  },
+  {
+    "start": 2676.76,
+    "duration": 4.24,
+    "text": "but can you do something smarter than"
+  },
+  {
+    "start": 2678.32,
+    "duration": 6.28,
+    "text": "this? Uh how about we design adaptive"
+  },
+  {
+    "start": 2681.0,
+    "duration": 6.76,
+    "text": "learning rates that adapt to the shape"
+  },
+  {
+    "start": 2684.6,
+    "duration": 5.64,
+    "text": "of our loss landscape. Um that actually"
+  },
+  {
+    "start": 2687.76,
+    "duration": 4.8,
+    "text": "is a much smarter idea because it means"
+  },
+  {
+    "start": 2690.24,
+    "duration": 4.28,
+    "text": "that we can now increase or decrease our"
+  },
+  {
+    "start": 2692.56,
+    "duration": 4.28,
+    "text": "learning rate depending on how large the"
+  },
+  {
+    "start": 2694.52,
+    "duration": 3.76,
+    "text": "gradient is at that location. When you"
+  },
+  {
+    "start": 2696.84,
+    "duration": 3.12,
+    "text": "have a very large gradient, maybe you"
+  },
+  {
+    "start": 2698.28,
+    "duration": 3.48,
+    "text": "want to take a bit of a smaller step. If"
+  },
+  {
+    "start": 2699.96,
+    "duration": 4.12,
+    "text": "you have a small gradient, maybe you"
+  },
+  {
+    "start": 2701.76,
+    "duration": 4.84,
+    "text": "want to adapt or have some momentum that"
+  },
+  {
+    "start": 2704.08,
+    "duration": 5.08,
+    "text": "can carry you through these these local"
+  },
+  {
+    "start": 2706.6,
+    "duration": 4.76,
+    "text": "minimums and pass over them."
+  },
+  {
+    "start": 2709.16,
+    "duration": 4.28,
+    "text": "And that's exactly what a lot of"
+  },
+  {
+    "start": 2711.36,
+    "duration": 4.76,
+    "text": "different optimizers have come out with."
+  },
+  {
+    "start": 2713.44,
+    "duration": 5.48,
+    "text": "So, we saw the most basic version of"
+  },
+  {
+    "start": 2716.12,
+    "duration": 4.28,
+    "text": "stochastic gradient descent previously,"
+  },
+  {
+    "start": 2718.92,
+    "duration": 3.16,
+    "text": "but there are a bunch of other"
+  },
+  {
+    "start": 2720.4,
+    "duration": 4.0,
+    "text": "variations of gradient descent"
+  },
+  {
+    "start": 2722.08,
+    "duration": 5.92,
+    "text": "algorithms called Adam, AdaDelta,"
+  },
+  {
+    "start": 2724.4,
+    "duration": 5.24,
+    "text": "AdaGrad, RMSProp, etc. that you'll get a"
+  },
+  {
+    "start": 2728.0,
+    "duration": 3.72,
+    "text": "lot of practice with throughout your"
+  },
+  {
+    "start": 2729.64,
+    "duration": 5.04,
+    "text": "software labs. And in general, these are"
+  },
+  {
+    "start": 2731.72,
+    "duration": 5.16,
+    "text": "actually much better types of optimizers"
+  },
+  {
+    "start": 2734.68,
+    "duration": 3.56,
+    "text": "for the reasons especially around"
+  },
+  {
+    "start": 2736.88,
+    "duration": 2.56,
+    "text": "setting learning rates and making sure"
+  },
+  {
+    "start": 2738.24,
+    "duration": 2.32,
+    "text": "that you can actually find these"
+  },
+  {
+    "start": 2739.44,
+    "duration": 3.6,
+    "text": "minimum."
+  },
+  {
+    "start": 2740.56,
+    "duration": 4.68,
+    "text": "Um and these are widely studied in"
+  },
+  {
+    "start": 2743.04,
+    "duration": 4.44,
+    "text": "practice, right? You In general, you"
+  },
+  {
+    "start": 2745.24,
+    "duration": 4.04,
+    "text": "will very rarely use the vanilla"
+  },
+  {
+    "start": 2747.48,
+    "duration": 4.0,
+    "text": "stochastic gradient descent SGD"
+  },
+  {
+    "start": 2749.28,
+    "duration": 4.68,
+    "text": "algorithm. You'd probably almost always"
+  },
+  {
+    "start": 2751.48,
+    "duration": 5.28,
+    "text": "use and change this line to something"
+  },
+  {
+    "start": 2753.96,
+    "duration": 6.72,
+    "text": "like Adam or another adaptive learning"
+  },
+  {
+    "start": 2756.76,
+    "duration": 3.92,
+    "text": "rate scheduler or optimizer."
+  },
+  {
+    "start": 2761.84,
+    "duration": 4.56,
+    "text": "Awesome. Okay, I'll continue now and"
+  },
+  {
+    "start": 2764.0,
+    "duration": 4.88,
+    "text": "just talking about some more practical"
+  },
+  {
+    "start": 2766.4,
+    "duration": 4.68,
+    "text": "considerations, especially now towards"
+  },
+  {
+    "start": 2768.88,
+    "duration": 4.0,
+    "text": "the the end of the technical part of the"
+  },
+  {
+    "start": 2771.08,
+    "duration": 3.84,
+    "text": "lecture, this first lecture. I want to"
+  },
+  {
+    "start": 2772.88,
+    "duration": 3.6,
+    "text": "talk about some of the practical"
+  },
+  {
+    "start": 2774.92,
+    "duration": 3.68,
+    "text": "considerations that you should have when"
+  },
+  {
+    "start": 2776.48,
+    "duration": 3.48,
+    "text": "actually training neural networks."
+  },
+  {
+    "start": 2778.6,
+    "duration": 3.12,
+    "text": "So, let's go back to the gradient"
+  },
+  {
+    "start": 2779.96,
+    "duration": 3.8,
+    "text": "descent algorithm for a second. We just"
+  },
+  {
+    "start": 2781.72,
+    "duration": 4.48,
+    "text": "saw this this algorithm here."
+  },
+  {
+    "start": 2783.76,
+    "duration": 4.12,
+    "text": "We saw how we can compute the gradient,"
+  },
+  {
+    "start": 2786.2,
+    "duration": 3.08,
+    "text": "but remember this is done through"
+  },
+  {
+    "start": 2787.88,
+    "duration": 3.2,
+    "text": "backpropagation, and this is a really"
+  },
+  {
+    "start": 2789.28,
+    "duration": 3.8,
+    "text": "expensive process because you have to go"
+  },
+  {
+    "start": 2791.08,
+    "duration": 3.2,
+    "text": "entirely back and compute derivatives"
+  },
+  {
+    "start": 2793.08,
+    "duration": 3.08,
+    "text": "for every single parameter in your"
+  },
+  {
+    "start": 2794.28,
+    "duration": 3.56,
+    "text": "network going from the output all the"
+  },
+  {
+    "start": 2796.16,
+    "duration": 4.28,
+    "text": "way back to the input, and you have to"
+  },
+  {
+    "start": 2797.84,
+    "duration": 5.2,
+    "text": "do this for every single data point in"
+  },
+  {
+    "start": 2800.44,
+    "duration": 4.8,
+    "text": "your data set, right? Not just one data"
+  },
+  {
+    "start": 2803.04,
+    "duration": 4.6,
+    "text": "point, of course. Now, in most real-life"
+  },
+  {
+    "start": 2805.24,
+    "duration": 4.36,
+    "text": "problems, it's not feasible to do this"
+  },
+  {
+    "start": 2807.64,
+    "duration": 3.4,
+    "text": "on every training iteration,"
+  },
+  {
+    "start": 2809.6,
+    "duration": 3.68,
+    "text": "right? You simply would not want to do"
+  },
+  {
+    "start": 2811.04,
+    "duration": 3.24,
+    "text": "that over every data point in your data"
+  },
+  {
+    "start": 2813.28,
+    "duration": 3.04,
+    "text": "set."
+  },
+  {
+    "start": 2814.28,
+    "duration": 3.52,
+    "text": "So, instead, we're going to define"
+  },
+  {
+    "start": 2816.32,
+    "duration": 3.52,
+    "text": "what's called stochastic gradient"
+  },
+  {
+    "start": 2817.8,
+    "duration": 4.56,
+    "text": "descent, SGD. So, instead of computing"
+  },
+  {
+    "start": 2819.84,
+    "duration": 4.08,
+    "text": "the gradient over your entire data set,"
+  },
+  {
+    "start": 2822.36,
+    "duration": 3.56,
+    "text": "let's compute the"
+  },
+  {
+    "start": 2823.92,
+    "duration": 3.96,
+    "text": "gradient over just one point. Pick a"
+  },
+  {
+    "start": 2825.92,
+    "duration": 3.36,
+    "text": "random point"
+  },
+  {
+    "start": 2827.88,
+    "duration": 4.0,
+    "text": "and compute the gradient with respect to"
+  },
+  {
+    "start": 2829.28,
+    "duration": 5.2,
+    "text": "that one point and step in the opposite"
+  },
+  {
+    "start": 2831.88,
+    "duration": 4.8,
+    "text": "direction of that one point."
+  },
+  {
+    "start": 2834.48,
+    "duration": 4.16,
+    "text": "Now, that is much, much faster to"
+  },
+  {
+    "start": 2836.68,
+    "duration": 3.6,
+    "text": "compute, obviously, on big data sets."
+  },
+  {
+    "start": 2838.64,
+    "duration": 3.36,
+    "text": "Computing a gradient on one point is"
+  },
+  {
+    "start": 2840.28,
+    "duration": 3.16,
+    "text": "going to be way more efficient than the"
+  },
+  {
+    "start": 2842.0,
+    "duration": 3.12,
+    "text": "entire data set, but it's also going to"
+  },
+  {
+    "start": 2843.44,
+    "duration": 3.48,
+    "text": "be way more noisy. So, there's a"
+  },
+  {
+    "start": 2845.12,
+    "duration": 3.12,
+    "text": "trade-off there, of course."
+  },
+  {
+    "start": 2846.92,
+    "duration": 3.12,
+    "text": "Now, the middle ground, what is the"
+  },
+  {
+    "start": 2848.24,
+    "duration": 3.72,
+    "text": "middle ground? Is that you do this over"
+  },
+  {
+    "start": 2850.04,
+    "duration": 3.92,
+    "text": "what's called a mini-batch. So, you"
+  },
+  {
+    "start": 2851.96,
+    "duration": 3.6,
+    "text": "compute some batch size"
+  },
+  {
+    "start": 2853.96,
+    "duration": 3.0,
+    "text": "of data points,"
+  },
+  {
+    "start": 2855.56,
+    "duration": 3.8,
+    "text": "and you compute the gradient with"
+  },
+  {
+    "start": 2856.96,
+    "duration": 4.32,
+    "text": "respect to that batch size. Batch sizes"
+  },
+  {
+    "start": 2859.36,
+    "duration": 4.04,
+    "text": "can range from anything very small to"
+  },
+  {
+    "start": 2861.28,
+    "duration": 3.96,
+    "text": "like a few data points all the way up"
+  },
+  {
+    "start": 2863.4,
+    "duration": 4.04,
+    "text": "to, you know,"
+  },
+  {
+    "start": 2865.24,
+    "duration": 4.88,
+    "text": "uh like most commonly people use things"
+  },
+  {
+    "start": 2867.44,
+    "duration": 4.52,
+    "text": "like 32 is a very common batch size. You"
+  },
+  {
+    "start": 2870.12,
+    "duration": 4.12,
+    "text": "can scale it up. In large language"
+  },
+  {
+    "start": 2871.96,
+    "duration": 4.44,
+    "text": "models, we have batch sizes of, you"
+  },
+  {
+    "start": 2874.24,
+    "duration": 4.64,
+    "text": "know, millions, right? It depends on the"
+  },
+  {
+    "start": 2876.4,
+    "duration": 4.2,
+    "text": "type of data sets that you're using."
+  },
+  {
+    "start": 2878.88,
+    "duration": 3.2,
+    "text": "But in general, you always want to pick"
+  },
+  {
+    "start": 2880.6,
+    "duration": 3.0,
+    "text": "something much smaller than the size of"
+  },
+  {
+    "start": 2882.08,
+    "duration": 2.56,
+    "text": "your entire data set because you don't"
+  },
+  {
+    "start": 2883.6,
+    "duration": 3.72,
+    "text": "want to be going through your entire"
+  },
+  {
+    "start": 2884.64,
+    "duration": 3.68,
+    "text": "data set every time."
+  },
+  {
+    "start": 2887.32,
+    "duration": 3.24,
+    "text": "Now,"
+  },
+  {
+    "start": 2888.32,
+    "duration": 4.44,
+    "text": "B is is normally not that large for most"
+  },
+  {
+    "start": 2890.56,
+    "duration": 5.6,
+    "text": "problems. Like I said, this is usually"
+  },
+  {
+    "start": 2892.76,
+    "duration": 5.24,
+    "text": "on the order of tens, hundreds, and even"
+  },
+  {
+    "start": 2896.16,
+    "duration": 4.52,
+    "text": "this gives you a pretty good estimate of"
+  },
+  {
+    "start": 2898.0,
+    "duration": 5.08,
+    "text": "the gradient for most problems."
+  },
+  {
+    "start": 2900.68,
+    "duration": 4.44,
+    "text": "This increases the accuracy that's going"
+  },
+  {
+    "start": 2903.08,
+    "duration": 3.44,
+    "text": "to be much more accurate than SGD,"
+  },
+  {
+    "start": 2905.12,
+    "duration": 3.32,
+    "text": "stochastic gradient descent, that's only"
+  },
+  {
+    "start": 2906.52,
+    "duration": 4.12,
+    "text": "looking at one point, but it'll also be"
+  },
+  {
+    "start": 2908.44,
+    "duration": 3.28,
+    "text": "much more efficient"
+  },
+  {
+    "start": 2910.64,
+    "duration": 2.4,
+    "text": "than"
+  },
+  {
+    "start": 2911.72,
+    "duration": 2.68,
+    "text": "computing it on the whole data set. So,"
+  },
+  {
+    "start": 2913.04,
+    "duration": 2.84,
+    "text": "it's this nice balance and you can"
+  },
+  {
+    "start": 2914.4,
+    "duration": 4.52,
+    "text": "actually control the balance yourself by"
+  },
+  {
+    "start": 2915.88,
+    "duration": 4.44,
+    "text": "controlling the size of the batch."
+  },
+  {
+    "start": 2918.92,
+    "duration": 3.92,
+    "text": "Now, the last topic I want to touch"
+  },
+  {
+    "start": 2920.32,
+    "duration": 5.48,
+    "text": "through is overfitting, right? This is"
+  },
+  {
+    "start": 2922.84,
+    "duration": 5.04,
+    "text": "known a very well-known problem in the"
+  },
+  {
+    "start": 2925.8,
+    "duration": 4.16,
+    "text": "field of machine learning, but it"
+  },
+  {
+    "start": 2927.88,
+    "duration": 3.32,
+    "text": "extends also, obviously, into deep"
+  },
+  {
+    "start": 2929.96,
+    "duration": 3.6,
+    "text": "learning as well. Now, what is"
+  },
+  {
+    "start": 2931.2,
+    "duration": 3.96,
+    "text": "overfitting? Overfitting is nothing more"
+  },
+  {
+    "start": 2933.56,
+    "duration": 4.52,
+    "text": "than the"
+  },
+  {
+    "start": 2935.16,
+    "duration": 5.44,
+    "text": "the process of"
+  },
+  {
+    "start": 2938.08,
+    "duration": 4.44,
+    "text": "learning too much into your data, right?"
+  },
+  {
+    "start": 2940.6,
+    "duration": 4.04,
+    "text": "Looking too much into it and overfitting"
+  },
+  {
+    "start": 2942.52,
+    "duration": 5.28,
+    "text": "on the details of that data set that do"
+  },
+  {
+    "start": 2944.64,
+    "duration": 5.08,
+    "text": "not generalize outside of the particular"
+  },
+  {
+    "start": 2947.8,
+    "duration": 3.88,
+    "text": "training data that you've seen. So,"
+  },
+  {
+    "start": 2949.72,
+    "duration": 4.48,
+    "text": "here's a good example, right? If you"
+  },
+  {
+    "start": 2951.68,
+    "duration": 4.28,
+    "text": "start on the right-hand side, and here's"
+  },
+  {
+    "start": 2954.2,
+    "duration": 4.44,
+    "text": "your training data set,"
+  },
+  {
+    "start": 2955.96,
+    "duration": 4.52,
+    "text": "the optimal line that fits this data is"
+  },
+  {
+    "start": 2958.64,
+    "duration": 3.8,
+    "text": "not going to follow all of the intricate"
+  },
+  {
+    "start": 2960.48,
+    "duration": 3.6,
+    "text": "details of the data."
+  },
+  {
+    "start": 2962.44,
+    "duration": 3.2,
+    "text": "But on the same side, on the other"
+  },
+  {
+    "start": 2964.08,
+    "duration": 3.16,
+    "text": "Excuse me, on the other side, there's"
+  },
+  {
+    "start": 2965.64,
+    "duration": 3.76,
+    "text": "also underfitting as well, where you"
+  },
+  {
+    "start": 2967.24,
+    "duration": 3.92,
+    "text": "don't learn a function that's expressive"
+  },
+  {
+    "start": 2969.4,
+    "duration": 3.56,
+    "text": "enough that captures all of the"
+  },
+  {
+    "start": 2971.16,
+    "duration": 3.96,
+    "text": "intricacies of the data. So, for"
+  },
+  {
+    "start": 2972.96,
+    "duration": 4.0,
+    "text": "example, a linear function on the left"
+  },
+  {
+    "start": 2975.12,
+    "duration": 3.0,
+    "text": "side is going to be underfitting on this"
+  },
+  {
+    "start": 2976.96,
+    "duration": 3.84,
+    "text": "problem because the problem is a"
+  },
+  {
+    "start": 2978.12,
+    "duration": 4.04,
+    "text": "nonlinear type of relationship,"
+  },
+  {
+    "start": 2980.8,
+    "duration": 3.68,
+    "text": "but on the right-hand side, it's also"
+  },
+  {
+    "start": 2982.16,
+    "duration": 3.68,
+    "text": "too high dim the the the learned"
+  },
+  {
+    "start": 2984.48,
+    "duration": 4.56,
+    "text": "solution on the right-hand side is too"
+  },
+  {
+    "start": 2985.84,
+    "duration": 6.48,
+    "text": "high dimensional and too overfitting to"
+  },
+  {
+    "start": 2989.04,
+    "duration": 5.68,
+    "text": "to capture the generalization of the of"
+  },
+  {
+    "start": 2992.32,
+    "duration": 4.28,
+    "text": "the problem. The ideal is somewhere in"
+  },
+  {
+    "start": 2994.72,
+    "duration": 3.76,
+    "text": "the middle, right? Where you don't have"
+  },
+  {
+    "start": 2996.6,
+    "duration": 3.84,
+    "text": "too much complexity and you don't read"
+  },
+  {
+    "start": 2998.48,
+    "duration": 4.32,
+    "text": "into too much other details, so that"
+  },
+  {
+    "start": 3000.44,
+    "duration": 4.48,
+    "text": "when you see brand new data in a test"
+  },
+  {
+    "start": 3002.8,
+    "duration": 3.36,
+    "text": "set or in deployment, you can actually"
+  },
+  {
+    "start": 3004.92,
+    "duration": 3.12,
+    "text": "extend"
+  },
+  {
+    "start": 3006.16,
+    "duration": 4.64,
+    "text": "your solution to have accurate"
+  },
+  {
+    "start": 3008.04,
+    "duration": 4.6,
+    "text": "predictions in that regime as well."
+  },
+  {
+    "start": 3010.8,
+    "duration": 4.56,
+    "text": "So, to address this problem, how do you"
+  },
+  {
+    "start": 3012.64,
+    "duration": 3.92,
+    "text": "go and toggle between these two sides of"
+  },
+  {
+    "start": 3015.36,
+    "duration": 3.04,
+    "text": "the coin?"
+  },
+  {
+    "start": 3016.56,
+    "duration": 4.2,
+    "text": "It's called regularization, right?"
+  },
+  {
+    "start": 3018.4,
+    "duration": 5.16,
+    "text": "Regularization is the technique that"
+  },
+  {
+    "start": 3020.76,
+    "duration": 5.04,
+    "text": "allows us to constrain how much we want"
+  },
+  {
+    "start": 3023.56,
+    "duration": 4.24,
+    "text": "to underfit versus overfit on a"
+  },
+  {
+    "start": 3025.8,
+    "duration": 5.28,
+    "text": "particular problem. And this is"
+  },
+  {
+    "start": 3027.8,
+    "duration": 5.52,
+    "text": "effectively allowing us to discourage"
+  },
+  {
+    "start": 3031.08,
+    "duration": 4.44,
+    "text": "the learning of very complex models."
+  },
+  {
+    "start": 3033.32,
+    "duration": 4.6,
+    "text": "This is how we're able to learn billions"
+  },
+  {
+    "start": 3035.52,
+    "duration": 6.04,
+    "text": "of parameter models,"
+  },
+  {
+    "start": 3037.92,
+    "duration": 6.12,
+    "text": "you know, on actually data sets, but not"
+  },
+  {
+    "start": 3041.56,
+    "duration": 4.08,
+    "text": "actually memorizing all of the details"
+  },
+  {
+    "start": 3044.04,
+    "duration": 4.88,
+    "text": "in the data sets or allowing us to"
+  },
+  {
+    "start": 3045.64,
+    "duration": 4.96,
+    "text": "generalize beyond those those data sets."
+  },
+  {
+    "start": 3048.92,
+    "duration": 3.76,
+    "text": "And this will allow us to improve the"
+  },
+  {
+    "start": 3050.6,
+    "duration": 3.84,
+    "text": "ability of our model to perform even on"
+  },
+  {
+    "start": 3052.68,
+    "duration": 4.64,
+    "text": "unseen data."
+  },
+  {
+    "start": 3054.44,
+    "duration": 4.12,
+    "text": "The most popular form of regularization,"
+  },
+  {
+    "start": 3057.32,
+    "duration": 2.8,
+    "text": "there are many different ways to"
+  },
+  {
+    "start": 3058.56,
+    "duration": 3.04,
+    "text": "regularize depending on the type of"
+  },
+  {
+    "start": 3060.12,
+    "duration": 3.2,
+    "text": "model,"
+  },
+  {
+    "start": 3061.6,
+    "duration": 3.8,
+    "text": "but I'll talk about one of the most"
+  },
+  {
+    "start": 3063.32,
+    "duration": 5.64,
+    "text": "popular ways. This is the idea of"
+  },
+  {
+    "start": 3065.4,
+    "duration": 5.44,
+    "text": "dropout, right? Dropout is is a"
+  },
+  {
+    "start": 3068.96,
+    "duration": 4.52,
+    "text": "stochastic method. It means that it's"
+  },
+  {
+    "start": 3070.84,
+    "duration": 4.64,
+    "text": "probabilistic. Let's revisit this"
+  },
+  {
+    "start": 3073.48,
+    "duration": 3.72,
+    "text": "this chart, this schematic that we saw"
+  },
+  {
+    "start": 3075.48,
+    "duration": 3.04,
+    "text": "earlier in the lecture from a neural"
+  },
+  {
+    "start": 3077.2,
+    "duration": 3.36,
+    "text": "network."
+  },
+  {
+    "start": 3078.52,
+    "duration": 4.8,
+    "text": "Right, in dropout, all we do is that we"
+  },
+  {
+    "start": 3080.56,
+    "duration": 5.04,
+    "text": "randomly drop out some activations of"
+  },
+  {
+    "start": 3083.32,
+    "duration": 4.84,
+    "text": "the hidden layers with some probability"
+  },
+  {
+    "start": 3085.6,
+    "duration": 6.72,
+    "text": "that we define. Okay, so let's assume"
+  },
+  {
+    "start": 3088.16,
+    "duration": 6.24,
+    "text": "that we set a probability like .5, 50%."
+  },
+  {
+    "start": 3092.32,
+    "duration": 5.2,
+    "text": "All this will mean is that we will"
+  },
+  {
+    "start": 3094.4,
+    "duration": 6.84,
+    "text": "randomly pick 50% of the neurons in our"
+  },
+  {
+    "start": 3097.52,
+    "duration": 5.44,
+    "text": "two hidden layers and randomly kill"
+  },
+  {
+    "start": 3101.24,
+    "duration": 3.8,
+    "text": "the outputs from coming out of those"
+  },
+  {
+    "start": 3102.96,
+    "duration": 6.08,
+    "text": "neurons. So, what does that mean? That"
+  },
+  {
+    "start": 3105.04,
+    "duration": 5.92,
+    "text": "this neuron here has to be resilient to"
+  },
+  {
+    "start": 3109.04,
+    "duration": 3.92,
+    "text": "sometimes receiving inputs from this"
+  },
+  {
+    "start": 3110.96,
+    "duration": 4.36,
+    "text": "neuron, but sometimes not receiving it"
+  },
+  {
+    "start": 3112.96,
+    "duration": 4.36,
+    "text": "from this neuron, right? And then on"
+  },
+  {
+    "start": 3115.32,
+    "duration": 3.96,
+    "text": "other iterations, it may receive it from"
+  },
+  {
+    "start": 3117.32,
+    "duration": 4.6,
+    "text": "the other set of neurons. So, what this"
+  },
+  {
+    "start": 3119.28,
+    "duration": 4.84,
+    "text": "encourages is actually the ability that"
+  },
+  {
+    "start": 3121.92,
+    "duration": 4.0,
+    "text": "on every iteration, every neuron is"
+  },
+  {
+    "start": 3124.12,
+    "duration": 4.04,
+    "text": "seeing different pathways through the"
+  },
+  {
+    "start": 3125.92,
+    "duration": 4.84,
+    "text": "network. This is forcing it to not rely"
+  },
+  {
+    "start": 3128.16,
+    "duration": 4.88,
+    "text": "on any one pathway and not memorize any"
+  },
+  {
+    "start": 3130.76,
+    "duration": 4.32,
+    "text": "one pathway too much through its forward"
+  },
+  {
+    "start": 3133.04,
+    "duration": 4.08,
+    "text": "path propagation. And that's actually"
+  },
+  {
+    "start": 3135.08,
+    "duration": 3.12,
+    "text": "able to allow it to generalize as well"
+  },
+  {
+    "start": 3137.12,
+    "duration": 3.36,
+    "text": "because it has to find these"
+  },
+  {
+    "start": 3138.2,
+    "duration": 4.52,
+    "text": "relationships that span across different"
+  },
+  {
+    "start": 3140.48,
+    "duration": 4.4,
+    "text": "pathways. Yes. Are the same activations"
+  },
+  {
+    "start": 3142.72,
+    "duration": 3.72,
+    "text": "set to zero for the entire mini batch?"
+  },
+  {
+    "start": 3144.88,
+    "duration": 3.12,
+    "text": "Same activations are set to zero for the"
+  },
+  {
+    "start": 3146.44,
+    "duration": 4.0,
+    "text": "entire mini batch, but then on the next"
+  },
+  {
+    "start": 3148.0,
+    "duration": 4.08,
+    "text": "mini batch, you have a new set of"
+  },
+  {
+    "start": 3150.44,
+    "duration": 3.8,
+    "text": "activations and new set of neurons that"
+  },
+  {
+    "start": 3152.08,
+    "duration": 4.68,
+    "text": "are set to zero. So, you reset on every"
+  },
+  {
+    "start": 3154.24,
+    "duration": 2.52,
+    "text": "batch."
+  },
+  {
+    "start": 3157.0,
+    "duration": 4.48,
+    "text": "Awesome. Okay. So, you repeat that on"
+  },
+  {
+    "start": 3159.92,
+    "duration": 3.24,
+    "text": "every iteration. Let me show you one"
+  },
+  {
+    "start": 3161.48,
+    "duration": 4.2,
+    "text": "more technique for regularization as"
+  },
+  {
+    "start": 3163.16,
+    "duration": 5.08,
+    "text": "well that goes beyond dropout. Dropout"
+  },
+  {
+    "start": 3165.68,
+    "duration": 4.28,
+    "text": "is a architectural level of"
+  },
+  {
+    "start": 3168.24,
+    "duration": 3.48,
+    "text": "regularization. This is going to be"
+  },
+  {
+    "start": 3169.96,
+    "duration": 3.72,
+    "text": "beyond architectural level. So, let's"
+  },
+  {
+    "start": 3171.72,
+    "duration": 5.76,
+    "text": "assume for any architecture, you can"
+  },
+  {
+    "start": 3173.68,
+    "duration": 5.76,
+    "text": "have the ability to stop training once"
+  },
+  {
+    "start": 3177.48,
+    "duration": 3.8,
+    "text": "you start to overfit. Sounds easy. Let's"
+  },
+  {
+    "start": 3179.44,
+    "duration": 3.84,
+    "text": "see how you might actually do this,"
+  },
+  {
+    "start": 3181.28,
+    "duration": 4.6,
+    "text": "right? This is called early stopping."
+  },
+  {
+    "start": 3183.28,
+    "duration": 4.84,
+    "text": "So, we already have this definition of"
+  },
+  {
+    "start": 3185.88,
+    "duration": 4.48,
+    "text": "overfitting, which is simply that we"
+  },
+  {
+    "start": 3188.12,
+    "duration": 5.12,
+    "text": "start to perform better on our training"
+  },
+  {
+    "start": 3190.36,
+    "duration": 4.36,
+    "text": "set than we are on our testing set,"
+  },
+  {
+    "start": 3193.24,
+    "duration": 3.16,
+    "text": "right? That's effectively what it means"
+  },
+  {
+    "start": 3194.72,
+    "duration": 4.16,
+    "text": "to overfit. So, we're no longer"
+  },
+  {
+    "start": 3196.4,
+    "duration": 5.0,
+    "text": "generalizing our learnings from training"
+  },
+  {
+    "start": 3198.88,
+    "duration": 4.64,
+    "text": "into testing, right? Our training is"
+  },
+  {
+    "start": 3201.4,
+    "duration": 4.2,
+    "text": "continuing to improve, but our testing"
+  },
+  {
+    "start": 3203.52,
+    "duration": 4.0,
+    "text": "data is just getting worse,"
+  },
+  {
+    "start": 3205.6,
+    "duration": 3.68,
+    "text": "right? So, we can do this by actually"
+  },
+  {
+    "start": 3207.52,
+    "duration": 4.36,
+    "text": "having two separate data sets, one that"
+  },
+  {
+    "start": 3209.28,
+    "duration": 4.48,
+    "text": "we train on and one that we test on. And"
+  },
+  {
+    "start": 3211.88,
+    "duration": 4.92,
+    "text": "constantly throughout training, we're"
+  },
+  {
+    "start": 3213.76,
+    "duration": 4.56,
+    "text": "evaluating both data sets. Now, in the"
+  },
+  {
+    "start": 3216.8,
+    "duration": 3.0,
+    "text": "beginning, both lines just decrease"
+  },
+  {
+    "start": 3218.32,
+    "duration": 3.16,
+    "text": "together, which is excellent. It means"
+  },
+  {
+    "start": 3219.8,
+    "duration": 4.08,
+    "text": "our model is learning, right? It's"
+  },
+  {
+    "start": 3221.48,
+    "duration": 4.84,
+    "text": "moving from that underfit regime to a"
+  },
+  {
+    "start": 3223.88,
+    "duration": 4.72,
+    "text": "more fit regime. And it continues to"
+  },
+  {
+    "start": 3226.32,
+    "duration": 5.72,
+    "text": "have this trend. Eventually, though, the"
+  },
+  {
+    "start": 3228.6,
+    "duration": 6.08,
+    "text": "network loss will start to plateau, and"
+  },
+  {
+    "start": 3232.04,
+    "duration": 4.52,
+    "text": "the testing loss will start to increase."
+  },
+  {
+    "start": 3234.68,
+    "duration": 4.68,
+    "text": "Right? This is actually the regime where"
+  },
+  {
+    "start": 3236.56,
+    "duration": 4.28,
+    "text": "we start to see overfitting."
+  },
+  {
+    "start": 3239.36,
+    "duration": 3.04,
+    "text": "And this pattern typically will continue"
+  },
+  {
+    "start": 3240.84,
+    "duration": 2.64,
+    "text": "for the rest of training."
+  },
+  {
+    "start": 3242.4,
+    "duration": 3.04,
+    "text": "Now,"
+  },
+  {
+    "start": 3243.48,
+    "duration": 3.6,
+    "text": "the question here is where would you"
+  },
+  {
+    "start": 3245.44,
+    "duration": 3.64,
+    "text": "actually you train the model for all of"
+  },
+  {
+    "start": 3247.08,
+    "duration": 4.48,
+    "text": "these training iterations, you save the"
+  },
+  {
+    "start": 3249.08,
+    "duration": 5.36,
+    "text": "model at these checkpoints across the"
+  },
+  {
+    "start": 3251.56,
+    "duration": 4.6,
+    "text": "x-axis. You can now take this"
+  },
+  {
+    "start": 3254.44,
+    "duration": 3.68,
+    "text": "checkpoint, right? You've saved all of"
+  },
+  {
+    "start": 3256.16,
+    "duration": 3.16,
+    "text": "the checkpoints. You look at the curve,"
+  },
+  {
+    "start": 3258.12,
+    "duration": 2.76,
+    "text": "and you actually say, \"Okay, this is the"
+  },
+  {
+    "start": 3259.32,
+    "duration": 3.76,
+    "text": "checkpoint that I want to use because"
+  },
+  {
+    "start": 3260.88,
+    "duration": 4.36,
+    "text": "after this checkpoint, yes, my training"
+  },
+  {
+    "start": 3263.08,
+    "duration": 4.28,
+    "text": "loss continues to get better, but it's"
+  },
+  {
+    "start": 3265.24,
+    "duration": 4.12,
+    "text": "not actually translating to my testing"
+  },
+  {
+    "start": 3267.36,
+    "duration": 4.4,
+    "text": "data set. So, this is the one that I"
+  },
+  {
+    "start": 3269.36,
+    "duration": 5.2,
+    "text": "actually should be using.\""
+  },
+  {
+    "start": 3271.76,
+    "duration": 4.48,
+    "text": "And we can see that, you know, after the"
+  },
+  {
+    "start": 3274.56,
+    "duration": 3.48,
+    "text": "early stopping checkpoint, things do get"
+  },
+  {
+    "start": 3276.24,
+    "duration": 3.84,
+    "text": "worse on your testing data. So, you"
+  },
+  {
+    "start": 3278.04,
+    "duration": 3.84,
+    "text": "wouldn't actually want to apply those"
+  },
+  {
+    "start": 3280.08,
+    "duration": 3.96,
+    "text": "checkpoints. This is such a very"
+  },
+  {
+    "start": 3281.88,
+    "duration": 3.44,
+    "text": "powerful idea because it's very general,"
+  },
+  {
+    "start": 3284.04,
+    "duration": 3.16,
+    "text": "this approach. You can really apply this"
+  },
+  {
+    "start": 3285.32,
+    "duration": 3.4,
+    "text": "to any type of model, and you can really"
+  },
+  {
+    "start": 3287.2,
+    "duration": 2.56,
+    "text": "track these these curves, right? It"
+  },
+  {
+    "start": 3288.72,
+    "duration": 2.48,
+    "text": "doesn't require architectural"
+  },
+  {
+    "start": 3289.76,
+    "duration": 4.24,
+    "text": "modifications."
+  },
+  {
+    "start": 3291.2,
+    "duration": 4.64,
+    "text": "Uh you just monitor the loss of your"
+  },
+  {
+    "start": 3294.0,
+    "duration": 3.32,
+    "text": "neural network over time on two"
+  },
+  {
+    "start": 3295.84,
+    "duration": 4.52,
+    "text": "different data sets, one that you train"
+  },
+  {
+    "start": 3297.32,
+    "duration": 5.16,
+    "text": "on, one that you test on."
+  },
+  {
+    "start": 3300.36,
+    "duration": 4.68,
+    "text": "Awesome. Okay, I'll conclude the first"
+  },
+  {
+    "start": 3302.48,
+    "duration": 4.32,
+    "text": "lecture now. Just summarize quickly uh"
+  },
+  {
+    "start": 3305.04,
+    "duration": 4.12,
+    "text": "what we've covered. So, we started with"
+  },
+  {
+    "start": 3306.8,
+    "duration": 3.84,
+    "text": "the most fundamental building blocks of"
+  },
+  {
+    "start": 3309.16,
+    "duration": 4.32,
+    "text": "neural networks, which was just a single"
+  },
+  {
+    "start": 3310.64,
+    "duration": 5.48,
+    "text": "neuron. We scaled that up to single"
+  },
+  {
+    "start": 3313.48,
+    "duration": 4.92,
+    "text": "layers and multi-layer perceptrons,"
+  },
+  {
+    "start": 3316.12,
+    "duration": 3.76,
+    "text": "multi-layered neural networks. And we've"
+  },
+  {
+    "start": 3318.4,
+    "duration": 4.96,
+    "text": "learned how we could build complex,"
+  },
+  {
+    "start": 3319.88,
+    "duration": 6.08,
+    "text": "hierarchical learning machines that go"
+  },
+  {
+    "start": 3323.36,
+    "duration": 4.64,
+    "text": "from input to output across a hierarchy"
+  },
+  {
+    "start": 3325.96,
+    "duration": 3.92,
+    "text": "of abstractions. And finally, we"
+  },
+  {
+    "start": 3328.0,
+    "duration": 3.52,
+    "text": "addressed a lot of the practical sides"
+  },
+  {
+    "start": 3329.88,
+    "duration": 3.4,
+    "text": "of actually training these models,"
+  },
+  {
+    "start": 3331.52,
+    "duration": 3.12,
+    "text": "evaluating them, picking the best model,"
+  },
+  {
+    "start": 3333.28,
+    "duration": 2.6,
+    "text": "and so on."
+  },
+  {
+    "start": 3334.64,
+    "duration": 3.48,
+    "text": "In the next lecture, we're going to be"
+  },
+  {
+    "start": 3335.88,
+    "duration": 3.92,
+    "text": "hearing from Alva on covering sequence"
+  },
+  {
+    "start": 3338.12,
+    "duration": 3.12,
+    "text": "models, right? This is a really exciting"
+  },
+  {
+    "start": 3339.8,
+    "duration": 3.48,
+    "text": "lecture, especially in today's world,"
+  },
+  {
+    "start": 3341.24,
+    "duration": 4.52,
+    "text": "because sequence models power"
+  },
+  {
+    "start": 3343.28,
+    "duration": 4.76,
+    "text": "uh GPTs, right? Everything a lot of"
+  },
+  {
+    "start": 3345.76,
+    "duration": 4.08,
+    "text": "things are sequences in today's world,"
+  },
+  {
+    "start": 3348.04,
+    "duration": 2.92,
+    "text": "right? You think of text is a sequence"
+  },
+  {
+    "start": 3349.84,
+    "duration": 4.12,
+    "text": "of words,"
+  },
+  {
+    "start": 3350.96,
+    "duration": 5.0,
+    "text": "audio is a sequence of waveforms,"
+  },
+  {
+    "start": 3353.96,
+    "duration": 4.08,
+    "text": "video is a sequence of images, right? A"
+  },
+  {
+    "start": 3355.96,
+    "duration": 3.92,
+    "text": "lot of things are sequences, and what we"
+  },
+  {
+    "start": 3358.04,
+    "duration": 3.92,
+    "text": "saw today is only covering"
+  },
+  {
+    "start": 3359.88,
+    "duration": 3.92,
+    "text": "non-sequential data so far in my"
+  },
+  {
+    "start": 3361.96,
+    "duration": 4.52,
+    "text": "lecture. In the next lecture, we'll see"
+  },
+  {
+    "start": 3363.8,
+    "duration": 3.8,
+    "text": "how we can extend that into sequences of"
+  },
+  {
+    "start": 3366.48,
+    "duration": 3.12,
+    "text": "data."
+  },
+  {
+    "start": 3367.6,
+    "duration": 3.56,
+    "text": "Uh so, we'll take a 5-minute break, and"
+  },
+  {
+    "start": 3369.6,
+    "duration": 4.96,
+    "text": "then we'll just set up, and then uh"
+  },
+  {
+    "start": 3371.16,
+    "duration": 3.4,
+    "text": "we'll continue from there. Thank you."
+  }
+]

@@ -1,0 +1,25 @@
+# Environments
+venv/
+.venv/
+env/
+
+# Secrets and local config
+.env
+
+# Python bytecode and cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyc
+
+# Local vector store data
+qdrant_data/
+
+# Application logs
+logs/
+
+# LLM disk cache
+cache/
+
+# Scratch & temporary workspace
+scratch/

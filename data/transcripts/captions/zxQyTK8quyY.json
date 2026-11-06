@@ -1,0 +1,4387 @@
+[
+  {
+    "start": 0.0,
+    "duration": 3.96,
+    "text": "[Music]"
+  },
+  {
+    "start": 0.62,
+    "duration": 4.96,
+    "text": "translation it's done with a transform"
+  },
+  {
+    "start": 3.96,
+    "duration": 3.86,
+    "text": "ER"
+  },
+  {
+    "start": 5.58,
+    "duration": 5.4,
+    "text": "stat Quest"
+  },
+  {
+    "start": 7.82,
+    "duration": 5.26,
+    "text": "hello I'm Josh starmer and welcome to"
+  },
+  {
+    "start": 10.98,
+    "duration": 4.68,
+    "text": "statquest today we're going to talk"
+  },
+  {
+    "start": 13.08,
+    "duration": 4.82,
+    "text": "about Transformer neural networks and"
+  },
+  {
+    "start": 15.66,
+    "duration": 5.7,
+    "text": "they're going to be clearly explained"
+  },
+  {
+    "start": 17.9,
+    "duration": 6.34,
+    "text": "Transformers are more fun when you build"
+  },
+  {
+    "start": 21.36,
+    "duration": 4.32,
+    "text": "them in the cloud with lightning"
+  },
+  {
+    "start": 24.24,
+    "duration": 4.5,
+    "text": "bam"
+  },
+  {
+    "start": 25.68,
+    "duration": 6.48,
+    "text": "right now people are going bonkers about"
+  },
+  {
+    "start": 28.74,
+    "duration": 6.36,
+    "text": "something called chat GPT for example"
+  },
+  {
+    "start": 32.16,
+    "duration": 5.88,
+    "text": "our friend statsquatch might type"
+  },
+  {
+    "start": 35.1,
+    "duration": 7.46,
+    "text": "something into chat GPT like"
+  },
+  {
+    "start": 38.04,
+    "duration": 6.44,
+    "text": "right and awesome song in the style of"
+  },
+  {
+    "start": 42.56,
+    "duration": 5.26,
+    "text": "statquest"
+  },
+  {
+    "start": 44.48,
+    "duration": 5.26,
+    "text": "translation it's done with a transform"
+  },
+  {
+    "start": 47.82,
+    "duration": 4.5,
+    "text": "ER"
+  },
+  {
+    "start": 49.74,
+    "duration": 6.18,
+    "text": "anyway there's a lot to be said about"
+  },
+  {
+    "start": 52.32,
+    "duration": 5.22,
+    "text": "how chat GPT works but fundamentally it"
+  },
+  {
+    "start": 55.92,
+    "duration": 3.06,
+    "text": "is based on something called a"
+  },
+  {
+    "start": 57.54,
+    "duration": 4.2,
+    "text": "Transformer"
+  },
+  {
+    "start": 58.98,
+    "duration": 5.28,
+    "text": "so in this stat Quest we're going to"
+  },
+  {
+    "start": 61.74,
+    "duration": 4.38,
+    "text": "show you how a Transformer works one"
+  },
+  {
+    "start": 64.26,
+    "duration": 4.62,
+    "text": "step at a time"
+  },
+  {
+    "start": 66.12,
+    "duration": 4.86,
+    "text": "specifically we're going to focus on how"
+  },
+  {
+    "start": 68.88,
+    "duration": 4.16,
+    "text": "a Transformer neural network can"
+  },
+  {
+    "start": 70.98,
+    "duration": 6.72,
+    "text": "translate a simple English sentence"
+  },
+  {
+    "start": 73.04,
+    "duration": 7.6,
+    "text": "let's go into Spanish vamos"
+  },
+  {
+    "start": 77.7,
+    "duration": 4.92,
+    "text": "now since a Transformer is a type of"
+  },
+  {
+    "start": 80.64,
+    "duration": 4.2,
+    "text": "neural network and neural networks"
+  },
+  {
+    "start": 82.62,
+    "duration": 3.24,
+    "text": "usually only have numbers for input"
+  },
+  {
+    "start": 84.84,
+    "duration": 3.6,
+    "text": "values"
+  },
+  {
+    "start": 85.86,
+    "duration": 4.64,
+    "text": "the first thing we need to do is find a"
+  },
+  {
+    "start": 88.44,
+    "duration": 4.38,
+    "text": "way to turn the input and output words"
+  },
+  {
+    "start": 90.5,
+    "duration": 4.72,
+    "text": "into numbers"
+  },
+  {
+    "start": 92.82,
+    "duration": 5.34,
+    "text": "there are a lot of ways to convert words"
+  },
+  {
+    "start": 95.22,
+    "duration": 4.98,
+    "text": "into numbers but for neural networks one"
+  },
+  {
+    "start": 98.16,
+    "duration": 5.04,
+    "text": "of the most commonly used methods is"
+  },
+  {
+    "start": 100.2,
+    "duration": 4.98,
+    "text": "called word embedding the main idea of"
+  },
+  {
+    "start": 103.2,
+    "duration": 5.28,
+    "text": "word embedding is to use a relatively"
+  },
+  {
+    "start": 105.18,
+    "duration": 5.52,
+    "text": "simple neural network that has one input"
+  },
+  {
+    "start": 108.48,
+    "duration": 5.52,
+    "text": "for every word and symbol in the"
+  },
+  {
+    "start": 110.7,
+    "duration": 6.0,
+    "text": "vocabulary that you want to use in this"
+  },
+  {
+    "start": 114.0,
+    "duration": 5.1,
+    "text": "case we have a super simple vocabulary"
+  },
+  {
+    "start": 116.7,
+    "duration": 5.4,
+    "text": "that allows us to input short phrases"
+  },
+  {
+    "start": 119.1,
+    "duration": 6.06,
+    "text": "like let's go and to go"
+  },
+  {
+    "start": 122.1,
+    "duration": 6.06,
+    "text": "and we have an input for this symbol EOS"
+  },
+  {
+    "start": 125.16,
+    "duration": 6.06,
+    "text": "which stands for end of sentence or end"
+  },
+  {
+    "start": 128.16,
+    "duration": 5.7,
+    "text": "of sequence because the vocabulary can"
+  },
+  {
+    "start": 131.22,
+    "duration": 6.12,
+    "text": "be a mix of words word fragments and"
+  },
+  {
+    "start": 133.86,
+    "duration": 5.52,
+    "text": "symbols we call each input a token"
+  },
+  {
+    "start": 137.34,
+    "duration": 3.9,
+    "text": "the inputs are then connected to"
+  },
+  {
+    "start": 139.38,
+    "duration": 4.26,
+    "text": "something called an activation function"
+  },
+  {
+    "start": 141.24,
+    "duration": 4.2,
+    "text": "and in this example we have two"
+  },
+  {
+    "start": 143.64,
+    "duration": 4.38,
+    "text": "activation functions"
+  },
+  {
+    "start": 145.44,
+    "duration": 5.4,
+    "text": "and each connection multiplies the input"
+  },
+  {
+    "start": 148.02,
+    "duration": 5.64,
+    "text": "value by something called a weight"
+  },
+  {
+    "start": 150.84,
+    "duration": 3.72,
+    "text": "hey Josh where do these numbers come"
+  },
+  {
+    "start": 153.66,
+    "duration": 3.36,
+    "text": "from"
+  },
+  {
+    "start": 154.56,
+    "duration": 4.2,
+    "text": "great question Squatch and we'll answer"
+  },
+  {
+    "start": 157.02,
+    "duration": 4.26,
+    "text": "it in just a bit"
+  },
+  {
+    "start": 158.76,
+    "duration": 5.1,
+    "text": "for now let's just see how we convert"
+  },
+  {
+    "start": 161.28,
+    "duration": 5.22,
+    "text": "the word let's into numbers"
+  },
+  {
+    "start": 163.86,
+    "duration": 6.0,
+    "text": "first we put a 1 into the input for"
+  },
+  {
+    "start": 166.5,
+    "duration": 4.98,
+    "text": "let's and then put zeros into all of the"
+  },
+  {
+    "start": 169.86,
+    "duration": 3.9,
+    "text": "other inputs"
+  },
+  {
+    "start": 171.48,
+    "duration": 4.08,
+    "text": "now we multiply the inputs by their"
+  },
+  {
+    "start": 173.76,
+    "duration": 3.6,
+    "text": "weights on the connections to the"
+  },
+  {
+    "start": 175.56,
+    "duration": 4.86,
+    "text": "activation functions"
+  },
+  {
+    "start": 177.36,
+    "duration": 7.92,
+    "text": "for example the input for let's is one"
+  },
+  {
+    "start": 180.42,
+    "duration": 7.44,
+    "text": "so we multiply 1.87 by 1 to get 1.87"
+  },
+  {
+    "start": 185.28,
+    "duration": 7.58,
+    "text": "going to the activation function on the"
+  },
+  {
+    "start": 187.86,
+    "duration": 8.46,
+    "text": "left and we multiply 0.09 by 1 to get"
+  },
+  {
+    "start": 192.86,
+    "duration": 4.6,
+    "text": "0.09 going to the activation function on"
+  },
+  {
+    "start": 196.32,
+    "duration": 3.9,
+    "text": "the right"
+  },
+  {
+    "start": 197.46,
+    "duration": 5.22,
+    "text": "in contrast if the input value for the"
+  },
+  {
+    "start": 200.22,
+    "duration": 6.84,
+    "text": "word 2 is 0"
+  },
+  {
+    "start": 202.68,
+    "duration": 6.6,
+    "text": "then we multiply negative 1.45 by 0 to"
+  },
+  {
+    "start": 207.06,
+    "duration": 3.66,
+    "text": "get 0 going to the activation function"
+  },
+  {
+    "start": 209.28,
+    "duration": 5.64,
+    "text": "on the left"
+  },
+  {
+    "start": 210.72,
+    "duration": 7.26,
+    "text": "and we multiply 1.50 by 0 to get 0 going"
+  },
+  {
+    "start": 214.92,
+    "duration": 5.82,
+    "text": "to the activation function on the right"
+  },
+  {
+    "start": 217.98,
+    "duration": 5.22,
+    "text": "in other words when an input value is 0"
+  },
+  {
+    "start": 220.74,
+    "duration": 6.18,
+    "text": "then it only sends zeros to the"
+  },
+  {
+    "start": 223.2,
+    "duration": 7.02,
+    "text": "activation functions and that means to"
+  },
+  {
+    "start": 226.92,
+    "duration": 6.0,
+    "text": "go and the EOS symbol all just send"
+  },
+  {
+    "start": 230.22,
+    "duration": 5.4,
+    "text": "zeros to the activation functions"
+  },
+  {
+    "start": 232.92,
+    "duration": 4.68,
+    "text": "and only the weight values for let's end"
+  },
+  {
+    "start": 235.62,
+    "duration": 4.68,
+    "text": "up at the activation functions because"
+  },
+  {
+    "start": 237.6,
+    "duration": 6.42,
+    "text": "its input value is 1."
+  },
+  {
+    "start": 240.3,
+    "duration": 6.24,
+    "text": "so in this case 1.87 goes to the"
+  },
+  {
+    "start": 244.02,
+    "duration": 6.12,
+    "text": "activation function on the left"
+  },
+  {
+    "start": 246.54,
+    "duration": 5.46,
+    "text": "and 0.09 goes to the activation function"
+  },
+  {
+    "start": 250.14,
+    "duration": 4.68,
+    "text": "on the right"
+  },
+  {
+    "start": 252.0,
+    "duration": 5.28,
+    "text": "in this example the activation functions"
+  },
+  {
+    "start": 254.82,
+    "duration": 4.8,
+    "text": "themselves are just identity functions"
+  },
+  {
+    "start": 257.28,
+    "duration": 4.32,
+    "text": "meaning the output values are the same"
+  },
+  {
+    "start": 259.62,
+    "duration": 4.86,
+    "text": "as the input values"
+  },
+  {
+    "start": 261.6,
+    "duration": 5.04,
+    "text": "in other words if the input value or"
+  },
+  {
+    "start": 264.48,
+    "duration": 6.3,
+    "text": "x-axis coordinate for the activation"
+  },
+  {
+    "start": 266.64,
+    "duration": 7.08,
+    "text": "function on the left is 1.87 then the"
+  },
+  {
+    "start": 270.78,
+    "duration": 5.28,
+    "text": "output value the y-axis coordinate will"
+  },
+  {
+    "start": 273.72,
+    "duration": 4.68,
+    "text": "also be 1.87"
+  },
+  {
+    "start": 276.06,
+    "duration": 6.3,
+    "text": "likewise because the input to the"
+  },
+  {
+    "start": 278.4,
+    "duration": 7.62,
+    "text": "activation function on the right is 0.09"
+  },
+  {
+    "start": 282.36,
+    "duration": 8.52,
+    "text": "the output is also 0.09"
+  },
+  {
+    "start": 286.02,
+    "duration": 7.14,
+    "text": "thus these output values 1.87 and 0.09"
+  },
+  {
+    "start": 290.88,
+    "duration": 4.76,
+    "text": "are the numbers that represent the word"
+  },
+  {
+    "start": 293.16,
+    "duration": 5.1,
+    "text": "leads bam"
+  },
+  {
+    "start": 295.64,
+    "duration": 4.66,
+    "text": "likewise if we want to convert the word"
+  },
+  {
+    "start": 298.26,
+    "duration": 6.3,
+    "text": "go into numbers"
+  },
+  {
+    "start": 300.3,
+    "duration": 7.08,
+    "text": "we set the input value for go to 1. and"
+  },
+  {
+    "start": 304.56,
+    "duration": 6.44,
+    "text": "all of the other inputs to zero"
+  },
+  {
+    "start": 307.38,
+    "duration": 6.6,
+    "text": "and we end up with negative 0.78 and"
+  },
+  {
+    "start": 311.0,
+    "duration": 4.66,
+    "text": "0.27 as the numbers that represent the"
+  },
+  {
+    "start": 313.98,
+    "duration": 4.2,
+    "text": "word go"
+  },
+  {
+    "start": 315.66,
+    "duration": 5.64,
+    "text": "and that is how we use word embedding to"
+  },
+  {
+    "start": 318.18,
+    "duration": 6.12,
+    "text": "convert our input phrase let's go into"
+  },
+  {
+    "start": 321.3,
+    "duration": 5.64,
+    "text": "numbers bam"
+  },
+  {
+    "start": 324.3,
+    "duration": 4.56,
+    "text": "note there is a lot more to say about"
+  },
+  {
+    "start": 326.94,
+    "duration": 3.66,
+    "text": "word embedding so if you're interested"
+  },
+  {
+    "start": 328.86,
+    "duration": 4.68,
+    "text": "check out the quest"
+  },
+  {
+    "start": 330.6,
+    "duration": 4.74,
+    "text": "also note before we move on I want to"
+  },
+  {
+    "start": 333.54,
+    "duration": 4.5,
+    "text": "point out two things"
+  },
+  {
+    "start": 335.34,
+    "duration": 5.82,
+    "text": "first we reuse the same word embedding"
+  },
+  {
+    "start": 338.04,
+    "duration": 5.28,
+    "text": "Network for each input word or symbol"
+  },
+  {
+    "start": 341.16,
+    "duration": 3.84,
+    "text": "in other words the weights in the"
+  },
+  {
+    "start": 343.32,
+    "duration": 4.32,
+    "text": "network for let's"
+  },
+  {
+    "start": 345.0,
+    "duration": 4.5,
+    "text": "are the exact same as the weights in the"
+  },
+  {
+    "start": 347.64,
+    "duration": 4.32,
+    "text": "network for go"
+  },
+  {
+    "start": 349.5,
+    "duration": 5.22,
+    "text": "this means that regardless of how long"
+  },
+  {
+    "start": 351.96,
+    "duration": 4.62,
+    "text": "the input sentence is we just copy and"
+  },
+  {
+    "start": 354.72,
+    "duration": 4.56,
+    "text": "use the exact same word embedding"
+  },
+  {
+    "start": 356.58,
+    "duration": 5.16,
+    "text": "Network for each word or symbol"
+  },
+  {
+    "start": 359.28,
+    "duration": 5.46,
+    "text": "and this gives us flexibility to handle"
+  },
+  {
+    "start": 361.74,
+    "duration": 5.1,
+    "text": "input sentences with different lengths"
+  },
+  {
+    "start": 364.74,
+    "duration": 4.2,
+    "text": "the second thing I want to mention is"
+  },
+  {
+    "start": 366.84,
+    "duration": 3.48,
+    "text": "that all of these weights and all of the"
+  },
+  {
+    "start": 368.94,
+    "duration": 4.02,
+    "text": "other weights we're going to talk about"
+  },
+  {
+    "start": 370.32,
+    "duration": 5.1,
+    "text": "in this Quest are determined using"
+  },
+  {
+    "start": 372.96,
+    "duration": 4.74,
+    "text": "something called back propagation"
+  },
+  {
+    "start": 375.42,
+    "duration": 5.52,
+    "text": "to get a sense of what back propagation"
+  },
+  {
+    "start": 377.7,
+    "duration": 5.7,
+    "text": "does let's imagine we had this data and"
+  },
+  {
+    "start": 380.94,
+    "duration": 4.86,
+    "text": "we wanted to fit a line to it"
+  },
+  {
+    "start": 383.4,
+    "duration": 4.86,
+    "text": "back propagation would start with a line"
+  },
+  {
+    "start": 385.8,
+    "duration": 5.28,
+    "text": "that has a random value for the y-axis"
+  },
+  {
+    "start": 388.26,
+    "duration": 3.72,
+    "text": "intercept and a random value for the"
+  },
+  {
+    "start": 391.08,
+    "duration": 4.26,
+    "text": "slope"
+  },
+  {
+    "start": 391.98,
+    "duration": 5.7,
+    "text": "and then using an iterative process back"
+  },
+  {
+    "start": 395.34,
+    "duration": 5.22,
+    "text": "propagation would change the y-axis"
+  },
+  {
+    "start": 397.68,
+    "duration": 6.26,
+    "text": "intercept and slope one step at a time"
+  },
+  {
+    "start": 400.56,
+    "duration": 5.94,
+    "text": "until it found the optimal values"
+  },
+  {
+    "start": 403.94,
+    "duration": 5.14,
+    "text": "likewise in the context of neural"
+  },
+  {
+    "start": 406.5,
+    "duration": 3.9,
+    "text": "networks each weight starts out as a"
+  },
+  {
+    "start": 409.08,
+    "duration": 3.96,
+    "text": "random number"
+  },
+  {
+    "start": 410.4,
+    "duration": 4.68,
+    "text": "but when we train the Transformer with"
+  },
+  {
+    "start": 413.04,
+    "duration": 3.78,
+    "text": "English phrases and known Spanish"
+  },
+  {
+    "start": 415.08,
+    "duration": 4.56,
+    "text": "translations"
+  },
+  {
+    "start": 416.82,
+    "duration": 5.7,
+    "text": "back propagation optimizes these values"
+  },
+  {
+    "start": 419.64,
+    "duration": 4.44,
+    "text": "one step at a time and results in these"
+  },
+  {
+    "start": 422.52,
+    "duration": 4.8,
+    "text": "final weights"
+  },
+  {
+    "start": 424.08,
+    "duration": 5.4,
+    "text": "also just to be clear the process of"
+  },
+  {
+    "start": 427.32,
+    "duration": 4.5,
+    "text": "optimizing the weights is also called"
+  },
+  {
+    "start": 429.48,
+    "duration": 4.86,
+    "text": "training bam"
+  },
+  {
+    "start": 431.82,
+    "duration": 5.04,
+    "text": "note there is a lot more to be said"
+  },
+  {
+    "start": 434.34,
+    "duration": 4.08,
+    "text": "about training and back propagation so"
+  },
+  {
+    "start": 436.86,
+    "duration": 2.7,
+    "text": "if you're interested check out the"
+  },
+  {
+    "start": 438.42,
+    "duration": 3.6,
+    "text": "quests"
+  },
+  {
+    "start": 439.56,
+    "duration": 4.98,
+    "text": "now because the word embedding networks"
+  },
+  {
+    "start": 442.02,
+    "duration": 4.26,
+    "text": "are taking up the whole screen let's"
+  },
+  {
+    "start": 444.54,
+    "duration": 4.86,
+    "text": "shrink them down and put them in the"
+  },
+  {
+    "start": 446.28,
+    "duration": 6.0,
+    "text": "corner okay and now that we know how to"
+  },
+  {
+    "start": 449.4,
+    "duration": 4.8,
+    "text": "convert words into numbers let's talk"
+  },
+  {
+    "start": 452.28,
+    "duration": 5.7,
+    "text": "about word order"
+  },
+  {
+    "start": 454.2,
+    "duration": 8.88,
+    "text": "for example if Norm said Squatch eats"
+  },
+  {
+    "start": 457.98,
+    "duration": 9.06,
+    "text": "pizza then squash might say yum"
+  },
+  {
+    "start": 463.08,
+    "duration": 8.94,
+    "text": "in contrast if Norm said Pizza eats"
+  },
+  {
+    "start": 467.04,
+    "duration": 7.14,
+    "text": "squash then squash might say yikes"
+  },
+  {
+    "start": 472.02,
+    "duration": 4.38,
+    "text": "so these two phrases"
+  },
+  {
+    "start": 474.18,
+    "duration": 5.88,
+    "text": "Squatch eats Pizza"
+  },
+  {
+    "start": 476.4,
+    "duration": 6.9,
+    "text": "and pizza eats squash use the exact same"
+  },
+  {
+    "start": 480.06,
+    "duration": 6.24,
+    "text": "words but have very different meanings"
+  },
+  {
+    "start": 483.3,
+    "duration": 5.76,
+    "text": "so keeping track of word order is super"
+  },
+  {
+    "start": 486.3,
+    "duration": 4.8,
+    "text": "important so let's talk about positional"
+  },
+  {
+    "start": 489.06,
+    "duration": 4.32,
+    "text": "encoding which is a technique that"
+  },
+  {
+    "start": 491.1,
+    "duration": 3.36,
+    "text": "Transformers use to keep track of word"
+  },
+  {
+    "start": 493.38,
+    "duration": 3.12,
+    "text": "order"
+  },
+  {
+    "start": 494.46,
+    "duration": 4.38,
+    "text": "we'll start by showing how to add"
+  },
+  {
+    "start": 496.5,
+    "duration": 4.98,
+    "text": "positional encoding to the first phrase"
+  },
+  {
+    "start": 498.84,
+    "duration": 5.1,
+    "text": "Squatch eats Pizza"
+  },
+  {
+    "start": 501.48,
+    "duration": 4.62,
+    "text": "note there are a bunch of ways to do"
+  },
+  {
+    "start": 503.94,
+    "duration": 4.74,
+    "text": "positional encoding but we're just going"
+  },
+  {
+    "start": 506.1,
+    "duration": 4.92,
+    "text": "to talk about one popular method"
+  },
+  {
+    "start": 508.68,
+    "duration": 5.34,
+    "text": "that said the first thing we do is"
+  },
+  {
+    "start": 511.02,
+    "duration": 5.46,
+    "text": "convert the words squash eats pizza into"
+  },
+  {
+    "start": 514.02,
+    "duration": 4.5,
+    "text": "numbers using word embedding"
+  },
+  {
+    "start": 516.48,
+    "duration": 4.5,
+    "text": "in this example we've got a new"
+  },
+  {
+    "start": 518.52,
+    "duration": 4.86,
+    "text": "vocabulary and we're creating four word"
+  },
+  {
+    "start": 520.98,
+    "duration": 5.4,
+    "text": "embedding values per word"
+  },
+  {
+    "start": 523.38,
+    "duration": 5.46,
+    "text": "however in practice people often create"
+  },
+  {
+    "start": 526.38,
+    "duration": 4.44,
+    "text": "hundreds or even thousands of embedding"
+  },
+  {
+    "start": 528.84,
+    "duration": 4.08,
+    "text": "values per word"
+  },
+  {
+    "start": 530.82,
+    "duration": 4.14,
+    "text": "now we add a set of numbers that"
+  },
+  {
+    "start": 532.92,
+    "duration": 5.1,
+    "text": "correspond to word order to the"
+  },
+  {
+    "start": 534.96,
+    "duration": 5.52,
+    "text": "embedding values for each word hey Josh"
+  },
+  {
+    "start": 538.02,
+    "duration": 4.44,
+    "text": "where do the numbers that correspond to"
+  },
+  {
+    "start": 540.48,
+    "duration": 4.44,
+    "text": "word order come from"
+  },
+  {
+    "start": 542.46,
+    "duration": 4.62,
+    "text": "in this case the numbers that represent"
+  },
+  {
+    "start": 544.92,
+    "duration": 5.52,
+    "text": "the word order come from a sequence of"
+  },
+  {
+    "start": 547.08,
+    "duration": 5.76,
+    "text": "alternating sine and cosine squiggles"
+  },
+  {
+    "start": 550.44,
+    "duration": 5.22,
+    "text": "each squiggle gives a specific position"
+  },
+  {
+    "start": 552.84,
+    "duration": 5.88,
+    "text": "values for each word's embeddings"
+  },
+  {
+    "start": 555.66,
+    "duration": 5.28,
+    "text": "for example the y-axis values on the"
+  },
+  {
+    "start": 558.72,
+    "duration": 4.56,
+    "text": "green squiggle give us position encoding"
+  },
+  {
+    "start": 560.94,
+    "duration": 3.44,
+    "text": "values for the first embeddings for each"
+  },
+  {
+    "start": 563.28,
+    "duration": 4.02,
+    "text": "word"
+  },
+  {
+    "start": 564.38,
+    "duration": 5.56,
+    "text": "specifically for the first word which"
+  },
+  {
+    "start": 567.3,
+    "duration": 5.28,
+    "text": "has an x-axis coordinate all the way to"
+  },
+  {
+    "start": 569.94,
+    "duration": 4.56,
+    "text": "the left of the green squiggle the"
+  },
+  {
+    "start": 572.58,
+    "duration": 5.4,
+    "text": "position value for the first embedding"
+  },
+  {
+    "start": 574.5,
+    "duration": 5.34,
+    "text": "is the y-axis coordinate zero"
+  },
+  {
+    "start": 577.98,
+    "duration": 4.14,
+    "text": "the position value for the second"
+  },
+  {
+    "start": 579.84,
+    "duration": 4.92,
+    "text": "embedding comes from the orange squiggle"
+  },
+  {
+    "start": 582.12,
+    "duration": 4.8,
+    "text": "and the y-axis coordinate on the orange"
+  },
+  {
+    "start": 584.76,
+    "duration": 4.14,
+    "text": "squiggle that corresponds to the first"
+  },
+  {
+    "start": 586.92,
+    "duration": 4.68,
+    "text": "word is one"
+  },
+  {
+    "start": 588.9,
+    "duration": 4.82,
+    "text": "likewise the blue squiggle which is more"
+  },
+  {
+    "start": 591.6,
+    "duration": 4.8,
+    "text": "spread out than the first two squiggles"
+  },
+  {
+    "start": 593.72,
+    "duration": 4.66,
+    "text": "gives us the position value for the"
+  },
+  {
+    "start": 596.4,
+    "duration": 4.14,
+    "text": "third embedding value which for the"
+  },
+  {
+    "start": 598.38,
+    "duration": 4.74,
+    "text": "first word is zero"
+  },
+  {
+    "start": 600.54,
+    "duration": 5.1,
+    "text": "lastly the red squiggle gives us the"
+  },
+  {
+    "start": 603.12,
+    "duration": 6.0,
+    "text": "position value for the fourth embedding"
+  },
+  {
+    "start": 605.64,
+    "duration": 5.88,
+    "text": "which for the first word is one"
+  },
+  {
+    "start": 609.12,
+    "duration": 4.92,
+    "text": "thus the position values for the first"
+  },
+  {
+    "start": 611.52,
+    "duration": 4.74,
+    "text": "word come from the corresponding y-axis"
+  },
+  {
+    "start": 614.04,
+    "duration": 4.86,
+    "text": "coordinates on the squiggles"
+  },
+  {
+    "start": 616.26,
+    "duration": 5.64,
+    "text": "now to get the position values for the"
+  },
+  {
+    "start": 618.9,
+    "duration": 4.68,
+    "text": "second word we simply use the y-axis"
+  },
+  {
+    "start": 621.9,
+    "duration": 4.08,
+    "text": "coordinates on the squiggles that"
+  },
+  {
+    "start": 623.58,
+    "duration": 4.08,
+    "text": "correspond to the x-axis coordinate for"
+  },
+  {
+    "start": 625.98,
+    "duration": 4.38,
+    "text": "the second word"
+  },
+  {
+    "start": 627.66,
+    "duration": 5.52,
+    "text": "lastly to get the position values for"
+  },
+  {
+    "start": 630.36,
+    "duration": 4.38,
+    "text": "the third word we use the y-axis"
+  },
+  {
+    "start": 633.18,
+    "duration": 3.84,
+    "text": "coordinates on the squiggles that"
+  },
+  {
+    "start": 634.74,
+    "duration": 3.96,
+    "text": "correspond to the x-axis coordinate for"
+  },
+  {
+    "start": 637.02,
+    "duration": 4.26,
+    "text": "the third word"
+  },
+  {
+    "start": 638.7,
+    "duration": 4.92,
+    "text": "note because the sine and cosine"
+  },
+  {
+    "start": 641.28,
+    "duration": 4.2,
+    "text": "squiggles are repetitive it's possible"
+  },
+  {
+    "start": 643.62,
+    "duration": 5.16,
+    "text": "that two words might get the same"
+  },
+  {
+    "start": 645.48,
+    "duration": 5.7,
+    "text": "position or y-axis values"
+  },
+  {
+    "start": 648.78,
+    "duration": 5.34,
+    "text": "for example the second and third words"
+  },
+  {
+    "start": 651.18,
+    "duration": 4.56,
+    "text": "both got negative 0.9 for the first"
+  },
+  {
+    "start": 654.12,
+    "duration": 4.38,
+    "text": "position value"
+  },
+  {
+    "start": 655.74,
+    "duration": 5.52,
+    "text": "however because the squiggles get wider"
+  },
+  {
+    "start": 658.5,
+    "duration": 4.98,
+    "text": "for larger embedding positions and the"
+  },
+  {
+    "start": 661.26,
+    "duration": 4.08,
+    "text": "more embedding values we have then the"
+  },
+  {
+    "start": 663.48,
+    "duration": 4.68,
+    "text": "wider the squiggles get"
+  },
+  {
+    "start": 665.34,
+    "duration": 5.1,
+    "text": "then even with a repeat value here and"
+  },
+  {
+    "start": 668.16,
+    "duration": 5.18,
+    "text": "there we end up with a unique sequence"
+  },
+  {
+    "start": 670.44,
+    "duration": 6.06,
+    "text": "of position values for each word"
+  },
+  {
+    "start": 673.34,
+    "duration": 5.74,
+    "text": "thus each input word ends up with a"
+  },
+  {
+    "start": 676.5,
+    "duration": 4.8,
+    "text": "unique sequence of position values"
+  },
+  {
+    "start": 679.08,
+    "duration": 4.32,
+    "text": "now all we have to do is add the"
+  },
+  {
+    "start": 681.3,
+    "duration": 4.68,
+    "text": "position values to the embedding values"
+  },
+  {
+    "start": 683.4,
+    "duration": 4.8,
+    "text": "and we end up with the word embeddings"
+  },
+  {
+    "start": 685.98,
+    "duration": 5.9,
+    "text": "plus positional encoding for the whole"
+  },
+  {
+    "start": 688.2,
+    "duration": 5.46,
+    "text": "sentence Squatch eats Pizza"
+  },
+  {
+    "start": 691.88,
+    "duration": 4.42,
+    "text": "yum"
+  },
+  {
+    "start": 693.66,
+    "duration": 7.02,
+    "text": "note if we reverse the order of the"
+  },
+  {
+    "start": 696.3,
+    "duration": 6.3,
+    "text": "input words to be Pizza eats squash then"
+  },
+  {
+    "start": 700.68,
+    "duration": 4.68,
+    "text": "the embeddings for the first and third"
+  },
+  {
+    "start": 702.6,
+    "duration": 5.1,
+    "text": "words get swapped but the positional"
+  },
+  {
+    "start": 705.36,
+    "duration": 5.64,
+    "text": "values for the first second and third"
+  },
+  {
+    "start": 707.7,
+    "duration": 5.82,
+    "text": "word stay the same and when we add the"
+  },
+  {
+    "start": 711.0,
+    "duration": 4.92,
+    "text": "positional values to the embeddings"
+  },
+  {
+    "start": 713.52,
+    "duration": 5.46,
+    "text": "we end up with new positional encoding"
+  },
+  {
+    "start": 715.92,
+    "duration": 5.52,
+    "text": "for the first and third words and the"
+  },
+  {
+    "start": 718.98,
+    "duration": 3.6,
+    "text": "second word since it didn't move stays"
+  },
+  {
+    "start": 721.44,
+    "duration": 3.72,
+    "text": "the same"
+  },
+  {
+    "start": 722.58,
+    "duration": 4.56,
+    "text": "thus positional encoding allows a"
+  },
+  {
+    "start": 725.16,
+    "duration": 4.98,
+    "text": "Transformer to keep track of word order"
+  },
+  {
+    "start": 727.14,
+    "duration": 3.0,
+    "text": "bam"
+  },
+  {
+    "start": 730.2,
+    "duration": 4.02,
+    "text": "now let's go back to our simple example"
+  },
+  {
+    "start": 732.42,
+    "duration": 4.5,
+    "text": "where we are just trying to translate"
+  },
+  {
+    "start": 734.22,
+    "duration": 4.8,
+    "text": "the English sentence let's go"
+  },
+  {
+    "start": 736.92,
+    "duration": 3.3,
+    "text": "and add position values to the word"
+  },
+  {
+    "start": 739.02,
+    "duration": 3.3,
+    "text": "embeddings"
+  },
+  {
+    "start": 740.22,
+    "duration": 5.64,
+    "text": "the first embedding for the first word"
+  },
+  {
+    "start": 742.32,
+    "duration": 6.6,
+    "text": "Let's gets zero and the second embedding"
+  },
+  {
+    "start": 745.86,
+    "duration": 7.26,
+    "text": "gets one and the first embedding for the"
+  },
+  {
+    "start": 748.92,
+    "duration": 7.32,
+    "text": "second word go gets a negative 0.9 and"
+  },
+  {
+    "start": 753.12,
+    "duration": 5.46,
+    "text": "the second embedding gets 0.4"
+  },
+  {
+    "start": 756.24,
+    "duration": 6.54,
+    "text": "and now we just do the math to get the"
+  },
+  {
+    "start": 758.58,
+    "duration": 6.6,
+    "text": "positional encoding for both words bam"
+  },
+  {
+    "start": 762.78,
+    "duration": 4.68,
+    "text": "now because we're going to need all the"
+  },
+  {
+    "start": 765.18,
+    "duration": 5.28,
+    "text": "space we can get let's consolidate the"
+  },
+  {
+    "start": 767.46,
+    "duration": 5.4,
+    "text": "math in the diagram and let the sine and"
+  },
+  {
+    "start": 770.46,
+    "duration": 4.32,
+    "text": "cosine and plus symbols represent the"
+  },
+  {
+    "start": 772.86,
+    "duration": 4.08,
+    "text": "positional encoding"
+  },
+  {
+    "start": 774.78,
+    "duration": 4.92,
+    "text": "now that we know how to keep track of"
+  },
+  {
+    "start": 776.94,
+    "duration": 4.98,
+    "text": "each word's position let's talk about"
+  },
+  {
+    "start": 779.7,
+    "duration": 4.92,
+    "text": "how a Transformer keeps track of the"
+  },
+  {
+    "start": 781.92,
+    "duration": 5.46,
+    "text": "relationships among words"
+  },
+  {
+    "start": 784.62,
+    "duration": 6.3,
+    "text": "for example if the input sentence was"
+  },
+  {
+    "start": 787.38,
+    "duration": 7.62,
+    "text": "this the pizza came out of the oven and"
+  },
+  {
+    "start": 790.92,
+    "duration": 7.74,
+    "text": "it tasted good then this word it could"
+  },
+  {
+    "start": 795.0,
+    "duration": 7.14,
+    "text": "refer to pizza or potentially it could"
+  },
+  {
+    "start": 798.66,
+    "duration": 6.06,
+    "text": "refer to the word oven Josh I've heard"
+  },
+  {
+    "start": 802.14,
+    "duration": 6.06,
+    "text": "of good tasting pizza but never a good"
+  },
+  {
+    "start": 804.72,
+    "duration": 5.22,
+    "text": "tasting oven I know Squatch that's why"
+  },
+  {
+    "start": 808.2,
+    "duration": 4.38,
+    "text": "it's important that the Transformer"
+  },
+  {
+    "start": 809.94,
+    "duration": 5.76,
+    "text": "correctly Associates the word it with"
+  },
+  {
+    "start": 812.58,
+    "duration": 4.8,
+    "text": "pizza the good news is that Transformers"
+  },
+  {
+    "start": 815.7,
+    "duration": 3.84,
+    "text": "have something called self-attention"
+  },
+  {
+    "start": 817.38,
+    "duration": 4.44,
+    "text": "which is a mechanism to correctly"
+  },
+  {
+    "start": 819.54,
+    "duration": 3.48,
+    "text": "associate the word ID with the word"
+  },
+  {
+    "start": 821.82,
+    "duration": 4.44,
+    "text": "Pizza"
+  },
+  {
+    "start": 823.02,
+    "duration": 5.76,
+    "text": "in general terms self-attention works by"
+  },
+  {
+    "start": 826.26,
+    "duration": 4.74,
+    "text": "seeing how similar each word is to all"
+  },
+  {
+    "start": 828.78,
+    "duration": 5.28,
+    "text": "of the words in the sentence including"
+  },
+  {
+    "start": 831.0,
+    "duration": 5.28,
+    "text": "itself for example self-attention"
+  },
+  {
+    "start": 834.06,
+    "duration": 5.1,
+    "text": "calculates the similarity between the"
+  },
+  {
+    "start": 836.28,
+    "duration": 6.18,
+    "text": "first word the and all of the words in"
+  },
+  {
+    "start": 839.16,
+    "duration": 5.46,
+    "text": "the sentence including itself"
+  },
+  {
+    "start": 842.46,
+    "duration": 4.14,
+    "text": "and self-attention calculates these"
+  },
+  {
+    "start": 844.62,
+    "duration": 3.36,
+    "text": "similarities for every word in the"
+  },
+  {
+    "start": 846.6,
+    "duration": 3.54,
+    "text": "sentence"
+  },
+  {
+    "start": 847.98,
+    "duration": 4.32,
+    "text": "once the similarities are calculated"
+  },
+  {
+    "start": 850.14,
+    "duration": 4.98,
+    "text": "they are used to determine how the"
+  },
+  {
+    "start": 852.3,
+    "duration": 5.22,
+    "text": "Transformer encodes each word"
+  },
+  {
+    "start": 855.12,
+    "duration": 4.86,
+    "text": "for example if you looked at a lot of"
+  },
+  {
+    "start": 857.52,
+    "duration": 4.86,
+    "text": "sentences about pizza and the word ID"
+  },
+  {
+    "start": 859.98,
+    "duration": 4.08,
+    "text": "was more commonly associated with pizza"
+  },
+  {
+    "start": 862.38,
+    "duration": 4.44,
+    "text": "than oven"
+  },
+  {
+    "start": 864.06,
+    "duration": 4.86,
+    "text": "then the similarity score for pizza will"
+  },
+  {
+    "start": 866.82,
+    "duration": 4.2,
+    "text": "cause it to have a larger impact on how"
+  },
+  {
+    "start": 868.92,
+    "duration": 3.36,
+    "text": "the word ID is encoded by the"
+  },
+  {
+    "start": 871.02,
+    "duration": 2.82,
+    "text": "Transformer"
+  },
+  {
+    "start": 872.28,
+    "duration": 3.84,
+    "text": "bam"
+  },
+  {
+    "start": 873.84,
+    "duration": 4.56,
+    "text": "and now that we know the main ideas of"
+  },
+  {
+    "start": 876.12,
+    "duration": 3.54,
+    "text": "how self-attention Works let's look at"
+  },
+  {
+    "start": 878.4,
+    "duration": 3.36,
+    "text": "the details"
+  },
+  {
+    "start": 879.66,
+    "duration": 4.2,
+    "text": "so let's go back to our simple example"
+  },
+  {
+    "start": 881.76,
+    "duration": 5.64,
+    "text": "where we had just added positional"
+  },
+  {
+    "start": 883.86,
+    "duration": 5.82,
+    "text": "encoding to the words let's and go"
+  },
+  {
+    "start": 887.4,
+    "duration": 4.26,
+    "text": "the first thing we do is multiply the"
+  },
+  {
+    "start": 889.68,
+    "duration": 5.16,
+    "text": "position encoded values for the word"
+  },
+  {
+    "start": 891.66,
+    "duration": 5.4,
+    "text": "let's by a pair of weights and we add"
+  },
+  {
+    "start": 894.84,
+    "duration": 3.9,
+    "text": "those products together to get Negative"
+  },
+  {
+    "start": 897.06,
+    "duration": 3.66,
+    "text": "1.0"
+  },
+  {
+    "start": 898.74,
+    "duration": 5.94,
+    "text": "then we do the same thing with a"
+  },
+  {
+    "start": 900.72,
+    "duration": 6.48,
+    "text": "different pair of weights to get 3.7"
+  },
+  {
+    "start": 904.68,
+    "duration": 4.62,
+    "text": "we do this twice because we started out"
+  },
+  {
+    "start": 907.2,
+    "duration": 5.28,
+    "text": "with two position encoded values that"
+  },
+  {
+    "start": 909.3,
+    "duration": 5.94,
+    "text": "represent the word leads and after doing"
+  },
+  {
+    "start": 912.48,
+    "duration": 5.46,
+    "text": "the math two times we still have two"
+  },
+  {
+    "start": 915.24,
+    "duration": 5.1,
+    "text": "values representing the word leads"
+  },
+  {
+    "start": 917.94,
+    "duration": 4.98,
+    "text": "Josh I don't get it"
+  },
+  {
+    "start": 920.34,
+    "duration": 5.28,
+    "text": "if we want two values to represent let's"
+  },
+  {
+    "start": 922.92,
+    "duration": 3.9,
+    "text": "why don't we just use the two values we"
+  },
+  {
+    "start": 925.62,
+    "duration": 3.48,
+    "text": "started with"
+  },
+  {
+    "start": 926.82,
+    "duration": 6.54,
+    "text": "that's a great question Squatch and"
+  },
+  {
+    "start": 929.1,
+    "duration": 7.14,
+    "text": "we'll answer it in a little bit grr"
+  },
+  {
+    "start": 933.36,
+    "duration": 5.16,
+    "text": "anyway for now just know that we have"
+  },
+  {
+    "start": 936.24,
+    "duration": 4.26,
+    "text": "these two new values to represent the"
+  },
+  {
+    "start": 938.52,
+    "duration": 4.68,
+    "text": "word let's and in Transformer"
+  },
+  {
+    "start": 940.5,
+    "duration": 5.28,
+    "text": "terminology we call them query values"
+  },
+  {
+    "start": 943.2,
+    "duration": 5.4,
+    "text": "and now that we have query values for"
+  },
+  {
+    "start": 945.78,
+    "duration": 5.16,
+    "text": "the word let's use them to calculate the"
+  },
+  {
+    "start": 948.6,
+    "duration": 3.48,
+    "text": "similarity between itself and the word"
+  },
+  {
+    "start": 950.94,
+    "duration": 3.6,
+    "text": "go"
+  },
+  {
+    "start": 952.08,
+    "duration": 5.16,
+    "text": "and we do this by creating two new"
+  },
+  {
+    "start": 954.54,
+    "duration": 4.8,
+    "text": "values just like we did for the query to"
+  },
+  {
+    "start": 957.24,
+    "duration": 4.26,
+    "text": "represent the word let's"
+  },
+  {
+    "start": 959.34,
+    "duration": 4.38,
+    "text": "and we create two new values to"
+  },
+  {
+    "start": 961.5,
+    "duration": 5.1,
+    "text": "represent the word go"
+  },
+  {
+    "start": 963.72,
+    "duration": 4.14,
+    "text": "both sets of new values are called key"
+  },
+  {
+    "start": 966.6,
+    "duration": 3.0,
+    "text": "values"
+  },
+  {
+    "start": 967.86,
+    "duration": 5.16,
+    "text": "and we use them to calculate"
+  },
+  {
+    "start": 969.6,
+    "duration": 5.58,
+    "text": "similarities with the query for let's"
+  },
+  {
+    "start": 973.02,
+    "duration": 4.74,
+    "text": "one way to calculate similarities"
+  },
+  {
+    "start": 975.18,
+    "duration": 5.22,
+    "text": "between the query and the keys is to"
+  },
+  {
+    "start": 977.76,
+    "duration": 5.1,
+    "text": "calculate something called a DOT product"
+  },
+  {
+    "start": 980.4,
+    "duration": 4.8,
+    "text": "for example in order to calculate the"
+  },
+  {
+    "start": 982.86,
+    "duration": 4.38,
+    "text": "dot product similarity between the query"
+  },
+  {
+    "start": 985.2,
+    "duration": 4.5,
+    "text": "and key for let's"
+  },
+  {
+    "start": 987.24,
+    "duration": 3.72,
+    "text": "we simply multiply each pair of numbers"
+  },
+  {
+    "start": 989.7,
+    "duration": 5.16,
+    "text": "together"
+  },
+  {
+    "start": 990.96,
+    "duration": 6.24,
+    "text": "and then add the products to get 11.7"
+  },
+  {
+    "start": 994.86,
+    "duration": 4.44,
+    "text": "likewise we can calculate the dot"
+  },
+  {
+    "start": 997.2,
+    "duration": 4.62,
+    "text": "product similarity between the query for"
+  },
+  {
+    "start": 999.3,
+    "duration": 4.5,
+    "text": "let's and the key for go"
+  },
+  {
+    "start": 1001.82,
+    "duration": 3.24,
+    "text": "by multiplying the pairs of numbers"
+  },
+  {
+    "start": 1003.8,
+    "duration": 3.6,
+    "text": "together"
+  },
+  {
+    "start": 1005.06,
+    "duration": 4.14,
+    "text": "and adding the products to get negative"
+  },
+  {
+    "start": 1007.4,
+    "duration": 4.26,
+    "text": "2.6"
+  },
+  {
+    "start": 1009.2,
+    "duration": 5.06,
+    "text": "the relatively large similarity value"
+  },
+  {
+    "start": 1011.66,
+    "duration": 6.18,
+    "text": "for let's relative to itself"
+  },
+  {
+    "start": 1014.26,
+    "duration": 6.4,
+    "text": "11.7 compared to the relatively small"
+  },
+  {
+    "start": 1017.84,
+    "duration": 5.22,
+    "text": "value for lets relative to the word go"
+  },
+  {
+    "start": 1020.66,
+    "duration": 5.04,
+    "text": "negative 2.6"
+  },
+  {
+    "start": 1023.06,
+    "duration": 6.0,
+    "text": "tells us that let's is much more similar"
+  },
+  {
+    "start": 1025.7,
+    "duration": 5.82,
+    "text": "to itself than it is to the word go"
+  },
+  {
+    "start": 1029.06,
+    "duration": 4.92,
+    "text": "that said if you remember the example"
+  },
+  {
+    "start": 1031.52,
+    "duration": 3.9,
+    "text": "where the word it could relate to pizza"
+  },
+  {
+    "start": 1033.98,
+    "duration": 3.9,
+    "text": "or oven"
+  },
+  {
+    "start": 1035.42,
+    "duration": 4.86,
+    "text": "the word it should have a relatively"
+  },
+  {
+    "start": 1037.88,
+    "duration": 5.1,
+    "text": "large similarity value with respect to"
+  },
+  {
+    "start": 1040.28,
+    "duration": 4.74,
+    "text": "the word Pizza since it refers to pizza"
+  },
+  {
+    "start": 1042.98,
+    "duration": 4.44,
+    "text": "and not oven"
+  },
+  {
+    "start": 1045.02,
+    "duration": 4.62,
+    "text": "note there's a lot to be said about"
+  },
+  {
+    "start": 1047.42,
+    "duration": 4.08,
+    "text": "calculating similarities in this context"
+  },
+  {
+    "start": 1049.64,
+    "duration": 4.5,
+    "text": "and the dot product so if you're"
+  },
+  {
+    "start": 1051.5,
+    "duration": 5.16,
+    "text": "interested check out the quests anyway"
+  },
+  {
+    "start": 1054.14,
+    "duration": 5.34,
+    "text": "since let's is much more similar to"
+  },
+  {
+    "start": 1056.66,
+    "duration": 4.92,
+    "text": "itself than it is to the word go"
+  },
+  {
+    "start": 1059.48,
+    "duration": 4.32,
+    "text": "then we want let's to have more"
+  },
+  {
+    "start": 1061.58,
+    "duration": 3.48,
+    "text": "influence on its encoding than the word"
+  },
+  {
+    "start": 1063.8,
+    "duration": 3.42,
+    "text": "go"
+  },
+  {
+    "start": 1065.06,
+    "duration": 3.9,
+    "text": "and we do this by first running the"
+  },
+  {
+    "start": 1067.22,
+    "duration": 4.44,
+    "text": "similarities course through something"
+  },
+  {
+    "start": 1068.96,
+    "duration": 5.82,
+    "text": "called a soft Max function"
+  },
+  {
+    "start": 1071.66,
+    "duration": 5.16,
+    "text": "the main idea of a soft Max function is"
+  },
+  {
+    "start": 1074.78,
+    "duration": 4.92,
+    "text": "that it preserves the order of the input"
+  },
+  {
+    "start": 1076.82,
+    "duration": 5.58,
+    "text": "values from low to high and translates"
+  },
+  {
+    "start": 1079.7,
+    "duration": 4.32,
+    "text": "them into numbers between 0 and 1 that"
+  },
+  {
+    "start": 1082.4,
+    "duration": 3.66,
+    "text": "add up to one"
+  },
+  {
+    "start": 1084.02,
+    "duration": 4.62,
+    "text": "so we can think of the output of the"
+  },
+  {
+    "start": 1086.06,
+    "duration": 5.04,
+    "text": "softmax function as a way to determine"
+  },
+  {
+    "start": 1088.64,
+    "duration": 5.22,
+    "text": "what percentage of each input word we"
+  },
+  {
+    "start": 1091.1,
+    "duration": 5.4,
+    "text": "should use to encode the word let's"
+  },
+  {
+    "start": 1093.86,
+    "duration": 5.1,
+    "text": "in this case because let's is so much"
+  },
+  {
+    "start": 1096.5,
+    "duration": 4.74,
+    "text": "more similar to itself than the word go"
+  },
+  {
+    "start": 1098.96,
+    "duration": 4.86,
+    "text": "we'll use one hundred percent of the"
+  },
+  {
+    "start": 1101.24,
+    "duration": 5.28,
+    "text": "word let's to encode less"
+  },
+  {
+    "start": 1103.82,
+    "duration": 4.44,
+    "text": "and zero percent of the word go to"
+  },
+  {
+    "start": 1106.52,
+    "duration": 4.08,
+    "text": "encode the word let's"
+  },
+  {
+    "start": 1108.26,
+    "duration": 4.38,
+    "text": "note there's a lot more to be said about"
+  },
+  {
+    "start": 1110.6,
+    "duration": 4.2,
+    "text": "the soft Max function so if you're"
+  },
+  {
+    "start": 1112.64,
+    "duration": 5.34,
+    "text": "interested check out the quest"
+  },
+  {
+    "start": 1114.8,
+    "duration": 5.7,
+    "text": "anyway because we want 100 of the word"
+  },
+  {
+    "start": 1117.98,
+    "duration": 5.16,
+    "text": "let's to encode let's"
+  },
+  {
+    "start": 1120.5,
+    "duration": 5.64,
+    "text": "we create two more values that will"
+  },
+  {
+    "start": 1123.14,
+    "duration": 4.26,
+    "text": "cleverly call values to represent the"
+  },
+  {
+    "start": 1126.14,
+    "duration": 3.3,
+    "text": "word let's"
+  },
+  {
+    "start": 1127.4,
+    "duration": 4.38,
+    "text": "and scale the values that represent"
+  },
+  {
+    "start": 1129.44,
+    "duration": 4.68,
+    "text": "let's by 1.0"
+  },
+  {
+    "start": 1131.78,
+    "duration": 4.02,
+    "text": "then we create two values to represent"
+  },
+  {
+    "start": 1134.12,
+    "duration": 5.22,
+    "text": "the word go"
+  },
+  {
+    "start": 1135.8,
+    "duration": 7.02,
+    "text": "and scale those values by 0.0"
+  },
+  {
+    "start": 1139.34,
+    "duration": 5.82,
+    "text": "lastly we add the scaled values together"
+  },
+  {
+    "start": 1142.82,
+    "duration": 5.28,
+    "text": "and these sums which combine separate"
+  },
+  {
+    "start": 1145.16,
+    "duration": 5.64,
+    "text": "encodings for both input words let's and"
+  },
+  {
+    "start": 1148.1,
+    "duration": 5.76,
+    "text": "go relative to their similarity to Let's"
+  },
+  {
+    "start": 1150.8,
+    "duration": 5.16,
+    "text": "are the self-attention values for leads"
+  },
+  {
+    "start": 1153.86,
+    "duration": 4.26,
+    "text": "bam"
+  },
+  {
+    "start": 1155.96,
+    "duration": 4.74,
+    "text": "now that we have self-attention values"
+  },
+  {
+    "start": 1158.12,
+    "duration": 4.86,
+    "text": "for the word let's it's time to"
+  },
+  {
+    "start": 1160.7,
+    "duration": 4.62,
+    "text": "calculate them for the word go"
+  },
+  {
+    "start": 1162.98,
+    "duration": 5.94,
+    "text": "the good news is that we don't need to"
+  },
+  {
+    "start": 1165.32,
+    "duration": 5.82,
+    "text": "recalculate the keys and values instead"
+  },
+  {
+    "start": 1168.92,
+    "duration": 4.74,
+    "text": "all we need to do is create the query"
+  },
+  {
+    "start": 1171.14,
+    "duration": 4.32,
+    "text": "that represents the word go"
+  },
+  {
+    "start": 1173.66,
+    "duration": 4.02,
+    "text": "and do the math"
+  },
+  {
+    "start": 1175.46,
+    "duration": 4.62,
+    "text": "by first calculating the similarity"
+  },
+  {
+    "start": 1177.68,
+    "duration": 5.22,
+    "text": "scores between the new query and the"
+  },
+  {
+    "start": 1180.08,
+    "duration": 4.8,
+    "text": "keys and then run the similarity scores"
+  },
+  {
+    "start": 1182.9,
+    "duration": 4.32,
+    "text": "through a softmax"
+  },
+  {
+    "start": 1184.88,
+    "duration": 4.5,
+    "text": "and then scale the values"
+  },
+  {
+    "start": 1187.22,
+    "duration": 4.32,
+    "text": "and then add them together"
+  },
+  {
+    "start": 1189.38,
+    "duration": 4.38,
+    "text": "and we end up with the self-attention"
+  },
+  {
+    "start": 1191.54,
+    "duration": 5.16,
+    "text": "values for go"
+  },
+  {
+    "start": 1193.76,
+    "duration": 5.76,
+    "text": "note before we move on I want to point"
+  },
+  {
+    "start": 1196.7,
+    "duration": 4.98,
+    "text": "out a few details about self-attention"
+  },
+  {
+    "start": 1199.52,
+    "duration": 4.44,
+    "text": "first the weights that we use to"
+  },
+  {
+    "start": 1201.68,
+    "duration": 5.1,
+    "text": "calculate the self-attention queries are"
+  },
+  {
+    "start": 1203.96,
+    "duration": 5.76,
+    "text": "the exact same for let's and go"
+  },
+  {
+    "start": 1206.78,
+    "duration": 4.26,
+    "text": "in other words this example uses one set"
+  },
+  {
+    "start": 1209.72,
+    "duration": 3.96,
+    "text": "of weights for calculating"
+  },
+  {
+    "start": 1211.04,
+    "duration": 4.98,
+    "text": "self-attention queries regardless of how"
+  },
+  {
+    "start": 1213.68,
+    "duration": 5.16,
+    "text": "many words are in the input"
+  },
+  {
+    "start": 1216.02,
+    "duration": 5.4,
+    "text": "likewise we reuse the sets of weights"
+  },
+  {
+    "start": 1218.84,
+    "duration": 5.04,
+    "text": "for calculating self-attention keys and"
+  },
+  {
+    "start": 1221.42,
+    "duration": 4.62,
+    "text": "values for each input word"
+  },
+  {
+    "start": 1223.88,
+    "duration": 4.8,
+    "text": "this means that no matter how many words"
+  },
+  {
+    "start": 1226.04,
+    "duration": 5.34,
+    "text": "are input into the Transformer"
+  },
+  {
+    "start": 1228.68,
+    "duration": 5.4,
+    "text": "we just reuse the same sets of weights"
+  },
+  {
+    "start": 1231.38,
+    "duration": 4.08,
+    "text": "for self-attention queries keys and"
+  },
+  {
+    "start": 1234.08,
+    "duration": 3.42,
+    "text": "values"
+  },
+  {
+    "start": 1235.46,
+    "duration": 4.2,
+    "text": "the other thing I want to point out is"
+  },
+  {
+    "start": 1237.5,
+    "duration": 4.68,
+    "text": "that we can calculate the queries keys"
+  },
+  {
+    "start": 1239.66,
+    "duration": 3.66,
+    "text": "and values for each word at the same"
+  },
+  {
+    "start": 1242.18,
+    "duration": 3.24,
+    "text": "time"
+  },
+  {
+    "start": 1243.32,
+    "duration": 4.5,
+    "text": "in other words we don't have to"
+  },
+  {
+    "start": 1245.42,
+    "duration": 5.1,
+    "text": "calculate the query key and value for"
+  },
+  {
+    "start": 1247.82,
+    "duration": 4.02,
+    "text": "the first word first before moving on to"
+  },
+  {
+    "start": 1250.52,
+    "duration": 3.3,
+    "text": "the second word"
+  },
+  {
+    "start": 1251.84,
+    "duration": 3.98,
+    "text": "and because we can do all of the"
+  },
+  {
+    "start": 1253.82,
+    "duration": 4.2,
+    "text": "computation at the same time"
+  },
+  {
+    "start": 1255.82,
+    "duration": 5.2,
+    "text": "Transformers can take advantage of"
+  },
+  {
+    "start": 1258.02,
+    "duration": 5.1,
+    "text": "parallel Computing and run fast"
+  },
+  {
+    "start": 1261.02,
+    "duration": 4.56,
+    "text": "now that we understand the details of"
+  },
+  {
+    "start": 1263.12,
+    "duration": 4.08,
+    "text": "how self-attention Works let's shrink it"
+  },
+  {
+    "start": 1265.58,
+    "duration": 5.82,
+    "text": "down so we can keep building our"
+  },
+  {
+    "start": 1267.2,
+    "duration": 6.72,
+    "text": "Transformer bam Josh you forgot"
+  },
+  {
+    "start": 1271.4,
+    "duration": 4.92,
+    "text": "something if we want two values to"
+  },
+  {
+    "start": 1273.92,
+    "duration": 4.5,
+    "text": "represent let's why don't we just use"
+  },
+  {
+    "start": 1276.32,
+    "duration": 3.42,
+    "text": "the two position encoded values we"
+  },
+  {
+    "start": 1278.42,
+    "duration": 4.02,
+    "text": "started with"
+  },
+  {
+    "start": 1279.74,
+    "duration": 5.28,
+    "text": "first the new self-attention values for"
+  },
+  {
+    "start": 1282.44,
+    "duration": 4.8,
+    "text": "each word contain input from all of the"
+  },
+  {
+    "start": 1285.02,
+    "duration": 5.28,
+    "text": "other words and this helps give each"
+  },
+  {
+    "start": 1287.24,
+    "duration": 5.58,
+    "text": "word context and this can help establish"
+  },
+  {
+    "start": 1290.3,
+    "duration": 3.66,
+    "text": "how each word in the input is related to"
+  },
+  {
+    "start": 1292.82,
+    "duration": 4.26,
+    "text": "the others"
+  },
+  {
+    "start": 1293.96,
+    "duration": 5.52,
+    "text": "also if we think of this unit with its"
+  },
+  {
+    "start": 1297.08,
+    "duration": 5.22,
+    "text": "weights for calculating queries keys and"
+  },
+  {
+    "start": 1299.48,
+    "duration": 5.7,
+    "text": "values as a self-attention cell"
+  },
+  {
+    "start": 1302.3,
+    "duration": 4.62,
+    "text": "then in order to correctly establish how"
+  },
+  {
+    "start": 1305.18,
+    "duration": 4.08,
+    "text": "words are related in complicated"
+  },
+  {
+    "start": 1306.92,
+    "duration": 4.92,
+    "text": "sentences and paragraphs"
+  },
+  {
+    "start": 1309.26,
+    "duration": 5.58,
+    "text": "we can create a stack of self-attention"
+  },
+  {
+    "start": 1311.84,
+    "duration": 5.16,
+    "text": "cells each with its own sets of Weights"
+  },
+  {
+    "start": 1314.84,
+    "duration": 4.38,
+    "text": "that we apply to the position encoded"
+  },
+  {
+    "start": 1317.0,
+    "duration": 5.28,
+    "text": "values for each word to capture"
+  },
+  {
+    "start": 1319.22,
+    "duration": 5.28,
+    "text": "different relationships among the words"
+  },
+  {
+    "start": 1322.28,
+    "duration": 4.26,
+    "text": "in the manuscript that first describes"
+  },
+  {
+    "start": 1324.5,
+    "duration": 3.96,
+    "text": "Transformers they stacked eight"
+  },
+  {
+    "start": 1326.54,
+    "duration": 4.26,
+    "text": "self-attention cells and they called"
+  },
+  {
+    "start": 1328.46,
+    "duration": 6.24,
+    "text": "this multi-head attention"
+  },
+  {
+    "start": 1330.8,
+    "duration": 5.0,
+    "text": "why eight instead of 12 or 16 I have no"
+  },
+  {
+    "start": 1334.7,
+    "duration": 2.88,
+    "text": "idea"
+  },
+  {
+    "start": 1335.8,
+    "duration": 4.48,
+    "text": "bam"
+  },
+  {
+    "start": 1337.58,
+    "duration": 5.52,
+    "text": "okay going back to our simple example"
+  },
+  {
+    "start": 1340.28,
+    "duration": 5.28,
+    "text": "with only one self-attention cell"
+  },
+  {
+    "start": 1343.1,
+    "duration": 4.08,
+    "text": "there's one more thing we need to do to"
+  },
+  {
+    "start": 1345.56,
+    "duration": 4.62,
+    "text": "encode the input"
+  },
+  {
+    "start": 1347.18,
+    "duration": 5.1,
+    "text": "we take the position encoded values"
+  },
+  {
+    "start": 1350.18,
+    "duration": 5.04,
+    "text": "and add them to the self-attention"
+  },
+  {
+    "start": 1352.28,
+    "duration": 5.16,
+    "text": "values these bypasses are called"
+  },
+  {
+    "start": 1355.22,
+    "duration": 5.64,
+    "text": "residual connections and they make it"
+  },
+  {
+    "start": 1357.44,
+    "duration": 5.94,
+    "text": "easier to train complex neural networks"
+  },
+  {
+    "start": 1360.86,
+    "duration": 4.62,
+    "text": "by allowing the self-attention layer to"
+  },
+  {
+    "start": 1363.38,
+    "duration": 4.38,
+    "text": "establish relationships among the input"
+  },
+  {
+    "start": 1365.48,
+    "duration": 4.14,
+    "text": "words without having to also preserve"
+  },
+  {
+    "start": 1367.76,
+    "duration": 3.48,
+    "text": "the word embedding and positioning"
+  },
+  {
+    "start": 1369.62,
+    "duration": 3.0,
+    "text": "coding information"
+  },
+  {
+    "start": 1371.24,
+    "duration": 3.78,
+    "text": "bam"
+  },
+  {
+    "start": 1372.62,
+    "duration": 5.4,
+    "text": "and that's all we need to do to encode"
+  },
+  {
+    "start": 1375.02,
+    "duration": 7.5,
+    "text": "the input for this simple Transformer"
+  },
+  {
+    "start": 1378.02,
+    "duration": 6.84,
+    "text": "double bam note this simple Transformer"
+  },
+  {
+    "start": 1382.52,
+    "duration": 5.18,
+    "text": "only contains the parts required for"
+  },
+  {
+    "start": 1384.86,
+    "duration": 6.96,
+    "text": "encoding the input word embedding"
+  },
+  {
+    "start": 1387.7,
+    "duration": 6.04,
+    "text": "positional encoding self-attention and"
+  },
+  {
+    "start": 1391.82,
+    "duration": 4.02,
+    "text": "residual connections"
+  },
+  {
+    "start": 1393.74,
+    "duration": 5.84,
+    "text": "these four features allow the"
+  },
+  {
+    "start": 1395.84,
+    "duration": 7.56,
+    "text": "Transformer to encode words into numbers"
+  },
+  {
+    "start": 1399.58,
+    "duration": 6.82,
+    "text": "encode the positions of the words encode"
+  },
+  {
+    "start": 1403.4,
+    "duration": 5.82,
+    "text": "the relationships among the words and"
+  },
+  {
+    "start": 1406.4,
+    "duration": 5.76,
+    "text": "relatively easily and quickly train in"
+  },
+  {
+    "start": 1409.22,
+    "duration": 5.34,
+    "text": "parallel that said there are lots of"
+  },
+  {
+    "start": 1412.16,
+    "duration": 4.44,
+    "text": "extra things we can add to a Transformer"
+  },
+  {
+    "start": 1414.56,
+    "duration": 6.42,
+    "text": "and we'll talk about those at the end of"
+  },
+  {
+    "start": 1416.6,
+    "duration": 7.26,
+    "text": "this Quest bam so now that we've encoded"
+  },
+  {
+    "start": 1420.98,
+    "duration": 5.64,
+    "text": "the English input phrase let's go it's"
+  },
+  {
+    "start": 1423.86,
+    "duration": 5.16,
+    "text": "time to decode it into Spanish"
+  },
+  {
+    "start": 1426.62,
+    "duration": 5.4,
+    "text": "in other words the first part of a"
+  },
+  {
+    "start": 1429.02,
+    "duration": 5.34,
+    "text": "transformer is called an encoder and now"
+  },
+  {
+    "start": 1432.02,
+    "duration": 3.6,
+    "text": "it's time to create the second part A"
+  },
+  {
+    "start": 1434.36,
+    "duration": 4.56,
+    "text": "decoder"
+  },
+  {
+    "start": 1435.62,
+    "duration": 6.54,
+    "text": "the decoder just like the encoder starts"
+  },
+  {
+    "start": 1438.92,
+    "duration": 5.22,
+    "text": "with word embedding however this time we"
+  },
+  {
+    "start": 1442.16,
+    "duration": 4.5,
+    "text": "create embedding values for the output"
+  },
+  {
+    "start": 1444.14,
+    "duration": 8.1,
+    "text": "vocabulary which consists of the Spanish"
+  },
+  {
+    "start": 1446.66,
+    "duration": 7.38,
+    "text": "words ear vamos e and the EOS end of"
+  },
+  {
+    "start": 1452.24,
+    "duration": 4.56,
+    "text": "sequence token"
+  },
+  {
+    "start": 1454.04,
+    "duration": 5.22,
+    "text": "now because we just finished encoding"
+  },
+  {
+    "start": 1456.8,
+    "duration": 4.86,
+    "text": "the English sentence let's go"
+  },
+  {
+    "start": 1459.26,
+    "duration": 5.88,
+    "text": "the decoder starts with embedding values"
+  },
+  {
+    "start": 1461.66,
+    "duration": 5.94,
+    "text": "for the EOS token in this case we're"
+  },
+  {
+    "start": 1465.14,
+    "duration": 4.98,
+    "text": "using the EOS token to start the"
+  },
+  {
+    "start": 1467.6,
+    "duration": 4.92,
+    "text": "decoding because that is a common way to"
+  },
+  {
+    "start": 1470.12,
+    "duration": 4.68,
+    "text": "initialize the process of decoding the"
+  },
+  {
+    "start": 1472.52,
+    "duration": 4.74,
+    "text": "encoded input sentence"
+  },
+  {
+    "start": 1474.8,
+    "duration": 5.4,
+    "text": "however sometimes you'll see people use"
+  },
+  {
+    "start": 1477.26,
+    "duration": 5.76,
+    "text": "SOS for startup sentence or start of"
+  },
+  {
+    "start": 1480.2,
+    "duration": 6.24,
+    "text": "sequence to initialize the process"
+  },
+  {
+    "start": 1483.02,
+    "duration": 5.64,
+    "text": "Josh starting with SOS makes more sense"
+  },
+  {
+    "start": 1486.44,
+    "duration": 4.74,
+    "text": "to me then you can do it that way"
+  },
+  {
+    "start": 1488.66,
+    "duration": 4.74,
+    "text": "Squatch I'm just saying a lot of people"
+  },
+  {
+    "start": 1491.18,
+    "duration": 6.3,
+    "text": "start with EOS"
+  },
+  {
+    "start": 1493.4,
+    "duration": 5.4,
+    "text": "anyway we plug in 1 for Eos and zero for"
+  },
+  {
+    "start": 1497.48,
+    "duration": 3.36,
+    "text": "everything else"
+  },
+  {
+    "start": 1498.8,
+    "duration": 5.78,
+    "text": "and do the math"
+  },
+  {
+    "start": 1500.84,
+    "duration": 6.96,
+    "text": "and we end up with 2.70 and negative"
+  },
+  {
+    "start": 1504.58,
+    "duration": 5.98,
+    "text": "1.34 as the numbers that represent the"
+  },
+  {
+    "start": 1507.8,
+    "duration": 4.8,
+    "text": "EOS token bam"
+  },
+  {
+    "start": 1510.56,
+    "duration": 3.9,
+    "text": "now let's shrink the word embedding down"
+  },
+  {
+    "start": 1512.6,
+    "duration": 3.6,
+    "text": "to make more space"
+  },
+  {
+    "start": 1514.46,
+    "duration": 3.06,
+    "text": "so that we can add the positional"
+  },
+  {
+    "start": 1516.2,
+    "duration": 4.26,
+    "text": "encoding"
+  },
+  {
+    "start": 1517.52,
+    "duration": 5.04,
+    "text": "note these are the exact same sine and"
+  },
+  {
+    "start": 1520.46,
+    "duration": 5.1,
+    "text": "cosine squiggles that we used when we"
+  },
+  {
+    "start": 1522.56,
+    "duration": 5.58,
+    "text": "encoded the input and since the EOS"
+  },
+  {
+    "start": 1525.56,
+    "duration": 4.74,
+    "text": "token is in the first position with two"
+  },
+  {
+    "start": 1528.14,
+    "duration": 3.72,
+    "text": "embeddings we just add those two"
+  },
+  {
+    "start": 1530.3,
+    "duration": 6.24,
+    "text": "position values"
+  },
+  {
+    "start": 1531.86,
+    "duration": 6.36,
+    "text": "and we get 2.70 and negative 0.34 as the"
+  },
+  {
+    "start": 1536.54,
+    "duration": 6.18,
+    "text": "position and word embedding values"
+  },
+  {
+    "start": 1538.22,
+    "duration": 7.08,
+    "text": "representing the EOS token bam now let's"
+  },
+  {
+    "start": 1542.72,
+    "duration": 4.56,
+    "text": "consolidate the math in the diagram"
+  },
+  {
+    "start": 1545.3,
+    "duration": 4.74,
+    "text": "and before we move on to the next step"
+  },
+  {
+    "start": 1547.28,
+    "duration": 4.44,
+    "text": "let's review a key concept from when we"
+  },
+  {
+    "start": 1550.04,
+    "duration": 4.44,
+    "text": "encoded the input"
+  },
+  {
+    "start": 1551.72,
+    "duration": 5.04,
+    "text": "one key concept from earlier was that we"
+  },
+  {
+    "start": 1554.48,
+    "duration": 3.66,
+    "text": "created a single unit to process an"
+  },
+  {
+    "start": 1556.76,
+    "duration": 3.6,
+    "text": "input word"
+  },
+  {
+    "start": 1558.14,
+    "duration": 4.2,
+    "text": "and then we just copied that unit for"
+  },
+  {
+    "start": 1560.36,
+    "duration": 4.5,
+    "text": "each word in the input"
+  },
+  {
+    "start": 1562.34,
+    "duration": 5.1,
+    "text": "and if we had more words we just make"
+  },
+  {
+    "start": 1564.86,
+    "duration": 4.98,
+    "text": "more copies of the same unit"
+  },
+  {
+    "start": 1567.44,
+    "duration": 5.1,
+    "text": "by creating a single unit that can be"
+  },
+  {
+    "start": 1569.84,
+    "duration": 4.26,
+    "text": "copied for each input word the"
+  },
+  {
+    "start": 1572.54,
+    "duration": 3.72,
+    "text": "Transformer can do all of the"
+  },
+  {
+    "start": 1574.1,
+    "duration": 4.26,
+    "text": "computation for each word in the input"
+  },
+  {
+    "start": 1576.26,
+    "duration": 4.44,
+    "text": "at the same time"
+  },
+  {
+    "start": 1578.36,
+    "duration": 4.62,
+    "text": "for example we can calculate the word"
+  },
+  {
+    "start": 1580.7,
+    "duration": 3.6,
+    "text": "embeddings on different processors at"
+  },
+  {
+    "start": 1582.98,
+    "duration": 3.78,
+    "text": "the same time"
+  },
+  {
+    "start": 1584.3,
+    "duration": 3.96,
+    "text": "and then add the positional encoding at"
+  },
+  {
+    "start": 1586.76,
+    "duration": 4.14,
+    "text": "the same time"
+  },
+  {
+    "start": 1588.26,
+    "duration": 4.86,
+    "text": "and then calculate the queries keys and"
+  },
+  {
+    "start": 1590.9,
+    "duration": 5.04,
+    "text": "values at the same time"
+  },
+  {
+    "start": 1593.12,
+    "duration": 4.92,
+    "text": "and once that is done we can calculate"
+  },
+  {
+    "start": 1595.94,
+    "duration": 3.18,
+    "text": "the self-attention values at the same"
+  },
+  {
+    "start": 1598.04,
+    "duration": 4.32,
+    "text": "time"
+  },
+  {
+    "start": 1599.12,
+    "duration": 5.7,
+    "text": "and lastly we can calculate the residual"
+  },
+  {
+    "start": 1602.36,
+    "duration": 4.8,
+    "text": "connections at the same time"
+  },
+  {
+    "start": 1604.82,
+    "duration": 4.2,
+    "text": "doing all of the computations at the"
+  },
+  {
+    "start": 1607.16,
+    "duration": 4.2,
+    "text": "same time rather than doing them"
+  },
+  {
+    "start": 1609.02,
+    "duration": 4.56,
+    "text": "sequentially for each word"
+  },
+  {
+    "start": 1611.36,
+    "duration": 4.74,
+    "text": "means we can process a lot of words"
+  },
+  {
+    "start": 1613.58,
+    "duration": 5.58,
+    "text": "relatively quickly on a chip with a lot"
+  },
+  {
+    "start": 1616.1,
+    "duration": 6.0,
+    "text": "of computing cores like a GPU Graphics"
+  },
+  {
+    "start": 1619.16,
+    "duration": 4.08,
+    "text": "Processing Unit or multiple chips in the"
+  },
+  {
+    "start": 1622.1,
+    "duration": 4.08,
+    "text": "cloud"
+  },
+  {
+    "start": 1623.24,
+    "duration": 5.22,
+    "text": "well likewise when we decode and"
+  },
+  {
+    "start": 1626.18,
+    "duration": 4.02,
+    "text": "translate the input we want a single"
+  },
+  {
+    "start": 1628.46,
+    "duration": 4.5,
+    "text": "unit that we can copy for each"
+  },
+  {
+    "start": 1630.2,
+    "duration": 4.92,
+    "text": "translated word for the same reasons we"
+  },
+  {
+    "start": 1632.96,
+    "duration": 5.16,
+    "text": "want to do the math quickly"
+  },
+  {
+    "start": 1635.12,
+    "duration": 6.48,
+    "text": "so even though we're only processing the"
+  },
+  {
+    "start": 1638.12,
+    "duration": 6.66,
+    "text": "EOS token so far we add a self-attention"
+  },
+  {
+    "start": 1641.6,
+    "duration": 5.94,
+    "text": "layer so that ultimately we can keep"
+  },
+  {
+    "start": 1644.78,
+    "duration": 5.28,
+    "text": "track of related words in the output"
+  },
+  {
+    "start": 1647.54,
+    "duration": 5.7,
+    "text": "now that we have the query key and value"
+  },
+  {
+    "start": 1650.06,
+    "duration": 6.36,
+    "text": "numbers for the EOS token we calculate"
+  },
+  {
+    "start": 1653.24,
+    "duration": 5.34,
+    "text": "itself attention values just like before"
+  },
+  {
+    "start": 1656.42,
+    "duration": 5.46,
+    "text": "and the self-attention values for the"
+  },
+  {
+    "start": 1658.58,
+    "duration": 7.5,
+    "text": "EOS token are negative 2.8 and negative"
+  },
+  {
+    "start": 1661.88,
+    "duration": 6.12,
+    "text": "2.3 note the sets of Weights we used to"
+  },
+  {
+    "start": 1666.08,
+    "duration": 4.8,
+    "text": "calculate the decoder self-attention"
+  },
+  {
+    "start": 1668.0,
+    "duration": 5.34,
+    "text": "query key and value are different from"
+  },
+  {
+    "start": 1670.88,
+    "duration": 5.7,
+    "text": "the sets we used in the encoder"
+  },
+  {
+    "start": 1673.34,
+    "duration": 6.18,
+    "text": "now let's consolidate the math and add"
+  },
+  {
+    "start": 1676.58,
+    "duration": 4.56,
+    "text": "residual connections just like before"
+  },
+  {
+    "start": 1679.52,
+    "duration": 4.08,
+    "text": "bam"
+  },
+  {
+    "start": 1681.14,
+    "duration": 4.5,
+    "text": "now so far we've talked about how"
+  },
+  {
+    "start": 1683.6,
+    "duration": 3.86,
+    "text": "self-attention helps the Transformer"
+  },
+  {
+    "start": 1685.64,
+    "duration": 4.26,
+    "text": "keep track of how words are related"
+  },
+  {
+    "start": 1687.46,
+    "duration": 4.72,
+    "text": "within a sentence"
+  },
+  {
+    "start": 1689.9,
+    "duration": 4.62,
+    "text": "however since We're translating a"
+  },
+  {
+    "start": 1692.18,
+    "duration": 4.68,
+    "text": "sentence we also need to keep track of"
+  },
+  {
+    "start": 1694.52,
+    "duration": 4.38,
+    "text": "the relationships between the input"
+  },
+  {
+    "start": 1696.86,
+    "duration": 5.58,
+    "text": "sentence and the output"
+  },
+  {
+    "start": 1698.9,
+    "duration": 6.36,
+    "text": "for example if the input sentence was"
+  },
+  {
+    "start": 1702.44,
+    "duration": 6.18,
+    "text": "don't eat the delicious looking and"
+  },
+  {
+    "start": 1705.26,
+    "duration": 5.88,
+    "text": "smelling pizza then when translating"
+  },
+  {
+    "start": 1708.62,
+    "duration": 5.04,
+    "text": "it's super important to keep track of"
+  },
+  {
+    "start": 1711.14,
+    "duration": 4.98,
+    "text": "the very first word don't"
+  },
+  {
+    "start": 1713.66,
+    "duration": 4.5,
+    "text": "if the translation focuses on other"
+  },
+  {
+    "start": 1716.12,
+    "duration": 4.32,
+    "text": "parts of the sentence and omits the"
+  },
+  {
+    "start": 1718.16,
+    "duration": 4.98,
+    "text": "don't then we'll end up with"
+  },
+  {
+    "start": 1720.44,
+    "duration": 3.72,
+    "text": "eat the delicious looking and smelling"
+  },
+  {
+    "start": 1723.14,
+    "duration": 3.66,
+    "text": "Pizza"
+  },
+  {
+    "start": 1724.16,
+    "duration": 4.44,
+    "text": "and these two sentences have completely"
+  },
+  {
+    "start": 1726.8,
+    "duration": 4.32,
+    "text": "opposite meanings"
+  },
+  {
+    "start": 1728.6,
+    "duration": 4.44,
+    "text": "so it's super important for the decoder"
+  },
+  {
+    "start": 1731.12,
+    "duration": 3.6,
+    "text": "to keep track of the significant words"
+  },
+  {
+    "start": 1733.04,
+    "duration": 4.68,
+    "text": "in the input"
+  },
+  {
+    "start": 1734.72,
+    "duration": 5.58,
+    "text": "so the main idea of encoder decoder"
+  },
+  {
+    "start": 1737.72,
+    "duration": 4.92,
+    "text": "attention is to allow the decoder to"
+  },
+  {
+    "start": 1740.3,
+    "duration": 3.96,
+    "text": "keep track of the significant words in"
+  },
+  {
+    "start": 1742.64,
+    "duration": 4.08,
+    "text": "the input"
+  },
+  {
+    "start": 1744.26,
+    "duration": 5.4,
+    "text": "now that we know the main idea behind"
+  },
+  {
+    "start": 1746.72,
+    "duration": 4.14,
+    "text": "encoder decoder attention here are the"
+  },
+  {
+    "start": 1749.66,
+    "duration": 3.36,
+    "text": "details"
+  },
+  {
+    "start": 1750.86,
+    "duration": 4.2,
+    "text": "first to give us a little more room"
+  },
+  {
+    "start": 1753.02,
+    "duration": 3.18,
+    "text": "let's consolidate the math and the"
+  },
+  {
+    "start": 1755.06,
+    "duration": 3.78,
+    "text": "diagrams"
+  },
+  {
+    "start": 1756.2,
+    "duration": 5.22,
+    "text": "now just like we did for self-attention"
+  },
+  {
+    "start": 1758.84,
+    "duration": 5.46,
+    "text": "we create two new values to represent"
+  },
+  {
+    "start": 1761.42,
+    "duration": 6.06,
+    "text": "the query for the EOS token in the"
+  },
+  {
+    "start": 1764.3,
+    "duration": 6.3,
+    "text": "decoder then we create keys for each"
+  },
+  {
+    "start": 1767.48,
+    "duration": 5.88,
+    "text": "word in the encoder and we calculate the"
+  },
+  {
+    "start": 1770.6,
+    "duration": 6.18,
+    "text": "similarities between the EOS token in"
+  },
+  {
+    "start": 1773.36,
+    "duration": 5.82,
+    "text": "the decoder and each word in the encoder"
+  },
+  {
+    "start": 1776.78,
+    "duration": 3.66,
+    "text": "by calculating the dot products just"
+  },
+  {
+    "start": 1779.18,
+    "duration": 3.54,
+    "text": "like before"
+  },
+  {
+    "start": 1780.44,
+    "duration": 5.22,
+    "text": "then we run the similarities through a"
+  },
+  {
+    "start": 1782.72,
+    "duration": 4.86,
+    "text": "softmax function and this tells us to"
+  },
+  {
+    "start": 1785.66,
+    "duration": 4.56,
+    "text": "use one hundred percent of the first"
+  },
+  {
+    "start": 1787.58,
+    "duration": 5.7,
+    "text": "input word and zero percent of the"
+  },
+  {
+    "start": 1790.22,
+    "duration": 5.82,
+    "text": "second when the decoder determines what"
+  },
+  {
+    "start": 1793.28,
+    "duration": 5.34,
+    "text": "should be the first translated word"
+  },
+  {
+    "start": 1796.04,
+    "duration": 4.98,
+    "text": "now that we know what percentage of each"
+  },
+  {
+    "start": 1798.62,
+    "duration": 5.04,
+    "text": "input word to use when determining what"
+  },
+  {
+    "start": 1801.02,
+    "duration": 6.3,
+    "text": "should be the first translated word"
+  },
+  {
+    "start": 1803.66,
+    "duration": 6.12,
+    "text": "we calculate values for each input word"
+  },
+  {
+    "start": 1807.32,
+    "duration": 4.44,
+    "text": "and then scale those values by the soft"
+  },
+  {
+    "start": 1809.78,
+    "duration": 4.32,
+    "text": "Max percentages"
+  },
+  {
+    "start": 1811.76,
+    "duration": 4.74,
+    "text": "and then add the pairs of scaled values"
+  },
+  {
+    "start": 1814.1,
+    "duration": 4.08,
+    "text": "together to get the encoder decoder"
+  },
+  {
+    "start": 1816.5,
+    "duration": 3.06,
+    "text": "attention values"
+  },
+  {
+    "start": 1818.18,
+    "duration": 4.08,
+    "text": "bam"
+  },
+  {
+    "start": 1819.56,
+    "duration": 4.68,
+    "text": "now to make room for the next step let's"
+  },
+  {
+    "start": 1822.26,
+    "duration": 4.08,
+    "text": "consolidate the encoder decoder"
+  },
+  {
+    "start": 1824.24,
+    "duration": 4.68,
+    "text": "attention in our diagram"
+  },
+  {
+    "start": 1826.34,
+    "duration": 4.8,
+    "text": "note the sets of Weights that we use to"
+  },
+  {
+    "start": 1828.92,
+    "duration": 4.86,
+    "text": "calculate the queries keys and values"
+  },
+  {
+    "start": 1831.14,
+    "duration": 4.38,
+    "text": "for encoder decoder attention are"
+  },
+  {
+    "start": 1833.78,
+    "duration": 3.6,
+    "text": "different from the sets of Weights we"
+  },
+  {
+    "start": 1835.52,
+    "duration": 4.8,
+    "text": "use for self-attention"
+  },
+  {
+    "start": 1837.38,
+    "duration": 5.22,
+    "text": "however just like for self-attention the"
+  },
+  {
+    "start": 1840.32,
+    "duration": 3.84,
+    "text": "sets of Weights are copied and reused"
+  },
+  {
+    "start": 1842.6,
+    "duration": 3.66,
+    "text": "for each word"
+  },
+  {
+    "start": 1844.16,
+    "duration": 4.32,
+    "text": "this allows the Transformer to be"
+  },
+  {
+    "start": 1846.26,
+    "duration": 3.96,
+    "text": "flexible with the length of the inputs"
+  },
+  {
+    "start": 1848.48,
+    "duration": 4.86,
+    "text": "and outputs"
+  },
+  {
+    "start": 1850.22,
+    "duration": 4.92,
+    "text": "and also we can stack encode or decoder"
+  },
+  {
+    "start": 1853.34,
+    "duration": 4.74,
+    "text": "attention just like we can stack"
+  },
+  {
+    "start": 1855.14,
+    "duration": 5.94,
+    "text": "self-attention to keep track of words in"
+  },
+  {
+    "start": 1858.08,
+    "duration": 5.4,
+    "text": "complicated phrases bam"
+  },
+  {
+    "start": 1861.08,
+    "duration": 3.6,
+    "text": "now we add another set of residual"
+  },
+  {
+    "start": 1863.48,
+    "duration": 3.84,
+    "text": "connections"
+  },
+  {
+    "start": 1864.68,
+    "duration": 4.8,
+    "text": "that allow the encoder decoder attention"
+  },
+  {
+    "start": 1867.32,
+    "duration": 4.2,
+    "text": "to focus on the relationships between"
+  },
+  {
+    "start": 1869.48,
+    "duration": 3.96,
+    "text": "the output words and the input words"
+  },
+  {
+    "start": 1871.52,
+    "duration": 4.2,
+    "text": "without having to preserve the"
+  },
+  {
+    "start": 1873.44,
+    "duration": 5.7,
+    "text": "self-attention or word and position"
+  },
+  {
+    "start": 1875.72,
+    "duration": 6.12,
+    "text": "encoding that happened earlier then we"
+  },
+  {
+    "start": 1879.14,
+    "duration": 5.58,
+    "text": "consolidate the math and the diagram"
+  },
+  {
+    "start": 1881.84,
+    "duration": 5.52,
+    "text": "lastly we need a way to take these two"
+  },
+  {
+    "start": 1884.72,
+    "duration": 5.7,
+    "text": "values that represent the EOS token in"
+  },
+  {
+    "start": 1887.36,
+    "duration": 7.98,
+    "text": "the decoder and select one of the four"
+  },
+  {
+    "start": 1890.42,
+    "duration": 7.2,
+    "text": "output tokens ear vamos e or EOS"
+  },
+  {
+    "start": 1895.34,
+    "duration": 4.5,
+    "text": "so we run these two values through a"
+  },
+  {
+    "start": 1897.62,
+    "duration": 4.2,
+    "text": "fully connected layer that has one input"
+  },
+  {
+    "start": 1899.84,
+    "duration": 4.56,
+    "text": "for each value that represents the"
+  },
+  {
+    "start": 1901.82,
+    "duration": 4.08,
+    "text": "current token so in this case we have"
+  },
+  {
+    "start": 1904.4,
+    "duration": 4.02,
+    "text": "two inputs"
+  },
+  {
+    "start": 1905.9,
+    "duration": 4.74,
+    "text": "and one output for each token in the"
+  },
+  {
+    "start": 1908.42,
+    "duration": 4.44,
+    "text": "output vocabulary which in this case"
+  },
+  {
+    "start": 1910.64,
+    "duration": 5.04,
+    "text": "means four outputs"
+  },
+  {
+    "start": 1912.86,
+    "duration": 4.56,
+    "text": "note a fully connected layer is just a"
+  },
+  {
+    "start": 1915.68,
+    "duration": 4.62,
+    "text": "simple neural network with weights"
+  },
+  {
+    "start": 1917.42,
+    "duration": 6.18,
+    "text": "numbers we multiply the inputs by"
+  },
+  {
+    "start": 1920.3,
+    "duration": 4.62,
+    "text": "and biases numbers we add to the sums of"
+  },
+  {
+    "start": 1923.6,
+    "duration": 3.54,
+    "text": "the products"
+  },
+  {
+    "start": 1924.92,
+    "duration": 3.96,
+    "text": "and when we do the math we get four"
+  },
+  {
+    "start": 1927.14,
+    "duration": 3.9,
+    "text": "output values"
+  },
+  {
+    "start": 1928.88,
+    "duration": 4.62,
+    "text": "which we run through a final soft Max"
+  },
+  {
+    "start": 1931.04,
+    "duration": 4.64,
+    "text": "function to select the first output word"
+  },
+  {
+    "start": 1933.5,
+    "duration": 4.02,
+    "text": "vamos"
+  },
+  {
+    "start": 1935.68,
+    "duration": 4.78,
+    "text": "bam"
+  },
+  {
+    "start": 1937.52,
+    "duration": 8.46,
+    "text": "note vamos is the Spanish translation"
+  },
+  {
+    "start": 1940.46,
+    "duration": 8.46,
+    "text": "for Let's Go triple boom no not yet"
+  },
+  {
+    "start": 1945.98,
+    "duration": 4.92,
+    "text": "so far the translation is correct but"
+  },
+  {
+    "start": 1948.92,
+    "duration": 5.16,
+    "text": "the decoder doesn't stop until it"
+  },
+  {
+    "start": 1950.9,
+    "duration": 5.4,
+    "text": "outputs an EOS token so let's"
+  },
+  {
+    "start": 1954.08,
+    "duration": 5.4,
+    "text": "consolidate our diagrams"
+  },
+  {
+    "start": 1956.3,
+    "duration": 5.58,
+    "text": "and plug the translated word vamos into"
+  },
+  {
+    "start": 1959.48,
+    "duration": 4.14,
+    "text": "a copy of the decoder's embedding layer"
+  },
+  {
+    "start": 1961.88,
+    "duration": 3.96,
+    "text": "and do the math"
+  },
+  {
+    "start": 1963.62,
+    "duration": 3.42,
+    "text": "first we get the word embeddings for"
+  },
+  {
+    "start": 1965.84,
+    "duration": 4.2,
+    "text": "vamos"
+  },
+  {
+    "start": 1967.04,
+    "duration": 5.4,
+    "text": "then we add the positional encoding"
+  },
+  {
+    "start": 1970.04,
+    "duration": 4.86,
+    "text": "now we calculate self-attention values"
+  },
+  {
+    "start": 1972.44,
+    "duration": 5.22,
+    "text": "for vamos using the exact same weights"
+  },
+  {
+    "start": 1974.9,
+    "duration": 5.52,
+    "text": "that we used for the EOS token"
+  },
+  {
+    "start": 1977.66,
+    "duration": 5.1,
+    "text": "now add the residual connections"
+  },
+  {
+    "start": 1980.42,
+    "duration": 4.62,
+    "text": "and calculate the encoder decoder"
+  },
+  {
+    "start": 1982.76,
+    "duration": 5.04,
+    "text": "attention using the same sets of Weights"
+  },
+  {
+    "start": 1985.04,
+    "duration": 5.64,
+    "text": "that we used for the EOS token"
+  },
+  {
+    "start": 1987.8,
+    "duration": 5.34,
+    "text": "now we add more residual connections"
+  },
+  {
+    "start": 1990.68,
+    "duration": 4.62,
+    "text": "lastly we run the values that represent"
+  },
+  {
+    "start": 1993.14,
+    "duration": 4.8,
+    "text": "vamos through the same fully connected"
+  },
+  {
+    "start": 1995.3,
+    "duration": 5.94,
+    "text": "layer and softmax that we used for the"
+  },
+  {
+    "start": 1997.94,
+    "duration": 7.32,
+    "text": "EOS token and the second output from the"
+  },
+  {
+    "start": 2001.24,
+    "duration": 6.72,
+    "text": "decoder is eos so we are done decoding"
+  },
+  {
+    "start": 2005.26,
+    "duration": 5.22,
+    "text": "triple bam"
+  },
+  {
+    "start": 2007.96,
+    "duration": 4.74,
+    "text": "at long last we've shown how a"
+  },
+  {
+    "start": 2010.48,
+    "duration": 4.32,
+    "text": "Transformer can encode a simple input"
+  },
+  {
+    "start": 2012.7,
+    "duration": 4.8,
+    "text": "phrase let's go"
+  },
+  {
+    "start": 2014.8,
+    "duration": 5.34,
+    "text": "and decode the encoding into the"
+  },
+  {
+    "start": 2017.5,
+    "duration": 4.28,
+    "text": "translated phrase of vamos"
+  },
+  {
+    "start": 2020.14,
+    "duration": 4.02,
+    "text": "in summary"
+  },
+  {
+    "start": 2021.78,
+    "duration": 4.48,
+    "text": "Transformers use word embedding to"
+  },
+  {
+    "start": 2024.16,
+    "duration": 4.56,
+    "text": "convert words into numbers"
+  },
+  {
+    "start": 2026.26,
+    "duration": 3.8,
+    "text": "positional encoding to keep track of"
+  },
+  {
+    "start": 2028.72,
+    "duration": 3.66,
+    "text": "word order"
+  },
+  {
+    "start": 2030.06,
+    "duration": 4.66,
+    "text": "self-attention to keep track of word"
+  },
+  {
+    "start": 2032.38,
+    "duration": 3.9,
+    "text": "relationships within the input and"
+  },
+  {
+    "start": 2034.72,
+    "duration": 4.32,
+    "text": "output phrases"
+  },
+  {
+    "start": 2036.28,
+    "duration": 4.98,
+    "text": "encoder decoder attention to keep track"
+  },
+  {
+    "start": 2039.04,
+    "duration": 4.44,
+    "text": "of things between the input and output"
+  },
+  {
+    "start": 2041.26,
+    "duration": 4.68,
+    "text": "phrases to make sure that important"
+  },
+  {
+    "start": 2043.48,
+    "duration": 3.72,
+    "text": "words in the input are not lost in the"
+  },
+  {
+    "start": 2045.94,
+    "duration": 3.66,
+    "text": "translation"
+  },
+  {
+    "start": 2047.2,
+    "duration": 5.4,
+    "text": "and residual connections to allow each"
+  },
+  {
+    "start": 2049.6,
+    "duration": 5.7,
+    "text": "subunit like self-attention to focus on"
+  },
+  {
+    "start": 2052.6,
+    "duration": 5.4,
+    "text": "solving just one part of the problem"
+  },
+  {
+    "start": 2055.3,
+    "duration": 5.16,
+    "text": "now that we understand the main ideas of"
+  },
+  {
+    "start": 2058.0,
+    "duration": 4.86,
+    "text": "how Transformers work let's talk about a"
+  },
+  {
+    "start": 2060.46,
+    "duration": 4.86,
+    "text": "few extra things we can add to them"
+  },
+  {
+    "start": 2062.86,
+    "duration": 3.54,
+    "text": "in this example we kept things super"
+  },
+  {
+    "start": 2065.32,
+    "duration": 3.72,
+    "text": "simple"
+  },
+  {
+    "start": 2066.4,
+    "duration": 5.58,
+    "text": "however if we had larger vocabularies"
+  },
+  {
+    "start": 2069.04,
+    "duration": 5.28,
+    "text": "and the original Transformer had 37 000"
+  },
+  {
+    "start": 2071.98,
+    "duration": 3.54,
+    "text": "tokens and longer input and output"
+  },
+  {
+    "start": 2074.32,
+    "duration": 3.66,
+    "text": "phrases"
+  },
+  {
+    "start": 2075.52,
+    "duration": 4.74,
+    "text": "then in order to get their model to work"
+  },
+  {
+    "start": 2077.98,
+    "duration": 3.78,
+    "text": "they had to normalize the values after"
+  },
+  {
+    "start": 2080.26,
+    "duration": 4.02,
+    "text": "every step"
+  },
+  {
+    "start": 2081.76,
+    "duration": 4.38,
+    "text": "for example they normalize the values"
+  },
+  {
+    "start": 2084.28,
+    "duration": 4.38,
+    "text": "after positional encoding and after"
+  },
+  {
+    "start": 2086.14,
+    "duration": 5.64,
+    "text": "self-attention in both the encoder and"
+  },
+  {
+    "start": 2088.66,
+    "duration": 5.82,
+    "text": "the decoder also when we calculated"
+  },
+  {
+    "start": 2091.78,
+    "duration": 5.28,
+    "text": "attention values we used the dot product"
+  },
+  {
+    "start": 2094.48,
+    "duration": 4.8,
+    "text": "to calculate the similarities but you"
+  },
+  {
+    "start": 2097.06,
+    "duration": 3.24,
+    "text": "can use whatever similarity function you"
+  },
+  {
+    "start": 2099.28,
+    "duration": 3.48,
+    "text": "want"
+  },
+  {
+    "start": 2100.3,
+    "duration": 4.8,
+    "text": "in the original Transformer manuscript"
+  },
+  {
+    "start": 2102.76,
+    "duration": 4.56,
+    "text": "they calculated the similarities with a"
+  },
+  {
+    "start": 2105.1,
+    "duration": 4.2,
+    "text": "DOT product divided by the square root"
+  },
+  {
+    "start": 2107.32,
+    "duration": 4.86,
+    "text": "of the number of embedding values per"
+  },
+  {
+    "start": 2109.3,
+    "duration": 5.1,
+    "text": "token just like with scaling the values"
+  },
+  {
+    "start": 2112.18,
+    "duration": 4.68,
+    "text": "after each step they found that scaling"
+  },
+  {
+    "start": 2114.4,
+    "duration": 5.34,
+    "text": "the dot product helped encode and decode"
+  },
+  {
+    "start": 2116.86,
+    "duration": 5.4,
+    "text": "long and complicated phrases"
+  },
+  {
+    "start": 2119.74,
+    "duration": 4.8,
+    "text": "lastly to give a Transformer more"
+  },
+  {
+    "start": 2122.26,
+    "duration": 4.68,
+    "text": "weights and biases to fit to complicated"
+  },
+  {
+    "start": 2124.54,
+    "duration": 4.26,
+    "text": "data you can add additional neural"
+  },
+  {
+    "start": 2126.94,
+    "duration": 4.92,
+    "text": "networks with hidden layers to both the"
+  },
+  {
+    "start": 2128.8,
+    "duration": 5.24,
+    "text": "encoder and decoder bam"
+  },
+  {
+    "start": 2131.86,
+    "duration": 5.52,
+    "text": "now it's time for some"
+  },
+  {
+    "start": 2134.04,
+    "duration": 5.26,
+    "text": "Shameless self-promotion if you want to"
+  },
+  {
+    "start": 2137.38,
+    "duration": 4.38,
+    "text": "review statistics and machine learning"
+  },
+  {
+    "start": 2139.3,
+    "duration": 4.98,
+    "text": "offline check out the statquest PDF"
+  },
+  {
+    "start": 2141.76,
+    "duration": 5.36,
+    "text": "study guides in my book the stat Quest"
+  },
+  {
+    "start": 2144.28,
+    "duration": 5.22,
+    "text": "Illustrated guide to machine learning at"
+  },
+  {
+    "start": 2147.12,
+    "duration": 3.4,
+    "text": "stackwest.org there's something for"
+  },
+  {
+    "start": 2149.5,
+    "duration": 3.3,
+    "text": "everyone"
+  },
+  {
+    "start": 2150.52,
+    "duration": 4.68,
+    "text": "hooray we've made it to the end of"
+  },
+  {
+    "start": 2152.8,
+    "duration": 4.08,
+    "text": "another exciting stat Quest if you like"
+  },
+  {
+    "start": 2155.2,
+    "duration": 3.78,
+    "text": "this stack Quest and want to see more"
+  },
+  {
+    "start": 2156.88,
+    "duration": 4.26,
+    "text": "please subscribe and if you want to"
+  },
+  {
+    "start": 2158.98,
+    "duration": 4.5,
+    "text": "support stackquest consider contributing"
+  },
+  {
+    "start": 2161.14,
+    "duration": 4.5,
+    "text": "to my patreon campaign becoming a"
+  },
+  {
+    "start": 2163.48,
+    "duration": 4.5,
+    "text": "channel member buying one or two of my"
+  },
+  {
+    "start": 2165.64,
+    "duration": 4.38,
+    "text": "original songs or a t-shirt or a hoodie"
+  },
+  {
+    "start": 2167.98,
+    "duration": 4.68,
+    "text": "or just donate the links are in the"
+  },
+  {
+    "start": 2170.02,
+    "duration": 6.2,
+    "text": "description below alright until next"
+  },
+  {
+    "start": 2172.66,
+    "duration": 3.56,
+    "text": "time Quest on"
+  }
+]
