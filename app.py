@@ -247,9 +247,16 @@ def main() -> None:
                 f"Retrieved {len(segments)} segments (total duration: {duration_formatted}) via **{source}**."
             )
 
-            # Five views: Ask, Transcript, Chunks, Retrieval test, Strategy comparison
-            tab_ask, tab_transcript, tab_chunks, tab_retrieval, tab_comparison = st.tabs(
-                ["Ask", "Transcript", "Chunks", "Retrieval test", "Strategy comparison"]
+            # Six views: Ask, Transcript, Chunks, Retrieval test, Strategy comparison, Benchmark & Paper
+            tab_ask, tab_transcript, tab_chunks, tab_retrieval, tab_comparison, tab_results = st.tabs(
+                [
+                    "Ask",
+                    "Transcript",
+                    "Chunks",
+                    "Retrieval test",
+                    "Strategy comparison",
+                    "📊 Benchmark & Paper",
+                ]
             )
 
             # -------------------- TAB 1: ASK --------------------
@@ -410,8 +417,10 @@ def main() -> None:
                                         st.session_state.autoplay = True
                                         st.rerun()
                                 with col_t:
+                                    yt_direct_url = f"https://www.youtube.com/watch?v={current_video_id}&t={int(round(src['start']))}s"
                                     st.markdown(
-                                        f"**[{src['n']}]** *({fmt_time(src['start'])}-{fmt_time(src['end'])})* {src['text']}"
+                                        f"**[{src['n']}]** *({fmt_time(src['start'])}-{fmt_time(src['end'])})* {src['text']} "
+                                        f"[[Open in YouTube ↗]({yt_direct_url})]"
                                     )
 
             # -------------------- TAB 2: TRANSCRIPT --------------------
@@ -589,6 +598,68 @@ def main() -> None:
                         })
                 df_comp = pd.DataFrame(comparison_rows)
                 st.dataframe(df_comp, use_container_width=True)
+
+            # -------------------- TAB 6: BENCHMARK & RESEARCH RESULTS --------------------
+            with tab_results:
+                st.subheader("📊 Empirical Research Findings & Benchmark Results")
+                st.markdown(
+                    "This tab summarizes the empirical findings from our IEEE conference paper: "
+                    "*'Evaluating Chunking Strategies and Temporal Grounding in Long-Form Educational Video RAG Under Acoustic Noise'*."
+                )
+
+                col_dl_pdf, col_dl_zip = st.columns([1, 1])
+                with col_dl_pdf:
+                    pdf_path = os.path.join(
+                        os.path.dirname(os.path.abspath(__file__)), "paper.pdf"
+                    )
+                    if os.path.exists(pdf_path):
+                        with open(pdf_path, "rb") as f:
+                            st.download_button(
+                                "📥 Download IEEE Research Paper (PDF)",
+                                data=f.read(),
+                                file_name="VidQuery_Research_Paper.pdf",
+                                mime="application/pdf",
+                                use_container_width=True,
+                            )
+                with col_dl_zip:
+                    zip_path = os.path.join(
+                        os.path.dirname(os.path.abspath(__file__)),
+                        "VidQuery_Submission.zip",
+                    )
+                    if os.path.exists(zip_path):
+                        with open(zip_path, "rb") as f:
+                            st.download_button(
+                                "📦 Download Full Submission Archive (.zip)",
+                                data=f.read(),
+                                file_name="VidQuery_Submission.zip",
+                                mime="application/zip",
+                                use_container_width=True,
+                            )
+
+                st.markdown("---")
+                st.markdown("#### Table 1: Retrieval Benchmark Across Chunking Strategies (N=156)")
+                csv_ret = os.path.join(
+                    os.path.dirname(os.path.abspath(__file__)),
+                    "results",
+                    "retrieval_summary.csv",
+                )
+                if os.path.exists(csv_ret):
+                    df_r = pd.read_csv(csv_ret)
+                    st.dataframe(df_r, use_container_width=True)
+
+                st.markdown("#### Table 4: Generation Faithfulness & Zero Hallucination")
+                csv_gen = os.path.join(
+                    os.path.dirname(os.path.abspath(__file__)),
+                    "results",
+                    "generation_eval_summary.csv",
+                )
+                if os.path.exists(csv_gen):
+                    df_g = pd.read_csv(csv_gen)
+                    st.dataframe(df_g, use_container_width=True)
+
+                st.info(
+                    "💡 Slide presentation available locally: open `presentation.html` in your browser for the full 12-slide deck with speaker notes."
+                )
 
 
 if __name__ == "__main__":
