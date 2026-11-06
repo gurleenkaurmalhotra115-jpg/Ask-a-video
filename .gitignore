@@ -23,3 +23,6 @@ cache/
 
 # Scratch & temporary workspace
 scratch/
+
+# Archives & submission zip
+*.zip
