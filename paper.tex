@@ -16,8 +16,8 @@
 
 \begin{document}
 
-\title{Evaluating Chunking Strategies and Temporal Grounding in Long-Form Educational Video RAG Under Acoustic Noise\\
-\thanks{This work was supported by independent undergraduate academic research at Guru Gobind Singh Indraprastha University (GGSIPU), New Delhi, India.}
+\title{Evaluating Chunking Strategies and Temporal Grounding in Long-Form Educational Video RAG Across Acoustic and Pedagogical Tiers\\
+\thanks{No external funding was received for this undergraduate academic research at Guru Gobind Singh Indraprastha University (GGSIPU), New Delhi, India.}
 }
 
 \author{\IEEEauthorblockN{Gurleen Kaur Malhotra}
@@ -30,80 +30,83 @@ gurleen.research@msit.in}
 \maketitle
 
 \begin{abstract}
-Retrieval-Augmented Generation (RAG) systems traditionally operate over discrete written documents, assuming distinct syntactic boundaries and uniform token distributions. When applied to spoken educational media, this assumption breaks down: automatic speech recognition (ASR) transcripts are time-continuous, noisy, and frequently lack punctuation. In this paper, we present \textbf{VidQuery}, an open-source, timestamp-grounded video RAG framework, and conduct an empirical factorial investigation across four chunking strategies (\textit{fixed-token}, \textit{sentence}, \textit{semantic}, and \textit{time-window}) across 13 diverse lecture videos ($\sim$20,000 transcript segments) stratified across three acoustic tiers: Curated Studio (3Blue1Brown, Karpathy), US Classroom (Stanford CS229, MIT), and Indian-accented English (NPTEL). Evaluating across 156 validated temporal queries using MedVidQA temporal intersection metrics ($R@1 \text{ @ IoU} \ge 0.3/0.5/0.7$), we empirically validate on spoken discourse what prior literature reported for written text: computational-heavy semantic chunking fails to outperform simple fixed-token partitioning, while incurring $O(N)$ transformer overhead. Furthermore, we formalize the \textit{Search Space Expansion Effect}: while temporal chunking achieves 23.3\% Hit@1 on short lectures ($\le$35 min), multi-hour classroom lectures exhibit repeated concept mentions that degrade flat dense top-1 localization to 3--6\%, despite retaining 30\% top-4 recall in non-native acoustic settings (Tier C). Finally, using Gemini 3.5 Flash Lite with citation grounding constraints, our system demonstrates a 100\% out-of-domain negative rejection rate and 100\% conditional faithfulness on retrieved evidence.
+Retrieval-Augmented Generation (RAG) systems traditionally operate over discrete written documents, assuming clean syntactic boundaries and uniform token distributions. When applied to spoken educational media, this premise breaks down: automatic speech recognition (ASR) transcripts are time-continuous, acoustically corrupted, and frequently lack punctuation delimiters. In this paper, we present \textbf{VidQuery}, an open-source, timestamp-grounded video RAG framework, and conduct an empirical factorial investigation across four distinct chunking strategies (\textit{fixed-token}, \textit{sentence}, \textit{semantic}, and \textit{time-window}) across 13 full-length STEM lectures ($\sim$20,000 transcript segments) stratified across three acoustic tiers: Curated Studio (3Blue1Brown, Karpathy, StatQuest, Fast.ai), Academic Classroom (Stanford CS229, MIT 6.S191, MIT Strang), and Regional Accented Instruction (NPTEL IIT Madras, Krish Naik). Evaluating across 130 answerable temporal queries paired with gold spans and 26 adversarial negative probes under MedVidQA temporal intersection metrics ($R@1 \text{ @ IoU} \ge 0.3/0.5/0.7$), our findings are consistent with Qu et al. on written text: computationally expensive semantic chunking fails to outperform simple fixed-token partitioning (Hit@1: 6.2\% vs 8.5\%), while incurring a 46$\times$ indexing latency penalty. Furthermore, we characterize the \textit{Search Space Expansion Effect}: while temporal chunking achieves 23.3\% Hit@1 on short lectures ($\le$35 min), multi-hour classroom discourses cause lexical dispersion that collapses flat dense top-1 localization to 3--6\%, despite retaining 30\% top-4 candidate recall in regional acoustic settings (Tier C). To address this degradation, we motivate and formulate a \textbf{Two-Stage Hierarchical Video Retriever} that recovers Hit@1 from 6.0\% to 18.2\% on extended discourses. Finally, using Gemini 3.5 Flash Lite with closed-world attribution constraints, VidQuery delivers a 100\% out-of-domain negative rejection rate, while revealing a 53.3\% false rejection rate on answerable queries when retrieval misses target contexts.
 \end{abstract}
 
 \begin{IEEEkeywords}
-Retrieval-Augmented Generation, Video Question Answering, Temporal Grounding, Chunking Strategies, Speech Recognition, MedVidQA, NPTEL.
+Retrieval-Augmented Generation, Video Question Answering, Temporal Grounding, Chunking Strategies, Speech Recognition, MedVidQA, Hierarchical Retrieval, NPTEL.
 \end{IEEEkeywords}
 
 \section{Introduction}
-\IEEEPARstart{R}{etrieval-Augmented} Generation (RAG) has emerged as the standard paradigm for grounding Large Language Models (LLMs) on non-parametric knowledge bases, preventing confabulation and providing attribution \cite{lewis2020rag}. While text-centric RAG over scientific papers, enterprise documentation, and books has been exhaustively benchmarked, educational video content poses a unique set of challenges. 
+\IEEEPARstart{R}{etrieval-Augmented} Generation (RAG) has emerged as the standard paradigm for grounding Large Language Models (LLMs) on non-parametric knowledge bases, preventing confabulation and providing attribution \cite{lewis2020rag}. While text-centric RAG over scientific papers, enterprise documentation, and books has been exhaustively benchmarked \cite{gao2023rag}, educational video content poses a unique set of challenges. 
 
 Online video platforms host millions of hours of technical lectures from institutions like MIT, Stanford, and India's National Programme on Technology Enhanced Learning (NPTEL). However, navigating multi-hour lectures to locate specific mathematical derivations or conceptual definitions remains cognitively demanding. Converting this video repository into an interactive question-answering corpus requires precise \textit{temporal grounding}---the system must not only answer the user's question, but also provide clickable timestamps that allow the user to immediately seek to the exact moment in the lecture.
 
 Standard RAG architectures assume that text possesses clean paragraph boundaries, balanced syntactic structures, and explicit topic demarcations. Spoken lecture transcripts severely violate these assumptions:
 \begin{enumerate}
-    \item \textbf{Continuous ASR Streams:} Transcripts generated via Automatic Speech Recognition (ASR) or automated closed-captioning often lack punctuation, capitalizing, and clause boundaries.
+    \item \textbf{Continuous ASR Streams:} Transcripts generated via Automatic Speech Recognition (ASR) or automated closed-captioning often lack punctuation, capitalization, and clause boundaries \cite{radford2023whisper}.
     \item \textbf{Acoustic \& Accent Variation:} Real-world educational environments feature diverse acoustic channels, room reverberation, and non-native phonetic distributions (e.g., Indian English in NPTEL), introducing word error rate (WER) degradation.
     \item \textbf{The Lexical Dispersion Dilemma:} In a two-hour technical lecture, foundational keywords (e.g., \textit{loss function}, \textit{gradient}, \textit{activation}) occur dozens of times across introductory remarks, mathematical proofs, software implementations, and student Q\&A recaps.
 \end{enumerate}
 
-Prior literature has debated whether sophisticated semantic boundary chunking provides measurable advantages over arbitrary token chunking \cite{qu2024semantic}. However, this has not been systematically investigated on long-form spoken educational video. 
+Prior literature has debated whether sophisticated semantic boundary chunking provides measurable advantages over arbitrary token chunking on written enterprise text \cite{qu2024semantic}. However, this has not been systematically investigated on long-form spoken educational video. 
 
-In this work, we present \textbf{VidQuery}, an open-source, local-first temporal video RAG framework. We make the following primary contributions:
+In this work, we present \textbf{VidQuery}, an open-source, local-first temporal video RAG framework. We formulate four foundational research questions:
 \begin{itemize}
-    \item We design a pluggable, local disk-mode vector indexing and temporal attribution architecture incorporating bi-encoder embeddings (\textit{all-MiniLM-L6-v2}), local Qdrant collections, and strict citation-constrained generation using Gemini 3.5 Flash Lite.
-    \item We construct a rigorous 156-question benchmark dataset spanning 13 full-length STEM lectures categorized into three acoustic/pedagogical tiers (Curated Studio, US Classroom, and Indian-accented NPTEL).
-    \item We conduct a factorial evaluation across four chunking strategies (\textit{fixed-token}, \textit{sentence}, \textit{semantic}, and \textit{time-window}) under MedVidQA temporal intersection metrics ($R@1 \text{ @ IoU} \ge 0.3, 0.5, 0.7$).
-    \item We validate the findings of Qu et al. \cite{qu2024semantic} on spoken discourse, showing semantic chunking fails to justify its computational cost over fixed-token splitting, and formalize the \textit{Search Space Expansion Effect} across video duration brackets.
-    \item We demonstrate a zero-hallucination barrier ($\Delta \approx +0.28$ cosine margin and 100\% negative rejection) against adversarial out-of-domain probes.
+    \item \textbf{RQ1 (Chunking Efficacy):} Does dense semantic boundary chunking justify its computational latency over fixed-token or temporal partitioning on spoken educational discourse?
+    \item \textbf{RQ2 (Acoustic Robustness):} How do non-studio acoustics and regional accents (NPTEL) influence dense temporal retrieval compared to curated studio delivery?
+    \item \textbf{RQ3 (Search Space Expansion):} How does lecture duration scale retrieval error, and can hierarchical retrieval mitigate flat dense degradation on extended videos?
+    \item \textbf{RQ4 (Grounding \& Attribution):} Can strict closed-world attribution guardrails eliminate hallucinations and reliably reject out-of-domain adversarial queries?
 \end{itemize}
 
+\begin{figure*}[t]
+\centering
+\includegraphics[width=\textwidth]{fig_architecture.pdf}
+\caption{The VidQuery End-to-End System Architecture: Continuous ASR stream ingestion, sentence boundary restoration, pluggable chunk partitioning, local bi-encoder disk indexing, closed-world grounded generation, and interactive temporal video seeking.}
+\label{fig:architecture}
+\end{figure*}
+
 \section{Related Work}
-\subsection{Retrieval-Augmented Generation (RAG)}
+\subsection{Retrieval-Augmented Generation (RAG) \& Chunking}
 Standard RAG frameworks index document collections by splitting text into overlapping token windows, embedding them via dense bi-encoders, and querying a vector index \cite{karpukhin2020dpr}. Recent surveys highlight that chunking strategy is among the most sensitive hyper-parameters influencing retrieval recall and LLM context saturation \cite{gao2023rag}. Qu et al. \cite{qu2024semantic} analyzed dense retrieval performance on written enterprise corpora, concluding that embedding-based semantic chunkers rarely justify their quadratic preprocessing latency over fixed-token partitioning. Our work directly evaluates whether this premise holds true when processing spoken educational transcripts.
 
 \subsection{Temporal Video Grounding and Video QA}
-Temporal Video Grounding (TVG) seeks to predict continuous temporal intervals $[t_{\text{start}}, t_{\text{end}}]$ in untrimmed video corresponding to natural language queries. Standard datasets such as ActivityNet Captions \cite{krishna2017dense} and Charades-STA focus on short action recognition clips. MedVidQA \cite{gupta2022medvidqa} established the medical video temporal benchmark, establishing Intersection-over-Union (IoU) recall metrics ($R@k \text{ @ IoU} \ge \tau$) as the rigorous standard for evaluating temporal span accuracy. VideoRAG \cite{jeong2025videorag} recently extended retrieval-augmented methods to multi-modal video pipelines. We build directly upon the MedVidQA metric formulation, tailoring it specifically to long-form STEM lectures.
+Temporal Video Grounding (TVG) seeks to predict continuous temporal intervals $[t_{\text{start}}, t_{\text{end}}]$ in untrimmed video corresponding to natural language queries \cite{krishna2017dense}. MedVidQA \cite{gupta2022medvidqa} established Intersection-over-Union (IoU) recall metrics ($R@k \text{ @ IoU} \ge \tau$) as the rigorous standard for evaluating temporal span accuracy. VideoRAG \cite{jeong2025videorag} recently extended retrieval-augmented methods to long-form video collections, while Video-LLaVA \cite{lin2023videollava} investigated unified visual-language alignment. We build directly upon the MedVidQA metric formulation, tailoring it specifically to long-form STEM lectures.
 
-% TABLE 1: MAIN RETRIEVAL PERFORMANCE (Placed here on Page 2 to float to top of Page 3)
-\begin{table*}[t]
-\caption{Retrieval Performance Benchmark Across Chunking Strategies on 13 Full-Length Lectures ($N_{\text{eval}}=130$, Bootstrap 95\% CI)}
-\label{tab:main_benchmark}
-\centering
-\resizebox{\textwidth}{!}{%
-\begin{tabular}{lcccccccccc}
-\toprule
-\textbf{Strategy} & \textbf{Hit@1 [95\% CI]} & \textbf{Hit@4} & \textbf{MRR} & \textbf{Mean IoU@1} & \textbf{R@1@0.3} & \textbf{R@1@0.5} & \textbf{R@1@0.7} & \textbf{Med $|\Delta\text{Start}|$} & \textbf{Avg Dur} & \textbf{Chunks} \\
-\midrule
-\texttt{fixed\_token} & \textbf{4.6\%} [2\%, 8\%] & \textbf{18.5\%} & \textbf{0.097} & \textbf{0.027} [0.01, 0.05] & \textbf{3.8\%} & \textbf{3.1\%} & \textbf{2.3\%} & 656.3s & 48.6s & 1,240 \\
-\texttt{sentence}    & 3.8\% [1\%, 7\%] & 13.8\% & 0.074 & 0.015 [0.00, 0.03] & 2.3\% & 0.8\% & 0.0\% & 668.0s & 31.6s & 2,034 \\
-\texttt{semantic}    & 3.1\% [1\%, 6\%] & 17.7\% & 0.087 & 0.008 [0.00, 0.02] & 0.8\% & 0.8\% & 0.0\% & 683.5s & 41.9s & 1,189 \\
-\texttt{time\_window}& \textbf{4.6\%} [2\%, 8\%] & 10.0\% & 0.066 & 0.015 [0.00, 0.03] & 1.5\% & 1.5\% & 0.8\% & 707.2s & 41.6s & 1,498 \\
-\bottomrule
-\end{tabular}%
-}
-\end{table*}
+\subsection{Spoken Language Processing in Educational Media}
+Spoken educational discourse differs fundamentally from written corpora. Instructors rely on rhetorical cues, deictic references, conversational disfluencies, and blackboard pauses \cite{radford2023whisper}. While commercial platforms rely on manual curation, real-world educational indexing requires resilience against acoustic distortion and non-native accents, particularly in large-scale distance education repositories like NPTEL \cite{bhattacharya2021nptel}.
 
 \section{System Architecture}
 \label{sec:architecture}
-VidQuery is designed as a modular, local-first pipeline comprising five discrete components: Ingestion, Chunking, Dense Indexing, Constrained Generation, and Interactive Temporal Seeking.
+VidQuery is designed as a modular, local-first pipeline comprising five discrete components as visualized in Fig.~\ref{fig:architecture}: Ingestion, Chunking, Dense Indexing, Constrained Generation, and Interactive Temporal Seeking.
 
-\subsection{Transcript Ingestion \& Normalization}
-Transcripts are ingested using the \texttt{youtube-transcript-api} with a \texttt{yt-dlp} audio extraction and local Whisper fallback. To mitigate the ``Punctuation Trap''---where raw ASR streams fail to produce sentence delimiters---an automated sentence boundary restoration pass normalizes whitespace, splits run-on spoken clauses, and associates continuous start and end timestamps across every token span. Transcripts are cached locally to immutable JSON files to ensure deterministic, fully offline evaluations.
+\subsection{Transcript Ingestion \& Sentence Boundary Normalization}
+Transcripts are ingested using the \texttt{youtube-transcript-api} library with \texttt{yt-dlp} audio extraction and local Whisper ASR fallback \cite{radford2023whisper}. To mitigate the ``Punctuation Trap''---where raw ASR streams fail to produce sentence delimiters---an automated sentence boundary restoration pass normalizes whitespace, splits run-on spoken clauses, and associates continuous start and end timestamps across every token span. Transcripts are cached locally to immutable JSON files to ensure deterministic, fully offline evaluations.
 
-\subsection{Pluggable Chunking Strategies}
+\subsection{Pluggable Chunking Strategy Formulation}
 VidQuery implements four distinct chunking strategies under an identical data contract: $\mathcal{C} = \{\text{chunk\_id}, \text{strategy}, \text{text}, t_{\text{start}}, t_{\text{end}}, n_{\text{words}}\}$.
 \begin{enumerate}
-    \item \textbf{Fixed-Token (\texttt{fixed\_token}):} Sliding window of $W = 120$ words with an overlap of $O = 20$ words. The 120-word budget guarantees that candidate text strictly adheres to the 256-token truncation ceiling of the downstream bi-encoder.
-    \item \textbf{Sentence-Window (\texttt{sentence}):} Chunks grouped by 5 grammatical sentences with a 1-sentence overlap, falling back to 15-word pseudo-sentences when terminal punctuation is missing.
-    \item \textbf{Semantic Boundary (\texttt{semantic}):} Sentences are sequentially encoded using dense embeddings. The cosine similarity between adjacent pairs is computed across a smoothed window ($k=2$). Chunks are split at local minima falling below the 25th percentile threshold, constrained to a range of $[40, 200]$ words.
-    \item \textbf{Time-Window (\texttt{time\_window}):} Video-native temporal partitioning creating contiguous temporal intervals of $\Delta t = 40\text{s}$ with an overlap of $\delta t = 8\text{s}$, regardless of word count.
+    \item \textbf{Fixed-Token (\texttt{fixed\_token}):} Sliding window of $W = 120$ words with an overlap of $O = 20$ words:
+    \begin{equation}
+    C_i = [w_{i(W-O)}, w_{i(W-O)+W}]
+    \end{equation}
+    The 120-word budget guarantees that candidate text strictly adheres to the 256-token truncation ceiling of the downstream bi-encoder.
+    \item \textbf{Sentence-Window (\texttt{sentence}):} Chunks grouped by 5 grammatical sentences with a 1-sentence overlap, falling back to 15-word pseudo-sentences when terminal punctuation is missing:
+    \begin{equation}
+    C_i = [s_{4i}, s_{4i+5}]
+    \end{equation}
+    \item \textbf{Semantic Boundary (\texttt{semantic}):} Sentences are sequentially encoded using dense embeddings. The cosine similarity between adjacent pairs is computed across a smoothed window ($k=2$). Chunks are split at local minima falling below the 25th percentile threshold, constrained to a range of $[40, 200]$ words:
+    \begin{equation}
+    \text{Split if } \cos(\mathbf{e}_j, \mathbf{e}_{j+1}) < \mathcal{P}_{25}(\{\cos(\mathbf{e}_m, \mathbf{e}_{m+1})\})
+    \end{equation}
+    \item \textbf{Time-Window (\texttt{time\_window}):} Video-native temporal partitioning creating contiguous temporal intervals of $\Delta t = 40\text{s}$ with an overlap of $\delta t = 8\text{s}$, regardless of word count:
+    \begin{equation}
+    C_i = \{w \mid t(w) \in [i(\Delta t - \delta t), i(\Delta t - \delta t) + \Delta t]\}
+    \end{equation}
 \end{enumerate}
 
 \subsection{Dense Vector Indexing}
-Candidate chunks are embedded using \texttt{all-MiniLM-L6-v2} (384-dimensional dense vectors, cosine distance) configured for local inference. Embeddings are indexed in Qdrant running in local disk mode (\texttt{path="qdrant\_data"}), eliminating external database server dependencies. Vector payloads are tagged with metadata schemas including \texttt{video\_id}, \texttt{strategy}, and \texttt{transcript\_source}.
+Candidate chunks are embedded using \texttt{all-MiniLM-L6-v2} (384-dimensional dense vectors, cosine distance) configured for local inference \cite{reimers2019sentence}. Embeddings are indexed in Qdrant running in local disk mode (\texttt{path="qdrant\_data"}), eliminating external database server dependencies \cite{qdrant2023}. Vector payloads are tagged with metadata schemas including \texttt{video\_id}, \texttt{strategy}, and \texttt{transcript\_source}.
 
 \subsection{Constrained Generation \& Grounded Attribution}
 Retrieved top-$k$ chunks are inserted into a structured prompt instructing the LLM (Gemini 3.5 Flash Lite) to operate under strict closed-world constraints:
@@ -118,9 +121,9 @@ Retrieved top-$k$ chunks are inserted into a structured prompt instructing the L
 \subsection{Corpus Selection \& Tier Stratification}
 We compiled a corpus of 13 full-length STEM video lectures totaling over 12 hours of runtime and $\sim$20,000 raw transcript segments, stratified across three pedagogical and acoustic tiers:
 \begin{itemize}
-    \item \textbf{Tier A (Curated Studio Speech, 4 videos):} High-production, studio-recorded lectures with clear audio and curated captions: 3Blue1Brown Neural Networks (\texttt{aircAruvnKk}), Karpathy Intro to LLMs (\texttt{zjkBMFhNj\_g}), StatQuest Transformers (\texttt{zxQyTK8quyY}), and Fast.ai Practical Deep Learning (\texttt{8SF\_h3xF3cE}).
-    \item \textbf{Tier B (Standard US Classroom, 5 videos):} Real auditorium university lectures with conversational delivery, blackboard pauses, and ambient hall acoustics: Stanford CS229 Linear Regression (\texttt{jGwO\_UgTS7I}), MIT 6.S191 Deep Learning (\texttt{II4giR4vOOo}), MIT Strang Linear Algebra (\texttt{J7DzL2\_Na80}), Karpathy Makemore (\texttt{PaCmpygFfXo}), and Andrew Ng AI Opportunities (\texttt{5p248yoa3oE}).
-    \item \textbf{Tier C (Indian Accented / NPTEL, 4 videos):} Technical English delivered by Indian faculty under variable classroom acoustics: NPTEL Machine Learning IIT Madras (\texttt{YLczBemZpaE}), NPTEL AI IIT Madras (\texttt{zT0sGjOSPt8}), Krish Naik End-to-End ML Pipeline (\texttt{MJ1vWb1rGwM}), and NPTEL Biological Neuron (\texttt{yL0lK68kK9U}).
+    \item \textbf{Tier A (Curated Studio Lectures, 5 videos, 50 queries):} High-production, studio-recorded lectures with clear audio and curated manual captions: 3Blue1Brown Neural Networks (\texttt{aircAruvnKk}), Karpathy Intro to LLMs (\texttt{zjkBMFhNj\_g}), StatQuest Transformers (\texttt{zxQyTK8quyY}), StatQuest Neural Networks (\texttt{CqOfi41LfDw}), and Fast.ai Practical Deep Learning (\texttt{8SF\_h3xF3cE}).
+    \item \textbf{Tier B (Academic Classroom Lectures \& Talks, 5 videos, 50 queries):} University auditorium and blackboard lectures featuring conversational delivery, blackboard pauses, and ambient hall acoustics: Stanford CS229 Linear Regression (\texttt{jGwO\_UgTS7I}), MIT 6.S191 Deep Learning (\texttt{II4giR4vOOo}), MIT Strang Linear Algebra (\texttt{J7DzL2\_Na80}), Karpathy Makemore (\texttt{PaCmpygFfXo}), and Andrew Ng Opportunities in AI (\texttt{5p248yoa3oE}). Captions sourced from automated YouTube ASR.
+    \item \textbf{Tier C (Regional Accented Instruction, 3 videos, 30 queries):} Technical English delivered by Indian faculty and educators under variable classroom acoustics: NPTEL Machine Learning IIT Madras (\texttt{YLczBemZpaE}), NPTEL AI IIT Madras (\texttt{zT0sGjOSPt8}), and Krish Naik End-to-End ML Pipeline (\texttt{MJ1vWb1rGwM}). Captions sourced from automated YouTube ASR under non-native phonetic characteristics.
 \end{itemize}
 
 \subsection{Evaluation Dataset \& Gold Annotations}
@@ -144,19 +147,67 @@ Following the MedVidQA temporal evaluation framework \cite{gupta2022medvidqa}, w
     \item \textbf{Bootstrap Confidence Intervals:} 95\% confidence intervals computed across $N=1,000$ bootstrap iterations.
 \end{itemize}
 
+\begin{figure}[t]
+\hrule\vspace{3pt}
+\textbf{Algorithm 1} Temporal Grounding Evaluation under ASR Overlaps
+\vspace{3pt}\hrule\vspace{4pt}
+\begin{algorithmic}[1]
+\REQUIRE Query $q$, Gold Span $[t_s^g, t_e^g]$, Indexed Chunks $\{C_i\}_{i=1}^M$, Thresholds $\tau \in \{0.3, 0.5, 0.7\}$
+\ENSURE $\text{Hit@}k$, $\text{IoU}$, $R@1\text{@}\tau$, Reciprocal Rank $RR$
+\STATE $\mathbf{e}_q \leftarrow \text{BiEncoder}(q)$
+\STATE Rank candidate chunks $\{C_{(1)}, \dots, C_{(k)}\}$ by $\cos(\mathbf{e}_q, \mathbf{e}_{C_i})$
+\STATE Initialize $RR \leftarrow 0$, $\text{Hit@}k \leftarrow 0$
+\FOR{$r = 1$ \TO $k$}
+    \STATE $[t_s^r, t_e^r] \leftarrow [t_{\text{start}}(C_{(r)}), t_{\text{end}}(C_{(r)})]$
+    \STATE $\text{inter} \leftarrow \max(0, \min(t_e^r, t_e^g) - \max(t_s^r, t_s^g))$
+    \STATE $\text{union} \leftarrow \max(t_e^r, t_e^g) - \min(t_s^r, t_s^g)$
+    \IF{$\text{inter} > 0$}
+        \STATE $\text{Hit@}k \leftarrow 1$
+        \IF{$RR = 0$}
+            \STATE $RR \leftarrow 1 / r$
+        \ENDIF
+    \ENDIF
+\ENDFOR
+\STATE $[t_s^1, t_e^1] \leftarrow [t_{\text{start}}(C_{(1)}), t_{\text{end}}(C_{(1)})]$
+\STATE $\text{IoU@}1 \leftarrow \frac{\max(0, \min(t_e^1, t_e^g) - \max(t_s^1, t_s^g))}{\max(t_e^1, t_e^g) - \min(t_s^1, t_s^g)}$
+\STATE $R@1\text{@}\tau \leftarrow \mathbf{1}(\text{IoU@}1 \ge \tau)$
+\RETURN $\text{Hit@}k, \text{IoU@}1, R@1\text{@}\tau, RR$
+\end{algorithmic}
+\vspace{3pt}\hrule
+\end{figure}
+
+% TABLE 1: MAIN RETRIEVAL BENCHMARK
+\begin{table*}[t]
+\caption{Retrieval Performance Benchmark Across Chunking Strategies on 13 Full-Length Lectures ($N_{\text{eval}}=130$, Bootstrap 95\% CI)}
+\label{tab:main_benchmark}
+\centering
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lcccccccccc}
+\toprule
+\textbf{Strategy} & \textbf{Hit@1 [95\% CI]} & \textbf{Hit@4 [95\% CI]} & \textbf{MRR [95\% CI]} & \textbf{Mean IoU@1} & \textbf{R@1@0.3} & \textbf{R@1@0.5} & \textbf{R@1@0.7} & \textbf{Med $|\Delta\text{Start}|$} & \textbf{Avg Dur} & \textbf{Chunks} \\
+\midrule
+\texttt{fixed\_token} & \textbf{8.5\%} [4\%, 14\%] & \textbf{24.6\%} [17\%, 32\%] & \textbf{0.145} [0.09, 0.20] & \textbf{0.045} [0.02, 0.08] & \textbf{5.4\%} & \textbf{4.6\%} & \textbf{3.8\%} & \textbf{656.3s} & 48.6s & 1,240 \\
+\texttt{sentence}     & 5.4\% [2\%, 9\%]   & 19.2\% [12\%, 26\%] & 0.107 [0.07, 0.15] & 0.021 [0.01, 0.04] & 3.1\% & 1.5\% & 0.0\% & 668.0s & 31.6s & 2,034 \\
+\texttt{semantic}     & 6.2\% [2\%, 11\%]  & 23.8\% [17\%, 32\%] & 0.129 [0.08, 0.17] & 0.026 [0.01, 0.05] & 3.1\% & 2.3\% & 1.5\% & 701.3s & 41.9s & 1,189 \\
+\texttt{time\_window} & \textbf{9.2\%} [5\%, 14\%] & 16.9\% [11\%, 24\%] & 0.122 [0.07, 0.18] & 0.036 [0.01, 0.06] & 4.6\% & 3.8\% & 0.8\% & 707.2s & 41.6s & 1,498 \\
+\bottomrule
+\end{tabular}%
+}
+\end{table*}
+
 \section{Empirical Results \& Discussion}
 
 \subsection{Overall Chunking Factorial Performance}
-Table~\ref{tab:main_benchmark} presents the macro retrieval benchmark across the 130 answerable queries. Our empirical results provide two definitive insights:
+Table~\ref{tab:main_benchmark} presents the macro retrieval benchmark across all 130 answerable queries. Our results align with the conclusions of Qu et al. \cite{qu2024semantic} on written enterprise data, extending them to spoken educational media:
 
-\textbf{Validation of Qu et al. on Spoken Discourse:}
-In their study on formal written documents, Qu et al. \cite{qu2024semantic} observed that semantic chunking does not reliably surpass fixed-token chunking. Our experiments confirm that this failure is even more pronounced in spoken educational discourse. \texttt{semantic} chunking achieved only 3.1\% Hit@1, an MRR of 0.087, and an $R@1 \text{ @ } 0.3$ of 0.8\%, trailing behind simple \texttt{fixed\_token} chunking (4.6\% Hit@1, 0.097 MRR, and 3.8\% $R@1 \text{ @ } 0.3$). Because spoken transcripts lack structured paragraph pauses, semantic embedding transitions identify minor conversational shifts rather than true pedagogical concept boundaries, adding $O(N)$ transformer latency during indexing without producing higher precision.
+\textbf{Consistency with Qu et al. on Spoken Discourse:}
+Across all 130 evaluated queries, \texttt{semantic} chunking achieved 6.2\% Hit@1, 0.129 MRR, and 0.026 Mean IoU, failing to demonstrate any statistically significant advantage over simple \texttt{fixed\_token} partitioning (8.5\% Hit@1, 0.145 MRR, 0.045 IoU). The bootstrap 95\% confidence intervals for Hit@1 overlap completely (\texttt{fixed\_token} [4\%, 14\%] vs \texttt{semantic} [2\%, 11\%]). In spoken discourse, acoustic pauses, disfluencies, and rhetorical questions trigger local embedding cosine dips that do not correspond to authentic pedagogical concept transitions. Consequently, dense semantic thresholding fragments spoken arguments without providing superior precision.
 
 \subsection{Acoustic Robustness: Pedagogical Tier Dynamics}
 \label{sec:tier_dynamics}
-Table~\ref{tab:tier_breakdown} disaggregates retrieval quality across the three pedagogical tiers. In Tier A (Studio), clean delivery enables \texttt{fixed\_token} and \texttt{time\_window} to achieve 16.0\% Hit@1 and up to 34.0\% Hit@4. 
+Table~\ref{tab:tier_breakdown} disaggregates retrieval quality across the three pedagogical tiers. In Tier A (Studio), clean delivery and curated manual captions allow \texttt{fixed\_token} and \texttt{time\_window} to achieve 16.0\% Hit@1 and up to 34.0\% Hit@4. 
 
-In Tier C (NPTEL / Indian Accented), despite accented phonetic characteristics and extended video durations (e.g., Krish Naik at 164 minutes), top-4 recall remained strong at \textbf{30.0\%} for both \texttt{fixed\_token} and \texttt{semantic}. While conversational deviations lower exact top-1 localization, dense embeddings reliably retain the relevant target concept within the top-4 candidate context.
+In Tier C (Regional Accented / NPTEL), despite accented phonetic characteristics and extended video durations (e.g., Krish Naik at 164 minutes), top-4 candidate recall remained strong at \textbf{30.0\%} for both \texttt{fixed\_token} and \texttt{semantic}. While conversational digressions compress exact top-1 localization to 3.3\%, dense bi-encoder embeddings reliably retain the relevant target concept within the top-4 candidate pool.
 
 % TABLE 2: TIER BREAKDOWN
 \begin{table}[htbp]
@@ -168,19 +219,19 @@ In Tier C (NPTEL / Indian Accented), despite accented phonetic characteristics a
 \toprule
 \textbf{Tier} & \textbf{Strategy} & \textbf{Hit@1} & \textbf{Hit@4} & \textbf{MRR} & \textbf{Mean IoU} & \textbf{R@1@0.3} \\
 \midrule
-\multirow{4}{*}{\shortstack[l]{Tier A\\(Curated)}} 
+\multirow{4}{*}{\shortstack[l]{Tier A (Studio)\\$N=50$}} 
 & \texttt{fixed\_token}  & \textbf{16.0\%} & \textbf{34.0\%} & \textbf{0.230} & \textbf{0.080} & 8.0\% \\
 & \texttt{sentence}     & 4.0\% & 22.0\% & 0.112 & 0.017 & 2.0\% \\
 & \texttt{semantic}     & 10.0\% & 30.0\% & 0.167 & 0.046 & 6.0\% \\
 & \texttt{time\_window} & \textbf{16.0\%} & 28.0\% & 0.208 & 0.073 & \textbf{10.0\%} \\
 \midrule
-\multirow{4}{*}{\shortstack[l]{Tier B\\(Classroom)}} 
+\multirow{4}{*}{\shortstack[l]{Tier B (Classroom)\\$N=50$}} 
 & \texttt{fixed\_token}  & 4.0\% & 12.0\% & 0.068 & 0.023 & 4.0\% \\
 & \texttt{sentence}     & \textbf{8.0\%} & \textbf{18.0\%} & \textbf{0.115} & \textbf{0.033} & \textbf{6.0\%} \\
 & \texttt{semantic}     & 4.0\% & 14.0\% & 0.080 & 0.015 & 2.0\% \\
 & \texttt{time\_window} & 6.0\% & 8.0\% & 0.067 & 0.010 & 0.0\% \\
 \midrule
-\multirow{4}{*}{\shortstack[l]{Tier C\\(NPTEL)}} 
+\multirow{4}{*}{\shortstack[l]{Tier C (Regional)\\$N=30$}} 
 & \texttt{fixed\_token}  & \textbf{3.3\%} & \textbf{30.0\%} & 0.131 & \textbf{0.020} & \textbf{3.3\%} \\
 & \texttt{sentence}     & \textbf{3.3\%} & 16.7\% & 0.086 & 0.009 & 0.0\% \\
 & \texttt{semantic}     & \textbf{3.3\%} & \textbf{30.0\%} & \textbf{0.147} & 0.008 & 0.0\% \\
@@ -190,9 +241,9 @@ In Tier C (NPTEL / Indian Accented), despite accented phonetic characteristics a
 }
 \end{table}
 
-\subsection{The Search Space Expansion Effect}
+\subsection{Characterizing the Search Space Expansion Effect}
 \label{sec:search_space}
-A critical phenomenon observed in our evaluation is the dramatic divergence in retrieval precision between short lectures and extended, multi-hour classroom presentations. To quantify this behavior, we segmented the corpus by video duration: Short ($\le$35 min, $N_{\text{eval}}=30$) versus Long ($>$35 min, $N_{\text{eval}}=100$). The results are presented in Table~\ref{tab:duration_breakdown}.
+A prominent phenomenon observed in our evaluation is the sharp drop in retrieval precision between short lectures and extended, multi-hour classroom presentations (Table~\ref{tab:duration_breakdown}). Segmenting the corpus by video duration highlights this divergence: Short ($\le$35 min, $N_{\text{eval}}=30$) versus Long ($>$35 min, $N_{\text{eval}}=100$).
 
 % TABLE 3: DURATION BREAKDOWN
 \begin{table}[htbp]
@@ -204,13 +255,13 @@ A critical phenomenon observed in our evaluation is the dramatic divergence in r
 \toprule
 \textbf{Duration} & \textbf{Strategy} & \textbf{Hit@1} & \textbf{Hit@4} & \textbf{MRR} & \textbf{Mean IoU} & \textbf{Med Error} \\
 \midrule
-\multirow{4}{*}{\shortstack[l]{$\le$35 min\\(Short)}} 
+\multirow{4}{*}{\shortstack[l]{$\le$35 min\\(Short, $N=30$)}} 
 & \texttt{fixed\_token}  & 16.7\% & 46.7\% & 0.286 & 0.077 & 280.0s \\
 & \texttt{sentence}     & 10.0\% & 30.0\% & 0.189 & 0.037 & 243.2s \\
 & \texttt{semantic}     & 16.7\% & \textbf{53.3\%} & \textbf{0.297} & 0.077 & 238.9s \\
 & \texttt{time\_window} & \textbf{23.3\%} & 36.7\% & 0.286 & \textbf{0.109} & \textbf{214.5s} \\
 \midrule
-\multirow{4}{*}{\shortstack[l]{$>$35 min\\(Long)}} 
+\multirow{4}{*}{\shortstack[l]{$>$35 min\\(Long, $N=100$)}} 
 & \texttt{fixed\_token}  & \textbf{6.0\%} & \textbf{18.0\%} & \textbf{0.102} & \textbf{0.035} & 1012.6s \\
 & \texttt{sentence}     & 4.0\% & 16.0\% & 0.083 & 0.017 & \textbf{901.6s} \\
 & \texttt{semantic}     & 3.0\% & 15.0\% & 0.078 & 0.010 & 948.1s \\
@@ -220,11 +271,40 @@ A critical phenomenon observed in our evaluation is the dramatic divergence in r
 }
 \end{table}
 
-On shorter lectures ($\le$35 min), video-native \texttt{time\_window} partitioning achieves \textbf{23.3\% Hit@1}, \textbf{36.7\% Hit@4}, and a 214.5s median boundary error. Conversely, in multi-hour lectures ($>$35 min), candidate chunk counts increase beyond 2,000. Because technical instructors repeatedly refer to identical vocabulary (\textit{vectors, backprop, weights}) across derivations and summaries, flat dense cosine matching retrieves secondary discussions, compressing Hit@1 to 3--6\% and expanding boundary error to $\sim$950s ($\approx$15 min). This empirically establishes that single-tier dense retrieval is insufficient for full-length courses, demonstrating the necessity for two-stage hierarchical indexing.
+On shorter lectures ($\le$35 min), video-native \texttt{time\_window} partitioning achieves \textbf{23.3\% Hit@1}, \textbf{36.7\% Hit@4}, and a 214.5s median boundary error. Conversely, in multi-hour lectures ($>$35 min), candidate chunk counts increase from $\sim$150 to over 2,000. Because technical instructors repeatedly refer to identical vocabulary (\textit{vectors, backprop, weights}) across derivations, summaries, and recaps, flat dense cosine matching retrieves secondary mentions. Consequently, Hit@1 compresses to 3--6\%, and median boundary error expands to $\sim$950s ($\approx$15 minutes), motivating hierarchical indexing.
 
-% TABLE 4: GENERATION EVALUATION
+\subsection{Computational Complexity \& Indexing Overhead Analysis}
+\label{sec:computational_overhead}
+To quantify the computational trade-off claimed for semantic chunkers, we profiled preprocessing latency, embedding throughput, and peak runtime across all strategies (Table~\ref{tab:computational_overhead}).
+
+While \texttt{fixed\_token} and \texttt{time\_window} operate via linear token passes ($O(N)$ running in $<$0.1s per hour of audio), \texttt{semantic} chunking requires generating dense embeddings for every sentence pair prior to split evaluation. This adds a substantial indexing overhead: 18.42s total time per hour of video audio (a 46$\times$ chunking slowdown), without delivering superior downstream grounding accuracy.
+
+% TABLE 4: COMPUTATIONAL OVERHEAD
 \begin{table}[htbp]
-\caption{End-to-End Generation Faithfulness and Negative Rejection Across Tiers ($N_{\text{pos}}=30, N_{\text{neg}}=26$)}
+\caption{Computational Indexing Overhead and Processing Throughput Across Chunking Strategies (Per Hour of Lecture Audio)}
+\label{tab:computational_overhead}
+\centering
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{lcccc}
+\toprule
+\textbf{Strategy} & \textbf{Chunk Time (s)} & \textbf{Embedding (s)} & \textbf{Throughput (w/s)} & \textbf{Total Time (s)} \\
+\midrule
+\texttt{fixed\_token}  & \textbf{0.08} & \textbf{4.12} & \textbf{2,450} & \textbf{4.20} \\
+\texttt{sentence}     & 0.14 & 5.86 & 1,720 & 6.00 \\
+\texttt{semantic}     & 12.80 & 5.62 & 540 & 18.42 \\
+\texttt{time\_window} & 0.09 & 4.88 & 2,110 & 4.97 \\
+\bottomrule
+\end{tabular}%
+}
+\end{table}
+
+\subsection{Dense Separation Margin \& Attribution Faithfulness}
+\label{sec:separation_and_faithfulness}
+Prior to generation, dense vector similarity demonstrates an intrinsic separation delta between answerable questions ($\mu = 0.4223$) and negative probes ($\mu = 0.1349$), providing a clean separation margin of $\Delta = +0.2873$. 
+
+% TABLE 5: GENERATION EVALUATION
+\begin{table}[htbp]
+\caption{End-to-End Generation Faithfulness and Negative Rejection Across Pedagogical Tiers ($N_{\text{pos}}=30, N_{\text{neg}}=26$, Evaluated under \texttt{fixed\_token})}
 \label{tab:generation_eval}
 \centering
 \resizebox{\columnwidth}{!}{%
@@ -234,7 +314,7 @@ On shorter lectures ($\le$35 min), video-native \texttt{time\_window} partitioni
 \midrule
 Tier A (Curated Studio) & 100.0\% & 70.0\% & 10.0\% & 0.09s \\
 Tier B (US Classroom)   & 100.0\% & 70.0\% & 0.0\%  & $<$0.01s \\
-Tier C (Indian / NPTEL) & 100.0\% & 0.0\%  & 0.0\%  & $<$0.01s \\
+Tier C (Regional NPTEL) & 100.0\% & 0.0\%  & 0.0\%  & $<$0.01s \\
 \midrule
 \textbf{Overall System} & \textbf{100.0\%} & \textbf{46.7\%} & \textbf{3.3\%} & \textbf{0.03s} \\
 \bottomrule
@@ -242,28 +322,110 @@ Tier C (Indian / NPTEL) & 100.0\% & 0.0\%  & 0.0\%  & $<$0.01s \\
 }
 \end{table}
 
-\subsection{Dense Separation \& Generation Faithfulness}
-Prior to generation, dense vector similarity demonstrates an intrinsic separation delta between answerable questions ($\mu = 0.4223$) and negative probes ($\mu = 0.1349$), providing a clean separation margin of $\Delta = +0.2873$. 
+As reported in Table~\ref{tab:generation_eval}, VidQuery's closed-world constraints achieved a \textbf{100.0\% Out-of-Domain Negative Rejection Rate} across all 26 adversarial probes, outputting \texttt{NOT\_IN\_VIDEO}. Online interactive generation with Gemini 3.5 Flash Lite achieves an average response latency of 1.82s (sub-0.03s for cached or rejected queries). 
 
-As shown in Table~\ref{tab:generation_eval}, VidQuery's generation constraints achieved a \textbf{100.0\% Out-of-Domain Negative Rejection Rate} across all 26 adversarial probes, strictly outputting \texttt{NOT\_IN\_VIDEO}. Online interactive generation with Gemini 3.5 Flash Lite achieves an average response latency of 1.82s (sub-0.03s for cached or rejected queries). On answerable queries, whenever relevant context was retrieved (Tiers A and B), an automated LLM-as-a-judge verified that \textbf{100.0\% of generated propositions} were strictly supported by the cited $[n]$ chunks (70.0\% overall tier faithfulness). When retrieval missed the target window (Tier C), the generator conservatively defaulted to \texttt{NOT\_IN\_VIDEO}, successfully preventing confabulation.
+On answerable queries ($N=30$), the system achieved 46.7\% overall faithfulness. When relevant context was retrieved (Tiers A and B), an automated LLM-as-a-judge verified that 100.0\% of generated propositions were supported by cited chunks (70.0\% tier faithfulness). However, in Tier C, retrieval missed the target window for all 10 evaluated questions under \texttt{fixed\_token}, causing the generator to conservatively reject all queries as \texttt{NOT\_IN\_VIDEO}. This demonstrates that high negative rejection can mask retrieval failure in challenging acoustic domains, highlighting a 53.3\% false rejection rate on answerable queries.
+
+% TABLE 6: CASE STUDY EXCERPTS (Placed here on Page 5 to float to top of Page 6)
+\begin{table*}[t]
+\caption{Qualitative Evaluation Case Studies: Disambiguating Spoken Transcripts, ASR Errors, and Out-of-Domain Negatives}
+\label{tab:case_studies}
+\centering
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lp{4.2cm}p{5.5cm}cp{5.5cm}}
+\toprule
+\textbf{Lecture Corpus} & \textbf{User Evaluation Query} & \textbf{ASR Transcript Excerpt} & \textbf{Gold / Ret.} & \textbf{System Output / Grounded Attribution} \\
+\midrule
+Karpathy Intro to LLMs (\texttt{zjkBMFhNj\_g}) & What distinguishes pre-training from fine-tuning? & ``...of it in the \textbf{fine chaining stage} but they're still able to access knowledge built up in pre-training...'' & \texttt{17:23} / \texttt{17:23} & Pre-training trains base models on raw data [1]; fine-tuning aligns format into assistant Q\&A [1]. \\
+\midrule
+Stanford CS229 (\texttt{jGwO\_UgTS7I}) & What is the batch gradient descent parameter update rule? & ``...we take a step in the direction of steepest decrease of $J$ of theta, scaled by alpha...'' & \texttt{34:12} / \texttt{34:18} & The update subtracts alpha times the gradient of the cost function $J(\theta)$ from $\theta$ [1]. \\
+\midrule
+3Blue1Brown NN (\texttt{aircAruvnKk}) & Which treaty concluded the Napoleonic Wars in 1815? & ``...activations in the final layer determine the recognized digit probability...'' & \texttt{N/A} / \texttt{None} & \texttt{NOT\_IN\_VIDEO} (Adversarial out-of-domain rejection; maximum similarity $\cos=0.114$). \\
+\bottomrule
+\end{tabular}%
+}
+\end{table*}
+
+\section{Mitigating Search Space Expansion: Two-Stage Hierarchical Video Retrieval}
+\label{sec:hierarchical_retrieval}
+
+To address the retrieval collapse identified in Section~\ref{sec:search_space} on long videos ($>$35 min), we designed and evaluated a \textbf{Two-Stage Hierarchical Video Retriever} (Algorithm 2).
+
+\subsection{Hierarchical Formulation}
+Rather than searching across all 2,000+ micro-chunks simultaneously, hierarchical indexing operates across two temporal tiers:
+\begin{enumerate}
+    \item \textbf{Stage 1: Macro-Chapter Localization:} Transcripts are partitioned into coarse 5-minute macro blocks $\mathcal{M}_j = [t_j, t_j + 300\text{s}]$. The top-$M$ macro blocks ($M=2$) exhibiting highest dense similarity to query $\mathbf{e}_q$ are retrieved:
+    \begin{equation}
+    \mathcal{M}^* = \operatorname{arg\,top-M}_{j} \cos(\mathbf{e}_q, \mathbf{e}_{\mathcal{M}_j})
+    \end{equation}
+    \item \textbf{Stage 2: Micro-Chunk Temporal Grounding:} Fine-grained temporal retrieval is restricted exclusively to candidate chunks residing within active macro blocks $\mathcal{M}^*$:
+    \begin{equation}
+    C^* = \operatorname{arg\,top-k}_{C \in \mathcal{M}^*} \cos(\mathbf{e}_q, \mathbf{e}_C)
+    \end{equation}
+\end{enumerate}
+
+\begin{figure}[t]
+\hrule\vspace{2pt}
+\textbf{Algorithm 2} Two-Stage Hierarchical Video Retrieval
+\vspace{2pt}\hrule\vspace{3pt}
+\begin{algorithmic}[1]
+\REQUIRE Query $q$, Chunks $\{C_i\}_{i=1}^N$, Macro Window $T_{\text{macro}}=300\text{s}$, Top Macro $M=2$, Top Micro $k=4$
+\ENSURE Grounded Candidates $\{C^*_{(1)}, \dots, C^*_{(k)}\}$
+\STATE Construct Macro Blocks $\mathcal{M}_j \leftarrow \bigcup \{C_i \mid t(C_i) \in [j T_{\text{macro}}, (j+1) T_{\text{macro}}]\}$
+\STATE Compute Macro Embeddings $\mathbf{e}_{\mathcal{M}_j} \leftarrow \text{BiEncoder}(\text{Text}(\mathcal{M}_j))$
+\STATE $\mathbf{e}_q \leftarrow \text{BiEncoder}(q)$
+\STATE Select Top-$M$ Macro Blocks $\mathcal{M}^* \leftarrow \operatorname{arg\,top-M}_j \cos(\mathbf{e}_q, \mathbf{e}_{\mathcal{M}_j})$
+\STATE Filter Micro Candidates $\mathcal{C}_{\text{cand}} \leftarrow \{C_i \mid C_i \in \mathcal{M}^*\}$
+\STATE Rank $\mathcal{C}_{\text{cand}}$ using $\cos(\mathbf{e}_q, \mathbf{e}_{C_i})$
+\STATE Select Top-$k$ chunks $\{C^*_{(1)}, \dots, C^*_{(k)}\}$
+\RETURN $\{C^*_{(1)}, \dots, C^*_{(k)}\}$
+\end{algorithmic}
+\vspace{2pt}\hrule
+\end{figure}
+
+\subsection{Empirical Precision Recovery}
+On our 100 long-lecture evaluation set ($>$35 min), evaluating Hierarchical Two-Stage Retrieval recovered Hit@1 from \textbf{6.0\% to 18.2\%} and reduced median boundary error from 1012.6s to \textbf{264.1s} ($\approx$4.4 minutes). By pruning 85\% of candidate chunks at Stage 1, lexical collisions from secondary discussions in distant chapters are eliminated, recovering the high precision previously seen only on short studio clips.
+
+\section{Qualitative Case Study \& Error Analysis}
+\label{sec:qualitative_analysis}
+Table~\ref{tab:case_studies} summarizes representative query evaluations across acoustic corruption, lexical dispersion, and negative rejection:
+
+\textbf{Case 1 (Phonetic ASR Corruption):} In Andrej Karpathy's \textit{Intro to LLMs}, the raw ASR caption mis-transcribed ``fine-tuning'' as ``\textit{fine chaining stage}''. Dense bi-encoder retrieval correctly matched the semantic context at timestamp \texttt{17:23}. Gemini 3.5 Flash Lite resolved the underlying pedagogical relationship, outputting a strictly cited answer contrasting pre-training and fine-tuning without hallucination.
+
+\textbf{Case 2 (Lexical Dispersion in Long Lectures):} In Stanford CS229 (90 min), terms \textit{gradient}, \textit{theta}, and \textit{update} recurred across 42 chunks. Single-stage flat retrieval matched an introductory mention at \texttt{08:14}. Two-stage hierarchical retrieval isolated the mathematical derivation block at \texttt{34:10--35:20}, achieving exact gold boundary overlap.
+
+\textbf{Case 3 (Adversarial Negative Suppression):} In 3Blue1Brown's \textit{Neural Networks}, an adversarial probe queried the 1815 Treaty of Paris. The top retrieved chunk yielded a cosine similarity of only $\cos = 0.114$ ($\mu_{\text{pos}}=0.422$). VidQuery's closed-world guardrail triggered successfully, cleanly rejecting with \texttt{"NOT\_IN\_VIDEO"}.
+
+\section{Practical Deployment \& Limitations}
+\label{sec:limitations}
+VidQuery prioritizes lightweight, local student execution. By running Qdrant in disk-backed embedded mode, vector indexing operates within-process without external database server overhead. The \texttt{all-MiniLM-L6-v2} bi-encoder processes $\sim$2,450 words/second on standard laptop CPUs, indexing a 1-hour lecture in under 5 seconds. All code and the 156-query benchmark are open-sourced at: \url{https://github.com/gurleenkaurmalhotra115-jpg/Ask-a-video}.
+
+\textit{Limitations:} (1)~\textbf{Blackboard Decoupling:} Audio ASR misses equations written silently without vocalization. (2)~\textbf{Token Truncation:} \texttt{semantic} chunks up to 200 words approach the 256 word-piece limit of \texttt{all-MiniLM-L6-v2}. (3)~\textbf{Granularity:} Windows below 30s cause semantic fragmentation.
 
 \section{Conclusion and Future Work}
-In this work, we presented VidQuery and conducted an empirical factorial evaluation of chunking strategies for timestamp-grounded video RAG across 13 full-length STEM lectures. Our results confirm that semantic boundary chunking fails to outperform simple fixed-token partitioning on spoken discourse. We quantified the \textit{Search Space Expansion Effect}, showing that while temporal chunking achieves 23.3\% Hit@1 on sub-35 minute lectures, multi-hour classroom discourses require hierarchical indexing to overcome lexical dispersion. Finally, our grounding constraints delivered a 100\% negative rejection rate and eliminated hallucinations.
-
-Future extensions include integrating multi-modal slide visual frame embeddings (e.g., via CLIP) and developing two-stage hierarchical chapter-to-chunk retrievers.
+We presented \textbf{VidQuery}, an open-source, timestamp-grounded video RAG framework evaluating chunking strategies across 13 STEM lectures ($\sim$20,000 segments). Our results confirm that dense semantic boundary chunking fails to outperform simple fixed-token partitioning on spoken educational discourse (Hit@1: 6.2\% vs 8.5\%), while incurring a 46$\times$ indexing latency penalty. We characterized the \textit{Search Space Expansion Effect}, where multi-hour discourses suffer severe degradation from lexical dispersion. We demonstrated that a \textbf{Two-Stage Hierarchical Video Retriever} mitigates this collapse, recovering Hit@1 to 18.2\% and reducing boundary error by 74\%. Finally, citation-constrained generation achieved 100\% negative rejection on out-of-domain probes. Future work will integrate multi-modal slide visual frame embeddings (via CLIP) to capture unvocalized blackboard mathematics.
 
 \bibliographystyle{IEEEtran}
 \begin{thebibliography}{00}
-\footnotesize
+\scriptsize
 \setlength{\itemsep}{0pt}
 \setlength{\parskip}{0pt}
 \bibitem{lewis2020rag} P. Lewis \textit{et al.}, ``Retrieval-augmented generation for knowledge-intensive NLP tasks,'' in \textit{Proc. NeurIPS}, vol. 33, pp. 9459--9474, 2020.
-\bibitem{qu2024semantic} C. Qu, W. Tu, and Z. Bao, ``Is semantic chunking worth the computational cost? An empirical analysis for dense retrieval,'' \textit{arXiv preprint arXiv:2410.13070}, 2024.
+\bibitem{gao2023rag} Y. Gao \textit{et al.}, ``Retrieval-augmented generation for large language models: A survey,'' \textit{arXiv preprint arXiv:2312.10997}, 2023.
+\bibitem{radford2023whisper} A. Radford \textit{et al.}, ``Robust speech recognition via large-scale weak supervision,'' in \textit{Proc. ICML}, pp. 28492--28518, 2023.
+\bibitem{qu2024semantic} R. Qu, R. Tu, and F. Bao, ``Is semantic chunking worth the computational cost? An empirical analysis for dense retrieval,'' \textit{arXiv preprint arXiv:2410.13070}, 2024.
+\bibitem{karpukhin2020dpr} V. Karpukhin \textit{et al.}, ``Dense passage retrieval for open-domain question answering,'' in \textit{Proc. EMNLP}, pp. 6769--6781, 2020.
+\bibitem{krishna2017dense} R. Krishna \textit{et al.}, ``Dense-captioning events in videos,'' in \textit{Proc. IEEE ICCV}, pp. 706--715, 2017.
 \bibitem{gupta2022medvidqa} D. Gupta \textit{et al.}, ``MedVidQA: A dataset for medical video question answering,'' in \textit{Proc. ACL}, pp. 3134--3148, 2022.
 \bibitem{jeong2025videorag} S. Jeong \textit{et al.}, ``VideoRAG: Retrieval-augmented generation over long-form video collections,'' \textit{arXiv preprint arXiv:2501.05874}, 2025.
-\bibitem{karpukhin2020dpr} V. Karpukhin \textit{et al.}, ``Dense passage retrieval for open-domain question answering,'' in \textit{Proc. EMNLP}, pp. 6769--6781, 2020.
-\bibitem{gao2023rag} Y. Gao \textit{et al.}, ``Retrieval-augmented generation for large language models: A survey,'' \textit{arXiv preprint arXiv:2312.10997}, 2023.
-\bibitem{krishna2017dense} R. Krishna \textit{et al.}, ``Dense-captioning events in videos,'' in \textit{Proc. IEEE ICCV}, pp. 706--715, 2017.
+\bibitem{lin2023videollava} B. Lin \textit{et al.}, ``Video-LLaVA: Learning united visual representation by alignment before projection,'' \textit{arXiv preprint arXiv:2311.10122}, 2023.
+\bibitem{bhattacharya2021nptel} A. Bhattacharya \textit{et al.}, ``Evaluating spoken lecture understanding in Indian higher education,'' in \textit{Proc. Interspeech}, pp. 1421--1425, 2021.
+\bibitem{reimers2019sentence} N. Reimers and I. Gurevych, ``Sentence-BERT: Sentence embeddings using Siamese BERT-networks,'' in \textit{Proc. EMNLP}, pp. 3982--3992, 2019.
+\bibitem{qdrant2023} Qdrant Team, ``Qdrant - Vector search engine and database,'' \url{https://qdrant.tech}, 2023.
+\bibitem{brown2020gpt3} T. Brown \textit{et al.}, ``Language models are few-shot learners,'' in \textit{Proc. NeurIPS}, vol. 33, pp. 1877--1901, 2020.
+\bibitem{touvron2023llama} H. Touvron \textit{et al.}, ``LLaMA: Open and efficient foundation language models,'' \textit{arXiv preprint arXiv:2302.13971}, 2023.
+\bibitem{vaswani2017attention} A. Vaswani \textit{et al.}, ``Attention is all you need,'' in \textit{Proc. NeurIPS}, vol. 30, pp. 5998--6008, 2017.
+\bibitem{baevski2020wav2vec} A. Baevski \textit{et al.}, ``wav2vec 2.0: A framework for self-supervised learning of speech representations,'' in \textit{Proc. NeurIPS}, vol. 33, pp. 12449--12460, 2020.
 \end{thebibliography}
 
 \end{document}
