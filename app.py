@@ -3,6 +3,8 @@
 from __future__ import annotations
 
 from typing import Any
+from datetime import datetime, timezone
+import os
 import pandas as pd
 import streamlit as st
 
@@ -29,10 +31,211 @@ def get_cached_chunks(
     return chunk_transcript(segments, strategy, **params)
 
 
+@st.cache_data(show_spinner=False)
+def get_suggested_questions(video_id: str, segments: list[dict[str, Any]]) -> list[str]:
+    """Retrieve 3 pedagogical questions spanning early, middle, and late sections of the video."""
+    questions_csv = "eval/questions.csv"
+    if os.path.exists(questions_csv):
+        try:
+            df_q = pd.read_csv(questions_csv)
+            v_matches = df_q[(df_q["video_id"] == video_id) & (df_q["is_negative"] == False)]
+            if not v_matches.empty:
+                sorted_matches = v_matches.sort_values(by="gold_start_sec")
+                n = len(sorted_matches)
+                if n <= 3:
+                    return sorted_matches["question"].tolist()
+                indices = [min(1, n - 1), n // 2, n - 1]
+                seen = set()
+                res = []
+                for idx in indices:
+                    q = str(sorted_matches.iloc[idx]["question"]).strip()
+                    if q not in seen:
+                        seen.add(q)
+                        res.append(q)
+                return res
+        except Exception:
+            pass
+
+    if not segments:
+        return [
+            "What is the main topic covered in this video?",
+            "What key methods or techniques are introduced?",
+            "What conclusions or summaries are discussed at the end?",
+        ]
+
+    n_seg = len(segments)
+    p1 = segments[min(5, n_seg - 1)]["text"]
+    p2 = segments[n_seg // 2]["text"]
+    p3 = segments[max(0, n_seg - 6)]["text"]
+
+    def _truncate(t: str, max_w: int = 6) -> str:
+        words = t.split()
+        return " ".join(words[:max_w])
+
+    return [
+        f"What is introduced regarding '{_truncate(p1)}'?",
+        f"How does the lecture explain '{_truncate(p2)}'?",
+        f"What is summarized near the end about '{_truncate(p3)}'?",
+    ]
+
+
+def generate_study_note_markdown(
+    video_id: str,
+    question: str,
+    qa_res: dict[str, Any],
+) -> str:
+    """Generate a clean, structured Markdown study note with cited timestamps."""
+    yt_url = f"https://www.youtube.com/watch?v={video_id}"
+    now_str = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
+    lines = [
+        f"# 🎓 VidQuery Grounded Study Note",
+        f"",
+        f"- **Lecture URL:** [{yt_url}]({yt_url})",
+        f"- **Question:** {question}",
+        f"- **Grounded LLM:** `{qa_res.get('model', 'gemini-3.5-flash-lite')}`",
+        f"- **Latency:** `{qa_res.get('latency_sec', 0.0)}s` | **Generated:** {now_str}",
+        f"",
+        f"---",
+        f"",
+        f"## 📝 Grounded Answer",
+        f"",
+        f"{qa_res.get('answer', '')}",
+        f"",
+        f"---",
+        f"",
+        f"## ⏱️ Verified Timestamp Citations & Excerpts",
+        f"",
+    ]
+    sources = qa_res.get("sources", [])
+    if not sources:
+        lines.append("*No citations provided for this query.*")
+    for src in sources:
+        t_start = fmt_time(src["start"])
+        t_end = fmt_time(src["end"])
+        seek_s = int(round(src["start"]))
+        direct_link = f"https://www.youtube.com/watch?v={video_id}&t={seek_s}s"
+        lines.append(f"### Citation [{src['n']}] — `{t_start} - {t_end}`")
+        lines.append(f"> \"{src['text']}\"")
+        lines.append(f"")
+        lines.append(f"👉 [Seek Video to {t_start}]({direct_link})")
+        lines.append(f"")
+
+    lines.append("---")
+    lines.append("*Generated automatically by VidQuery — Timestamp-Grounded Video RAG*")
+    return "\n".join(lines)
+
+
+def is_seg_cited(seg_start: float, seg_dur: float, spans: list[tuple[float, float, int]]) -> int | None:
+    """Check if a transcript segment overlaps with any cited source span."""
+    seg_end = seg_start + max(1.0, seg_dur)
+    for start, end, n in spans:
+        if max(seg_start, start) < min(seg_end, end):
+            return n
+    return None
+
+
 def main() -> None:
     """Run the main Streamlit application interface."""
-    st.set_page_config(page_title="Ask a Video", layout="wide")
-    st.title("Ask a Video")
+    st.set_page_config(page_title="Ask a Video (VidQuery)", page_icon="🎬", layout="wide")
+
+    st.markdown(
+        """
+        <style>
+        /* Modern Clean White Theme */
+        .stApp {
+            background-color: #ffffff;
+            color: #0f172a;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        }
+        /* Top Navigation Header */
+        .app-header {
+            margin-bottom: 1.2rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .app-title {
+            font-size: 2.1rem;
+            font-weight: 800;
+            color: #0f172a;
+            letter-spacing: -0.025em;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .app-badge {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #2563eb;
+            background: #eff6ff;
+            padding: 3px 12px;
+            border-radius: 12px;
+            border: 1px solid #bfdbfe;
+        }
+        .app-subtitle {
+            font-size: 0.95rem;
+            color: #64748b;
+            margin: 0.25rem 0 0 0;
+        }
+        /* Buttons */
+        .stButton > button {
+            border-radius: 8px !important;
+            font-weight: 500 !important;
+            transition: all 0.15s ease-in-out !important;
+            border: 1px solid #cbd5e1 !important;
+            background-color: #ffffff !important;
+            color: #1e293b !important;
+        }
+        .stButton > button:hover {
+            border-color: #2563eb !important;
+            color: #2563eb !important;
+            background-color: #eff6ff !important;
+            box-shadow: 0 1px 3px rgba(37, 99, 235, 0.12) !important;
+        }
+        /* Primary buttons */
+        .stButton > button[kind="primary"] {
+            background-color: #2563eb !important;
+            color: #ffffff !important;
+            border: 1px solid #1d4ed8 !important;
+        }
+        .stButton > button[kind="primary"]:hover {
+            background-color: #1d4ed8 !important;
+            color: #ffffff !important;
+        }
+        /* Text inputs */
+        .stTextInput > div > div > input, .stTextArea > div > div > textarea {
+            border-radius: 8px !important;
+            border: 1px solid #cbd5e1 !important;
+            background-color: #ffffff !important;
+            color: #0f172a !important;
+        }
+        .stTextInput > div > div > input:focus, .stTextArea > div > div > textarea:focus {
+            border-color: #2563eb !important;
+            box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.2) !important;
+        }
+        /* Metrics & Containers */
+        div[data-testid="stMetric"] {
+            background-color: #f8fafc;
+            border: 1px solid #e2e8f0;
+            padding: 12px;
+            border-radius: 8px;
+        }
+        .answer-card {
+            background-color: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 10px;
+            padding: 18px 20px;
+            margin-top: 10px;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.03);
+        }
+        </style>
+        <div class="app-header">
+            <div class="app-title">🎬 Ask a Video <span class="app-badge">VidQuery RAG</span></div>
+            <p class="app-subtitle">Timestamp-grounded educational lecture Q&amp;A powered by dense retrieval &amp; Gemini</p>
+        </div>
+        """,
+        unsafe_allow_html=True,
+    )
 
     # Initialize session state storage
     if "videos" not in st.session_state:
@@ -51,6 +254,8 @@ def main() -> None:
         st.session_state.last_error_retrieved = None
     if "current_question_text" not in st.session_state:
         st.session_state.current_question_text = ""
+    if "trigger_ask" not in st.session_state:
+        st.session_state.trigger_ask = False
 
     # Sidebar settings
     with st.sidebar:
@@ -289,76 +494,108 @@ def main() -> None:
                         "Top-k chunks", min_value=1, max_value=10, value=4, key="ask_k_slider"
                     )
 
+                # Dynamic Suggested Question Chips
+                suggested_qs = get_suggested_questions(current_video_id, segments)
+                if suggested_qs:
+                    st.markdown("**💡 Suggested Questions from this Lecture:**")
+                    cols_sug = st.columns(len(suggested_qs))
+                    for i_s, q_s in enumerate(suggested_qs):
+                        with cols_sug[i_s]:
+                            short_label = q_s if len(q_s) <= 42 else q_s[:39] + "..."
+                            def make_sug_callback(q_target: str):
+                                def _callback():
+                                    st.session_state["ask_question_input"] = q_target
+                                    st.session_state["current_question_text"] = q_target
+                                    st.session_state["trigger_ask"] = True
+                                return _callback
+
+                            st.button(
+                                f"📌 {short_label}",
+                                key=f"btn_sug_q_{i_s}",
+                                help=q_s,
+                                use_container_width=True,
+                                on_click=make_sug_callback(q_s),
+                            )
+
                 question_text = st.text_area(
                     "Your question about this video:",
-                    value=st.session_state.get("current_question_text", ""),
                     placeholder="e.g. What is the difference between supervised and unsupervised learning?",
                     key="ask_question_input",
                 )
 
-                if ask_strategy not in indexed_strategies:
-                    st.info(
-                        f"Strategy '{ask_strategy}' is not indexed for this video yet."
+                col_btn_ask, col_btn_clear = st.columns([4, 1])
+                with col_btn_ask:
+                    ask_btn = st.button("Ask Question", type="primary", use_container_width=True)
+                with col_btn_clear:
+                    def clear_btn_callback():
+                        st.session_state["ask_question_input"] = ""
+                        st.session_state["current_question_text"] = ""
+                        st.session_state["latest_qa"] = None
+                        st.session_state["last_llm_error"] = None
+                        st.session_state["trigger_ask"] = False
+
+                    st.button("Clear", use_container_width=True, on_click=clear_btn_callback)
+
+                trigger_exec = ask_btn or st.session_state.get("trigger_ask", False)
+                if trigger_exec:
+                    st.session_state.trigger_ask = False
+                    clean_q = (
+                        question_text.strip()
+                        or st.session_state.get("current_question_text", "").strip()
                     )
-                    if st.button(
-                        f"Index '{ask_strategy}' now",
-                        key="btn_index_for_ask",
-                        use_container_width=True,
-                    ):
-                        with st.spinner(f"Indexing '{ask_strategy}' chunks..."):
-                            chunks_to_index = get_cached_chunks(
-                                current_video_id,
-                                segments,
-                                ask_strategy,
-                                DEFAULT_PARAMS[ask_strategy],
-                            )
-                            index_chunks(client, current_video_id, ask_strategy, chunks_to_index)
-                            st.success(f"Indexed {len(chunks_to_index)} chunks for '{ask_strategy}'!")
-                            st.rerun()
-                else:
-                    ask_btn = st.button("Ask", type="primary", use_container_width=True)
-                    if ask_btn:
-                        clean_q = question_text.strip()
-                        if not clean_q:
-                            st.warning("Please enter a question.")
-                        else:
-                            st.session_state.current_question_text = clean_q
-                            st.session_state.last_error_retrieved = None
-                            st.session_state.last_llm_error = None
-                            try:
-                                with st.spinner("Searching video & generating answer..."):
-                                    retrieved = search(
-                                        client=client,
-                                        query=clean_q,
-                                        video_id=current_video_id,
-                                        strategy=ask_strategy,
-                                        k=ask_k,
-                                    )
-                                    if not retrieved:
-                                        st.warning("No relevant chunks found in the video.")
-                                    else:
-                                        try:
-                                            qa_result = answer_question(
-                                                question=clean_q, chunks=retrieved
-                                            )
-                                            log_qa(
-                                                video_id=current_video_id,
-                                                strategy=ask_strategy,
-                                                k=ask_k,
-                                                question=clean_q,
-                                                retrieved_chunks=retrieved,
-                                                llm_result=qa_result,
-                                            )
-                                            st.session_state.latest_qa = qa_result
-                                            st.session_state.last_llm_error = None
-                                        except LLMError as exc:
-                                            st.session_state.last_llm_error = str(exc)
-                                            st.session_state.last_error_retrieved = retrieved
-                                            st.session_state.latest_qa = None
-                            except TranscriptError as exc:
-                                st.error(str(exc))
-                            except Exception as exc:
-                                st.error(f"Error generating answer: {exc}")
+                    if not clean_q:
+                        st.warning("Please enter a question or click a suggested question chip above.")
+                    else:
+                        st.session_state.current_question_text = clean_q
+                        st.session_state.last_error_retrieved = None
+                        st.session_state.last_llm_error = None
+
+                        # Auto-index on the fly if this strategy is not yet indexed in Qdrant
+                        if ask_strategy not in indexed_strategies:
+                            with st.spinner(f"Auto-indexing '{ask_strategy}' chunks for first-time search..."):
+                                chunks_to_index = get_cached_chunks(
+                                    current_video_id,
+                                    segments,
+                                    ask_strategy,
+                                    DEFAULT_PARAMS[ask_strategy],
+                                )
+                                index_chunks(client, current_video_id, ask_strategy, chunks_to_index)
+                                indexed_strategies.add(ask_strategy)
+
+                        try:
+                            with st.spinner("Searching video & generating answer..."):
+                                retrieved = search(
+                                    client=client,
+                                    query=clean_q,
+                                    video_id=current_video_id,
+                                    strategy=ask_strategy,
+                                    k=ask_k,
+                                )
+                                if not retrieved:
+                                    st.warning("No relevant chunks found in the video.")
+                                else:
+                                    try:
+                                        qa_result = answer_question(
+                                            question=clean_q, chunks=retrieved
+                                        )
+                                        log_qa(
+                                            video_id=current_video_id,
+                                            strategy=ask_strategy,
+                                            k=ask_k,
+                                            question=clean_q,
+                                            retrieved_chunks=retrieved,
+                                            llm_result=qa_result,
+                                        )
+                                        st.session_state.latest_qa = qa_result
+                                        st.session_state.last_llm_error = None
+                                    except LLMError as exc:
+                                        st.session_state.last_llm_error = str(exc)
+                                        st.session_state.last_error_retrieved = retrieved
+                                        st.session_state.latest_qa = None
+                        except TranscriptError as exc:
+                            st.error(str(exc))
+                        except Exception as exc:
+                            st.error(f"Error generating answer: {exc}")
 
                 # Display error and fallback retrieved chunks if LLM was unavailable
                 if st.session_state.get("last_llm_error"):
@@ -388,10 +625,15 @@ def main() -> None:
                 if qa_res:
                     st.markdown("---")
                     if not qa_res.get("grounded", False):
-                        st.warning("This video doesn't seem to answer that question.")
+                        st.warning("⚠️ This video does not answer this question (Out-of-Domain Negative Rejection).")
                     else:
-                        st.markdown("### Answer")
-                        st.markdown(qa_res["answer"])
+                        st.markdown(
+                            f"""<div class="answer-card">
+                            <h3 style="margin-top:0; color:#0f172a; font-size:1.15rem; font-weight:700;">💬 Grounded Answer</h3>
+                            <div style="font-size:1rem; line-height:1.65; color:#1e293b;">{qa_res['answer']}</div>
+                            </div>""",
+                            unsafe_allow_html=True,
+                        )
 
                         model_parts = [f"Model: `{qa_res.get('model', 'gemini-3.8-flash')}`"]
                         if qa_res.get("fallback_used"):
@@ -423,18 +665,114 @@ def main() -> None:
                                         f"[[Open in YouTube ↗]({yt_direct_url})]"
                                     )
 
+                        # Feature 3: Export Study Notes Button
+                        if qa_res.get("grounded", False):
+                            st.markdown("---")
+                            study_note_md = generate_study_note_markdown(
+                                video_id=current_video_id,
+                                question=st.session_state.get("current_question_text", ""),
+                                qa_res=qa_res,
+                            )
+                            st.download_button(
+                                label="📥 Export Grounded Study Note (.md)",
+                                data=study_note_md,
+                                file_name=f"vidquery_study_note_{current_video_id}.md",
+                                mime="text/markdown",
+                                use_container_width=True,
+                                help="Download your Q&A, verified citations, and timestamp links as an exam-ready Markdown study note.",
+                            )
+
             # -------------------- TAB 2: TRANSCRIPT --------------------
             with tab_transcript:
-                df_records = [
-                    {
-                        "time (mm:ss)": fmt_time(seg["start"]),
-                        "start (s)": seg["start"],
-                        "text": seg["text"],
-                    }
-                    for seg in segments
+                st.subheader("Interactive Transcript")
+
+                active_qa = st.session_state.get("latest_qa")
+                active_sources = active_qa.get("sources", []) if active_qa else []
+                cited_spans = [
+                    (float(s["start"]), float(s["end"]), int(s.get("n", 1)))
+                    for s in active_sources
                 ]
-                df = pd.DataFrame(df_records)
-                st.dataframe(df, use_container_width=True, height=450)
+
+                col_t_search, col_t_mode = st.columns([3, 2])
+                with col_t_search:
+                    filter_kw = st.text_input(
+                        "🔍 Search transcript by keyword:",
+                        "",
+                        key="transcript_filter_kw",
+                        placeholder="e.g. gradient, neuron, attention",
+                    ).strip().lower()
+                with col_t_mode:
+                    view_mode = st.radio(
+                        "Display format:",
+                        ["Interactive (Click-to-Seek)", "Data Table"],
+                        horizontal=True,
+                        key="transcript_view_mode",
+                    )
+
+                if active_sources:
+                    st.info(
+                        f"🎯 **{len(active_sources)} cited moment(s)** from your latest answer are highlighted in yellow below."
+                    )
+                    only_cited = st.checkbox(
+                        "Show only cited segments",
+                        value=False,
+                        key="chk_only_cited",
+                    )
+                else:
+                    only_cited = False
+
+                if view_mode == "Data Table":
+                    df_records = []
+                    for seg in segments:
+                        c_n = is_seg_cited(seg["start"], seg["duration"], cited_spans)
+                        if only_cited and c_n is None:
+                            continue
+                        if filter_kw and filter_kw not in seg["text"].lower():
+                            continue
+                        df_records.append({
+                            "time (mm:ss)": fmt_time(seg["start"]),
+                            "start (s)": seg["start"],
+                            "cited": f"Source [{c_n}]" if c_n else "",
+                            "text": seg["text"],
+                        })
+                    st.dataframe(pd.DataFrame(df_records), use_container_width=True, height=450)
+                else:
+                    filtered_segs = []
+                    for seg in segments:
+                        c_n = is_seg_cited(seg["start"], seg["duration"], cited_spans)
+                        if only_cited and c_n is None:
+                            continue
+                        if filter_kw and filter_kw not in seg["text"].lower():
+                            continue
+                        filtered_segs.append((seg, c_n))
+
+                    st.caption(
+                        f"Showing {len(filtered_segs)} of {len(segments)} segments. Click any timestamp to seek the video."
+                    )
+
+                    with st.container(height=520):
+                        for idx, (seg, c_n) in enumerate(filtered_segs):
+                            col_btn_seek, col_text_seg = st.columns([1, 5])
+                            with col_btn_seek:
+                                if st.button(
+                                    f"▶ {fmt_time(seg['start'])}",
+                                    key=f"seek_tr_{idx}_{int(seg['start'])}",
+                                    use_container_width=True,
+                                ):
+                                    st.session_state.seek = int(round(seg["start"]))
+                                    st.session_state.autoplay = True
+                                    st.rerun()
+                            with col_text_seg:
+                                if c_n is not None:
+                                    st.markdown(
+                                        f"""<div style="background-color: #fef3c7; border-left: 4px solid #d97706; padding: 8px 12px; border-radius: 6px; margin-bottom: 6px;">
+                                        <span style="color: #b45309; font-weight: 700; font-size: 0.82em;">🎯 CITED AS SOURCE [{c_n}]</span><br/>
+                                        <span style="color: #451a03; font-size: 0.95rem; line-height: 1.5;">{seg['text']}</span>
+                                        </div>""",
+                                        unsafe_allow_html=True,
+                                    )
+                                else:
+                                    st.markdown(f"<span style='color: #64748b; font-weight: 600;'>{fmt_time(seg['start'])}</span> — <span style='color: #1e293b;'>{seg['text']}</span>", unsafe_allow_html=True)
 
             # -------------------- TAB 3: CHUNKS --------------------
             with tab_chunks:

@@ -26,3 +26,14 @@ scratch/
 
 # Archives & submission zip
 *.zip
+
+# Pytest & testing
+.pytest_cache/
+
+# LaTeX auxiliary files (preserves paper.tex and paper.pdf)
+*.aux
+*.bbl
+*.blg
+*.out
+*.toc
+*.synctex.gz

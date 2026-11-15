@@ -35,12 +35,19 @@ SYSTEM_PROMPT = (
 )
 
 
+_client_instance: Any = None
+
+
 def get_client() -> Any:
-    """Load environment variables and initialize the Google GenAI client.
+    """Load environment variables and initialize the Google GenAI client (cached singleton).
 
     Raises:
         LLMError: If GEMINI_API_KEY is not defined in the environment or .env file.
     """
+    global _client_instance
+    if _client_instance is not None:
+        return _client_instance
+
     load_dotenv()
     api_key = os.getenv("GEMINI_API_KEY")
     if not api_key or not api_key.strip():
@@ -48,7 +55,8 @@ def get_client() -> Any:
 
     try:
         from google import genai
-        return genai.Client(api_key=api_key.strip())
+        _client_instance = genai.Client(api_key=api_key.strip())
+        return _client_instance
     except Exception as exc:
         raise LLMError(f"Failed to initialize Gemini client: {exc}") from exc
 
@@ -154,7 +162,10 @@ def _call_model(
 
     from google.genai import types
 
-    cfg_args: dict[str, Any] = {"temperature": 0.2}
+    cfg_args: dict[str, Any] = {
+        "temperature": 0.2,
+        "max_output_tokens": 512,
+    }
     if system_instruction is not None:
         cfg_args["system_instruction"] = system_instruction
 
