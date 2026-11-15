@@ -214,7 +214,7 @@ In Tier C, top-4 recall (30.0\% for \texttt{fixed\_token} and \texttt{semantic})
 
 \subsection{Characterizing the Search Space Expansion Effect}
 \label{sec:search_space}
-A prominent phenomenon observed in our evaluation is the sharp drop in retrieval precision between short lectures and extended, multi-hour classroom presentations (Table~\ref{tab:duration_breakdown}). Segmenting the corpus by video duration highlights this divergence: Short ($\le$35 min, $N_{\text{eval}}=30$) versus Long ($>$35 min, $N_{\text{eval}}=100$).
+A prominent phenomenon observed in our evaluation is the sharp drop in retrieval precision between short lectures and long lectures ($>$35 min) (Table~\ref{tab:duration_breakdown}). Segmenting the corpus by video duration highlights this divergence: Short ($\le$35 min, $N_{\text{eval}}=30$) versus Long ($>$35 min, $N_{\text{eval}}=100$).
 
 % TABLE 3: DURATION BREAKDOWN
 \begin{table}[htbp]
@@ -269,7 +269,7 @@ While \texttt{fixed\_token} and \texttt{time\_window} operate via linear token p
 }
 \end{table}
 
-\subsection{Dense Separation Margin \& Attribution Faithfulness}
+\subsection{Dense Separation Margin \& Attribution Evaluation}
 \label{sec:separation_and_faithfulness}
 Prior to generation, dense vector similarity exhibits an intrinsic separation delta between answerable questions ($\mu = 0.4223$) and negative probes ($\mu = 0.1349$), providing a clean separation margin of $\Delta = +0.2873$. 
 
@@ -285,7 +285,7 @@ Prior to generation, dense vector similarity exhibits an intrinsic separation de
 \midrule
 Tier A (Curated Studio)     & 100\% (10/10) & 70\% (7/10) & 30\% (3/10)  & 100\% (7/7) & 14\% (1/7) \\
 Tier B (Academic Classroom) & 100\% (10/10) & 70\% (7/10) & 30\% (3/10)  & 100\% (7/7) & 0\% (0/7)  \\
-Tier C (Regional Accented)  & 100\% (6/6)   & 0\% (0/10)  & 100\% (10/10)& N/A (0/0)   & 0\% (0/0)  \\
+Tier C (Regional Accented)  & 100\% (6/6)   & 0\% (0/10)  & 100\% (10/10)& N/A         & N/A        \\
 \midrule
 \textbf{Overall System}     & \textbf{100\%} (26/26) & \textbf{47\%} (14/30) & \textbf{53\%} (16/30) & \textbf{100\%} (14/14) & \textbf{7\%} (1/14) \\
 \bottomrule
@@ -295,7 +295,7 @@ Tier C (Regional Accented)  & 100\% (6/6)   & 0\% (0/10)  & 100\% (10/10)& N/A (
 
 As reported in Table~\ref{tab:generation_eval}, Ask-a-Video's closed-world constraints achieved a \textbf{100\% Out-of-Domain Negative Rejection Rate} across all 26 adversarial probes, outputting strictly \texttt{NOT\_IN\_VIDEO}. Online interactive generation with Gemini 3.5 Flash Lite achieves an average response latency of 1.82s (sub-0.03s for cached or rejected queries). 
 
-On answerable queries ($N=10$ per tier sampled pseudo-randomly with seed 42, top-$k=4$ \texttt{fixed\_token} chunks passed to the LLM with no similarity threshold), the system answered 14/30 (46.7\%) and rejected 16/30 (a 53.3\% rejection rate on answerable queries). An LLM-as-a-judge (not human-verified) rated all 14 answers as supported by their cited chunks. Crucially, however, supported does not equal correct: only 1 of the 14 answered queries cited a chunk that actually overlapped the gold target span (in Tier B, Hit@4 is only 12\%, so answers were grounded in off-target lecture chunks that mentioned related terms). The guardrail therefore filters out-of-domain queries but does not detect off-target retrieval on in-domain queries: 13 of 14 answers cited chunks outside the gold span. In Tier C, where \texttt{fixed\_token} top-4 recall is 30\% (21/30 misses across all queries), top-4 retrieval in this 10-query sample missed the target concept entirely, leading the generator to abstain on all queries (10/10 rejection), showing that high rejection rates can mask upstream retrieval failure.
+On answerable queries ($N=10$ per tier sampled pseudo-randomly with seed 42 via pandas \texttt{sample()}, top-$k=4$ \texttt{fixed\_token} chunks passed to the LLM with no similarity threshold), the system answered 14/30 (46.7\%) and rejected 16/30 (a 53.3\% rejection rate on answerable queries). An LLM-as-a-judge (not human-verified) rated all 14 answers as supported by their cited chunks. Crucially, however, supported does not equal correct: only 1 of the 14 answered queries cited a chunk that actually overlapped the gold target span (in Tier B, Hit@4 is only 12\%, so answers were grounded in off-target lecture chunks that mentioned related terms). The guardrail therefore filters out-of-domain queries but does not detect off-target retrieval on in-domain queries: 13 of 14 answers cited chunks outside the gold span. In Tier C, where \texttt{fixed\_token} top-4 recall is 30\% across the tier, all 10 queries drawn in this pseudo-random sample missed the target concept entirely, leading the generator to abstain on all queries (10/10 rejection), showing that high rejection rates can mask upstream retrieval failure.
 
 % TABLE 6: CASE STUDY EXCERPTS (Placed here on Page 5 to float to top of Page 6)
 \begin{table*}[t]
@@ -371,12 +371,12 @@ Table~\ref{tab:case_studies} summarizes representative query evaluations across 
 
 \section{Practical Deployment \& Limitations}
 \label{sec:limitations}
-Ask-a-Video prioritizes lightweight, local student execution. By running Qdrant in disk-backed embedded mode, vector indexing operates within-process without external database server overhead. The \texttt{all-MiniLM-L6-v2} bi-encoder processes $\sim$2,450 words/second on standard laptop CPUs, indexing a 1-hour lecture in under 5 seconds. All code and the 156-query benchmark are open-sourced at: \url{https://github.com/gurleenkaurmalhotra115-jpg/Ask-a-video}.
+Ask-a-Video prioritizes lightweight, local student execution. Running Qdrant in disk-backed embedded mode eliminates external database server overhead. The \texttt{all-MiniLM-L6-v2} bi-encoder processes $\sim$2,450 words/second on standard laptop CPUs, indexing a 1-hour lecture in under 5 seconds. Benchmark code is open-sourced at: \url{https://github.com/gurleenkaurmalhotra115-jpg/Ask-a-video}.
 
-\textit{Limitations:} (1)~\textbf{Single Annotator Protocol:} Gold query boundaries were authored by a single domain expert; future releases will include inter-annotator agreement metrics ($\kappa$). (2)~\textbf{Blackboard Decoupling:} Audio ASR misses unvocalized blackboard equations, requiring multimodal frame embeddings. (3)~\textbf{Macro-Block Truncation \& BM25 Baselines:} Macro-block embeddings use standard bi-encoder truncation (256 word-pieces), limiting holistic block representation; sparse lexical (BM25) baselines were omitted in favor of pure dense retrieval scaling analysis. (4)~\textbf{Token Truncation:} \texttt{semantic} chunks up to 200 words approach the 256 word-piece limit of \texttt{all-MiniLM-L6-v2}. (5)~\textbf{Granularity:} Windows below 30s cause semantic fragmentation. (6)~\textbf{Confounding \& Sample Size:} Duration and acoustic tier are partially confounded (all short videos are studio recordings), and per-tier query samples are modest ($N = 30$--$50$).
+\textit{Limitations:} (1)~\textbf{Single Annotator Protocol:} Gold query boundaries were authored by a single domain expert; future releases will include inter-annotator agreement metrics ($\kappa$). (2)~\textbf{Blackboard Decoupling:} Audio ASR misses unvocalized blackboard equations, requiring multimodal frame embeddings. (3)~\textbf{Macro-Block Truncation \& BM25 Baselines:} Macro-block embeddings use standard bi-encoder truncation (256 word-pieces); sparse lexical (BM25) baselines were omitted in favor of dense scaling analysis. (4)~\textbf{Token Truncation:} \texttt{semantic} chunks up to 200 words approach the 256 word-piece limit of \texttt{all-MiniLM-L6-v2}. (5)~\textbf{Granularity:} Windows below 30s cause semantic fragmentation. (6)~\textbf{Confounding \& Sample Size:} Duration and acoustic tier are partially confounded (short videos are mostly studio recordings), and per-tier query samples are modest ($N = 30$--$50$).
 
 \section{Conclusion and Future Work}
-We presented \textbf{Ask-a-Video}, an open-source, timestamp-grounded video RAG framework evaluating chunking strategies across 13 STEM lectures ($\sim$20,000 segments). Our findings are consistent with Qu et al. on written documents: dense semantic boundary chunking fails to outperform simple fixed-token partitioning on spoken educational discourse (Hit@1: 6.2\% vs 8.5\%), while suffering a 160$\times$ slower chunking step and a 4.4$\times$ total indexing time penalty. We characterized the \textit{Search Space Expansion Effect}, where multi-hour discourses suffer severe degradation from lexical dispersion. We formulated a \textbf{Two-Stage Hierarchical Video Retriever} that indicates a viable mitigation, raising Hit@1 to 18\% in post-hoc analysis and reducing boundary error by 74\%. Finally, citation-constrained generation achieved 100\% negative rejection on out-of-domain probes, while false-negative rejections underscore the necessity of high-recall retrieval stages. Future work will integrate multi-modal slide visual frame embeddings (via CLIP) to capture unvocalized blackboard mathematics.
+We presented \textbf{Ask-a-Video}, an open-source, timestamp-grounded video RAG framework evaluating chunking strategies across 13 STEM lectures ($\sim$20,000 segments). Our findings are consistent with Qu et al. on written documents: dense semantic boundary chunking fails to outperform simple fixed-token partitioning on spoken educational discourse (Hit@1: 6.2\% vs 8.5\%), while suffering a 160$\times$ slower chunking step and a 4.4$\times$ total indexing time penalty. We characterized the \textit{Search Space Expansion Effect}, where long lectures suffer severe degradation from lexical dispersion. We formulated a \textbf{Two-Stage Hierarchical Video Retriever} that indicates a viable mitigation, raising Hit@1 to 18\% in post-hoc analysis and reducing boundary error by 74\%. Finally, citation-constrained generation achieved 100\% negative rejection on out-of-domain probes, while rejections of answerable queries underscore the necessity of high-recall retrieval stages. Future work will integrate multi-modal slide visual frame embeddings (via CLIP) to capture unvocalized blackboard mathematics.
 
 \bibliographystyle{IEEEtran}
 \begin{thebibliography}{00}
@@ -389,10 +389,10 @@ We presented \textbf{Ask-a-Video}, an open-source, timestamp-grounded video RAG 
 \bibitem{qu2024semantic} R. Qu, R. Tu, and F. Bao, ``Is semantic chunking worth the computational cost? An empirical analysis for dense retrieval,'' \textit{arXiv preprint arXiv:2410.13070}, 2024.
 \bibitem{karpukhin2020dpr} V. Karpukhin \textit{et al.}, ``Dense passage retrieval for open-domain question answering,'' in \textit{Proc. EMNLP}, pp. 6769--6781, 2020.
 \bibitem{krishna2017dense} R. Krishna \textit{et al.}, ``Dense-captioning events in videos,'' in \textit{Proc. IEEE ICCV}, pp. 706--715, 2017.
-\bibitem{gupta2022medvidqa} D. Gupta, K. Attal, and D. Demner-Fushman, ``MedVidQA: A dataset for medical video question answering,'' in \textit{Proc. ACL}, pp. 3134--3148, 2022.
+\bibitem{gupta2022medvidqa} D. Gupta, K. Attal, and D. Demner-Fushman, ``A dataset for medical instructional video classification and question answering,'' \textit{Scientific Data}, vol. 10, no. 1, p. 158, 2023.
 \bibitem{jeong2025videorag} S. Jeong, K. Kim, J. Baek, and S. J. Hwang, ``VideoRAG: Retrieval-augmented generation over video corpus,'' \textit{arXiv preprint arXiv:2501.05874}, 2025.
 \bibitem{lin2023videollava} B. Lin \textit{et al.}, ``Video-LLaVA: Learning united visual representation by alignment before projection,'' \textit{arXiv preprint arXiv:2311.10122}, 2023.
-\bibitem{bhattacharya2021nptel} A. Prakash \textit{et al.}, ``Technology pipeline for large scale cross-lingual dubbing of lecture videos into multiple Indian languages,'' in \textit{Proc. Interspeech}, pp. 1421--1425, 2022.
+\bibitem{bhattacharya2021nptel} A. Prakash \textit{et al.}, ``Technology pipeline for large scale cross-lingual dubbing of lecture videos into multiple Indian languages,'' in \textit{Proc. Interspeech}, pp. 3683--3684, 2023.
 \bibitem{reimers2019sentence} N. Reimers and I. Gurevych, ``Sentence-BERT: Sentence embeddings using Siamese BERT-networks,'' in \textit{Proc. EMNLP}, pp. 3982--3992, 2019.
 \bibitem{qdrant2023} Qdrant Team, ``Qdrant - Vector search engine and database,'' \url{https://qdrant.tech}, 2023.
 \end{thebibliography}
