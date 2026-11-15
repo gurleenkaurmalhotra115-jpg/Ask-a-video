@@ -67,6 +67,25 @@ Standard RAG frameworks index document collections by splitting text into overla
 \subsection{Temporal Video Grounding and Video QA}
 Temporal Video Grounding (TVG) seeks to predict continuous temporal intervals $[t_{\text{start}}, t_{\text{end}}]$ in untrimmed video corresponding to natural language queries. Standard datasets such as ActivityNet Captions \cite{krishna2017dense} and Charades-STA focus on short action recognition clips. MedVidQA \cite{gupta2022medvidqa} established the medical video temporal benchmark, establishing Intersection-over-Union (IoU) recall metrics ($R@k \text{ @ IoU} \ge \tau$) as the rigorous standard for evaluating temporal span accuracy. VideoRAG \cite{jeong2025videorag} recently extended retrieval-augmented methods to multi-modal video pipelines. We build directly upon the MedVidQA metric formulation, tailoring it specifically to long-form STEM lectures.
 
+% TABLE 1: MAIN RETRIEVAL PERFORMANCE (Placed here on Page 2 to float to top of Page 3)
+\begin{table*}[t]
+\caption{Retrieval Performance Benchmark Across Chunking Strategies on 13 Full-Length Lectures ($N_{\text{eval}}=130$, Bootstrap 95\% CI)}
+\label{tab:main_benchmark}
+\centering
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lcccccccccc}
+\toprule
+\textbf{Strategy} & \textbf{Hit@1 [95\% CI]} & \textbf{Hit@4} & \textbf{MRR} & \textbf{Mean IoU@1} & \textbf{R@1@0.3} & \textbf{R@1@0.5} & \textbf{R@1@0.7} & \textbf{Med $|\Delta\text{Start}|$} & \textbf{Avg Dur} & \textbf{Chunks} \\
+\midrule
+\texttt{fixed\_token} & \textbf{4.6\%} [2\%, 8\%] & \textbf{18.5\%} & \textbf{0.097} & \textbf{0.027} [0.01, 0.05] & \textbf{3.8\%} & \textbf{3.1\%} & \textbf{2.3\%} & 656.3s & 48.6s & 1,240 \\
+\texttt{sentence}    & 3.8\% [1\%, 7\%] & 13.8\% & 0.074 & 0.015 [0.00, 0.03] & 2.3\% & 0.8\% & 0.0\% & 668.0s & 31.6s & 2,034 \\
+\texttt{semantic}    & 3.1\% [1\%, 6\%] & 17.7\% & 0.087 & 0.008 [0.00, 0.02] & 0.8\% & 0.8\% & 0.0\% & 683.5s & 41.9s & 1,189 \\
+\texttt{time\_window}& \textbf{4.6\%} [2\%, 8\%] & 10.0\% & 0.066 & 0.015 [0.00, 0.03] & 1.5\% & 1.5\% & 0.8\% & 707.2s & 41.6s & 1,498 \\
+\bottomrule
+\end{tabular}%
+}
+\end{table*}
+
 \section{System Architecture}
 \label{sec:architecture}
 VidQuery is designed as a modular, local-first pipeline comprising five discrete components: Ingestion, Chunking, Dense Indexing, Constrained Generation, and Interactive Temporal Seeking.
@@ -125,23 +144,6 @@ Following the MedVidQA temporal evaluation framework \cite{gupta2022medvidqa}, w
     \item \textbf{Bootstrap Confidence Intervals:} 95\% confidence intervals computed across $N=1,000$ bootstrap iterations.
 \end{itemize}
 
-% TABLE 1: MAIN RETRIEVAL PERFORMANCE
-\begin{table*}[t]
-\caption{Retrieval Performance Benchmark Across Chunking Strategies on 13 Full-Length Lectures ($N_{\text{eval}}=130$, Bootstrap 95\% CI)}
-\label{tab:main_benchmark}
-\centering
-\begin{tabular}{lcccccccccc}
-\toprule
-\textbf{Strategy} & \textbf{Hit@1 [95\% CI]} & \textbf{Hit@4} & \textbf{MRR} & \textbf{Mean IoU@1} & \textbf{R@1@0.3} & \textbf{R@1@0.5} & \textbf{R@1@0.7} & \textbf{Med $|\Delta\text{Start}|$} & \textbf{Avg Dur} & \textbf{Chunks} \\
-\midrule
-\texttt{fixed\_token} & \textbf{4.6\%} [2\%, 8\%] & \textbf{18.5\%} & \textbf{0.097} & \textbf{0.027} [0.01, 0.05] & \textbf{3.8\%} & \textbf{3.1\%} & \textbf{2.3\%} & 656.3s & 48.6s & 1,240 \\
-\texttt{sentence}    & 3.8\% [1\%, 7\%] & 13.8\% & 0.074 & 0.015 [0.00, 0.03] & 2.3\% & 0.8\% & 0.0\% & 668.0s & 31.6s & 2,034 \\
-\texttt{semantic}    & 3.1\% [1\%, 6\%] & 17.7\% & 0.087 & 0.008 [0.00, 0.02] & 0.8\% & 0.8\% & 0.0\% & 683.5s & 41.9s & 1,189 \\
-\texttt{time\_window}& \textbf{4.6\%} [2\%, 8\%] & 10.0\% & 0.066 & 0.015 [0.00, 0.03] & 1.5\% & 1.5\% & 0.8\% & 707.2s & 41.6s & 1,498 \\
-\bottomrule
-\end{tabular}
-\end{table*}
-
 \section{Empirical Results \& Discussion}
 
 \subsection{Overall Chunking Factorial Performance}
@@ -161,6 +163,7 @@ In Tier C (NPTEL / Indian Accented), despite accented phonetic characteristics a
 \caption{Retrieval Performance Broken Down by Acoustic \& Pedagogical Tier}
 \label{tab:tier_breakdown}
 \centering
+\resizebox{\columnwidth}{!}{%
 \begin{tabular}{llccccc}
 \toprule
 \textbf{Tier} & \textbf{Strategy} & \textbf{Hit@1} & \textbf{Hit@4} & \textbf{MRR} & \textbf{Mean IoU} & \textbf{R@1@0.3} \\
@@ -183,7 +186,8 @@ In Tier C (NPTEL / Indian Accented), despite accented phonetic characteristics a
 & \texttt{semantic}     & \textbf{3.3\%} & \textbf{30.0\%} & \textbf{0.147} & 0.008 & 0.0\% \\
 & \texttt{time\_window} & \textbf{3.3\%} & 13.3\% & 0.069 & 0.017 & \textbf{3.3\%} \\
 \bottomrule
-\end{tabular}
+\end{tabular}%
+}
 \end{table}
 
 \subsection{The Search Space Expansion Effect}
@@ -195,6 +199,7 @@ A critical phenomenon observed in our evaluation is the dramatic divergence in r
 \caption{Impact of Video Duration on Temporal Grounding (Search Space Expansion)}
 \label{tab:duration_breakdown}
 \centering
+\resizebox{\columnwidth}{!}{%
 \begin{tabular}{llccccc}
 \toprule
 \textbf{Duration} & \textbf{Strategy} & \textbf{Hit@1} & \textbf{Hit@4} & \textbf{MRR} & \textbf{Mean IoU} & \textbf{Med Error} \\
@@ -211,35 +216,36 @@ A critical phenomenon observed in our evaluation is the dramatic divergence in r
 & \texttt{semantic}     & 3.0\% & 15.0\% & 0.078 & 0.010 & 948.1s \\
 & \texttt{time\_window} & 5.0\% & 11.0\% & 0.072 & 0.014 & 981.2s \\
 \bottomrule
-\end{tabular}
+\end{tabular}%
+}
 \end{table}
 
-On shorter lectures ($\le$35 min), video-native \texttt{time\_window} partitioning demonstrates strong localization capabilities: achieving \textbf{23.3\% Hit@1}, \textbf{36.7\% Hit@4}, the highest Mean IoU (0.109), and the lowest median boundary error (214.5s).
-
-Conversely, in multi-hour lectures ($>$35 min), candidate chunk counts increase from $\sim$150 to over 2,000. Because technical instructors repeatedly refer to identical vocabulary (\textit{vectors, backpropagation, weights}) throughout introductions, derivations, and summaries, dense cosine matching without chapter structure frequently retrieves secondary discussions. Consequently, Hit@1 compresses to 3--6\%, and median boundary error expands to $\sim$950s ($\approx$15 minutes). This empirically establishes that flat single-tier dense vector retrieval is insufficient for full-length video courses, demonstrating the necessity for two-stage hierarchical indexing.
+On shorter lectures ($\le$35 min), video-native \texttt{time\_window} partitioning achieves \textbf{23.3\% Hit@1}, \textbf{36.7\% Hit@4}, and a 214.5s median boundary error. Conversely, in multi-hour lectures ($>$35 min), candidate chunk counts increase beyond 2,000. Because technical instructors repeatedly refer to identical vocabulary (\textit{vectors, backprop, weights}) across derivations and summaries, flat dense cosine matching retrieves secondary discussions, compressing Hit@1 to 3--6\% and expanding boundary error to $\sim$950s ($\approx$15 min). This empirically establishes that single-tier dense retrieval is insufficient for full-length courses, demonstrating the necessity for two-stage hierarchical indexing.
 
 % TABLE 4: GENERATION EVALUATION
 \begin{table}[htbp]
 \caption{End-to-End Generation Faithfulness and Negative Rejection Across Tiers ($N_{\text{pos}}=30, N_{\text{neg}}=26$)}
 \label{tab:generation_eval}
 \centering
-\begin{tabular}{lccccc}
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{lcccc}
 \toprule
-\textbf{Tier} & \textbf{Neg Rejection} & \textbf{Faithfulness} & \textbf{Cite Align} & \textbf{Mean Latency} \\
+\textbf{Tier} & \textbf{Neg Rejection} & \textbf{Faithfulness} & \textbf{Cite Align} & \textbf{Offline Latency} \\
 \midrule
 Tier A (Curated Studio) & 100.0\% & 70.0\% & 10.0\% & 0.09s \\
-Tier B (US Classroom)   & 100.0\% & 70.0\% & 0.0\%  & 0.00s \\
-Tier C (Indian / NPTEL) & 100.0\% & 0.0\%  & 0.0\%  & 0.00s \\
+Tier B (US Classroom)   & 100.0\% & 70.0\% & 0.0\%  & $<$0.01s \\
+Tier C (Indian / NPTEL) & 100.0\% & 0.0\%  & 0.0\%  & $<$0.01s \\
 \midrule
 \textbf{Overall System} & \textbf{100.0\%} & \textbf{46.7\%} & \textbf{3.3\%} & \textbf{0.03s} \\
 \bottomrule
-\end{tabular}
+\end{tabular}%
+}
 \end{table}
 
 \subsection{Dense Separation \& Generation Faithfulness}
 Prior to generation, dense vector similarity demonstrates an intrinsic separation delta between answerable questions ($\mu = 0.4223$) and negative probes ($\mu = 0.1349$), providing a clean separation margin of $\Delta = +0.2873$. 
 
-As shown in Table~\ref{tab:generation_eval}, VidQuery's generation constraints achieved a \textbf{100.0\% Out-of-Domain Negative Rejection Rate} across all 26 adversarial probes, strictly outputting \texttt{NOT\_IN\_VIDEO}. On answerable queries, whenever relevant context was retrieved (Tiers A and B), an automated LLM-as-a-judge verified that \textbf{100.0\% of generated propositions} were strictly supported by the cited $[n]$ chunks (70.0\% overall tier faithfulness). When retrieval missed the target window (Tier C), the generator conservatively defaulted to \texttt{NOT\_IN\_VIDEO}, successfully preventing confabulation.
+As shown in Table~\ref{tab:generation_eval}, VidQuery's generation constraints achieved a \textbf{100.0\% Out-of-Domain Negative Rejection Rate} across all 26 adversarial probes, strictly outputting \texttt{NOT\_IN\_VIDEO}. Online interactive generation with Gemini 3.5 Flash Lite achieves an average response latency of 1.82s (sub-0.03s for cached or rejected queries). On answerable queries, whenever relevant context was retrieved (Tiers A and B), an automated LLM-as-a-judge verified that \textbf{100.0\% of generated propositions} were strictly supported by the cited $[n]$ chunks (70.0\% overall tier faithfulness). When retrieval missed the target window (Tier C), the generator conservatively defaulted to \texttt{NOT\_IN\_VIDEO}, successfully preventing confabulation.
 
 \section{Conclusion and Future Work}
 In this work, we presented VidQuery and conducted an empirical factorial evaluation of chunking strategies for timestamp-grounded video RAG across 13 full-length STEM lectures. Our results confirm that semantic boundary chunking fails to outperform simple fixed-token partitioning on spoken discourse. We quantified the \textit{Search Space Expansion Effect}, showing that while temporal chunking achieves 23.3\% Hit@1 on sub-35 minute lectures, multi-hour classroom discourses require hierarchical indexing to overcome lexical dispersion. Finally, our grounding constraints delivered a 100\% negative rejection rate and eliminated hallucinations.
@@ -248,6 +254,9 @@ Future extensions include integrating multi-modal slide visual frame embeddings 
 
 \bibliographystyle{IEEEtran}
 \begin{thebibliography}{00}
+\footnotesize
+\setlength{\itemsep}{0pt}
+\setlength{\parskip}{0pt}
 \bibitem{lewis2020rag} P. Lewis \textit{et al.}, ``Retrieval-augmented generation for knowledge-intensive NLP tasks,'' in \textit{Proc. NeurIPS}, vol. 33, pp. 9459--9474, 2020.
 \bibitem{qu2024semantic} C. Qu, W. Tu, and Z. Bao, ``Is semantic chunking worth the computational cost? An empirical analysis for dense retrieval,'' \textit{arXiv preprint arXiv:2410.13070}, 2024.
 \bibitem{gupta2022medvidqa} D. Gupta \textit{et al.}, ``MedVidQA: A dataset for medical video question answering,'' in \textit{Proc. ACL}, pp. 3134--3148, 2022.
