@@ -16,15 +16,10 @@
 
 \begin{document}
 
-\title{Evaluating Chunking Strategies and Temporal Grounding in Long-Form Educational Video RAG Across Acoustic and Pedagogical Tiers\\
-\thanks{No external funding was received for this undergraduate academic research at Guru Gobind Singh Indraprastha University (GGSIPU), New Delhi, India.}
-}
+\title{Evaluating Chunking Strategies and Temporal Grounding in Long-Form Educational Video RAG Across Acoustic and Pedagogical Tiers}
 
-\author{\IEEEauthorblockN{Gurleen Kaur Malhotra}
-\IEEEauthorblockA{\textit{Department of Information Technology} \\
-\textit{Maharaja Surajmal Institute of Technology, GGSIPU}\\
-New Delhi, India \\
-gurleen.research@msit.in}
+\author{\IEEEauthorblockN{Anonymous Author(s)}
+\IEEEauthorblockA{Department and Institution Withheld for Double-Blind Review}
 }
 
 \maketitle
@@ -40,7 +35,7 @@ Retrieval-Augmented Generation, Video Question Answering, Temporal Grounding, Ch
 \section{Introduction}
 \IEEEPARstart{R}{etrieval-Augmented} Generation (RAG) has emerged as the standard paradigm for grounding Large Language Models (LLMs) on non-parametric knowledge bases, preventing confabulation and providing attribution \cite{lewis2020rag}. While text-centric RAG over scientific papers, enterprise documentation, and books has been exhaustively benchmarked \cite{gao2023rag}, educational video content poses a unique set of challenges. 
 
-Online video platforms host millions of hours of technical lectures from institutions like MIT, Stanford, and India's National Programme on Technology Enhanced Learning (NPTEL). However, navigating multi-hour lectures to locate specific mathematical derivations or conceptual definitions remains cognitively demanding. Converting this video repository into an interactive question-answering corpus requires precise \textit{temporal grounding}---the system must not only answer the user's question, but also provide clickable timestamps that allow the user to immediately seek to the exact moment in the lecture.
+Online video platforms host millions of hours of technical lectures from institutions like MIT, Stanford, and India's National Programme on Technology Enhanced Learning (NPTEL). However, navigating long video lectures to locate specific mathematical derivations or conceptual definitions remains cognitively demanding. Converting this video repository into an interactive question-answering corpus requires precise \textit{temporal grounding}---the system must not only answer the user's question, but also provide clickable timestamps that allow the user to immediately seek to the exact moment in the lecture.
 
 Standard RAG architectures assume that text possesses clean paragraph boundaries, balanced syntactic structures, and explicit topic demarcations. Spoken lecture transcripts severely violate these assumptions:
 \begin{enumerate}
@@ -242,7 +237,7 @@ A prominent phenomenon observed in our evaluation is the sharp drop in retrieval
 }
 \end{table}
 
-On shorter lectures ($\le$35 min), video-native \texttt{time\_window} partitioning achieves \textbf{23\% Hit@1}, \textbf{37\% Hit@4}, and a 214.5s median boundary error. Conversely, across the 13 evaluated lectures, per-video candidate chunk counts range from 11 to 306 chunks under \texttt{fixed\_token} (mean: 95.4; total 1,240), compared to 17 to 520 chunks under \texttt{sentence} (mean: 156.5; total 2,034 corpus-wide). In multi-hour lectures, technical instructors repeatedly refer to identical vocabulary (\textit{vectors, backprop, weights}) across derivations, summaries, and recaps. Flat dense cosine matching retrieves secondary mentions, compressing Hit@1 to 3--6\% and expanding median boundary error to $\sim$950s ($\approx$15 minutes), motivating hierarchical indexing.
+On shorter lectures ($\le$35 min), video-native \texttt{time\_window} partitioning achieves \textbf{23\% Hit@1}, \textbf{37\% Hit@4}, and a 214.5s median boundary error. Conversely, across the 13 evaluated lectures, per-video candidate chunk counts range from 11 to 306 chunks under \texttt{fixed\_token} (mean: 95.4; total 1,240), compared to 17 to 520 chunks under \texttt{sentence} (mean: 156.5; total 2,034 corpus-wide). In long lectures, technical instructors repeatedly refer to identical vocabulary (\textit{vectors, backprop, weights}) across derivations, summaries, and recaps. Flat dense cosine matching retrieves secondary mentions, compressing Hit@1 to 3--6\% and expanding median boundary error to $\sim$950s ($\approx$15 minutes), motivating hierarchical indexing.
 
 \subsection{Computational Complexity \& Indexing Overhead Analysis}
 \label{sec:computational_overhead}
@@ -371,7 +366,7 @@ Table~\ref{tab:case_studies} summarizes representative query evaluations across 
 
 \section{Practical Deployment \& Limitations}
 \label{sec:limitations}
-Ask-a-Video prioritizes lightweight, local student execution. Running Qdrant in disk-backed embedded mode eliminates external database server overhead. The \texttt{all-MiniLM-L6-v2} bi-encoder processes $\sim$2,450 words/second on standard laptop CPUs, indexing a 1-hour lecture in under 5 seconds. Benchmark code is open-sourced at: \url{https://github.com/gurleenkaurmalhotra115-jpg/Ask-a-video}.
+Ask-a-Video prioritizes lightweight, local student execution. Running Qdrant in disk-backed embedded mode eliminates external database server overhead. The \texttt{all-MiniLM-L6-v2} bi-encoder processes $\sim$2,450 words/second on standard laptop CPUs, indexing a 1-hour lecture in under 5 seconds. Benchmark code and evaluation resources will be released open-source upon publication (anonymized for review).
 
 \textit{Limitations:} (1)~\textbf{Single Annotator Protocol:} Gold query boundaries were authored by a single domain expert; future releases will include inter-annotator agreement metrics ($\kappa$). (2)~\textbf{Blackboard Decoupling:} Audio ASR misses unvocalized blackboard equations, requiring multimodal frame embeddings. (3)~\textbf{Macro-Block Truncation \& BM25 Baselines:} Macro-block embeddings use standard bi-encoder truncation (256 word-pieces); sparse lexical (BM25) baselines were omitted in favor of dense scaling analysis. (4)~\textbf{Token Truncation:} \texttt{semantic} chunks up to 200 words approach the 256 word-piece limit of \texttt{all-MiniLM-L6-v2}. (5)~\textbf{Granularity:} Windows below 30s cause semantic fragmentation. (6)~\textbf{Confounding \& Sample Size:} Duration and acoustic tier are partially confounded (short videos are mostly studio recordings), and per-tier query samples are modest ($N = 30$--$50$).
 
