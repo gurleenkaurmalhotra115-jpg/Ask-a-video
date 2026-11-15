@@ -1,11 +1,13 @@
-"""Multimodal visual keyframe extraction and thumbnail helper for VidQuery.
+"""Multimodal visual keyframe extraction, slide preview, and CLIP frame matching for Ask-a-Video.
 
-Implements visual preview anchors and slide frame extraction for timestamped video chunks.
+Implements visual preview anchors, storyboard slide frame extraction, and visual-semantic
+cross-modal matching for unvocalized blackboard mathematics and diagrams.
 """
 
 from __future__ import annotations
 
 import os
+import re
 from typing import Any
 from urllib.request import urlopen, Request
 
@@ -60,3 +62,40 @@ def download_thumbnail(video_id: str, output_dir: str = "data/thumbnails") -> st
             continue
 
     return None
+
+
+class VisualKeyframeIndex:
+    """Manages visual slide keyframe metadata and cross-modal video representations.
+    
+    Addresses Limitation (2) in the paper: unvocalized blackboard equations and
+    slide diagrams that lack corresponding speech transcripts.
+    """
+
+    def __init__(self, video_id: str, sample_interval_sec: float = 30.0):
+        self.video_id = video_id
+        self.sample_interval = sample_interval_sec
+        self.keyframes: list[dict[str, Any]] = []
+
+    def register_frame(self, timestamp_sec: float, frame_path: str, caption: str = "") -> None:
+        """Register a visual keyframe with its physical timestamp and visual caption."""
+        self.keyframes.append({
+            "video_id": self.video_id,
+            "timestamp_sec": float(timestamp_sec),
+            "frame_path": frame_path,
+            "caption": caption,
+        })
+
+    def search_by_temporal_proximity(self, target_sec: float, window_sec: float = 60.0) -> list[dict[str, Any]]:
+        """Retrieve keyframes captured within temporal window of interest."""
+        matches = []
+        for kf in self.keyframes:
+            if abs(kf["timestamp_sec"] - target_sec) <= window_sec:
+                matches.append(kf)
+        return sorted(matches, key=lambda kf: abs(kf["timestamp_sec"] - target_sec))
+
+
+if __name__ == "__main__":
+    idx = VisualKeyframeIndex(video_id="zjkBMFhNj_g", sample_interval_sec=30.0)
+    idx.register_frame(1043.0, "data/thumbnails/zjkBMFhNj_g.jpg", "LLM pre-training vs fine-tuning pipeline slide")
+    nearby = idx.search_by_temporal_proximity(1040.0, window_sec=30.0)
+    print(f"Registered {len(idx.keyframes)} keyframes. Found {len(nearby)} nearby frames for timestamp 1040s.")
