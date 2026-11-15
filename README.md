@@ -1,6 +1,7 @@
 # VidQuery ("Ask a Video")
 > **Timestamp-Grounded Video RAG & Empirical Chunking Evaluation**  
-> *Author:* Gurleen Kaur Malhotra, B.Tech IT, Maharaja Surajmal Institute of Technology (MSIT), GGSIPU, New Delhi.
+> *Author:* Gurleen Kaur Malhotra, B.Tech IT, Maharaja Surajmal Institute of Technology (MSIT), GGSIPU, New Delhi.  
+> 📖 **[Read the Full Technical Wiki & Viva Defense Guide (WIKI.md)](WIKI.md)** | 📄 **[Read the IEEE Research Paper (paper.pdf)](paper.pdf)**
 
 ---
 
