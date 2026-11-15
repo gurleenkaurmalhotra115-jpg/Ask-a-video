@@ -1,10 +1,10 @@
 """Generate high-resolution vector PDF architecture diagram for IEEE paper."""
 from reportlab.lib import colors
-from reportlab.graphics.shapes import Drawing, Rect, String, Line, Polygon, Group
+from reportlab.graphics.shapes import Drawing, Rect, String, Line, Polygon
 from reportlab.graphics import renderPDF
 
 def create_diagram():
-    # Width: 504 pt (standard IEEE textwidth = 7 inches * 72 = 504 pt), Height: 120 pt
+    # Width: 504 pt (standard IEEE textwidth = 7 inches * 72 = 504 pt), Height: 115 pt
     w, h = 504, 115
     d = Drawing(w, h)
     
@@ -43,7 +43,7 @@ def create_diagram():
         ("Top-k Temporal\nRetriever", 104, 10, 85, 40, "#f0fdf4", "#16a34a"),
         ("Closed-World Prompt\n([n] Attribution)", 205, 10, 85, 40, "#faf5ff", "#9333ea"),
         ("Gemini 3.5 Flash Lite\n(Grounding Guardrail)", 306, 10, 85, 40, "#fff7ed", "#ea580c"),
-        ("Interactive Player\n(Seek ▶ mm:ss)", 407, 10, 87, 40, "#ecfdf5", "#059669"),
+        ("Interactive Player\n(Seek to mm:ss)", 407, 10, 87, 40, "#ecfdf5", "#059669"),
     ]
 
     for text, bx, by, bw, bh, fcol, scol in boxes_bot:
