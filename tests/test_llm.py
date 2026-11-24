@@ -415,3 +415,29 @@ def test_confidence_gate_bypassed_when_threshold_zero() -> None:
     assert calls == 1
     assert res["gated_out"] is False
     assert res["grounded"] is True
+
+
+def test_multi_agent_citation_verification(sample_chunks: list[dict[str, any]]) -> None:
+    """Test second-pass verification agent attaches verification verdict."""
+    res_ok = answer_question(
+        question="What is supervised learning?",
+        chunks=sample_chunks,
+        generate_fn=lambda p: "Supervised learning uses labeled datasets [1].",
+        verify_grounded=True,
+        verify_fn=lambda vp: '{"verified": true, "unsupported_claims": [], "confidence": "high"}',
+        use_cache=False,
+    )
+    assert res_ok["grounded"] is True
+    assert res_ok["verification"]["verified"] is True
+    assert res_ok["verification"]["confidence"] == "high"
+
+    res_flagged = answer_question(
+        question="What is supervised learning?",
+        chunks=sample_chunks,
+        generate_fn=lambda p: "Supervised learning requires quantum GPUs [1].",
+        verify_grounded=True,
+        verify_fn=lambda vp: '{"verified": false, "unsupported_claims": ["requires quantum GPUs"], "confidence": "low"}',
+        use_cache=False,
+    )
+    assert res_flagged["verification"]["verified"] is False
+    assert "requires quantum GPUs" in res_flagged["verification"]["unsupported_claims"]

@@ -503,6 +503,12 @@ def main() -> None:
                         help="Minimum top-1 similarity required before calling Gemini (0.0 disables gate).",
                         key="ask_min_conf_slider",
                     )
+                    ask_verify = st.checkbox(
+                        "Verify citations",
+                        value=False,
+                        help="Run a second-pass verification agent to check citation support.",
+                        key="ask_verify_checkbox",
+                    )
 
                 # Dynamic Suggested Question Chips
                 suggested_qs = get_suggested_questions(current_video_id, segments)
@@ -589,6 +595,7 @@ def main() -> None:
                                             question=clean_q,
                                             chunks=retrieved,
                                             min_confidence=ask_min_conf,
+                                            verify_grounded=ask_verify,
                                         )
                                         log_qa(
                                             video_id=current_video_id,
@@ -666,7 +673,17 @@ def main() -> None:
                                 f"| Retrieval Confidence: `{conf_info.get('level', 'unknown')}` (`{conf_info['top_score']:.3f}`)"
                             )
                         model_parts.append(f"| Latency: `{qa_res.get('latency_sec', 0.0)}s`")
+                        verif = qa_res.get("verification")
+                        if isinstance(verif, dict):
+                            if verif.get("verified", True):
+                                model_parts.append(f"| Verifier: `verified ({verif.get('confidence', 'high')})`")
+                            else:
+                                model_parts.append("| Verifier: `flagged unsupported claims`")
                         st.caption(" ".join(model_parts))
+                        if isinstance(verif, dict) and not verif.get("verified", True):
+                            claims = verif.get("unsupported_claims") or []
+                            detail = f": {', '.join(claims)}" if claims else "."
+                            st.warning(f"⚠️ Verification Agent flagged potentially unsupported claims{detail}")
 
                         sources = qa_res.get("sources", [])
                         if sources:

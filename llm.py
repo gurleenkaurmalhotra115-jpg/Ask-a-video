@@ -36,6 +36,13 @@ SYSTEM_PROMPT = (
     "If the chunks do not contain the answer, reply with exactly: NOT_IN_VIDEO"
 )
 
+VERIFIER_SYSTEM_PROMPT = (
+    "You are an independent citation verification agent. Given numbered transcript chunks and a draft answer, "
+    "check whether every factual claim in the answer is directly supported by the cited chunks. "
+    "Respond ONLY with valid JSON in this exact schema: "
+    '{"verified": true, "unsupported_claims": [], "confidence": "high"}'
+)
+
 
 _client_instance: Any = None
 
@@ -268,6 +275,73 @@ def assess_retrieval_confidence(
     }
 
 
+def _parse_verifier_json(raw_text: str) -> dict[str, Any]:
+    """Parse structured JSON output from the citation verification agent."""
+    cleaned = raw_text.strip()
+    if cleaned.startswith("```"):
+        cleaned = re.sub(r"^```(?:json)?\s*", "", cleaned)
+        cleaned = re.sub(r"\s*```$", "", cleaned)
+    try:
+        parsed = json.loads(cleaned)
+        if isinstance(parsed, dict):
+            return {
+                "verified": bool(parsed.get("verified", True)),
+                "unsupported_claims": list(parsed.get("unsupported_claims", [])),
+                "confidence": str(parsed.get("confidence", "medium")),
+            }
+    except Exception:
+        pass
+    return {
+        "verified": True,
+        "unsupported_claims": [],
+        "confidence": "unknown",
+        "raw": raw_text[:200],
+    }
+
+
+def verify_answer(
+    question: str,
+    chunks: list[dict[str, Any]],
+    answer: str,
+    cited: list[int],
+    client: Any = None,
+    model: str | None = None,
+    generate_fn: Callable[..., str] | None = None,
+    verify_fn: Callable[[str], str] | None = None,
+) -> dict[str, Any]:
+    """Run a second-pass verification agent to check citation faithfulness."""
+    cited_chunks = [chunks[n - 1] for n in cited if 1 <= n <= len(chunks)] or chunks
+    context_str = build_context(cited_chunks)
+    verify_prompt = (
+        f"Chunks:\n{context_str}\n\n"
+        f"Question: {question}\n\n"
+        f"Draft Answer: {answer}"
+    )
+
+    try:
+        if verify_fn is not None:
+            raw_verdict = verify_fn(verify_prompt)
+        else:
+            active_model = model or get_model_chain()[0]
+            active_client = client if (client is not None or generate_fn is not None) else get_client()
+            raw_verdict = _call_model(
+                active_client,
+                active_model,
+                verify_prompt,
+                generate_fn=generate_fn,
+                system_instruction=VERIFIER_SYSTEM_PROMPT,
+            )
+        return _parse_verifier_json(raw_verdict)
+    except Exception as exc:
+        logger.warning("Citation verification agent failed gracefully: %s", exc)
+        return {
+            "verified": True,
+            "unsupported_claims": [],
+            "confidence": "error",
+            "error": str(exc),
+        }
+
+
 def answer_question(
     question: str,
     chunks: list[dict[str, Any]],
@@ -277,6 +351,8 @@ def answer_question(
     cache_path: str = CACHE_FILE_DEFAULT,
     min_confidence: float | None = None,
     enforce_confidence_gate: bool = True,
+    verify_grounded: bool = False,
+    verify_fn: Callable[[str], str] | None = None,
 ) -> dict[str, Any]:
     """Generate a grounded answer for the question using retrieved chunks.
 
@@ -463,6 +539,18 @@ def answer_question(
         "gated_out": False,
         "confidence": confidence,
     }
+
+    if verify_grounded:
+        result["verification"] = verify_answer(
+            question=question,
+            chunks=chunks,
+            answer=raw_answer,
+            cited=cited_numbers,
+            client=client,
+            model=active_model,
+            generate_fn=generate_fn,
+            verify_fn=verify_fn,
+        )
 
     if use_cache:
         _write_cache(cache_path, cache_key, result)

@@ -103,7 +103,9 @@ Top-k Retrieval ──► Grounded Prompt ──► Gemini 3.5 Flash Lite
 │   ├── latex_table_generation.tex # Table 4: Generation faithfulness
 │   ├── retrieval_summary.csv   # Aggregated retrieval metrics
 │   └── generation_eval_summary.csv # Generation evaluation metrics
-├── tests/                      # Full pytest test suite (48 passing tests)
+├── tests/                      # Full pytest test suite (53 passing tests)
+├── api.py                      # FastAPI REST backend (/health, /videos/*, /benchmarks)
+├── docker-compose.yml          # Full stack (FastAPI, Streamlit, Postgres, Redis)
 ├── .github/workflows/ci.yml    # GitHub Actions CI (verify_all.py + pytest)
 ├── Dockerfile                  # Production container image (Python 3.11 + ffmpeg)
 ├── LICENSE                     # MIT License
@@ -140,19 +142,25 @@ streamlit run app.py --server.port 8502
 ```
 Open **`http://localhost:8502`** in your browser. Choose any lecture from the pre-indexed benchmark dropdown to test offline without hitting YouTube rate limits!
 
-### Option B: Docker
+### Option B: Docker & Full Production Stack (FastAPI + Streamlit + Postgres + Redis)
+```bash
+docker compose up --build
+```
+- **Streamlit UI:** `http://localhost:8501`
+- **FastAPI Docs (Swagger):** `http://localhost:8000/docs`
+
+Or run the single-container UI image:
 ```bash
 docker build -t vidquery .
 docker run -p 8501:8501 --env-file .env vidquery
 ```
-Open **`http://localhost:8501`** in your browser.
 
 ### Run Verification & Unit Tests
 ```bash
 python verify_all.py
 pytest tests/ -v
 ```
-*48/48 tests passing.*
+*53/53 tests passing.*
 
 ---
 
