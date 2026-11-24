@@ -7,9 +7,14 @@ from functools import lru_cache
 from typing import Any
 import numpy as np
 
-# Prefer local cached weights to avoid network timeouts in sandboxed environments
-os.environ.setdefault("HF_HUB_OFFLINE", "1")
-os.environ.setdefault("TRANSFORMERS_OFFLINE", "1")
+# Allow downloading model weights in CI or when online access is available
+if os.environ.get("CI") == "true" or os.environ.get("HF_HUB_OFFLINE") == "0":
+    os.environ.pop("HF_HUB_OFFLINE", None)
+    os.environ.pop("TRANSFORMERS_OFFLINE", None)
+else:
+    # Prefer local cached weights to avoid network timeouts in sandboxed environments
+    os.environ.setdefault("HF_HUB_OFFLINE", "1")
+    os.environ.setdefault("TRANSFORMERS_OFFLINE", "1")
 
 
 @lru_cache(maxsize=1)
