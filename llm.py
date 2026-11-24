@@ -20,6 +20,8 @@ logger = logging.getLogger(__name__)
 
 CACHE_FILE_DEFAULT = "cache/llm_cache.json"
 RETRYABLE_STATUS_CODES = {429, 500, 502, 503, 504}
+DEFAULT_MIN_CONFIDENCE = 0.22
+HIGH_CONFIDENCE_THRESHOLD = 0.38
 
 
 class LLMError(Exception):
@@ -179,6 +181,93 @@ def _call_model(
     return response.text.strip()
 
 
+def get_model_chain() -> list[str]:
+    """Return ordered list of [primary_model, ...fallback_models] from environment config."""
+    load_dotenv()
+    main_model = os.getenv("GEMINI_MODEL", "gemini-3.8-flash").strip() or "gemini-3.8-flash"
+    raw_fallbacks = os.getenv("GEMINI_FALLBACK_MODELS", "").strip()
+    if not raw_fallbacks:
+        raw_fallbacks = os.getenv("GEMINI_FALLBACK_MODEL", "").strip()
+
+    chain = [main_model]
+    for candidate in raw_fallbacks.split(","):
+        model_name = candidate.strip()
+        if model_name and model_name not in chain:
+            chain.append(model_name)
+    return chain
+
+
+def _resolve_min_confidence(min_confidence: float | None) -> float:
+    """Resolve confidence gate threshold from explicit argument or environment."""
+    if min_confidence is not None:
+        return max(0.0, float(min_confidence))
+    raw_env = os.getenv("MIN_RETRIEVAL_CONFIDENCE", "").strip()
+    if not raw_env:
+        return DEFAULT_MIN_CONFIDENCE
+    try:
+        return max(0.0, float(raw_env))
+    except ValueError:
+        logger.warning("Invalid MIN_RETRIEVAL_CONFIDENCE=%r; using default %.2f", raw_env, DEFAULT_MIN_CONFIDENCE)
+        return DEFAULT_MIN_CONFIDENCE
+
+
+def assess_retrieval_confidence(
+    chunks: list[dict[str, Any]],
+    min_confidence: float | None = None,
+) -> dict[str, Any]:
+    """Assess whether retrieved chunks meet the minimum similarity confidence threshold.
+
+    Uses top-1 cosine similarity to detect retrieval failure and out-of-domain queries
+    prior to LLM generation. Synthetic chunks without numeric scores pass with level='unknown'.
+    """
+    threshold = _resolve_min_confidence(min_confidence)
+    if not chunks:
+        return {
+            "passed": False,
+            "top_score": 0.0,
+            "avg_score": 0.0,
+            "level": "none",
+            "threshold": threshold,
+            "reason": "No chunks were retrieved for this query.",
+        }
+
+    scores = [float(c["score"]) for c in chunks if c.get("score") is not None]
+    if not scores:
+        return {
+            "passed": True,
+            "top_score": None,
+            "avg_score": None,
+            "level": "unknown",
+            "threshold": threshold,
+            "reason": None,
+        }
+
+    top_score = max(scores)
+    avg_score = sum(scores) / len(scores)
+    passed = threshold <= 0.0 or top_score >= threshold
+
+    if top_score >= HIGH_CONFIDENCE_THRESHOLD:
+        level = "high"
+    elif passed:
+        level = "medium"
+    else:
+        level = "low"
+
+    reason = (
+        None
+        if passed
+        else f"Top retrieval similarity ({top_score:.3f}) is below confidence threshold ({threshold:.3f})."
+    )
+    return {
+        "passed": passed,
+        "top_score": round(top_score, 4),
+        "avg_score": round(avg_score, 4),
+        "level": level,
+        "threshold": round(threshold, 4),
+        "reason": reason,
+    }
+
+
 def answer_question(
     question: str,
     chunks: list[dict[str, Any]],
@@ -186,11 +275,13 @@ def answer_question(
     use_cache: bool = True,
     sleep_fn: Callable[[float], None] = time.sleep,
     cache_path: str = CACHE_FILE_DEFAULT,
+    min_confidence: float | None = None,
+    enforce_confidence_gate: bool = True,
 ) -> dict[str, Any]:
     """Generate a grounded answer for the question using retrieved chunks.
 
-    Supports retries on transient errors, fallback model execution, disk caching,
-    and user-friendly error wrapping.
+    Supports retrieval-confidence gating, retries on transient errors, ordered multi-model
+    fallback execution, disk caching, and user-friendly error wrapping.
 
     Args:
         question: The user's question.
@@ -199,20 +290,39 @@ def answer_question(
         use_cache: If True, reads and writes answers from cache/llm_cache.json.
         sleep_fn: Function used to pause between retries (defaults to time.sleep).
         cache_path: Path to disk cache JSON file.
+        min_confidence: Optional override for minimum top-1 similarity threshold.
+        enforce_confidence_gate: If True, short-circuits low-confidence retrievals before LLM call.
 
     Returns:
         dict: {"answer": str, "grounded": bool, "cited": list[int], "sources": list[dict],
                "model": str, "latency_sec": float, "fallback_used": bool, "attempts": int,
-               "cache_hit": bool}
+               "cache_hit": bool, "gated_out": bool, "confidence": dict}
     """
-    load_dotenv()
-    main_model = os.getenv("GEMINI_MODEL", "gemini-3.8-flash")
-    fallback_model = os.getenv("GEMINI_FALLBACK_MODEL", "").strip() or None
+    model_chain = get_model_chain()
+    main_model = model_chain[0]
+    fallback_models = model_chain[1:]
+
+    start_time = time.perf_counter()
+    confidence = assess_retrieval_confidence(chunks, min_confidence=min_confidence)
+
+    if enforce_confidence_gate and not confidence["passed"]:
+        logger.info("Retrieval-confidence gate triggered: %s", confidence.get("reason"))
+        return {
+            "answer": "NOT_IN_VIDEO",
+            "grounded": False,
+            "cited": [],
+            "sources": [],
+            "model": "retrieval-confidence-gate",
+            "latency_sec": round(time.perf_counter() - start_time, 2),
+            "fallback_used": False,
+            "attempts": 0,
+            "cache_hit": False,
+            "gated_out": True,
+            "confidence": confidence,
+        }
 
     context_str = build_context(chunks)
     prompt = f"Context:\n{context_str}\n\nQuestion: {question}"
-
-    start_time = time.perf_counter()
 
     # Check cache
     concat_chunks = "".join(str(c.get("text", "")) for c in chunks)
@@ -232,6 +342,8 @@ def answer_question(
                 "fallback_used": cached_res.get("fallback_used", False),
                 "attempts": 0,
                 "cache_hit": True,
+                "gated_out": cached_res.get("gated_out", False),
+                "confidence": cached_res.get("confidence", confidence),
             }
 
     client = None if generate_fn is not None else get_client()
@@ -259,26 +371,30 @@ def answer_question(
                 delay = main_delays[attempt_idx] + random.uniform(0.1, 0.5)
                 sleep_fn(delay)
 
-    # If main model failed after all retries, attempt fallback model if configured
-    if last_exception is not None and fallback_model and fallback_model != main_model:
-        logger.info("Main model %s exhausted retries. Attempting fallback model %s.", main_model, fallback_model)
-        fallback_used = True
-        active_model = fallback_model
+    # If main model failed after all retries, cascade through fallback models in order
+    if last_exception is not None and fallback_models:
         fallback_delays = [2.0]
+        for fb_model in fallback_models:
+            logger.info("Model %s exhausted retries. Attempting fallback model %s.", active_model, fb_model)
+            fallback_used = True
+            active_model = fb_model
 
-        for fb_idx in range(len(fallback_delays) + 1):
-            total_attempts += 1
-            try:
-                raw_answer = _call_model(client, active_model, prompt, generate_fn).strip()
-                last_exception = None
+            for fb_idx in range(len(fallback_delays) + 1):
+                total_attempts += 1
+                try:
+                    raw_answer = _call_model(client, active_model, prompt, generate_fn).strip()
+                    last_exception = None
+                    break
+                except Exception as exc:
+                    last_exception = exc
+                    if not _is_retryable(exc):
+                        raise _make_friendly_error(exc, active_model, total_attempts) from exc
+                    if fb_idx < len(fallback_delays):
+                        delay = fallback_delays[fb_idx] + random.uniform(0.1, 0.5)
+                        sleep_fn(delay)
+
+            if last_exception is None:
                 break
-            except Exception as exc:
-                last_exception = exc
-                if not _is_retryable(exc):
-                    raise _make_friendly_error(exc, active_model, total_attempts) from exc
-                if fb_idx < len(fallback_delays):
-                    delay = fallback_delays[fb_idx] + random.uniform(0.1, 0.5)
-                    sleep_fn(delay)
 
     if last_exception is not None:
         raise _make_friendly_error(last_exception, active_model, total_attempts) from last_exception
@@ -298,6 +414,8 @@ def answer_question(
             "fallback_used": fallback_used,
             "attempts": total_attempts,
             "cache_hit": False,
+            "gated_out": False,
+            "confidence": confidence,
         }
         if use_cache:
             _write_cache(cache_path, cache_key, result)
@@ -342,6 +460,8 @@ def answer_question(
         "fallback_used": fallback_used,
         "attempts": total_attempts,
         "cache_hit": False,
+        "gated_out": False,
+        "confidence": confidence,
     }
 
     if use_cache:
@@ -376,6 +496,8 @@ def log_qa(
         ],
         "cited": llm_result.get("cited", []),
         "grounded": llm_result.get("grounded", False),
+        "gated_out": llm_result.get("gated_out", False),
+        "confidence": llm_result.get("confidence", {}),
         "answer": llm_result.get("answer", ""),
         "model": llm_result.get("model", ""),
         "fallback_used": llm_result.get("fallback_used", False),

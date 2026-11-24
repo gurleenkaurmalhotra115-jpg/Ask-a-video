@@ -7,7 +7,14 @@ import tempfile
 import pytest
 from google.genai.errors import APIError
 
-from llm import LLMError, answer_question, build_context, get_client
+from llm import (
+    LLMError,
+    answer_question,
+    assess_retrieval_confidence,
+    build_context,
+    get_client,
+    get_model_chain,
+)
 
 
 @pytest.fixture
@@ -286,3 +293,125 @@ def test_disk_cache_hit_avoids_generator_call(sample_chunks: list[dict[str, any]
     finally:
         if os.path.exists(tmp_cache_file):
             os.remove(tmp_cache_file)
+
+
+# -------------------- Multi-Model Fallback & Confidence Gate Tests --------------------
+
+
+def test_get_model_chain_deduplicates_and_preserves_legacy_var(monkeypatch: pytest.MonkeyPatch) -> None:
+    """Test ordered multi-model chain parsing and deduplication."""
+    monkeypatch.setenv("GEMINI_MODEL", "gemini-3.8-flash")
+    monkeypatch.setenv("GEMINI_FALLBACK_MODELS", "gemini-3.8-flash, gemini-2.5-flash, gemini-2.5-flash-lite, gemini-2.5-flash")
+    monkeypatch.delenv("GEMINI_FALLBACK_MODEL", raising=False)
+    assert get_model_chain() == ["gemini-3.8-flash", "gemini-2.5-flash", "gemini-2.5-flash-lite"]
+
+    monkeypatch.delenv("GEMINI_FALLBACK_MODELS", raising=False)
+    monkeypatch.setenv("GEMINI_FALLBACK_MODEL", "gemini-2.5-flash")
+    assert get_model_chain() == ["gemini-3.8-flash", "gemini-2.5-flash"]
+
+
+def test_multi_model_fallback_chain_cascades(
+    sample_chunks: list[dict[str, any]], monkeypatch: pytest.MonkeyPatch
+) -> None:
+    """Test cascading through multiple fallback models when earlier models fail transiently."""
+    monkeypatch.setenv("GEMINI_MODEL", "primary-m")
+    monkeypatch.setenv("GEMINI_FALLBACK_MODELS", "fb-1, fb-2")
+    visited_models: list[str] = []
+
+    def fake_generator(prompt: str, model: str = "") -> str:
+        visited_models.append(model)
+        if model == "primary-m":
+            raise APIError(503, {"error": {"message": "Overloaded", "status": "UNAVAILABLE"}})
+        if model == "fb-1":
+            raise APIError(429, {"error": {"message": "Quota exceeded", "status": "RESOURCE_EXHAUSTED"}})
+        return f"Answered by {model} [1]."
+
+    res = answer_question(
+        question="Cascade test",
+        chunks=sample_chunks,
+        generate_fn=fake_generator,
+        use_cache=False,
+        sleep_fn=lambda s: None,
+    )
+
+    assert res["fallback_used"] is True
+    assert res["model"] == "fb-2"
+    assert res["grounded"] is True
+    assert "primary-m" in visited_models
+    assert "fb-1" in visited_models
+    assert "fb-2" in visited_models
+
+
+def test_assess_retrieval_confidence_levels() -> None:
+    """Test confidence level classification across score regimes."""
+    assert assess_retrieval_confidence([])["level"] == "none"
+    assert assess_retrieval_confidence([])["passed"] is False
+
+    no_scores = [{"text": "Chunk without score", "start": 0.0, "end": 5.0}]
+    res_unknown = assess_retrieval_confidence(no_scores)
+    assert res_unknown["level"] == "unknown"
+    assert res_unknown["passed"] is True
+
+    low = assess_retrieval_confidence([{"text": "x", "start": 0.0, "end": 5.0, "score": 0.14}], min_confidence=0.22)
+    assert low["level"] == "low"
+    assert low["passed"] is False
+
+    med = assess_retrieval_confidence([{"text": "x", "start": 0.0, "end": 5.0, "score": 0.28}], min_confidence=0.22)
+    assert med["level"] == "medium"
+    assert med["passed"] is True
+
+    high = assess_retrieval_confidence([{"text": "x", "start": 0.0, "end": 5.0, "score": 0.52}], min_confidence=0.22)
+    assert high["level"] == "high"
+    assert high["passed"] is True
+
+
+def test_confidence_gate_blocks_low_similarity_without_llm_call() -> None:
+    """Test that weak retrieval scores short-circuit before calling the LLM."""
+    weak_chunks = [
+        {"chunk_id": 1, "text": "Unrelated snippet", "start": 0.0, "end": 10.0, "score": 0.13},
+        {"chunk_id": 2, "text": "Another weak match", "start": 10.0, "end": 20.0, "score": 0.09},
+    ]
+    calls = 0
+
+    def fake_generator(prompt: str, model: str = "") -> str:
+        nonlocal calls
+        calls += 1
+        return "Should not be reached [1]."
+
+    res = answer_question(
+        question="Out of domain question",
+        chunks=weak_chunks,
+        generate_fn=fake_generator,
+        use_cache=False,
+        min_confidence=0.22,
+    )
+
+    assert calls == 0
+    assert res["gated_out"] is True
+    assert res["grounded"] is False
+    assert res["answer"] == "NOT_IN_VIDEO"
+    assert res["model"] == "retrieval-confidence-gate"
+    assert res["confidence"]["level"] == "low"
+
+
+def test_confidence_gate_bypassed_when_threshold_zero() -> None:
+    """Test that min_confidence=0.0 allows LLM execution even on low-score chunks."""
+    weak_chunks = [{"chunk_id": 1, "text": "Marginal snippet", "start": 0.0, "end": 10.0, "score": 0.13}]
+    calls = 0
+
+    def fake_generator(prompt: str, model: str = "") -> str:
+        nonlocal calls
+        calls += 1
+        return "Marginal answer [1]."
+
+    res = answer_question(
+        question="Test bypass",
+        chunks=weak_chunks,
+        generate_fn=fake_generator,
+        use_cache=False,
+        min_confidence=0.0,
+    )
+
+    assert calls == 1
+    assert res["gated_out"] is False
+    assert res["grounded"] is True

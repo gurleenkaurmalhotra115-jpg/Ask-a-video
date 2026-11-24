@@ -475,7 +475,7 @@ def main() -> None:
                     if item["video_id"] == current_video_id
                 }
 
-                col_ask_strat, col_ask_k = st.columns([2, 1])
+                col_ask_strat, col_ask_k, col_ask_conf = st.columns([2, 1, 1])
                 with col_ask_strat:
                     strat_keys = list(DEFAULT_PARAMS.keys())
                     default_strat_idx = (
@@ -492,6 +492,16 @@ def main() -> None:
                 with col_ask_k:
                     ask_k = st.slider(
                         "Top-k chunks", min_value=1, max_value=10, value=4, key="ask_k_slider"
+                    )
+                with col_ask_conf:
+                    ask_min_conf = st.slider(
+                        "Confidence gate",
+                        min_value=0.0,
+                        max_value=0.60,
+                        value=0.22,
+                        step=0.02,
+                        help="Minimum top-1 similarity required before calling Gemini (0.0 disables gate).",
+                        key="ask_min_conf_slider",
                     )
 
                 # Dynamic Suggested Question Chips
@@ -576,7 +586,9 @@ def main() -> None:
                                 else:
                                     try:
                                         qa_result = answer_question(
-                                            question=clean_q, chunks=retrieved
+                                            question=clean_q,
+                                            chunks=retrieved,
+                                            min_confidence=ask_min_conf,
                                         )
                                         log_qa(
                                             video_id=current_video_id,
@@ -624,8 +636,17 @@ def main() -> None:
                 qa_res = st.session_state.get("latest_qa")
                 if qa_res:
                     st.markdown("---")
+                    conf_info = qa_res.get("confidence") or {}
                     if not qa_res.get("grounded", False):
-                        st.warning("⚠️ This video does not answer this question (Out-of-Domain Negative Rejection).")
+                        if qa_res.get("gated_out"):
+                            top_sc = conf_info.get("top_score", 0.0)
+                            thresh = conf_info.get("threshold", 0.22)
+                            st.warning(
+                                f"🛡️ **Retrieval-Confidence Gate Triggered** — Top similarity (`{top_sc:.3f}`) "
+                                f"is below threshold (`{thresh:.2f}`). Skipped LLM generation to prevent hallucination."
+                            )
+                        else:
+                            st.warning("⚠️ This video does not answer this question (Out-of-Domain Negative Rejection).")
                     else:
                         st.markdown(
                             f"""<div class="answer-card">
@@ -640,6 +661,10 @@ def main() -> None:
                             model_parts.append("*(fallback)*")
                         if qa_res.get("cache_hit"):
                             model_parts.append("*(cached)*")
+                        if conf_info.get("top_score") is not None:
+                            model_parts.append(
+                                f"| Retrieval Confidence: `{conf_info.get('level', 'unknown')}` (`{conf_info['top_score']:.3f}`)"
+                            )
                         model_parts.append(f"| Latency: `{qa_res.get('latency_sec', 0.0)}s`")
                         st.caption(" ".join(model_parts))
 

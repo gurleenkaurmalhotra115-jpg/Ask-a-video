@@ -1,21 +1,29 @@
 # VidQuery ("Ask a Video")
+
+[![VidQuery CI](https://github.com/gurleenkaurmalhotra115-jpg/Ask-a-video/actions/workflows/ci.yml/badge.svg)](https://github.com/gurleenkaurmalhotra115-jpg/Ask-a-video/actions/workflows/ci.yml)
+![Python 3.11+](https://img.shields.io/badge/Python-3.11%2B-3776AB?logo=python&logoColor=white)
+![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)
+![Vector DB: Qdrant](https://img.shields.io/badge/Vector%20DB-Qdrant-DC244C)
+![UI: Streamlit](https://img.shields.io/badge/UI-Streamlit-FF4B4B?logo=streamlit&logoColor=white)
+
 > **Timestamp-Grounded Video RAG & Empirical Chunking Evaluation**  
 > *Author:* Gurleen Kaur Malhotra, B.Tech IT, Maharaja Surajmal Institute of Technology (MSIT), GGSIPU, New Delhi.  
 > 📖 **[Read the Full Technical Wiki & Viva Defense Guide (WIKI.md)](WIKI.md)** | 📄 **[Read the IEEE Research Paper (paper.pdf)](paper.pdf)**
 
 ---
 
-## 📌 Overview
+## 📌 About
 
-**VidQuery** is an open-source, local-first Retrieval-Augmented Generation (RAG) framework designed for long-form educational STEM lectures. Given a YouTube video URL or pre-indexed lecture, VidQuery:
+**VidQuery ("Ask a Video")** is an open-source, local-first Retrieval-Augmented Generation (RAG) framework for long-form educational STEM lectures. Given a YouTube video URL or pre-indexed lecture, VidQuery:
 1. Ingests timestamped transcripts (via YouTube captions or local Whisper ASR fallback).
 2. Normalizes punctuation boundaries to avoid ASR splitting artifacts.
 3. Partitions transcripts using four pluggable chunking strategies (`fixed_token`, `sentence`, `semantic`, and `time_window`).
 4. Indexes dense embeddings (`sentence-transformers/all-MiniLM-L6-v2`) in local disk-mode Qdrant.
-5. Performs top-$k$ semantic retrieval and generates citation-constrained answers using Gemini 3.5 Flash Lite.
-6. Surfaces interactive `▶ mm:ss` buttons that dynamically seek an embedded video player to the exact referenced second.
+5. Guards generation with a configurable **Retrieval-Confidence Gate** (`MIN_RETRIEVAL_CONFIDENCE`) to intercept out-of-domain or weak-match queries *before* calling the LLM.
+6. Generates citation-constrained answers via Google Gemini with an **ordered multi-model fallback chain** (`GEMINI_FALLBACK_MODELS`), retries, and disk caching.
+7. Surfaces interactive `▶ mm:ss` buttons that dynamically seek an embedded video player to the exact referenced second.
 
-The project includes an empirical research study formatted for an **IEEE conference paper** (`paper.tex`), evaluating retrieval quality under MedVidQA temporal intersection metrics ($R@1 \text{ @ IoU} \ge 0.3/0.5/0.7$) and testing whether semantic chunking justifies its computational overhead on spoken lecture discourse.
+The repository also includes an empirical research study formatted for an **IEEE conference paper** (`paper.tex`), evaluating retrieval quality under MedVidQA temporal intersection metrics ($R@1 \text{ @ IoU} \ge 0.3/0.5/0.7$) across 13 full-length lectures and 156 queries.
 
 ---
 
@@ -79,7 +87,7 @@ Top-k Retrieval ──► Grounded Prompt ──► Gemini 3.5 Flash Lite
 ├── transcript.py              # Transcript fetcher with offline cache & Whisper
 ├── embeddings.py               # Bi-encoder embedding generator (all-MiniLM-L6-v2)
 ├── vectorstore.py              # Local Qdrant vector database operations
-├── llm.py                      # Grounded QA with Gemini, retries, and disk cache
+├── llm.py                      # Grounded QA with confidence gate, fallback chain & cache
 ├── eval/
 │   ├── corpus_meta.json        # 13-video corpus metadata across 3 tiers
 │   ├── questions.csv           # 156 validated questions (130 pos + 26 neg)
@@ -95,7 +103,10 @@ Top-k Retrieval ──► Grounded Prompt ──► Gemini 3.5 Flash Lite
 │   ├── latex_table_generation.tex # Table 4: Generation faithfulness
 │   ├── retrieval_summary.csv   # Aggregated retrieval metrics
 │   └── generation_eval_summary.csv # Generation evaluation metrics
-├── tests/                      # Full pytest test suite (43 passing tests)
+├── tests/                      # Full pytest test suite (48 passing tests)
+├── .github/workflows/ci.yml    # GitHub Actions CI (verify_all.py + pytest)
+├── Dockerfile                  # Production container image (Python 3.11 + ffmpeg)
+├── LICENSE                     # MIT License
 └── requirements.txt            # Project dependencies
 ```
 
@@ -103,7 +114,7 @@ Top-k Retrieval ──► Grounded Prompt ──► Gemini 3.5 Flash Lite
 
 ## 🚀 Quick Start
 
-### 1. Installation
+### Option A: Local Python Setup
 Clone the repository and set up a Python 3.11 virtual environment:
 ```bash
 python -m venv venv
@@ -115,25 +126,33 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
-### 2. Environment Configuration
-Create a `.env` file in the project root:
+Create a `.env` file in the project root (see `.env.example`):
 ```env
 GEMINI_API_KEY=your_google_gemini_api_key_here
-GEMINI_MODEL=gemini-3.5-flash-lite
-GEMINI_FALLBACK_MODEL=gemini-3.8-flash
+GEMINI_MODEL=gemini-3.8-flash
+GEMINI_FALLBACK_MODELS=gemini-2.5-flash,gemini-2.5-flash-lite
+MIN_RETRIEVAL_CONFIDENCE=0.22
 ```
 
-### 3. Launch the Streamlit App
+Launch the Streamlit app:
 ```bash
 streamlit run app.py --server.port 8502
 ```
 Open **`http://localhost:8502`** in your browser. Choose any lecture from the pre-indexed benchmark dropdown to test offline without hitting YouTube rate limits!
 
-### 4. Run Unit Tests
+### Option B: Docker
 ```bash
-pytest
+docker build -t vidquery .
+docker run -p 8501:8501 --env-file .env vidquery
 ```
-*43/43 tests passing.*
+Open **`http://localhost:8501`** in your browser.
+
+### Run Verification & Unit Tests
+```bash
+python verify_all.py
+pytest tests/ -v
+```
+*48/48 tests passing.*
 
 ---
 
@@ -163,3 +182,9 @@ Generated LaTeX tables will be saved directly into `results/`.
   year={2026}
 }
 ```
+
+---
+
+## 📄 License
+
+This project is licensed under the **MIT License** — see [LICENSE](LICENSE) for details.
