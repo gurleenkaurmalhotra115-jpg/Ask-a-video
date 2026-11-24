@@ -30,6 +30,9 @@ scratch/
 # Pytest & testing
 .pytest_cache/
 
+# Standalone subprojects
+tinyinfer/
+
 # LaTeX auxiliary files (preserves paper.tex and paper.pdf)
 *.aux
 *.bbl

@@ -59,5 +59,16 @@ services:
     depends_on:
       - api
 
+  mcp:
+    build: .
+    command: python mcp_server.py
+    env_file:
+      - .env
+    volumes:
+      - ./qdrant_data:/app/qdrant_data
+      - ./cache:/app/cache
+    depends_on:
+      - api
+
 volumes:
   pg_data:

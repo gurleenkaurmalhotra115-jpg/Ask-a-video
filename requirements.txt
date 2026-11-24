@@ -13,3 +13,4 @@ pytest
 qdrant-client
 google-genai
 tabulate
+mcp>=1.0.0

@@ -155,12 +155,40 @@ docker build -t vidquery .
 docker run -p 8501:8501 --env-file .env vidquery
 ```
 
+### Option C: Model Context Protocol (MCP) Server
+VidQuery ships with a native **Model Context Protocol (MCP)** server, enabling any MCP-compliant AI agent (Claude Desktop, Cursor, Gemini CLI) to search timestamped video moments, query lectures with confidence gating, and verify citations:
+
+```bash
+python mcp_server.py
+```
+
+**Claude Desktop Configuration (`claude_desktop_config.json`):**
+```json
+{
+  "mcpServers": {
+    "vidquery": {
+      "command": "python",
+      "args": ["-m", "mcp_server"],
+      "cwd": "/path/to/Ask-a-video",
+      "env": {
+        "GEMINI_API_KEY": "your_api_key_here"
+      }
+    }
+  }
+}
+```
+
+**Exposed MCP Tools:**
+1. `search_video_moments(video_id, query, k=4, strategy='fixed_token')`: Semantic search returning timestamped video chunks.
+2. `ask_grounded_question(video_id, question, k=4, min_confidence=0.22)`: Confidence-gated Q&A with multi-model fallback and exact citations.
+3. `verify_citations(question, answer, chunk_texts)`: Independent verification agent checking factual grounding.
+
 ### Run Verification & Unit Tests
 ```bash
 python verify_all.py
 pytest tests/ -v
 ```
-*53/53 tests passing.*
+*58/58 tests passing.*
 
 ---
 
