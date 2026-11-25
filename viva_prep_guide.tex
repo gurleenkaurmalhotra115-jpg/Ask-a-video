@@ -1,0 +1,276 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=0.75in]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{xcolor}
+\usepackage{tcolorbox}
+\tcbuselibrary{skins,breakable}
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage{microtype}
+\usepackage[colorlinks=true,linkcolor=blue!70!black,urlcolor=blue!70!black]{hyperref}
+
+% Color definitions
+\definecolor{primary}{RGB}{24, 76, 120}
+\definecolor{secondary}{RGB}{43, 114, 186}
+\definecolor{accent}{RGB}{220, 80, 50}
+\definecolor{boxbg}{RGB}{248, 250, 252}
+\definecolor{boxframe}{RGB}{203, 213, 225}
+\definecolor{keypoint}{RGB}{16, 120, 80}
+
+% Custom boxes
+\newtcolorbox{quesbox}[1]{
+  colback=boxbg,
+  colframe=primary,
+  fonttitle=\bfseries\color{white},
+  title={#1},
+  arc=3mm,
+  boxrule=1pt,
+  left=8pt,
+  right=8pt,
+  top=6pt,
+  bottom=6pt,
+  breakable
+}
+
+\newtcolorbox{tipbox}[1]{
+  colback=yellow!5!white,
+  colframe=orange!80!black,
+  fonttitle=\bfseries\color{white},
+  title={#1},
+  arc=2mm,
+  boxrule=0.8pt,
+  left=8pt,
+  right=8pt,
+  top=5pt,
+  bottom=5pt,
+  breakable
+}
+
+\newtcolorbox{statbox}{
+  colback=blue!3!white,
+  colframe=secondary,
+  arc=2mm,
+  boxrule=0.8pt,
+  left=8pt,
+  right=8pt,
+  top=5pt,
+  bottom=5pt
+}
+
+\pagestyle{plain}
+
+\begin{document}
+
+\begin{center}
+    {\huge\bfseries\color{primary} Ask-a-Video: Viva Voce \& Defense Guide}\\[4pt]
+    {\large\color{secondary} Comprehensive Question-and-Answer Master Manual (Basic to Advanced)}\\[6pt]
+    \rule{\textwidth}{1.2pt}
+\end{center}
+
+\vspace{-4pt}
+
+\section*{\color{primary} 1. Executive Pitches (How to Introduce Your Paper)}
+
+\begin{quesbox}{P1: 30-Second Elevator Pitch (Jab Examiner bole: "Briefly explain your project")}
+\textbf{Examiner-Ready Script:}
+\begin{quote}
+``Our paper, \textbf{Ask-a-Video}, investigates Retrieval-Augmented Generation (RAG) for long-form educational videos. Traditional RAG assumes clean written documents, whereas video transcripts from ASR are continuous, lack punctuation, and suffer from heavy acoustic variation. We benchmarked 4 transcript chunking strategies across 13 STEM lectures in 3 acoustic tiers, identified the \textit{Search Space Expansion Effect} that collapses retrieval in multi-hour lectures, and proposed a \textbf{Two-Stage Hierarchical Video Retriever} that triples top-1 localization accuracy from 6\% to 18\% while reducing boundary error by 74\%.''
+\end{quote}
+\textbf{Intuition in Mind:} RAG ko spoken video par lagaya. Pata chala semantic chunking slow aur bekar hai, simple fixed-token best hai; aur lambe lecture mein keyword repetition ki wajah se retrieval fail hota hai, jise humne 2-stage hierarchical search se solve kiya.
+\end{quesbox}
+
+\begin{quesbox}{P2: 2-Minute In-Depth Project Walkthrough (Jab detailed explanation maange)}
+\textbf{Structured 4-Step Narrative:}
+\begin{enumerate}[leftmargin=*]
+    \item \textbf{Problem \& Motivation:} Document RAG does not translate cleanly to spoken lectures. Continuous speech transcripts lack sentence punctuation, classroom audio has reverberation, and technical keywords (\textit{loss function, gradient}) repeat 50+ times across a 90-minute lecture (\textit{Lexical Dispersion}).
+    \item \textbf{Factorial Experiment:} We evaluated 4 chunking strategies (\texttt{fixed\_token}, \texttt{sentence}, \texttt{semantic}, \texttt{time\_window}) across 13 full-length STEM lectures (15 hours, $\sim$20,000 segments) categorized into 3 acoustic tiers (Studio, Academic Classroom, Regional Accented/NPTEL).
+    \item \textbf{Key Empirical Surprise:} Semantic boundary chunking degraded Hit@1 (6.2\% vs 8.5\%) while adding a 160$\times$ chunking latency penalty and 4.4$\times$ overall indexing delay. Simple fixed-token partitioning was superior.
+    \item \textbf{Novel Solution \& Generation Findings:} In long lectures ($>$35 min), flat retrieval collapses to 3--6\%. Our \textbf{Two-Stage Hierarchical Retriever} resolves coarse 5-minute macro blocks first, then searches micro-chunks, raising Hit@1 to 18\%. Using Gemini 3.5 Flash Lite under strict closed-world prompting, we proved that prompt constraints achieve 100\% hallucination rejection on negative probes, but cannot rescue generation when retrieval fails.
+\end{enumerate}
+\end{quesbox}
+
+\section*{\color{primary} 2. Fundamentals \& Problem Formulation (Basic Stage)}
+
+\begin{quesbox}{Q1: What is RAG, and why does standard RAG fail on educational videos?}
+\textbf{Formal Academic Answer:}
+Retrieval-Augmented Generation (RAG) grounds language models on non-parametric knowledge bases. Standard RAG architectures (e.g., LangChain, LlamaIndex) are optimized for discrete written documents with clean syntax, headings, and paragraphs. On spoken educational videos, this breaks down due to three core challenges:
+\begin{enumerate}[leftmargin=*]
+    \item \textbf{Continuous ASR Streams:} Transcripts lack punctuation delimiters, sentence capitalization, and natural page/paragraph boundaries.
+    \item \textbf{Acoustic \& Phonetic Variation:} Real-world classrooms feature reverberation, room echo, and regional accents (e.g., Indian English in NPTEL), degrading word error rates (WER).
+    \item \textbf{Lexical Dispersion:} High repetition of core pedagogical keywords across introductions, derivations, coding, and Q\&A recaps misleads dense semantic embeddings.
+\end{enumerate}
+\end{quesbox}
+
+\begin{quesbox}{Q2: What is "Temporal Grounding" in Video QA?}
+\textbf{Formal Answer:}
+Temporal grounding is the task of retrieving the exact start and end timestamps ($[t_{\text{start}}, t_{\text{end}}]$) in a video where a specific question is answered or a concept is derived, rather than merely synthesizing an unverified textual summary.
+\end{quesbox}
+
+\begin{quesbox}{Q3: What are the 4 chunking strategies evaluated, and what are their parameters?}
+\begin{enumerate}[leftmargin=*]
+    \item \textbf{\texttt{fixed\_token}:} Uniform 100-token windows with a 20-token sliding overlap.
+    \item \textbf{\texttt{sentence}:} Groups of 5 grammatical sentences with 1-sentence overlap (falls back to 15-word windows when terminal punctuation is missing).
+    \item \textbf{\texttt{semantic}:} Computes cosine similarity between consecutive sentence embeddings across a smoothed window ($k=2$). Splits chunks at local similarity minima below the 25th percentile threshold, constrained to $[40, 200]$ words.
+    \item \textbf{\texttt{time\_window}:} Contiguous temporal windows of $\Delta t = 40\text{s}$ with an overlap of $\delta t = 8\text{s}$, regardless of word count.
+\end{enumerate}
+\end{quesbox}
+
+\begin{quesbox}{Q4: Which chunking strategy was the winner, and under what conditions?}
+\textbf{Empirical Result:}
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Overall Winner:} \texttt{fixed\_token} achieved the highest overall Top-1 accuracy (\textbf{Hit@1: 8.5\%}, Hit@4: 23.1\%, MRR: 0.147).
+    \item \textbf{Short Lectures ($\le$35 min) Winner:} \texttt{time\_window} performed best on shorter videos, achieving \textbf{23\% Hit@1}, 37\% Hit@4, and the lowest median boundary error (214.5s).
+\end{itemize}
+\end{quesbox}
+
+\section*{\color{primary} 3. System Architecture \& Implementation Choices}
+
+\begin{quesbox}{Q5: Explain the end-to-end pipeline of Ask-a-Video.}
+\textbf{Pipeline Architecture (4 Stages):}
+\begin{enumerate}[leftmargin=*]
+    \item \textbf{Transcription:} Video container (.mp4/.mkv) $\rightarrow$ Audio extracted via \texttt{ffmpeg} (16 kHz mono) $\rightarrow$ Ingested by \texttt{faster-whisper} (or parsed directly from WebVTT subtitle tracks).
+    \item \textbf{Chunking:} Audio transcript partitioned using one of the 4 chunking algorithms, attaching timestamp metadata $[t_{\text{start}}, t_{\text{end}}]$ to every chunk.
+    \item \textbf{Dense Vector Indexing:} Text chunks encoded into 384-dimensional dense vectors using \texttt{all-MiniLM-L6-v2} and indexed into an embedded \texttt{Qdrant} vector store.
+    \item \textbf{Closed-World QA:} User query encoded $\rightarrow$ Top-$k$ chunks retrieved $\rightarrow$ Injected into \texttt{Gemini 3.5 Flash Lite} with a 4-clause constrained prompt.
+\end{enumerate}
+\end{quesbox}
+
+\begin{quesbox}{Q6: Why did you choose Qdrant in embedded mode instead of Pinecone or Milvus?}
+\textbf{Engineering Justification:}
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Zero Infrastructure Overhead:} Qdrant embedded runs in-process, storing vector indexes directly to disk. It requires no Docker daemon, external database server, or cloud network latency.
+    \item \textbf{Student Laptop Execution:} Ensures the benchmark can execute offline on standard student hardware without recurring cloud fees.
+    \item \textbf{Fast Payload Filtering:} Enables instantaneous filtering on metadata fields like video ID and temporal bounds.
+\end{itemize}
+\end{quesbox}
+
+\begin{quesbox}{Q7: Why use \texttt{all-MiniLM-L6-v2} rather than OpenAI's embedding API?}
+\textbf{Technical Rationale:}
+\begin{itemize}[leftmargin=*]
+    \item \textbf{CPU Throughput:} \texttt{all-MiniLM-L6-v2} (384-dim) processes $\sim$2,450 words/second on standard laptop CPUs (Intel Core i5-1135G7). A 1-hour lecture is fully indexed in under 5 seconds.
+    \item \textbf{Reproducibility \& Determinism:} Open-source weights guarantee identical embeddings across runs, eliminating API rate limits, deprecations, and network timeouts.
+\end{itemize}
+\end{quesbox}
+
+\begin{quesbox}{Q8: Why did you stratify the evaluation into 3 Acoustic Tiers?}
+\textbf{Experimental Design:} Real educational videos vary drastically in production quality:
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Tier A (Curated Studio):} High-production, crisp lapel microphone audio, manual captions (3Blue1Brown, Fast.ai, Karpathy). Hit@1: 12.0--16.0\%.
+    \item \textbf{Tier B (Academic Classroom):} University lecture halls (Stanford, MIT) with room reverberation and distance microphones. Hit@1 dropped to 4.0--8.0\%.
+    \item \textbf{Tier C (Regional Accented Instruction):} NPTEL and regional Indian educators. Features Indian English phonetic distributions and conversational cadence. Hit@1 dropped to 3.3\%, but Hit@4 remained at 30.0\% (proving relevant chunks exist in candidate pools but get outranked).
+\end{itemize}
+\end{quesbox}
+
+\section*{\color{primary} 4. Core Research Findings \& Counter-Intuitive Insights (Viva Core)}
+
+\begin{quesbox}{Q9: Why did Semantic Chunking fail to outperform Fixed-Token chunking?}
+\textbf{Deep Scientific Explanation:}
+\begin{enumerate}[leftmargin=*]
+    \item \textbf{Spoken Syntax vs Written Syntax:} Written text has clean topic transitions. Spoken transcripts feature pauses, colloquial fillers, and meandering topic drifts. Cosine thresholding creates fragmented micro-chunks that lose instructional context.
+    \item \textbf{Token Truncation Ceiling:} \texttt{semantic} chunks up to 200 words approach the 256 word-piece ceiling of the \texttt{all-MiniLM-L6-v2} encoder, truncating later sentences.
+    \item \textbf{Computational Tax:} Semantic chunking requires dense embedding computation for every adjacent pair before cutting. It is \textbf{160$\times$ slower in chunking} and \textbf{4.4$\times$ slower overall} (18.42s vs 4.20s per lecture-hour), with lower precision.
+\end{enumerate}
+\end{quesbox}
+
+\begin{quesbox}{Q10: What is the "Search Space Expansion Effect"? Explain its mechanism.}
+\textbf{Mechanism \& Impact:}
+\begin{itemize}[leftmargin=*]
+    \item In short lectures ($\le$35 min), candidate chunks are few ($\sim$30). Dense retrieval achieves **23\% Hit@1**.
+    \item In long lectures ($>$35 min), candidate chunks expand to 300+. Key technical terms appear in an introductory syllabus overview, a formal theorem proof, a practical demonstration, and a closing recap.
+    \item Global cosine similarity between the query and 300+ chunks causes \textit{lexical interference}: flat dense embeddings rank an introductory summary or recap higher than the primary derivation.
+    \item \textbf{Result:} Hit@1 collapses to **3--6\%**, and the median boundary error blows up to **$\sim$950 seconds ($\approx$15 minutes)**.
+\end{itemize}
+\end{quesbox}
+
+\begin{quesbox}{Q11: How does the Two-Stage Hierarchical Video Retriever solve this collapse?}
+\textbf{Algorithm 1 Breakdown:}
+\begin{enumerate}[leftmargin=*]
+    \item \textbf{Stage 1 (Macro-Chapter Localization):} Transcripts are split into coarse 5-minute blocks ($\mathcal{M}_j = [t_j, t_j + 300\text{s}]$). The retriever calculates similarity to the query and isolates only the top-$M$ ($M=2$) macro blocks.
+    \item \textbf{Stage 2 (Micro-Chunk Grounding):} Fine-grained search (100-token chunks) is executed \textbf{strictly inside} the candidate macro blocks $\mathcal{M}^*$, completely filtering out the other 80 minutes of the lecture.
+\end{enumerate}
+\textbf{Quantitative Proof (Table VII):}
+\begin{itemize}[leftmargin=*]
+    \item Hit@1 jumped from **6\% to 18\%** (95\% CI: 11--25\%, a **3$\times$ gain**).
+    \item Median boundary error dropped from **1012.6s to 263.2s** (a **74\% reduction**).
+\end{itemize}
+\end{quesbox}
+
+\begin{quesbox}{Q12: Macro blocks exceed the 256-token limit. Why does Stage 1 still work?}
+\textbf{Subtle In-Depth Insight:}
+Macro blocks ($\sim$750 words) exceed the 256 word-piece limit of \texttt{all-MiniLM-L6-v2}, so embeddings represent primarily the opening 1--2 minutes of each 5-minute block. In educational pedagogy, professors typically announce their topic at the beginning of a conceptual section (e.g., \textit{``Now let us derive the backpropagation equations...''}). Therefore, the opening segment provides sufficient topical signal for macro filtering.
+\end{quesbox}
+
+\section*{\color{primary} 5. LLM Generation, Attribution \& Qualitative Analysis}
+
+\begin{quesbox}{Q13: What were the 4 system prompt rules enforced on Gemini 3.5 Flash Lite?}
+\textbf{The 4 Closed-World Constraints:}
+\begin{enumerate}[leftmargin=*]
+    \item Answer using \textbf{only} the numbered chunks provided.
+    \item Add citation markers $[n]$ to each claim.
+    \item If the query cannot be resolved exclusively from the chunks, return \texttt{"NOT\_IN\_VIDEO"}.
+    \item Do not generate timestamps in text (frontend renders clickable timestamps from metadata).
+\end{enumerate}
+\end{quesbox}
+
+\begin{quesbox}{Q14: What was the primary finding of the Generation experiment (Table V)?}
+\textbf{The Key Insight:}
+\begin{itemize}[leftmargin=*]
+    \item \textbf{100\% Hallucination Resistance:} It rejected all 26 adversarial out-of-domain probes (e.g., asking about the 1815 Treaty of Paris during a Machine Learning lecture).
+    \item \textbf{The Retrieval Bottleneck:} Out of 30 valid answerable queries, it answered only 14 and rejected 16. Furthermore, among the 14 answered queries, **only 1 cited the gold timestamp span**; the other 13 cited partially relevant distractor chunks.
+    \item \textbf{Takeaway Quote for Viva:} \textit{``Closed-world prompt constraints successfully prevent hallucinations, but they cannot fix retrieval failure: when the retriever surfaces off-target chunks, the generator either cites the off-target chunk or refrains from answering.''}
+\end{itemize}
+\end{quesbox}
+
+\begin{quesbox}{Q15: Explain Case Study 2 (Acoustic WER Hallucination Rejection).}
+\textbf{Case Study Detail:}
+In a Tier B lecture with heavy acoustic reverberation, Whisper transcribed \textit{``regularization parameter lambda''} as \textit{``regularization parameter lamb done''}. Rather than confabulating an answer from the phonetically corrupted transcript, the closed-world generator returned \texttt{NOT\_IN\_VIDEO}, demonstrating robustness against acoustic ASR corruption.
+\end{quesbox}
+
+\section*{\color{primary} 6. Evaluation Metrics, Limitations \& Defense Strategy}
+
+\begin{quesbox}{Q16: How are the MedVidQA metrics calculated?}
+\begin{itemize}[leftmargin=*]
+    \item \textbf{IoU (Intersection over Union):} Temporal overlap between predicted span $S_{\text{pred}} = [t_{s}, t_{e}]$ and gold span $S_{\text{gold}} = [g_{s}, g_{e}]$:
+    $$\text{IoU}(S_{\text{pred}}, S_{\text{gold}}) = \frac{\max(0, \min(t_{e}, g_{e}) - \max(t_{s}, g_{s}))}{\max(t_{e}, g_{e}) - \min(t_{s}, g_{s})}$$
+    \item \textbf{Hit@$k$:} Binary indicator whether any of the top-$k$ retrieved chunks has $\text{IoU} > 0$ with the gold span.
+    \item \textbf{Median Boundary Error:} Absolute difference in seconds between predicted center and gold center.
+\end{itemize}
+\end{quesbox}
+
+\begin{quesbox}{Q17: What are the primary Limitations of your work? (Honest Defense)}
+\textbf{How to impress the examiner when asked about flaws:}
+\begin{enumerate}[leftmargin=*]
+    \item \textbf{Blackboard Decoupling (Audio Only):} When an instructor writes math silently on the blackboard and says \textit{``as you can see here''}, audio ASR misses it. Solution: Multi-modal frame embeddings (CLIP).
+    \item \textbf{Single Annotator Protocol:} Gold query spans were annotated by one domain expert ($N=130$). Future work will include multiple annotators and Cohen's Kappa ($\kappa$).
+    \item \textbf{End-to-End Hierarchical Generation:} Table V evaluated generation on flat retrieval; end-to-end generation with hierarchical retrieval is left to future work.
+    \item \textbf{Confounding:} Video duration and acoustic tier are partially confounded (most short videos were studio-recorded).
+\end{enumerate}
+\end{quesbox}
+
+\section*{\color{primary} 7. Rapid-Fire "Golden Numbers" Cheat Sheet}
+
+\begin{statbox}
+\begin{center}
+\textbf{\large Numbers to Memorize Before Walking Into the Viva Room}
+\end{center}
+\vspace{2pt}
+\begin{tabular}{lll}
+\toprule
+\textbf{Metric / Parameter} & \textbf{Value} & \textbf{Context / Significance} \\
+\midrule
+Total Lectures / Segments & 13 lectures, $\sim$20,000 segments & $\sim$15 hours of full-length STEM coursework \\
+Evaluation Queries & 130 answerable + 26 negative probes & Stratified across Tier A (50), Tier B (50), Tier C (30) \\
+Overall Best Strategy & \texttt{fixed\_token} & \textbf{Hit@1: 8.5\%}, Hit@4: 23.1\%, MRR: 0.147 \\
+Semantic Chunking Hit@1 & \texttt{semantic}: 6.2\% & Trails fixed-token, 160$\times$ slower chunking step \\
+Short Lectures ($\le$35 min) Hit@1 & \texttt{time\_window}: \textbf{23\%} & Best localization on compact videos \\
+Long Lectures ($>$35 min) Hit@1 & 3\% to 6\% & Severe collapse caused by Lexical Dispersion \\
+Hierarchical Retrieval Hit@1 & \textbf{6\% $\rightarrow$ 18\%} (3$\times$ gain) & Post-hoc analysis on 100 long-lecture queries \\
+Median Boundary Error Reduction & \textbf{1012.6s $\rightarrow$ 263.2s} & **74\% reduction** using Two-Stage Hierarchical \\
+Hallucination Rejection Rate & \textbf{100\% (26/26)} & Gemini 3.5 Flash Lite closed-world constraint \\
+Embedding Throughput & $\sim$2,450 words/sec & \texttt{all-MiniLM-L6-v2} on standard laptop CPU \\
+\bottomrule
+\end{tabular}
+\end{statbox}
+
+\end{document}

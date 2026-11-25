@@ -20,7 +20,7 @@ from pydantic import BaseModel, Field
 from chunking import DEFAULT_PARAMS, STRATEGIES, chunk_transcript
 from llm import LLMError, answer_question, log_qa
 from transcript import TranscriptError, get_transcript
-from vectorstore import get_client as get_qdrant_client, index_chunks, search
+from vectorstore import get_client as get_qdrant_client, index_chunks, search, search_hierarchical
 
 logger = logging.getLogger(__name__)
 
@@ -42,6 +42,9 @@ class SearchRequest(BaseModel):
     query: str = Field(..., min_length=1, description="Search query.")
     strategy: str = Field(default="fixed_token", description="Chunking strategy.")
     k: int = Field(default=4, ge=1, le=20, description="Number of chunks to retrieve.")
+    use_hierarchical: bool = Field(default=False, description="Enable Two-Stage Hierarchical Video Retrieval (Algorithm 1).")
+    t_macro: float = Field(default=300.0, ge=60.0, le=1800.0, description="Macro-window duration in seconds.")
+    top_m_macro: int = Field(default=2, ge=1, le=10, description="Top-M macro-blocks selected in Stage 1.")
 
 
 class AskRequest(BaseModel):
@@ -51,6 +54,9 @@ class AskRequest(BaseModel):
     k: int = Field(default=4, ge=1, le=20, description="Number of chunks to retrieve.")
     min_confidence: float | None = Field(default=None, ge=0.0, le=1.0, description="Optional confidence gate threshold override.")
     verify_grounded: bool = Field(default=False, description="Enable second-pass citation verification agent.")
+    use_hierarchical: bool = Field(default=False, description="Enable Two-Stage Hierarchical Video Retrieval prior to QA.")
+    t_macro: float = Field(default=300.0, ge=60.0, le=1800.0, description="Macro-window duration in seconds.")
+    top_m_macro: int = Field(default=2, ge=1, le=10, description="Top-M macro-blocks selected in Stage 1.")
     use_cache: bool = Field(default=True, description="Enable disk/Redis caching.")
 
 
@@ -168,10 +174,29 @@ def index_video(req: IndexRequest) -> dict[str, Any]:
 
 @app.post("/videos/search")
 def search_video(req: SearchRequest) -> dict[str, Any]:
-    """Retrieve top-k timestamped chunks for a video and strategy."""
+    """Retrieve top-k timestamped chunks for a video and strategy (flat or hierarchical)."""
     if req.strategy not in STRATEGIES:
         raise HTTPException(status_code=400, detail=f"Unknown strategy '{req.strategy}'. Choose from {list(STRATEGIES)}.")
     qdrant = get_qdrant_client(os.getenv("QDRANT_PATH", "qdrant_data"))
+    if req.use_hierarchical:
+        results, macro_meta = search_hierarchical(
+            client=qdrant,
+            query=req.query,
+            video_id=req.video_id,
+            strategy=req.strategy,
+            t_macro=req.t_macro,
+            top_m_macro=req.top_m_macro,
+            k=req.k,
+        )
+        return {
+            "video_id": req.video_id,
+            "strategy": req.strategy,
+            "k": req.k,
+            "hierarchical": True,
+            "selected_macro_blocks": macro_meta,
+            "results": results,
+        }
+
     results = search(
         client=qdrant,
         query=req.query,
@@ -183,6 +208,7 @@ def search_video(req: SearchRequest) -> dict[str, Any]:
         "video_id": req.video_id,
         "strategy": req.strategy,
         "k": req.k,
+        "hierarchical": False,
         "results": results,
     }
 
@@ -194,7 +220,7 @@ def ask_video(req: AskRequest) -> dict[str, Any]:
         raise HTTPException(status_code=400, detail=f"Unknown strategy '{req.strategy}'. Choose from {list(STRATEGIES)}.")
 
     cache_key = hashlib.sha256(
-        f"{req.video_id}|{req.strategy}|{req.k}|{req.min_confidence}|{req.verify_grounded}|{req.question}".encode("utf-8")
+        f"{req.video_id}|{req.strategy}|{req.k}|{req.min_confidence}|{req.verify_grounded}|{req.use_hierarchical}|{req.question}".encode("utf-8")
     ).hexdigest()
 
     redis_client = _get_redis_client() if req.use_cache else None
@@ -209,13 +235,24 @@ def ask_video(req: AskRequest) -> dict[str, Any]:
             pass
 
     qdrant = get_qdrant_client(os.getenv("QDRANT_PATH", "qdrant_data"))
-    retrieved = search(
-        client=qdrant,
-        query=req.question,
-        video_id=req.video_id,
-        strategy=req.strategy,
-        k=req.k,
-    )
+    if req.use_hierarchical:
+        retrieved, _ = search_hierarchical(
+            client=qdrant,
+            query=req.question,
+            video_id=req.video_id,
+            strategy=req.strategy,
+            t_macro=req.t_macro,
+            top_m_macro=req.top_m_macro,
+            k=req.k,
+        )
+    else:
+        retrieved = search(
+            client=qdrant,
+            query=req.question,
+            video_id=req.video_id,
+            strategy=req.strategy,
+            k=req.k,
+        )
     if not retrieved:
         raise HTTPException(status_code=404, detail=f"No indexed chunks found for video_id='{req.video_id}' and strategy='{req.strategy}'.")
 

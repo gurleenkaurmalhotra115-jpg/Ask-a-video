@@ -209,6 +209,81 @@ def search(
     return results
 
 
+def search_hierarchical(
+    client: QdrantClient,
+    query: str,
+    video_id: str,
+    strategy: str,
+    transcript_source: str | None = None,
+    t_macro: float = 300.0,
+    top_m_macro: int = 2,
+    k: int = 4,
+    embed_fn: Callable[[list[str]], Any] | None = None,
+) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
+    """Retrieve top-k chunks using Two-Stage Hierarchical Video Retrieval (Algorithm 1).
+
+    Stage 1: Groups chunks into t_macro macro-blocks (default 300s = 5m), selects top-M blocks.
+    Stage 2: Restricts candidate pool to micro-chunks inside shortlisted macro-blocks and ranks top-k.
+
+    Returns:
+        tuple (top_micro_chunks, selected_macro_blocks_metadata)
+    """
+    from hierarchical_retriever import search_hierarchical as run_hierarchical
+
+    if not client.collection_exists(COLLECTION):
+        return [], []
+
+    must_filters = [
+        models.FieldCondition(key="video_id", match=models.MatchValue(value=video_id)),
+        models.FieldCondition(key="strategy", match=models.MatchValue(value=strategy)),
+    ]
+    if transcript_source:
+        must_filters.append(
+            models.FieldCondition(key="transcript_source", match=models.MatchValue(value=transcript_source))
+        )
+
+    # Scroll all candidate micro-chunks for this video & strategy
+    chunks: list[dict[str, Any]] = []
+    offset = None
+    while True:
+        points, next_offset = client.scroll(
+            collection_name=COLLECTION,
+            scroll_filter=models.Filter(must=must_filters),
+            limit=500,
+            with_payload=True,
+            with_vectors=False,
+            offset=offset,
+        )
+        for pt in points:
+            payload = pt.payload or {}
+            chunks.append({
+                "chunk_id": int(payload.get("chunk_id", 0)),
+                "text": str(payload.get("text", "")),
+                "start": float(payload.get("start", 0.0)),
+                "end": float(payload.get("end", 0.0)),
+                "transcript_source": str(payload.get("transcript_source", "captions")),
+                "n_words": int(payload.get("n_words", 0)),
+            })
+        if next_offset is None:
+            break
+        offset = next_offset
+
+    if not chunks:
+        return [], []
+
+    # Sort chunks by start time for consistent macro-block partitioning
+    chunks.sort(key=lambda c: c["start"])
+
+    return run_hierarchical(
+        query=query,
+        chunks=chunks,
+        t_macro=t_macro,
+        top_m_macro=top_m_macro,
+        k=k,
+        embed_fn=embed_fn,
+    )
+
+
 def list_indexed(client: QdrantClient) -> list[dict[str, Any]]:
     """Return summary of all indexed videos and strategies with chunk counts.
 

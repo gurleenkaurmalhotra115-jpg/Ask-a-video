@@ -1,0 +1,91 @@
+video_id,question,flat_hit_at_1,flat_hit_at_k,flat_error_sec,hier_hit_at_1,hier_hit_at_k,hier_error_sec
+zjkBMFhNj_g,What two files compose the core of a modern LLM package like Llama 2 70B?,1,1,-30.439999999999998,1,1,-30.439999999999998
+zjkBMFhNj_g,How much text is typically collected to pretrain a foundational base model?,1,1,6.399999999999977,0,0,836.8399999999999
+zjkBMFhNj_g,What computational hardware is typically used for pretraining runs and at what cost?,0,0,681.0,0,1,-84.83999999999997
+zjkBMFhNj_g,What fundamental objective is an LLM trained to predict during pretraining?,0,1,304.64,0,0,712.44
+zjkBMFhNj_g,Why does an LLM function as a lossy compression algorithm for the internet?,0,0,-290.88,0,0,-290.88
+zjkBMFhNj_g,What is the role of fine-tuning or instruction tuning after pretraining?,0,0,332.44000000000005,0,0,332.44000000000005
+zjkBMFhNj_g,How does Reinforcement Learning from Human Feedback (RLHF) improve LLM responses?,0,0,1203.0,0,0,1203.0
+zjkBMFhNj_g,What is context window memory in an LLM and how is it limited?,0,0,1105.2800000000002,0,0,-1190.88
+zjkBMFhNj_g,How does retrieval-augmented generation (RAG) help prevent model hallucinations?,0,0,638.8400000000001,0,0,-614.1600000000001
+zjkBMFhNj_g,What security vulnerability arises from prompt injection attacks on LLMs?,0,0,1057.4,0,0,669.5999999999999
+8SF_h3xF3cE,Why does Fast.ai recommend a top-down teaching approach to machine learning?,0,0,1868.96,0,0,2464.96
+8SF_h3xF3cE,What computer vision task is built in the first 10 minutes of the lesson?,0,1,1477.92,0,0,3047.6
+8SF_h3xF3cE,How are images downloaded using DuckDuckGo search programmatically?,0,0,-245.84,0,0,2349.6
+8SF_h3xF3cE,What is a DataBlock and what components does it require?,0,0,2046.96,0,0,2046.96
+8SF_h3xF3cE,Why is a validation set essential before training any neural network?,0,0,3659.12,0,0,1980.0
+8SF_h3xF3cE,What pretrained architecture (e.g. resnet18) is used for transfer learning?,0,0,2182.4,0,0,2182.4
+8SF_h3xF3cE,What is fine-tuning in fastai and why is fine_tune used instead of fit?,0,0,2714.32,0,0,2714.32
+8SF_h3xF3cE,How does fastai measure classification error rate during training?,0,0,1646.08,0,0,1646.08
+8SF_h3xF3cE,How can the trained model be exported and loaded for production inference?,0,0,1286.08,0,0,1286.08
+8SF_h3xF3cE,What interactive web application tool (like Gradio or Hugging Face Spaces) is recommended?,0,0,156.48000000000002,0,0,156.48000000000002
+jGwO_UgTS7I,What are the four main areas or topics covered in CS229?,0,0,1601.38,0,0,1601.38
+jGwO_UgTS7I,How does Andrew Ng define supervised learning using the housing prices dataset?,0,0,2287.45,0,0,2287.45
+jGwO_UgTS7I,What is the difference between a regression problem and a classification problem?,0,0,2147.45,0,0,2147.45
+jGwO_UgTS7I,What medical diagnosis example is used to illustrate binary classification?,0,0,2227.39,0,0,2227.39
+jGwO_UgTS7I,How does Support Vector Machines use infinite-dimensional feature spaces?,0,0,2206.14,0,0,2206.14
+jGwO_UgTS7I,How does unsupervised learning differ from supervised learning regarding data labels?,0,0,2905.84,0,0,2905.84
+jGwO_UgTS7I,What real-world cocktail party problem is solved using unsupervised learning?,0,0,2973.0200000000004,0,0,2973.0200000000004
+jGwO_UgTS7I,What is reinforcement learning and how is the reward function structured?,0,0,3058.17,0,0,1126.9299999999998
+jGwO_UgTS7I,What autonomous helicopter control project is used as a case study for reinforcement learning?,0,0,2753.5,0,0,2043.17
+jGwO_UgTS7I,What are the course prerequisites in linear algebra and probability?,0,0,-1188.3,0,0,-1188.3
+II4giR4vOOo,Why has deep learning surged in practical capability over the past decade?,0,0,642.6,0,0,774.44
+II4giR4vOOo,What is a perceptron and how does it compute its output?,0,0,1496.2,0,0,678.08
+II4giR4vOOo,Why is non-linearity crucial in neural network activation functions?,0,0,693.24,0,0,834.24
+II4giR4vOOo,"What activation function outputs values strictly in the range [0, 1]?",0,0,593.24,0,0,798.6800000000001
+II4giR4vOOo,What is the mathematical definition of the Rectified Linear Unit (ReLU)?,0,0,1038.72,0,0,1038.72
+II4giR4vOOo,How do dense feedforward layers connect neurons between successive stages?,0,0,1076.32,0,0,1076.32
+II4giR4vOOo,What is cross-entropy loss and when is it applied instead of mean squared error?,0,0,1101.96,0,0,1101.96
+II4giR4vOOo,How does stochastic gradient descent differ from batch gradient descent?,0,0,1500.56,0,0,1500.56
+II4giR4vOOo,What is the vanishing gradient problem in deep neural networks?,0,0,1031.92,0,0,1031.92
+II4giR4vOOo,How does dropout regularization prevent neural networks from overfitting?,0,0,1301.56,0,0,1301.56
+J7DzL2_Na80,What are the two fundamental geometric pictures for systems of linear equations?,1,1,28.879999999999995,1,1,28.879999999999995
+J7DzL2_Na80,"In the 2x2 system 2x - y = 0 and -x + 2y = 3, what is the row picture?",0,1,120.94,0,0,171.23000000000002
+J7DzL2_Na80,How does the column picture represent the matrix equation Ax = b?,0,0,229.67999999999995,0,0,-71.74000000000001
+J7DzL2_Na80,"What is the linear combination of column vectors [2, -1] and [-1, 2] that yields [0, 3]?",0,0,939.8299999999999,0,0,245.47000000000003
+J7DzL2_Na80,Why does Professor Strang emphasize the column picture over the row picture?,0,1,-506.12,0,1,-506.12
+J7DzL2_Na80,"In 3 dimensions with 3 equations, what does each equation represent in the row picture?",0,0,262.38,0,0,494.48
+J7DzL2_Na80,When do three 3D column vectors fail to solve Ax = b for all b?,0,0,879.49,0,0,879.49
+J7DzL2_Na80,What does it mean for a square matrix A to be singular or non-invertible?,0,0,651.79,0,0,651.79
+J7DzL2_Na80,How is matrix-vector multiplication Ax interpreted in terms of matrix columns?,0,0,847.9699999999998,0,0,847.9699999999998
+J7DzL2_Na80,What is the dot product interpretation of multiplying row i by vector x?,0,0,677.9699999999998,0,0,677.9699999999998
+PaCmpygFfXo,What dataset of names is used to train the bigram character model?,0,0,278.2,0,0,278.2
+PaCmpygFfXo,What is a bigram language model and how does it predict subsequent tokens?,0,0,158.2,0,0,158.2
+PaCmpygFfXo,What special start/end token is added to delineate name boundaries?,0,0,184.12,0,0,-292.32
+PaCmpygFfXo,How is a 2D 27x27 tensor created in PyTorch to store character pair counts?,0,0,329.48,0,0,3739.2799999999997
+PaCmpygFfXo,How are raw bigram counts converted into probability distributions along rows?,0,0,5832.36,0,0,5832.36
+PaCmpygFfXo,How does torch.multinomial sample new characters using probability distributions?,0,0,534.6800000000001,0,0,761.6400000000001
+PaCmpygFfXo,What is negative log likelihood and why is it used as the training loss?,0,0,2057.48,0,0,4096.0
+PaCmpygFfXo,What problem occurs when a bigram count is zero and how does model smoothing solve it?,0,0,4992.36,0,0,4992.36
+PaCmpygFfXo,How is the bigram problem reformulated into a single linear neural network layer?,0,0,2676.96,0,0,1854.7600000000002
+PaCmpygFfXo,Why does gradient descent on the single-layer neural network match count probabilities?,0,0,3870.08,0,0,2620.4799999999996
+5p248yoa3oE,Why does Andrew Ng compare AI to general-purpose technology like electricity?,1,1,6.280000000000001,1,1,6.280000000000001
+5p248yoa3oE,What are the two foundational pillars of modern AI technology mentioned?,0,0,1031.64,0,0,1922.6999999999998
+5p248yoa3oE,Why is supervised learning still the primary driver of commercial AI economic value?,0,0,374.0,0,1,901.6400000000001
+5p248yoa3oE,How has generative AI compressed software development timelines?,0,1,232.22000000000003,1,1,46.039999999999964
+5p248yoa3oE,What is the long-tail problem in commercial machine learning deployment?,0,1,-177.14,0,0,565.24
+5p248yoa3oE,How do low-code AI platforms empower non-programmers to solve niche problems?,0,0,454.1199999999999,0,0,454.1199999999999
+5p248yoa3oE,"What are the three main layers of the AI tech stack (Hardware, Infrastructure, Applications)?",0,0,194.1199999999999,0,0,194.1199999999999
+5p248yoa3oE,Where does Andrew Ng see the greatest near-term opportunity for new AI startups?,0,0,-128.3599999999999,0,0,-421.22
+5p248yoa3oE,What realistic stance does Andrew Ng take on immediate existential extinction risks from AI?,0,0,496.17999999999984,0,0,496.17999999999984
+5p248yoa3oE,What is the role of AI startup studios in co-founding companies?,0,0,-602.3,0,0,-602.3
+YLczBemZpaE,What classic definition of machine learning by Tom Mitchell is introduced?,0,1,2314.74,0,0,2314.74
+YLczBemZpaE,"What checkers playing example illustrates Task, Performance, and Experience?",0,1,1188.17,1,1,-16.659999999999997
+YLczBemZpaE,Why is machine learning necessary when human programming cannot specify exact rules?,0,0,-196.66,0,0,1682.4
+YLczBemZpaE,How does biological learning in humans inspire machine learning paradigms?,0,1,1824.7399999999998,0,0,1824.7399999999998
+YLczBemZpaE,What is the difference between inductive inference and deductive reasoning?,0,1,-684.05,0,1,1342.4
+YLczBemZpaE,What is inductive bias in machine learning and why is it required?,0,0,1464.7399999999998,0,0,1464.7399999999998
+YLczBemZpaE,What three broad learning categories are outlined for the course?,0,0,-163.83000000000004,0,0,-1138.87
+YLczBemZpaE,What role do credit assignment and delayed rewards play in reinforcement learning?,0,1,1024.7399999999998,0,0,1024.7399999999998
+YLczBemZpaE,How does the course organize evaluation metrics across classification problems?,0,0,184.58999999999992,0,0,-1618.87
+YLczBemZpaE,What mathematical foundations in linear algebra and multivariate calculus are required?,1,1,-11.339999999999918,1,1,-11.339999999999918
+MJ1vWb1rGwM,What are the core phases of an industrial end-to-end machine learning project lifecycle?,0,0,3805.04,0,1,3250.56
+MJ1vWb1rGwM,Why is modular coding with src packages preferred over running single Jupyter notebooks?,0,0,5808.56,0,0,5808.56
+MJ1vWb1rGwM,What is the role of setup.py and requirements.txt in local packaging?,0,0,4820.64,0,0,7774.56
+MJ1vWb1rGwM,How is custom exception handling implemented in python using sys.exc_info?,0,0,2434.8,0,0,4310.56
+MJ1vWb1rGwM,Why is structured logging with logging.basicConfig essential for production debugging?,0,0,5008.72,0,0,5008.72
+MJ1vWb1rGwM,What data ingestion component splits raw CSV files into train and test sets?,0,0,1000.4000000000001,0,0,1235.52
+MJ1vWb1rGwM,How does a ColumnTransformer handle numerical and categorical preprocessing pipelines?,0,0,-473.67999999999995,0,0,-473.67999999999995
+MJ1vWb1rGwM,How is the preprocessor object serialized to disk using dill or pickle?,0,0,5022.88,0,0,4724.4
+MJ1vWb1rGwM,How does ModelTrainer evaluate multiple regression models to pick the best R2 score?,0,0,1461.52,0,0,1901.52
+MJ1vWb1rGwM,What is the purpose of Dockerizing the Flask or FastAPI web application?,0,0,6433.84,0,0,6433.84
